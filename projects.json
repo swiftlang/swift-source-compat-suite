@@ -719,6 +719,31 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/realm/SwiftLint.git",
+    "path": "swiftlint",
+    "branch": "master",
+    "compatibility": {
+      "3.0": {
+        "commit": "e4fa18df06ddbcc730dd2c08a1c0c42aa531ae0c"
+      }
+    },
+    "maintainer": "jp@jpsim.com",
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/vapor/vapor.git",
     "path": "vapor",
     "branch": "master",
