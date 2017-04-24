@@ -738,5 +738,42 @@
         "configuration": "release"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/louisdh/panelkit.git",
+    "path": "panelkit",
+    "branch": "master",
+    "compatibility": {
+      "3.0": {
+        "commit": "d451d956fb31f0ca5d76940c0b1db46b8c74a089"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "maintainer": "louisdhauwe@silverfox.be",
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "PanelKit.xcworkspace",
+        "scheme": "PanelKit",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "PanelKit.xcworkspace",
+        "scheme": "Example",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "PanelKit.xcworkspace",
+        "scheme": "PanelKitTests",
+        "destination": "platform=iOS Simulator,name=iPad Pro (12.9 inch)"
+      }
+    ]
   }
 ]
