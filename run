@@ -1,0 +1,219 @@
+#!/usr/bin/env python
+# ===--- run --------------------------------------------------------------===
+#
+#  This source file is part of the Swift.org open source project
+#
+#  Copyright (c) 2014 - 2017 Apple Inc. and the Swift project authors
+#  Licensed under Apache License v2.0 with Runtime Library Exception
+#
+#  See https://swift.org/LICENSE.txt for license information
+#  See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
+#
+# ===----------------------------------------------------------------------===
+
+"""A run script to be executed as a Jenkins build step."""
+
+import sys
+import os
+import argparse
+import platform
+
+import common
+
+script_dir = os.path.abspath(os.path.dirname(__file__))
+
+
+def main():
+    common.debug_print('** RUN **')
+    os.chdir(os.path.dirname(__file__))
+
+    args = parse_args()
+    common.set_swift_branch(args.swift_branch)
+    workspace = common.private_workspace('.')
+
+    if not args.skip_clone:
+        common.clone_repos()
+
+    if not args.skip_build:
+        build_swift_toolchain(workspace, args)
+
+    if not args.skip_runner:
+        if args.test_incremental:
+            execute_build_incremental(workspace, args)
+        else:
+            execute_runner(workspace, args)
+
+    return 0
+
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('swift_branch')
+    parser.add_argument('--sandbox', action='store_true')
+    parser.add_argument('--projects',
+                        metavar='PATH',
+                        help='JSON project file',
+                        default='projects.json')
+    parser.add_argument("--verbose",
+                        action='store_true')
+    parser.add_argument("--assertions",
+                        help='Build Swift with asserts',
+                        action='store_true')
+    parser.add_argument("--test-incremental",
+                        help='Test incremental-mode over multiple commits',
+                        action='store_true')
+    parser.add_argument('--swiftc',
+                        metavar='PATH',
+                        help='swiftc executable')
+    parser.add_argument('--skip-build',
+                        action='store_true')
+    parser.add_argument('--skip-ci-steps',
+                        action='store_true')
+    parser.add_argument('--skip-clone',
+                        action='store_true')
+    parser.add_argument('--skip-runner',
+                        action='store_true')
+    return parser.parse_args()
+
+
+def get_swiftc_path(workspace, swiftc):
+    if platform.system() == 'Darwin':
+        swiftc_path = (
+            swiftc if swiftc else
+            os.path.join(workspace, 'build/compat_macos/install/toolchain/usr/bin/swiftc')
+        )
+    elif platform.system() == 'Linux':
+        swiftc_path = (
+            swiftc if swiftc else
+            os.path.join(workspace, 'build/compat_linux/install/usr/bin/swiftc')
+        )
+    else:
+        raise common.UnsupportedPlatform
+    return swiftc_path
+
+
+def get_sandbox_profile_flags():
+    sandbox_flags = []
+    if platform.system() == 'Darwin':
+        sandbox_flags += [
+            '--sandbox-profile-xcodebuild',
+            '../../../workspace-private/swift-source-compat-suite-sandbox/sandbox_xcodebuild.sb',
+            '--sandbox-profile-package',
+            '../../../workspace-private/swift-source-compat-suite-sandbox/sandbox_package.sb'
+        ]
+    elif platform.system() == 'Linux':
+        sandbox_flags += [
+            '--sandbox-profile-package',
+            '../../../workspace-private/swift-source-compat-suite-sandbox/sandbox_package_linux.profile'
+        ]
+    else:
+        raise common.UnsupportedPlatform
+    return sandbox_flags
+
+
+def execute_runner(workspace, args):
+    swiftc_path = get_swiftc_path(workspace, args.swiftc)
+    runner_command = [
+        './runner.py',
+        '--swiftc', swiftc_path,
+        '--projects', args.projects,
+        '--swift-version', '3',
+        '--include-actions', 'action.startswith("Build")',
+        '--swift-branch', args.swift_branch
+    ]
+    if args.sandbox:
+        runner_command += get_sandbox_profile_flags()
+    if args.verbose:
+        runner_command += ["--verbose"]
+    common.check_execute(runner_command, timeout=9999999)
+
+
+def execute_build_incremental(workspace, args):
+    swiftc_path = get_swiftc_path(workspace, args.swiftc)
+    runner_command = [
+        './build_incremental.py',
+        '--swiftc', swiftc_path,
+        # FIXME: do something clever with default args
+        # that vary by mode.
+        '--projects', 'projects-incremental.json',
+        '--swift-version', '3',
+        '--include-actions', 'action.startswith("Build")',
+        '--swift-branch', args.swift_branch,
+        '--check-stats'
+    ]
+    if args.sandbox:
+        runner_command += get_sandbox_profile_flags()
+    common.check_execute(runner_command, timeout=9999999)
+
+
+def build_swift_toolchain(workspace, args):
+    if platform.system() == 'Darwin':
+        build_command = [
+            os.path.join(workspace, 'swift/utils/build-script'),
+            '--debug' if args.assertions else '--release',
+            '--assertions' if args.assertions else '--no-assertions',
+            '--build-ninja',
+            '--llbuild',
+            '--swiftpm',
+            '--ios',
+            '--tvos',
+            '--watchos',
+            '--skip-build-benchmarks',
+            '--build-subdir=compat_macos',
+            '--compiler-vendor=apple',
+            '--',
+            '--darwin-install-extract-symbols',
+            '--darwin-toolchain-alias=swift',
+            '--darwin-toolchain-bundle-identifier=org.swift.compat-macos',
+            '--darwin-toolchain-display-name-short=Swift Development Snapshot'
+            '--darwin-toolchain-display-name=Swift Development Snapshot',
+            '--darwin-toolchain-name=swift-DEVELOPMENT-SNAPSHOT',
+            '--darwin-toolchain-version=3.999.999',
+            '--install-llbuild',
+            '--install-swift',
+            '--install-swiftpm',
+            '--install-destdir={}/build/compat_macos/install'.format(workspace),
+            '--install-prefix=/toolchain/usr',
+            '--install-symroot={}/build/compat_macos/symroot'.format(workspace),
+            '--installable-package={}/build/compat_macos/root.tar.gz'.format(workspace),
+            '--llvm-install-components=libclang;libclang-headers',
+            '--swift-install-components=compiler;clang-builtin-headers;stdlib;sdk-overlay;license;sourcekit-xpc-service;swift-remote-mirror;swift-remote-mirror-headers',
+            '--symbols-package={}/build/compat_macos/root-symbols.tar.gz'.format(workspace),
+            '--verbose-build',
+            '--reconfigure',
+        ]
+    elif platform.system() == 'Linux':
+        build_command = [
+            os.path.join(workspace, 'swift/utils/build-script'),
+            '--debug' if args.assertions else '--release',
+            '--assertions' if args.assertions else '--no-assertions',
+            '--build-ninja',
+            '--llbuild',
+            '--swiftpm',
+            '--foundation',
+            '--libdispatch',
+            '--xctest',
+            '--skip-build-benchmarks',
+            '--build-subdir=compat_linux',
+            '--',
+            '--install-foundation',
+            '--install-libdispatch',
+            '--install-llbuild',
+            '--install-swift',
+            '--install-swiftpm',
+            '--install-xctest',
+            '--install-destdir={}/build/compat_linux/install'.format(workspace),
+            '--install-prefix=/usr',
+            '--installable-package={}/build/compat_linux/root.tar.gz'.format(workspace),
+            '--swift-install-components=autolink-driver;compiler;clang-builtin-headers;stdlib;swift-remote-mirror;sdk-overlay;license',
+            '--verbose-build',
+            '--reconfigure',
+        ]
+    else:
+        raise common.UnsupportedPlatform
+    common.check_execute(build_command, timeout=9999999)
+
+
+if __name__ == '__main__':
+    sys.exit(main())
+

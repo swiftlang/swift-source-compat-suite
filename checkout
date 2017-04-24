@@ -1,0 +1,60 @@
+#!/usr/bin/env python
+# ===--- checkout  --------------------------------------------------------===
+#
+#  This source file is part of the Swift.org open source project
+#
+#  Copyright (c) 2014 - 2017 Apple Inc. and the Swift project authors
+#  Licensed under Apache License v2.0 with Runtime Library Exception
+#
+#  See https://swift.org/LICENSE.txt for license information
+#  See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
+#
+# ===----------------------------------------------------------------------===
+
+"""Clone and checkout pinned commits for indexed projects."""
+
+import json
+import os
+import argparse
+import sys
+
+import common
+import project
+
+
+def parse_args():
+    """Return parsed command line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Clone and checkout pinned commits for indexed projects."
+    )
+    parser.add_argument('--projects',
+                        metavar='PATH',
+                        required=True,
+                        help='JSON project file',
+                        type=os.path.abspath)
+    return parser.parse_args()
+
+def main():
+    """Clone and checkout pinned commits for indexed projects."""
+    os.chdir(os.path.dirname(__file__))
+    args = parse_args()
+    index = json.loads(open(args.projects).read())
+    root_path = common.private_workspace('project_cache')
+    total_repos = 0
+
+    common.check_execute(['rm', '-rf', root_path])
+    common.check_execute(['mkdir', '-p', root_path])
+    for repo in index:
+        total_repos += 1
+        for compatible_swift in repo['compatibility']:
+            project.checkout(root_path, repo,
+                             repo['compatibility'][compatible_swift]['commit'])
+    common.debug_print('='*40)
+    common.debug_print('Repository Summary:')
+    common.debug_print('      Total: %s' % total_repos)
+    common.debug_print('='*40)
+
+    return 0
+
+if __name__ == '__main__':
+    sys.exit(main())

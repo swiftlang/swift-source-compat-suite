@@ -1,0 +1,154 @@
+#!/usr/bin/env python
+# ===--- check ------------------------------------------------------------===
+#
+#  This source file is part of the Swift.org open source project
+#
+#  Copyright (c) 2014 - 2017 Apple Inc. and the Swift project authors
+#  Licensed under Apache License v2.0 with Runtime Library Exception
+#
+#  See https://swift.org/LICENSE.txt for license information
+#  See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
+#
+# ===----------------------------------------------------------------------===
+
+import sys
+import os
+import argparse
+import platform
+import json
+
+import common
+
+script_path = os.path.dirname(os.path.realpath(__file__))
+project_list = os.path.join(script_path, 'projects.json')
+runner_path = os.path.join(script_path, 'runner.py')
+supported_configs = {
+    'Darwin': {
+        '3.0': {
+            'version': 'Apple Swift version 3.0 '
+                       '(swiftlang-800.0.46.2 clang-800.0.38)\n'
+                       'Target: x86_64-apple-macosx10.9\n',
+            'description': 'Xcode 8.0 (contains Swift 3.0)'
+        },
+        '3.1': {
+            'version': 'Apple Swift version 3.1 '
+                       '(swiftlang-802.0.53 clang-802.0.42)\n'
+                       'Target: x86_64-apple-macosx10.9\n',
+            'description': 'Xcode 8.3.2 (contains Swift 3.1)'
+        }
+    },
+    'Linux': {
+        '3.0': {
+            'version': 'Swift version 3.0 '
+                       '(swift-3.0-RELEASE)\n'
+                       'Target: x86_64-unknown-linux-gnu\n',
+            'description': 'swift-3.0-RELEASE toolchain'
+        },
+        '3.1': {
+            'version': 'Swift version 3.1 '
+                       '(swift-3.1-RELEASE)\n'
+                       'Target: x86_64-unknown-linux-gnu\n',
+            'description': 'swift-3.1-RELEASE toolchain'
+        }
+    }
+}
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description='Check a project for inclusion in the Swift source compatibility test suite'
+    )
+    parser.add_argument('project',
+                        help='the project to test, specified by the "path" index field')
+    parser.add_argument('--swiftc',
+                        metavar='PATH',
+                        help='swiftc executable')
+    return parser.parse_args()
+
+
+def get_project_compatibility(project_path):
+    common.debug_print("--- Finding %s Swift version compatibility ---" % project_path)
+    index = json.loads(open(project_list).read())
+    project = next((p for p in index if p['path'] == project_path), None)
+    if not project:
+        common.debug_print("error: Unable to find %s in project index ---" % project_path)
+        exit(1)
+    try:
+        compatibility_version = project['compatibility'].keys()[0]
+    except (IndexError, KeyError, TypeError) as e:
+        common.debug_print("error: Unable to find %s Swift version compatibility ---" % project_path)
+        raise
+    common.debug_print("--- Project configured to be compatible with Swift %s ---" % compatibility_version)
+
+    common.debug_print("--- Checking %s platform compatibility with %s ---" % (project_path, platform.system()))
+    if not platform.system() in project['platforms']:
+        common.debug_print("error: %s is not configured to be compatible with %s ---" % (project_path, platform.system()))
+        common.debug_print("-- Add %s to the platforms list for %s ---" % (platform.system(), project_path))
+        exit(1)
+    common.debug_print("--- Platform compatibility check succeeded ---")
+
+    return compatibility_version
+
+
+def is_correct_swift_version(swiftc, compatibility_version):
+
+    common.debug_print("--- Checking installed Swift version ---")
+    swift_version = common.check_execute_output([swiftc, '--version'])
+    try:
+        expected_swift_version = supported_configs[platform.system()][compatibility_version]['version']
+    except KeyError:
+        common.debug_print("error: Project configured for unsupported platform or Swift version")
+        raise
+    error_msg = "error: please select {description}".format(
+        description=supported_configs[platform.system()][compatibility_version]['description']
+    )
+    if swift_version != expected_swift_version:
+        common.debug_print("--- Version check failed ---")
+        common.debug_print("Expected version:\n" + expected_swift_version)
+        common.debug_print("Current version:\n" + swift_version)
+        common.debug_print(error_msg)
+        return False
+    common.debug_print("--- Version check succeeded ---")
+    return True
+
+
+def check(project, swift_branch, swiftc, compatibility_version):
+    if platform.system() == 'Darwin':
+        common.debug_print("--- Locating swiftc executable ---")
+        swiftc = common.check_execute_output(['xcrun', '-f', 'swiftc']).strip()
+    if not swiftc:
+        common.debug_print('error: please specify --swiftc')
+        return 1
+    swiftc = os.path.abspath(swiftc)
+    if not is_correct_swift_version(swiftc, compatibility_version):
+        return 1
+    runner_command = [
+        runner_path,
+        '--swift-branch', swift_branch,
+        '--swiftc', swiftc,
+        '--projects', project_list,
+        '--include-repos', 'path == "%s"' % project,
+        '--include-actions', 'action.startswith("Build")',
+    ]
+    common.debug_print("--- Executing build actions ---")
+    try:
+        common.check_execute(runner_command, timeout=3600)
+    except common.ExecuteCommandFailure:
+        common.debug_print("--- Encountered failures. Check .log files in current directory for details ---")
+        return 1
+    common.debug_print("--- %s checked successfully against Swift %s ---" % (project, compatibility_version))
+    return 0
+
+
+def main():
+    os.chdir(os.path.dirname(__file__))
+    args = parse_args()
+    common.debug_print('** CHECK **')
+    compatibility_version = get_project_compatibility(args.project)
+    swift_branch = 'swift-%s-branch' % compatibility_version
+    common.set_swift_branch(swift_branch)
+    return check(args.project, swift_branch, args.swiftc, compatibility_version)
+
+if __name__ == '__main__':
+    sys.exit(main())
+

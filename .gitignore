@@ -1,0 +1,15 @@
+*.pyc
+*.log
+project_cache/
+build/
+clang/
+cmark/
+compiler-rt/
+llbuild/
+llvm/
+ninja/
+swift/
+swift-corelibs-foundation/
+swift-corelibs-libdispatch/
+swift-corelibs-xctest/
+swiftpm/

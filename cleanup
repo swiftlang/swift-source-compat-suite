@@ -1,0 +1,70 @@
+#!/usr/bin/env python
+# ===--- cleanup ----------------------------------------------------------===
+#
+#  This source file is part of the Swift.org open source project
+#
+#  Copyright (c) 2014 - 2017 Apple Inc. and the Swift project authors
+#  Licensed under Apache License v2.0 with Runtime Library Exception
+#
+#  See https://swift.org/LICENSE.txt for license information
+#  See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
+#
+# ===----------------------------------------------------------------------===
+
+"""A cleanup script to be executed as a Jenkins post-build step."""
+
+import sys
+import os
+import argparse
+import platform
+import glob
+
+import common
+
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('swift_branch')
+    parser.add_argument('--skip-ci-steps',
+                        action='store_true')
+    return parser.parse_args()
+
+
+def main():
+    common.debug_print('** CLEANUP **')
+    os.chdir(os.path.dirname(__file__))
+
+    args = parse_args()
+    common.set_swift_branch(args.swift_branch)
+
+    paths = [
+        'build',
+        'swift',
+        'llvm',
+        'clang',
+        'compiler-rt',
+        'cmark',
+        'ninja',
+        'llbuild',
+        'swiftpm',
+        'swift-corelibs-foundation',
+        'swift-corelibs-libdispatch',
+        'swift-corelibs-xctest',
+    ]
+
+    for path in paths:
+        common.check_execute([
+            'rm', '-rf', common.private_workspace(path)
+        ])
+
+    for log in glob.glob('*.log'):
+        common.check_execute(['rm', log])
+
+    if not args.skip_ci_steps:
+        if platform.system() == 'Darwin':
+            pass
+
+    return 0
+
+if __name__ == '__main__':
+    sys.exit(main())
