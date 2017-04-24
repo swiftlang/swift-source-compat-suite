@@ -156,12 +156,6 @@ def clone_repos():
 
     assert process0.wait() == 0
 
-    # FIXME: Remove after swiftpm issue is resolved
-    check_execute([
-        'git', '-C', '%s/swiftpm' % workspace, 'checkout',
-        '0e7e3b5b8ba528e9b24666a47e192fd2c8ed8465'
-    ])
-
 
 class Unreachable(Exception):
     """An exception to be thrown at an unreachable."""
