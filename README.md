@@ -89,6 +89,7 @@ To add a new Swift Package Manager project, use the following template:
   "url": "https://github.com/example/project.git",
   "path": "project",
   "branch": "master",
+  "maintainer": "email@example.com",
   "compatibility": {
     "3.0": {
       "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
@@ -97,7 +98,6 @@ To add a new Swift Package Manager project, use the following template:
   "platforms": [
     "Darwin"
   ],
-  "maintainer": "email@example.com",
   "actions": [
     {
       "action": "BuildSwiftPackage",
@@ -125,6 +125,7 @@ To add a new Swift Xcode workspace, use the following template:
   "url": "https://github.com/example/project.git",
   "path": "project",
   "branch": "master",
+  "maintainer": "email@example.com",
   "compatibility": {
     "3.0": {
       "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
@@ -133,7 +134,6 @@ To add a new Swift Xcode workspace, use the following template:
   "platforms": [
     "Darwin"
   ],
-  "maintainer": "email@example.com",
   "actions": [
     {
       "action": "BuildXcodeWorkspaceScheme",
@@ -193,6 +193,7 @@ To add a new Swift Xcode project, use the following template:
   "url": "https://github.com/example/project.git",
   "path": "project",
   "branch": "master",
+  "maintainer": "email@example.com",
   "compatibility": {
     "3.0": {
       "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
@@ -201,7 +202,6 @@ To add a new Swift Xcode project, use the following template:
   "platforms": [
     "Darwin"
   ],
-  "maintainer": "email@example.com",
   "actions": [
     {
       "action": "BuildXcodeProjectTarget",
