@@ -132,6 +132,31 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/artsabintsev/Guitar.git",
+    "path": "Guitar",
+    "branch": "master",
+    "compatibility": {
+      "3.1": {
+        "commit": "f3135a5c1fc7ac079cf4156992455b254b16bb84"
+      }
+    },
+    "maintainer": "arthur@sabintsev.com",
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/IBAnimatable/IBAnimatable.git",
     "path": "IBAnimatable",
     "branch": "master",
