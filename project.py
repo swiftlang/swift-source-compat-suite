@@ -678,7 +678,7 @@ class ListBuilder(Factory):
         results = self.new_result()
         for subtarget in self.subtargets():
             if self.included(subtarget):
-                output_fd = self.output_fd(subtarget)
+                (log_filename, output_fd) = self.output_fd(subtarget)
                 try:
                     results.add(self.subbuilder(*self.attach(subtarget)).build(
                         stdout=output_fd
@@ -686,13 +686,18 @@ class ListBuilder(Factory):
                 finally:
                     if output_fd is not sys.stdout:
                         output_fd.close()
+                        os.rename(
+                            log_filename,
+                            '%s_%s' % (results, log_filename),
+                        )
+
         return results
 
     def new_result(self):
         return ListResult()
 
     def output_fd(self, subtarget):
-        return sys.stdout
+        return (None, sys.stdout)
 
 
 class ProjectListBuilder(ListBuilder):
@@ -735,7 +740,7 @@ class ProjectBuilder(ListBuilder):
             fd = sys.stdout
         else:
             fd = open(log_filename, 'w')
-        return fd
+        return (log_filename, fd)
 
 
 
