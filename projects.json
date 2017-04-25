@@ -548,37 +548,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/ReactiveX/RxSwift.git",
-    "path": "RxSwift",
-    "branch": "master",
-    "maintainer": "krunoslav.zaher@gmail.com",
-    "compatibility": {
-      "3.0": {
-        "commit": "09c4b19c48c77435eddc8443f3aaa30e7be7ff66"
-      }
-    },
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "<rdar://problem/31776399>"
-              }
-            }
-          }
-        }
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/daltoniam/Starscream",
     "path": "Starscream",
     "branch": "master",
