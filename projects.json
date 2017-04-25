@@ -750,38 +750,23 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/louisdh/panelkit.git",
-    "path": "panelkit",
+    "url": "https://github.com/davecom/SwiftGraph.git",
+    "path": "SwiftGraph",
     "branch": "master",
+    "maintainer": "david@oaksnow.com",
     "compatibility": {
       "3.0": {
-        "commit": "d451d956fb31f0ca5d76940c0b1db46b8c74a089"
+        "commit": "07b088eef5cb883e5544ea4d2e9a1338318f0596"
       }
     },
     "platforms": [
-      "Darwin"
+      "Darwin",
+      "Linux"
     ],
-    "maintainer": "louisdhauwe@silverfox.be",
     "actions": [
       {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "PanelKit.xcworkspace",
-        "scheme": "PanelKit",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "PanelKit.xcworkspace",
-        "scheme": "Example",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "TestXcodeWorkspaceScheme",
-        "workspace": "PanelKit.xcworkspace",
-        "scheme": "PanelKitTests",
-        "destination": "platform=iOS Simulator,name=iPad Pro (12.9 inch)"
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
       }
     ]
   }
