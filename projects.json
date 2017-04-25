@@ -755,7 +755,7 @@
     "branch": "master",
     "maintainer": "david@oaksnow.com",
     "compatibility": {
-      "3.0": {
+      "3.1": {
         "commit": "07b088eef5cb883e5544ea4d2e9a1338318f0596"
       }
     },
