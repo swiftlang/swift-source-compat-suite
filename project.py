@@ -439,6 +439,10 @@ def add_arguments(parser):
                         metavar="FLAGS",
                         help='add flags to each Swift invocation',
                         default='')
+    parser.add_argument("--skip-clean",
+                        help='skip all git and build clean steps before '
+                             'building projects',
+                        action='store_true')
 
 
 def add_minimal_arguments(parser):
@@ -740,6 +744,7 @@ class ActionBuilder(Factory):
                  sandbox_profile_xcodebuild,
                  sandbox_profile_package,
                  added_swift_flags,
+                 skip_clean,
                  project, action):
         self.swiftc = swiftc
         self.swift_version = swift_version
@@ -752,6 +757,7 @@ class ActionBuilder(Factory):
         self.root_path = common.private_workspace('project_cache')
         self.current_platform = platform.system()
         self.added_swift_flags = added_swift_flags
+        self.skip_clean = skip_clean
         self.init()
 
     def init(self):
@@ -781,10 +787,13 @@ class ActionBuilder(Factory):
             if os.path.exists(path):
                 if ref_is_sha:
                     common.git_update(self.project['url'], ref, path,
+                                      incremental=self.skip_clean,
                                       stdout=stdout, stderr=stderr)
                 else:
-                    common.git_clean(path, stdout=stdout, stderr=stderr)
+                    if not self.skip_clean:
+                        common.git_clean(path, stdout=stdout, stderr=stderr)
                     common.git_checkout(ref, path,
+                                        force=True,
                                         stdout=stdout, stderr=stderr)
                 if pull_after_update:
                     common.git_pull(path, stdout=stdout, stderr=stderr)
@@ -803,6 +812,7 @@ class ActionBuilder(Factory):
                      self.sandbox_profile_xcodebuild,
                      self.sandbox_profile_package,
                      self.added_swift_flags,
+                     incremental=self.skip_clean,
                      stdout=stdout, stderr=stderr)
         except common.ExecuteCommandFailure as error:
             return self.failed(identifier, error)
@@ -840,6 +850,7 @@ class CompatActionBuilder(ActionBuilder):
                      self.sandbox_profile_xcodebuild,
                      self.sandbox_profile_package,
                      self.added_swift_flags,
+                     incremental=self.skip_clean,
                      should_strip_resource_phases=True,
                      stdout=stdout, stderr=stderr)
         except common.ExecuteCommandFailure as error:

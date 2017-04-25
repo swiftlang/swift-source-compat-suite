@@ -336,6 +336,7 @@ def git_clone(url, path, tree=None, recursive=True,
     returncodes.append(check_execute(command, stdout=stdout, stderr=stderr))
     if tree:
         returncodes.append(git_checkout(tree, path,
+                                        force=True,
                                         stdout=stdout, stderr=stderr))
     if recursive:
         returncodes.append(git_submodule_update(path,
@@ -359,10 +360,12 @@ def git_sha(path, stdout=sys.stdout, stderr=sys.stderr):
 
 
 def git_update(url, configured_sha, path,
+               incremental=False,
                stdout=sys.stdout, stderr=sys.stderr):
     """Update a repository to a given sha if necessary."""
     returncodes = []
-    git_clean(path, stdout=stdout, stderr=stderr)
+    if not incremental:
+        git_clean(path, stdout=stdout, stderr=stderr)
     current_sha = git_sha(path, stdout=stdout, stderr=stderr)
     debug_print('current_sha: ' + current_sha, stderr=stderr)
     debug_print('configured_sha: ' + configured_sha, stderr=stderr)
@@ -373,6 +376,7 @@ def git_update(url, configured_sha, path,
                                          stdout=stdout, stderr=stderr))
         try:
             returncodes.append(git_checkout(configured_sha, path,
+                                            force=True,
                                             stdout=stdout, stderr=stderr))
             returncodes.append(git_submodule_update(
                 path, stdout=stdout, stderr=stderr
