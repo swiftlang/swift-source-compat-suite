@@ -834,5 +834,27 @@
         "destination": "platform=iOS Simulator,name=iPad Pro (12.9 inch)"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/nodes-ios/Serpent.git",
+    "path": "Serpent",
+    "branch": "master",
+    "compatibility": {
+      "3.0": {
+        "commit": "16a3bf87f4b3ad13827c65deabb0bf0af07ae59d"
+      }
+    },
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "maintainer": "ios@nodes.dk",
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      }
+    ]
   }
 ]
