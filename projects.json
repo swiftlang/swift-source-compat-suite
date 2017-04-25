@@ -834,5 +834,44 @@
         "destination": "platform=iOS Simulator,name=iPad Pro (12.9 inch)"
       }
     ]
+  },
+  {
+  	"repository": "Git",
+  	"url": "https://github.com/AsyncNinja/AsyncNinja.git",
+  	"path": "AsyncNinja",
+  	"branch": "master",
+  	"compatibility": {
+  		"3.0": {
+  			"commit": "fa34ec954f13399e6e05bbe150bfe62ee051505a"
+  		}
+  	},
+    "maintainer": "antonvmironov@gmail.com",
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "AsyncNinja.xcodeproj",
+        "scheme": "AsyncNinja",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "AsyncNinja.xcodeproj",
+        "scheme": "AsyncNinja",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "AsyncNinja.xcodeproj",
+        "scheme": "AsyncNinja",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      }
+    ]
   }
 ]
