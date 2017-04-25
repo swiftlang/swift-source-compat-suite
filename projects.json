@@ -799,6 +799,7 @@
     ]
   },
   {
+    "repository": "Git",
     "url": "https://github.com/louisdh/panelkit.git",
     "path": "panelkit",
     "branch": "master",
