@@ -747,5 +747,30 @@
         "configuration": "release"
       }
     ]
-  }
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/pinterest/plank.git",
+    "path": "Plank",
+    "branch": "master",
+    "compatibility": {
+      "3.0": {
+        "commit": "d69c8e6f9942c098e589a75162d3196dec183929"
+      }
+    },
+    "maintainer": "rmalik@pinterest.com",
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
 ]
