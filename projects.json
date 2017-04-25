@@ -834,5 +834,30 @@
         "destination": "platform=iOS Simulator,name=iPad Pro (12.9 inch)"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/reswifq/reswifq.git",
+    "path": "reswifq",
+    "branch": "master",
+    "compatibility": {
+      "3.0": {
+        "commit": "d451d956fb31f0ca5d76940c0b1db46b8c74a089"
+      }
+    },
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "maintainer": "valerio.mazzeo@gmail.com",
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
   }
 ]
