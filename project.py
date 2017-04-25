@@ -680,15 +680,16 @@ class ListBuilder(Factory):
             if self.included(subtarget):
                 (log_filename, output_fd) = self.output_fd(subtarget)
                 try:
-                    results.add(self.subbuilder(*self.attach(subtarget)).build(
+                    subbuilder_result = self.subbuilder(*self.attach(subtarget)).build(
                         stdout=output_fd
-                    ))
+                    )
+                    results.add(subbuilder_result)
                 finally:
                     if output_fd is not sys.stdout:
                         output_fd.close()
                         os.rename(
                             log_filename,
-                            '%s_%s' % (results, log_filename),
+                            '%s_%s' % (subbuilder_result, log_filename),
                         )
 
         return results

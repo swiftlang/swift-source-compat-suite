@@ -548,37 +548,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/ReactiveX/RxSwift.git",
-    "path": "RxSwift",
-    "branch": "master",
-    "maintainer": "krunoslav.zaher@gmail.com",
-    "compatibility": {
-      "3.0": {
-        "commit": "09c4b19c48c77435eddc8443f3aaa30e7be7ff66"
-      }
-    },
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "<rdar://problem/31776399>"
-              }
-            }
-          }
-        }
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/daltoniam/Starscream",
     "path": "Starscream",
     "branch": "master",
@@ -728,6 +697,40 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/realm/SwiftLint.git",
+    "path": "swiftlint",
+    "branch": "master",
+    "compatibility": {
+      "3.0": {
+        "commit": "e4fa18df06ddbcc730dd2c08a1c0c42aa531ae0c"
+      }
+    },
+    "maintainer": "jp@jpsim.com",
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4696"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/vapor/vapor.git",
     "path": "vapor",
     "branch": "master",
@@ -745,6 +748,68 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/pinterest/plank.git",
+    "path": "Plank",
+    "branch": "master",
+    "compatibility": {
+      "3.0": {
+        "commit": "d69c8e6f9942c098e589a75162d3196dec183929"
+      }
+    },
+    "maintainer": "rmalik@pinterest.com",
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/louisdh/panelkit.git",
+    "path": "panelkit",
+    "branch": "master",
+    "compatibility": {
+      "3.0": {
+        "commit": "d451d956fb31f0ca5d76940c0b1db46b8c74a089"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "maintainer": "louisdhauwe@silverfox.be",
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "PanelKit.xcworkspace",
+        "scheme": "PanelKit",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "PanelKit.xcworkspace",
+        "scheme": "Example",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "PanelKit.xcworkspace",
+        "scheme": "PanelKitTests",
+        "destination": "platform=iOS Simulator,name=iPad Pro (12.9 inch)"
       }
     ]
   },
