@@ -132,6 +132,31 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/artsabintsev/Guitar.git",
+    "path": "Guitar",
+    "branch": "master",
+    "compatibility": {
+      "3.1": {
+        "commit": "f3135a5c1fc7ac079cf4156992455b254b16bb84"
+      }
+    },
+    "maintainer": "arthur@sabintsev.com",
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/IBAnimatable/IBAnimatable.git",
     "path": "IBAnimatable",
     "branch": "master",
@@ -548,37 +573,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/ReactiveX/RxSwift.git",
-    "path": "RxSwift",
-    "branch": "master",
-    "maintainer": "krunoslav.zaher@gmail.com",
-    "compatibility": {
-      "3.0": {
-        "commit": "09c4b19c48c77435eddc8443f3aaa30e7be7ff66"
-      }
-    },
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "<rdar://problem/31776399>"
-              }
-            }
-          }
-        }
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/bustoutsolutions/siesta.git",
     "path": "siesta",
     "branch": "master",
@@ -886,6 +880,80 @@
         "workspace": "PanelKit.xcworkspace",
         "scheme": "PanelKitTests",
         "destination": "platform=iOS Simulator,name=iPad Pro (12.9 inch)"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/davecom/SwiftGraph.git",
+    "path": "SwiftGraph",
+    "branch": "master",
+    "maintainer": "david@oaksnow.com",
+    "compatibility": {
+      "3.1": {
+        "commit": "07b088eef5cb883e5544ea4d2e9a1338318f0596"
+      }
+    },
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/willowtreeapps/PinkyPromise.git",
+    "path": "PinkyPromise",
+    "branch": "master",
+    "compatibility": {
+      "3.0": {
+        "commit": "a127ac74685daec77dd4580bd82c8ace8cc9cc29"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "maintainer": "connerk@gmail.com",
+    "actions": [
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "PinkyPromise.xcodeproj",
+        "scheme": "PinkyPromise_iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "PinkyPromise.xcodeproj",
+        "scheme": "PinkyPromise_macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestXcodeProjectScheme",
+        "project": "PinkyPromise.xcodeproj",
+        "scheme": "PinkyPromise_iOS",
+        "destination": "platform=iOS Simulator,name=iPhone 7",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeProjectScheme",
+        "project": "PinkyPromise.xcodeproj",
+        "scheme": "PinkyPromise_macOS",
+        "destination": "platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestSwiftPackage"
       }
     ]
   }
