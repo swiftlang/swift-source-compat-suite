@@ -1225,5 +1225,38 @@
         "action": "TestSwiftPackage"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/Bouke/SRP.git",
+    "path": "SRP",
+    "branch": "master",
+    "maintainer": "bouke@haarsma.eu",
+    "compatibility": {
+      "3.1": {
+        "commit": "ea8a65f1b5185444364637da490356aff0daadae"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4709"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
   }
 ]
