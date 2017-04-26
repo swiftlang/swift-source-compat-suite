@@ -46,6 +46,7 @@ def main():
     root_path = common.private_workspace('project_cache')
     total_repos = 0
 
+    common.check_execute(['chflags', '-R', 'nouchg', root_path])
     common.check_execute(['rm', '-rf', root_path])
     common.check_execute(['mkdir', '-p', root_path])
     for repo in index:
