@@ -977,7 +977,7 @@
         "configuration": "release",
         "xfail": {
           "compatibility": {
-            "3.0": {
+            "3.1": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-4704"
               }
