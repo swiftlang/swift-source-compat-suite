@@ -1159,5 +1159,29 @@
         "configuration": "release"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/Bouke/Lark.git",
+    "path": "Lark",
+    "branch": "master",
+    "maintainer": "bouke@haarsma.eu",
+    "compatibility": {
+      "3.0": {
+        "commit": "fc67970caccfd23b0da802d74dcacbe8db7f1e90"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
   }
 ]
