@@ -679,6 +679,7 @@ class ListBuilder(Factory):
         for subtarget in self.subtargets():
             if self.included(subtarget):
                 (log_filename, output_fd) = self.output_fd(subtarget)
+                subbuilder_result = None
                 try:
                     subbuilder_result = self.subbuilder(*self.attach(subtarget)).build(
                         stdout=output_fd
