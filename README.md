@@ -11,27 +11,7 @@ projects.
 
 ## Current List of Projects
 
-<ul>
-   <li><a href="https://github.com/andreamazz/AMScrollingNavbar.git">AMScrollingNavbar</a></li>
-   <li><a href="https://github.com/Alamofire/Alamofire.git">Alamofire</a></li>
-   <li><a href="https://github.com/IBM-Swift/BlueSocket">BlueSocket</a></li>
-   <li><a href="https://github.com/ankurp/Dollar.git">Dollar</a></li>
-   <li><a href="https://github.com/IBAnimatable/IBAnimatable.git">IBAnimatable</a></li>
-   <li><a href="https://github.com/kickstarter/Kickstarter-Prelude">Kickstarter-Prelude</a></li>
-   <li><a href="https://github.com/kickstarter/Kickstarter-ReactiveExtensions">Kickstarter-ReactiveExtensions</a></li>
-   <li><a href="https://github.com/onevcat/Kingfisher.git">Kingfisher</a></li>
-   <li><a href="https://github.com/IBM-Swift/Kitura.git">Kitura</a></li>
-   <li><a href="https://github.com/Hearst-DD/ObjectMapper.git">ObjectMapper</a></li>
-   <li><a href="https://github.com/PerfectlySoft/Perfect.git">Perfect</a></li>
-   <li><a href="https://github.com/mxcl/PromiseKit.git">PromiseKit</a></li>
-   <li><a href="https://github.com/ReSwift/ReSwift.git">ReSwift</a></li>
-   <li><a href="https://github.com/RxSwiftCommunity/RxDataSources">RxDataSources</a></li>
-   <li><a href="https://github.com/ReactiveX/RxSwift.git">RxSwift</a></li>
-   <li><a href="https://github.com/daltoniam/Starscream">Starscream</a></li>
-   <li><a href="https://github.com/mattt/Surge">Surge</a></li>
-   <li><a href="https://github.com/malcommac/SwiftDate">SwiftDate</a></li>
-   <li><a href="https://github.com/vapor/vapor.git">vapor</a></li>
-</ul>
+The <a href="https://swift.org/source-compatibility/#current-list-of-projects">current list of projects</a> can be viewed on Swift.org.
 
 ## Adding Projects
 
