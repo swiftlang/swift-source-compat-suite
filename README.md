@@ -237,15 +237,15 @@ Swift pull request.
 To build all projects against a specified Swift compiler locally, use the
 `runner.py` utility as shown below.
 
-```bash
+~~~bash
 ./runner.py --swift-branch master --projects projects.json --swift-version 3 --include-actions 'action.startswith("Build")' --swiftc path/to/swiftc
-```
+~~~
 
 Use the `--include-repos` flag to build a specific project.
 
-```bash
+~~~bash
 ./runner.py --swift-branch master --projects projects.json --swift-version 3 --include-actions 'action.startswith("Build")' --include-repos 'path == "Alamofire"' --swiftc path/to/swiftc
-```
+~~~
 
 By default, build output is redirected to per-action `.log` files in the current
 working directory. To change this behavior to output build results to standard
