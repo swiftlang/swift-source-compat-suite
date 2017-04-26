@@ -956,5 +956,29 @@
         "action": "TestSwiftPackage"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/groue/GRDB.swift.git",
+    "path": "GRDB.swift",
+    "branch": "master",
+    "compatibility": {
+      "3.1": {
+        "commit": "3eb2646cad7ad787b92237f717e670e639dc8c92"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "maintainer": "gwendal.roue@gmail.com",
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
   }
 ]
