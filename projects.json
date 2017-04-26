@@ -854,10 +854,11 @@
       "Linux"
     ],
     "actions": [
-    {
-      "action": "BuildSwiftPackage",
-      "configuration": "release"
-    }
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      }
+    ]
   },
   {
     "repository": "Git",
