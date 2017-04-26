@@ -1222,7 +1222,7 @@
   {
     "repository": "Git",
     "url": "https://github.com/realm/SwiftLint.git",
-    "path": "swiftlint",
+    "path": "SwiftLint",
     "branch": "master",
     "compatibility": {
       "3.0": {
