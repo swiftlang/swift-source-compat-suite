@@ -95,6 +95,9 @@ contained inside a `compatibility` field which specifies the version of Swift
 the commit is known to compile against. Multiple commits compatible with
 different versions of Swift can be specified.
 
+The `platforms` field specifies the platforms that can be used to build the
+project. Linux and Darwin can currently be specified.
+
 If tests aren't supported, remove the test action entry.
 
 To add a new Swift Xcode workspace, use the following template:
