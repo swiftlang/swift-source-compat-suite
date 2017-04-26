@@ -32,6 +32,10 @@ def parse_args():
                         required=True,
                         help='JSON project file',
                         type=os.path.abspath)
+    parser.add_argument('--project-path',
+                        metavar='PATH',
+                        help='only checkout this project')
+                        
     return parser.parse_args()
 
 def main():
@@ -45,6 +49,8 @@ def main():
     common.check_execute(['rm', '-rf', root_path])
     common.check_execute(['mkdir', '-p', root_path])
     for repo in index:
+        if args.project_path and args.project_path != repo['path']:
+            continue
         total_repos += 1
         for compatible_swift in repo['compatibility']:
             project.checkout(root_path, repo,
