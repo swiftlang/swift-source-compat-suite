@@ -573,6 +573,51 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/bustoutsolutions/siesta.git",
+    "path": "siesta",
+    "branch": "master",
+    "compatibility": {
+      "3.0": {
+        "commit": "1665db77a35b0e5c60269825d2e9b4d6971b81b5"
+      }
+    },
+    "maintainer": "cantrell@pobox.com",
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Siesta.xcodeproj",
+        "target": "Siesta iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Siesta.xcodeproj",
+        "target": "Siesta macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Siesta.xcodeproj",
+        "target": "SiestaUI iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Siesta.xcodeproj",
+        "target": "SiestaUI macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/daltoniam/Starscream",
     "path": "Starscream",
     "branch": "master",
