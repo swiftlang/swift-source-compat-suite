@@ -107,7 +107,7 @@ def main():
                        '--skip-ci-steps', '--skip-runner']
         if not should_clone:
             run_command += ['--skip-clone']
-        common.check_execute(run_command)
+        common.check_execute(run_command, timeout=3600)
 
     # Build specified indexed project. Otherwise, build all indexed projects
     runner_command = [
