@@ -1192,5 +1192,38 @@
         "action": "TestSwiftPackage"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/krzysztofzablocki/Sourcery.git",
+    "path": "Sourcery",
+    "branch": "master",
+    "maintainer": "krzysztof.zablocki@pixle.pl",
+    "compatibility": {
+      "3.1": {
+        "commit": "92a180906cd5863bc6a1dea881abcfc2d9389a1f"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4705"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
   }
 ]
