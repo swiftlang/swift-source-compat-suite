@@ -840,6 +840,27 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/davecom/SwiftGraph.git",
+    "path": "SwiftGraph",
+    "branch": "master",
+    "maintainer": "david@oaksnow.com",
+    "compatibility": {
+      "3.1": {
+        "commit": "07b088eef5cb883e5544ea4d2e9a1338318f0596"
+      }
+    },
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release"
+    }
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/willowtreeapps/PinkyPromise.git",
     "path": "PinkyPromise",
     "branch": "master",
