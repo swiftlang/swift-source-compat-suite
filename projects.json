@@ -533,6 +533,65 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/lyft/mapper.git",
+    "path": "mapper",
+    "branch": "master",
+    "maintainer": "k@keith.so",
+    "compatibility": {
+      "3.0": {
+        "commit": "db431abebe6b6ec632a3829edd75be0a440e331a"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Mapper.xcodeproj",
+        "target": "Mapper",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Mapper.xcodeproj",
+        "target": "Mapper",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Mapper.xcodeproj",
+        "target": "Mapper",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Mapper.xcodeproj",
+        "target": "Mapper",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Mapper.xcodeproj",
+        "target": "Mapper",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/Hearst-DD/ObjectMapper.git",
     "path": "ObjectMapper",
     "branch": "master",
