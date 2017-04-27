@@ -713,6 +713,51 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/realm/realm-cocoa.git",
+    "path": "Realm",
+    "branch": "master",
+    "maintainer": "ci@realm.io",
+    "compatibility": {
+      "3.0": {
+        "commit": "3df0fb6ec06a0f3c5ca49c88bd51ab5b64f4f0af"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "Realm.xcodeproj",
+        "scheme": "RealmSwift",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeProjectScheme",
+        "project": "Realm.xcodeproj",
+        "scheme": "RealmSwift",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeProjectScheme",
+        "project": "Realm.xcodeproj",
+        "scheme": "RealmSwift",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "Realm.xcodeproj",
+        "scheme": "RealmSwift",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/ReSwift/ReSwift.git",
     "path": "ReSwift",
     "branch": "master",
