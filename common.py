@@ -364,29 +364,30 @@ def git_update(url, configured_sha, path,
                stdout=sys.stdout, stderr=sys.stderr):
     """Update a repository to a given sha if necessary."""
     returncodes = []
-    if not incremental:
-        git_clean(path, stdout=stdout, stderr=stderr)
-    current_sha = git_sha(path, stdout=stdout, stderr=stderr)
-    debug_print('current_sha: ' + current_sha, stderr=stderr)
-    debug_print('configured_sha: ' + configured_sha, stderr=stderr)
-    if current_sha != configured_sha:
-        debug_print('current_sha != configured_sha', stderr=stderr)
-        command_fetch = ['git', '-C', path, 'fetch']
-        returncodes.append(check_execute(command_fetch,
-                                         stdout=stdout, stderr=stderr))
-        try:
+    try:
+        if not incremental:
+            git_clean(path, stdout=stdout, stderr=stderr)
+        current_sha = git_sha(path, stdout=stdout, stderr=stderr)
+        debug_print('current_sha: ' + current_sha, stderr=stderr)
+        debug_print('configured_sha: ' + configured_sha, stderr=stderr)
+        if current_sha != configured_sha:
+            debug_print('current_sha != configured_sha', stderr=stderr)
+            command_fetch = ['git', '-C', path, 'fetch']
+            returncodes.append(check_execute(command_fetch,
+                                             stdout=stdout, stderr=stderr))
             returncodes.append(git_checkout(configured_sha, path,
                                             force=True,
                                             stdout=stdout, stderr=stderr))
             returncodes.append(git_submodule_update(
                 path, stdout=stdout, stderr=stderr
             ))
-        except ExecuteCommandFailure:
-            check_execute(['rm', '-rf', path])
-            return git_clone(url, path, tree=configured_sha,
-                             stdout=stdout, stderr=stderr)
-    else:
-        debug_print('current_sha == configured_sha', stderr=stderr)
+        else:
+            debug_print('current_sha == configured_sha', stderr=stderr)
+    except ExecuteCommandFailure:
+        debug_print("warning: Unable to update. Falling back to a clone.")
+        check_execute(['rm', '-rf', path])
+        return git_clone(url, path, tree=configured_sha,
+                         stdout=stdout, stderr=stderr)
     return 0 if all(rc == 0 for rc in returncodes) else 1
 
 
