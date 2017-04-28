@@ -478,6 +478,58 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/lyft/Kronos.git",
+    "path": "Kronos",
+    "branch": "master",
+    "maintainer": "Reflejo@gmail.com",
+    "compatibility": {
+      "3.0": {
+        "commit": "56bb7200af13151184a319a4826e64764adacdf2"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Kronos.xcodeproj",
+        "target": "Kronos",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Kronos.xcodeproj",
+        "target": "Kronos",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Kronos.xcodeproj",
+        "target": "Kronos",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Kronos.xcodeproj",
+        "target": "Kronos",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/IBM-Swift/Kitura.git",
     "path": "Kitura",
     "branch": "master",
