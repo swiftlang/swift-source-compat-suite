@@ -384,8 +384,9 @@ def git_update(url, configured_sha, path,
         else:
             debug_print('current_sha == configured_sha', stderr=stderr)
     except ExecuteCommandFailure:
-        debug_print("warning: Unable to update. Falling back to a clone.")
-        check_execute(['rm', '-rf', path])
+        debug_print("warning: Unable to update. Falling back to a clone.",
+                    stderr=stderr)
+        check_execute(['rm', '-rf', path], stdout=stdout, stderr=stderr)
         return git_clone(url, path, tree=configured_sha,
                          stdout=stdout, stderr=stderr)
     return 0 if all(rc == 0 for rc in returncodes) else 1
