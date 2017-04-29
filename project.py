@@ -729,11 +729,13 @@ class ProjectBuilder(ListBuilder):
 
     def output_fd(self, subtarget):
         scheme_target = dict_get(subtarget, 'scheme', 'target', default=False)
+        destination = dict_get(subtarget, 'destination', default=False)
         project_identifier = dict_get(self.target, 'path', default=False) + " " + \
                              dict_get(subtarget, 'project', default="").split('-')[0]
         identifier = ': '.join(
             [subtarget['action'], project_identifier] +
-            ([scheme_target] if scheme_target else [])
+            ([scheme_target] if scheme_target else []) +
+            ([destination] if destination else [])
         )
         log_filename = re.sub(
             r"[^\w\_]+", "-", identifier.replace(': ', '_')
@@ -902,14 +904,18 @@ class CompatActionBuilder(ActionBuilder):
                             compatibility=compatible_swift,
                             action_target = dict_get(self.action, 'scheme', 'target', default="Swift Package")
                         )
+            if 'destination' in self.action:
+                error_str += ', ' + self.action['destination']
             result = ActionResult(Result.XFAIL, error_str)
         else:
-            error_str = 'FAIL: {project}, {compatibility}, {action_target}, {error}'.format(
+            error_str = 'FAIL: {project}, {compatibility}, {action_target}'.format(
                             project=self.project['path'],
                             compatibility=compatible_swift,
-                            action_target = dict_get(self.action, 'scheme', 'target', default="Swift Package"),
-                            error=str(error)
+                            action_target = dict_get(self.action, 'scheme', 'target', default="Swift Package")
                         )
+            if 'destination' in self.action:
+                error_str += ', ' + self.action['destination']
+            error_str += ', ' + str(error)
             result = ActionResult(Result.FAIL, error_str)
         common.debug_print(error_str)
         return result
@@ -933,6 +939,8 @@ class CompatActionBuilder(ActionBuilder):
                             compatibility=compatible_swift,
                             action_target = dict_get(self.action, 'scheme', 'target', default="Swift Package")
                         )
+            if 'destination' in self.action:
+                error_str += ', ' + self.action['destination']
             result = ActionResult(Result.UPASS, error_str)
         else:
             error_str = 'PASS: {project}, {compatibility}, {action_target}'.format(
@@ -940,6 +948,8 @@ class CompatActionBuilder(ActionBuilder):
                             compatibility=compatible_swift,
                             action_target = dict_get(self.action, 'scheme', 'target', default="Swift Package")
                         )
+            if 'destination' in self.action:
+                error_str += ', ' + self.action['destination']
             result = ActionResult(Result.PASS, error_str)
         common.debug_print(error_str)
         return result
