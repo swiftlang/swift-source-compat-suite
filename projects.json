@@ -594,35 +594,80 @@
         "project": "Mapper.xcodeproj",
         "target": "Mapper",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4731"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectTarget",
         "project": "Mapper.xcodeproj",
         "target": "Mapper",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4731"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectTarget",
         "project": "Mapper.xcodeproj",
         "target": "Mapper",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4731"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectTarget",
         "project": "Mapper.xcodeproj",
         "target": "Mapper",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4731"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectTarget",
         "project": "Mapper.xcodeproj",
         "target": "Mapper",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4731"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildSwiftPackage",
@@ -842,7 +887,16 @@
         "project": "Realm.xcodeproj",
         "scheme": "RealmSwift",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4730"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestXcodeProjectScheme",
@@ -863,7 +917,16 @@
         "project": "Realm.xcodeproj",
         "scheme": "RealmSwift",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4730"
+              }
+            }
+          }
+        }
       }
     ]
   },
