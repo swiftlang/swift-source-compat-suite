@@ -1068,6 +1068,30 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/asynchrony/Re-Lax.git",
+    "path": "Re-Lax",
+    "branch": "master",
+    "maintainer": "marksands07@gmail.com",
+    "compatibility": {
+      "3.0": {
+        "commit": "b65d53b9547f2f5047c4253fb97ed1d504b4c36d"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "ReLax.xcworkspace",
+        "scheme": "ReLax",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/RxSwiftCommunity/RxDataSources",
     "path": "RxDataSources",
     "branch": "master",
