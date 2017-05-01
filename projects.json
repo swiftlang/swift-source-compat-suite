@@ -725,6 +725,31 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/Bouke/NetService.git",
+    "path": "NetService",
+    "branch": "master",
+    "maintainer": "bouke@haarsma.eu",
+    "compatibility": {
+      "3.1": {
+        "commit": "4c20bd99c56f6ba370faf1d014599f7149fb834d"
+      }
+    },
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/PerfectlySoft/Perfect.git",
     "path": "Perfect",
     "branch": "master",
