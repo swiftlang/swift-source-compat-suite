@@ -869,6 +869,67 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/ProcedureKit/ProcedureKit.git",
+    "path": "ProcedureKit",
+    "branch": "master",
+    "maintainer": "danthorpe@me.com",
+    "compatibility": {
+      "3.0": {
+        "commit": "006f9ff23448e28342a9f5d134327d58e3b4aa0d"
+      },
+      "3.1": {
+        "commit": "46bdfdf2910acc84e58ed686df14a46a5cbc61f4"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "ProcedureKit.xcodeproj",
+        "target": "ProcedureKit",
+        "destination": "platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "ProcedureKit.xcodeproj",
+        "target": "ProcedureKit",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "ProcedureKit.xcodeproj",
+        "target": "ProcedureKit",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },      
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "ProcedureKit.xcodeproj",
+        "target": "ProcedureKit",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },      
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "ProcedureKit.xcodeproj",
+        "target": "ProcedureKitCloud",
+        "destination": "platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeProjectTarget",
+        "project": "ProcedureKit.xcodeproj",
+        "target": "ProcedureKit",
+        "destination": "platform=macOS"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/realm/realm-cocoa.git",
     "path": "Realm",
     "branch": "master",
