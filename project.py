@@ -108,7 +108,8 @@ class XcodeTarget(ProjectTarget):
                    + ['-sdk', self._sdk,
                       'CODE_SIGN_IDENTITY=',
                       'CODE_SIGNING_REQUIRED=NO',
-                      'ENABLE_BITCODE=NO'])
+                      'ENABLE_BITCODE=NO',
+                      'GCC_TREAT_WARNINGS_AS_ERRORS=0'])
         for setting, value in self._build_settings.iteritems():
             command += ['%s=%s' % (setting, value)]
 
@@ -130,7 +131,8 @@ class XcodeTarget(ProjectTarget):
                       'SWIFT_LIBRARY_PATH=%s' %
                       get_stdlib_platform_path(
                           self._build_settings['SWIFT_EXEC'],
-                          self._destination)])
+                          self._destination)]
+                   + ['GCC_TREAT_WARNINGS_AS_ERRORS=0'])
         for setting, value in self._build_settings.iteritems():
             command += ['%s=%s' % (setting, value)]
 
