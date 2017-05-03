@@ -1502,8 +1502,8 @@
     "branch": "master",
     "maintainer": "alejandro.ruperez@intelygenz.com",
     "compatibility": {
-      "3.0": {
-        "commit": "de259cd2d0e7bcdf6290a35e08ff666732ebe824"
+      "3.1": {
+        "commit": "aad3be3990ef6a3a57897573fc50b13d4a8073f0"
       }
     },
     "platforms": [
@@ -1511,8 +1511,32 @@
     ],
     "actions": [
       {
-        "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Net.xcworkspace",
+        "scheme": "iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Net.xcworkspace",
+        "scheme": "macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Net.xcworkspace",
+        "scheme": "tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Net.xcworkspace",
+        "scheme": "watchOS",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
       }
     ]
   },
@@ -1523,8 +1547,8 @@
     "branch": "master",
     "maintainer": "alejandro.ruperez@intelygenz.com",
     "compatibility": {
-      "3.0": {
-        "commit": "deff54a6ee76be3aad22eed26c3d7938dc9fcd01"
+      "3.1": {
+        "commit": "1d258f90416b82cafa2b1cf0146720ce99ceaf28"
       }
     },
     "platforms": [
@@ -1532,8 +1556,32 @@
     ],
     "actions": [
       {
-        "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Kommander.xcworkspace",
+        "scheme": "Kommander",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Kommander.xcworkspace",
+        "scheme": "Kommander macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Kommander.xcworkspace",
+        "scheme": "Kommander tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Kommander.xcworkspace",
+        "scheme": "Kommander watchOS",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
       }
     ]
   }
