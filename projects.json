@@ -1180,6 +1180,30 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/mac-cain13/R.swift.git",
+    "path": "R.swift",
+    "branch": "master",
+    "maintainer": "tom@lokhorst.eu",
+    "compatibility": {
+      "3.0": {
+        "commit": "ac56b87a94a4ea8b795af45012d0f89d4981919e"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/RxSwiftCommunity/RxDataSources",
     "path": "RxDataSources",
     "branch": "master",
