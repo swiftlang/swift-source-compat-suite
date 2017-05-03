@@ -1515,5 +1515,26 @@
         "configuration": "release"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/intelygenz/Kommander-iOS.git",
+    "path": "kommander",
+    "branch": "master",
+    "maintainer": "alejandro.ruperez@intelygenz.com",
+    "compatibility": {
+      "3.0": {
+        "commit": "deff54a6ee76be3aad22eed26c3d7938dc9fcd01"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      }
+    ]
   }
 ]
