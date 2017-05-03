@@ -52,13 +52,16 @@ def main():
         'swift-corelibs-xctest',
     ]
 
-    for path in paths:
-        common.check_execute([
-            'rm', '-rf', common.private_workspace(path)
-        ])
+    with open('/dev/null', 'w') as devnull:
+        common.debug_print('Deleting build and source directories...')
+        for path in paths:
+            common.check_execute([
+                'rm', '-rf', common.private_workspace(path)
+            ], stdout=devnull, stderr=devnull)
 
-    for log in glob.glob('*.log'):
-        common.check_execute(['rm', log])
+        common.debug_print('Deleting log files...')
+        for log in glob.glob('*.log'):
+            common.check_execute(['rm', log], stdout=devnull, stderr=devnull)
 
     if not args.skip_ci_steps:
         if platform.system() == 'Darwin':
