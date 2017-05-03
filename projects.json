@@ -1503,7 +1503,7 @@
     "maintainer": "krunoslav.zaher@gmail.com",
     "compatibility": {
       "3.1": {
-        "commit": "aa77bb44d4ee6257c0b72b739bd19773e62eab5b"
+        "commit": "c5ba6843736e502c2ef7a608a162a3359fad3837"
       }
     },
     "platforms": [
@@ -1618,7 +1618,7 @@
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
-        "scheme": "RxTests-watchOS",
+        "scheme": "RxTest-watchOS",
         "destination": "generic/platform=watchOS",
         "configuration": "Release"
       }
