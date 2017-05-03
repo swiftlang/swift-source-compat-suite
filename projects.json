@@ -1494,5 +1494,26 @@
         "configuration": "release"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/intelygenz/NetClient-iOS.git",
+    "path": "netclient",
+    "branch": "master",
+    "maintainer": "alejandro.ruperez@intelygenz.com",
+    "compatibility": {
+      "3.0": {
+        "commit": "de259cd2d0e7bcdf6290a35e08ff666732ebe824"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      }
+    ]
   }
 ]
