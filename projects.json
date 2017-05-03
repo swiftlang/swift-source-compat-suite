@@ -1503,7 +1503,7 @@
     "maintainer": "krunoslav.zaher@gmail.com",
     "compatibility": {
       "3.1": {
-        "commit": "102424379fb8d6c69b33b95c67504679042f44cc"
+        "commit": "aa77bb44d4ee6257c0b72b739bd19773e62eab5b"
       }
     },
     "platforms": [
