@@ -1494,5 +1494,127 @@
         "configuration": "release"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/ReactiveX/RxSwift.git",
+    "path": "RxSwift",
+    "branch": "master",
+    "maintainer": "krunoslav.zaher@gmail.com",
+    "compatibility": {
+      "3.1": {
+        "commit": "102424379fb8d6c69b33b95c67504679042f44cc"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxSwift-macOS",
+        "destination": "platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxSwift-iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxSwift-tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxSwift-watchOS",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxCocoa-macOS",
+        "destination": "platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxCocoa-iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxCocoa-tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxCocoa-watchOS",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxBlocking-macOS",
+        "destination": "platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxBlocking-iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxBlocking-tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxBlocking-watchOS",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxTests-macOS",
+        "destination": "platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxTests-iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxTests-tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      }
+    ]
   }
 ]
