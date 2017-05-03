@@ -1494,5 +1494,49 @@
         "configuration": "release"
       }
     ]
-  }
+  },{
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "WTKit.xcworkspace",
+      "scheme": "WTKit iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "WTKit.xcworkspace",
+      "scheme": "WTKitMacOS",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "WTKit.xcworkspace",
+      "scheme": "WTKitTVOS",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "WTKit.xcworkspace",
+      "scheme": "WTKitWatchOS",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "compatibility": {
+    "3.0": {
+      "commit": "a2386f3bba2eb9a40be9c4b7f432c169f634680e"
+    }
+  },
+  "maintainer": "275712575@qq.com",
+  "branch": "master",
+  "path": "WTKit",
+  "url": "https://github.com/swtlovewtt/WTKit.git",
+  "repository": "Git"
+}
 ]
