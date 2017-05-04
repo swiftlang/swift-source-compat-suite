@@ -223,6 +223,33 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/jflinter/Dwifft.git",
+    "path": "Dwifft",
+    "branch": "master",
+    "maintainer": "jflinter11@gmail.com",
+    "compatibility": {
+      "3.0": {
+        "commit": "e3e8bf0d2355a23dc0f1af3a0b6465efcb3b6488"
+      },
+      "3.1": {
+        "commit": "e3e8bf0d2355a23dc0f1af3a0b6465efcb3b6488"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Dwifft.xcodeproj",
+        "target": "Dwifft",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/groue/GRDB.swift.git",
     "path": "GRDB.swift",
     "branch": "master",
