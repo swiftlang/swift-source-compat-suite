@@ -1,6 +1,69 @@
 [
   {
     "repository": "Git",
+    "url": "https://github.com/SwifterSwift/SwifterSwift.git",
+    "path": "SwifterSwift",
+    "branch": "master",
+    "maintainer": "omaralbeik@gmail.com",
+    "compatibility": {
+      "3.0": {
+        "commit": "66e5237f055f72f725536cd3322f7f6483e7aeed"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "SwifterSwift.xcworkspace",
+        "scheme": "SwifterSwift iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "SwifterSwift.xcworkspace",
+        "scheme": "SwifterSwift macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "SwifterSwift.xcworkspace",
+        "scheme": "SwifterSwift tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "SwifterSwift.xcworkspace",
+        "scheme": "SwifterSwift watchOS",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "SwifterSwift.xcworkspace",
+        "scheme": "SwifterSwift iOSTests",
+        "destination": "platform=iOS Simulator,name=iPhone 7,OS=10.2"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "SwifterSwift.xcworkspace",
+        "scheme": "SwifterSwift tvOSTests",
+        "destination": "platform=tvOS Simulator,name=Apple TV 1080p"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "SwifterSwift.xcworkspace",
+        "scheme": "SwifterSwift macOSTests",
+        "destination": "platform=macOS"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/andreamazz/AMScrollingNavbar.git",
     "path": "AMScrollingNavbar",
     "branch": "master",
