@@ -724,6 +724,30 @@
     ]
   },
   {
+  "repository": "Git",
+  "url": "https://github.com/kelvin13/maxpng.git",
+  "path": "maxpng",
+  "branch": "master",
+  "maintainer": "kelvin13ma@gmail.com",
+  "compatibility": {
+    "3.0": {
+      "commit": "a8b3eaefd3bdcce973ea4cc6c647b6870f43e4a6"
+    }
+  },
+  "platforms": [
+    "Glibc"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+},
+  {
     "repository": "Git",
     "url": "https://github.com/PerfectlySoft/Perfect.git",
     "path": "Perfect",
