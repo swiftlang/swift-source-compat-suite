@@ -1630,5 +1630,29 @@
         "configuration": "release"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/antitypical/Result.git",
+    "path": "Result",
+    "branch": "master",
+    "compatibility": {
+      "3.1": {
+        "commit": "1a2a979e6399dfb3574c935d6ccee36bc0214405"
+      }
+    },
+    "maintainer": "rob.rix@github.com",
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
   }
 ]
