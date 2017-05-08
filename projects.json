@@ -1497,51 +1497,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/intelygenz/NetClient-iOS.git",
-    "path": "netclient",
-    "branch": "master",
-    "maintainer": "alejandro.ruperez@intelygenz.com",
-    "compatibility": {
-      "3.1": {
-        "commit": "aad3be3990ef6a3a57897573fc50b13d4a8073f0"
-      }
-    },
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Net.xcworkspace",
-        "scheme": "iOS",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Net.xcworkspace",
-        "scheme": "macOS",
-        "destination": "generic/platform=macOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Net.xcworkspace",
-        "scheme": "tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Net.xcworkspace",
-        "scheme": "watchOS",
-        "destination": "generic/platform=watchOS",
-        "configuration": "Release"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/intelygenz/Kommander-iOS.git",
     "path": "kommander",
     "branch": "master",
