@@ -1524,6 +1524,30 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/devxoul/Then.git",
+    "path": "Then",
+    "branch": "master",
+    "maintainer": "devxoul@gmail.com",
+    "compatibility": {
+      "3.1": {
+        "commit": "daaea1ac2100ae86bd20f0920ebbd2f1becb2e6e"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/vapor/vapor.git",
     "path": "vapor",
     "branch": "master",
