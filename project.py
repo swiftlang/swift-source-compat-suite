@@ -875,7 +875,7 @@ class CompatActionBuilder(ActionBuilder):
             [self.action['action'], self.project['path']] +
             ([scheme_target] if scheme_target else [])
         )
-        for compatible_swift in self.project['compatibility']:
+        for compatible_swift in self.project['compatibility'].keys()[:1]:
             self.checkout_sha(
                 self.project['compatibility'][compatible_swift]['commit'],
                 stdout=stdout, stderr=stdout
