@@ -212,7 +212,16 @@
       },
       {
          "action": "BuildSwiftPackage",
-         "configuration": "release"
+         "configuration": "release",
+         "xfail": {
+           "compatibility": {
+             "3.1": {
+               "branch": {
+                 "master": "TBD"
+               }
+             }
+           }
+         }
       },
       {
          "action": "TestSwiftPackage"
