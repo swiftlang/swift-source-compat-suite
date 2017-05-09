@@ -144,8 +144,8 @@
     "path": "AsyncNinja",
     "branch": "master",
     "compatibility": {
-      "3.0": {
-        "commit": "fa34ec954f13399e6e05bbe150bfe62ee051505a"
+      "3.1": {
+        "commit": "8f661f2eee1519054b97b0ca031d917cbc361748"
       }
     },
     "maintainer": "antonvmironov@gmail.com",
@@ -202,6 +202,20 @@
         "scheme": "AsyncNinja",
         "destination": "platform=tvOS Simulator,name=Apple TV 1080p",
         "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "AsyncNinja.xcodeproj",
+        "scheme": "AsyncNinja",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+         "action": "BuildSwiftPackage",
+         "configuration": "release"
+      },
+      {
+         "action": "TestSwiftPackage"
       }
     ]
   },
