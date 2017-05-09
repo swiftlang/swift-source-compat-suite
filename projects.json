@@ -1553,11 +1553,14 @@
   {
     "repository": "Git",
     "url": "https://github.com/realm/SwiftLint.git",
-    "path": "swiftlint",
+    "path": "SwiftLint",
     "branch": "master",
     "compatibility": {
       "3.0": {
         "commit": "e4fa18df06ddbcc730dd2c08a1c0c42aa531ae0c"
+      },
+      "3.1": {
+        "commit": "ab664127d5d32d9ddd655b2cc313abe528a66a42"
       }
     },
     "maintainer": "jp@jpsim.com",
