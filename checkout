@@ -34,7 +34,9 @@ def parse_args():
                         type=os.path.abspath)
     parser.add_argument('--project-path',
                         metavar='PATH',
-                        help='only checkout this project')
+                        help='only checkout this project',
+                        default=[],
+                        action='append')
                         
     return parser.parse_args()
 
@@ -53,7 +55,7 @@ def main():
     common.check_execute(['mkdir', '-p', root_path])
 
     for repo in index:
-        if args.project_path and args.project_path != repo['path']:
+        if args.project_path and repo['path'] not in args.project_path:
             continue
         total_repos += 1
         for compatible_swift in repo['compatibility']:
