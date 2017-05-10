@@ -849,7 +849,7 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "TBD"
+                "master": "https://bugs.swift.org/browse/SR-4855"
               }
             }
           }
