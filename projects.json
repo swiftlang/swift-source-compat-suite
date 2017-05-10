@@ -1,69 +1,6 @@
 [
   {
     "repository": "Git",
-    "url": "https://github.com/SwifterSwift/SwifterSwift.git",
-    "path": "SwifterSwift",
-    "branch": "master",
-    "maintainer": "omaralbeik@gmail.com",
-    "compatibility": {
-      "3.0": {
-        "commit": "66e5237f055f72f725536cd3322f7f6483e7aeed"
-      }
-    },
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift iOS",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift macOS",
-        "destination": "generic/platform=macOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift watchOS",
-        "destination": "generic/platform=watchOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "TestXcodeWorkspaceScheme",
-        "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift iOSTests",
-        "destination": "platform=iOS Simulator,name=iPhone 7,OS=10.2"
-      },
-      {
-        "action": "TestXcodeWorkspaceScheme",
-        "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift tvOSTests",
-        "destination": "platform=tvOS Simulator,name=Apple TV 1080p"
-      },
-      {
-        "action": "TestXcodeWorkspaceScheme",
-        "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift macOSTests",
-        "destination": "platform=macOS"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/andreamazz/AMScrollingNavbar.git",
     "path": "AMScrollingNavbar",
     "branch": "master",
@@ -211,20 +148,20 @@
         "configuration": "Release"
       },
       {
-         "action": "BuildSwiftPackage",
-         "configuration": "release",
-         "xfail": {
-           "compatibility": {
-             "3.1": {
-               "branch": {
-                 "master": "TBD"
-               }
-             }
-           }
-         }
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "TBD"
+              }
+            }
+          }
+        }
       },
       {
-         "action": "TestSwiftPackage"
+        "action": "TestSwiftPackage"
       }
     ]
   },
@@ -591,6 +528,28 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/IBM-Swift/Kitura.git",
+    "path": "Kitura",
+    "branch": "master",
+    "maintainer": "navneet@us.ibm.com",
+    "compatibility": {
+      "3.0": {
+        "commit": "5ebf8f63fe6ab1fd2f50de860e19a07661fbb974"
+      }
+    },
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/lyft/Kronos.git",
     "path": "Kronos",
     "branch": "master",
@@ -643,28 +602,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/IBM-Swift/Kitura.git",
-    "path": "Kitura",
-    "branch": "master",
-    "maintainer": "navneet@us.ibm.com",
-    "compatibility": {
-      "3.0": {
-        "commit": "5ebf8f63fe6ab1fd2f50de860e19a07661fbb974"
-      }
-    },
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/Bouke/Lark.git",
     "path": "Lark",
     "branch": "master",
@@ -689,99 +626,20 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/lyft/mapper.git",
-    "path": "mapper",
+    "url": "https://github.com/Bouke/NetService.git",
+    "path": "NetService",
     "branch": "master",
-    "maintainer": "k@keith.so",
+    "maintainer": "bouke@haarsma.eu",
     "compatibility": {
-      "3.0": {
-        "commit": "db431abebe6b6ec632a3829edd75be0a440e331a"
+      "3.1": {
+        "commit": "4c20bd99c56f6ba370faf1d014599f7149fb834d"
       }
     },
     "platforms": [
-      "Darwin"
+      "Darwin",
+      "Linux"
     ],
     "actions": [
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Mapper.xcodeproj",
-        "target": "Mapper",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4731"
-              }
-            }
-          }
-        }
-      },
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Mapper.xcodeproj",
-        "target": "Mapper",
-        "destination": "generic/platform=macOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4731"
-              }
-            }
-          }
-        }
-      },
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Mapper.xcodeproj",
-        "target": "Mapper",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4731"
-              }
-            }
-          }
-        }
-      },
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Mapper.xcodeproj",
-        "target": "Mapper",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4731"
-              }
-            }
-          }
-        }
-      },
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Mapper.xcodeproj",
-        "target": "Mapper",
-        "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4731"
-              }
-            }
-          }
-        }
-      },
       {
         "action": "BuildSwiftPackage",
         "configuration": "release"
@@ -833,31 +691,6 @@
         "scheme": "ObjectMapper-watchOS",
         "destination": "generic/platform=watchOS",
         "configuration": "Release"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/Bouke/NetService.git",
-    "path": "NetService",
-    "branch": "master",
-    "maintainer": "bouke@haarsma.eu",
-    "compatibility": {
-      "3.1": {
-        "commit": "4c20bd99c56f6ba370faf1d014599f7149fb834d"
-      }
-    },
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release"
-      },
-      {
-        "action": "TestSwiftPackage"
       }
     ]
   },
@@ -962,6 +795,76 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/ProcedureKit/ProcedureKit.git",
+    "path": "ProcedureKit",
+    "branch": "master",
+    "maintainer": "danthorpe@me.com",
+    "compatibility": {
+      "3.0": {
+        "commit": "006f9ff23448e28342a9f5d134327d58e3b4aa0d"
+      },
+      "3.1": {
+        "commit": "46bdfdf2910acc84e58ed686df14a46a5cbc61f4"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "ProcedureKit.xcodeproj",
+        "target": "ProcedureKit",
+        "destination": "platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "ProcedureKit.xcodeproj",
+        "target": "ProcedureKit",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "ProcedureKit.xcodeproj",
+        "target": "ProcedureKit",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "ProcedureKit.xcodeproj",
+        "target": "ProcedureKit",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "ProcedureKit.xcodeproj",
+        "target": "ProcedureKitCloud",
+        "destination": "platform=macOS",
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "TBD"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "TestXcodeProjectTarget",
+        "project": "ProcedureKit.xcodeproj",
+        "target": "ProcedureKit",
+        "destination": "platform=macOS"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/mxcl/PromiseKit.git",
     "path": "PromiseKit",
     "branch": "master",
@@ -1007,16 +910,13 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/ProcedureKit/ProcedureKit.git",
-    "path": "ProcedureKit",
+    "url": "https://github.com/mac-cain13/R.swift.git",
+    "path": "R.swift",
     "branch": "master",
-    "maintainer": "danthorpe@me.com",
+    "maintainer": "tom@lokhorst.eu",
     "compatibility": {
       "3.0": {
-        "commit": "006f9ff23448e28342a9f5d134327d58e3b4aa0d"
-      },
-      "3.1": {
-        "commit": "46bdfdf2910acc84e58ed686df14a46a5cbc61f4"
+        "commit": "ac56b87a94a4ea8b795af45012d0f89d4981919e"
       }
     },
     "platforms": [
@@ -1024,66 +924,23 @@
     ],
     "actions": [
       {
-        "action": "BuildXcodeProjectTarget",
-        "project": "ProcedureKit.xcodeproj",
-        "target": "ProcedureKit",
-        "destination": "platform=macOS",
-        "configuration": "Release"
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
       },
       {
-        "action": "BuildXcodeProjectTarget",
-        "project": "ProcedureKit.xcodeproj",
-        "target": "ProcedureKit",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "ProcedureKit.xcodeproj",
-        "target": "ProcedureKit",
-        "destination": "generic/platform=watchOS",
-        "configuration": "Release"
-      },      
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "ProcedureKit.xcodeproj",
-        "target": "ProcedureKit",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
-      },      
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "ProcedureKit.xcodeproj",
-        "target": "ProcedureKitCloud",
-        "destination": "platform=macOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "TBD"
-              }
-            }
-          }
-        }
-      },
-      {
-        "action": "TestXcodeProjectTarget",
-        "project": "ProcedureKit.xcodeproj",
-        "target": "ProcedureKit",
-        "destination": "platform=macOS"
+        "action": "TestSwiftPackage"
       }
     ]
   },
   {
     "repository": "Git",
-    "url": "https://github.com/realm/realm-cocoa.git",
-    "path": "Realm",
+    "url": "https://github.com/asynchrony/Re-Lax.git",
+    "path": "Re-Lax",
     "branch": "master",
-    "maintainer": "ci@realm.io",
+    "maintainer": "marksands07@gmail.com",
     "compatibility": {
       "3.0": {
-        "commit": "3df0fb6ec06a0f3c5ca49c88bd51ab5b64f4f0af"
+        "commit": "b65d53b9547f2f5047c4253fb97ed1d504b4c36d"
       }
     },
     "platforms": [
@@ -1091,50 +948,11 @@
     ],
     "actions": [
       {
-        "action": "BuildXcodeProjectScheme",
-        "project": "Realm.xcodeproj",
-        "scheme": "RealmSwift",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4730"
-              }
-            }
-          }
-        }
-      },
-      {
-        "action": "TestXcodeProjectScheme",
-        "project": "Realm.xcodeproj",
-        "scheme": "RealmSwift",
-        "destination": "generic/platform=macOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "TestXcodeProjectScheme",
-        "project": "Realm.xcodeproj",
-        "scheme": "RealmSwift",
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "ReLax.xcworkspace",
+        "scheme": "ReLax",
         "destination": "generic/platform=tvOS",
         "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "Realm.xcodeproj",
-        "scheme": "RealmSwift",
-        "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4730"
-              }
-            }
-          }
-        }
       }
     ]
   },
@@ -1276,13 +1094,13 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/asynchrony/Re-Lax.git",
-    "path": "Re-Lax",
+    "url": "https://github.com/realm/realm-cocoa.git",
+    "path": "Realm",
     "branch": "master",
-    "maintainer": "marksands07@gmail.com",
+    "maintainer": "ci@realm.io",
     "compatibility": {
       "3.0": {
-        "commit": "b65d53b9547f2f5047c4253fb97ed1d504b4c36d"
+        "commit": "3df0fb6ec06a0f3c5ca49c88bd51ab5b64f4f0af"
       }
     },
     "platforms": [
@@ -1290,25 +1108,64 @@
     ],
     "actions": [
       {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "ReLax.xcworkspace",
-        "scheme": "ReLax",
+        "action": "BuildXcodeProjectScheme",
+        "project": "Realm.xcodeproj",
+        "scheme": "RealmSwift",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4730"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "TestXcodeProjectScheme",
+        "project": "Realm.xcodeproj",
+        "scheme": "RealmSwift",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeProjectScheme",
+        "project": "Realm.xcodeproj",
+        "scheme": "RealmSwift",
         "destination": "generic/platform=tvOS",
         "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "Realm.xcodeproj",
+        "scheme": "RealmSwift",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4730"
+              }
+            }
+          }
+        }
       }
     ]
   },
   {
     "repository": "Git",
-    "url": "https://github.com/mac-cain13/R.swift.git",
-    "path": "R.swift",
+    "url": "https://github.com/antitypical/Result.git",
+    "path": "Result",
     "branch": "master",
-    "maintainer": "tom@lokhorst.eu",
     "compatibility": {
-      "3.0": {
-        "commit": "ac56b87a94a4ea8b795af45012d0f89d4981919e"
+      "3.1": {
+        "commit": "1a2a979e6399dfb3574c935d6ccee36bc0214405"
       }
     },
+    "maintainer": "rob.rix@github.com",
     "platforms": [
       "Darwin"
     ],
@@ -1349,6 +1206,128 @@
         "project": "Pods/Pods.xcodeproj",
         "target": "Pods-Example",
         "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/ReactiveX/RxSwift.git",
+    "path": "RxSwift",
+    "branch": "master",
+    "maintainer": "krunoslav.zaher@gmail.com",
+    "compatibility": {
+      "3.1": {
+        "commit": "102424379fb8d6c69b33b95c67504679042f44cc"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxSwift-macOS",
+        "destination": "platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxSwift-iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxSwift-tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxSwift-watchOS",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxCocoa-macOS",
+        "destination": "platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxCocoa-iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxCocoa-tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxCocoa-watchOS",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxBlocking-macOS",
+        "destination": "platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxBlocking-iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxBlocking-tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxBlocking-watchOS",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxTests-macOS",
+        "destination": "platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxTests-iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxTests-tvOS",
+        "destination": "generic/platform=tvOS",
         "configuration": "Release"
       }
     ]
@@ -1614,112 +1593,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/louisdh/panelkit.git",
-    "path": "panelkit",
-    "branch": "master",
-    "compatibility": {
-      "3.0": {
-        "commit": "d451d956fb31f0ca5d76940c0b1db46b8c74a089"
-      }
-    },
-    "platforms": [
-      "Darwin"
-    ],
-    "maintainer": "louisdhauwe@silverfox.be",
-    "actions": [
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "PanelKit.xcworkspace",
-        "scheme": "PanelKit",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "PanelKit.xcworkspace",
-        "scheme": "Example",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "TestXcodeWorkspaceScheme",
-        "workspace": "PanelKit.xcworkspace",
-        "scheme": "PanelKitTests",
-        "destination": "platform=iOS Simulator,name=iPad Pro (12.9 inch)"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/antitypical/Result.git",
-    "path": "Result",
-    "branch": "master",
-    "compatibility": {
-      "3.1": {
-        "commit": "1a2a979e6399dfb3574c935d6ccee36bc0214405"
-      }
-    },
-    "maintainer": "rob.rix@github.com",
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/bustoutsolutions/siesta.git",
-    "path": "siesta",
-    "branch": "master",
-    "compatibility": {
-      "3.0": {
-        "commit": "1665db77a35b0e5c60269825d2e9b4d6971b81b5"
-      }
-    },
-    "maintainer": "cantrell@pobox.com",
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Siesta.xcodeproj",
-        "target": "Siesta iOS",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Siesta.xcodeproj",
-        "target": "Siesta macOS",
-        "destination": "generic/platform=macOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Siesta.xcodeproj",
-        "target": "SiestaUI iOS",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Siesta.xcodeproj",
-        "target": "SiestaUI macOS",
-        "destination": "generic/platform=macOS",
-        "configuration": "Release"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/realm/SwiftLint.git",
     "path": "SwiftLint",
     "branch": "master",
@@ -1758,6 +1631,69 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/SwifterSwift/SwifterSwift.git",
+    "path": "SwifterSwift",
+    "branch": "master",
+    "maintainer": "omaralbeik@gmail.com",
+    "compatibility": {
+      "3.0": {
+        "commit": "66e5237f055f72f725536cd3322f7f6483e7aeed"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "SwifterSwift.xcworkspace",
+        "scheme": "SwifterSwift iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "SwifterSwift.xcworkspace",
+        "scheme": "SwifterSwift macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "SwifterSwift.xcworkspace",
+        "scheme": "SwifterSwift tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "SwifterSwift.xcworkspace",
+        "scheme": "SwifterSwift watchOS",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "SwifterSwift.xcworkspace",
+        "scheme": "SwifterSwift iOSTests",
+        "destination": "platform=iOS Simulator,name=iPhone 7,OS=10.2"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "SwifterSwift.xcworkspace",
+        "scheme": "SwifterSwift tvOSTests",
+        "destination": "platform=tvOS Simulator,name=Apple TV 1080p"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "SwifterSwift.xcworkspace",
+        "scheme": "SwifterSwift macOSTests",
+        "destination": "platform=macOS"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/devxoul/Then.git",
     "path": "Then",
     "branch": "master",
@@ -1777,28 +1713,6 @@
       },
       {
         "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/vapor/vapor.git",
-    "path": "vapor",
-    "branch": "master",
-    "maintainer": "tanner@vapor.codes",
-    "compatibility": {
-      "3.0": {
-        "commit": "652e8d8316696bd0f0bbde07da555210e81557f1"
-      }
-    },
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release"
       }
     ]
   },
@@ -1849,13 +1763,13 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/ReactiveX/RxSwift.git",
-    "path": "RxSwift",
+    "url": "https://github.com/lyft/mapper.git",
+    "path": "mapper",
     "branch": "master",
-    "maintainer": "krunoslav.zaher@gmail.com",
+    "maintainer": "k@keith.so",
     "compatibility": {
-      "3.1": {
-        "commit": "102424379fb8d6c69b33b95c67504679042f44cc"
+      "3.0": {
+        "commit": "db431abebe6b6ec632a3829edd75be0a440e331a"
       }
     },
     "platforms": [
@@ -1863,109 +1777,195 @@
     ],
     "actions": [
       {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Rx.xcworkspace",
-        "scheme": "RxSwift-macOS",
-        "destination": "platform=macOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Rx.xcworkspace",
-        "scheme": "RxSwift-iOS",
+        "action": "BuildXcodeProjectTarget",
+        "project": "Mapper.xcodeproj",
+        "target": "Mapper",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4731"
+              }
+            }
+          }
+        }
       },
       {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Rx.xcworkspace",
-        "scheme": "RxSwift-tvOS",
+        "action": "BuildXcodeProjectTarget",
+        "project": "Mapper.xcodeproj",
+        "target": "Mapper",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4731"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Mapper.xcodeproj",
+        "target": "Mapper",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4731"
+              }
+            }
+          }
+        }
       },
       {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Rx.xcworkspace",
-        "scheme": "RxSwift-watchOS",
+        "action": "BuildXcodeProjectTarget",
+        "project": "Mapper.xcodeproj",
+        "target": "Mapper",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4731"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Mapper.xcodeproj",
+        "target": "Mapper",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4731"
+              }
+            }
+          }
+        }
       },
       {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Rx.xcworkspace",
-        "scheme": "RxCocoa-macOS",
-        "destination": "platform=macOS",
-        "configuration": "Release"
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
       },
       {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/louisdh/panelkit.git",
+    "path": "panelkit",
+    "branch": "master",
+    "compatibility": {
+      "3.0": {
+        "commit": "d451d956fb31f0ca5d76940c0b1db46b8c74a089"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "maintainer": "louisdhauwe@silverfox.be",
+    "actions": [
+      {
         "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Rx.xcworkspace",
-        "scheme": "RxCocoa-iOS",
+        "workspace": "PanelKit.xcworkspace",
+        "scheme": "PanelKit",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Rx.xcworkspace",
-        "scheme": "RxCocoa-tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Rx.xcworkspace",
-        "scheme": "RxCocoa-watchOS",
-        "destination": "generic/platform=watchOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Rx.xcworkspace",
-        "scheme": "RxBlocking-macOS",
-        "destination": "platform=macOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Rx.xcworkspace",
-        "scheme": "RxBlocking-iOS",
+        "workspace": "PanelKit.xcworkspace",
+        "scheme": "Example",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
       },
       {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Rx.xcworkspace",
-        "scheme": "RxBlocking-tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
-      },
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "PanelKit.xcworkspace",
+        "scheme": "PanelKitTests",
+        "destination": "platform=iOS Simulator,name=iPad Pro (12.9 inch)"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/bustoutsolutions/siesta.git",
+    "path": "siesta",
+    "branch": "master",
+    "compatibility": {
+      "3.0": {
+        "commit": "1665db77a35b0e5c60269825d2e9b4d6971b81b5"
+      }
+    },
+    "maintainer": "cantrell@pobox.com",
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
       {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Rx.xcworkspace",
-        "scheme": "RxBlocking-watchOS",
-        "destination": "generic/platform=watchOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Rx.xcworkspace",
-        "scheme": "RxTests-macOS",
-        "destination": "platform=macOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Rx.xcworkspace",
-        "scheme": "RxTests-iOS",
+        "action": "BuildXcodeProjectTarget",
+        "project": "Siesta.xcodeproj",
+        "target": "Siesta iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
       },
       {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Rx.xcworkspace",
-        "scheme": "RxTests-tvOS",
-        "destination": "generic/platform=tvOS",
+        "action": "BuildXcodeProjectTarget",
+        "project": "Siesta.xcodeproj",
+        "target": "Siesta macOS",
+        "destination": "generic/platform=macOS",
         "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Siesta.xcodeproj",
+        "target": "SiestaUI iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Siesta.xcodeproj",
+        "target": "SiestaUI macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/vapor.git",
+    "path": "vapor",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": {
+      "3.0": {
+        "commit": "652e8d8316696bd0f0bbde07da555210e81557f1"
+      }
+    },
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
       }
     ]
   }
