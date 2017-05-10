@@ -21,6 +21,7 @@ import shutil
 import filecmp
 import sys
 import json
+import time
 
 import common
 
@@ -99,6 +100,8 @@ class XcodeTarget(ProjectTarget):
         dir_override = []
         if self._has_scheme:
             dir_override = ['-derivedDataPath', build_dir]
+        else:
+            dir_override = ['SYMROOT=' + build_dir]
         command = (['xcodebuild']
                    + build
                    + [project_param, self._project,
@@ -275,7 +278,8 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
     if stats_path is not None:
         if os.path.exists(stats_path):
             shutil.rmtree(stats_path)
-        common.check_execute(['mkdir', '-p', stats_path])
+        common.check_execute(['mkdir', '-p', stats_path],
+                             stdout=stdout, stderr=stderr)
 
     if action['action'] == 'BuildSwiftPackage':
         return build_swift_package(os.path.join(root_path, repo['path']),
@@ -955,3 +959,289 @@ class CompatActionBuilder(ActionBuilder):
             result = ActionResult(Result.PASS, error_str)
         common.debug_print(error_str)
         return result
+
+class EarlyExit(Exception):
+    def __init__(self, value):
+        self.value = value
+    def __str__(self):
+        return repr(self.value)
+
+def ignore_missing(f):
+    if (f.endswith('.dia') or
+        f.endswith('~')):
+        return True
+    return False
+
+def ignore_diff(f):
+    if (f.endswith('-master.swiftdeps') or
+        f.endswith('dependency_info.dat')):
+        return True
+    return False
+
+def have_same_trees(full, incr, d):
+    ok = True
+    for f in d.left_only:
+        if ignore_missing(f):
+            continue
+        ok = False
+        common.debug_print("Missing 'incr' file: %s"
+                           % os.path.relpath(os.path.join(d.left, f), full))
+
+    for f in d.right_only:
+        if ignore_missing(f):
+            continue
+        ok = False
+        common.debug_print("Missing 'full' file: %s"
+                           % os.path.relpath(os.path.join(d.right, f), incr))
+
+    for f in d.diff_files:
+        if ignore_diff(f):
+            continue
+        ok = False
+        common.debug_print("File difference: %s"
+                           % os.path.relpath(os.path.join(d.left, f), full))
+
+    for sub in d.subdirs.values():
+        ok = have_same_trees(full, incr, sub) and ok
+    return ok
+
+class StatsSummary:
+
+    def __init__(self):
+        self.commits = {}
+
+    def add_stats_from_json(self, seq, sha, j):
+        key = (seq, sha)
+        if key not in self.commits:
+            self.commits[key] = {}
+        for (k, v) in j.items():
+            if k.startswith("time."):
+                continue
+            e = self.commits[key].get(k, 0)
+            self.commits[key][k] = int(v) + e
+
+    def check_against_expected(self, seq, sha, expected):
+        key = (seq, sha)
+        if key in self.commits:
+            for (k, ev) in expected.items():
+                if k in self.commits[key]:
+                    gv = self.commits[key][k]
+                    if ev < gv:
+                        message = ("Expected %s of %s, got %s" %
+                                   (k, str(ev), str(gv)) )
+                        raise EarlyExit(ActionResult(Result.FAIL, message))
+
+    def add_stats_from_file(self, seq, sha, f):
+        with open(f) as fp:
+            self.add_stats_from_json(seq, sha, json.load(fp))
+
+    def add_stats_from_dir(self, seq, sha, path):
+        for root, dirs, files in os.walk(path):
+            for f in files:
+                if not f.endswith(".json"):
+                    continue
+                self.add_stats_from_file(seq, sha, os.path.join(root, f))
+
+    def dump(self, pattern):
+        return json.dumps([ {"commit": sha,
+                             "stats": { k: v for (k, v) in self.commits[(seq, sha)].items()
+                                        if re.match(pattern, k) } }
+                            for (seq, sha) in sorted(self.commits.keys()) ],
+                          sort_keys=False,
+                          indent=2)
+
+class IncrementalActionBuilder(ActionBuilder):
+
+    def __init__(self, swiftc, swift_version, swift_branch,
+                 sandbox_profile_xcodebuild,
+                 sandbox_profile_package,
+                 added_swift_flags,
+                 check_stats,
+                 show_stats,
+                 project, action):
+        super(IncrementalActionBuilder,
+              self).__init__(swiftc, swift_version, swift_branch,
+                             sandbox_profile_xcodebuild,
+                             sandbox_profile_package,
+                             added_swift_flags,
+                             skip_clean=True,
+                             project=project,
+                             action=action)
+        self.check_stats = check_stats
+        self.show_stats = show_stats
+        self.stats_path = None
+        self.stats_summ = None
+        self.proj_path = os.path.join(self.root_path, self.project['path'])
+        self.incr_path = self.proj_path + "-incr"
+        if self.check_stats or (self.show_stats is not None):
+            self.stats_path = os.path.join(self.proj_path, "swift-stats")
+            self.stats_summ = StatsSummary()
+
+    def curr_build_state_path(self):
+        if self.action['action'] == 'BuildSwiftPackage':
+            return os.path.join(self.proj_path, ".build")
+        match = re.match(r'^(Build|Test)Xcode(Workspace|Project)(Scheme|Target)$',
+                      self.action['action'])
+        if match:
+            project_path = os.path.join(self.proj_path,
+                                        self.action[match.group(2).lower()])
+            return os.path.join(os.path.dirname(project_path), "build")
+        else:
+            raise Exception("Unsupported action: " + self.action['action'])
+
+    def ignored_differences(self):
+        if self.action['action'] == 'BuildSwiftPackage':
+            return ['ModuleCache', 'build.db', 'master.swiftdeps', 'master.swiftdeps~']
+        elif re.match(r'^(Build|Test)Xcode(Workspace|Project)(Scheme|Target)$',
+                      self.action['action']):
+            return ['ModuleCache', 'Logs', 'info.plist', 'dgph', 'dgph~',
+                    'master.swiftdeps', 'master.swiftdeps~']
+        else:
+            raise Exception("Unsupported action: " + self.action['action'])
+
+    def expect_determinism(self):
+        # We're not seeing determinism in incremental builds yet, so
+        # for the time being disable the expectation.
+        return False
+
+    def saved_build_state_path(self, seq, flav, sha):
+        return os.path.join(self.incr_path, ("build-state-%03d-%s-%.7s" %
+                                             (seq, flav, sha)))
+
+    def saved_build_stats_path(self, seq, flav, sha):
+        return os.path.join(self.incr_path, ("build-stats-%03d-%s-%.7s" %
+                                             (seq, flav, sha)))
+
+    def restore_saved_build_state(self, seq, flav, sha, stdout=sys.stdout):
+        src = self.saved_build_state_path(seq, flav, sha)
+        dst = self.curr_build_state_path()
+        proj = self.project['path']
+        common.debug_print("Restoring %s build-state #%d of %s from %s" %
+                           (flav, seq, proj, src), stderr=stdout)
+        if os.path.exists(dst):
+            shutil.rmtree(dst)
+        shutil.copytree(src, dst, symlinks=True)
+
+    def save_build_state(self, seq, flav, sha, stats, stdout=sys.stdout):
+        src = self.curr_build_state_path()
+        dst = self.saved_build_state_path(seq, flav, sha)
+        proj = self.project['path']
+        common.debug_print("Saving %s state #%d of %s to %s" %
+                           (flav, seq, proj, dst), stderr=stdout)
+        if os.path.exists(dst):
+            shutil.rmtree(dst)
+        shutil.copytree(src, dst, symlinks=True)
+        if self.stats_summ is not None:
+            self.stats_summ.add_stats_from_dir(seq, sha, self.stats_path)
+            src = self.stats_path
+            dst = self.saved_build_stats_path(seq, flav, sha)
+            common.debug_print("Saving %s stats #%d of %s to %s" %
+                               (flav, seq, proj, dst), stderr=stdout)
+            if os.path.exists(dst):
+                shutil.rmtree(dst)
+            shutil.copytree(src, dst, symlinks=True)
+            if stats is not None and self.check_stats:
+                self.stats_summ.check_against_expected(seq, sha, stats)
+
+    def check_full_vs_incr(self, seq, sha, stdout=sys.stdout):
+        full = self.saved_build_state_path(seq, 'full', sha)
+        incr = self.saved_build_state_path(seq, 'incr', sha)
+        common.debug_print("Comparing dirs %s vs. %s" % (os.path.relpath(full),
+                                                         os.path.basename(incr)),
+                           stderr=stdout)
+        d = filecmp.dircmp(full, incr, self.ignored_differences())
+        if not have_same_trees(full, incr, d):
+            message = ("Dirs differ: %s vs. %s" %
+                       (os.path.relpath(full),
+                        os.path.basename(incr)))
+            if self.expect_determinism():
+                raise EarlyExit(ActionResult(Result.FAIL, message))
+            else:
+                common.debug_print(message, stderr=stdout)
+
+    def excluded_by_limit(self, limits):
+        for (kind, value) in limits.items():
+            if self.action.get(kind) != value:
+                return True
+        return False
+
+    def build(self, stdout=sys.stdout):
+        action_result = ActionResult(Result.PASS, "")
+        try:
+            if 'incremental' in self.project:
+                for vers in self.project['incremental']:
+                    incr = self.project['incremental'][vers]
+                    if 'limit' in incr and self.excluded_by_limit(incr['limit']):
+                        continue
+                    ident = "%s-incr-%s" % (self.project['path'], vers)
+                    action_result = self.build_incremental(ident,
+                                                           incr['commits'],
+                                                           stdout=stdout)
+        except EarlyExit as error:
+            action_result = error.value
+        if self.show_stats is not None:
+            common.debug_print("Stats summary:", stderr=stdout)
+            common.debug_print(self.stats_summ.dump(self.show_stats), stderr=stdout)
+        return action_result
+
+    def dispatch(self, identifier, incremental, stdout=sys.stdout, stderr=sys.stderr):
+        try:
+            dispatch(self.root_path, self.project, self.action,
+                     self.swiftc,
+                     self.swift_version,
+                     self.sandbox_profile_xcodebuild,
+                     self.sandbox_profile_package,
+                     self.added_swift_flags,
+                     should_strip_resource_phases=False,
+                     stdout=stdout, stderr=stderr,
+                     incremental=incremental,
+                     stats_path=self.stats_path)
+        except common.ExecuteCommandFailure as error:
+            return self.failed(identifier, error)
+        else:
+            return self.succeeded(identifier)
+
+    def dispatch_or_raise(self, identifier, incremental,
+                          stdout=sys.stdout, stderr=sys.stderr):
+        time.sleep(2)
+        action_result = self.dispatch(identifier, incremental=incremental,
+                                      stdout=stdout, stderr=stderr)
+        time.sleep(2)
+        if action_result.result not in [ResultEnum.PASS,
+                                        ResultEnum.XFAIL]:
+            raise EarlyExit(action_result)
+        return action_result
+
+    def build_incremental(self, identifier, commits, stdout=sys.stdout):
+        if os.path.exists(self.incr_path):
+            shutil.rmtree(self.incr_path)
+        os.makedirs(self.incr_path)
+        prev = None
+        seq = 0
+        action_result = ActionResult(Result.PASS, "")
+        for commit in commits:
+            sha = commit
+            stats = None
+            if type(commit) is dict:
+                sha = commit['commit']
+                stats = commit.get('stats', None)
+            proj = self.project['path']
+            ident = "%s-%03d-%.7s" % (identifier, seq, sha)
+            if prev is None:
+                common.debug_print("Doing full build #%03d of %s: %.7s" %
+                                   (seq, proj, sha), stderr=stdout)
+                self.checkout_sha(sha, stdout=stdout, stderr=stdout)
+                action_result = self.dispatch_or_raise(ident, incremental=False,
+                                                       stdout=stdout, stderr=stdout)
+                self.save_build_state(seq, 'full', sha, None, stdout=stdout)
+            else:
+                common.debug_print("Doing incr build #%d of %s: %.7s -> %.7s" %
+                                   (seq, proj, prev, sha), stderr=stdout)
+                common.git_checkout(sha, self.proj_path, stdout=stdout, stderr=stdout)
+                common.git_submodule_update(self.proj_path, stdout=stdout, stderr=stdout)
+                action_result = self.dispatch_or_raise(ident, incremental=True,
+                                                       stdout=stdout, stderr=stdout)
+                self.save_build_state(seq, 'incr', sha, stats, stdout=stdout)
+            prev = sha
+            seq += 1
+        return action_result
