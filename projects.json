@@ -1418,8 +1418,7 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4820",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4820"
+                "master": "https://bugs.swift.org/browse/SR-4820"
               }
             }
           }
