@@ -35,6 +35,42 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/AsyncNinja/AsyncNinja.git",
+    "path": "AsyncNinja",
+    "branch": "master",
+    "incremental": {
+      "3.1": {
+        "commits": [
+          "91fc483dcfe83f7238beb8f4d8ad692e79d5e1c1",
+          "52b27c451e5a1836fcad6dc649c0c478b84afb14",
+          "714164ddb2cd9806539d33dcab81baa4eabffb5c",
+          "d5328a92858d79809412d79e979b2401e7e53bd3",
+          "f0937974fb671d80cbe1c1d758de7412cdb1ea38",
+          "a889e24cb0b55facc9bc3d26044992ddf0970ca3",
+          "038574a9eb7315dbd2f7900c85ba6e68becce63f",
+          "38a27baf3523e4906d01f617ad4fbac387ac0769",
+          "3bc7267a092cff8448d84cedc635c49391a433e3",
+          "3b1b3b01a727d4950a37f2a7bad0cc079478a0f3",
+          "8f661f2eee1519054b97b0ca031d917cbc361748"
+        ]
+      }
+    },
+    "maintainer": "antonvmironov@gmail.com",
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "AsyncNinja.xcodeproj",
+        "scheme": "AsyncNinja",
+        "destination": "generic/platform=macOS",
+        "configuration": "Debug"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/ReactiveX/RxSwift.git",
     "path": "RxSwift",
     "branch": "master",
