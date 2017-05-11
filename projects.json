@@ -854,7 +854,6 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4855",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4855"
               }
             }
