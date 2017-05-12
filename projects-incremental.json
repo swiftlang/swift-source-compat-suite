@@ -71,6 +71,37 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/lyft/Kronos.git",
+    "path": "Kronos",
+    "branch": "master",
+    "maintainer": "Reflejo@gmail.com",
+    "incremental": {
+      "3.0": {
+        "commits": [
+          "6575f91858ff62d40f1467277e6a80ac5a62a439",
+          "684eb9dd972cfa2ae84b8a091b8bae5cb34875ce",
+          "d12f364166b995a65f217e79b64796eadb7f982a",
+          "3d357f1ddb81382b40f6b1f8288106e29cf5c244",
+          "4afd00daa15039279c55f2f436ebf1ac7a4fa61d",
+          "56bb7200af13151184a319a4826e64764adacdf2"
+        ]
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Kronos.xcodeproj",
+        "target": "Kronos",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/ReactiveX/RxSwift.git",
     "path": "RxSwift",
     "branch": "master",
