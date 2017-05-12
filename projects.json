@@ -1123,7 +1123,8 @@
             "3.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-4730",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4730"
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4730",
+                "swift-3.1-branch": "https://bugs.swift.org/browse/SR-4879"
               }
             }
           }
@@ -1154,7 +1155,9 @@
             "3.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-4730",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4730"
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4730",
+                "swift-3.1-branch": "https://bugs.swift.org/browse/SR-4879"
+              }
               }
             }
           }
