@@ -2073,7 +2073,17 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "rdar://problem/32222500",
+                "swift-4.0-branch": "rdar://problem/32222500"
+              }
+            }
+          }
+        }
       }
     ]
   }
