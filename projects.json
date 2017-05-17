@@ -96,56 +96,136 @@
         "project": "AsyncNinja.xcodeproj",
         "scheme": "AsyncNinja",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4854",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4854"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestXcodeProjectScheme",
         "project": "AsyncNinja.xcodeproj",
         "scheme": "AsyncNinja",
         "destination": "platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4854",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4854"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "AsyncNinja.xcodeproj",
         "scheme": "AsyncNinja",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4854",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4854"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestXcodeProjectScheme",
         "project": "AsyncNinja.xcodeproj",
         "scheme": "AsyncNinja",
         "destination": "platform=iOS Simulator,name=iPhone 5",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4854",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4854"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestXcodeProjectScheme",
         "project": "AsyncNinja.xcodeproj",
         "scheme": "AsyncNinja",
         "destination": "platform=iOS Simulator,name=iPhone 7",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4854",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4854"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "AsyncNinja.xcodeproj",
         "scheme": "AsyncNinja",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4854",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4854"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestXcodeProjectScheme",
         "project": "AsyncNinja.xcodeproj",
         "scheme": "AsyncNinja",
         "destination": "platform=tvOS Simulator,name=Apple TV 1080p",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4854",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4854"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "AsyncNinja.xcodeproj",
         "scheme": "AsyncNinja",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-4854",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4854"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildSwiftPackage",
@@ -417,72 +497,28 @@
         "project": "ReactiveExtensions.xcodeproj",
         "scheme": "ReactiveExtensions-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "<rdar://problem/30788078>",
-                "swift-4.0-branch": "<rdar://problem/30788078>",
-                "swift-3.1-branch": "<rdar://problem/30788078>"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "ReactiveExtensions.xcodeproj",
         "scheme": "ReactiveExtensions-TestHelpers-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "<rdar://problem/30788078>",
-                "swift-4.0-branch": "<rdar://problem/30788078>",
-                "swift-3.1-branch": "<rdar://problem/30788078>"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "ReactiveExtensions.xcodeproj",
         "scheme": "ReactiveExtensions-TestHelpers-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "<rdar://problem/30788078>",
-                "swift-4.0-branch": "<rdar://problem/30788078>",
-                "swift-3.1-branch": "<rdar://problem/30788078>"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "ReactiveExtensions.xcodeproj",
         "scheme": "ReactiveExtensions-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "<rdar://problem/30788078>",
-                "swift-4.0-branch": "<rdar://problem/30788078>",
-                "swift-3.1-branch": "<rdar://problem/30788078>"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       }
     ]
   },
@@ -1993,7 +2029,17 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "rdar://problem/32222500",
+                "swift-4.0-branch": "rdar://problem/32222500"
+              }
+            }
+          }
+        }
       }
     ]
   }

@@ -114,7 +114,10 @@ class XcodeTarget(ProjectTarget):
                       'ENABLE_BITCODE=NO',
                       'GCC_TREAT_WARNINGS_AS_ERRORS=0'])
         for setting, value in self._build_settings.iteritems():
-            command += ['%s=%s' % (setting, value)]
+            if setting == 'CONFIGURATION':
+                command += ['-configuration', value]
+            else:
+                command += ['%s=%s' % (setting, value)]
 
         return command
 
