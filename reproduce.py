@@ -62,6 +62,9 @@ def parse_args():
                         help='sandbox package build and test operations with '
                              'profile',
                         type=os.path.abspath)
+    parser.add_argument("--assertions",
+                        help='Build Swift with asserts',
+                        action='store_true')
     return parser.parse_args()
 
 
@@ -107,6 +110,8 @@ def main():
                        '--skip-ci-steps', '--skip-runner']
         if not should_clone:
             run_command += ['--skip-clone']
+        if args.assertions:
+            run_command += ['--assertions']
         common.check_execute(run_command, timeout=3600)
 
     # Build specified indexed project. Otherwise, build all indexed projects
