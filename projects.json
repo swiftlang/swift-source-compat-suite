@@ -1951,5 +1951,29 @@
         }
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/alexruperez/LaunchScreenSnapshot.git",
+    "path": "launchscreensnapshot",
+    "branch": "master",
+    "maintainer": "contact@alexruperez.com",
+    "compatibility": {
+      "3.1": {
+        "commit": "9af0557c932b69648ff5aa0c70b5468fdf65cb93"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "LaunchScreenSnapshot.xcworkspace",
+        "scheme": "iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      }
+    ]
   }
 ]
