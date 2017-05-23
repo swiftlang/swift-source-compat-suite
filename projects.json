@@ -1939,7 +1939,7 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
+        "configuration": "release"
       }
     ]
   }
