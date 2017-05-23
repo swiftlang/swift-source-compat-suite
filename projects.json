@@ -459,6 +459,54 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/kishikawakatsumi/KeychainAccess.git",
+    "path": "KeychainAccess",
+    "branch": "master",
+    "maintainer": "kishikawakatsumi@mac.com",
+    "compatibility": {
+      "3.0": {
+        "commit": "6e3d9679fd49c7ae8869454e76edf1306983c62c"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "KeychainAccess.xcworkspace",
+        "scheme": "KeychainAccess",
+        "destination": "platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "KeychainAccess.xcworkspace",
+        "scheme": "KeychainAccess",
+        "destination": "generic/platform=iOS",
+        "scheme": "KeychainAccess",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "KeychainAccess.xcworkspace",
+        "scheme": "KeychainAccess",
+        "destination": "generic/platform=tvOS",
+        "scheme": "KeychainAccess",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "KeychainAccess.xcworkspace",
+        "scheme": "KeychainAccess",
+        "destination": "generic/platform=watchOS",
+        "scheme": "KeychainAccess",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/kickstarter/Kickstarter-Prelude",
     "path": "Kickstarter-Prelude",
     "branch": "master",
