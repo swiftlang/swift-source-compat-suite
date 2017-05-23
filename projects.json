@@ -189,6 +189,76 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/JohnEstropia/CoreStore",
+    "path": "CoreStore",
+    "branch": "master",
+    "maintainer": "rommel.estropia@gmail.com",
+    "compatibility": {
+      "3.1": {
+        "commit": "42c28b064ad87ef783dccdeea7c518f6a0ae3b9d"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "CoreStore.xcworkspace",
+        "scheme": "CoreStore iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "CoreStore.xcworkspace",
+        "scheme": "CoreStore OSX",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "CoreStore.xcworkspace",
+        "scheme": "CoreStore tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "CoreStore.xcworkspace",
+        "scheme": "CoreStore watchOS",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "CoreStore.xcworkspace",
+        "scheme": "CoreStoreDemo",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "CoreStore.xcworkspace",
+        "scheme": "CoreStore iOS",
+        "destination": "platform=iOS Simulator,name=iPhone 7"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "CoreStore.xcworkspace",
+        "scheme": "CoreStore OSX",
+        "destination": "platform=macOS"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "CoreStore.xcworkspace",
+        "scheme": "CoreStore tvOS",
+        "destination": "platform=tvOS Simulator,name=Apple TV 1080p"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/Bouke/DNS.git",
     "path": "DNS",
     "branch": "master",
