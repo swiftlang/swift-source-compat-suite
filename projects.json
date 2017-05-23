@@ -1940,15 +1940,6 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "rdar://problem/32222500"
-              }
-            }
-          }
-        }
       }
     ]
   }
