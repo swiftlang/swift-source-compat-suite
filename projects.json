@@ -817,6 +817,55 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/Moya/Moya.git",
+    "path": "Moya",
+    "branch": "master",
+    "compatibility": {
+      "3.1": {
+        "commit": "5fd1ac2e54db91e1e30194eb8c74911a5df20ee2"
+      }
+    },
+    "maintainer": "ash@ashfurrow.com",
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/Bouke/NetService.git",
+    "path": "NetService",
+    "branch": "master",
+    "maintainer": "bouke@haarsma.eu",
+    "compatibility": {
+      "3.1": {
+        "commit": "4c20bd99c56f6ba370faf1d014599f7149fb834d"
+      }
+    },
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/PerfectlySoft/Perfect.git",
     "path": "Perfect",
     "branch": "master",
