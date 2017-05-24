@@ -229,7 +229,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4981"
+                "master": "https://bugs.swift.org/browse/SR-4981",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4981"
               }
             }
           }
@@ -245,7 +246,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4981"
+                "master": "https://bugs.swift.org/browse/SR-4981",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4981"
               }
             }
           }
@@ -261,7 +263,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4981"
+                "master": "https://bugs.swift.org/browse/SR-4981",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4981"
               }
             }
           }
@@ -277,7 +280,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4981"
+                "master": "https://bugs.swift.org/browse/SR-4981",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4981"
               }
             }
           }
