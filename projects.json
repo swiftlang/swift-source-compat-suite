@@ -822,7 +822,7 @@
     "branch": "master",
     "compatibility": {
       "3.1": {
-        "commit": "5fd1ac2e54db91e1e30194eb8c74911a5df20ee2"
+        "commit": "c4e58ee23db4aaec944505a2f7b001a89b602d7d"
       }
     },
     "maintainer": "ash@ashfurrow.com",
