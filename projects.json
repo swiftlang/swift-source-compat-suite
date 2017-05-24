@@ -2124,7 +2124,7 @@
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "LaunchScreenSnapshot.xcworkspace",
-        "scheme": "iOS",
+        "scheme": "LaunchScreenSnapshot",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
       }
