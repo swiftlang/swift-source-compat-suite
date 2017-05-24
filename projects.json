@@ -752,6 +752,30 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/kelvin13/maxpng.git",
+    "path": "MaxPNG",
+    "branch": "master",
+    "maintainer": "kelvin13ma@gmail.com",
+    "compatibility": {
+      "3.1": {
+        "commit": "8c8f735b4fb0a2aea792aa16fce0770dc5a3dd4e"
+      }
+    },
+    "platforms": [
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/Moya/Moya.git",
     "path": "Moya",
     "branch": "master",
