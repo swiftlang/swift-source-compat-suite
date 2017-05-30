@@ -2150,10 +2150,7 @@
     ],
     "actions": [
       {
-        "action": "BuildXcodeProjectTarget",
-        "project": "URBNJSONDecodableSPM.xcodeproj",
-        "target": "URBNJSONDecodableSPM",
-        "destination": "generic/platform=iOS",
+        "action": "BuildSwiftPackage",
         "configuration": "Release"
       }
     ]
