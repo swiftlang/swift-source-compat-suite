@@ -724,7 +724,7 @@
     "maintainer": "bouke@haarsma.eu",
     "compatibility": {
       "3.0": {
-        "commit": "fc67970caccfd23b0da802d74dcacbe8db7f1e90"
+        "commit": "0179286cd571fa49a7d95cbcafa725cba9e11207"
       }
     },
     "platforms": [
@@ -733,17 +733,7 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "rdar://problem/32185310",
-                "swift-4.0-branch": "rdar://problem/32185310"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       },
       {
         "action": "TestSwiftPackage"
