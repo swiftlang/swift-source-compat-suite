@@ -121,6 +121,7 @@ def main():
         '--swift-branch', args.swift_branch,
         '--swift-version', '3',
         '--include-actions', 'action.startswith("Build")',
+        '--verbose',
     ]
     if args.swiftc:
         runner_command += ['--swiftc', args.swiftc]
