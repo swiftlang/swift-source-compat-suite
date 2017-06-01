@@ -82,7 +82,7 @@
     "branch": "master",
     "compatibility": {
       "3.1": {
-        "commit": "8f661f2eee1519054b97b0ca031d917cbc361748"
+        "commit": "ca1eab6e3bf5588fad50f122c3294fef2f9aa79a"
       }
     },
     "maintainer": "antonvmironov@gmail.com",
