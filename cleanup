@@ -27,6 +27,8 @@ def parse_args():
     parser.add_argument('swift_branch')
     parser.add_argument('--skip-ci-steps',
                         action='store_true')
+    parser.add_argument('--cleanup-cache',
+                        action='store_true')
     return parser.parse_args()
 
 
@@ -51,6 +53,9 @@ def main():
         'swift-corelibs-libdispatch',
         'swift-corelibs-xctest',
     ]
+
+    if args.cleanup_cache:
+        paths.append('project_cache')
 
     with open('/dev/null', 'w') as devnull:
         common.debug_print('Deleting build and source directories...')
