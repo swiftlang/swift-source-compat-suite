@@ -46,9 +46,7 @@ def main():
                 args.swift_branch,
                 args.sandbox_profile_xcodebuild,
                 args.sandbox_profile_package,
-                args.add_swift_flags,
-                args.check_stats,
-                args.show_stats
+                args.add_swift_flags
             ),
         ),
         index

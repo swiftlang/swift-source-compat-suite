@@ -223,12 +223,7 @@
           "cd89737d3d5306124e91c357b66cde274a3269b4",
           "3ce08c3b83caf88f79bdb9392e291f800830afb4",
           "5c0d10516d473e041f73b957c4137d5a536390cb",
-          {
-            "commit": "fddfaa399877fb83596df9380d8fb531aa40d7ae",
-            "stats": {
-              "Driver.DriverDepTopLevel": 8
-            }
-          },
+          "fddfaa399877fb83596df9380d8fb531aa40d7ae",
           "101f9441e47381cbe05dec50d1712e170d945d23",
           "4bfde847a382fef9e9b5809441da9b75ac29e32f"
         ]

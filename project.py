@@ -203,8 +203,7 @@ def clean_swift_package(path, swiftc, sandbox_profile,
 
 def build_swift_package(path, swiftc, configuration, sandbox_profile,
                         stdout=sys.stdout, stderr=sys.stderr,
-                        incremental=False,
-                        stats_path=None):
+                        incremental=False):
     """Build a Swift package manager project."""
     swift = swiftc[:-1]
     if not incremental:
@@ -214,9 +213,6 @@ def build_swift_package(path, swiftc, configuration, sandbox_profile,
     env['SWIFT_EXEC'] = swiftc
     command = [swift, 'build', '-C', path, '--verbose',
                '--configuration', configuration]
-    if stats_path is not None:
-        command += ['-Xswiftc', '-stats-output-dir',
-                    '-Xswiftc', stats_path]
     if (swift_branch not in ['swift-3.0-branch',
                              'swift-3.1-branch']):
         command.insert(2, '--disable-sandbox')
@@ -228,8 +224,7 @@ def build_swift_package(path, swiftc, configuration, sandbox_profile,
 
 def test_swift_package(path, swiftc, sandbox_profile,
                        stdout=sys.stdout, stderr=sys.stderr,
-                       incremental=False,
-                       stats_path=None):
+                       incremental=False):
     """Test a Swift package manager project."""
     swift = swiftc[:-1]
     if not incremental:
@@ -237,9 +232,6 @@ def test_swift_package(path, swiftc, sandbox_profile,
     env = os.environ
     env['SWIFT_EXEC'] = swiftc
     command = [swift, 'test', '-C', path, '--verbose']
-    if stats_path is not None:
-        command += ['-Xswiftc', '-stats-output-dir',
-                    '-Xswiftc', stats_path]
     return common.check_execute(command, timeout=3600,
                                 sandbox_profile=sandbox_profile,
                                 stdout=stdout, stderr=stderr,
@@ -274,15 +266,8 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
              sandbox_profile_xcodebuild, sandbox_profile_package,
              added_swift_flags, should_strip_resource_phases=False,
              stdout=sys.stdout, stderr=sys.stderr,
-             incremental=False,
-             stats_path=None):
+             incremental=False):
     """Call functions corresponding to actions."""
-
-    if stats_path is not None:
-        if os.path.exists(stats_path):
-            shutil.rmtree(stats_path)
-        common.check_execute(['mkdir', '-p', stats_path],
-                             stdout=stdout, stderr=stderr)
 
     if action['action'] == 'BuildSwiftPackage':
         return build_swift_package(os.path.join(root_path, repo['path']),
@@ -290,15 +275,13 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
                                    action['configuration'],
                                    sandbox_profile_package,
                                    stdout=stdout, stderr=stderr,
-                                   incremental=incremental,
-                                   stats_path=stats_path)
+                                   incremental=incremental)
     elif action['action'] == 'TestSwiftPackage':
         return test_swift_package(os.path.join(root_path, repo['path']),
                                   swiftc,
                                   sandbox_profile_package,
                                   stdout=stdout, stderr=stderr,
-                                  incremental=incremental,
-                                  stats_path=stats_path)
+                                  incremental=incremental)
     elif re.match(r'^(Build|Test)Xcode(Workspace|Project)(Scheme|Target)$',
                   action['action']):
         match = re.match(
@@ -315,8 +298,6 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
         if swift_version:
             other_swift_flags += ['-swift-version', swift_version]
             build_settings['SWIFT_VERSION'] = swift_version
-        if stats_path is not None:
-            other_swift_flags += ['-stats-output-dir', stats_path]
         if added_swift_flags:
             other_swift_flags.append(added_swift_flags)
         if other_swift_flags:
@@ -438,12 +419,6 @@ def add_arguments(parser):
     parser.add_argument("--test-incremental",
                         help='test incremental-mode over multiple commits',
                         action='store_true')
-    parser.add_argument("--check-stats",
-                        help='collect stats and compare to expectations',
-                        action='store_true')
-    parser.add_argument("--show-stats",
-                        metavar='PATTERN',
-                        help='report stats matching PATTERN')
     parser.add_argument("--add-swift-flags",
                         metavar="FLAGS",
                         help='add flags to each Swift invocation',
@@ -1008,50 +983,6 @@ def have_same_trees(full, incr, d):
         ok = have_same_trees(full, incr, sub) and ok
     return ok
 
-class StatsSummary:
-
-    def __init__(self):
-        self.commits = {}
-
-    def add_stats_from_json(self, seq, sha, j):
-        key = (seq, sha)
-        if key not in self.commits:
-            self.commits[key] = {}
-        for (k, v) in j.items():
-            if k.startswith("time."):
-                continue
-            e = self.commits[key].get(k, 0)
-            self.commits[key][k] = int(v) + e
-
-    def check_against_expected(self, seq, sha, expected):
-        key = (seq, sha)
-        if key in self.commits:
-            for (k, ev) in expected.items():
-                if k in self.commits[key]:
-                    gv = self.commits[key][k]
-                    if ev < gv:
-                        message = ("Expected %s of %s, got %s" %
-                                   (k, str(ev), str(gv)) )
-                        raise EarlyExit(ActionResult(Result.FAIL, message))
-
-    def add_stats_from_file(self, seq, sha, f):
-        with open(f) as fp:
-            self.add_stats_from_json(seq, sha, json.load(fp))
-
-    def add_stats_from_dir(self, seq, sha, path):
-        for root, dirs, files in os.walk(path):
-            for f in files:
-                if not f.endswith(".json"):
-                    continue
-                self.add_stats_from_file(seq, sha, os.path.join(root, f))
-
-    def dump(self, pattern):
-        return json.dumps([ {"commit": sha,
-                             "stats": { k: v for (k, v) in self.commits[(seq, sha)].items()
-                                        if re.match(pattern, k) } }
-                            for (seq, sha) in sorted(self.commits.keys()) ],
-                          sort_keys=False,
-                          indent=2)
 
 class IncrementalActionBuilder(ActionBuilder):
 
@@ -1059,8 +990,6 @@ class IncrementalActionBuilder(ActionBuilder):
                  sandbox_profile_xcodebuild,
                  sandbox_profile_package,
                  added_swift_flags,
-                 check_stats,
-                 show_stats,
                  project, action):
         super(IncrementalActionBuilder,
               self).__init__(swiftc, swift_version, swift_branch,
@@ -1070,15 +999,8 @@ class IncrementalActionBuilder(ActionBuilder):
                              skip_clean=True,
                              project=project,
                              action=action)
-        self.check_stats = check_stats
-        self.show_stats = show_stats
-        self.stats_path = None
-        self.stats_summ = None
         self.proj_path = os.path.join(self.root_path, self.project['path'])
         self.incr_path = self.proj_path + "-incr"
-        if self.check_stats or (self.show_stats is not None):
-            self.stats_path = os.path.join(self.proj_path, "swift-stats")
-            self.stats_summ = StatsSummary()
 
     def curr_build_state_path(self):
         if self.action['action'] == 'BuildSwiftPackage':
@@ -1111,10 +1033,6 @@ class IncrementalActionBuilder(ActionBuilder):
         return os.path.join(self.incr_path, ("build-state-%03d-%s-%.7s" %
                                              (seq, flav, sha)))
 
-    def saved_build_stats_path(self, seq, flav, sha):
-        return os.path.join(self.incr_path, ("build-stats-%03d-%s-%.7s" %
-                                             (seq, flav, sha)))
-
     def restore_saved_build_state(self, seq, flav, sha, stdout=sys.stdout):
         src = self.saved_build_state_path(seq, flav, sha)
         dst = self.curr_build_state_path()
@@ -1125,7 +1043,7 @@ class IncrementalActionBuilder(ActionBuilder):
             shutil.rmtree(dst)
         shutil.copytree(src, dst, symlinks=True)
 
-    def save_build_state(self, seq, flav, sha, stats, stdout=sys.stdout):
+    def save_build_state(self, seq, flav, sha, stdout=sys.stdout):
         src = self.curr_build_state_path()
         dst = self.saved_build_state_path(seq, flav, sha)
         proj = self.project['path']
@@ -1134,17 +1052,6 @@ class IncrementalActionBuilder(ActionBuilder):
         if os.path.exists(dst):
             shutil.rmtree(dst)
         shutil.copytree(src, dst, symlinks=True)
-        if self.stats_summ is not None:
-            self.stats_summ.add_stats_from_dir(seq, sha, self.stats_path)
-            src = self.stats_path
-            dst = self.saved_build_stats_path(seq, flav, sha)
-            common.debug_print("Saving %s stats #%d of %s to %s" %
-                               (flav, seq, proj, dst), stderr=stdout)
-            if os.path.exists(dst):
-                shutil.rmtree(dst)
-            shutil.copytree(src, dst, symlinks=True)
-            if stats is not None and self.check_stats:
-                self.stats_summ.check_against_expected(seq, sha, stats)
 
     def check_full_vs_incr(self, seq, sha, stdout=sys.stdout):
         full = self.saved_build_state_path(seq, 'full', sha)
@@ -1182,9 +1089,6 @@ class IncrementalActionBuilder(ActionBuilder):
                                                            stdout=stdout)
         except EarlyExit as error:
             action_result = error.value
-        if self.show_stats is not None:
-            common.debug_print("Stats summary:", stderr=stdout)
-            common.debug_print(self.stats_summ.dump(self.show_stats), stderr=stdout)
         return action_result
 
     def dispatch(self, identifier, incremental, stdout=sys.stdout, stderr=sys.stderr):
@@ -1197,8 +1101,7 @@ class IncrementalActionBuilder(ActionBuilder):
                      self.added_swift_flags,
                      should_strip_resource_phases=False,
                      stdout=stdout, stderr=stderr,
-                     incremental=incremental,
-                     stats_path=self.stats_path)
+                     incremental=incremental)
         except common.ExecuteCommandFailure as error:
             return self.failed(identifier, error)
         else:
@@ -1222,12 +1125,7 @@ class IncrementalActionBuilder(ActionBuilder):
         prev = None
         seq = 0
         action_result = ActionResult(Result.PASS, "")
-        for commit in commits:
-            sha = commit
-            stats = None
-            if type(commit) is dict:
-                sha = commit['commit']
-                stats = commit.get('stats', None)
+        for sha in commits:
             proj = self.project['path']
             ident = "%s-%03d-%.7s" % (identifier, seq, sha)
             if prev is None:
@@ -1244,7 +1142,7 @@ class IncrementalActionBuilder(ActionBuilder):
                 common.git_submodule_update(self.proj_path, stdout=stdout, stderr=stdout)
                 action_result = self.dispatch_or_raise(ident, incremental=True,
                                                        stdout=stdout, stderr=stdout)
-                self.save_build_state(seq, 'incr', sha, stats, stdout=stdout)
+                self.save_build_state(seq, 'incr', sha, stdout=stdout)
             prev = sha
             seq += 1
         return action_result
