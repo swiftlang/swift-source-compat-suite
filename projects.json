@@ -2142,7 +2142,7 @@
     "maintainer": "lsykes@urbn.com",
     "compatibility": {
       "3.1": {
-        "commit": "09ba73fc64cc1023ea8970a8f2e662dfe6053ba7"
+        "commit": "6dc998583b170395e8ba03cacabe1ea44256b1bd"
       }
     },
     "platforms": [
