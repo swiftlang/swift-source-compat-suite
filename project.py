@@ -189,7 +189,7 @@ def get_sdk_platform_path(destination, stdout=sys.stdout, stderr=sys.stderr):
 def clean_swift_package(path, swiftc, sandbox_profile,
                         stdout=sys.stdout, stderr=sys.stderr):
     """Clean a Swift package manager project."""
-    swift = swiftc[:-1]
+    swift = os.path.join(os.path.dirname(swiftc), 'swift')
     if swift_branch == 'swift-3.0-branch':
         command = [swift, 'build', '-C', path, '--clean']
     else:
@@ -206,7 +206,7 @@ def build_swift_package(path, swiftc, configuration, sandbox_profile,
                         added_swift_flags=None,
                         incremental=False):
     """Build a Swift package manager project."""
-    swift = swiftc[:-1]
+    swift = os.path.join(os.path.dirname(swiftc), 'swift')
     if not incremental:
         clean_swift_package(path, swiftc, sandbox_profile,
                             stdout=stdout, stderr=stderr)
@@ -231,7 +231,7 @@ def test_swift_package(path, swiftc, sandbox_profile,
                        added_swift_flags=None,
                        incremental=False):
     """Test a Swift package manager project."""
-    swift = swiftc[:-1]
+    swift = os.path.join(os.path.dirname(swiftc), 'swift')
     if not incremental:
         clean_swift_package(path, swiftc, sandbox_profile)
     env = os.environ
