@@ -59,6 +59,9 @@ def parse_args():
     parser.add_argument("--assertions",
                         help='Build Swift with asserts',
                         action='store_true')
+    parser.add_argument("--test",
+                        help='Only run test actions',
+                        action='store_true')
     parser.add_argument("--test-incremental",
                         help='Test incremental-mode over multiple commits',
                         action='store_true')
@@ -111,18 +114,39 @@ def get_sandbox_profile_flags():
     return sandbox_flags
 
 
+def get_sandbox_profile_flags_test():
+    sandbox_flags = []
+    if platform.system() == 'Darwin':
+        sandbox_flags += [
+            '--sandbox-profile-xcodebuild',
+            '../../../workspace-private/swift-source-compat-suite-sandbox/sandbox_xcodebuild.sb',
+            '--sandbox-profile-package',
+            '../../../workspace-private/swift-source-compat-suite-sandbox/sandbox_test.sb'
+        ]
+    else:
+        raise common.UnsupportedPlatform
+    return sandbox_flags
+
+
 def execute_runner(workspace, args):
     swiftc_path = get_swiftc_path(workspace, args.swiftc)
+    if args.test:
+        action_filter = 'action.startswith("TestSwiftPackage")'
+    else:
+        action_filter = 'action.startswith("Build")'
     runner_command = [
         './runner.py',
         '--swiftc', swiftc_path,
         '--projects', args.projects,
         '--swift-version', '3',
-        '--include-actions', 'action.startswith("Build")',
+        '--include-actions', action_filter,
         '--swift-branch', args.swift_branch
     ]
     if args.sandbox:
-        runner_command += get_sandbox_profile_flags()
+        if args.test:
+            runner_command += get_sandbox_profile_flags_test()
+        else:
+            runner_command += get_sandbox_profile_flags()
     if args.verbose:
         runner_command += ["--verbose"]
     common.check_execute(runner_command, timeout=9999999)
