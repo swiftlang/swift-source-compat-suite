@@ -35,6 +35,73 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/AsyncNinja/AsyncNinja.git",
+    "path": "AsyncNinja",
+    "branch": "master",
+    "incremental": {
+      "3.1": {
+        "commits": [
+          "91fc483dcfe83f7238beb8f4d8ad692e79d5e1c1",
+          "52b27c451e5a1836fcad6dc649c0c478b84afb14",
+          "714164ddb2cd9806539d33dcab81baa4eabffb5c",
+          "d5328a92858d79809412d79e979b2401e7e53bd3",
+          "f0937974fb671d80cbe1c1d758de7412cdb1ea38",
+          "a889e24cb0b55facc9bc3d26044992ddf0970ca3",
+          "038574a9eb7315dbd2f7900c85ba6e68becce63f",
+          "38a27baf3523e4906d01f617ad4fbac387ac0769",
+          "3bc7267a092cff8448d84cedc635c49391a433e3",
+          "3b1b3b01a727d4950a37f2a7bad0cc079478a0f3",
+          "8f661f2eee1519054b97b0ca031d917cbc361748"
+        ]
+      }
+    },
+    "maintainer": "antonvmironov@gmail.com",
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "AsyncNinja.xcodeproj",
+        "scheme": "AsyncNinja",
+        "destination": "generic/platform=macOS",
+        "configuration": "Debug"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/lyft/Kronos.git",
+    "path": "Kronos",
+    "branch": "master",
+    "maintainer": "Reflejo@gmail.com",
+    "incremental": {
+      "3.0": {
+        "commits": [
+          "6575f91858ff62d40f1467277e6a80ac5a62a439",
+          "684eb9dd972cfa2ae84b8a091b8bae5cb34875ce",
+          "d12f364166b995a65f217e79b64796eadb7f982a",
+          "3d357f1ddb81382b40f6b1f8288106e29cf5c244",
+          "4afd00daa15039279c55f2f436ebf1ac7a4fa61d",
+          "56bb7200af13151184a319a4826e64764adacdf2"
+        ]
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Kronos.xcodeproj",
+        "target": "Kronos",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/ReactiveX/RxSwift.git",
     "path": "RxSwift",
     "branch": "master",
@@ -156,12 +223,7 @@
           "cd89737d3d5306124e91c357b66cde274a3269b4",
           "3ce08c3b83caf88f79bdb9392e291f800830afb4",
           "5c0d10516d473e041f73b957c4137d5a536390cb",
-          {
-            "commit": "fddfaa399877fb83596df9380d8fb531aa40d7ae",
-            "stats": {
-              "Driver.DriverDepTopLevel": 8
-            }
-          },
+          "fddfaa399877fb83596df9380d8fb531aa40d7ae",
           "101f9441e47381cbe05dec50d1712e170d945d23",
           "4bfde847a382fef9e9b5809441da9b75ac29e32f"
         ]
@@ -174,6 +236,40 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "debug"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/malcommac/SwiftDate",
+    "path": "SwiftDate",
+    "branch": "master",
+    "maintainer": "me@danielemargutti.com",
+    "incremental": {
+      "3.0": {
+        "commits": [
+          "5ad817a5ae0cdf9e71cf599ad96becc1572545b7",
+          "f1f16721f34f36798279012213d25942e60593ee",
+          "63315c500cf451fe40ad49a18e77ec63112c2cdd",
+          "03935e9f4c7813e5ebb9b1ae3887ef9ca19a9833",
+          "aba23f2ed024516ee615e89fe0e6d9cab993dbc4",
+          "30e5198c6f3d8846cb52725cbf390b85fb2bbabf",
+          "edcbfd20e0c727d90743168af82029425799e46b",
+          "96a2346501bb597bbcb1b4156ba3a34a49a5194f",
+          "b8a6ace0b4a419d377886615ece14a3f259323fc"
+        ]
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "SwiftDate/SwiftDate.xcodeproj",
+        "scheme": "SwiftDate_macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Debug"
       }
     ]
   }
