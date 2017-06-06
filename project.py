@@ -303,9 +303,11 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
         )
 
         build_settings = {
-            'CONFIGURATION': action['configuration'],
-            'SWIFT_EXEC': swiftc,
+            'SWIFT_EXEC': swiftc
         }
+
+        if 'configuration' in action:
+            build_settings['CONFIGURATION'] = action['configuration']
 
         other_swift_flags = []
         if swift_version:
