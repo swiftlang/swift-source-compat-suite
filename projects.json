@@ -102,8 +102,7 @@
         "action": "TestXcodeProjectScheme",
         "project": "AsyncNinja.xcodeproj",
         "scheme": "AsyncNinja",
-        "destination": "platform=macOS",
-        "configuration": "Release"
+        "destination": "platform=macOS"
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -116,15 +115,13 @@
         "action": "TestXcodeProjectScheme",
         "project": "AsyncNinja.xcodeproj",
         "scheme": "AsyncNinja",
-        "destination": "platform=iOS Simulator,name=iPhone 5",
-        "configuration": "Release"
+        "destination": "platform=iOS Simulator,name=iPhone 5"
       },
       {
         "action": "TestXcodeProjectScheme",
         "project": "AsyncNinja.xcodeproj",
         "scheme": "AsyncNinja",
-        "destination": "platform=iOS Simulator,name=iPhone 7",
-        "configuration": "Release"
+        "destination": "platform=iOS Simulator,name=iPhone 7"
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -137,8 +134,7 @@
         "action": "TestXcodeProjectScheme",
         "project": "AsyncNinja.xcodeproj",
         "scheme": "AsyncNinja",
-        "destination": "platform=tvOS Simulator,name=Apple TV 1080p",
-        "configuration": "Release"
+        "destination": "platform=tvOS Simulator,name=Apple TV 1080p"
       },
       {
         "action": "BuildXcodeProjectScheme",
