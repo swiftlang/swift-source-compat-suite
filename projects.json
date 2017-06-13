@@ -185,6 +185,62 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/badoo/Chatto.git",
+    "path": "Chatto",
+    "branch": "master",
+    "maintainer": "a.p.schukin@gmail.com",
+    "compatibility": {
+      "3.1": {
+        "commit": "0eb7ac56b76ed5c1024b7035ed0e29f69c74c8e7"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Chatto.xcworkspace",
+        "scheme": "Chatto",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "Chatto.xcworkspace",
+        "scheme": "Chatto",
+        "destination": "platform=iOS Simulator,name=iPhone 7"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Chatto.xcworkspace",
+        "scheme": "ChattoAdditions",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "Chatto.xcworkspace",
+        "scheme": "ChattoAdditions",
+        "destination": "platform=iOS Simulator,name=iPhone 7"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "ChattoApp/ChattoApp.xcworkspace",
+        "scheme": "ChattoApp",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "ChattoApp/ChattoApp.xcworkspace",
+        "scheme": "ChattoApp",
+        "destination": "platform=iOS Simulator,name=iPhone 7"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/JohnEstropia/CoreStore",
     "path": "CoreStore",
     "branch": "master",
