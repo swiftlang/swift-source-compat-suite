@@ -2238,5 +2238,35 @@
         }
       }
     ]
-  }
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/jessesquires/JSQDataSourcesKit.git",
+    "path": "JSQDataSourcesKit",
+    "branch": "master",
+    "maintainer": "jesse@jessesquires.com",
+    "compatibility": {
+      "3.0": {
+        "commit": "b764e341713d67ab9c8160929f46e55ad1e2ca07"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "JSQDataSourcesKit.xcodeproj",
+        "target": "JSQDataSourcesKit-iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeProjectScheme",
+        "project": "JSQDataSourcesKit.xcodeproj",
+        "scheme": "JSQDataSourcesKitTests",
+        "destination": "platform=iOS Simulator,name=iPhone 6s"
+      },
+    ]
+  },
 ]
