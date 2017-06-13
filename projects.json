@@ -234,9 +234,9 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "",
-                "swift-3.1-branch": "",
-                "swift-4.0-branch": ""
+                "master": "TBD",
+                "swift-3.1-branch": "TBD",
+                "swift-4.0-branch": "TBD"
               }
             }
           }
