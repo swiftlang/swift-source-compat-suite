@@ -229,7 +229,18 @@
         "workspace": "ChattoApp/ChattoApp.xcworkspace",
         "scheme": "ChattoApp",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "",
+                "swift-3.1-branch": "",
+                "swift-4.0-branch": ""
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestXcodeWorkspaceScheme",
