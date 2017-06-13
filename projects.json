@@ -2120,6 +2120,27 @@
       }
     ]
   },
+   {
+    "repository": "Git",
+    "url": "https://github.com/urbn/URBNJSONDecodableSPM",
+    "path": "URBNJSONDecodableSPM",
+    "branch": "master",
+    "maintainer": "lsykes@urbn.com",
+    "compatibility": {
+      "3.1": {
+        "commit": "6dc998583b170395e8ba03cacabe1ea44256b1bd"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "Release"
+      }
+    ]
+  },
   {
     "repository": "Git",
     "url": "https://github.com/vapor/vapor.git",
