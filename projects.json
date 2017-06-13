@@ -2137,7 +2137,7 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "Release"
+        "configuration": "release"
       }
     ]
   },
