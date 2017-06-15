@@ -2266,7 +2266,7 @@
         "project": "JSQDataSourcesKit.xcodeproj",
         "scheme": "JSQDataSourcesKitTests",
         "destination": "platform=iOS Simulator,name=iPhone 6s"
-      },
+      }
     ]
-  },
+  }
 ]
