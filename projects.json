@@ -1212,7 +1212,17 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-5236",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5236"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
