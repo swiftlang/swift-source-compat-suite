@@ -2319,16 +2319,7 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-5264"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       }
     ]
   }
