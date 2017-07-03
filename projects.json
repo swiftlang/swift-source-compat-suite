@@ -415,7 +415,7 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/krzyzanowskim/swift.git",
+    "url": "https://github.com/krzyzanowskim/CryptoSwift.git",
     "path": "CryptoSwift",
     "branch": "master",
     "maintainer": "marcin@krzyzanowskim.com",
