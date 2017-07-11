@@ -277,15 +277,17 @@ def strip_resource_phases(repo_path, stdout=sys.stdout, stderr=sys.stderr):
 
 def dispatch(root_path, repo, action, swiftc, swift_version,
              sandbox_profile_xcodebuild, sandbox_profile_package,
-             added_swift_flags, should_strip_resource_phases=False,
+             added_swift_flags, build_config, should_strip_resource_phases=False,
              stdout=sys.stdout, stderr=sys.stderr,
              incremental=False):
     """Call functions corresponding to actions."""
 
     if action['action'] == 'BuildSwiftPackage':
+        if build_config == '':
+            build_config = action['configuration']
         return build_swift_package(os.path.join(root_path, repo['path']),
                                    swiftc,
-                                   action['configuration'],
+                                   build_config,
                                    sandbox_profile_package,
                                    stdout=stdout, stderr=stderr,
                                    added_swift_flags=added_swift_flags,
@@ -308,7 +310,11 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
             'SWIFT_EXEC': swiftc
         }
 
-        if 'configuration' in action:
+        if build_config == 'debug':
+            build_settings['CONFIGURATION'] = 'Debug'
+        elif build_config == 'release':
+            build_settings['CONFIGURATION'] = 'Release'
+        elif 'configuration' in action:
             build_settings['CONFIGURATION'] = action['configuration']
 
         other_swift_flags = []
@@ -443,8 +449,14 @@ def add_arguments(parser):
     parser.add_argument("--skip-clean",
                         help='skip all git and build clean steps before '
                              'building projects',
-                        action='store_true')
-
+                        action='store_true'),
+    parser.add_argument("--build-config",
+                        metavar="NAME",
+                        choices=['debug', 'release'],
+                        dest='build_config',
+                        help='specify "debug" or "release" to override '
+                             'the build configuration in the projects.json file',
+                        default='')
 
 def add_minimal_arguments(parser):
     """Add common arguments to parser."""
@@ -754,7 +766,7 @@ class ActionBuilder(Factory):
                  sandbox_profile_xcodebuild,
                  sandbox_profile_package,
                  added_swift_flags,
-                 skip_clean,
+                 skip_clean, build_config,
                  project, action):
         self.swiftc = swiftc
         self.swift_version = swift_version
@@ -768,6 +780,7 @@ class ActionBuilder(Factory):
         self.current_platform = platform.system()
         self.added_swift_flags = added_swift_flags
         self.skip_clean = skip_clean
+        self.build_config = build_config
         self.init()
 
     def init(self):
@@ -822,6 +835,7 @@ class ActionBuilder(Factory):
                      self.sandbox_profile_xcodebuild,
                      self.sandbox_profile_package,
                      self.added_swift_flags,
+                     self.build_config,
                      incremental=self.skip_clean,
                      stdout=stdout, stderr=stderr)
         except common.ExecuteCommandFailure as error:
@@ -860,6 +874,7 @@ class CompatActionBuilder(ActionBuilder):
                      self.sandbox_profile_xcodebuild,
                      self.sandbox_profile_package,
                      self.added_swift_flags,
+                     self.build_config,
                      incremental=self.skip_clean,
                      should_strip_resource_phases=True,
                      stdout=stdout, stderr=stderr)
@@ -1006,7 +1021,7 @@ class IncrementalActionBuilder(ActionBuilder):
     def __init__(self, swiftc, swift_version, swift_branch,
                  sandbox_profile_xcodebuild,
                  sandbox_profile_package,
-                 added_swift_flags,
+                 added_swift_flags, build_config,
                  project, action):
         super(IncrementalActionBuilder,
               self).__init__(swiftc, swift_version, swift_branch,
@@ -1014,6 +1029,7 @@ class IncrementalActionBuilder(ActionBuilder):
                              sandbox_profile_package,
                              added_swift_flags,
                              skip_clean=True,
+                             build_config=build_config,
                              project=project,
                              action=action)
         self.proj_path = os.path.join(self.root_path, self.project['path'])
@@ -1116,6 +1132,7 @@ class IncrementalActionBuilder(ActionBuilder):
                      self.sandbox_profile_xcodebuild,
                      self.sandbox_profile_package,
                      self.added_swift_flags,
+                     self.build_config,
                      should_strip_resource_phases=False,
                      stdout=stdout, stderr=stderr,
                      incremental=incremental)
