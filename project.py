@@ -283,7 +283,7 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
     """Call functions corresponding to actions."""
 
     if action['action'] == 'BuildSwiftPackage':
-        if build_config == '':
+        if not build_config:
             build_config = action['configuration']
         return build_swift_package(os.path.join(root_path, repo['path']),
                                    swiftc,
@@ -455,8 +455,7 @@ def add_arguments(parser):
                         choices=['debug', 'release'],
                         dest='build_config',
                         help='specify "debug" or "release" to override '
-                             'the build configuration in the projects.json file',
-                        default='')
+                             'the build configuration in the projects.json file')
 
 def add_minimal_arguments(parser):
     """Add common arguments to parser."""
