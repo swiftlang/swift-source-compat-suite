@@ -229,7 +229,16 @@
         "workspace": "ChattoApp/ChattoApp.xcworkspace",
         "scheme": "ChattoApp",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-5500"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestXcodeWorkspaceScheme",
