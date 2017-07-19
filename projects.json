@@ -415,6 +415,31 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/krzyzanowskim/CryptoSwift.git",
+    "path": "CryptoSwift",
+    "branch": "master",
+    "maintainer": "marcin@krzyzanowskim.com",
+    "compatibility": {
+        "3.1": {
+          "commit": "85c659ac534c5f8a72eb3b72488fb941e82763bd"
+        }
+    },
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/Bouke/DNS.git",
     "path": "DNS",
     "branch": "master",
