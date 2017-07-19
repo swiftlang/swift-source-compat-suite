@@ -19,7 +19,16 @@
         "project": "AMScrollingNavbar.xcodeproj",
         "target": "AMScrollingNavbar",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-5500"
+              }
+            }
+          }
+        }
       }
     ]
   },
