@@ -1326,6 +1326,9 @@
     "compatibility": {
       "3.0": {
         "commit": "fdc02f188228666d56966fd4f82fb596f14576f1"
+      },
+      "3.1": {
+        "commit": "afe5b34d384a86fec79766672b965de56005ba42"
       }
     },
     "platforms": [
@@ -1371,6 +1374,9 @@
     "compatibility": {
       "3.0": {
         "commit": "1556b846de627cac0b96291ec2835fbc349c5e21"
+      },
+      "3.1": {
+        "commit": "b9d5b350a446b85704396ce332a1f9e4960cfc6b"
       }
     },
     "platforms": [
