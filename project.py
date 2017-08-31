@@ -889,6 +889,9 @@ class CompatActionBuilder(ActionBuilder):
             ([scheme_target] if scheme_target else [])
         )
         for compatible_swift in self.project['compatibility'].keys()[:1]:
+            if len(self.project['compatibility'][compatible_swift]['commit']) != 40:
+                common.debug_print("ERROR: Commits must be 40 character SHA hashes")
+                exit(1)
             self.checkout_sha(
                 self.project['compatibility'][compatible_swift]['commit'],
                 stdout=stdout, stderr=stdout
