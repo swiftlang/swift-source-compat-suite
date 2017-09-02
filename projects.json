@@ -600,6 +600,36 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/jessesquires/JSQCoreDataKit.git",
+    "path": "JSQCoreDataKit",
+    "branch": "master",
+    "maintainer": "jesse@jessesquires.com",
+    "compatibility": {
+      "3.0": {
+        "commit": "5e8b8327fc87c008e718a2c1aa0a78b7eac16a53"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "JSQCoreDataKit.xcodeproj",
+        "target": "JSQCoreDataKit-iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeProjectScheme",
+        "project": "JSQCoreDataKit.xcodeproj",
+        "scheme": "JSQCoreDataKitTests",
+        "destination": "platform=iOS Simulator,name=iPhone 6s"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/kishikawakatsumi/KeychainAccess.git",
     "path": "KeychainAccess",
     "branch": "master",
