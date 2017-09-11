@@ -154,6 +154,31 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/igor-makarov/BeaconKit.git",
+    "path": "BeaconKit",
+    "branch": "master",
+    "maintainer": "igormaka@gmail.com",
+    "compatibility": {
+      "3.1": {
+        "commit": "1d2a69c6cb6d3850a9893374b2391ab749aaf414"
+      }
+    },
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "debug"
+      },
+      {
+        "action": "TestSwiftPackage",
+        "configuration": "debug"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/IBM-Swift/BlueSocket",
     "path": "BlueSocket",
     "branch": "master",
