@@ -1,0 +1,357 @@
+#!/usr/bin/env python
+# ===--- run --------------------------------------------------------------===
+#
+#  This source file is part of the Swift.org open source project
+#
+#  Copyright (c) 2014 - 2017 Apple Inc. and the Swift project authors
+#  Licensed under Apache License v2.0 with Runtime Library Exception
+#
+#  See https://swift.org/LICENSE.txt for license information
+#  See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
+#
+# ===----------------------------------------------------------------------===
+
+"""A run script to be executed as a pull-request test on Jenkins."""
+
+import argparse
+import os
+import platform
+import shutil
+import sys
+
+import common
+
+
+def setup_workspace(instance, workspace, args):
+    if args.clean:
+        shutil.rmtree(workspace)
+    if not os.path.exists(workspace):
+        os.makedirs(workspace)
+    swift = os.path.join(workspace, "swift")
+    if not os.path.exists(swift):
+        common.git_clone(args.url, swift, tree=args.swift_branch)
+    common.check_execute(['utils/update-checkout',
+                          '--clone', '--reset-to-remote',
+                          '--clean', '--scheme', args.swift_branch],
+                         cwd=swift)
+    if instance == 'new':
+        command_fetch = ['git', '-C', swift, 'fetch', 'origin',
+                         'pull/%d/merge' % args.setup_workspaces_for_pr]
+        common.check_execute(command_fetch)
+        common.git_checkout('FETCH_HEAD', swift)
+
+
+def validate_workspace(instance, workspace, args):
+    if not os.path.exists(workspace):
+        raise RuntimeError("Missing %s workspace dir %s"
+                           % (instance, workspace))
+    swift = os.path.join(workspace, "swift")
+    if not os.path.exists(swift):
+        raise RuntimeError("Missing swift checkout in workspace dir %s"
+                           % workspace)
+
+
+def main():
+    common.debug_print('** RUN PULL-REQUEST CPERF **')
+    os.chdir(os.path.dirname(__file__))
+
+    args = parse_args()
+    instances = ['old', 'new']
+    configs = ['debug', 'wmo-onone', 'release']
+
+    for instance in instances:
+        workspace = common.private_workspace(instance)
+
+        if args.setup_workspaces_for_pr:
+            setup_workspace(instance, workspace, args)
+        validate_workspace(instance, workspace, args)
+
+        if not args.skip_build:
+            build_swift_toolchain(workspace, args)
+
+        if not args.skip_runner:
+            execute_runner(instance, workspace, configs, args)
+
+
+def get_sandbox_profile_flags():
+    sandbox_flags = []
+    workspace = common.private_workspace('.')
+    sscss = os.path.join(workspace, "swift-source-compat-suite-sandbox")
+    if not os.path.exists(sscss):
+        raise RuntimeError("Missing sandbox dir %s" % sscss)
+
+    if platform.system() == 'Darwin':
+        sandbox_flags += [
+            '--sandbox-profile-xcodebuild',
+            os.path.join(sscss, 'sandbox_xcodebuild.sb'),
+            '--sandbox-profile-package',
+            os.path.join(sscss, 'sandbox_package.sb')
+        ]
+    elif platform.system() == 'Linux':
+        sandbox_flags += [
+            '--sandbox-profile-package',
+            os.path.join(sscss, 'sandbox_package_linux.profile')
+        ]
+    else:
+        raise common.UnsupportedPlatform
+    return sandbox_flags
+
+
+def get_swiftc_path(workspace):
+    if platform.system() == 'Darwin':
+        swiftc_path = os.path.join(workspace, 'build/compat_macos/install/toolchain/usr/bin/swiftc')
+    elif platform.system() == 'Linux':
+        swiftc_path = os.path.join(workspace, 'build/compat_linux/install/usr/bin/swiftc')
+    else:
+        raise common.UnsupportedPlatform
+    return swiftc_path
+
+
+def build_swift_toolchain(workspace, args):
+    if platform.system() == 'Darwin':
+        build_command = [
+            os.path.join(workspace, 'swift/utils/build-script'),
+            '--release',
+            '--no-assertions',
+            '--build-ninja',
+            '--llbuild',
+            '--swiftpm',
+            '--ios',
+            '--tvos',
+            '--watchos',
+            '--skip-build-benchmarks',
+            '--build-subdir=compat_macos',
+            '--compiler-vendor=apple',
+            '--',
+            '--darwin-install-extract-symbols',
+            '--darwin-toolchain-alias=swift',
+            '--darwin-toolchain-bundle-identifier=org.swift.compat-macos',
+            '--darwin-toolchain-display-name-short=Swift Development Snapshot'
+            '--darwin-toolchain-display-name=Swift Development Snapshot',
+            '--darwin-toolchain-name=swift-DEVELOPMENT-SNAPSHOT',
+            '--darwin-toolchain-version=3.999.999',
+            '--install-llbuild',
+            '--install-swift',
+            '--install-swiftpm',
+            '--install-destdir={}/build/compat_macos/install'.format(workspace),
+            '--install-prefix=/toolchain/usr',
+            '--install-symroot={}/build/compat_macos/symroot'.format(workspace),
+            '--installable-package={}/build/compat_macos/root.tar.gz'.format(workspace),
+            '--llvm-install-components=libclang;libclang-headers',
+            '--swift-install-components=compiler;clang-builtin-headers;stdlib;sdk-overlay;license;sourcekit-xpc-service;swift-remote-mirror;swift-remote-mirror-headers',
+            '--symbols-package={}/build/compat_macos/root-symbols.tar.gz'.format(workspace),
+            '--verbose-build',
+            '--reconfigure',
+        ]
+    elif platform.system() == 'Linux':
+        build_command = [
+            os.path.join(workspace, 'swift/utils/build-script'),
+            '--release',
+            '--no-assertions',
+            '--build-ninja',
+            '--llbuild',
+            '--swiftpm',
+            '--foundation',
+            '--libdispatch',
+            '--xctest',
+            '--skip-build-benchmarks',
+            '--build-subdir=compat_linux',
+            '--',
+            '--install-foundation',
+            '--install-libdispatch',
+            '--install-llbuild',
+            '--install-swift',
+            '--install-swiftpm',
+            '--install-xctest',
+            '--install-destdir={}/build/compat_linux/install'.format(workspace),
+            '--install-prefix=/usr',
+            '--installable-package={}/build/compat_linux/root.tar.gz'.format(workspace),
+            '--swift-install-components=autolink-driver;compiler;clang-builtin-headers;stdlib;swift-remote-mirror;sdk-overlay;license',
+            '--verbose-build',
+            '--reconfigure',
+        ]
+    else:
+        raise common.UnsupportedPlatform
+    common.check_execute(build_command, timeout=9999999)
+
+
+def get_projects(suite):
+    if suite == 'full':
+        return 'projects.json'
+    elif suite == 'smoketest':
+        return 'projects-cperf-smoketest.json'
+    else:
+        raise ValueError("Unknown suite: " + suite)
+
+
+def get_stats_dir(instance, variant):
+    return os.path.join(os.getcwd(),
+                        "-".join(["stats", instance, variant]))
+
+
+def get_actual_config_and_flags(config, stats):
+    flags = ("-j 1 -num-threads 1 -stats-output-dir '%s'" % stats)
+    # Handle wmo-onone as a pseudo-config
+    if config == 'wmo-onone':
+        flags += ' -wmo -Onone '
+        config = 'release'
+    return (config, flags)
+
+
+def get_variant(config, args):
+    return '-'.join([args.suite, args.swift_branch, config])
+
+
+def execute_runner(instance, workspace, configs, args):
+    projects = get_projects(args.suite)
+    swiftc_path = get_swiftc_path(workspace)
+    for config in configs:
+        variant = get_variant(config, args)
+        stats = get_stats_dir(instance, variant)
+        (config, flags) = get_actual_config_and_flags(config, stats)
+        runner_command = [
+            './runner.py',
+            '--swiftc', swiftc_path,
+            '--projects', projects,
+            '--build-config', config,
+            '--swift-version', '3',
+            '--include-actions', 'action.startswith("Build")',
+            '--swift-branch', args.swift_branch,
+            '--add-swift-flags', flags,
+        ]
+        if args.sandbox:
+            runner_command += get_sandbox_profile_flags()
+        if args.verbose:
+            runner_command += ["--verbose"]
+        common.check_execute(runner_command, timeout=9999999)
+
+
+def get_table_name(reference, subset, variant):
+    return os.path.join(
+        os.getcwd(),
+        ('-'.join([reference, subset, variant]) + '.md'))
+
+
+def get_baseline_name(variant):
+    return os.path.join(os.cwd(),
+                        'cperf-baselines', variant + '.csv')
+
+
+def analyze_results(instances, configs, args):
+    old_ws = common.private_workspace(instances[0])
+    process_stats = os.path.join(old_ws, 'swift/utils/process-stats-dir.py')
+    references = ('head', 'baseline')
+    subsets = ('counters', 'timers')
+
+    common_args = [process_stats,
+                   '--markdown', '--group-by-module',
+                   '--sort-by-delta-pct', '--sort-descending']
+
+    returncodes = []
+    for config in configs:
+        variant = get_variant(config, args)
+        stats_dirs = [get_stats_dir(i, variant)
+                      for i in instances]
+        returncodes.append(
+            common.execute(
+                common_args +
+                ['--output', get_table_name('head', 'counters', variant),
+                 '--exclude-timers',
+                 '--compare-stats-dirs'] + stats_dirs))
+        returncodes.append(
+            common.execute(
+                common_args +
+                ['--output', get_table_name('head', 'timers', variant),
+                 '--select-stat', 'driver.*user',
+                 '--compare-stats-dirs'] + stats_dirs))
+        baseline = get_baseline_name(variant)
+        if os.path.exists(baseline):
+            (_, new) = stats_dirs
+            returncodes.append(
+                common.execute(
+                    common_args +
+                    ['--output',
+                     get_table_name('baseline', 'counters', variant),
+                     '--exclude-timers',
+                     '--compare-to-csv-baseline', baseline, new]))
+            returncodes.append(
+                common.execute(
+                    common_args +
+                    ['--output',
+                     get_table_name('baseline', 'timers', variant),
+                     '--select-stat', 'driver.*user',
+                     '--compare-to-csv-baseline', baseline, new]))
+
+    out = args.output
+    regressions = any(x != 0 for x in returncodes)
+    if regressions:
+        args.output.write("**Regressions found (see below)**")
+    else:
+        args.output.write("No regressions above thresholds")
+    for config in configs:
+        variant = get_variant(config, args)
+        for reference in references:
+            out.write("\n")
+            out.write("## PR vs. %s (%s)\n" % (reference, variant))
+            out.write("\n")
+            for subset in subsets:
+                out.write("\n")
+                out.write("### PR vs. %s %s changes (%s)\n" %
+                          (reference, subset, variant))
+                out.write("\n")
+                table = get_table_name('baseline', 'counters', variant)
+                if os.path.exists(table):
+                    with open(table) as t:
+                        out.write(t.read())
+                    os.unlink(table)
+                else:
+                    out.write("No analysis available\n")
+
+    out.write('<details>')
+    for config in configs:
+        variant = get_variant(config, args)
+        baseline = get_baseline_name(variant)
+        if os.path.exists(baseline):
+            out.write("Last baseline commit on %s" %
+                      os.path.basename(baseline))
+            out.write("\n\n<pre>\n")
+            out.write(common.check_execute_output([
+                'git', 'log', '--pretty=medium', '-1', baseline
+            ]))
+            out.write("\n</pre>\n")
+        else:
+            out.write("No baseline file %s found" %
+                      os.path.basename(baseline))
+    out.write('</details>')
+
+    return regressions
+
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('swift_branch')
+    parser.add_argument('--sandbox', action='store_true')
+    parser.add_argument('--url', type=str,
+                        default="https://github.com/apple/swift")
+    parser.add_argument('--suite',
+                        metavar='(smoketest|full)',
+                        help='cperf suite to run',
+                        default='smoketest')
+    parser.add_argument("--verbose",
+                        action='store_true')
+    parser.add_argument('--skip-build',
+                        action='store_true')
+    parser.add_argument('--skip-runner',
+                        action='store_true')
+    parser.add_argument('--output',
+                        type=str,
+                        default='comment.md')
+    parser.add_argument('--clean',
+                        action='store_true')
+    parser.add_argument('--setup-workspaces-for-pr',
+                        type=int, default=None)
+    return parser.parse_args()
+
+
+if __name__ == '__main__':
+    sys.exit(main())
