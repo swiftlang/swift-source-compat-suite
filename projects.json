@@ -2226,7 +2226,8 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-5683"
+                "master": "https://bugs.swift.org/browse/SR-5683",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5683"
               }
             }
           }
@@ -2242,7 +2243,8 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-5683"
+                "master": "https://bugs.swift.org/browse/SR-5683",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5683"
               }
             }
           }
@@ -2258,7 +2260,8 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-5683"
+                "master": "https://bugs.swift.org/browse/SR-5683",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5683"
               }
             }
           }
@@ -2274,7 +2277,8 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-5683"
+                "master": "https://bugs.swift.org/browse/SR-5683",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5683"
               }
             }
           }
