@@ -56,7 +56,7 @@ def main():
     os.chdir(os.path.dirname(__file__))
 
     args = parse_args()
-    instances = ['old', 'new']
+    instances = ['new', 'old']
     configs = ['debug', 'wmo-onone', 'release']
 
     for instance in instances:
@@ -238,7 +238,7 @@ def get_baseline_name(variant):
 
 
 def analyze_results(instances, configs, args):
-    old_ws = common.private_workspace(instances[0])
+    old_ws = common.private_workspace('old')
     process_stats = os.path.join(old_ws, 'swift/utils/process-stats-dir.py')
     references = ('head', 'baseline')
     subsets = ('counters', 'timers')
