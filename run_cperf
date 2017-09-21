@@ -356,7 +356,7 @@ def parse_args():
     parser.add_argument('--skip-runner',
                         action='store_true')
     parser.add_argument('--output',
-                        type=str,
+                        type=argparse.FileType('wb', 0),
                         default='comment.md')
     parser.add_argument('--clean',
                         action='store_true')
