@@ -218,6 +218,9 @@ def execute_runner(instance, workspace, configs, args):
     for config in configs:
         variant = get_variant(config, args)
         stats = get_stats_dir(instance, variant)
+        if os.path.exists(stats):
+            shutil.rmtree(stats)
+        os.makedirs(stats)
         (config, flags) = get_actual_config_and_flags(config, stats)
         runner_command = [
             './runner.py',
