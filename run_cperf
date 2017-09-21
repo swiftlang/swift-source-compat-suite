@@ -243,7 +243,7 @@ def get_table_name(reference, subset, variant):
 
 
 def get_baseline_name(variant):
-    return os.path.join(os.cwd(),
+    return os.path.join(os.getcwd(),
                         'cperf-baselines', variant + '.csv')
 
 
