@@ -22,6 +22,11 @@ import sys
 import common
 
 
+def get_workspace_for_instance(instance, args):
+    return common.private_workspace(
+        os.path.join(args.swift_branch, instance))
+
+
 def setup_workspace(instance, workspace, args):
     if args.clean:
         shutil.rmtree(workspace)
@@ -60,7 +65,7 @@ def main():
     configs = ['debug', 'wmo-onone', 'release']
 
     for instance in instances:
-        workspace = common.private_workspace(instance)
+        workspace = get_workspace_for_instance(instance, args)
 
         if args.setup_workspaces_for_pr:
             setup_workspace(instance, workspace, args)
@@ -237,7 +242,7 @@ def get_baseline_name(variant):
 
 
 def analyze_results(instances, configs, args):
-    old_ws = common.private_workspace('old')
+    old_ws = get_workspace_for_instance('old', args)
     process_stats = os.path.join(old_ws, 'swift/utils/process-stats-dir.py')
     references = ('head', 'baseline')
     subsets = ('counters', 'timers')
