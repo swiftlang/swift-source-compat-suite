@@ -22,6 +22,10 @@ import sys
 import common
 
 
+OLD_INSTANCE = 'old'
+NEW_INSTANCE = 'new'
+
+
 def get_workspace_for_instance(instance, args):
     return common.private_workspace(
         os.path.join(args.swift_branch, instance))
@@ -39,7 +43,7 @@ def setup_workspace(instance, workspace, args):
                           '--clone', '--reset-to-remote',
                           '--clean', '--scheme', args.swift_branch],
                          cwd=swift)
-    if instance == 'new':
+    if instance == NEW_INSTANCE:
         command_fetch = ['git', '-C', swift, 'fetch', 'origin',
                          'pull/%d/merge' % args.setup_workspaces_for_pr]
         common.check_execute(command_fetch)
@@ -61,7 +65,7 @@ def main():
     os.chdir(os.path.dirname(__file__))
 
     args = parse_args()
-    instances = ['new', 'old']
+    instances = [NEW_INSTANCE, OLD_INSTANCE]
     configs = ['debug', 'wmo-onone', 'release']
 
     for instance in instances:
@@ -241,8 +245,8 @@ def get_baseline_name(variant):
                         'cperf-baselines', variant + '.csv')
 
 
-def analyze_results(instances, configs, args):
-    old_ws = get_workspace_for_instance('old', args)
+def analyze_results(configs, args):
+    old_ws = get_workspace_for_instance(OLD_INSTANCE, args)
     process_stats = os.path.join(old_ws, 'swift/utils/process-stats-dir.py')
     references = ('head', 'baseline')
     subsets = ('counters', 'timers')
@@ -254,37 +258,36 @@ def analyze_results(instances, configs, args):
     returncodes = []
     for config in configs:
         variant = get_variant(config, args)
-        stats_dirs = [get_stats_dir(i, variant)
-                      for i in instances]
+        sd_old = get_stats_dir(OLD_INSTANCE, variant)
+        sd_new = get_stats_dir(NEW_INSTANCE, variant)
         returncodes.append(
             common.execute(
                 common_args +
                 ['--output', get_table_name('head', 'counters', variant),
                  '--exclude-timers',
-                 '--compare-stats-dirs'] + stats_dirs))
+                 '--compare-stats-dirs', sd_old, sd_new]))
         returncodes.append(
             common.execute(
                 common_args +
                 ['--output', get_table_name('head', 'timers', variant),
                  '--select-stat', 'driver.*user',
-                 '--compare-stats-dirs'] + stats_dirs))
+                 '--compare-stats-dirs', sd_old, sd_new]))
         baseline = get_baseline_name(variant)
         if os.path.exists(baseline):
-            (_, new) = stats_dirs
             returncodes.append(
                 common.execute(
                     common_args +
                     ['--output',
                      get_table_name('baseline', 'counters', variant),
                      '--exclude-timers',
-                     '--compare-to-csv-baseline', baseline, new]))
+                     '--compare-to-csv-baseline', baseline, sd_new]))
             returncodes.append(
                 common.execute(
                     common_args +
                     ['--output',
                      get_table_name('baseline', 'timers', variant),
                      '--select-stat', 'driver.*user',
-                     '--compare-to-csv-baseline', baseline, new]))
+                     '--compare-to-csv-baseline', baseline, sd_new]))
 
     out = args.output
     regressions = any(x != 0 for x in returncodes)
