@@ -81,6 +81,8 @@ def main():
         if not args.skip_runner:
             execute_runner(instance, workspace, configs, args)
 
+    analyze_results(configs, args)
+
 
 def get_sandbox_profile_flags():
     sandbox_flags = []
