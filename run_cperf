@@ -16,6 +16,7 @@
 import argparse
 import os
 import platform
+import re
 import shutil
 import sys
 
@@ -245,6 +246,27 @@ def get_table_name(reference, subset, variant):
         ('-'.join([reference, subset, variant]) + '.md'))
 
 
+def get_config_desc(config):
+    return config.capitalize()
+
+
+def get_reference_desc(reference, config):
+    return ("PR vs. %s (%s)" %
+            (reference, config))
+
+
+def get_table_desc(reference, subset, config):
+    return ("PR vs. %s, changed %s (%s)" %
+            (reference, subset, config))
+
+
+def make_internal_link(desc):
+    link = re.sub('[^ a-zA-Z0-9-]', '', desc)
+    link = link.strip().lower()
+    link = re.sub(' +', '-', link)
+    return ("[%s](#%s)" % (desc, link))
+
+
 def get_baseline_name(variant):
     return os.path.join(os.getcwd(),
                         'cperf-baselines', variant + '.csv')
@@ -296,30 +318,48 @@ def analyze_results(configs, args):
 
     out = args.output
     regressions = any(x != 0 for x in returncodes)
+    out.write("# Summary for %s %s\n\n" % (args.swift_branch, args.suite))
     if regressions:
-        args.output.write("**Regressions found (see below)**")
+        out.write("**Regressions found (see below)**\n\n")
     else:
-        args.output.write("No regressions above thresholds")
+        out.write("No regressions above thresholds\n\n")
+
+    # Write summary TOC
     for config in configs:
         variant = get_variant(config, args)
+        cdesc = get_config_desc(config)
+        out.write('- %s\n' % make_internal_link(cdesc))
         for reference in references:
-            out.write("\n")
-            out.write("## PR vs. %s (%s)\n" % (reference, variant))
-            out.write("\n")
+            rdesc = get_reference_desc(reference, config)
+            out.write('    - %s\n' % make_internal_link(rdesc))
             for subset in subsets:
-                out.write("\n")
-                out.write("### PR vs. %s %s changes (%s)\n" %
-                          (reference, subset, variant))
-                out.write("\n")
-                table = get_table_name('baseline', 'counters', variant)
+                tdesc = get_table_desc(reference, subset, config)
+                out.write('        - %s\n' % make_internal_link(tdesc))
+
+    out.write('\n\n')
+
+    for config in configs:
+        variant = get_variant(config, args)
+        cdesc = get_config_desc(config)
+        out.write("\n# %s\n" % cdesc)
+        for reference in references:
+            rdesc = get_reference_desc(reference, config)
+            out.write("\n## %s\n" % rdesc)
+            for subset in subsets:
+                tdesc = get_table_desc(reference, subset, config)
+                out.write("\n### %s\n" % tdesc)
+                table = get_table_name(reference, subset, variant)
                 if os.path.exists(table):
-                    with open(table) as t:
-                        out.write(t.read())
+                    if os.stat(table).st_size == 0:
+                        out.write("\nNone\n")
+                    else:
+                        with open(table) as t:
+                            out.write(t.read())
                     os.unlink(table)
                 else:
-                    out.write("No analysis available\n")
+                    out.write("\nNo analysis available\n")
 
-    out.write('<details>')
+    out.write('\n\n<details>\n')
     for config in configs:
         variant = get_variant(config, args)
         baseline = get_baseline_name(variant)
@@ -334,7 +374,7 @@ def analyze_results(configs, args):
         else:
             out.write("No baseline file %s found" %
                       os.path.basename(baseline))
-    out.write('</details>')
+    out.write('\n</details>\n\n')
 
     return regressions
 
