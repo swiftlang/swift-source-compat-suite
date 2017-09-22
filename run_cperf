@@ -82,7 +82,23 @@ def main():
         if not args.skip_runner:
             execute_runner(instance, workspace, configs, args)
 
-    analyze_results(configs, args)
+    regressions = analyze_results(configs, args)
+
+    # Temporary hack to write output to workspace when in CI,
+    # regardless of --output passed.
+    if 'WORKSPACE' in os.environ:
+        workspace = os.environ['WORKSPACE']
+        print("WORKSPACE: %s" % workspace)
+        p = os.path.join(workspace, 'comment.md')
+        o = os.path.abspath(os.path.join(os.getcwd(),
+                                         args.output.name))
+        print("Output written to: %s" % o)
+        if o != p:
+            print("Copying %s to %s" % (o, p))
+            args.output.close()
+            shutil.copyfile(o, p)
+
+    return regressions
 
 
 def get_sandbox_profile_flags():
