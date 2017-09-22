@@ -379,6 +379,14 @@ def analyze_results(configs, args):
     return regressions
 
 
+def get_default_output(basename):
+    if 'WORKSPACE' in os.environ:
+        workspace = os.environ['WORKSPACE']
+        return os.path.join(workspace, basename)
+    else:
+        return basename
+
+
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('swift_branch')
@@ -397,7 +405,7 @@ def parse_args():
                         action='store_true')
     parser.add_argument('--output',
                         type=argparse.FileType('wb', 0),
-                        default='comment.md')
+                        default=get_default_output('comment.md'))
     parser.add_argument('--clean',
                         action='store_true')
     parser.add_argument('--setup-workspaces-for-pr',
