@@ -414,7 +414,10 @@
     "compatibility": {
       "4.0": {
         "commit": "d88afd48e8793d66f4609db98710b679ce039341"
-      }
+      },
+      "3.1": {
+        "commit": "f3135a5c1fc7ac079cf4156992455b254b16bb84"
+      },
     },
     "maintainer": "arthur@sabintsev.com",
     "platforms": [
