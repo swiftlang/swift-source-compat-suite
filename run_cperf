@@ -321,11 +321,13 @@ def analyze_results(configs, args):
         variant = get_variant(config, args)
         sd_old = get_stats_dir(OLD_INSTANCE, variant)
         sd_new = get_stats_dir(NEW_INSTANCE, variant)
+        baseline = get_baseline_name(variant)
         returncodes.append(
             common.execute(
                 common_args +
                 ['--output', get_table_name('head', 'counters', variant),
                  '--exclude-timers',
+                 "--select-stats-from-csv-baseline", baseline,
                  '--compare-stats-dirs', sd_old, sd_new]))
         returncodes.append(
             common.execute(
@@ -333,7 +335,6 @@ def analyze_results(configs, args):
                 ['--output', get_table_name('head', 'timers', variant),
                  '--select-stat', 'driver.*user',
                  '--compare-stats-dirs', sd_old, sd_new]))
-        baseline = get_baseline_name(variant)
         if os.path.exists(baseline):
             returncodes.append(
                 common.execute(
