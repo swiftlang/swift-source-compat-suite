@@ -294,7 +294,7 @@ def make_internal_anchor(desc, run_id):
     link = link.strip().lower()
     link = re.sub(' +', '-', link)
     link += '-' + run_id
-    return ('\n<a name="%s">\n' % (desc, link))
+    return ('\n<a name="%s">\n' % link)
 
 
 def get_baseline_name(variant):
