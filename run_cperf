@@ -19,6 +19,7 @@ import platform
 import re
 import shutil
 import sys
+import random
 
 import common
 
@@ -282,11 +283,20 @@ def get_table_desc(reference, subset, config):
             (reference, subset, config))
 
 
-def make_internal_link(desc):
+def make_internal_link(desc, run_id):
     link = re.sub('[^ a-zA-Z0-9-]', '', desc)
     link = link.strip().lower()
     link = re.sub(' +', '-', link)
+    link += '-' + run_id
     return ("[%s](#%s)" % (desc, link))
+
+
+def make_internal_anchor(desc, run_id):
+    link = re.sub('[^ a-zA-Z0-9-]', '', desc)
+    link = link.strip().lower()
+    link = re.sub(' +', '-', link)
+    link += '-' + run_id
+    return ('\n<a name="%s">\n' % (desc, link))
 
 
 def get_baseline_name(variant):
@@ -295,6 +305,8 @@ def get_baseline_name(variant):
 
 
 def analyze_results(configs, args):
+    # Make a separate random run_id for each comment, to uniquify links.
+    run_id = hex(random.randint(1, 2**63))[2:]
     old_ws = get_workspace_for_instance(OLD_INSTANCE, args)
     process_stats = os.path.join(old_ws, 'swift/utils/process-stats-dir.py')
     references = ('head', 'baseline')
@@ -350,25 +362,28 @@ def analyze_results(configs, args):
     for config in configs:
         variant = get_variant(config, args)
         cdesc = get_config_desc(config)
-        out.write('- %s\n' % make_internal_link(cdesc))
+        out.write('- %s\n' % make_internal_link(cdesc, run_id))
         for reference in references:
             rdesc = get_reference_desc(reference, config)
-            out.write('    - %s\n' % make_internal_link(rdesc))
+            out.write('    - %s\n' % make_internal_link(rdesc, run_id))
             for subset in subsets:
                 tdesc = get_table_desc(reference, subset, config)
-                out.write('        - %s\n' % make_internal_link(tdesc))
+                out.write('        - %s\n' % make_internal_link(tdesc, run_id))
 
     out.write('\n\n')
 
     for config in configs:
         variant = get_variant(config, args)
         cdesc = get_config_desc(config)
+        out.write(make_internal_anchor(cdesc, run_id))
         out.write("\n# %s\n" % cdesc)
         for reference in references:
             rdesc = get_reference_desc(reference, config)
+            out.write(make_internal_anchor(rdesc, run_id))
             out.write("\n## %s\n" % rdesc)
             for subset in subsets:
                 tdesc = get_table_desc(reference, subset, config)
+                out.write(make_internal_anchor(rdesc, run_id))
                 out.write("\n### %s\n" % tdesc)
                 table = get_table_name(reference, subset, variant)
                 if os.path.exists(table):
