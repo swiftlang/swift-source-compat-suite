@@ -99,8 +99,6 @@ def main():
             args.output.close()
             shutil.copyfile(o, p)
 
-    common.check_execute(['find', os.getcwd(), '-ls'])
-
     return regressions
 
 
