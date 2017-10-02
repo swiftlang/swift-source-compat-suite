@@ -313,7 +313,8 @@ def analyze_results(configs, args):
     subsets = ('counters', 'timers')
 
     common_args = [process_stats,
-                   '--markdown', '--group-by-module',
+                   '--markdown', "--github-emoji",
+                   '--group-by-module',
                    '--sort-by-delta-pct', '--sort-descending']
 
     returncodes = []
