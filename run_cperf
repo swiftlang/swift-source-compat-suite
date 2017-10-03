@@ -341,7 +341,8 @@ def analyze_results(configs, args):
             common.execute(
                 common_args +
                 ['--output', get_table_name('head', 'timers', variant),
-                 '--select-stat', 'driver.*user',
+                 '--delta-usec-thresh', '1000000',
+                 '--select-stat', 'driver.*wall',
                  '--compare-stats-dirs', sd_old, sd_new]))
         if os.path.exists(baseline):
             returncodes.append(
@@ -356,7 +357,8 @@ def analyze_results(configs, args):
                     common_args +
                     ['--output',
                      get_table_name('baseline', 'timers', variant),
-                     '--select-stat', 'driver.*user',
+                     '--delta-usec-thresh', '1000000',
+                     '--select-stat', 'driver.*wall',
                      '--compare-to-csv-baseline', baseline, sd_new]))
 
     out = args.output
