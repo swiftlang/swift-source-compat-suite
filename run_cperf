@@ -330,9 +330,11 @@ def analyze_results(configs, args):
         returncodes.append(
             common.execute(
                 common_args +
+                (["--select-stats-from-csv-baseline", baseline]
+                 if os.path.exists(baseline)
+                 else []) +
                 ['--output', get_table_name('head', 'counters', variant),
                  '--exclude-timers',
-                 "--select-stats-from-csv-baseline", baseline,
                  '--compare-stats-dirs', sd_old, sd_new]))
         returncodes.append(
             common.execute(
