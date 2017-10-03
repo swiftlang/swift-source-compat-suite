@@ -270,8 +270,9 @@ def execute_runner(instance, workspace, configs, args):
             '--swift-branch', args.swift_branch,
             '--add-swift-flags', flags,
         ]
-        if args.sandbox:
-            runner_command += get_sandbox_profile_flags()
+        # DEBUG: temporarily disable the sandbox feature here
+        # if args.sandbox:
+        #     runner_command += get_sandbox_profile_flags()
         if args.verbose:
             runner_command += ["--verbose"]
         common.check_execute(runner_command, timeout=9999999)
