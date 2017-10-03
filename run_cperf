@@ -403,7 +403,7 @@ def analyze_results(configs, args):
             out.write("\n## %s\n" % rdesc)
             for subset in subsets:
                 tdesc = get_table_desc(reference, subset, config)
-                out.write(make_internal_anchor(rdesc, run_id))
+                out.write(make_internal_anchor(tdesc, run_id))
                 out.write("\n### %s\n" % tdesc)
                 table = get_table_name(reference, subset, variant)
                 if os.path.exists(table):
