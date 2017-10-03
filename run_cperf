@@ -104,7 +104,14 @@ def main():
 
 def get_sandbox_profile_flags():
     sandbox_flags = []
-    sscss = "../../../workspace-private/swift-source-compat-suite-sandbox"
+    if 'WORKSPACE' not in os.environ:
+        raise RuntimeError("Missing $WORKSPACE when looking for sandbox")
+    if 'JOB_NAME' not in os.environ:
+        raise RuntimeError("Missing $JOB_NAME when looking for sandbox")
+    workspace = os.environ['WORKSPACE']
+    job_name = os.environ['JOB_NAME']
+    sscss = os.path.join(workspace, "../../workspace-private",
+                         job_name, "swift-source-compat-suite-sandbox")
     if not os.path.exists(sscss):
         raise RuntimeError("Missing sandbox dir %s" % sscss)
 
