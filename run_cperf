@@ -68,7 +68,7 @@ def main():
 
     args = parse_args()
     instances = [NEW_INSTANCE, OLD_INSTANCE]
-    configs = ['debug', 'debug-opt', 'wmo-onone', 'release']
+    configs = get_configs(args.suite)
 
     for instance in instances:
         workspace = get_workspace_for_instance(instance, args)
@@ -219,6 +219,15 @@ def get_projects(suite):
         raise ValueError("Unknown suite: " + suite)
 
 
+def get_configs(suite):
+    if suite == 'full':
+        return ['debug', 'debug-opt', 'wmo-onone', 'release']
+    elif suite == 'smoketest':
+        return ['debug', 'release']
+    else:
+        raise ValueError("Unknown suite: " + suite)
+
+
 def get_stats_dir(instance, variant):
     return os.path.join(os.getcwd(),
                         "-".join(["stats", instance, variant]))
@@ -341,7 +350,8 @@ def analyze_results(configs, args):
             common.execute(
                 common_args +
                 ['--output', get_table_name('head', 'timers', variant),
-                 '--select-stat', 'driver.*user',
+                 '--delta-usec-thresh', '1000000',
+                 '--select-stat', 'driver.*wall',
                  '--compare-stats-dirs', sd_old, sd_new]))
         if os.path.exists(baseline):
             returncodes.append(
@@ -356,7 +366,8 @@ def analyze_results(configs, args):
                     common_args +
                     ['--output',
                      get_table_name('baseline', 'timers', variant),
-                     '--select-stat', 'driver.*user',
+                     '--delta-usec-thresh', '1000000',
+                     '--select-stat', 'driver.*wall',
                      '--compare-to-csv-baseline', baseline, sd_new]))
 
     out = args.output
