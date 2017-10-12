@@ -206,7 +206,7 @@ in Xcode 8.0.
 # Select Xcode 8.0 GM
 sudo xcode-select -s /Applications/Xcode.app
 # Build project at pinned commit against selected Xcode
-./check project-path-field
+./project_precommit_check project-path-field
 ~~~
 
 On Linux, you can build against the Swift 3.0 release toolchain:
@@ -214,7 +214,7 @@ On Linux, you can build against the Swift 3.0 release toolchain:
 ~~~bash
 curl -O https://swift.org/builds/swift-3.0-release/ubuntu1510/swift-3.0-RELEASE/swift-3.0-RELEASE-ubuntu15.10.tar.gz
 tar xzvf swift-3.0-RELEASE-ubuntu15.10.tar.gz
-./check project-path-field --swiftc swift-3.0-RELEASE-ubuntu15.10/usr/bin/swiftc
+./project_precommit_check project-path-field --swiftc swift-3.0-RELEASE-ubuntu15.10/usr/bin/swiftc
 ~~~
 
 ## Maintaining Projects
