@@ -22,6 +22,7 @@ import filecmp
 import sys
 import json
 import time
+import argparse
 
 import common
 
@@ -371,8 +372,19 @@ def is_xfailed(xfail_args, compatible_version, platform, swift_branch):
     return None
 
 
+def str2bool(s):
+    """Convert an argument string into a boolean."""
+    if s.lower() == 'true':
+        return True
+    elif s.lower() == 'false':
+        return False
+    else:
+        raise argparse.ArgumentTypeError('true/false boolean value expected.')
+
+
 def add_arguments(parser):
     """Add common arguments to parser."""
+    parser.register('type', 'bool', str2bool)
     parser.add_argument('--verbose',
                         action='store_true')
     # TODO: remove Linux sandbox hack
@@ -456,6 +468,14 @@ def add_arguments(parser):
                         dest='build_config',
                         help='specify "debug" or "release" to override '
                              'the build configuration in the projects.json file')
+    parser.add_argument("--strip-resource-phases",
+                        help='strip all resource phases from project file '
+                             'before building (default: true)',
+                        metavar='BOOL',
+                        type='bool',
+                        nargs='?',
+                        const=True,
+                        default=True)
 
 def add_minimal_arguments(parser):
     """Add common arguments to parser."""
@@ -766,6 +786,7 @@ class ActionBuilder(Factory):
                  sandbox_profile_package,
                  added_swift_flags,
                  skip_clean, build_config,
+                 strip_resource_phases,
                  project, action):
         self.swiftc = swiftc
         self.swift_version = swift_version
@@ -780,6 +801,7 @@ class ActionBuilder(Factory):
         self.added_swift_flags = added_swift_flags
         self.skip_clean = skip_clean
         self.build_config = build_config
+        self.strip_resource_phases = strip_resource_phases
         self.init()
 
     def init(self):
@@ -875,7 +897,7 @@ class CompatActionBuilder(ActionBuilder):
                      self.added_swift_flags,
                      self.build_config,
                      incremental=self.skip_clean,
-                     should_strip_resource_phases=True,
+                     should_strip_resource_phases=self.strip_resource_phases,
                      stdout=stdout, stderr=stderr)
         except common.ExecuteCommandFailure as error:
             return self.failed(identifier, error)
@@ -1024,6 +1046,7 @@ class IncrementalActionBuilder(ActionBuilder):
                  sandbox_profile_xcodebuild,
                  sandbox_profile_package,
                  added_swift_flags, build_config,
+                 strip_resource_phases,
                  project, action):
         super(IncrementalActionBuilder,
               self).__init__(swiftc, swift_version, swift_branch,
@@ -1032,6 +1055,7 @@ class IncrementalActionBuilder(ActionBuilder):
                              added_swift_flags,
                              skip_clean=True,
                              build_config=build_config,
+                             strip_resource_phases=strip_resource_phases,
                              project=project,
                              action=action)
         self.proj_path = os.path.join(self.root_path, self.project['path'])
