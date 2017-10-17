@@ -23,6 +23,7 @@ import sys
 import json
 import time
 import argparse
+import multiprocessing
 
 import common
 
@@ -110,6 +111,8 @@ class XcodeTarget(ProjectTarget):
                       '-destination', self._destination]
                    + dir_override
                    + ['-sdk', self._sdk,
+                      '-jobs', str(multiprocessing.cpu_count()),
+                      '-parallelizeTargets',
                       'CODE_SIGN_IDENTITY=',
                       'CODE_SIGNING_REQUIRED=NO',
                       'ENABLE_BITCODE=NO',
