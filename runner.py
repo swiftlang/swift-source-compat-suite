@@ -16,6 +16,7 @@
 import argparse
 import json
 import sys
+import multiprocessing
 
 import common
 import project
@@ -31,6 +32,7 @@ def parse_args():
 def main():
     """Execute specified indexed project actions."""
     args = parse_args()
+    args.add_swift_flags += '-j' + str(multiprocessing.cpu_count())
     index = json.loads(open(args.projects).read())
     result = project.ProjectListBuilder(
         args.include_repos,
