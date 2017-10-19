@@ -344,6 +344,7 @@
             "3.1": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-4981",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4981",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4981"
               }
             }
@@ -361,6 +362,7 @@
             "3.1": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-4981",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4981",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4981"
               }
             }
@@ -378,6 +380,7 @@
             "3.1": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-4981",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4981",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4981"
               }
             }
@@ -395,6 +398,7 @@
             "3.1": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-4981",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4981",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4981"
               }
             }
@@ -412,6 +416,7 @@
             "3.1": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-4981",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4981",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4981"
               }
             }
@@ -860,6 +865,7 @@
             "3.0": {
               "branch": {
                 "master": "<rdar://problem/34812868> Kitura is using an old version of SwiftyJSON that references _Incrementable"
+                "swift-4.1-branch": "<rdar://problem/34812868> Kitura is using an old version of SwiftyJSON that references _Incrementable"
               }
             }
           }
@@ -1165,6 +1171,7 @@
             "3.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-5265",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-5265",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5265"
               }
             }
@@ -1182,6 +1189,7 @@
             "3.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-5265",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-5265",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5265"
               }
             }
@@ -1199,6 +1207,7 @@
             "3.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-5265",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-5265",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5265"
               }
             }
@@ -1216,6 +1225,7 @@
             "3.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-5265",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-5265",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5265"
               }
             }
@@ -1233,6 +1243,7 @@
             "3.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-5265",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-5265",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5265"
               }
             }
@@ -1508,6 +1519,7 @@
             "3.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-4730",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4730",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4730",
                 "swift-3.1-branch": "https://bugs.swift.org/browse/SR-4879"
               }
@@ -1540,6 +1552,7 @@
             "3.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-4730",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4730",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4730",
                 "swift-3.1-branch": "https://bugs.swift.org/browse/SR-4879"
               }
@@ -1749,6 +1762,7 @@
             "3.1": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-4968",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4968",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4968"
               }
             }
@@ -1805,6 +1819,7 @@
             "3.1": {
               "branch": {
                 "master": "rdar://problem/32185310",
+                "swift-4.1-branch": "rdar://problem/32185310",
                 "swift-4.0-branch": "rdar://problem/32185310"
               }
             }
@@ -1922,6 +1937,7 @@
             "3.0": {
               "branch": {
                 "master": "rdar://problem/32185310",
+                "swift-4.1-branch": "rdar://problem/32185310",
                 "swift-4.0-branch": "rdar://problem/32185310"
               }
             }
@@ -2024,6 +2040,7 @@
             "3.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-4696",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4696",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4696",
                 "swift-3.1-branch": "https://bugs.swift.org/browse/SR-4696"
               }
@@ -2239,6 +2256,7 @@
             "3.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-5683",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-5683",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5683"
               }
             }
@@ -2256,6 +2274,7 @@
             "3.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-5683",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-5683",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5683"
               }
             }
@@ -2273,6 +2292,7 @@
             "3.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-5683",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-5683",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5683"
               }
             }
@@ -2290,6 +2310,7 @@
             "3.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-5683",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-5683",
                 "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5683"
               }
             }
