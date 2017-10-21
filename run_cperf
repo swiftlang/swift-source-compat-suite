@@ -34,7 +34,7 @@ def get_workspace_for_instance(instance, args):
 
 
 def setup_workspace(instance, workspace, args):
-    if args.clean:
+    if args.clean and os.path.exists(workspace):
         shutil.rmtree(workspace)
     if not os.path.exists(workspace):
         os.makedirs(workspace)
