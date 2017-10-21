@@ -62,6 +62,15 @@ def validate_workspace(instance, workspace, args):
                            % workspace)
 
 
+def workspace_comment():
+    if 'WORKSPACE' in os.environ:
+        workspace = os.environ['WORKSPACE']
+        print("WORKSPACE: %s" % workspace)
+        return os.path.join(workspace, 'comment.md')
+    else:
+        return None
+
+
 def main():
     common.debug_print('** RUN PULL-REQUEST CPERF **')
     os.chdir(os.path.dirname(__file__))
@@ -69,6 +78,11 @@ def main():
     args = parse_args()
     instances = [NEW_INSTANCE, OLD_INSTANCE]
     configs = get_configs(args.suite)
+
+    ws_comment = workspace_comment()
+    if ws_comment is not None:
+        with open(ws_comment, 'w') as f:
+            f.write("Compilation-performance test failed")
 
     for instance in instances:
         workspace = get_workspace_for_instance(instance, args)
@@ -85,19 +99,16 @@ def main():
 
     regressions = analyze_results(configs, args)
 
-    # Temporary hack to write output to workspace when in CI,
+    # Crude hack to write output to workspace when in CI,
     # regardless of --output passed.
-    if 'WORKSPACE' in os.environ:
-        workspace = os.environ['WORKSPACE']
-        print("WORKSPACE: %s" % workspace)
-        p = os.path.join(workspace, 'comment.md')
-        o = os.path.abspath(os.path.join(os.getcwd(),
-                                         args.output.name))
-        print("Output written to: %s" % o)
-        if o != p:
-            print("Copying %s to %s" % (o, p))
+    if ws_comment is not None:
+        out = os.path.abspath(os.path.join(os.getcwd(),
+                                           args.output.name))
+        print("Output written to: %s" % out)
+        if out != ws_comment:
+            print("Copying %s to %s" % (out, ws_comment))
             args.output.close()
-            shutil.copyfile(o, p)
+            shutil.copyfile(out, ws_comment)
 
     return regressions
 
