@@ -2408,26 +2408,4 @@
       }
     ]
   },
-  {
-    "repository": "Git",
-    "url": "https://github.com/vapor/vapor.git",
-    "path": "vapor",
-    "branch": "master",
-    "maintainer": "tanner@vapor.codes",
-    "compatibility": {
-      "3.0": {
-        "commit": "652e8d8316696bd0f0bbde07da555210e81557f1"
-      }
-    },
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release"
-      }
-    ]
-  }
 ]
