@@ -344,7 +344,8 @@ def git_submodule_update(path, stdout=sys.stdout, stderr=sys.stderr):
 def git_clean(path, stdout=sys.stdout, stderr=sys.stderr):
     """Perform a git clean operation on a path."""
     command = ['git', '-C', path, 'clean', '-ffdx']
-    check_execute(['chflags', '-R', 'nouchg', path], stdout=stdout, stderr=stderr)
+    if platform.system() == 'Darwin':
+        check_execute(['chflags', '-R', 'nouchg', path], stdout=stdout, stderr=stderr)
     return check_execute(command, stdout=stdout, stderr=stderr)
 
 
