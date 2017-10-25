@@ -254,7 +254,7 @@ def get_stats_dir(instance, variant):
 
 
 def get_actual_config_and_flags(config, stats):
-    flags = ("-stats-output-dir '%s'" % stats)
+    flags = ("-stats-output-dir  " + stats)
     # Handle pseudo-configs
     if config == 'wmo-onone':
         flags += ' -wmo -Onone '
@@ -279,13 +279,17 @@ def execute_runner(instance, workspace, configs, args):
             shutil.rmtree(stats)
         os.makedirs(stats)
         (config, flags) = get_actual_config_and_flags(config, stats)
+        actions = 'action.startswith("BuildSwiftPackage")'
+        if platform.system() == 'Darwin':
+            # Darwin can handle xcodebuild as well
+            actions = 'action.startswith("Build")'
         runner_command = [
             './runner.py',
             '--swiftc', swiftc_path,
             '--projects', projects,
             '--build-config', config,
             '--swift-version', '3',
-            '--include-actions', 'action.startswith("Build")',
+            '--include-actions', actions,
             '--swift-branch', args.swift_branch,
             '--add-swift-flags', flags,
         ]
