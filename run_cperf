@@ -29,8 +29,13 @@ NEW_INSTANCE = 'new'
 
 
 def get_workspace_for_instance(instance, args):
-    return common.private_workspace(
-        os.path.join(args.swift_branch, instance))
+    if instance == OLD_INSTANCE and args.old_workspace is not None:
+        return args.old_workspace
+    elif instance == NEW_INSTANCE and args.new_workspace is not None:
+        return args.new_workspace
+    else:
+        return common.private_workspace(
+            os.path.join(args.swift_branch, instance))
 
 
 def setup_workspace(instance, workspace, args):
@@ -143,8 +148,12 @@ def get_sandbox_profile_flags():
     return sandbox_flags
 
 
-def get_swiftc_path(workspace):
-    if platform.system() == 'Darwin':
+def get_swiftc_path(instance, workspace, args):
+    if instance == OLD_INSTANCE and args.old_swiftc is not None:
+        return args.old_swiftc
+    elif instance == NEW_INSTANCE and args.new_swiftc is not None:
+        return args.new_swiftc
+    elif platform.system() == 'Darwin':
         swiftc_path = os.path.join(workspace, 'build/compat_macos/install/toolchain/usr/bin/swiftc')
     elif platform.system() == 'Linux':
         swiftc_path = os.path.join(workspace, 'build/compat_linux/install/usr/bin/swiftc')
@@ -262,7 +271,7 @@ def get_variant(config, args):
 
 def execute_runner(instance, workspace, configs, args):
     projects = get_projects(args.suite)
-    swiftc_path = get_swiftc_path(workspace)
+    swiftc_path = get_swiftc_path(instance, workspace, args)
     for config in configs:
         variant = get_variant(config, args)
         stats = get_stats_dir(instance, variant)
@@ -477,6 +486,14 @@ def parse_args():
                         action='store_true')
     parser.add_argument('--setup-workspaces-for-pr',
                         type=int, default=None)
+    parser.add_argument('--old-workspace',
+                        type=str, default=None)
+    parser.add_argument('--new-workspace',
+                        type=str, default=None)
+    parser.add_argument('--old-swiftc',
+                        type=str, default=None)
+    parser.add_argument('--new-swiftc',
+                        type=str, default=None)
     return parser.parse_args()
 
 
