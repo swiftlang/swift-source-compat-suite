@@ -89,6 +89,7 @@ def main():
         with open(ws_comment, 'w') as f:
             f.write("Compilation-performance test failed")
 
+    failures = []
     for instance in instances:
         workspace = get_workspace_for_instance(instance, args)
 
@@ -100,9 +101,9 @@ def main():
             build_swift_toolchain(workspace, args)
 
         if not args.skip_runner:
-            execute_runner(instance, workspace, configs, args)
+            failures += execute_runner(instance, workspace, configs, args)
 
-    regressions = analyze_results(configs, args)
+    regressions = analyze_results(configs, failures, args)
 
     # Crude hack to write output to workspace when in CI,
     # regardless of --output passed.
@@ -272,6 +273,7 @@ def get_variant(config, args):
 def execute_runner(instance, workspace, configs, args):
     projects = get_projects(args.suite)
     swiftc_path = get_swiftc_path(instance, workspace, args)
+    failures = []
     for config in configs:
         variant = get_variant(config, args)
         stats = get_stats_dir(instance, variant)
@@ -297,7 +299,14 @@ def execute_runner(instance, workspace, configs, args):
             runner_command += get_sandbox_profile_flags()
         if args.verbose:
             runner_command += ["--verbose"]
-        common.check_execute(runner_command, timeout=9999999)
+        try:
+            common.check_execute(runner_command, timeout=9999999)
+        except common.ExecuteCommandFailure:
+            fail_logs = [ re.sub('FAIL_.*_(\\w+).log', '\\1', n)
+                          for n in os.listdir(".")
+                          if re.match('FAIL.*.log', n)]
+            failures += (fail_logs if len(fail_logs) != 0 else ["unknown"])
+    return failures
 
 
 def get_table_name(reference, subset, variant):
@@ -341,7 +350,7 @@ def get_baseline_name(variant):
                         'cperf-baselines', variant + '.csv')
 
 
-def analyze_results(configs, args):
+def analyze_results(configs, failures, args):
     # Make a separate random run_id for each comment, to uniquify links.
     run_id = hex(random.randint(1, 2**63))[2:]
     old_ws = get_workspace_for_instance(OLD_INSTANCE, args)
@@ -396,6 +405,9 @@ def analyze_results(configs, args):
     out = args.output
     regressions = any(x != 0 for x in returncodes)
     out.write("# Summary for %s %s\n\n" % (args.swift_branch, args.suite))
+    if len(failures) != 0:
+        out.write("**Unexpected test results, stats may be off for %s**\n\n" %
+                  ", ".join(set(failures)))
     if regressions:
         out.write("**Regressions found (see below)**\n\n")
     else:
