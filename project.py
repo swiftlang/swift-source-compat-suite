@@ -283,6 +283,11 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
              incremental=False):
     """Call functions corresponding to actions."""
 
+    if added_swift_flags:
+        substitutions = action.copy()
+        substitutions.update(repo)
+        added_swift_flags = added_swift_flags.format(**substitutions)
+
     if action['action'] == 'BuildSwiftPackage':
         if not build_config:
             build_config = action['configuration']
