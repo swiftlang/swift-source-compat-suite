@@ -2024,6 +2024,9 @@
       },
       "3.1": {
         "commit": "ab664127d5d32d9ddd655b2cc313abe528a66a42"
+      },
+      "4.0": {
+        "commit": "c34c5c164954132a87e90d2312a74826a54487ed"
       }
     },
     "maintainer": "jp@jpsim.com",
