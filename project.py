@@ -284,6 +284,10 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
     """Call functions corresponding to actions."""
 
     if added_swift_flags:
+        # Support added swift flags specific to the current repository and
+        # action by passing their fields as keyword arguments to format, e.g.
+        # so that {path} in '-index-store-path /tmp/index/{path}' is replaced
+        # with the value of repo's path field.
         substitutions = action.copy()
         substitutions.update(repo)
         added_swift_flags = added_swift_flags.format(**substitutions)
