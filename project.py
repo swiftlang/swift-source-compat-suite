@@ -465,7 +465,9 @@ def add_arguments(parser):
                         action='store_true')
     parser.add_argument("--add-swift-flags",
                         metavar="FLAGS",
-                        help='add flags to each Swift invocation',
+                        help='add flags to each Swift invocation (note: field '
+                             'names from projects.json enclosed in {} will be '
+                             'replaced with their value)',
                         default='')
     parser.add_argument("--skip-clean",
                         help='skip all git and build clean steps before '
