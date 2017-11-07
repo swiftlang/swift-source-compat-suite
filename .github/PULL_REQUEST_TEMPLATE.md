@@ -24,6 +24,6 @@ To be accepted into the Swift source compatibility test suite, a project must:
 	* Mozilla Public License (MPL) 1.1
 	* MPL 2.0
 	* CDDL
-- [ ] pass ./check script run
+- [ ] pass `./project_precommit_check` script run
 
 Ensure project meets all listed requirements before submitting a pull request.
