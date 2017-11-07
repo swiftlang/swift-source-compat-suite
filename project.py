@@ -283,6 +283,15 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
              incremental=False):
     """Call functions corresponding to actions."""
 
+    if added_swift_flags:
+        # Support added swift flags specific to the current repository and
+        # action by passing their fields as keyword arguments to format, e.g.
+        # so that {path} in '-index-store-path /tmp/index/{path}' is replaced
+        # with the value of repo's path field.
+        substitutions = action.copy()
+        substitutions.update(repo)
+        added_swift_flags = added_swift_flags.format(**substitutions)
+
     if action['action'] == 'BuildSwiftPackage':
         if not build_config:
             build_config = action['configuration']
@@ -456,7 +465,9 @@ def add_arguments(parser):
                         action='store_true')
     parser.add_argument("--add-swift-flags",
                         metavar="FLAGS",
-                        help='add flags to each Swift invocation',
+                        help='add flags to each Swift invocation (note: field '
+                             'names from projects.json enclosed in {} will be '
+                             'replaced with their value)',
                         default='')
     parser.add_argument("--skip-clean",
                         help='skip all git and build clean steps before '
