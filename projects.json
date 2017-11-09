@@ -2020,10 +2020,10 @@
     "branch": "master",
     "compatibility": {
       "3.0": {
-        "commit": "e4fa18df06ddbcc730dd2c08a1c0c42aa531ae0c"
+        "commit": "d8f5a316f29077cd22f7d129e8bfaf4f4238d6f1"
       },
       "3.1": {
-        "commit": "ab664127d5d32d9ddd655b2cc313abe528a66a42"
+        "commit": "c34c5c164954132a87e90d2312a74826a54487ed"
       },
       "4.0": {
         "commit": "c34c5c164954132a87e90d2312a74826a54487ed"
@@ -2037,19 +2037,7 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4696",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4696",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4696",
-                "swift-3.1-branch": "https://bugs.swift.org/browse/SR-4696"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       },
       {
         "action": "TestSwiftPackage"
