@@ -299,13 +299,14 @@ def execute_runner(instance, workspace, configs, args):
             runner_command += get_sandbox_profile_flags()
         if args.verbose:
             runner_command += ["--verbose"]
-        try:
-            common.check_execute(runner_command, timeout=9999999)
-        except common.ExecuteCommandFailure:
-            fail_logs = [ re.sub('FAIL_.*_(\\w+).log', '\\1', n)
-                          for n in os.listdir(".")
-                          if re.match('FAIL.*.log', n)]
-            failures += (fail_logs if len(fail_logs) != 0 else ["unknown"])
+        for i in range(args.repetitions):
+            try:
+                common.check_execute(runner_command, timeout=9999999)
+            except common.ExecuteCommandFailure:
+                fail_logs = [re.sub('FAIL_\w+_(\\w+).*\\.log', '\\1', n)
+                             for n in os.listdir(".")
+                             if re.match('FAIL.*.log', n)]
+                failures += (fail_logs if len(fail_logs) != 0 else ["unknown"])
     return failures
 
 
@@ -324,9 +325,12 @@ def get_reference_desc(reference, config):
             (reference, config))
 
 
-def get_table_desc(reference, subset, config):
-    return ("PR vs. %s, changed %s (%s)" %
-            (reference, subset, config))
+def get_table_desc(refqual, subset, config):
+    if refqual is not None:
+        return ("PR vs. %s, changed %s (%s)" %
+                (refqual, subset, config))
+    else:
+        return ("%s %s" % (config, subset))
 
 
 def make_internal_link(desc, run_id):
@@ -355,13 +359,14 @@ def analyze_results(configs, failures, args):
     run_id = hex(random.randint(1, 2**63))[2:]
     old_ws = get_workspace_for_instance(OLD_INSTANCE, args)
     process_stats = os.path.join(old_ws, 'swift/utils/process-stats-dir.py')
-    references = ('head', 'baseline')
-    subsets = ('counters', 'timers')
-
+    references = ('head', 'baseline') if args.show_baselines else ('head',)
+    subsets = ('brief', 'detailed')
+    delta_usec_thresh = str(100 * 1000)
+    delta_pct_thresh = str(1)
     common_args = [process_stats,
-                   '--markdown', "--github-emoji",
-                   '--group-by-module',
-                   '--sort-by-delta-pct', '--sort-descending']
+                   '--markdown', "--github-emoji"]
+    if args.group_by_module:
+        common_args += ['--group-by-module']
 
     returncodes = []
     for config in configs:
@@ -369,37 +374,51 @@ def analyze_results(configs, failures, args):
         sd_old = get_stats_dir(OLD_INSTANCE, variant)
         sd_new = get_stats_dir(NEW_INSTANCE, variant)
         baseline = get_baseline_name(variant)
+        select_stats_from_baseline_args = (
+            ["--select-stats-from-csv-baseline", baseline]
+            if os.path.exists(baseline)
+            else [])
         returncodes.append(
             common.execute(
                 common_args +
-                (["--select-stats-from-csv-baseline", baseline]
-                 if os.path.exists(baseline)
-                 else []) +
-                ['--output', get_table_name('head', 'counters', variant),
+                ['--output', get_table_name('head', 'brief', variant),
+                 '--divide-by', str(args.repetitions),
+                 '--select-stat', r'driver.*wall|NumLLVMBytesOutput',
+                 '--merge-timers',
+                 '--delta-pct-thresh', delta_pct_thresh,
+                 '--delta-usec-thresh', delta_usec_thresh,
+                 '--compare-stats-dirs', sd_old, sd_new]))
+        returncodes.append(
+            common.execute(
+                common_args +
+                select_stats_from_baseline_args +
+                ['--output', get_table_name('head', 'detailed', variant),
                  '--exclude-timers',
+                 '--divide-by', str(args.repetitions),
+                 '--close-regressions',
+                 '--delta-pct-thresh', delta_pct_thresh,
                  '--compare-stats-dirs', sd_old, sd_new]))
-        returncodes.append(
-            common.execute(
-                common_args +
-                ['--output', get_table_name('head', 'timers', variant),
-                 '--delta-usec-thresh', '1000000',
-                 '--select-stat', 'driver.*wall',
-                 '--compare-stats-dirs', sd_old, sd_new]))
-        if os.path.exists(baseline):
+        if args.show_baselines and os.path.exists(baseline):
             returncodes.append(
                 common.execute(
                     common_args +
                     ['--output',
-                     get_table_name('baseline', 'counters', variant),
-                     '--exclude-timers',
+                     get_table_name('baseline', 'brief', variant),
+                     '--select-stat', r'driver.*wall|NumLLVMBytesOutput',
+                     '--merge-timers',
+                     '--divide-by', str(args.repetitions),
+                     '--delta-pct-thresh', delta_pct_thresh,
+                     '--delta-usec-thresh', delta_usec_thresh,
                      '--compare-to-csv-baseline', baseline, sd_new]))
             returncodes.append(
                 common.execute(
                     common_args +
                     ['--output',
-                     get_table_name('baseline', 'timers', variant),
-                     '--delta-usec-thresh', '1000000',
-                     '--select-stat', 'driver.*wall',
+                     get_table_name('baseline', 'detailed', variant),
+                     '--exclude-timers',
+                     '--divide-by', str(args.repetitions),
+                     '--close-regressions',
+                     '--delta-pct-thresh', delta_pct_thresh,
                      '--compare-to-csv-baseline', baseline, sd_new]))
 
     out = args.output
@@ -419,11 +438,17 @@ def analyze_results(configs, failures, args):
         cdesc = get_config_desc(config)
         out.write('- %s\n' % make_internal_link(cdesc, run_id))
         for reference in references:
-            rdesc = get_reference_desc(reference, config)
-            out.write('    - %s\n' % make_internal_link(rdesc, run_id))
+            rindent = ''
+            refqual = None
+            if len(references) > 1:
+                rindent = '    '
+                refqual = reference
+                rdesc = get_reference_desc(reference, config)
+                out.write('    - %s\n' % make_internal_link(rdesc, run_id))
             for subset in subsets:
-                tdesc = get_table_desc(reference, subset, config)
-                out.write('        - %s\n' % make_internal_link(tdesc, run_id))
+                tdesc = get_table_desc(refqual, subset, config)
+                out.write((rindent + '    - %s\n') %
+                          make_internal_link(tdesc, run_id))
 
     out.write('\n\n')
 
@@ -433,13 +458,18 @@ def analyze_results(configs, failures, args):
         out.write(make_internal_anchor(cdesc, run_id))
         out.write("\n# %s\n" % cdesc)
         for reference in references:
-            rdesc = get_reference_desc(reference, config)
-            out.write(make_internal_anchor(rdesc, run_id))
-            out.write("\n## %s\n" % rdesc)
+            rindent = ''
+            refqual = None
+            if len(references) > 1:
+                rindent = '#'
+                refqual = reference
+                rdesc = get_reference_desc(reference, config)
+                out.write(make_internal_anchor(rdesc, run_id))
+                out.write("\n## %s\n" % rdesc)
             for subset in subsets:
-                tdesc = get_table_desc(reference, subset, config)
+                tdesc = get_table_desc(refqual, subset, config)
                 out.write(make_internal_anchor(tdesc, run_id))
-                out.write("\n### %s\n" % tdesc)
+                out.write("\n" + rindent + "## " + tdesc + "\n")
                 table = get_table_name(reference, subset, variant)
                 if os.path.exists(table):
                     if os.stat(table).st_size == 0:
@@ -451,22 +481,23 @@ def analyze_results(configs, failures, args):
                 else:
                     out.write("\nNo analysis available\n")
 
-    out.write('\n\n<details>\n')
-    for config in configs:
-        variant = get_variant(config, args)
-        baseline = get_baseline_name(variant)
-        if os.path.exists(baseline):
-            out.write("Last baseline commit on %s" %
-                      os.path.basename(baseline))
-            out.write("\n\n<pre>\n")
-            out.write(common.check_execute_output([
-                'git', 'log', '--pretty=medium', '-1', baseline
-            ]))
-            out.write("\n</pre>\n")
-        else:
-            out.write("No baseline file %s found" %
-                      os.path.basename(baseline))
-    out.write('\n</details>\n\n')
+    if args.show_baselines:
+        out.write('\n\n<details>\n')
+        for config in configs:
+            variant = get_variant(config, args)
+            baseline = get_baseline_name(variant)
+            if os.path.exists(baseline):
+                out.write("Last baseline commit on %s" %
+                          os.path.basename(baseline))
+                out.write("\n\n<pre>\n")
+                out.write(common.check_execute_output([
+                    'git', 'log', '--pretty=medium', '-1', baseline
+                ]))
+                out.write("\n</pre>\n")
+            else:
+                out.write("No baseline file %s found" %
+                          os.path.basename(baseline))
+        out.write('\n</details>\n\n')
 
     return regressions
 
@@ -510,6 +541,12 @@ def parse_args():
                         type=str, default=None)
     parser.add_argument('--new-swiftc',
                         type=str, default=None)
+    parser.add_argument('--repetitions',
+                        type=int, default=3)
+    parser.add_argument('--show-baselines',
+                        type=bool, default=False)
+    parser.add_argument('--group-by-module',
+                        type=bool, default=False)
     return parser.parse_args()
 
 
