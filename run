@@ -59,6 +59,9 @@ def parse_args():
     parser.add_argument("--assertions",
                         help='Build Swift with asserts',
                         action='store_true')
+    parser.add_argument("--debug",
+                        help='Build Swift in debug mode',
+                        action='store_true')
     parser.add_argument("--test",
                         help='Only run test actions',
                         action='store_true')
@@ -174,7 +177,7 @@ def build_swift_toolchain(workspace, args):
     if platform.system() == 'Darwin':
         build_command = [
             os.path.join(workspace, 'swift/utils/build-script'),
-            '--debug' if args.assertions else '--release',
+            '--debug' if args.debug else '--release',
             '--assertions' if args.assertions else '--no-assertions',
             '--build-ninja',
             '--llbuild',
@@ -209,7 +212,7 @@ def build_swift_toolchain(workspace, args):
     elif platform.system() == 'Linux':
         build_command = [
             os.path.join(workspace, 'swift/utils/build-script'),
-            '--debug' if args.assertions else '--release',
+            '--debug' if args.debug else '--release',
             '--assertions' if args.assertions else '--no-assertions',
             '--build-ninja',
             '--llbuild',

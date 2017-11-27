@@ -145,7 +145,18 @@
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6333",
+                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-6333",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6333"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -771,28 +782,68 @@
         "project": "ReactiveExtensions.xcodeproj",
         "scheme": "ReactiveExtensions-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6335",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6335"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "ReactiveExtensions.xcodeproj",
         "scheme": "ReactiveExtensions-TestHelpers-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6335",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6335"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "ReactiveExtensions.xcodeproj",
         "scheme": "ReactiveExtensions-TestHelpers-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6335",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6335"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "ReactiveExtensions.xcodeproj",
         "scheme": "ReactiveExtensions-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6335",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6335"
+              }
+            }
+          }
+        }
       }
     ]
   },
@@ -966,7 +1017,17 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6335",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6335"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -991,7 +1052,16 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6334"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -1419,28 +1489,68 @@
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6335",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6335"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6335",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6335"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6335",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6335"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6335",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6335"
+              }
+            }
+          }
+        }
       }
     ]
   },
@@ -1468,28 +1578,68 @@
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6335",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6335"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6335",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6335"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6335",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6335"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6335",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6335"
+              }
+            }
+          }
+        }
       }
     ]
   },
@@ -2045,19 +2195,19 @@
                 "master": "rdar://problem/35633455",
                 "swift-4.1-branch": "rdar://problem/35633455"
               }
-	    },
+            },
             "3.1": {
               "branch": {
                 "master": "rdar://problem/35633455",
                 "swift-4.1-branch": "rdar://problem/35633455"
               }
-	    },
+            },
             "4.0": {
               "branch": {
                 "master": "rdar://problem/35633455",
-                "swift-4.1-branch": "rdar://problem/35633455"
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6349"
               }
-	    }
+            }
           }
         }
       },
