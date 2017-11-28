@@ -632,6 +632,15 @@
         "target": "JSQDataSourcesKit-iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6484",
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestXcodeProjectScheme",
