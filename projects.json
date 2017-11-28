@@ -636,7 +636,7 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6484",
+                "master": "https://bugs.swift.org/browse/SR-6484"
               }
             }
           }
