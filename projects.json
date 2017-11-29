@@ -1208,7 +1208,16 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6488"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -1393,7 +1402,16 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6488"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
