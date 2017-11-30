@@ -2190,8 +2190,7 @@
             },
             "4.0": {
               "branch": {
-                "master": "rdar://problem/35633455",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6349"
+                "master": "rdar://problem/35633455"
               }
             }
           }
