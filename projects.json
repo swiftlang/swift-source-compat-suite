@@ -348,90 +348,35 @@
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4981",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4981",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4981"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore OSX",
         "destination": "generic/platform=macOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4981",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4981",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4981"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4981",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4981",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4981"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4981",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4981",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4981"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStoreDemo",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4981",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4981",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4981"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
