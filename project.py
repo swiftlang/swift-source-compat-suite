@@ -114,7 +114,8 @@ class XcodeTarget(ProjectTarget):
                       'CODE_SIGNING_REQUIRED=NO',
                       'ENABLE_BITCODE=NO',
                       'INDEX_ENABLE_DATA_STORE=NO',
-                      'GCC_TREAT_WARNINGS_AS_ERRORS=NO'])
+                      'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
+                      'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO'])
         for setting, value in self._build_settings.iteritems():
             if setting == 'CONFIGURATION':
                 command += ['-configuration', value]
