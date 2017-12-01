@@ -335,8 +335,8 @@
     "branch": "master",
     "maintainer": "rommel.estropia@gmail.com",
     "compatibility": {
-      "3.1": {
-        "commit": "42c28b064ad87ef783dccdeea7c518f6a0ae3b9d"
+      "3.2": {
+        "commit": "305e2b61a000753b6f1aff7f3f6485a88b3ff4e7"
       }
     },
     "platforms": [
