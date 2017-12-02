@@ -1159,7 +1159,7 @@
     "maintainer": "danthorpe@me.com",
     "compatibility": {
       "3.0": {
-        "commit": "006f9ff23448e28342a9f5d134327d58e3b4aa0d"
+        "commit": "d6389ea98ec2e0d17ab368f40045bfe48622ac67"
       },
       "3.1": {
         "commit": "46bdfdf2910acc84e58ed686df14a46a5cbc61f4"
@@ -1174,90 +1174,35 @@
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKit",
         "destination": "platform=macOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-5265",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-5265",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5265"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectTarget",
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKit",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-5265",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-5265",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5265"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectTarget",
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKit",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-5265",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-5265",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5265"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectTarget",
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKit",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-5265",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-5265",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5265"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectTarget",
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKitCloud",
         "destination": "platform=macOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-5265",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-5265",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-5265"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "TestXcodeProjectTarget",
