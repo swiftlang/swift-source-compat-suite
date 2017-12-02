@@ -850,17 +850,7 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "<rdar://problem/34812868> Kitura is using an old version of SwiftyJSON that references _Incrementable",
-                "swift-4.1-branch": "<rdar://problem/34812868> Kitura is using an old version of SwiftyJSON that references _Incrementable"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       }
     ]
   },
