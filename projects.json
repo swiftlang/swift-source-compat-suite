@@ -839,8 +839,8 @@
     "branch": "master",
     "maintainer": "navneet@us.ibm.com",
     "compatibility": {
-      "3.0": {
-        "commit": "5ebf8f63fe6ab1fd2f50de860e19a07661fbb974"
+      "4.0": {
+        "commit": "edbd229ba8b99db936bc552c8e4f8e190a6dc633"
       }
     },
     "platforms": [
