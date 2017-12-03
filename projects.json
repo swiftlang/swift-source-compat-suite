@@ -1202,7 +1202,16 @@
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKitCloud",
         "destination": "platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "swift-4.0-branch": "rdar://35814436"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestXcodeProjectTarget",
