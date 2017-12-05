@@ -1594,20 +1594,57 @@
         "project": "Realm.xcodeproj",
         "scheme": "RealmSwift",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.2": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6538",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6538"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "Realm.xcodeproj",
         "scheme": "RealmSwift",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.2": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6538",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6538"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "Realm.xcodeproj",
         "scheme": "RealmSwift",
         "destination": "generic/platform=tvOS",
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.2": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6538",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6538"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "Realm.xcodeproj",
+        "scheme": "RealmSwift",
+        "destination": "generic/platform=watchOS",
         "configuration": "Release"
       }
     ]
