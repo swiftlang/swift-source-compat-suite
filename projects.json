@@ -1597,14 +1597,14 @@
         "configuration": "Release"
       },
       {
-        "action": "TestXcodeProjectScheme",
+        "action": "BuildXcodeProjectScheme",
         "project": "Realm.xcodeproj",
         "scheme": "RealmSwift",
         "destination": "generic/platform=macOS",
         "configuration": "Release"
       },
       {
-        "action": "TestXcodeProjectScheme",
+        "action": "BuildXcodeProjectScheme",
         "project": "Realm.xcodeproj",
         "scheme": "RealmSwift",
         "destination": "generic/platform=tvOS",
