@@ -1838,8 +1838,8 @@
     "branch": "master",
     "maintainer": "krzysztof.zablocki@pixle.pl",
     "compatibility": {
-      "3.1": {
-        "commit": "92a180906cd5863bc6a1dea881abcfc2d9389a1f"
+      "4.0": {
+        "commit": "c96f06602d53e0eeca1fe5273f21080af63c7f31"
       }
     },
     "platforms": [
