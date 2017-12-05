@@ -1791,18 +1791,7 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "3.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4968",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4968",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4968"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       },
       {
         "action": "TestSwiftPackage"
