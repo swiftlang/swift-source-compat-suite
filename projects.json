@@ -1781,8 +1781,8 @@
     "branch": "master",
     "maintainer": "bouke@haarsma.eu",
     "compatibility": {
-      "3.1": {
-        "commit": "ea8a65f1b5185444364637da490356aff0daadae"
+      "4.0": {
+        "commit": "fcff1d09602d660c15b5050ea8f0359cd22563ff"
       }
     },
     "platforms": [
