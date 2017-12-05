@@ -1848,18 +1848,7 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "3.1": {
-              "branch": {
-                "master": "rdar://problem/32185310",
-                "swift-4.1-branch": "rdar://problem/32185310",
-                "swift-4.0-branch": "rdar://problem/32185310"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       },
       {
         "action": "TestSwiftPackage"
