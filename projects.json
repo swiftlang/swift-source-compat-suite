@@ -1781,8 +1781,8 @@
     "branch": "master",
     "maintainer": "bouke@haarsma.eu",
     "compatibility": {
-      "3.1": {
-        "commit": "ea8a65f1b5185444364637da490356aff0daadae"
+      "4.0": {
+        "commit": "fcff1d09602d660c15b5050ea8f0359cd22563ff"
       }
     },
     "platforms": [
@@ -1794,11 +1794,10 @@
         "configuration": "release",
         "xfail": {
           "compatibility": {
-            "3.1": {
+            "4.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4968",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4968",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4968"
+                "master": "https://bugs.swift.org/browse/SR-6537",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6537"
               }
             }
           }
