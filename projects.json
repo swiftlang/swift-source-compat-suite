@@ -850,17 +850,7 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6539",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6539"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       }
     ]
   },
@@ -991,16 +981,7 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "3.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6334"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       },
       {
         "action": "TestSwiftPackage"
