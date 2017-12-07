@@ -1848,7 +1848,17 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6556",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6556"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
