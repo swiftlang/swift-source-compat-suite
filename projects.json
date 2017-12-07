@@ -1535,8 +1535,8 @@
     "branch": "master",
     "maintainer": "ci@realm.io",
     "compatibility": {
-      "3.0": {
-        "commit": "3df0fb6ec06a0f3c5ca49c88bd51ab5b64f4f0af"
+      "3.2": {
+        "commit": "2493b356b3422f3bbb4dab27dc351f16ebdda13c"
       }
     },
     "platforms": [
@@ -1551,30 +1551,48 @@
         "configuration": "Release",
         "xfail": {
           "compatibility": {
-            "3.0": {
+            "3.2": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4730",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4730",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4730",
-                "swift-3.1-branch": "https://bugs.swift.org/browse/SR-4879"
+                "master": "https://bugs.swift.org/browse/SR-6538",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6538"
               }
             }
           }
         }
       },
       {
-        "action": "TestXcodeProjectScheme",
+        "action": "BuildXcodeProjectScheme",
         "project": "Realm.xcodeproj",
         "scheme": "RealmSwift",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.2": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6538",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6538"
+              }
+            }
+          }
+        }
       },
       {
-        "action": "TestXcodeProjectScheme",
+        "action": "BuildXcodeProjectScheme",
         "project": "Realm.xcodeproj",
         "scheme": "RealmSwift",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.2": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6538",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6538"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -1584,12 +1602,10 @@
         "configuration": "Release",
         "xfail": {
           "compatibility": {
-            "3.0": {
+            "3.2": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-4730",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-4730",
-                "swift-4.0-branch": "https://bugs.swift.org/browse/SR-4730",
-                "swift-3.1-branch": "https://bugs.swift.org/browse/SR-4879"
+                "master": "https://bugs.swift.org/browse/SR-6538",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6538"
               }
             }
           }
