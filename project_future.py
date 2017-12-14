@@ -954,7 +954,7 @@ class CompatActionBuilder(ActionBuilder):
 
     def dispatch(self, identifier, stdout=sys.stdout, stderr=sys.stderr):
         if not self.swift_version:
-            self.swift_version = identifier.split('@')[0].strip('.0')
+            self.swift_version = self.version['version'].strip('.0')
         try:
             dispatch(self.root_path, self.project, self.action,
                      self.swiftc,
@@ -985,36 +985,34 @@ class CompatActionBuilder(ActionBuilder):
             self.version['commit'],
             stdout=stdout, stderr=stdout
         )
-        action_result = self.dispatch('%s@%s' % (self.version['version'], self.version['commit'][:6]),
+        action_result = self.dispatch('%s, %s' % (self.version['version'], self.version['commit'][:6]),
                                       stdout=stdout, stderr=stdout)
         return action_result
 
     def failed(self, identifier, error):
-        compatible_swift = identifier.split('@')[0]
-        compatible_swift_message = (
-            compatible_swift + '=' +
-            self.version['commit']
-        )
+        version_commit = self.version['commit'][:6]
         bug_identifier = None
         if 'xfail' in self.action:
             bug_identifier = is_xfailed(self.action['xfail'],
-                                        compatible_swift,
+                                        self.version['version'],
                                         self.current_platform,
                                         self.swift_branch)
         if bug_identifier:
-            error_str = 'XFAIL: {bug}, {project}, {compatibility}, {action_target}'.format(
+            error_str = 'XFAIL: {bug}, {project}, {compatibility}, {commit}, {action_target}'.format(
                             bug=bug_identifier,
                             project=self.project['path'],
-                            compatibility=compatible_swift,
+                            compatibility=self.version['version'],
+                            commit=version_commit,
                             action_target = dict_get(self.action, 'scheme', 'target', default="Swift Package")
                         )
             if 'destination' in self.action:
                 error_str += ', ' + self.action['destination']
             result = ActionResult(Result.XFAIL, error_str)
         else:
-            error_str = 'FAIL: {project}, {compatibility}, {action_target}'.format(
+            error_str = 'FAIL: {project}, {compatibility}, {commit}, {action_target}'.format(
                             project=self.project['path'],
-                            compatibility=compatible_swift,
+                            compatibility=self.version['version'],
+                            commit=version_commit,
                             action_target = dict_get(self.action, 'scheme', 'target', default="Swift Package")
                         )
             if 'destination' in self.action:
@@ -1025,31 +1023,29 @@ class CompatActionBuilder(ActionBuilder):
         return result
 
     def succeeded(self, identifier):
-        compatible_swift = identifier.split('@')[0]
-        compatible_swift_message = (
-            compatible_swift + '=' +
-            self.version['commit']
-        )
+        version_commit = self.version['commit'][:6]
         bug_identifier = None
         if 'xfail' in self.action:
             bug_identifier = is_xfailed(self.action['xfail'],
-                                        compatible_swift,
+                                        self.version['version'],
                                         self.current_platform,
                                         self.swift_branch)
         if bug_identifier:
-            error_str = 'UPASS: {bug}, {project}, {compatibility}, {action_target}'.format(
+            error_str = 'UPASS: {bug}, {project}, {compatibility}, {commit}, {action_target}'.format(
                             bug=bug_identifier,
                             project=self.project['path'],
-                            compatibility=compatible_swift,
+                            compatibility=self.version['version'],
+                            commit=version_commit,
                             action_target = dict_get(self.action, 'scheme', 'target', default="Swift Package")
                         )
             if 'destination' in self.action:
                 error_str += ', ' + self.action['destination']
             result = ActionResult(Result.UPASS, error_str)
         else:
-            error_str = 'PASS: {project}, {compatibility}, {action_target}'.format(
+            error_str = 'PASS: {project}, {compatibility}, {commit}, {action_target}'.format(
                             project=self.project['path'],
-                            compatibility=compatible_swift,
+                            compatibility=self.version['version'],
+                            commit=version_commit,
                             action_target = dict_get(self.action, 'scheme', 'target', default="Swift Package")
                         )
             if 'destination' in self.action:
