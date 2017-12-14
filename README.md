@@ -70,11 +70,12 @@ To add a new Swift Package Manager project, use the following template:
   "path": "project",
   "branch": "master",
   "maintainer": "email@example.com",
-  "compatibility": {
-    "3.0": {
+  "compatibility": [
+    {
+      "version": "3.0",
       "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
     }
-  },
+  ],
   "platforms": [
     "Darwin"
   ],
@@ -90,10 +91,13 @@ To add a new Swift Package Manager project, use the following template:
 }
 ~~~
 
-The `commit` field specifies a commit hash to pin the repository to. It's
-contained inside a `compatibility` field which specifies the version of Swift
-the commit is known to compile against. Multiple commits compatible with
-different versions of Swift can be specified.
+The `compatibility` field contains a list of version dictionaries, each
+containing a Swift version and a commit. Commits are checked out before
+building a project in the associated Swift version compatibility mode. The
+Swift version is the earliest version of Swift known to compile the project at
+the given commit. The goal is to have multiple commits at different points in a
+project's history that are compatible with all supported Swift version
+compatibility modes.
 
 The `platforms` field specifies the platforms that can be used to build the
 project. Linux and Darwin can currently be specified.
@@ -109,11 +113,12 @@ To add a new Swift Xcode workspace, use the following template:
   "path": "project",
   "branch": "master",
   "maintainer": "email@example.com",
-  "compatibility": {
-    "3.0": {
+  "compatibility": [
+    {
+      "version": "3.0",
       "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
     }
-  },
+  ],
   "platforms": [
     "Darwin"
   ],
@@ -177,11 +182,12 @@ To add a new Swift Xcode project, use the following template:
   "path": "project",
   "branch": "master",
   "maintainer": "email@example.com",
-  "compatibility": {
-    "3.0": {
+  "compatibility": [
+    {
+      "version": "3.0",
       "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
     }
-  },
+  ],
   "platforms": [
     "Darwin"
   ],
@@ -238,13 +244,13 @@ To build all projects against a specified Swift compiler locally, use the
 `runner.py` utility as shown below.
 
 ~~~bash
-./runner.py --swift-branch master --projects projects.json --swift-version 3 --include-actions 'action.startswith("Build")' --swiftc path/to/swiftc
+./runner.py --swift-branch master --projects projects.json --include-actions 'action.startswith("Build")' --swiftc path/to/swiftc
 ~~~
 
 Use the `--include-repos` flag to build a specific project.
 
 ~~~bash
-./runner.py --swift-branch master --projects projects.json --swift-version 3 --include-actions 'action.startswith("Build")' --include-repos 'path == "Alamofire"' --swiftc path/to/swiftc
+./runner.py --swift-branch master --projects projects.json --include-actions 'action.startswith("Build")' --include-repos 'path == "Alamofire"' --swiftc path/to/swiftc
 ~~~
 
 By default, build output is redirected to per-action `.log` files in the current
