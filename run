@@ -141,7 +141,6 @@ def execute_runner(workspace, args):
         './runner.py',
         '--swiftc', swiftc_path,
         '--projects', args.projects,
-        '--swift-version', '3',
         '--include-actions', action_filter,
         '--swift-branch', args.swift_branch
     ]
