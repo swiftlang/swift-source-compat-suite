@@ -23,7 +23,6 @@ import sys
 import json
 import time
 import argparse
-import pprint
 
 import common
 
@@ -762,7 +761,6 @@ class ListBuilder(Factory):
                 (log_filename, output_fd) = self.output_fd(subtarget)
                 subbuilder_result = None
                 try:
-                    pprint.pprint([subtarget] + self.payload())
                     subbuilder_result = self.subbuilder(*([subtarget] + self.payload())).build(
                         stdout=output_fd
                     )
