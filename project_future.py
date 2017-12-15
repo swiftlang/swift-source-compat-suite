@@ -829,7 +829,7 @@ class VersionBuilder(ListBuilder):
     def output_fd(self, subtarget):
         scheme_target = dict_get(subtarget, 'scheme', 'target', default=False)
         destination = dict_get(subtarget, 'destination', default=False)
-        project_identifier = dict_get(self.target, 'path', default="") + " " + \
+        project_identifier = dict_get(self.project, 'path', default="") + " " + \
                              dict_get(subtarget, 'project', default="").split('-')[0]
         identifier = ': '.join(
             [subtarget['action'], project_identifier] +
