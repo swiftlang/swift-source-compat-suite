@@ -410,6 +410,9 @@ def git_update(url, configured_sha, path,
             ))
         else:
             debug_print('current_sha == configured_sha', stderr=stderr)
+            returncodes.append(git_checkout(configured_sha, path,
+                                            force=True,
+                                            stdout=stdout, stderr=stderr))
     except ExecuteCommandFailure:
         debug_print("warning: Unable to update. Falling back to a clone.",
                     stderr=stderr)
