@@ -28,27 +28,46 @@ supported_configs = {
             'version': 'Apple Swift version 3.0 '
                        '(swiftlang-800.0.46.2 clang-800.0.38)\n'
                        'Target: x86_64-apple-macosx10.9\n',
-            'description': 'Xcode 8.0 (contains Swift 3.0)'
+            'description': 'Xcode 8.0 (contains Swift 3.0)',
+            'branch': 'swift-3.0-branch'
         },
         '3.1': {
             'version': 'Apple Swift version 3.1 '
                        '(swiftlang-802.0.53 clang-802.0.42)\n'
                        'Target: x86_64-apple-macosx10.9\n',
-            'description': 'Xcode 8.3.2 (contains Swift 3.1)'
+            'description': 'Xcode 8.3.2 (contains Swift 3.1)',
+            'branch': 'swift-3.0-branch'
+        },
+        '3.2': {
+            'version': 'Apple Swift version 4.0.3 '
+                       '(swiftlang-900.0.74.1 clang-900.0.39.2)\n'
+                       'Target: x86_64-apple-macosx10.9\n',
+            'description': 'Xcode 9.2 (contains Swift 3.2 compatibility mode)',
+            'branch': 'swift-4.0-branch'
+        },
+        '4.0.3': {
+            'version': 'Apple Swift version 4.0.3 '
+                       '(swiftlang-900.0.74.1 clang-900.0.39.2)\n'
+                       'Target: x86_64-apple-macosx10.9\n',
+            'description': 'Xcode 9.2 (contains Swift 4.0.3)',
+            'branch': 'swift-4.0-branch'
         }
     },
+    # NOTE: Linux isn't fully supported yet
     'Linux': {
         '3.0': {
             'version': 'Swift version 3.0 '
                        '(swift-3.0-RELEASE)\n'
                        'Target: x86_64-unknown-linux-gnu\n',
-            'description': 'swift-3.0-RELEASE toolchain'
+            'description': 'swift-3.0-RELEASE toolchain',
+            'branch': 'swift-3.0-branch'
         },
         '3.1': {
             'version': 'Swift version 3.1 '
                        '(swift-3.1-RELEASE)\n'
                        'Target: x86_64-unknown-linux-gnu\n',
-            'description': 'swift-3.1-RELEASE toolchain'
+            'description': 'swift-3.1-RELEASE toolchain',
+            'branch': 'swift-3.0-branch'
         }
     }
 }
@@ -60,23 +79,28 @@ def parse_args():
     )
     parser.add_argument('project',
                         help='the project to test, specified by the "path" index field')
+    parser.add_argument('--earliest-compatible-swift-version',
+                        metavar='VERSION',
+                        help='the Swift version mode to check, including decimal point (e.g. 3.0)',
+                        required=True)
     parser.add_argument('--swiftc',
                         metavar='PATH',
                         help='swiftc executable')
     return parser.parse_args()
 
 
-def get_project_compatibility(project_path):
-    common.debug_print("--- Finding %s Swift version compatibility ---" % project_path)
+def validate(project_path, compatibility_version):
+    common.debug_print("--- Validating %s Swift version %s compatibility ---" % (project_path, compatibility_version))
     index = json.loads(open(project_list).read())
     project = next((p for p in index if p['path'] == project_path), None)
     if not project:
         common.debug_print("error: Unable to find %s in project index ---" % project_path)
         exit(1)
     try:
-        compatibility_version = project['compatibility'].keys()[0]
+        compatibility_dict = {version['version']: version for version in project['compatibility']}
+        compatibility_dict[compatibility_version]
     except (IndexError, KeyError, TypeError) as e:
-        common.debug_print("error: Unable to find %s Swift version compatibility ---" % project_path)
+        common.debug_print("error: Unable to find %s Swift version %s compatibility in project index ---" % (project_path, compatibility_version))
         raise
     common.debug_print("--- Project configured to be compatible with Swift %s ---" % compatibility_version)
 
@@ -87,11 +111,8 @@ def get_project_compatibility(project_path):
         exit(1)
     common.debug_print("--- Platform compatibility check succeeded ---")
 
-    return compatibility_version
-
 
 def is_correct_swift_version(swiftc, compatibility_version):
-
     common.debug_print("--- Checking installed Swift version ---")
     swift_version = common.check_execute_output([swiftc, '--version'])
     try:
@@ -128,6 +149,7 @@ def check(project, swift_branch, swiftc, compatibility_version):
         '--swiftc', swiftc,
         '--projects', project_list,
         '--include-repos', 'path == "%s"' % project,
+        '--include-versions', 'version == "%s"' % compatibility_version,
         '--include-actions', 'action.startswith("Build")',
     ]
     common.debug_print("--- Executing build actions ---")
@@ -144,10 +166,10 @@ def main():
     os.chdir(os.path.dirname(__file__))
     args = parse_args()
     common.debug_print('** CHECK **')
-    compatibility_version = get_project_compatibility(args.project)
-    swift_branch = 'swift-%s-branch' % compatibility_version
-    common.set_swift_branch(swift_branch)
-    return check(args.project, swift_branch, args.swiftc, compatibility_version)
+    validate(args.project, args.earliest_compatible_swift_version)
+    config = supported_configs[platform.system()][args.earliest_compatible_swift_version]
+    common.set_swift_branch(config['branch'])
+    return check(args.project, config['branch'], args.swiftc, args.earliest_compatible_swift_version)
 
 if __name__ == '__main__':
     sys.exit(main())
