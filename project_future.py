@@ -330,8 +330,8 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
 
         other_swift_flags = []
         if swift_version:
-            other_swift_flags += ['-swift-version', swift_version]
-            build_settings['SWIFT_VERSION'] = swift_version
+            other_swift_flags += ['-swift-version', swift_version.split('.')[0]]
+            build_settings['SWIFT_VERSION'] = swift_version.split('.')[0]
         if added_swift_flags:
             other_swift_flags.append(added_swift_flags)
         if other_swift_flags:
