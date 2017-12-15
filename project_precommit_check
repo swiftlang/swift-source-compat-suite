@@ -101,6 +101,7 @@ def validate(project_path, compatibility_version):
         compatibility_dict[compatibility_version]
     except (IndexError, KeyError, TypeError) as e:
         common.debug_print("error: Unable to find %s Swift version %s compatibility in project index ---" % (project_path, compatibility_version))
+        common.debug_print("note: Please add a version entry for %s to the `compatibility` field for %s in the project index or check against a version that has already been added ---" % (compatibility_version, project_path))
         raise
     common.debug_print("--- Project configured to be compatible with Swift %s ---" % compatibility_version)
 
