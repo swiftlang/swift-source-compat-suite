@@ -797,6 +797,10 @@ class ProjectBuilder(ListBuilder):
     def payload(self):
         return [self.target]
 
+    def included(self, subtarget):
+        version = subtarget
+        return included_element(self.include, self.exclude, version)
+
     def subtargets(self):
         return self.target['compatibility']
 
