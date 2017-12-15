@@ -1139,8 +1139,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "error: instance method 'add(observer:)' in non-final class 'Procedure' cannot be used",
-                "swift-4.1-branch": "error: instance method 'add(observer:)' in non-final class 'Procedure' cannot be used"
+                "master": "https://bugs.swift.org/browse/SR-6618",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6618"
               }
             }
           }
@@ -1156,8 +1156,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "error: instance method 'add(observer:)' in non-final class 'Procedure' cannot be used",
-                "swift-4.1-branch": "error: instance method 'add(observer:)' in non-final class 'Procedure' cannot be used"
+                "master": "https://bugs.swift.org/browse/SR-6618",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6618"
               }
             }
           }
@@ -1173,8 +1173,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "error: instance method 'add(observer:)' in non-final class 'Procedure' cannot be used",
-                "swift-4.1-branch": "error: instance method 'add(observer:)' in non-final class 'Procedure' cannot be used"
+                "master": "https://bugs.swift.org/browse/SR-6618",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6618"
               }
             }
           }
@@ -1190,8 +1190,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "error: instance method 'add(observer:)' in non-final class 'Procedure' cannot be used",
-                "swift-4.1-branch": "error: instance method 'add(observer:)' in non-final class 'Procedure' cannot be used"
+                "master": "https://bugs.swift.org/browse/SR-6618",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6618"
               }
             }
           }
@@ -1212,8 +1212,8 @@
             },
             "3.1": {
               "branch": {
-                "master": "error: instance method 'add(observer:)' in non-final class 'Procedure' cannot be used",
-                "swift-4.1-branch": "error: instance method 'add(observer:)' in non-final class 'Procedure' cannot be used"
+                "master": "https://bugs.swift.org/browse/SR-6618",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6618"
               }
             }
           }
@@ -1399,8 +1399,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "error: type 'Bag<Element>' does not conform to protocol 'BidirectionalCollection'",
-                "swift-4.1-branch": "error: type 'Bag<Element>' does not conform to protocol 'BidirectionalCollection'"
+                "master": "https://bugs.swift.org/browse/SR-6620",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6620"
               }
             }
           }
@@ -1416,8 +1416,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "error: type 'Bag<Element>' does not conform to protocol 'BidirectionalCollection'",
-                "swift-4.1-branch": "error: type 'Bag<Element>' does not conform to protocol 'BidirectionalCollection'"
+                "master": "https://bugs.swift.org/browse/SR-6620",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6620"
               }
             }
           }
@@ -1433,8 +1433,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "error: type 'Bag<Element>' does not conform to protocol 'BidirectionalCollection'",
-                "swift-4.1-branch": "error: type 'Bag<Element>' does not conform to protocol 'BidirectionalCollection'"
+                "master": "https://bugs.swift.org/browse/SR-6620",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6620"
               }
             }
           }
@@ -1450,8 +1450,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "error: type 'Bag<Element>' does not conform to protocol 'BidirectionalCollection'",
-                "swift-4.1-branch": "error: type 'Bag<Element>' does not conform to protocol 'BidirectionalCollection'"
+                "master": "https://bugs.swift.org/browse/SR-6620",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6620"
               }
             }
           }
@@ -1490,8 +1490,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "error: type 'Bag<Element>' does not conform to protocol 'BidirectionalCollection'",
-                "swift-4.1-branch": "error: type 'Bag<Element>' does not conform to protocol 'BidirectionalCollection'"
+                "master": "https://bugs.swift.org/browse/SR-6620",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6620"
               }
             }
           }
@@ -1507,8 +1507,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "error: type 'Bag<Element>' does not conform to protocol 'BidirectionalCollection'",
-                "swift-4.1-branch": "error: type 'Bag<Element>' does not conform to protocol 'BidirectionalCollection'"
+                "master": "https://bugs.swift.org/browse/SR-6620",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6620"
               }
             }
           }
@@ -1524,8 +1524,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "error: type 'Bag<Element>' does not conform to protocol 'BidirectionalCollection'",
-                "swift-4.1-branch": "error: type 'Bag<Element>' does not conform to protocol 'BidirectionalCollection'"
+                "master": "https://bugs.swift.org/browse/SR-6620",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6620"
               }
             }
           }
@@ -1541,8 +1541,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "error: type 'Bag<Element>' does not conform to protocol 'BidirectionalCollection'",
-                "swift-4.1-branch": "error: type 'Bag<Element>' does not conform to protocol 'BidirectionalCollection'"
+                "master": "https://bugs.swift.org/browse/SR-6620",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6620"
               }
             }
           }
@@ -1560,7 +1560,7 @@
       {
         "version": "3.2",
         "commit": "2493b356b3422f3bbb4dab27dc351f16ebdda13c"
-  }
+      }
     ],
     "platforms": [
       "Darwin"
@@ -2116,8 +2116,8 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "error: invalid redeclaration of 'Element'",
-                "swift-4.1-branch": "error: invalid redeclaration of 'Element'"
+                "master": "https://bugs.swift.org/browse/SR-6617",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6617"
               }
             }
           }
