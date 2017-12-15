@@ -956,7 +956,7 @@ class CompatActionBuilder(ActionBuilder):
 
     def dispatch(self, identifier, stdout=sys.stdout, stderr=sys.stderr):
         if not self.swift_version:
-            self.swift_version = self.version['version'].strip('.0')
+            self.swift_version = self.version['version'].split('.')[0]
         try:
             dispatch(self.root_path, self.project, self.action,
                      self.swiftc,
