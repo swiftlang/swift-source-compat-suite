@@ -832,7 +832,7 @@ class VersionBuilder(ListBuilder):
         project_identifier = dict_get(self.project, 'path', default="") + " " + \
                              dict_get(subtarget, 'project', default="").split('-')[0]
         identifier = ': '.join(
-            [subtarget['action'], project_identifier] +
+            [subtarget['action'], project_identifier, self.target['version']] +
             ([scheme_target] if scheme_target else []) +
             ([destination] if destination else [])
         )
