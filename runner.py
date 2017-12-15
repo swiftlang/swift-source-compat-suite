@@ -18,13 +18,13 @@ import json
 import sys
 
 import common
-import project
+import project_future
 
 
 def parse_args():
     """Return parsed command line arguments."""
     parser = argparse.ArgumentParser()
-    project.add_arguments(parser)
+    project_future.add_arguments(parser)
     return parser.parse_args()
 
 
@@ -32,31 +32,36 @@ def main():
     """Execute specified indexed project actions."""
     args = parse_args()
     index = json.loads(open(args.projects).read())
-    result = project.ProjectListBuilder(
+    result = project_future.ProjectListBuilder(
         args.include_repos,
         args.exclude_repos,
         args.verbose,
-        project.ProjectBuilder.factory(
-            args.include_actions,
-            args.exclude_actions,
+        project_future.ProjectBuilder.factory(
+            args.include_versions,
+            args.exclude_versions,
             args.verbose,
-            project.CompatActionBuilder.factory(
-                args.swiftc,
-                args.swift_version,
-                args.swift_branch,
-                args.sandbox_profile_xcodebuild,
-                args.sandbox_profile_package,
-                args.add_swift_flags,
-                args.skip_clean,
-                args.build_config,
-                args.strip_resource_phases
+            project_future.VersionBuilder.factory(
+                args.include_actions,
+                args.exclude_actions,
+                args.verbose,
+                project_future.CompatActionBuilder.factory(
+                    args.swiftc,
+                    args.swift_version,
+                    args.swift_branch,
+                    args.sandbox_profile_xcodebuild,
+                    args.sandbox_profile_package,
+                    args.add_swift_flags,
+                    args.skip_clean,
+                    args.build_config,
+                    args.strip_resource_phases
+                ),
             ),
         ),
         index
     ).build()
     common.debug_print(str(result))
-    return 0 if result.result in [project.ResultEnum.PASS,
-                                  project.ResultEnum.XFAIL] else 1
+    return 0 if result.result in [project_future.ResultEnum.PASS,
+                                  project_future.ResultEnum.XFAIL] else 1
 
 if __name__ == '__main__':
     sys.exit(main())
