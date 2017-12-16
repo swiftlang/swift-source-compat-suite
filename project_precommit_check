@@ -38,6 +38,13 @@ supported_configs = {
             'description': 'Xcode 8.3.2 (contains Swift 3.1)',
             'branch': 'swift-3.0-branch'
         },
+        '4.0': {
+            'version': 'Apple Swift version 4.0 '
+                       '(swiftlang-900.0.65.2 clang-900.0.37)\n'
+                       'Target: x86_64-apple-macosx10.9\n',
+            'description': 'Xcode 9.0.1 (contains Swift 4.0)',
+            'branch': 'swift-4.0-branch'
+        },
         '3.2': {
             'version': 'Apple Swift version 4.0.3 '
                        '(swiftlang-900.0.74.1 clang-900.0.39.2)\n'
