@@ -5,11 +5,12 @@
     "path": "Alamofire",
     "branch": "master",
     "maintainer": "cnoon@alamofire.org",
-    "compatibility": {
-      "3.0": {
+    "compatibility": [
+      {
+        "version": "3.0",
         "commit": "b03b43cc381ec02eb9855085427186ef89055eef"
       }
-    },
+    ],
     "platforms": [
       "Darwin"
     ],
@@ -25,17 +26,44 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/onevcat/Kingfisher.git",
+    "path": "Kingfisher",
+    "branch": "master",
+    "maintainer": "onev@onevcat.com",
+    "compatibility": [
+      {
+        "version": "3.0",
+        "commit": "5cfa0dd5c9fc48e1c31f574ad8eaa31a3a9d4003"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Kingfisher.xcworkspace",
+        "scheme": "Kingfisher",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/ReactiveCocoa/ReactiveCocoa.git",
     "path": "ReactiveCocoa",
     "branch": "master",
-    "compatibility": {
-      "3.0": {
+    "compatibility": [
+      {
+        "version": "3.0",
         "commit": "fdc02f188228666d56966fd4f82fb596f14576f1"
       },
-      "3.1": {
+      {
+        "version": "3.1",
         "commit": "afe5b34d384a86fec79766672b965de56005ba42"
       }
-    },
+    ],
     "platforms": [
       "Darwin"
     ],
@@ -45,30 +73,6 @@
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-iOS",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/onevcat/Kingfisher.git",
-    "path": "Kingfisher",
-    "branch": "master",
-    "maintainer": "onev@onevcat.com",
-    "compatibility": {
-      "3.0": {
-        "commit": "5cfa0dd5c9fc48e1c31f574ad8eaa31a3a9d4003"
-      }
-    },
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Kingfisher.xcworkspace",
-        "scheme": "Kingfisher",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
       }
