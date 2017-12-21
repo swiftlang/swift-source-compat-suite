@@ -1493,64 +1493,28 @@
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.1": {
-              "branch": {
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6620"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.1": {
-              "branch": {
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6620"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.1": {
-              "branch": {
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6620"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.1": {
-              "branch": {
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6620"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       }
     ]
   },
@@ -1838,16 +1802,7 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6537"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       },
       {
         "action": "TestSwiftPackage"
