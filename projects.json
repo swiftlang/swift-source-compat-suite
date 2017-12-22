@@ -487,6 +487,10 @@
     "branch": "master",
     "compatibility": [
       {
+        "version": "4.0",
+        "commit": "58e05d13d1e5b42c70c6dd36d64cf1a44fabbb45"
+      },
+      {
         "version": "3.1",
         "commit": "ba8375adb120a9c67de8cc8f420c934581a82e3b"
       }
