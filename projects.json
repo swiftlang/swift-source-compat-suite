@@ -1407,8 +1407,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6620",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6620"
+                "master": "https://bugs.swift.org/browse/SR-6658",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6658"
               }
             }
           }
@@ -1424,8 +1424,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6620",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6620"
+                "master": "https://bugs.swift.org/browse/SR-6658",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6658"
               }
             }
           }
@@ -1441,8 +1441,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6620",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6620"
+                "master": "https://bugs.swift.org/browse/SR-6658",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6658"
               }
             }
           }
@@ -1458,8 +1458,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6620",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6620"
+                "master": "https://bugs.swift.org/browse/SR-6658",
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6658"
               }
             }
           }
