@@ -1012,15 +1012,15 @@
         "workspace": "ObjectMapper.xcworkspace",
         "scheme": "ObjectMapper-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
         "xfail": {
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6690"
+                "master": "https://bugs.swift.org/browse/SR-6690",
                 "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6690"
               }
-            },
+            }
 	  }
 	}
       },
@@ -1029,15 +1029,15 @@
         "workspace": "ObjectMapper.xcworkspace",
         "scheme": "ObjectMapper-Mac",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
         "xfail": {
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6690"
+                "master": "https://bugs.swift.org/browse/SR-6690",
                 "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6690"
               }
-            },
+            }
 	  }
 	}
       },
@@ -1046,15 +1046,15 @@
         "workspace": "ObjectMapper.xcworkspace",
         "scheme": "ObjectMapper-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
         "xfail": {
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6690"
+                "master": "https://bugs.swift.org/browse/SR-6690",
                 "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6690"
               }
-            },
+            }
 	  }
 	}
       },
@@ -1063,15 +1063,15 @@
         "workspace": "ObjectMapper.xcworkspace",
         "scheme": "ObjectMapper-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
         "xfail": {
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6690"
+                "master": "https://bugs.swift.org/browse/SR-6690",
                 "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6690"
               }
-            },
+            }
 	  }
 	}
       }
