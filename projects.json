@@ -485,18 +485,16 @@
     "url": "https://github.com/groue/GRDB.swift.git",
     "path": "GRDB.swift",
     "branch": "master",
-    "xfail": {
-      "compatibility": [
-        {
-          "version": "4.0",
-          "commit": "58e05d13d1e5b42c70c6dd36d64cf1a44fabbb45"
-        },
-        {
-          "version": "3.1",
-          "commit": "ba8375adb120a9c67de8cc8f420c934581a82e3b"
-        }
-      ]
-    },
+    "compatibility": [
+      {
+        "version": "4.0",
+        "commit": "58e05d13d1e5b42c70c6dd36d64cf1a44fabbb45"
+      },
+      {
+        "version": "3.1",
+        "commit": "ba8375adb120a9c67de8cc8f420c934581a82e3b"
+      }
+    ],
     "platforms": [
       "Darwin"
     ],
@@ -504,7 +502,21 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6907"
+              }
+            },
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-6907"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
