@@ -2071,12 +2071,8 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "3.1",
-        "commit": "c34c5c164954132a87e90d2312a74826a54487ed"
-      },
-      {
         "version": "4.0",
-        "commit": "c34c5c164954132a87e90d2312a74826a54487ed"
+        "commit": "549d4c97664bea31af61a4d3d6184dc3e970880a"
       }
     ],
     "maintainer": "jp@jpsim.com",
