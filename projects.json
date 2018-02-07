@@ -1031,8 +1031,7 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6690",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6690"
+                "master": "https://bugs.swift.org/browse/SR-6690"
               }
             }
 	  }
@@ -1048,8 +1047,7 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6690",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6690"
+                "master": "https://bugs.swift.org/browse/SR-6690"
               }
             }
 	  }
@@ -1065,8 +1063,7 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6690",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6690"
+                "master": "https://bugs.swift.org/browse/SR-6690"
               }
             }
 	  }
@@ -1082,8 +1079,7 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6690",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6690"
+                "master": "https://bugs.swift.org/browse/SR-6690"
               }
             }
 	  }
