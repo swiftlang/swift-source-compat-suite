@@ -2481,5 +2481,56 @@
         "configuration": "release"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/bignerdranch/Deferred.git",
+    "path": "Deferred",
+    "branch": "master",
+    "compatibility": [
+      {
+        "version": "3.2",
+        "commit": "190f44e8de0d949c7cdc55e3b3bd856a05b42a67"
+      },
+      {
+        "version": "4.0",
+        "commit": "190f44e8de0d949c7cdc55e3b3bd856a05b42a67"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "maintainer": "zachary@bignerdranch.com",
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "Deferred.xcodeproj",
+        "scheme": "MobileDeferred",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "Deferred.xcodeproj",
+        "scheme": "TVDeferred",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "Deferred.xcodeproj",
+        "scheme": "NanoDeferred",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
   }
 ]
