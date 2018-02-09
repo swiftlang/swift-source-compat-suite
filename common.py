@@ -39,9 +39,9 @@ branches = {
         'swift-corelibs-xctest': 'master',
     },
     'swift-5.0-branch': {
-        'llvm': 'swift-5.0-branch',
-        'clang': 'swift-5.0-branch',
-        'compiler-rt': 'swift-5.0-branch',
+        'llvm': 'swift-4.1-branch',
+        'clang': 'swift-4.1-branch',
+        'compiler-rt': 'swift-4.1-branch',
         'swift': 'swift-5.0-branch',
         'cmark': 'master',
         'ninja': 'release',
