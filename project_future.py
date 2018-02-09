@@ -23,6 +23,7 @@ import sys
 import json
 import time
 import argparse
+import shlex
 
 import common
 
@@ -68,13 +69,14 @@ class ProjectTarget(object):
 class XcodeTarget(ProjectTarget):
     """An Xcode workspace scheme."""
 
-    def __init__(self, project, target, destination, sdk, build_settings,
-                 is_workspace, has_scheme):
+    def __init__(self, swiftc, project, target, destination, sdk,
+                 added_xcodebuild_flags, is_workspace, has_scheme):
+        self._swiftc = swiftc
         self._project = project
         self._target = target
         self._destination = destination
         self._sdk = sdk
-        self._build_settings = build_settings
+        self._added_xcodebuild_flags = added_xcodebuild_flags
         self._is_workspace = is_workspace
         self._has_scheme = has_scheme
 
@@ -116,11 +118,7 @@ class XcodeTarget(ProjectTarget):
                       'INDEX_ENABLE_DATA_STORE=NO',
                       'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
                       'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO'])
-        for setting, value in self._build_settings.iteritems():
-            if setting == 'CONFIGURATION':
-                command += ['-configuration', value]
-            else:
-                command += ['%s=%s' % (setting, value)]
+        command += self._added_xcodebuild_flags
 
         return command
 
@@ -139,12 +137,11 @@ class XcodeTarget(ProjectTarget):
                       # TODO: stdlib search code
                       'SWIFT_LIBRARY_PATH=%s' %
                       get_stdlib_platform_path(
-                          self._build_settings['SWIFT_EXEC'],
+                          self._swiftc,
                           self._destination)]
                    + ['INDEX_ENABLE_DATA_STORE=NO',
                       'GCC_TREAT_WARNINGS_AS_ERRORS=NO'])
-        for setting, value in self._build_settings.iteritems():
-            command += ['%s=%s' % (setting, value)]
+        command += self._added_xcodebuild_flags
 
         return command
 
@@ -279,19 +276,25 @@ def strip_resource_phases(repo_path, stdout=sys.stdout, stderr=sys.stderr):
 
 def dispatch(root_path, repo, action, swiftc, swift_version,
              sandbox_profile_xcodebuild, sandbox_profile_package,
-             added_swift_flags, build_config, should_strip_resource_phases=False,
+             added_swift_flags, added_xcodebuild_flags,
+             build_config, should_strip_resource_phases=False,
              stdout=sys.stdout, stderr=sys.stderr,
              incremental=False):
     """Call functions corresponding to actions."""
 
+    substitutions = action.copy()
+    substitutions.update(repo)
     if added_swift_flags:
         # Support added swift flags specific to the current repository and
         # action by passing their fields as keyword arguments to format, e.g.
         # so that {path} in '-index-store-path /tmp/index/{path}' is replaced
         # with the value of repo's path field.
-        substitutions = action.copy()
-        substitutions.update(repo)
         added_swift_flags = added_swift_flags.format(**substitutions)
+    if added_xcodebuild_flags:
+        added_xcodebuild_flags = \
+            shlex.split(added_xcodebuild_flags.format(**substitutions))
+    else:
+        added_xcodebuild_flags = []
 
     if action['action'] == 'BuildSwiftPackage':
         if not build_config:
@@ -317,38 +320,38 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
             action['action']
         )
 
-        build_settings = {
-            'SWIFT_EXEC': swiftc
-        }
+        initial_xcodebuild_flags = ['SWIFT_EXEC=%s' % swiftc]
 
         if build_config == 'debug':
-            build_settings['CONFIGURATION'] = 'Debug'
+            initial_xcodebuild_flags += ['-configuration', 'Debug']
         elif build_config == 'release':
-            build_settings['CONFIGURATION'] = 'Release'
+            initial_xcodebuild_flags += ['-configuration', 'Release']
         elif 'configuration' in action:
-            build_settings['CONFIGURATION'] = action['configuration']
+            initial_xcodebuild_flags += ['-configuration',
+                                         action['configuration']]
 
         other_swift_flags = []
         if swift_version:
             other_swift_flags += ['-swift-version', swift_version.split('.')[0]]
-            build_settings['SWIFT_VERSION'] = swift_version.split('.')[0]
+            initial_xcodebuild_flags += ['SWIFT_VERSION=%s' % swift_version.split('.')[0]]
         if added_swift_flags:
             other_swift_flags.append(added_swift_flags)
         if other_swift_flags:
             other_swift_flags = ['$(OTHER_SWIFT_FLAGS)'] + other_swift_flags
-            build_settings['OTHER_SWIFT_FLAGS'] = ' '.join(other_swift_flags)
+            initial_xcodebuild_flags += ['OTHER_SWIFT_FLAGS=%s' % ' '.join(other_swift_flags)]
 
         is_workspace = match.group(2).lower() == 'workspace'
         project_path = os.path.join(root_path, repo['path'],
                                     action[match.group(2).lower()])
         has_scheme = match.group(3).lower() == 'scheme'
         xcode_target = \
-            XcodeTarget(project_path,
+            XcodeTarget(swiftc,
+                        project_path,
                         action[match.group(3).lower()],
                         action['destination'],
                         get_sdk_platform_path(action['destination'],
                                               stdout=stdout, stderr=stderr),
-                        build_settings,
+                        initial_xcodebuild_flags + added_xcodebuild_flags,
                         is_workspace,
                         has_scheme)
         if should_strip_resource_phases:
@@ -483,6 +486,12 @@ def add_arguments(parser):
     parser.add_argument("--add-swift-flags",
                         metavar="FLAGS",
                         help='add flags to each Swift invocation (note: field '
+                             'names from projects.json enclosed in {} will be '
+                             'replaced with their value)',
+                        default='')
+    parser.add_argument("--add-xcodebuild-flags",
+                        metavar="FLAGS",
+                        help='add flags to each xcodebuild invocation (note: field '
                              'names from projects.json enclosed in {} will be '
                              'replaced with their value)',
                         default='')
@@ -851,6 +860,7 @@ class ActionBuilder(Factory):
                  sandbox_profile_xcodebuild,
                  sandbox_profile_package,
                  added_swift_flags,
+                 added_xcodebuild_flags,
                  skip_clean, build_config,
                  strip_resource_phases,
                  action, version, project):
@@ -866,6 +876,7 @@ class ActionBuilder(Factory):
         self.root_path = common.private_workspace('project_cache')
         self.current_platform = platform.system()
         self.added_swift_flags = added_swift_flags
+        self.added_xcodebuild_flags = added_xcodebuild_flags
         self.skip_clean = skip_clean
         self.build_config = build_config
         self.strip_resource_phases = strip_resource_phases
@@ -923,6 +934,7 @@ class ActionBuilder(Factory):
                      self.sandbox_profile_xcodebuild,
                      self.sandbox_profile_package,
                      self.added_swift_flags,
+                     self.added_xcodebuild_flags,
                      self.build_config,
                      incremental=self.skip_clean,
                      stdout=stdout, stderr=stderr)
@@ -964,6 +976,7 @@ class CompatActionBuilder(ActionBuilder):
                      self.sandbox_profile_xcodebuild,
                      self.sandbox_profile_package,
                      self.added_swift_flags,
+                     self.added_xcodebuild_flags,
                      self.build_config,
                      incremental=self.skip_clean,
                      should_strip_resource_phases=self.strip_resource_phases,
@@ -1220,6 +1233,7 @@ class IncrementalActionBuilder(ActionBuilder):
                      self.sandbox_profile_xcodebuild,
                      self.sandbox_profile_package,
                      self.added_swift_flags,
+                     self.added_xcodebuild_flags,
                      self.build_config,
                      should_strip_resource_phases=False,
                      stdout=stdout, stderr=stderr,
