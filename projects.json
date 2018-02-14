@@ -1518,7 +1518,15 @@
       },
       {
         "version": "3.1",
-        "commit": "afe5b34d384a86fec79766672b965de56005ba42"
+        "commit": "339e7bdbc44f3c0e68ebc7fbbe7a59a259686703"
+      },
+      {
+        "version": "3.2",
+        "commit": "e5532fc81474ced9908965c5e4d5a91135fb2e2d"
+      },
+      { 
+        "version": "4.0",
+        "commit": "e5532fc81474ced9908965c5e4d5a91135fb2e2d"
       }
     ],
     "platforms": [
@@ -1613,6 +1621,14 @@
       {
         "version": "3.1",
         "commit": "b9d5b350a446b85704396ce332a1f9e4960cfc6b"
+      },
+      {
+        "version": "3.2",
+        "commit": "46fb4d4a8285286e54929add1d12f384675895c6"
+      },
+      {
+        "version": "4.0",
+        "commit": "46fb4d4a8285286e54929add1d12f384675895c6"
       }
     ],
     "platforms": [
