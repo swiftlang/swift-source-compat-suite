@@ -1524,7 +1524,7 @@
         "version": "3.2",
         "commit": "e5532fc81474ced9908965c5e4d5a91135fb2e2d"
       },
-      { 
+      {
         "version": "4.0",
         "commit": "e5532fc81474ced9908965c5e4d5a91135fb2e2d"
       }
@@ -1768,7 +1768,7 @@
         "commit": "1a2a979e6399dfb3574c935d6ccee36bc0214405"
       }
     ],
-    "maintainer": "rob.rix@github.com",
+    "maintainer": "matt@diephouse.com",
     "platforms": [
       "Darwin"
     ],
