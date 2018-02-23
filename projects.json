@@ -2413,6 +2413,10 @@
       {
         "version": "3.0",
         "commit": "db431abebe6b6ec632a3829edd75be0a440e331a"
+      },
+      {
+        "version": "4.0",
+        "commit": "45f5726304f41e6e6ad5d3d836e89940e165f48d"
       }
     ],
     "platforms": [
