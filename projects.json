@@ -614,6 +614,10 @@
       {
         "version": "3.0",
         "commit": "b428dd736d9418e03a1fad19d89f2c9b99389227"
+      },
+      {
+        "version": "4.0",
+        "commit": "b565f2755567e3b75311393f643fa14f4cccf69b"
       }
     ],
     "platforms": [
@@ -621,15 +625,15 @@
     ],
     "actions": [
       {
-        "action": "BuildXcodeProjectScheme",
-        "project": "IBAnimatable.xcodeproj",
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "IBAnimatable.xcworkspace",
         "scheme": "IBAnimatable",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
       },
       {
-        "action": "BuildXcodeProjectScheme",
-        "project": "IBAnimatable.xcodeproj",
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "IBAnimatable.xcworkspace",
         "scheme": "IBAnimatableApp",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
