@@ -1766,6 +1766,10 @@
       {
         "version": "3.1",
         "commit": "1a2a979e6399dfb3574c935d6ccee36bc0214405"
+      },
+      {
+        "version": "4.0",
+        "commit": "7477584259bfce2560a19e06ad9f71db441fff11"
       }
     ],
     "maintainer": "matt@diephouse.com",
