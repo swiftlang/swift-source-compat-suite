@@ -9,6 +9,10 @@
       {
         "version": "3.0",
         "commit": "424000e3ee8549fdc0705cb4fd1a0fae321ad787"
+      },
+      {
+        "version": "4.0",
+        "commit": "a9d68fb796886d03790fbef816e882e9d3edffaa"
       }
     ],
     "platforms": [
@@ -1524,7 +1528,7 @@
         "version": "3.2",
         "commit": "e5532fc81474ced9908965c5e4d5a91135fb2e2d"
       },
-      { 
+      {
         "version": "4.0",
         "commit": "e5532fc81474ced9908965c5e4d5a91135fb2e2d"
       }
