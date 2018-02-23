@@ -14,6 +14,7 @@
 """A run script to be executed as a pull-request test on Jenkins."""
 
 import argparse
+import json
 import os
 import platform
 import random
@@ -89,7 +90,6 @@ def main():
         with open(ws_comment, 'w') as f:
             f.write("Compilation-performance test failed")
 
-    failures = []
     for instance in instances:
         workspace = get_workspace_for_instance(instance, args)
 
@@ -101,9 +101,9 @@ def main():
             build_swift_toolchain(workspace, args)
 
         if not args.skip_runner:
-            failures += execute_runner(instance, workspace, configs, args)
+            execute_runner(instance, workspace, configs, args)
 
-    regressions = analyze_results(configs, failures, args)
+    regressions = analyze_results(configs, args)
 
     # Crude hack to write output to workspace when in CI,
     # regardless of --output passed.
@@ -273,7 +273,6 @@ def get_variant(config, args):
 def execute_runner(instance, workspace, configs, args):
     projects = get_projects(args.suite)
     swiftc_path = get_swiftc_path(instance, workspace, args)
-    failures = []
     for config in configs:
         variant = get_variant(config, args)
         stats = get_stats_dir(instance, variant)
@@ -303,11 +302,7 @@ def execute_runner(instance, workspace, configs, args):
             try:
                 common.check_execute(runner_command, timeout=9999999)
             except common.ExecuteCommandFailure:
-                fail_logs = [re.sub('FAIL_\w+_(\\w+).*\\.log', '\\1', n)
-                             for n in os.listdir(".")
-                             if re.match('FAIL.*.log', n)]
-                failures += (fail_logs if len(fail_logs) != 0 else ["unknown"])
-    return failures
+                pass
 
 
 def get_table_name(reference, subset, variant):
@@ -354,11 +349,41 @@ def get_baseline_name(variant):
                         'cperf-baselines', variant + '.csv')
 
 
-def analyze_results(configs, failures, args):
+def all_driver_stats_files(configs, args):
+    for config in configs:
+        variant = get_variant(config, args)
+        sd_old = get_stats_dir(OLD_INSTANCE, variant)
+        sd_new = get_stats_dir(NEW_INSTANCE, variant)
+        for sd in [sd_old, sd_new]:
+            for root, dirs, files in os.walk(sd):
+                for f in files:
+                    m = re.match(r'stats-\d+-swift-driver-([^-]+).*\.json', f)
+                    if m:
+                        with open(os.path.join(root, f)) as fp:
+                            j = json.load(fp)
+                        yield (m.group(1), j)
+
+
+def find_module_statuses(configs, args):
+    passed = set()
+    failed = set()
+    k = 'Driver.NumProcessFailures'
+    for (module, j) in all_driver_stats_files(configs, args):
+        # Treat a module as failed if there was >0 process failures,
+        # or we can't tell.
+        if j.get(k, 1) == 0:
+            passed.add(module)
+        else:
+            failed.add(module)
+    return (passed, failed)
+
+
+def analyze_results(configs, args):
     # Make a separate random run_id for each comment, to uniquify links.
     run_id = hex(random.randint(1, 2**63))[2:]
     old_ws = get_workspace_for_instance(OLD_INSTANCE, args)
     process_stats = os.path.join(old_ws, 'swift/utils/process-stats-dir.py')
+    (passed_modules, failed_modules) = find_module_statuses(configs, args)
     references = ('head', 'baseline') if args.show_baselines else ('head',)
     subsets = ('brief', 'detailed')
     delta_usec_thresh = str(100 * 1000)
@@ -367,6 +392,9 @@ def analyze_results(configs, failures, args):
                    '--markdown', "--github-emoji"]
     if args.group_by_module:
         common_args += ['--group-by-module']
+
+    for m in (passed_modules - failed_modules):
+        common_args += ['--select-module', m]
 
     returncodes = []
     for config in configs:
@@ -424,9 +452,9 @@ def analyze_results(configs, failures, args):
     out = args.output
     regressions = any(x != 0 for x in returncodes)
     out.write("# Summary for %s %s\n\n" % (args.swift_branch, args.suite))
-    if len(failures) != 0:
-        out.write("**Unexpected test results, stats may be off for %s**\n\n" %
-                  ", ".join(set(failures)))
+    if len(failed_modules) != 0:
+        out.write("**Unexpected test results, excluded stats for %s**\n\n" %
+                  ", ".join(failed_modules))
     if regressions:
         out.write("**Regressions found (see below)**\n\n")
     else:
