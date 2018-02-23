@@ -1774,7 +1774,8 @@
     ],
     "maintainer": "matt@diephouse.com",
     "platforms": [
-      "Darwin"
+      "Darwin",
+      "Linux"
     ],
     "actions": [
       {
