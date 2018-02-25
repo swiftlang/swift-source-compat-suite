@@ -168,7 +168,15 @@
     "compatibility": [
       {
         "version": "3.1",
-        "commit": "1d2a69c6cb6d3850a9893374b2391ab749aaf414"
+        "commit": "189b40655da001a9599337767687857b4cf91b36"
+      },
+      {
+        "version": "4.0",
+        "commit": "189b40655da001a9599337767687857b4cf91b36"
+      },
+      {
+        "version": "4.0.3",
+        "commit": "189b40655da001a9599337767687857b4cf91b36"
       }
     ],
     "platforms": [
