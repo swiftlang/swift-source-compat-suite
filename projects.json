@@ -90,6 +90,10 @@
       {
         "version": "3.1",
         "commit": "91b80dd2fc959b7673b5151bba41beef8e877607"
+      },
+      {
+        "version": "4.0",
+        "commit": "efc83bd21d8c25ba3896debab5f66408f683a1e7"
       }
     ],
     "maintainer": "antonvmironov@gmail.com",
