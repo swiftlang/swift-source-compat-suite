@@ -668,6 +668,18 @@ class ListResult(Result):
     def all(self):
         return [i for l in self.subresults.values() for i in l]
 
+    def recursive_all(self):
+        stack = self.all()
+        actions = []
+        while stack:
+            result = stack.pop(0)
+            if isinstance(result, ActionResult):
+                actions.append(result)
+            else:
+                for r in result.all():
+                    stack.insert(0, r)
+        return actions
+
     @property
     def result(self):
         if self.subresults[Result.FAIL]:
@@ -695,10 +707,14 @@ class ProjectListResult(ListResult):
     def __str__(self):
         output = ""
 
-        xfails = [ar for pr in self.all() for vr in pr.all() for ar in vr.xfails()]
-        fails = [ar for pr in self.all() for vr in pr.all() for ar in vr.fails()]
-        upasses = [ar for pr in self.all() for vr in pr.all() for ar in vr.upasses()]
-        passes = [ar for pr in self.all() for vr in pr.all() for ar in vr.passes()]
+        xfails = [ar for ar in self.recursive_all()
+                  if ar.result == Result.XFAIL]
+        fails = [ar for ar in self.recursive_all()
+                 if ar.result == Result.FAIL]
+        upasses = [ar for ar in self.recursive_all()
+                   if ar.result == Result.UPASS]
+        passes = [ar for ar in self.recursive_all()
+                  if ar.result == Result.PASS]
 
         if xfails:
             output += ('='*40) + '\n'
@@ -863,7 +879,7 @@ class ActionBuilder(Factory):
                  added_xcodebuild_flags,
                  skip_clean, build_config,
                  strip_resource_phases,
-                 action, version, project):
+                 action, project):
         self.swiftc = swiftc
         self.swift_version = swift_version
         self.swift_branch = swift_branch
@@ -871,7 +887,6 @@ class ActionBuilder(Factory):
         self.sandbox_profile_xcodebuild = sandbox_profile_xcodebuild
         self.sandbox_profile_package = sandbox_profile_package
         self.project = project
-        self.version = version
         self.action = action
         self.root_path = common.private_workspace('project_cache')
         self.current_platform = platform.system()
@@ -965,6 +980,26 @@ class ActionBuilder(Factory):
 
 
 class CompatActionBuilder(ActionBuilder):
+    def __init__(self,
+                 swiftc, swift_version, swift_branch,
+                 sandbox_profile_xcodebuild,
+                 sandbox_profile_package,
+                 added_swift_flags,
+                 added_xcodebuild_flags,
+                 skip_clean, build_config,
+                 strip_resource_phases,
+                 action, version, project):
+        super(CompatActionBuilder, self).__init__(
+            swiftc, swift_version, swift_branch,
+            sandbox_profile_xcodebuild,
+            sandbox_profile_package,
+            added_swift_flags,
+            added_xcodebuild_flags,
+            skip_clean, build_config,
+            strip_resource_phases,
+            action, project
+        )
+        self.version = version
 
     def dispatch(self, identifier, stdout=sys.stdout, stderr=sys.stderr):
         if not self.swift_version:
@@ -1032,7 +1067,6 @@ class CompatActionBuilder(ActionBuilder):
                         )
             if 'destination' in self.action:
                 error_str += ', ' + self.action['destination']
-            error_str += ', ' + str(error)
             result = ActionResult(Result.FAIL, error_str)
         common.debug_print(error_str)
         return result
