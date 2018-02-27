@@ -1422,10 +1422,23 @@
       {
         "version": "3.0",
         "commit": "63ccb34a3d2834b7b08ce2014536344966399668"
+      },
+      {
+        "version": "3.1",
+        "commit": "c538a244b110389483c71d5801f7944e042b5b7b"
+      },
+      {
+        "version": "3.2",
+        "commit": "c538a244b110389483c71d5801f7944e042b5b7b"
+      },
+      {
+        "version": "4.0.3",
+        "commit": "c538a244b110389483c71d5801f7944e042b5b7b"
       }
     ],
     "platforms": [
-      "Darwin"
+      "Darwin",
+      "Linux"
     ],
     "actions": [
       {
