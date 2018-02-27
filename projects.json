@@ -2515,6 +2515,10 @@
       {
         "version": "3.0",
         "commit": "1665db77a35b0e5c60269825d2e9b4d6971b81b5"
+      },
+      {
+        "version": "4.0",
+        "commit": "926127231446fc5c1c8c3236033914a4006ab9a2"
       }
     ],
     "maintainer": "cantrell@pobox.com",
