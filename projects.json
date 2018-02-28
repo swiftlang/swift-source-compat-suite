@@ -1063,6 +1063,10 @@
       {
         "version": "3.1",
         "commit": "c4e58ee23db4aaec944505a2f7b001a89b602d7d"
+      },
+      {
+        "version": "4.0.3",
+        "commit": "4b3ff7e7ddd87c0ce73b39b5390c045fe1a8d4af"
       }
     ],
     "maintainer": "ash@ashfurrow.com",
