@@ -1906,7 +1906,16 @@
         "workspace": "Rx.xcworkspace",
         "scheme": "RxSwift-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.0.3": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-7098"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
