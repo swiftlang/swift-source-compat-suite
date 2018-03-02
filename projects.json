@@ -2251,47 +2251,47 @@
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift iOS",
+        "scheme": "SwifterSwift-iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift macOS",
+        "scheme": "SwifterSwift-macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift tvOS",
+        "scheme": "SwifterSwift-tvOS",
         "destination": "generic/platform=tvOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift watchOS",
+        "scheme": "SwifterSwift-watchOS",
         "destination": "generic/platform=watchOS",
         "configuration": "Release"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
         "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift iOSTests",
+        "scheme": "SwifterSwift-iOSTests",
         "destination": "platform=iOS Simulator,name=iPhone 7,OS=10.2"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
         "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift tvOSTests",
+        "scheme": "SwifterSwift-tvOSTests",
         "destination": "platform=tvOS Simulator,name=Apple TV 1080p"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
         "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift macOSTests",
+        "scheme": "SwifterSwift-macOSTests",
         "destination": "platform=macOS"
       }
     ]
