@@ -256,3 +256,55 @@ Use the `--include-repos` flag to build a specific project.
 By default, build output is redirected to per-action `.log` files in the current
 working directory. To change this behavior to output build results to standard
 out, use the `--verbose` flag.
+
+## Marking actions as expected failures
+
+When an action is expected to fail for an extended period of time, it's
+important to mark the action as an expected failure to make new failures more
+visible.
+
+To mark an action as an expected failure, add an `xfail` entry for the correct
+Swift version and branch to the failing actions, associating each with a link
+to a JIRA reporting the relevant failure. The following is an example of an
+action that's XFAIL'd when building against Swift master branch in 3.0
+compatibility mode.
+
+~~~json
+{
+  "repository": "Git",
+  "url": "https://github.com/example/project.git",
+  "path": "project",
+  "branch": "master",
+  "maintainer": "email@example.com",
+  "compatibility": [
+    {
+      "version": "3.0",
+      "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "project.xcodeproj",
+      "target": "project",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release",
+      "xfail": {
+        "compatibility": {
+          "3.0": {
+            "branch": {
+              "master": "https://bugs.swift.org/browse/SR-9999"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
+~~~
+
+Additional Swift branches and versions can be added to XFAIL different
+configurations.
