@@ -56,12 +56,8 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "fdc02f188228666d56966fd4f82fb596f14576f1"
-      },
-      {
-        "version": "3.1",
-        "commit": "afe5b34d384a86fec79766672b965de56005ba42"
+        "version": "4.0",
+        "commit": "e5532fc81474ced9908965c5e4d5a91135fb2e2d"
       }
     ],
     "platforms": [
@@ -75,6 +71,29 @@
         "scheme": "ReactiveCocoa-iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/realm/SwiftLint.git",
+    "path": "SwiftLint",
+    "branch": "master",
+    "compatibility": [
+      {
+        "version": "4.0",
+        "commit": "549d4c97664bea31af61a4d3d6184dc3e970880a"
+      }
+    ],
+    "maintainer": "jp@jpsim.com",
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
       }
     ]
   }
