@@ -1280,6 +1280,10 @@
       {
         "version": "3.0",
         "commit": "d69c8e6f9942c098e589a75162d3196dec183929"
+      },
+      {
+        "version": "4.0.3",
+        "commit": "fe78418de7757d100c94f702e8effb5e7b8e93b8"
       }
     ],
     "maintainer": "rmalik@pinterest.com",
