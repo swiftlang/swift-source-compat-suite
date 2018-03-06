@@ -351,7 +351,11 @@
     "compatibility": [
       {
         "version": "3.2",
-        "commit": "305e2b61a000753b6f1aff7f3f6485a88b3ff4e7"
+        "commit": "e314db8f56b83f2cc761a70cdfc3b823b9815c03"
+      },
+      {
+        "version": "4.0",
+        "commit": "83e6082c5646c5eb4d3130ce575ab858df168c59"
       }
     ],
     "platforms": [
