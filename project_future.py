@@ -651,7 +651,8 @@ class ListResult(Result):
         self.subresults = {value: [] for value in ResultEnum.values}
 
     def add(self, result):
-        self.subresults[result.result].append(result)
+        if result:
+            self.subresults[result.result].append(result)
 
     def xfails(self):
         return self.subresults[Result.XFAIL]
@@ -988,6 +989,7 @@ class CompatActionBuilder(ActionBuilder):
                  added_xcodebuild_flags,
                  skip_clean, build_config,
                  strip_resource_phases,
+                 only_latest_versions,
                  action, version, project):
         super(CompatActionBuilder, self).__init__(
             swiftc, swift_version, swift_branch,
@@ -999,9 +1001,17 @@ class CompatActionBuilder(ActionBuilder):
             strip_resource_phases,
             action, project
         )
+        self.only_latest_versions = only_latest_versions
         self.version = version
 
     def dispatch(self, identifier, stdout=sys.stdout, stderr=sys.stderr):
+        if self.only_latest_versions:
+            if self.version['version'] != \
+               sorted(self.project['compatibility'],
+                      reverse=True,
+                      key=lambda x: [float(y) for y in x['version'].split('.')])[0]['version']:
+                return None
+
         if not self.swift_version:
             self.swift_version = self.version['version'].split('.')[0]
         try:

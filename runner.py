@@ -25,6 +25,7 @@ def parse_args():
     """Return parsed command line arguments."""
     parser = argparse.ArgumentParser()
     project_future.add_arguments(parser)
+    parser.add_argument('--only-latest-versions', action='store_true')
     return parser.parse_args()
 
 
@@ -54,7 +55,8 @@ def main():
                     args.add_xcodebuild_flags,
                     args.skip_clean,
                     args.build_config,
-                    args.strip_resource_phases
+                    args.strip_resource_phases,
+                    args.only_latest_versions
                 ),
             ),
         ),
