@@ -1891,14 +1891,32 @@
         "project": "Pods/Pods.xcodeproj",
         "target": "Pods-RxDataSources",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+            "compatibility": {
+              "3.0": {
+                "branch": {
+                  "master": "https://bugs.swift.org/browse/SR-7181"
+                }
+              }
+            }
+        }
       },
       {
         "action": "BuildXcodeProjectTarget",
         "project": "Pods/Pods.xcodeproj",
         "target": "Pods-Example",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+            "compatibility": {
+              "3.0": {
+                "branch": {
+                  "master": "https://bugs.swift.org/browse/SR-7181"
+                }
+              }
+            }
+        }
       }
     ]
   },
