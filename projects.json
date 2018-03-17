@@ -1924,6 +1924,10 @@
       {
         "version": "3.1",
         "commit": "102424379fb8d6c69b33b95c67504679042f44cc"
+      },
+      {
+        "version": "4.0.3",
+        "commit": "3e848781c7756accced855a6317a4c2ff5e8588b"
       }
     ],
     "platforms": [
@@ -1977,7 +1981,16 @@
         "workspace": "Rx.xcworkspace",
         "scheme": "RxCocoa-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.0.3": {
+              "branch": { 
+                "master": "https://bugs.swift.org/browse/SR-7098"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
