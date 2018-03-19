@@ -2294,6 +2294,10 @@
       {
         "version": "3.1",
         "commit": "07b088eef5cb883e5544ea4d2e9a1338318f0596"
+      },
+      {
+        "version": "4.0.3",
+        "commit": "639e382b21975d900afadbcfaf02ff50c90409b7"
       }
     ],
     "platforms": [
