@@ -1536,7 +1536,11 @@
       {
         "version": "3.0",
         "commit": "b65d53b9547f2f5047c4253fb97ed1d504b4c36d"
-      }
+      },
+	  {
+          "version": "4.0",
+          "commit": "4502081d713257bb414d7dffa25f10ba59fa6770"
+	  }
     ],
     "platforms": [
       "Darwin"
