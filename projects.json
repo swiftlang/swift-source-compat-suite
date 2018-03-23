@@ -423,6 +423,44 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/louisdh/cub.git",
+    "path": "cub",
+    "branch": "master",
+    "maintainer": "louisdhauwe@silverfox.be",
+    "compatibility": [
+      {
+        "version": "4.0.3",
+        "commit": "3574d3fda70091f8dea6494cafa4bca0c340b354"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Cub.xcworkspace",
+        "scheme": "Cub iOS [Double]",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Cub.xcworkspace",
+        "scheme": "Cub macOS Release [Double]",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "Cub.xcworkspace",
+        "scheme": "Cub macOS Tests",
+        "destination": "platform=macOS"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/Bouke/DNS.git",
     "path": "DNS",
     "branch": "master",
