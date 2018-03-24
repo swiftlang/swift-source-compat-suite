@@ -2036,7 +2036,8 @@
           "compatibility": {
             "4.0.3": {
               "branch": { 
-                "master": "https://bugs.swift.org/browse/SR-7098"
+                "master": "https://bugs.swift.org/browse/SR-7098",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-7098"
               }
             }
           }
