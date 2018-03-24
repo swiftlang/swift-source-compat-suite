@@ -2807,7 +2807,8 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-7233"
+                "master": "https://bugs.swift.org/browse/SR-7233",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-7233"
               }
             }
           }
