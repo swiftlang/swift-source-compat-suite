@@ -615,23 +615,7 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6907",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-6907"
-              }
-            },
-            "3.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6907",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-6907"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       },
       {
         "action": "TestSwiftPackage"
