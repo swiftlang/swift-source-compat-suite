@@ -1604,68 +1604,28 @@
         "project": "ReSwift.xcodeproj",
         "scheme": "ReSwift-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-7287",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-7287"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "ReSwift.xcodeproj",
         "scheme": "ReSwift-macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-7287",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-7287"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "ReSwift.xcodeproj",
         "scheme": "ReSwift-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-7287",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-7287"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "ReSwift.xcodeproj",
         "scheme": "ReSwift-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-7287",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-7287"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       }
     ]
   },
