@@ -1661,46 +1661,14 @@
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.2": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-7299",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-7299"
-              }
-            },
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-7299",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-7299"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.2": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-7299",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-7299"
-              }
-            },
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-7299",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-7299"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
