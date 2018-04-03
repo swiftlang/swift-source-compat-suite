@@ -556,7 +556,11 @@ def parse_args():
                         help='cperf suite to run',
                         default='smoketest')
     parser.add_argument("--verbose",
-                        action='store_true')
+                        action='store_true',
+                        default=True)
+    parser.add_argument("--quiet",
+                        action='store_false',
+                        dest='verbose')
     parser.add_argument('--skip-build',
                         action='store_true')
     parser.add_argument('--skip-runner',
