@@ -242,7 +242,7 @@ def get_projects(suite):
 
 def get_configs(suite):
     if suite == 'full':
-        return ['debug', 'debug-opt', 'wmo-onone', 'release']
+        return ['debug-batch', 'release']
     elif suite == 'smoketest':
         return ['debug', 'release']
     else:
@@ -262,6 +262,9 @@ def get_actual_config_and_flags(config, stats):
         config = 'release'
     elif config == 'debug-opt':
         flags += ' -O '
+        config = 'debug'
+    elif config == 'debug-batch':
+        flags += ' -enable-batch-mode '
         config = 'debug'
     return (config, flags)
 
