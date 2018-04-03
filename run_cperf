@@ -242,7 +242,7 @@ def get_projects(suite):
 
 def get_configs(suite):
     if suite == 'full':
-        return ['debug', 'debug-opt', 'wmo-onone', 'release']
+        return ['debug-batch', 'release']
     elif suite == 'smoketest':
         return ['debug', 'release']
     else:
@@ -262,6 +262,9 @@ def get_actual_config_and_flags(config, stats):
         config = 'release'
     elif config == 'debug-opt':
         flags += ' -O '
+        config = 'debug'
+    elif config == 'debug-batch':
+        flags += ' -enable-batch-mode '
         config = 'debug'
     return (config, flags)
 
@@ -289,7 +292,6 @@ def execute_runner(instance, workspace, configs, args):
             '--swiftc', swiftc_path,
             '--projects', projects,
             '--build-config', config,
-            '--swift-version', '3',
             '--include-actions', actions,
             '--swift-branch', args.swift_branch,
             '--add-swift-flags', flags,
@@ -359,9 +361,14 @@ def all_driver_stats_files(configs, args):
                 for f in files:
                     m = re.match(r'stats-\d+-swift-driver-([^-]+).*\.json', f)
                     if m:
-                        with open(os.path.join(root, f)) as fp:
-                            j = json.load(fp)
-                        yield (m.group(1), j)
+                        try:
+                            with open(os.path.join(root, f)) as fp:
+                                j = json.load(fp)
+                            yield (m.group(1), j)
+                        except ValueError:
+                            # Something sufficiently bad happened that
+                            # we can't read the json: build a fake one.
+                            yield (m.group(1), {})
 
 
 def find_module_statuses(configs, args):
@@ -549,7 +556,11 @@ def parse_args():
                         help='cperf suite to run',
                         default='smoketest')
     parser.add_argument("--verbose",
-                        action='store_true')
+                        action='store_true',
+                        default=True)
+    parser.add_argument("--quiet",
+                        action='store_false',
+                        dest='verbose')
     parser.add_argument('--skip-build',
                         action='store_true')
     parser.add_argument('--skip-runner',
@@ -570,7 +581,7 @@ def parse_args():
     parser.add_argument('--new-swiftc',
                         type=str, default=None)
     parser.add_argument('--repetitions',
-                        type=int, default=3)
+                        type=int, default=2)
     parser.add_argument('--show-baselines',
                         type=bool, default=False)
     parser.add_argument('--group-by-module',
