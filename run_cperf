@@ -289,7 +289,6 @@ def execute_runner(instance, workspace, configs, args):
             '--swiftc', swiftc_path,
             '--projects', projects,
             '--build-config', config,
-            '--swift-version', '3',
             '--include-actions', actions,
             '--swift-branch', args.swift_branch,
             '--add-swift-flags', flags,
