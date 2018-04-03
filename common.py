@@ -47,9 +47,9 @@ branches = {
         'ninja': 'release',
         'llbuild': 'master',
         'swiftpm': 'master',
-        'swift-corelibs-libdispatch': 'master',
-        'swift-corelibs-foundation': 'master',
-        'swift-corelibs-xctest': 'master',
+        'swift-corelibs-libdispatch': 'swift-4.2-branch',
+        'swift-corelibs-foundation': 'swift-4.2-branch',
+        'swift-corelibs-xctest': 'swift-4.2-branch',
     },
     'swift-5.0-branch': {
         'llvm': 'swift-4.1-branch',
