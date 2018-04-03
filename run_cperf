@@ -361,9 +361,14 @@ def all_driver_stats_files(configs, args):
                 for f in files:
                     m = re.match(r'stats-\d+-swift-driver-([^-]+).*\.json', f)
                     if m:
-                        with open(os.path.join(root, f)) as fp:
-                            j = json.load(fp)
-                        yield (m.group(1), j)
+                        try:
+                            with open(os.path.join(root, f)) as fp:
+                                j = json.load(fp)
+                            yield (m.group(1), j)
+                        except ValueError:
+                            # Something sufficiently bad happened that
+                            # we can't read the json: build a fake one.
+                            yield (m.group(1), {})
 
 
 def find_module_statuses(configs, args):
