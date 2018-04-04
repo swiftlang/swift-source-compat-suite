@@ -1654,28 +1654,84 @@
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.2": {
+              "branch": {
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
+              }
+            },
+            "4.0": {
+              "branch": {
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.2": {
+              "branch": {
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
+              }
+            },
+            "4.0": {
+              "branch": {
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.2": {
+              "branch": {
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
+              }
+            },
+            "4.0": {
+              "branch": {
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.2": {
+              "branch": {
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
+              }
+            },
+            "4.0": {
+              "branch": {
+                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
+              }
+            }
+          }
+        }
       }
     ]
   },
