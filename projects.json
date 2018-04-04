@@ -1661,11 +1661,6 @@
               "branch": {
                 "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
               }
-            },
-            "4.0": {
-              "branch": {
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
-              }
             }
           }
         }
@@ -1679,11 +1674,6 @@
         "xfail": {
           "compatibility": {
             "3.2": {
-              "branch": {
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
-              }
-            },
-            "4.0": {
               "branch": {
                 "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
               }
@@ -1703,11 +1693,6 @@
               "branch": {
                 "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
               }
-            },
-            "4.0": {
-              "branch": {
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
-              }
             }
           }
         }
@@ -1721,11 +1706,6 @@
         "xfail": {
           "compatibility": {
             "3.2": {
-              "branch": {
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
-              }
-            },
-            "4.0": {
               "branch": {
                 "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
               }
