@@ -493,12 +493,8 @@
         "commit": "c0dd3c0f8cd5fa12f8b433f3f2e3e50fa7debdf5"
       },
       {
-        "version": "3.1",
-        "commit": "9e102ed702045a09eae77b16d223160a66c3f8bc"
-      },
-      {
         "version": "4.0",
-        "commit": "04ae84dbaf423214c644590cbe0d837edfbfd411"
+        "commit": "433d4ba9a3bec8aa739f05cb8505527aab7a30e7"
       }
     ],
     "platforms": [
