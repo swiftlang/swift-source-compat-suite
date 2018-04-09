@@ -549,10 +549,15 @@
       {
         "version": "3.0",
         "commit": "c0dd3c0f8cd5fa12f8b433f3f2e3e50fa7debdf5"
+      },
+      {
+        "version": "4.0",
+        "commit": "433d4ba9a3bec8aa739f05cb8505527aab7a30e7"
       }
     ],
     "platforms": [
-      "Darwin"
+      "Darwin",
+      "Linux"
     ],
     "actions": [
       {
