@@ -79,6 +79,12 @@ def parse_args():
                         action='store_true')
     parser.add_argument('--skip-runner',
                         action='store_true')
+    parser.add_argument("--add-swift-flags",
+                        metavar="FLAGS",
+                        help='add flags to each Swift invocation (note: field '
+                             'names from projects.json enclosed in {} will be '
+                             'replaced with their value)',
+                        default='')
     return parser.parse_args()
 
 
@@ -151,6 +157,9 @@ def execute_runner(workspace, args):
             runner_command += get_sandbox_profile_flags()
     if args.verbose:
         runner_command += ["--verbose"]
+
+    if args.add_swift_flags:
+        runner_command += ['--add-swift-flags=%s' % args.add_swift_flags]
     common.check_execute(runner_command, timeout=9999999)
 
 
