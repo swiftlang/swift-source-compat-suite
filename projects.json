@@ -2002,16 +2002,7 @@
         "workspace": "Rx.xcworkspace",
         "scheme": "RxCocoa-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.0.3": {
-              "branch": {
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-7098"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
