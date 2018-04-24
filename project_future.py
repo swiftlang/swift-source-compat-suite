@@ -112,7 +112,7 @@ class XcodeTarget(ProjectTarget):
                       '-destination', self._destination]
                    + dir_override
                    + ['-sdk', self._sdk,
-                      'CODE_SIGN_IDENTITY=',
+                      'CODE_SIGN_IDENTITY=-',
                       'CODE_SIGNING_REQUIRED=NO',
                       'ENABLE_BITCODE=NO',
                       'INDEX_ENABLE_DATA_STORE=NO',
