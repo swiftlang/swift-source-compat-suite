@@ -68,12 +68,11 @@ class ProjectTarget(object):
 class XcodeTarget(ProjectTarget):
     """An Xcode workspace scheme."""
 
-    def __init__(self, project, target, destination, sdk, build_settings,
+    def __init__(self, project, target, destination, build_settings,
                  is_workspace, has_scheme):
         self._project = project
         self._target = target
         self._destination = destination
-        self._sdk = sdk
         self._build_settings = build_settings
         self._is_workspace = is_workspace
         self._has_scheme = has_scheme
@@ -109,8 +108,7 @@ class XcodeTarget(ProjectTarget):
                       target_param, self._target,
                       '-destination', self._destination]
                    + dir_override
-                   + ['-sdk', self._sdk,
-                      'CODE_SIGN_IDENTITY=',
+                   + ['CODE_SIGN_IDENTITY=',
                       'CODE_SIGNING_REQUIRED=NO',
                       'ENABLE_BITCODE=NO',
                       'INDEX_ENABLE_DATA_STORE=NO',
@@ -135,7 +133,6 @@ class XcodeTarget(ProjectTarget):
                    + [project_param, self._project,
                       target_param, self._target,
                       '-destination', self._destination,
-                      '-sdk', self._sdk,
                       # TODO: stdlib search code
                       'SWIFT_LIBRARY_PATH=%s' %
                       get_stdlib_platform_path(
@@ -166,28 +163,6 @@ def get_stdlib_platform_path(swiftc, destination):
     stdlib_path = os.path.join(os.path.dirname(os.path.dirname(swiftc)),
                                'lib/swift/' + stdlib_dir)
     return stdlib_path
-
-
-def get_sdk_platform_path(destination, stdout=sys.stdout, stderr=sys.stderr):
-    """Return the corresponding sdk path for a destination."""
-    platform_sdk_path = {
-        'Xcode': 'macosx',
-        'macOS': 'macosx',
-        'iOS': 'iphoneos',
-        'tvOS': 'appletvos',
-        'watchOS': 'watchos',
-    }
-    sdk_dir = None
-    for platform_key in platform_sdk_path:
-        if platform_key in destination:
-            sdk_dir = common.check_execute_output([
-                '/usr/bin/xcrun',
-                '-show-sdk-path',
-                '-sdk', platform_sdk_path[platform_key]
-            ], stdout=stdout, stderr=stderr).strip()
-            break
-    assert sdk_dir, 'Unable to find SDK'
-    return sdk_dir
 
 
 def clean_swift_package(path, swiftc, sandbox_profile,
@@ -346,8 +321,6 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
             XcodeTarget(project_path,
                         action[match.group(3).lower()],
                         action['destination'],
-                        get_sdk_platform_path(action['destination'],
-                                              stdout=stdout, stderr=stderr),
                         build_settings,
                         is_workspace,
                         has_scheme)
