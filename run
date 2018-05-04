@@ -85,6 +85,12 @@ def parse_args():
                              'names from projects.json enclosed in {} will be '
                              'replaced with their value)',
                         default='')
+    parser.add_argument("--add-xcodebuild-flags",
+                        metavar="FLAGS",
+                        help='add flags to each xcodebuild invocation (note: field '
+                             'names from projects.json enclosed in {} will be '
+                             'replaced with their value)',
+                        default='')
     return parser.parse_args()
 
 
@@ -160,6 +166,10 @@ def execute_runner(workspace, args):
 
     if args.add_swift_flags:
         runner_command += ['--add-swift-flags=%s' % args.add_swift_flags]
+
+    if args.add_xcodebuild_flags:
+        runner_command += ['--add-xcodebuild-flags=%s' % args.add_xcodebuild_flags]
+
     common.check_execute(runner_command, timeout=9999999)
 
 
