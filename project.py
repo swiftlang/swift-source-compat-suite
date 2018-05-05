@@ -26,6 +26,11 @@ import argparse
 
 import common
 
+try:
+    basestring        # Python 2
+except NameError:
+    basestring = str  # Python 3
+
 swift_branch = None
 
 
@@ -512,7 +517,7 @@ def evaluate_predicate(element, predicate):
     # pylint: disable=I0011,W0122,W0123
     for key in element:
         if isinstance(element[key], basestring):
-            exec key + ' = """' + element[key] + '"""'
+            exec(key + ' = """' + element[key] + '"""')
     return eval(predicate)
 
 

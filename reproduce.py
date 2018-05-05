@@ -27,6 +27,11 @@ import sys
 
 import common
 
+try:
+    raw_input          # Python 2
+except NameError:
+    raw_input = input  # Python 3
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__.split('\n')[0])
