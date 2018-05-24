@@ -228,18 +228,6 @@ def test_swift_package(path, swiftc, sandbox_profile,
                                 env=env)
 
 
-def checkout(root_path, repo, commit):
-    """Checkout an indexed repository."""
-    path = os.path.join(root_path, repo['path'])
-    if repo['repository'] == 'Git':
-        if os.path.exists(path):
-            return common.git_update(repo['url'], commit, path)
-        else:
-            return common.git_clone(repo['url'], path, tree=commit)
-    raise common.Unreachable('Unsupported repository: %s' %
-                             repo['repository'])
-
-
 def strip_resource_phases(repo_path, stdout=sys.stdout, stderr=sys.stderr):
     """Strip resource build phases from a given project."""
     command = ['perl', '-i', '-00ne',
