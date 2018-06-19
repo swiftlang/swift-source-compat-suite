@@ -12,6 +12,7 @@
 # ===----------------------------------------------------------------------===
 
 """A library containing common utility functionality."""
+from __future__ import print_function
 
 import multiprocessing
 import os
@@ -21,6 +22,11 @@ import signal
 import subprocess
 import sys
 import shlex
+
+try:
+    basestring        # Python 2
+except NameError:
+    basestring = str  # Python 3
 
 DEFAULT_EXECUTE_TIMEOUT = 10*60
 
@@ -270,7 +276,7 @@ def shell_join(command):
 
 def debug_print(s, stderr=sys.stderr):
     """Print a string to stderr and flush."""
-    print >>stderr, s
+    print(s, file=stderr)
     stderr.flush()
 
 
