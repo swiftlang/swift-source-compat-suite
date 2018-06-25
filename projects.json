@@ -2722,6 +2722,32 @@
     ]
   },
   {
+  "repository": "Git",
+  "url": "https://github.com/exercism/swift.git",
+  "path": "xswift",
+  "branch": "master",
+  "maintainer": "cheyo@masters3d.com",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "ce9509e301f0661b0e9758f5cef23edd1d1bb50e"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+  },
+  {
     "repository": "Git",
     "url": "https://github.com/vapor/vapor.git",
     "path": "vapor",
