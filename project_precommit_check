@@ -65,6 +65,13 @@ supported_configs = {
                        'Target: x86_64-apple-darwin17.7.0\n',
             'description': 'Xcode 9.3 (contains Swift 4.1)',
             'branch': 'swift-4.1-branch'
+        },
+        '4.2': {
+            'version': 'Apple Swift version 4.2 '
+                       '(swiftlang-1000.0.16.9 clang-1000.10.25.3)\n'
+                       'Target: x86_64-apple-darwin17.7.0\n',
+            'description': 'Xcode 10 Beta 2 (contains Swift 4.2)',
+            'branch': 'swift-4.2-branch'
         }
     },
     # NOTE: Linux isn't fully supported yet
