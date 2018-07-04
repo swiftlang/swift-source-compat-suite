@@ -733,8 +733,8 @@
     "maintainer": "JakeLinAu@gmail.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "b428dd736d9418e03a1fad19d89f2c9b99389227"
+        "version": "4.0",
+        "commit": "c81532d38ee03e76f86e5b1b40dcd4cfad153fee"
       }
     ],
     "platforms": [
