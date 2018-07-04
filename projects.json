@@ -609,12 +609,8 @@
     "maintainer": "jflinter11@gmail.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "e3e8bf0d2355a23dc0f1af3a0b6465efcb3b6488"
-      },
-      {
-        "version": "3.1",
-        "commit": "e3e8bf0d2355a23dc0f1af3a0b6465efcb3b6488"
+        "version": "4.0",
+        "commit": "6e09d221d6589c6f620af810727cfb6a2657d911"
       }
     ],
     "platforms": [
