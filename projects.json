@@ -2235,8 +2235,8 @@
     "maintainer": "me@danielemargutti.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "b8a6ace0b4a419d377886615ece14a3f259323fc"
+        "version": "4.0",
+        "commit": "744a8ce947f71e951e9f0f240b07d1a4f1f8b84e"
       }
     ],
     "platforms": [
