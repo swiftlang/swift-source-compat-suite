@@ -973,8 +973,8 @@
     "maintainer": "onev@onevcat.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "5cfa0dd5c9fc48e1c31f574ad8eaa31a3a9d4003"
+        "version": "4.0",
+        "commit": "a5d1214220b8ddf29acf7c08c8bb42993ed56c54"
       }
     ],
     "platforms": [
