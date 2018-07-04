@@ -637,17 +637,9 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "4.1",
-        "commit": "27e94c211d1e6b129ecfa9e73d5846717ceed4e8"
-      },
-      {
         "version": "4.0",
-        "commit": "58e05d13d1e5b42c70c6dd36d64cf1a44fabbb45"
+        "commit": "f121c6b1393aacf6d1956ea9edf0dd1e9c34977f"
       },
-      {
-        "version": "3.1",
-        "commit": "ba8375adb120a9c67de8cc8f420c934581a82e3b"
-      }
     ],
     "platforms": [
       "Darwin"
