@@ -639,7 +639,7 @@
       {
         "version": "4.0",
         "commit": "f121c6b1393aacf6d1956ea9edf0dd1e9c34977f"
-      },
+      }
     ],
     "platforms": [
       "Darwin"
