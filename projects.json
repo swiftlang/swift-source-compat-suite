@@ -766,11 +766,7 @@
     "compatibility": [
       {
         "version": "4.0",
-        "commit": "c48fed73909a295d9aa80e22a4a0e26a04301723"
-      },
-      {
-        "version": "3.0",
-        "commit": "5e8b8327fc87c008e718a2c1aa0a78b7eac16a53"
+        "commit": "fccbaf7e8726e5129935d3dd4da401938293ee2e"
       }
     ],
     "platforms": [
