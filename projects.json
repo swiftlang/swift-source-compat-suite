@@ -7,12 +7,8 @@
     "maintainer": "andrea@fancypixel.it",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "424000e3ee8549fdc0705cb4fd1a0fae321ad787"
-      },
-      {
         "version": "4.0",
-        "commit": "a9d68fb796886d03790fbef816e882e9d3edffaa"
+        "commit": "de70ea613ca1648e98650fdade4f003f4223b510"
       }
     ],
     "platforms": [
