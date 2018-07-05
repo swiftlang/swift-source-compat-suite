@@ -2246,28 +2246,28 @@
       {
         "action": "BuildXcodeProjectScheme",
         "project": "SwiftDate.xcodeproj",
-        "scheme": "SwiftDate_iOS",
+        "scheme": "SwiftDate-iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "SwiftDate.xcodeproj",
-        "scheme": "SwiftDate_macOS",
+        "scheme": "SwiftDate-macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "SwiftDate.xcodeproj",
-        "scheme": "SwiftDate_tvOS",
+        "scheme": "SwiftDate-tvOS",
         "destination": "generic/platform=tvOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "SwiftDate.xcodeproj",
-        "scheme": "SwiftDate_watchOS",
+        "scheme": "SwiftDate-watchOS",
         "destination": "generic/platform=watchOS",
         "configuration": "Release"
       }
