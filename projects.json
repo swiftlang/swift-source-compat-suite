@@ -298,12 +298,8 @@
     "maintainer": "emaloney@gilt.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "1d6cd902ace110048c91b4bfdfeffa955738522f"
-      },
-      {
-        "version": "3.1",
-        "commit": "d023ef2e6a2165bb162f4385828e321d4573fca0"
+        "version": "4.0",
+        "commit": "7a75a8a6ae0c43a848c8fb9e261f477405f91664"
       }
     ],
     "platforms": [
