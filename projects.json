@@ -1683,18 +1683,6 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "1556b846de627cac0b96291ec2835fbc349c5e21"
-      },
-      {
-        "version": "3.1",
-        "commit": "b9d5b350a446b85704396ce332a1f9e4960cfc6b"
-      },
-      {
-        "version": "3.2",
-        "commit": "46fb4d4a8285286e54929add1d12f384675895c6"
-      },
-      {
         "version": "4.0",
         "commit": "46fb4d4a8285286e54929add1d12f384675895c6"
       }
