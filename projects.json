@@ -377,7 +377,7 @@
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
