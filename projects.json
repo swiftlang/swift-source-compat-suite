@@ -346,10 +346,6 @@
     "maintainer": "rommel.estropia@gmail.com",
     "compatibility": [
       {
-        "version": "3.2",
-        "commit": "e314db8f56b83f2cc761a70cdfc3b823b9815c03"
-      },
-      {
         "version": "4.0",
         "commit": "83e6082c5646c5eb4d3130ce575ab858df168c59"
       }
@@ -387,12 +383,6 @@
         "configuration": "Release",
         "xfail": {
           "compatibility": {
-            "3.2": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-7908",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-7908"
-              }
-            },
             "4.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-7908",
@@ -554,10 +544,6 @@
     "branch": "master",
     "maintainer": "ankur.patel@ymail.com",
     "compatibility": [
-      {
-        "version": "3.0",
-        "commit": "c0dd3c0f8cd5fa12f8b433f3f2e3e50fa7debdf5"
-      },
       {
         "version": "4.0",
         "commit": "433d4ba9a3bec8aa739f05cb8505527aab7a30e7"
@@ -1099,10 +1085,6 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "3.1",
-        "commit": "c4e58ee23db4aaec944505a2f7b001a89b602d7d"
-      },
-      {
         "version": "4.0.3",
         "commit": "4b3ff7e7ddd87c0ce73b39b5390c045fe1a8d4af"
       }
@@ -1320,10 +1302,6 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "d69c8e6f9942c098e589a75162d3196dec183929"
-      },
-      {
         "version": "4.0.3",
         "commit": "fe78418de7757d100c94f702e8effb5e7b8e93b8"
       }
@@ -1418,18 +1396,6 @@
     "branch": "master",
     "maintainer": "mxcl@me.com",
     "compatibility": [
-      {
-        "version": "3.0",
-        "commit": "63ccb34a3d2834b7b08ce2014536344966399668"
-      },
-      {
-        "version": "3.1",
-        "commit": "c538a244b110389483c71d5801f7944e042b5b7b"
-      },
-      {
-        "version": "3.2",
-        "commit": "c538a244b110389483c71d5801f7944e042b5b7b"
-      },
       {
         "version": "4.0.3",
         "commit": "c538a244b110389483c71d5801f7944e042b5b7b"
@@ -1883,10 +1849,6 @@
     "maintainer": "krunoslav.zaher@gmail.com",
     "compatibility": [
       {
-        "version": "3.1",
-        "commit": "102424379fb8d6c69b33b95c67504679042f44cc"
-      },
-      {
         "version": "4.0.3",
         "commit": "3e848781c7756accced855a6317a4c2ff5e8588b"
       }
@@ -2298,70 +2260,6 @@
     "maintainer": "omaralbeik@gmail.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "66e5237f055f72f725536cd3322f7f6483e7aeed"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift iOS",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift macOS",
-        "destination": "generic/platform=macOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift watchOS",
-        "destination": "generic/platform=watchOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "TestXcodeWorkspaceScheme",
-        "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift iOSTests",
-        "destination": "platform=iOS Simulator,name=iPhone 7,OS=10.2"
-      },
-      {
-        "action": "TestXcodeWorkspaceScheme",
-        "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift tvOSTests",
-        "destination": "platform=tvOS Simulator,name=Apple TV 1080p"
-      },
-      {
-        "action": "TestXcodeWorkspaceScheme",
-        "workspace": "SwifterSwift.xcworkspace",
-        "scheme": "SwifterSwift macOSTests",
-        "destination": "platform=macOS"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/SwifterSwift/SwifterSwift.git",
-    "path": "SwifterSwift",
-    "branch": "master",
-    "maintainer": "omaralbeik@gmail.com",
-    "compatibility": [
-      {
         "version": "4.0",
         "commit": "21316259f00fe1254d985e89dad6a50de08f551f"
       }
@@ -2600,10 +2498,6 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "d451d956fb31f0ca5d76940c0b1db46b8c74a089"
-      },
-      {
         "version": "4.0.3",
         "commit": "3ede6efaa9d2b2502ad069b16215513f3e515119"
       }
@@ -2641,10 +2535,6 @@
     "path": "siesta",
     "branch": "master",
     "compatibility": [
-      {
-        "version": "3.0",
-        "commit": "1665db77a35b0e5c60269825d2e9b4d6971b81b5"
-      },
       {
         "version": "4.0",
         "commit": "926127231446fc5c1c8c3236033914a4006ab9a2"
