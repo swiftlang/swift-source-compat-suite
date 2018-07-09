@@ -828,8 +828,12 @@
     "url": "https://github.com/kickstarter/Kickstarter-Prelude",
     "path": "Kickstarter-Prelude",
     "branch": "master",
-    "maintainer": "stephen@stephencelis.com",
+    "maintainer": "justins@kickstarter.com",
     "compatibility": [
+      {
+        "version": "4.0",
+        "commit": "7b4eff0bae4f1abaf8ccc8370153f0945e0752ae"
+      },
       {
         "version": "3.0",
         "commit": "9b2cc23ce8acf29b4b666a80a665c67cba800aac"
@@ -874,8 +878,12 @@
     "url": "https://github.com/kickstarter/Kickstarter-ReactiveExtensions",
     "path": "Kickstarter-ReactiveExtensions",
     "branch": "master",
-    "maintainer": "stephen@stephencelis.com",
+    "maintainer": "justins@kickstarter.com",
     "compatibility": [
+      {
+        "version": "4.0",
+        "commit": "6b7887e7b38ebd81e2d04a936e64998b0f634e98"
+      },
       {
         "version": "3.0",
         "commit": "732eab9da730699f264dceb4f423586754191d67"
@@ -911,6 +919,31 @@
         "project": "ReactiveExtensions.xcodeproj",
         "scheme": "ReactiveExtensions-tvOS",
         "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/kickstarter/ios-oss",
+    "path": "ios-oss",
+    "branch": "master",
+    "maintainer": "justins@kickstarter.com",
+    "compatibility": [
+      {
+        "version": "4.0",
+        "commit": "bec03d1095131d820dff0e845981e7ea296caeb3"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "Kickstarter.xcodeproj",
+        "scheme": "Kickstarter-iOS",
+        "destination": "generic/platform=iOS",
         "configuration": "Release"
       }
     ]
