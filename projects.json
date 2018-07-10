@@ -926,7 +926,7 @@
   {
     "repository": "Git",
     "url": "https://github.com/kickstarter/ios-oss",
-    "path": "ios-oss",
+    "path": "Kickstarter",
     "branch": "master",
     "maintainer": "justins@kickstarter.com",
     "compatibility": [
