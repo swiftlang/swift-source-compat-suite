@@ -2117,8 +2117,8 @@
     "maintainer": "me@danielemargutti.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "b8a6ace0b4a419d377886615ece14a3f259323fc"
+        "version": "4.0",
+        "commit": "744a8ce947f71e951e9f0f240b07d1a4f1f8b84e"
       }
     ],
     "platforms": [
@@ -2127,29 +2127,29 @@
     "actions": [
       {
         "action": "BuildXcodeProjectScheme",
-        "project": "SwiftDate/SwiftDate.xcodeproj",
-        "scheme": "SwiftDate_iOS",
+        "project": "SwiftDate.xcodeproj",
+        "scheme": "SwiftDate-iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
-        "project": "SwiftDate/SwiftDate.xcodeproj",
-        "scheme": "SwiftDate_macOS",
+        "project": "SwiftDate.xcodeproj",
+        "scheme": "SwiftDate-macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
-        "project": "SwiftDate/SwiftDate.xcodeproj",
-        "scheme": "SwiftDate_tvOS",
+        "project": "SwiftDate.xcodeproj",
+        "scheme": "SwiftDate-tvOS",
         "destination": "generic/platform=tvOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
-        "project": "SwiftDate/SwiftDate.xcodeproj",
-        "scheme": "SwiftDate_watchOS",
+        "project": "SwiftDate.xcodeproj",
+        "scheme": "SwiftDate-watchOS",
         "destination": "generic/platform=watchOS",
         "configuration": "Release"
       }
