@@ -931,7 +931,7 @@
     "maintainer": "justins@kickstarter.com",
     "compatibility": [
       {
-        "version": "4.0",
+        "version": "4.1",
         "commit": "bec03d1095131d820dff0e845981e7ea296caeb3"
       }
     ],
