@@ -833,10 +833,6 @@
       {
         "version": "4.0",
         "commit": "7b4eff0bae4f1abaf8ccc8370153f0945e0752ae"
-      },
-      {
-        "version": "3.0",
-        "commit": "9b2cc23ce8acf29b4b666a80a665c67cba800aac"
       }
     ],
     "platforms": [
@@ -883,10 +879,6 @@
       {
         "version": "4.0",
         "commit": "6b7887e7b38ebd81e2d04a936e64998b0f634e98"
-      },
-      {
-        "version": "3.0",
-        "commit": "732eab9da730699f264dceb4f423586754191d67"
       }
     ],
     "platforms": [
