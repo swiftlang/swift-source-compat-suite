@@ -167,15 +167,7 @@
     "maintainer": "igormaka@gmail.com",
     "compatibility": [
       {
-        "version": "3.1",
-        "commit": "189b40655da001a9599337767687857b4cf91b36"
-      },
-      {
         "version": "4.0",
-        "commit": "189b40655da001a9599337767687857b4cf91b36"
-      },
-      {
-        "version": "4.0.3",
         "commit": "189b40655da001a9599337767687857b4cf91b36"
       }
     ],
@@ -185,11 +177,29 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "debug"
+        "configuration": "debug",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8234"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage",
-        "configuration": "debug"
+        "configuration": "debug",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8234"
+              }
+            }
+          }
+        }
       }
     ]
   },
@@ -493,10 +503,6 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "3.2",
-        "commit": "190f44e8de0d949c7cdc55e3b3bd856a05b42a67"
-      },
-      {
         "version": "4.0",
         "commit": "190f44e8de0d949c7cdc55e3b3bd856a05b42a67"
       }
@@ -509,7 +515,16 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8234"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -606,7 +621,16 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8234"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -1025,10 +1049,6 @@
     "maintainer": "bouke@haarsma.eu",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "0179286cd571fa49a7d95cbcafa725cba9e11207"
-      },
-      {
         "version": "4.0",
         "commit": "7604f91d757d888c456f75e19c00ea755d94fe8f"
       }
@@ -1039,7 +1059,16 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8234"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -1053,7 +1082,7 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "4.0.3",
+        "version": "4.0",
         "commit": "4b3ff7e7ddd87c0ce73b39b5390c045fe1a8d4af"
       }
     ],
@@ -1064,7 +1093,16 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8234"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -1079,10 +1117,6 @@
     "maintainer": "bouke@haarsma.eu",
     "compatibility": [
       {
-        "version": "3.1",
-        "commit": "4c20bd99c56f6ba370faf1d014599f7149fb834d"
-      },
-      {
         "version": "4.0",
         "commit": "51256c161c32570267174469ac3826b7bb3da113"
       }
@@ -1094,7 +1128,16 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8234"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -1206,7 +1249,16 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8234"
+              }
+            }
+          }
+        }
       }
     ]
   },
@@ -1270,7 +1322,7 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "4.0.3",
+        "version": "4.0",
         "commit": "fe78418de7757d100c94f702e8effb5e7b8e93b8"
       }
     ],
@@ -1282,7 +1334,16 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8234"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -1412,10 +1473,6 @@
     "maintainer": "tom@lokhorst.eu",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "ac56b87a94a4ea8b795af45012d0f89d4981919e"
-      },
-      {
         "version": "4.0",
         "commit": "c5273e456ef02230689f6db2172abb29901115f0"
       }
@@ -1426,7 +1483,16 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8234"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -1742,10 +1808,6 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "3.1",
-        "commit": "1a2a979e6399dfb3574c935d6ccee36bc0214405"
-      },
-      {
         "version": "4.0",
         "commit": "7477584259bfce2560a19e06ad9f71db441fff11"
       }
@@ -1758,7 +1820,16 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8234"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -2197,7 +2268,16 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8234"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"

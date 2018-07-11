@@ -116,7 +116,6 @@ class XcodeTarget(ProjectTarget):
                    + ['CODE_SIGN_IDENTITY=',
                       'CODE_SIGNING_REQUIRED=NO',
                       'ENABLE_BITCODE=NO',
-                      '-UseNewBuildSystem=NO',
                       'INDEX_ENABLE_DATA_STORE=NO',
                       'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
                       'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO'])
