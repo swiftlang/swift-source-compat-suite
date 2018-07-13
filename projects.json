@@ -966,7 +966,7 @@
     "compatibility": [
       {
         "version": "4.0",
-        "commit": "edbd229ba8b99db936bc552c8e4f8e190a6dc633"
+        "commit": "f1c3169b5b923ded814e5b1ef5a354720da93a36"
       }
     ],
     "platforms": [
@@ -976,19 +976,7 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6748",
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-6748",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-6748",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-6748"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       }
     ]
   },
