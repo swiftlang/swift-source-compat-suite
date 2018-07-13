@@ -84,10 +84,6 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "3.1",
-        "commit": "91b80dd2fc959b7673b5151bba41beef8e877607"
-      },
-      {
         "version": "4.0",
         "commit": "efc83bd21d8c25ba3896debab5f66408f683a1e7"
       }
@@ -244,10 +240,6 @@
     "branch": "master",
     "maintainer": "a.p.schukin@gmail.com",
     "compatibility": [
-      {
-        "version": "3.1",
-        "commit": "0eb7ac56b76ed5c1024b7035ed0e29f69c74c8e7"
-      },
       {
         "version": "4.0.3",
         "commit": "3e4b1a7167b066b1472fe217778461f9d7bd46fd"
@@ -477,10 +469,6 @@
     "maintainer": "bouke@haarsma.eu",
     "compatibility": [
       {
-        "version": "3.1",
-        "commit": "9e102ed702045a09eae77b16d223160a66c3f8bc"
-      },
-      {
         "version": "4.0",
         "commit": "04ae84dbaf423214c644590cbe0d837edfbfd411"
       }
@@ -650,10 +638,6 @@
       {
         "version": "4.0",
         "commit": "d88afd48e8793d66f4609db98710b679ce039341"
-      },
-      {
-        "version": "3.1",
-        "commit": "f3135a5c1fc7ac079cf4156992455b254b16bb84"
       }
     ],
     "maintainer": "arthur@sabintsev.com",
@@ -664,7 +648,17 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8250"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -1026,7 +1020,17 @@
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8250"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -1290,7 +1294,17 @@
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8250"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestXcodeProjectScheme",
@@ -1505,13 +1519,9 @@
     "maintainer": "marksands07@gmail.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "b65d53b9547f2f5047c4253fb97ed1d504b4c36d"
-      },
-	  {
-          "version": "4.0",
-          "commit": "4502081d713257bb414d7dffa25f10ba59fa6770"
-	  }
+        "version": "4.0",
+        "commit": "4502081d713257bb414d7dffa25f10ba59fa6770"
+      }
     ],
     "platforms": [
       "Darwin"
@@ -2034,7 +2044,17 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8250"
+              }
+            }
+          }
+        }
       }
     ]
   },
@@ -2366,7 +2386,17 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8250"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -2391,7 +2421,17 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "3.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8250"
+              }
+            }
+          }
+        }
       }
     ]
   },
@@ -2474,10 +2514,6 @@
     "maintainer": "k@keith.so",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "db431abebe6b6ec632a3829edd75be0a440e331a"
-      },
-      {
         "version": "4.0",
         "commit": "45f5726304f41e6e6ad5d3d836e89940e165f48d"
       }
@@ -2516,7 +2552,17 @@
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8250"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
