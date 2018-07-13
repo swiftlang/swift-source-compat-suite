@@ -861,52 +861,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/kickstarter/Kickstarter-ReactiveExtensions",
-    "path": "Kickstarter-ReactiveExtensions",
-    "branch": "master",
-    "maintainer": "stephen@stephencelis.com",
-    "compatibility": [
-      {
-        "version": "3.0",
-        "commit": "732eab9da730699f264dceb4f423586754191d67"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "ReactiveExtensions.xcodeproj",
-        "scheme": "ReactiveExtensions-iOS",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "ReactiveExtensions.xcodeproj",
-        "scheme": "ReactiveExtensions-TestHelpers-iOS",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "ReactiveExtensions.xcodeproj",
-        "scheme": "ReactiveExtensions-TestHelpers-tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "ReactiveExtensions.xcodeproj",
-        "scheme": "ReactiveExtensions-tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/onevcat/Kingfisher.git",
     "path": "Kingfisher",
     "branch": "master",
@@ -1802,38 +1756,6 @@
       },
       {
         "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/RxSwiftCommunity/RxDataSources",
-    "path": "RxDataSources",
-    "branch": "master",
-    "maintainer": "krunoslav.zaher@gmail.com",
-    "compatibility": [
-      {
-        "version": "3.0",
-        "commit": "c06ebe2207ed3a74d69a9d9b9bb59b48b64a09b4"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Pods/Pods.xcodeproj",
-        "target": "Pods-RxDataSources",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Pods/Pods.xcodeproj",
-        "target": "Pods-Example",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
       }
     ]
   },
