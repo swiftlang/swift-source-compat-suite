@@ -1589,10 +1589,6 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "3.2",
-        "commit": "72dd2096c04e66bb10a5dd0c230c7a7ceef467e9"
-      },
-      {
         "version": "4.0",
         "commit": "72dd2096c04e66bb10a5dd0c230c7a7ceef467e9"
       }
@@ -1607,64 +1603,28 @@
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.2": {
-              "branch": {
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.2": {
-              "branch": {
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.2": {
-              "branch": {
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.2": {
-              "branch": {
-                "swift-4.1-branch": "https://bugs.swift.org/browse/SR-7346"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       }
     ]
   },
