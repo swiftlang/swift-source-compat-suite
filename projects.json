@@ -2061,8 +2061,8 @@
     "maintainer": "daltoniam@gmail.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "13859364e33368687a5ee0c9cc0d5782e4212b66"
+        "version": "4.0",
+        "commit": "114e5df9b6251970a069e8f1c0cbb5802759f0a9"
       }
     ],
     "platforms": [
@@ -2078,20 +2078,6 @@
       },
       {
         "action": "BuildXcodeProjectScheme",
-        "project": "examples/AutobahnTest/Autobahn.xcodeproj",
-        "scheme": "StarscreamOSX",
-        "destination": "generic/platform=macOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "examples/AutobahnTest/Autobahn.xcodeproj",
-        "scheme": "StarscreamTv",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
         "project": "examples/SimpleTest/SimpleTest.xcodeproj",
         "scheme": "Starscream",
         "destination": "generic/platform=iOS",
@@ -2099,37 +2085,9 @@
       },
       {
         "action": "BuildXcodeProjectScheme",
-        "project": "examples/SimpleTest/SimpleTest.xcodeproj",
-        "scheme": "StarscreamOSX",
-        "destination": "generic/platform=macOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "examples/SimpleTest/SimpleTest.xcodeproj",
-        "scheme": "StarscreamTv",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
         "project": "Starscream.xcodeproj",
         "scheme": "Starscream",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "Starscream.xcodeproj",
-        "scheme": "StarscreamOSX",
-        "destination": "generic/platform=macOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "Starscream.xcodeproj",
-        "scheme": "StarscreamTv",
-        "destination": "generic/platform=tvOS",
         "configuration": "Release"
       }
     ]
