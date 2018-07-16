@@ -632,6 +632,35 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/masters3d/xswift.git",
+    "path": "exercism-xswift",
+    "branch": "do-not-delete-pre-4.2-compatibility",
+    "maintainer": "cheyo@masters3d.com",
+    "compatibility": [
+      {
+        "version": "4.0",
+        "commit": "7614aae4a87d92e2343473c619a805ace98a474e"
+      },
+      {
+        "version": "4.1",
+        "commit": "7614aae4a87d92e2343473c619a805ace98a474e"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "xswift.xcodeproj",
+        "target": "xswift",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      }
+    ]
+    },
+  {
+    "repository": "Git",
     "url": "https://github.com/groue/GRDB.swift.git",
     "path": "GRDB.swift",
     "branch": "master",
@@ -2722,61 +2751,6 @@
     ]
   },
   {
-  "repository": "Git",
-  "url": "https://github.com/masters3d/xswift.git",
-  "path": "xswift",
-  "branch": "do-not-delete-pre-4.2-compatibility",
-  "maintainer": "cheyo@masters3d.com",
-  "compatibility": [
-    {
-      "version": "4.0",
-      "commit": "7614aae4a87d92e2343473c619a805ace98a474e"
-    },
-    {
-      "version": "4.1",
-      "commit": "7614aae4a87d92e2343473c619a805ace98a474e"
-    }
-  ],
-  "platforms": [
-    "Darwin"
-  ],
-  "actions": [
-    {
-      "action": "BuildXcodeProjectTarget",
-      "project": "xswift.xcodeproj",
-      "target": "xswift-Package",
-      "destination": "generic/platform=macOS",
-      "configuration": "Release"
-    }
-  ]
-  },
-  {
-  "repository": "Git",
-  "url": "https://github.com/exercism/swift.git",
-  "path": "xswift",
-  "branch": "master",
-  "maintainer": "cheyo@masters3d.com",
-  "compatibility": [
-    {
-      "version": "4.2",
-      "commit": "ce9509e301f0661b0e9758f5cef23edd1d1bb50e"
-    }
-  ],
-  "platforms": [
-    "Darwin",
-    "Linux"
-  ],
-  "actions": [
-    {
-      "action": "BuildSwiftPackage",
-      "configuration": "release"
-    },
-    {
-      "action": "TestSwiftPackage"
-    }
-  ]
-  },
-  {
     "repository": "Git",
     "url": "https://github.com/vapor/vapor.git",
     "path": "vapor",
@@ -2808,5 +2782,31 @@
 	}
       }
     ]
-  }
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/exercism/swift.git",
+    "path": "xswift",
+    "branch": "master",
+    "maintainer": "cheyo@masters3d.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "ce9509e301f0661b0e9758f5cef23edd1d1bb50e"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+    }
 ]
