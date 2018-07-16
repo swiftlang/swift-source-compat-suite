@@ -68,9 +68,9 @@ supported_configs = {
         },
         '4.2': {
             'version': 'Apple Swift version 4.2 '
-                       '(swiftlang-1000.0.16.9 clang-1000.10.25.3)\n'
+                       '(swiftlang-1000.0.25.1 clang-1000.10.28.1)\n'
                        'Target: x86_64-apple-darwin17.7.0\n',
-            'description': 'Xcode 10 Beta 2 (contains Swift 4.2)',
+            'description': 'Xcode 10 Beta 3 (contains Swift 4.2)',
             'branch': 'swift-4.2-branch'
         }
     },
@@ -145,7 +145,7 @@ def is_correct_swift_version(swiftc, compatibility_version):
     error_msg = "error: please select {description}".format(
         description=supported_configs[platform.system()][compatibility_version]['description']
     )
-    if swift_version != expected_swift_version:
+    if swift_version.split("\n")[0] != expected_swift_version.split("\n")[0]:
         common.debug_print("--- Version check failed ---")
         common.debug_print("Expected version:\n" + expected_swift_version)
         common.debug_print("Current version:\n" + swift_version)
