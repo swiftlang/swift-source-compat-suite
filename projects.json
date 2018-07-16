@@ -885,7 +885,7 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8270",
+                "master": "https://bugs.swift.org/browse/SR-8270"
               }
             }
           }
@@ -901,7 +901,7 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8270",
+                "master": "https://bugs.swift.org/browse/SR-8270"
               }
             }
           }
@@ -917,7 +917,7 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8270",
+                "master": "https://bugs.swift.org/browse/SR-8270"
               }
             }
           }
@@ -933,7 +933,7 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8270",
+                "master": "https://bugs.swift.org/browse/SR-8270"
               }
             }
           }
@@ -1867,7 +1867,7 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8271",
+                "master": "https://bugs.swift.org/browse/SR-8271"
               }
             }
           }
@@ -1883,7 +1883,7 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8271",
+                "master": "https://bugs.swift.org/browse/SR-8271"
               }
             }
           }
