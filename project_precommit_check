@@ -145,7 +145,7 @@ def is_correct_swift_version(swiftc, compatibility_version):
     error_msg = "error: please select {description}".format(
         description=supported_configs[platform.system()][compatibility_version]['description']
     )
-    if swift_version != expected_swift_version:
+    if swift_version.split("\n")[0] != expected_swift_version.split("\n")[0]:
         common.debug_print("--- Version check failed ---")
         common.debug_print("Expected version:\n" + expected_swift_version)
         common.debug_print("Current version:\n" + swift_version)
