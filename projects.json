@@ -596,6 +596,28 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/vapor/fluent",
+    "path": "fluent",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "86eb8812415fa33674793e37482a9e6455be0a0f"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/groue/GRDB.swift.git",
     "path": "GRDB.swift",
     "branch": "master",
