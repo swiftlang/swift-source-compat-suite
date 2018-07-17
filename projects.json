@@ -2210,6 +2210,45 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/bizz84/SwiftyStoreKit",
+    "path": "SwiftyStoreKit",
+    "branch": "master",
+    "maintainer": "bizz84@gmail.com",
+    "compatibility": [
+      {
+        "version": "4.0",
+        "commit": "eaa51b729fba905131c0eb534293895846272a63"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "SwiftyStoreKit.xcodeproj",
+        "target": "SwiftyStoreKit_iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "SwiftyStoreKit.xcodeproj",
+        "target": "SwiftyStoreKit_macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "SwiftyStoreKit.xcodeproj",
+        "target": "SwiftyStoreKit_tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/devxoul/Then.git",
     "path": "Then",
     "branch": "master",
@@ -2523,45 +2562,6 @@
             }
           }
 	}
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/bizz84/SwiftyStoreKit",
-    "path": "SwiftyStoreKit",
-    "branch": "master",
-    "maintainer": "bizz84@gmail.com",
-    "compatibility": [
-      {
-        "version": "3.0",
-        "commit": "26a0bd9ac93befe47df499cc54d91280af196158"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "SwiftyStoreKit.xcodeproj",
-        "target": "SwiftyStoreKit_iOS",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "SwiftyStoreKit.xcodeproj",
-        "target": "SwiftyStoreKit_macOS",
-        "destination": "generic/platform=macOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "SwiftyStoreKit.xcodeproj",
-        "target": "SwiftyStoreKit_tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
       }
     ]
   }
