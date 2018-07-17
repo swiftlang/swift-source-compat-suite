@@ -849,22 +849,8 @@
       {
         "action": "BuildXcodeProjectScheme",
         "project": "Prelude.xcodeproj",
-        "scheme": "Prelude-tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "Prelude.xcodeproj",
         "scheme": "Prelude-UIKit-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "Prelude.xcodeproj",
-        "scheme": "Prelude-UIKit-tvOS",
-        "destination": "generic/platform=tvOS",
         "configuration": "Release"
       }
     ]
@@ -896,45 +882,6 @@
         "action": "BuildXcodeProjectScheme",
         "project": "ReactiveExtensions.xcodeproj",
         "scheme": "ReactiveExtensions-TestHelpers-iOS",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "ReactiveExtensions.xcodeproj",
-        "scheme": "ReactiveExtensions-TestHelpers-tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "ReactiveExtensions.xcodeproj",
-        "scheme": "ReactiveExtensions-tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/kickstarter/ios-oss",
-    "path": "Kickstarter",
-    "branch": "master",
-    "maintainer": "justins@kickstarter.com",
-    "compatibility": [
-      {
-        "version": "4.1",
-        "commit": "bec03d1095131d820dff0e845981e7ea296caeb3"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "Kickstarter.xcodeproj",
-        "scheme": "Kickstarter-iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
       }
