@@ -992,7 +992,7 @@
     "url": "https://github.com/IBM-Swift/Kitura.git",
     "path": "Kitura",
     "branch": "master",
-    "maintainer": "navneet@us.ibm.com",
+    "maintainer": "i.partridge@uk.ibm.com",
     "compatibility": [
       {
         "version": "4.0",
