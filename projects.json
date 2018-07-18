@@ -2800,7 +2800,7 @@
   {
     "repository": "Git",
     "url": "https://github.com/exercism/swift.git",
-    "path": "xswift",
+    "path": "exercism-swift",
     "branch": "master",
     "maintainer": "cheyo@masters3d.com",
     "compatibility": [
