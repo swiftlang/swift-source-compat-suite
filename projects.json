@@ -632,6 +632,41 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/exercism/swift.git",
+    "path": "exercism-swift",
+    "branch": "master",
+    "maintainer": "cheyo@masters3d.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "38a17de8717a2282fd4ff62cd1ce732b926bf4ab"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release", 
+        "xfail": {
+           "compatibility": {
+             "4.2": {
+               "branch": {
+                 "master": "https://bugs.swift.org/browse/SR-8307"
+               }
+             }
+           }
+         }
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/masters3d/xswift.git",
     "path": "exercism-xswift",
     "branch": "do-not-delete-pre-4.2-compatibility",
@@ -2796,40 +2831,5 @@
 	}
       }
     ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/exercism/swift.git",
-    "path": "exercism-swift",
-    "branch": "master",
-    "maintainer": "cheyo@masters3d.com",
-    "compatibility": [
-      {
-        "version": "4.2",
-        "commit": "38a17de8717a2282fd4ff62cd1ce732b926bf4ab"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release", 
-        "xfail": {
-           "compatibility": {
-             "4.2": {
-               "branch": {
-                 "master": "https://bugs.swift.org/browse/SR-8307"
-               }
-             }
-           }
-         }
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-    }
+  }
 ]
