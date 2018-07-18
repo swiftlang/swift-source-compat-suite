@@ -596,6 +596,84 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/exercism/swift.git",
+    "path": "exercism-swift",
+    "branch": "master",
+    "maintainer": "cheyo@masters3d.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "38a17de8717a2282fd4ff62cd1ce732b926bf4ab"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release", 
+        "xfail": {
+           "compatibility": {
+             "4.2": {
+               "branch": {
+                 "master": "https://bugs.swift.org/browse/SR-8307"
+               }
+             }
+           }
+         }
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/masters3d/xswift.git",
+    "path": "exercism-xswift",
+    "branch": "do-not-delete-pre-4.2-compatibility",
+    "maintainer": "cheyo@masters3d.com",
+    "compatibility": [
+      {
+        "version": "4.0",
+        "commit": "7614aae4a87d92e2343473c619a805ace98a474e"
+      },
+      {
+        "version": "4.1",
+        "commit": "7614aae4a87d92e2343473c619a805ace98a474e"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "xswift.xcodeproj",
+        "target": "xswift",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release", 
+        "xfail": {
+           "compatibility": {
+             "4.0": {
+               "branch": {
+                 "master": "https://bugs.swift.org/browse/SR-8307"
+               }
+             },
+             "4.1": {
+               "branch": {
+                 "master": "https://bugs.swift.org/browse/SR-8307"
+               }
+             }
+           }
+         }
+      }
+    ]
+    },
+  {
+    "repository": "Git",
     "url": "https://github.com/groue/GRDB.swift.git",
     "path": "GRDB.swift",
     "branch": "master",
