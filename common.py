@@ -52,7 +52,7 @@ branches = {
         'cmark': 'master',
         'ninja': 'release',
         'llbuild': 'master',
-        'swiftpm': 'master',
+        'swiftpm': 'swift-4.2-branch',
         'swift-corelibs-libdispatch': 'swift-4.2-branch',
         'swift-corelibs-foundation': 'swift-4.2-branch',
         'swift-corelibs-xctest': 'swift-4.2-branch',
