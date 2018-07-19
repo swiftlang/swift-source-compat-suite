@@ -1290,8 +1290,8 @@
     "maintainer": "tristanhimmelman@gmail.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "eef27bfcfd201036a12992b6988e64a088fe7354"
+        "version": "4.2",
+        "commit": "ed1caa237b9742135996fefe3682b834bb394a6a"
       }
     ],
     "platforms": [
@@ -1303,68 +1303,28 @@
         "workspace": "ObjectMapper.xcworkspace",
         "scheme": "ObjectMapper-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6690",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-6690"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ObjectMapper.xcworkspace",
         "scheme": "ObjectMapper-Mac",
         "destination": "generic/platform=macOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6690",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-6690"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ObjectMapper.xcworkspace",
         "scheme": "ObjectMapper-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6690",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-6690"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ObjectMapper.xcworkspace",
         "scheme": "ObjectMapper-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-6690",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-6690"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       }
     ]
   },
