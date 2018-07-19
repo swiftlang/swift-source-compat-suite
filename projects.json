@@ -2342,6 +2342,31 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/apple/swift-nio",
+    "path": "swift-nio",
+    "branch": "master",
+    "maintainer": "johannesweiss@apple.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "e56d1cc41c51badcadcdff825484bf61bc48f418"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/bizz84/SwiftyStoreKit",
     "path": "SwiftyStoreKit",
     "branch": "master",
