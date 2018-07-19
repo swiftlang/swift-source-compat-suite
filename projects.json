@@ -596,6 +596,31 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/brentsimmons/Evergreen.git",
+    "path": "Evergreen",
+    "branch": "master",
+    "maintainer": "brent@ranchero.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "ce0d2450b83ec8c5dee6bb9c612b3eb06ba39c47"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Evergreen.xcworkspace",
+        "scheme": "Evergreen",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/exercism/swift.git",
     "path": "exercism-swift",
     "branch": "master",
@@ -656,22 +681,22 @@
         "destination": "generic/platform=macOS",
         "configuration": "Release", 
         "xfail": {
-           "compatibility": {
-             "4.0": {
-               "branch": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8307"
+              }
+            },
+            "4.1": {
+              "branch": {
                  "master": "https://bugs.swift.org/browse/SR-8307"
-               }
-             },
-             "4.1": {
-               "branch": {
-                 "master": "https://bugs.swift.org/browse/SR-8307"
-               }
-             }
-           }
-         }
+              }
+            }
+          }
+        }
       }
     ]
-    },
+  },
   {
     "repository": "Git",
     "url": "https://github.com/groue/GRDB.swift.git",
