@@ -596,6 +596,109 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/brentsimmons/Evergreen.git",
+    "path": "Evergreen",
+    "branch": "master",
+    "maintainer": "brent@ranchero.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "ce0d2450b83ec8c5dee6bb9c612b3eb06ba39c47"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Evergreen.xcworkspace",
+        "scheme": "Evergreen",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/exercism/swift.git",
+    "path": "exercism-swift",
+    "branch": "master",
+    "maintainer": "cheyo@masters3d.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "38a17de8717a2282fd4ff62cd1ce732b926bf4ab"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release", 
+        "xfail": {
+           "compatibility": {
+             "4.2": {
+               "branch": {
+                 "master": "https://bugs.swift.org/browse/SR-8307"
+               }
+             }
+           }
+         }
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/masters3d/xswift.git",
+    "path": "exercism-xswift",
+    "branch": "do-not-delete-pre-4.2-compatibility",
+    "maintainer": "cheyo@masters3d.com",
+    "compatibility": [
+      {
+        "version": "4.0",
+        "commit": "7614aae4a87d92e2343473c619a805ace98a474e"
+      },
+      {
+        "version": "4.1",
+        "commit": "7614aae4a87d92e2343473c619a805ace98a474e"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "xswift.xcodeproj",
+        "target": "xswift",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release", 
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8307"
+              }
+            },
+            "4.1": {
+              "branch": {
+                 "master": "https://bugs.swift.org/browse/SR-8307"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/vapor/fluent",
     "path": "fluent",
     "branch": "master",
@@ -605,15 +708,15 @@
         "version": "4.2",
         "commit": "270b6fa372f03809b9795e8f8b9d1c31267a0ff3"
       }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release"
-      }
+     ],
+     "platforms": [
+       "Darwin"
+     ],
+     "actions": [
+       {
+         "action": "BuildSwiftPackage",
+         "configuration": "release"
+       }
     ]
   },
   {
@@ -883,6 +986,88 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/kickstarter/Kickstarter-ReactiveExtensions",
+    "path": "Kickstarter-ReactiveExtensions",
+    "branch": "master",
+    "maintainer": "stephen@stephencelis.com",
+    "compatibility": [
+      {
+        "version": "3.0",
+        "commit": "732eab9da730699f264dceb4f423586754191d67"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "ReactiveExtensions.xcodeproj",
+        "scheme": "ReactiveExtensions-iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8270"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "ReactiveExtensions.xcodeproj",
+        "scheme": "ReactiveExtensions-TestHelpers-iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8270"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "ReactiveExtensions.xcodeproj",
+        "scheme": "ReactiveExtensions-TestHelpers-tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8270"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "ReactiveExtensions.xcodeproj",
+        "scheme": "ReactiveExtensions-tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8270"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/onevcat/Kingfisher.git",
     "path": "Kingfisher",
     "branch": "master",
@@ -932,7 +1117,7 @@
     "url": "https://github.com/IBM-Swift/Kitura.git",
     "path": "Kitura",
     "branch": "master",
-    "maintainer": "navneet@us.ibm.com",
+    "maintainer": "i.partridge@uk.ibm.com",
     "compatibility": [
       {
         "version": "4.0",
@@ -1689,6 +1874,56 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/RxSwiftCommunity/RxDataSources",
+    "path": "RxDataSources",
+    "branch": "master",
+    "maintainer": "krunoslav.zaher@gmail.com",
+    "compatibility": [
+      {
+        "version": "3.0",
+        "commit": "c06ebe2207ed3a74d69a9d9b9bb59b48b64a09b4"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Pods/Pods.xcodeproj",
+        "target": "Pods-RxDataSources",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8271"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Pods/Pods.xcodeproj",
+        "target": "Pods-Example",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8271"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/ReactiveX/RxSwift.git",
     "path": "RxSwift",
     "branch": "master",
@@ -2133,6 +2368,45 @@
         "workspace": "SwifterSwift.xcworkspace",
         "scheme": "SwifterSwift-macOSTests",
         "destination": "platform=macOS"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/bizz84/SwiftyStoreKit",
+    "path": "SwiftyStoreKit",
+    "branch": "master",
+    "maintainer": "bizz84@gmail.com",
+    "compatibility": [
+      {
+        "version": "4.0",
+        "commit": "eaa51b729fba905131c0eb534293895846272a63"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "SwiftyStoreKit.xcodeproj",
+        "target": "SwiftyStoreKit_iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "SwiftyStoreKit.xcodeproj",
+        "target": "SwiftyStoreKit_macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "SwiftyStoreKit.xcodeproj",
+        "target": "SwiftyStoreKit_tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
       }
     ]
   },
