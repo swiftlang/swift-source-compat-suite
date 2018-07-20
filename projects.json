@@ -708,15 +708,15 @@
         "version": "4.2",
         "commit": "270b6fa372f03809b9795e8f8b9d1c31267a0ff3"
       }
-     ],
-     "platforms": [
-       "Darwin"
-     ],
-     "actions": [
-       {
-         "action": "BuildSwiftPackage",
-         "configuration": "release"
-       }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      }
     ]
   },
   {
