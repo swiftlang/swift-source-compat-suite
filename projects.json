@@ -699,6 +699,37 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/vapor/fluent",
+    "path": "fluent",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "270b6fa372f03809b9795e8f8b9d1c31267a0ff3"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.2": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8332"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/groue/GRDB.swift.git",
     "path": "GRDB.swift",
     "branch": "master",
