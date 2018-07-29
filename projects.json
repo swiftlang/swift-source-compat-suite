@@ -20,7 +20,8 @@
         "project": "AMScrollingNavbar.xcodeproj",
         "target": "AMScrollingNavbar",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       }
     ]
   },
@@ -52,7 +53,8 @@
         "workspace": "Alamofire.xcworkspace",
         "scheme": "Alamofire macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -99,7 +101,8 @@
         "project": "AsyncNinja.xcodeproj",
         "scheme": "AsyncNinja",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "TestXcodeProjectScheme",
@@ -174,6 +177,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "debug",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "4.0": {
@@ -220,7 +224,8 @@
         "workspace": "BlueSocket.xcworkspace",
         "scheme": "Socket",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -252,7 +257,8 @@
         "workspace": "Chatto.xcworkspace",
         "scheme": "Chatto",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -265,7 +271,8 @@
         "workspace": "Chatto.xcworkspace",
         "scheme": "ChattoAdditions",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -316,7 +323,8 @@
         "project": "CleanroomLogger.xcodeproj",
         "scheme": "CleanroomLogger",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -368,7 +376,8 @@
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore OSX",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -439,7 +448,8 @@
         "workspace": "Cub.xcworkspace",
         "scheme": "Cub macOS Release [Double]",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -467,7 +477,8 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "sourcekit"
       },
       {
         "action": "TestSwiftPackage"
@@ -494,6 +505,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "4.0": {
@@ -552,7 +564,8 @@
         "project": "Dollar.xcodeproj",
         "scheme": "Dollar",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
       }
     ]
   },
@@ -577,7 +590,8 @@
         "project": "Dwifft.xcodeproj",
         "target": "Dwifft",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       }
     ]
   },
@@ -602,7 +616,8 @@
         "workspace": "Evergreen.xcworkspace",
         "scheme": "Evergreen",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       }
     ]
   },
@@ -626,15 +641,16 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release", 
+        "tags": "sourcekit",
         "xfail": {
-           "compatibility": {
-             "4.2": {
-               "branch": {
-                 "master": "https://bugs.swift.org/browse/SR-8307"
-               }
-             }
-           }
-         }
+          "compatibility": {
+            "4.2": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8307"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -703,6 +719,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "4.2": {
@@ -734,6 +751,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "4.0": {
@@ -769,6 +787,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit sourcekit-smoke",
         "xfail": {
           "compatibility": {
             "4.0": {
@@ -805,7 +824,8 @@
         "workspace": "IBAnimatable.xcworkspace",
         "scheme": "IBAnimatable",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -841,7 +861,8 @@
         "project": "JSQCoreDataKit.xcodeproj",
         "target": "JSQCoreDataKit-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "TestXcodeProjectScheme",
@@ -876,7 +897,8 @@
         "project": "JSQDataSourcesKit.xcodeproj",
         "target": "JSQDataSourcesKit-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "TestXcodeProjectScheme",
@@ -907,7 +929,8 @@
         "workspace": "KeychainAccess.xcworkspace",
         "scheme": "KeychainAccess",
         "destination": "platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -953,7 +976,8 @@
         "project": "Prelude.xcodeproj",
         "scheme": "Prelude-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -967,7 +991,8 @@
         "project": "Prelude.xcodeproj",
         "scheme": "Prelude-UIKit-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -1000,6 +1025,7 @@
         "scheme": "ReactiveExtensions-iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "3.0": {
@@ -1088,7 +1114,8 @@
         "workspace": "Kingfisher.xcworkspace",
         "scheme": "Kingfisher-macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -1125,7 +1152,8 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "sourcekit"
       }
     ]
   },
@@ -1157,7 +1185,8 @@
         "project": "Kronos.xcodeproj",
         "target": "Kronos",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -1210,6 +1239,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "4.0": {
@@ -1244,6 +1274,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "4.0": {
@@ -1279,6 +1310,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "4.0": {
@@ -1322,7 +1354,8 @@
         "workspace": "ObjectMapper.xcworkspace",
         "scheme": "ObjectMapper-Mac",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -1360,6 +1393,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "3.0": {
@@ -1400,7 +1434,8 @@
         "project": "PinkyPromise.xcodeproj",
         "scheme": "PinkyPromise_macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildSwiftPackage",
@@ -1454,6 +1489,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "4.0": {
@@ -1490,7 +1526,8 @@
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKit",
         "destination": "platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -1519,6 +1556,7 @@
         "target": "ProcedureKitCloud",
         "destination": "platform=macOS",
         "configuration": "Release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "3.0": {
@@ -1559,7 +1597,8 @@
         "project": "PromiseKit.xcodeproj",
         "target": "PromiseKit",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -1603,6 +1642,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "4.0": {
@@ -1639,7 +1679,8 @@
         "workspace": "ReLax.xcworkspace",
         "scheme": "ReLax",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       }
     ]
   },
@@ -1671,7 +1712,8 @@
         "project": "ReSwift.xcodeproj",
         "scheme": "ReSwift-macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -1710,7 +1752,8 @@
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -1757,7 +1800,8 @@
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -1802,6 +1846,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "4.0": {
@@ -1839,6 +1884,7 @@
         "target": "Pods-RxDataSources",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "3.0": {
@@ -1888,7 +1934,8 @@
         "workspace": "Rx.xcworkspace",
         "scheme": "RxSwift-macOS",
         "destination": "platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -1916,7 +1963,8 @@
         "workspace": "Rx.xcworkspace",
         "scheme": "RxCocoa-macOS",
         "destination": "platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -1944,7 +1992,8 @@
         "workspace": "Rx.xcworkspace",
         "scheme": "RxBlocking-macOS",
         "destination": "platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -1972,7 +2021,8 @@
         "workspace": "Rx.xcworkspace",
         "scheme": "RxTests-macOS",
         "destination": "platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -2008,7 +2058,8 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "sourcekit"
       },
       {
         "action": "TestSwiftPackage"
@@ -2035,6 +2086,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "3.0": {
@@ -2066,6 +2118,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "4.0": {
@@ -2117,7 +2170,8 @@
         "project": "Starscream.xcodeproj",
         "scheme": "Starscream",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       }
     ]
   },
@@ -2142,7 +2196,8 @@
         "project": "Surge.xcodeproj",
         "scheme": "Surge",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
       }
     ]
   },
@@ -2174,7 +2229,8 @@
         "project": "SwiftDate.xcodeproj",
         "scheme": "SwiftDate-macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -2211,7 +2267,8 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "sourcekit"
       }
     ]
   },
@@ -2235,6 +2292,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "4.0": {
@@ -2278,7 +2336,8 @@
         "workspace": "SwifterSwift.xcworkspace",
         "scheme": "SwifterSwift-macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -2332,7 +2391,8 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "sourcekit"
       },
       {
         "action": "TestSwiftPackage"
@@ -2367,7 +2427,8 @@
         "project": "SwiftyStoreKit.xcodeproj",
         "target": "SwiftyStoreKit_macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -2397,6 +2458,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "3.1": {
@@ -2431,6 +2493,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "3.1": {
@@ -2471,7 +2534,8 @@
         "workspace": "Kommander.xcworkspace",
         "scheme": "Kommander macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -2510,7 +2574,8 @@
         "workspace": "LaunchScreenSnapshot.xcworkspace",
         "scheme": "LaunchScreenSnapshot",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       }
     ]
   },
@@ -2542,7 +2607,8 @@
         "project": "Mapper.xcodeproj",
         "target": "Mapper",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -2597,7 +2663,8 @@
         "workspace": "PanelKit.xcworkspace",
         "scheme": "PanelKit",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -2642,7 +2709,8 @@
         "project": "Siesta.xcodeproj",
         "target": "Siesta macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -2656,7 +2724,8 @@
         "project": "Siesta.xcodeproj",
         "target": "SiestaUI macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit"
       }
     ]
   },
@@ -2680,6 +2749,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "3.0": {
