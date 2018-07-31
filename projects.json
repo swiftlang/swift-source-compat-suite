@@ -2342,16 +2342,7 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "4.2": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8403"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       },
       {
         "action": "TestSwiftPackage"
