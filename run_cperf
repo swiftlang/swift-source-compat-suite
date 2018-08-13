@@ -403,6 +403,7 @@ def analyze_results(configs, args):
     for m in (passed_modules - failed_modules):
         common_args += ['--select-module', m]
 
+    briefpattern = r'driver.*wall|NumLLVMBytesOutput|NumInstructions'
     returncodes = []
     for config in configs:
         variant = get_variant(config, args)
@@ -418,7 +419,7 @@ def analyze_results(configs, args):
                 common_args +
                 ['--output', get_table_name('head', 'brief', variant),
                  '--divide-by', str(args.repetitions),
-                 '--select-stat', r'driver.*wall|NumLLVMBytesOutput',
+                 '--select-stat', briefpattern,
                  '--merge-timers',
                  '--delta-pct-thresh', delta_pct_thresh,
                  '--delta-usec-thresh', delta_usec_thresh,
@@ -439,7 +440,7 @@ def analyze_results(configs, args):
                     common_args +
                     ['--output',
                      get_table_name('baseline', 'brief', variant),
-                     '--select-stat', r'driver.*wall|NumLLVMBytesOutput',
+                     '--select-stat', briefpattern,
                      '--merge-timers',
                      '--divide-by', str(args.repetitions),
                      '--delta-pct-thresh', delta_pct_thresh,
