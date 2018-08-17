@@ -2020,24 +2020,24 @@
     "url": "https://github.com/nodes-ios/Serpent.git",
     "path": "Serpent",
     "branch": "master",
+    "maintainer": "ios@nodes.dk",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "16a3bf87f4b3ad13827c65deabb0bf0af07ae59d"
+        "version": "4.2",
+        "commit": "33ce18293ef42e5565ce285a15ee70ac9d5b121d"
       }
     ],
     "platforms": [
       "Darwin",
       "Linux"
     ],
-    "maintainer": "ios@nodes.dk",
     "actions": [
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "xfail": {
           "compatibility": {
-            "3.0": {
+            "4.2": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-8250"
               }
