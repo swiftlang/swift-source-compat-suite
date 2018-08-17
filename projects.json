@@ -1379,8 +1379,8 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "a127ac74685daec77dd4580bd82c8ace8cc9cc29"
+        "version": "4.2",
+        "commit": "5c15634de4ff3152e9ccede6543c83ed93e2cf7b"
       }
     ],
     "platforms": [
@@ -1407,7 +1407,7 @@
         "configuration": "release",
         "xfail": {
           "compatibility": {
-            "3.0": {
+            "4.2": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-8250"
               }
