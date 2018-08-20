@@ -268,14 +268,6 @@
   },
   {
     "branches": ["master"],
-    "failure": "crashed",
-    "file": "Evergreen/Frameworks/Account/Account.swift",
-    "offset": 4496,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8559"
-  },
-  {
-    "branches": ["master"],
     "file": "Evergreen/Frameworks/Account/Account.swift",
     "offset": 156,
     "request": "CursorInfo",
@@ -574,7 +566,7 @@
   {
     "branches": ["master"],
     "file": "PinkyPromise/Sources/Promise.swift",
-    "offset": 11022,
+    "offset": 11120,
     "request": "CodeComplete",
     "issue": "https://bugs.swift.org/browse/SR-8555"
   },
@@ -1071,6 +1063,13 @@
     "file": "SwiftyStoreKit/SwiftyStoreKit/CompleteTransactionsController.swift",
     "offset": 2818,
     "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["master"],
+    "file": "SwiftyStoreKit/SwiftyStoreKit/AppleReceiptValidator.swift",
+    "offset": 2402,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8559"
   },
   {
     "branches": ["swift-4.2-branch"],
