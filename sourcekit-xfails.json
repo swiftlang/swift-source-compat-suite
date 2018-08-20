@@ -647,13 +647,6 @@
   },
   {
     "branches": ["master"],
-    "file": "Re-Lax/ReLax/ReLax/DataHelpers.swift",
-    "offset": 2230,
-    "request": "CodeComplete",
-    "issue": "https://bugs.swift.org/browse/SR-8568"
-  },
-  {
-    "branches": ["master"],
     "failure": "crashed",
     "file": "Re-Lax/ReLax/ReLax/LCRFlattenedRendition.swift",
     "offset": 1537,
