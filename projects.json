@@ -719,16 +719,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.2": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8332"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       }
     ]
   },
