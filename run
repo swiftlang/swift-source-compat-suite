@@ -94,6 +94,12 @@ def parse_args():
     parser.add_argument("--distcc",
                         help='Pass --distcc to the build script',
                         action='store_true')
+    parser.add_argument("--build-config",
+                        metavar="NAME",
+                        choices=['debug', 'release'],
+                        dest='build_config',
+                        help='specify "debug" or "release" to override '
+                             'the build configuration in the projects.json file')
     return parser.parse_args()
 
 
@@ -172,6 +178,9 @@ def execute_runner(workspace, args):
 
     if args.add_xcodebuild_flags:
         runner_command += ['--add-xcodebuild-flags=%s' % args.add_xcodebuild_flags]
+
+    if args.build_config:
+        runner_command += ['--build-config=%s' % args.build_config]
 
     common.check_execute(runner_command, timeout=9999999)
 
