@@ -50,7 +50,7 @@ def setup_workspace(instance, workspace, args):
     common.check_execute(['utils/update-checkout',
                           '--clone', '--reset-to-remote',
                           '--clean', '--scheme', args.swift_branch],
-                         cwd=swift)
+                         cwd=swift, timeout=9999999)
     if instance == NEW_INSTANCE:
         command_fetch = ['git', '-C', swift, 'fetch', 'origin',
                          'pull/%d/merge' % args.setup_workspaces_for_pr]
