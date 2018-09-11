@@ -2438,8 +2438,8 @@
     "maintainer": "devxoul@gmail.com",
     "compatibility": [
       {
-        "version": "3.1",
-        "commit": "daaea1ac2100ae86bd20f0920ebbd2f1becb2e6e"
+        "version": "4.2",
+        "commit": "3edb1c0f557506d845362fda6d8564718435bfb1"
       }
     ],
     "platforms": [
