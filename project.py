@@ -196,6 +196,7 @@ def build_swift_package(path, swiftc, configuration, sandbox_profile,
                             stdout=stdout, stderr=stderr)
     env = os.environ
     env['SWIFT_EXEC'] = swiftc
+    env['SWIFT_SOURCE_COMPAT_SUITE'] = "1"
     command = [swift, 'build', '-C', path, '--verbose',
                '--configuration', configuration]
     if (swift_branch not in ['swift-3.0-branch',
@@ -220,6 +221,7 @@ def test_swift_package(path, swiftc, sandbox_profile,
         clean_swift_package(path, swiftc, sandbox_profile)
     env = os.environ
     env['SWIFT_EXEC'] = swiftc
+    env['SWIFT_SOURCE_COMPAT_SUITE'] = "1"
     command = [swift, 'test', '-C', path, '--verbose']
     if added_swift_flags is not None:
         for flag in added_swift_flags.split():
