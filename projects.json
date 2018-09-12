@@ -492,8 +492,8 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "190f44e8de0d949c7cdc55e3b3bd856a05b42a67"
+        "version": "4.2",
+        "commit": "c374a6e7072ed88ed0c79299098ca2ba7c27e720"
       }
     ],
     "platforms": [
@@ -505,16 +505,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeProjectScheme",
