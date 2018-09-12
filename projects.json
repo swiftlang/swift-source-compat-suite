@@ -1815,8 +1815,8 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "7477584259bfce2560a19e06ad9f71db441fff11"
+        "version": "4.2",
+        "commit": "2fe5b325a8a54e77c545b2f511213420da133b8c"
       }
     ],
     "maintainer": "matt@diephouse.com",
@@ -1828,16 +1828,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "TestSwiftPackage"
