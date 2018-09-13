@@ -1363,8 +1363,8 @@
     "maintainer": "sean@perfect.org",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "540feb1d8b3c1965823e0e3ecc9e975d47006b80"
+        "version": "4.2",
+        "commit": "cdc17d544ec8e87da5f3b24cdbda8d02d77bb943"
       }
     ],
     "platforms": [
@@ -1375,16 +1375,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       }
     ]
   },
