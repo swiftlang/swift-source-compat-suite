@@ -1595,8 +1595,8 @@
     "maintainer": "tom@lokhorst.eu",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "c5273e456ef02230689f6db2172abb29901115f0"
+        "version": "4.2",
+        "commit": "f96758593573d3d1d9ae8084721033ab0bf392f6"
       }
     ],
     "platforms": [
@@ -1606,16 +1606,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "TestSwiftPackage"
