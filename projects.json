@@ -2227,6 +2227,10 @@
       {
         "version": "4.0",
         "commit": "549d4c97664bea31af61a4d3d6184dc3e970880a"
+      },
+      {
+        "version": "4.2",
+        "commit": "60f98ec50d74c6e6aa7c527493d844960653f3a6"
       }
     ],
     "maintainer": "jp@jpsim.com",
@@ -2238,16 +2242,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "TestSwiftPackage"
