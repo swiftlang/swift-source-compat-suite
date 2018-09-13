@@ -2561,7 +2561,15 @@
     "compatibility": [
       {
         "version": "4.0",
-        "commit": "45f5726304f41e6e6ad5d3d836e89940e165f48d"
+        "commit": "d501cb83be55d67779dd2dc3e2dea53fdf78c39d"
+      },
+      {
+        "version": "4.1",
+        "commit": "d501cb83be55d67779dd2dc3e2dea53fdf78c39d"
+      },
+      {
+        "version": "4.2",
+        "commit": "d501cb83be55d67779dd2dc3e2dea53fdf78c39d"
       }
     ],
     "platforms": [
@@ -2599,16 +2607,7 @@
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8250"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       },
       {
         "action": "TestSwiftPackage"
