@@ -2347,6 +2347,70 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/SwiftyJSON/SwiftyJSON.git",
+    "path": "SwiftyJSON",
+    "branch": "master",
+    "maintainer": "wongzigii@gmail.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "b93c5d2bd883959262b4c7aabe333667dadb1ab0"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "SwiftyJSON.xcworkspace",
+        "scheme": "SwiftyJSON macOS",
+        "destination": "platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "SwiftyJSON.xcworkspace",
+        "scheme": "SwiftyJSON iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "SwiftyJSON.xcworkspace",
+        "scheme": "SwiftyJSON tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "SwiftyJSON.xcworkspace",
+        "scheme": "SwiftyJSON watchOS",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "SwiftyJSON.xcworkspace",
+        "scheme": "SwiftyJSON OSX",
+        "destination": "platform=macOS"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "SwiftyJSON.xcworkspace",
+        "scheme": "SwiftyJSON iOS",
+        "destination": "platform=iOS Simulator,name=iPhone 7"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "SwiftyJSON.xcworkspace",
+        "scheme": "SwiftyJSON tvOS",
+        "destination": "platform=tvOS Simulator,name=Apple TV 1080p"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/bizz84/SwiftyStoreKit",
     "path": "SwiftyStoreKit",
     "branch": "master",
