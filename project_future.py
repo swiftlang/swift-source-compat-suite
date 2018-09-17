@@ -124,6 +124,9 @@ class XcodeTarget(ProjectTarget):
                       'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO'])
         command += self._added_xcodebuild_flags
 
+        if self._destination == 'generic/platform=watchOS':
+            command += ['ARCHS=armv7k']
+
         return command
 
     def get_test_command(self, incremental=False):

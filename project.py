@@ -124,6 +124,8 @@ class XcodeTarget(ProjectTarget):
                 command += ['-configuration', value]
             else:
                 command += ['%s=%s' % (setting, value)]
+        if self._destination == 'generic/platform=watchOS':
+            command += ['ARCHS=armv7k']
 
         return command
 
