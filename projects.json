@@ -1581,7 +1581,17 @@
         "project": "PromiseKit.xcodeproj",
         "target": "PromiseKit",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.0.3": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8781",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8781"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectTarget",
