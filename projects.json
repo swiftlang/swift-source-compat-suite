@@ -1500,7 +1500,17 @@
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKit",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "3.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8780",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8780"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -1571,7 +1581,17 @@
         "project": "PromiseKit.xcodeproj",
         "target": "PromiseKit",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.0.3": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8781",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8781"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -2617,7 +2637,23 @@
         "project": "Mapper.xcodeproj",
         "target": "Mapper",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8778",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8778"
+              }
+            },
+            "4.2": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8778",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8778"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildSwiftPackage",
