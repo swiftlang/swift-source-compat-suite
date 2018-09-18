@@ -2617,7 +2617,23 @@
         "project": "Mapper.xcodeproj",
         "target": "Mapper",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8778",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8778"
+              }
+            },
+            "4.2": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8778",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8778"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildSwiftPackage",
