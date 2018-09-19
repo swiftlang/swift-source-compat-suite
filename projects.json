@@ -757,7 +757,7 @@
     "compatibility": [
       {
         "version": "4.2",
-        "commit": "a5b3a0ff480e44f5183a1a39a859f77eaa05f9d0"
+        "commit": "c0e68b17c6741e32b131ab33bbdd33524027e2af"
       }
     ],
     "maintainer": "arthur@sabintsev.com",
