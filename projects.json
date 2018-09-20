@@ -738,8 +738,8 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "d88afd48e8793d66f4609db98710b679ce039341"
+        "version": "4.2",
+        "commit": "c0e68b17c6741e32b131ab33bbdd33524027e2af"
       }
     ],
     "maintainer": "arthur@sabintsev.com",
