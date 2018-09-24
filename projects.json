@@ -2699,14 +2699,14 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/vapor/vapor.git",
-    "path": "vapor",
+    "url": "https://github.com/vapor/console.git",
+    "path": "vapor_console",
     "branch": "master",
     "maintainer": "tanner@vapor.codes",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "652e8d8316696bd0f0bbde07da555210e81557f1"
+        "version": "4.2",
+        "commit": "5b9796d39f201b3dd06800437abd9d774a455e57"
       }
     ],
     "platforms": [
@@ -2717,17 +2717,199 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-7233",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-7233"
-              }
-            }
-          }
-	}
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/core.git",
+    "path": "vapor_core",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "08a5764af95ccf0a08d0a510358c18628736070d"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/database-kit.git",
+    "path": "vapor_database-kit",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "3a17dbbe9be5f8c37703e4b7982c1332ad6b00c4"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/multipart.git",
+    "path": "vapor_multipart",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "e57007c23a52b68e44ebdfc70cbe882a7c4f1ec3"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/routing.git",
+    "path": "vapor_routing",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "3219e328491b0853b8554c5a694add344d2c6cfb"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/service.git",
+    "path": "vapor_service",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "281a70b69783891900be31a9e70051b6fe19e146"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/template-kit.git",
+    "path": "vapor_template-kit",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "db35b1c35aabd0f5db3abca0cfda7becfe9c43e2"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/url-encoded-form.git",
+    "path": "vapor_url-encoded-form",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "cbfe7ef6301557d3f2d0807a98165232ae06e1c6"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/validation.git",
+    "path": "vapor_validation",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "156f8adeac3440e868da3757777884efbc6ec0cc"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
       }
     ]
   }
