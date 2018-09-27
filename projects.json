@@ -239,8 +239,7 @@
         "workspace": "Chatto.xcworkspace",
         "scheme": "Chatto",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "configuration": "Release"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -359,7 +358,7 @@
         "scheme": "CoreStore OSX",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -820,7 +819,7 @@
         "scheme": "IBAnimatable",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -1985,7 +1984,7 @@
         "scheme": "RxSwift-macOS",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
