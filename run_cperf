@@ -90,12 +90,20 @@ def main():
         with open(ws_comment, 'w') as f:
             f.write("Compilation-performance test failed")
 
+    # First _get_ all the sources (with as little a gap between
+    # fetches as possible to minimize race possibility)
     for instance in instances:
         workspace = get_workspace_for_instance(instance, args)
 
         if args.setup_workspaces_for_pr:
             setup_workspace(instance, workspace, args)
         validate_workspace(instance, workspace, args)
+
+    # Then _build and test_ both workspaces, which can take
+    # longer since we're not concerned about racing on github
+    # anymore.
+    for instance in instances:
+        workspace = get_workspace_for_instance(instance, args)
 
         if not args.skip_build:
             build_swift_toolchain(workspace, args)
