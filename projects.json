@@ -193,8 +193,8 @@
     "maintainer": "babt@us.ibm.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "b0dcf15387be3641ecafea52f872fcd106cb644a"
+        "version": "4.2",
+        "commit": "fb4e74cd8eb3ce4a2b860fbf727b2dada796d77d"
       }
     ],
     "platforms": [
