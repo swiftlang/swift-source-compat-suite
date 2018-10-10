@@ -33,8 +33,8 @@
     "maintainer": "cnoon@alamofire.org",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "b03b43cc381ec02eb9855085427186ef89055eef"
+        "version": "4.2",
+        "commit": "a5cd9e233f24df3583f4b02f7e4722c076ab9032"
       }
     ],
     "platforms": [
