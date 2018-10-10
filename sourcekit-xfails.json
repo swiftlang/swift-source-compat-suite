@@ -1,724 +1,1090 @@
 [
   {
-    "branches": ["master"],
-    "file": "Alamofire/Source/AFError.swift",
-    "offset": 2817,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8812"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "Alamofire/Source/Alamofire.swift",
-    "offset": 3719,
-    "length": 9,
-    "request": "RangeInfo",
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["master"],
-    "file": "AsyncNinja/Sources/BaseProducer.swift",
-    "offset": 1146,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8553"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "AsyncNinja/Sources/BaseProducer.swift",
-    "offset": 1773,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "BlueSocket/Sources/Socket.swift",
-    "offset": 30861,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["master"],
-    "file": "Chatto/ChattoAdditions/Source/Chat Items/BaseMessage/BaseMessageModel.swift",
-    "offset": 1128,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8553"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 12,
-    "file": "Chatto/Chatto/Source/Chat Items/ChatItemCompanion.swift",
-    "offset": 1580,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 34,
-    "file": "Chatto/ChattoAdditions/Source/Chat Items/BaseMessage/Views/BaseMessageCollectionViewCell.swift",
-    "offset": 8369,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 8,
-    "file": "CleanroomLogger/Sources/ConcatenatingLogFormatter.swift",
-    "offset": 2348,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 22,
-    "file": "CoreStore/Sources/CSDataStack+Observing.swift",
-    "offset": 3048,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 13,
-    "file": "cub/Sources/Cub/AST/Nodes/ArrayNode.swift",
-    "offset": 758,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "failure": "crashed",
-    "length": 16,
-    "file": "DNS/Sources/DNS/Bytes.swift",
-    "offset": 6663,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 24,
-    "file": "Deferred/Sources/Deferred/Deferred.swift",
-    "offset": 2331,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "Deferred/Sources/Task/TaskAndThen.swift",
-    "offset": 2614,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["master"],
-    "file": "Evergreen/submodules/RSCore/RSCore/AppKit/LogWindowController.swift",
-    "offset": 167,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8553"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 18,
-    "file": "Evergreen/submodules/RSCore/RSCore/RSToolbarItem.swift",
-    "offset": 1174,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["master"],
-    "file": "Evergreen/submodules/RSParser/Sources/Feeds/FeedType.swift",
-    "offset": 705,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8559"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 17,
-    "file": "Evergreen/submodules/RSDatabase/RSDatabase/DatabaseObject.swift",
-    "offset": 649,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 24,
-    "file": "Evergreen/submodules/RSWeb/RSWeb/DownloadSession.swift",
-    "offset": 3145,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["master"],
-    "file": "Evergreen/submodules/RSTree/RSTree/NSOutlineView+RSTree.swift",
-    "offset": 166,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8553"
-  },
-  {
-    "branches": ["master"],
-    "file": "Evergreen/submodules/RSWeb/RSWeb/Credentials.swift",
-    "offset": 152,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8553"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "Evergreen/Frameworks/Data/DatabaseID.swift",
-    "offset": 488,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["master"],
-    "file": "Evergreen/Frameworks/Data/Article.swift",
-    "offset": 151,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8553"
-  },
-  {
-    "branches": ["master"],
-    "file": "Evergreen/Frameworks/Database/ArticlesTable.swift",
-    "offset": 162,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8553"
-  },
-  {
-    "branches": ["master"],
-    "file": "Evergreen/Frameworks/Account/Account.swift",
-    "offset": 156,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8553"
-  },
-  {
-    "branches": ["master"],
-    "file": "Evergreen/AppleEvents/AppleEventUtils.swift",
-    "offset": 158,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8553"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 24,
-    "file": "Evergreen/Frameworks/Account/Account.swift",
-    "offset": 2653,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 20,
-    "file": "Evergreen/Commands/DeleteFromSidebarCommand.swift",
-    "offset": 2831,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "SemanticRefactoring",
-    "refactoring": "Convert To Trailing Closure",
-    "file": "exercism-*swift/exercises/word-count/Sources/WordCountExample.swift",
-    "offset": 97,
-    "issue": "https://github.com/apple/swift/pull/17291 (fixed on master; rdar://problem/41093898)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "exercism-*swift/exercises/acronym/Sources/AcronymExample.swift",
-    "offset": 913,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "fluent/Sources/Fluent/Cache/CacheEntry.swift",
-    "offset": 534,
-    "request": "CodeComplete",
-    "issue": "https://bugs.swift.org/browse/SR-8042"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "fluent/Sources/FluentBenchmark/Benchmarks/Bar.swift",
-    "offset": 240,
-    "request": "CodeComplete",
-    "issue": "https://bugs.swift.org/browse/SR-8042"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "GRDB.swift/GRDB/Core/Cursor.swift",
-    "offset": 22555,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["master"],
-    "file": "IBAnimatable/Sources/ActivityIndicators/Animations/ActivityIndicatorAnimationBallBeat.swift",
-    "offset": 2007,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8559"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "IBAnimatable/Sources/ActivityIndicators/Animations/ActivityIndicatorAnimationBallPulseRise.swift",
-    "offset": 2460,
-    "request": "CodeComplete",
-    "issue": "https://github.com/apple/swift/pull/18665 (fixed on master; rdar://problem/42639255)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "JSQDataSourcesKit/Source/ReusableViewConfig.swift",
-    "offset": 6930,
-    "request": "CodeComplete",
-    "issue": "https://github.com/apple/swift/commit/398abdfb (fixed on master; rdar://problem/41175473)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 26,
-    "file": "KeychainAccess/Lib/KeychainAccess/Keychain.swift",
-    "offset": 18237,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "Kickstarter-Prelude/Prelude/Optional.swift",
-    "offset": 1585,
-    "request": "CodeComplete",
-    "issue": "https://github.com/apple/swift/pull/17339 (fixed on master; rdar://problem/41219750)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "Kickstarter-Prelude/Prelude-UIKit/UIImage.swift",
-    "offset": 309,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "Kickstarter-ReactiveExtensions/Frameworks/ReactiveSwift/Sources/Action.swift",
-    "offset": 3959,
-    "request": "CodeComplete",
-    "issue": "https://github.com/apple/swift/pull/18202 (fixed on master; rdar://problem/42448618)"
-  },
-  {
-    "branches": ["master"],
-    "file": "Kingfisher/Sources/Box.swift",
-    "offset": 1223,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8553"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "Kingfisher/Sources/Image.swift",
-    "offset": 21272,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "SemanticRefactoring",
-    "refactoring": "Local Rename",
-    "file": "Kitura/Sources/Kitura/CodableRouter.swift",
-    "offset": 45420,
-    "issue": "https://bugs.swift.org/browse/SR-8566"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "Kronos/Sources/DNSResolver.swift",
-    "offset": 3012,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 16,
-    "file": "Lark/Sources/Lark/Client.swift",
-    "offset": 6608,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 9,
-    "file": "Lark/Sources/CodeGenerator/Generator.swift",
-    "offset": 5239,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 16,
-    "file": "Moya/Sources/Moya/AnyEncodable.swift",
-    "offset": 233,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "Moya/Sources/ReactiveMoya/MoyaProvider+Reactive.swift",
-    "offset": 382,
-    "request": "CodeComplete",
-    "issue": "https://github.com/apple/swift/pull/18202 (fixed on master; rdar://problem/42448618)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "Moya/Sources/RxMoya/MoyaProvider+Rx.swift",
-    "offset": 1536,
-    "request": "CodeComplete",
-    "issue": "https://github.com/apple/swift/pull/18202 (fixed on master; rdar://problem/42448618)"
+    "path" : "*\/Alamofire\/Source\/Request.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "request" : {
+      "kind" : "editorOpen"
+    }
+  },
+  {
+    "path" : "*\/AsyncNinja\/Sources\/BaseProducer.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 2560
+    }
+  },
+  {
+    "path" : "*\/AsyncNinja\/Sources\/EventSource_Merge2.swift",
+    "modification" : "concurrent-2781",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9378",
+    "request" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 2773
+    }
+  },
+  {
+    "path" : "*\/BeaconKit\/Sources\/BeaconKit\/Classes\/Parser\/LayoutFragment.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "request" : {
+      "kind" : "editorOpen"
+    }
+  },
+  {
+    "path" : "*\/BlueSocket\/Sources\/Socket\/Socket.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "request" : {
+      "kind" : "editorOpen"
+    }
+  },
+  {
+    "path" : "*\/Chatto\/Chatto\/Source\/ChatController\/BaseChatViewController.swift",
+    "modification" : "concurrent-1515",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 1345
+    }
+  },
+  {
+    "path" : "*\/Chatto\/Chatto\/Source\/Utils.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "request" : {
+      "kind" : "editorOpen"
+    }
+  },
+  {
+    "path" : "*\/Chatto\/ChattoAdditions\/Source\/Chat Items\/TextMessages\/Views\/TextMessageCollectionViewCellDefaultStyle.swift",
+    "modification" : "concurrent-2191",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9387",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 2189
+    }
+  },
+  {
+    "path" : "*\/CoreStore\/Sources\/AsynchronousDataTransaction.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 6581
+    }
+  },
+  {
+    "path" : "*\/CoreStore\/Sources\/CoreStoreError.swift",
+    "modification" : "concurrent-4683",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 2769
+    }
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Integer+Data.swift",
+    "modification" : "concurrent-460",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 456
+    }
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Message.swift",
+    "modification" : "concurrent-9359",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 5567
+    }
+  },
+  {
+    "path" : "*\/Deferred\/Sources\/Deferred\/DeferredQueue.swift",
+    "modification" : "insideOut-2356",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 312
+    }
+  },
+  {
+    "path" : "*\/Deferred\/Sources\/Task\/ResultRecovery.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 606
+    }
+  },
+  {
+    "path" : "*\/Deferred\/Sources\/Task\/TaskAndThen.swift",
+    "modification" : "concurrent-893",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 887
+    }
+  },
+  {
+    "path" : "*\/Dollar\/Sources\/Dollar.swift",
+    "modification" : "concurrent-2573",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 2250
+    }
+  },
+  {
+    "path" : "*\/Evergreen\/submodules\/RSDatabase\/RSDatabase\/DatabaseTable.swift",
+    "modification" : "insideOut-1034",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 821
+    }
+  },
+  {
+    "path" : "*\/Evergreen\/submodules\/RSDatabase\/RSDatabase\/DatabaseTable.swift",
+    "modification" : "insideOut-1037",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 843
+    }
+  },
+  {
+    "path" : "*\/Evergreen\/submodules\/RSTree\/RSTree\/Node.swift",
+    "modification" : "insideOut-2666",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 2400
+    }
+  },
+  {
+    "path" : "*\/Evergreen\/Frameworks\/Database\/Database.swift",
+    "modification" : "insideOut-32",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "editorReplaceText",
+      "length" : 0,
+      "offset" : 3,
+      "text" : ":"
+    }
+  },
+  {
+    "path" : "*\/Evergreen\/Commands\/DeleteFromSidebarCommand.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 1583
+    }
+  },
+  {
+    "path" : "*\/Evergreen\/Evergreen\/ProgressWindow\/IndeterminateProgressWindowController.swift",
+    "modification" : "concurrent-1304",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 1292
+    }
+  },
+  {
+    "path" : "*\/fluent\/Sources\/Fluent\/Cache\/CacheEntry.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9003",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 908
+    }
+  },
+  {
+    "path" : "*\/fluent\/Sources\/FluentBenchmark\/Benchmarks\/Bar.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9003",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 955
+    }
+  },
+  {
+    "path" : "*\/fluent\/Sources\/FluentSQL\/SQL+Contains.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 215
+    }
+  },
+  {
+    "path" : "*\/IBAnimatable\/Sources\/ActivityIndicators\/Animations\/ActivityIndicatorAnimationCircleDashStrokeSpin.swift",
+    "modification" : "concurrent-2290",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 2284
+    }
+  },
+  {
+    "path" : "*\/IBAnimatable\/Sources\/Enums\/GradientType.swift",
+    "modification" : "insideOut-3275",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "editorReplaceText",
+      "length" : 0,
+      "offset" : 3275,
+      "text" : "0.254901960784314"
+    }
+  },
+  {
+    "path" : "*\/KeychainAccess\/Lib\/KeychainAccess\/Keychain.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "request" : {
+      "kind" : "editorOpen"
+    }
+  },
+  {
+    "path" : "*\/Kickstarter-Prelude\/Frameworks\/Runes\/Sources\/Runes\/Optional\/Optional+Applicative.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 1436
+    }
+  },
+  {
+    "path" : "*\/Kickstarter-Prelude\/Prelude\/Either.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 2903
+    }
+  },
+  {
+    "path" : "*\/Kickstarter-Prelude\/Frameworks\/Runes\/Sources\/Runes\/Optional\/Optional+Applicative.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 1436
+    }
+  },
+  {
+    "path" : "*\/Kickstarter-ReactiveExtensions\/Frameworks\/ReactiveSwift\/Sources\/Action.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 4690
+    }
+  },
+  {
+    "path" : "*\/Kickstarter-ReactiveExtensions\/ReactiveExtensions\/UIKit\/Rac.swift",
+    "modification" : "concurrent-495",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 458
+    }
+  },
+  {
+    "path" : "*\/Kickstarter-ReactiveExtensions\/ReactiveExtensions\/helpers\/DispatchTimeInterval-Extensions.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "request" : {
+      "kind" : "editorOpen"
+    }
+  },
+  {
+    "path" : "*\/Kingfisher\/Sources\/Filter.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "request" : {
+      "kind" : "editorOpen"
+    }
+  },
+  {
+    "path" : "*\/Kitura\/Sources\/Kitura\/CodableRouter.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-8566",
+    "request" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 45420
+    }
+  },
+  {
+    "path" : "*\/NetService\/Sources\/NetService\/Utils.swift",
+    "modification" : "insideOut-*",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371 TIMEOUT",
+    "request" : {
+      "kind" : "cursorInfo",
+    }
+  },
+  {
+    "path" : "*\/ObjectMapper\/Sources\/DictionaryTransform.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 626
+    }
+  },
+  {
+    "path" : "*\/ObjectMapper\/Sources\/EnumOperators.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "editorOpen"
+    }
+  },
+  {
+    "path" : "*\/Perfect\/Sources\/PerfectLib\/File.swift",
+    "modification" : "concurrent-4321",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 3543
+    }
+  },
+  {
+    "path" : "*\/Perfect\/Sources\/PerfectLib\/SysProcess.swift",
+    "modification" : "insideOut-279",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "editorReplaceText",
+      "length" : 0,
+      "offset" : 63,
+      "text" : "&"
+    }
+  },
+  {
+    "path" : "*\/Plank\/Sources\/Core\/JSIR.swift",
+    "modification" : "insideOut-174",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "editorReplaceText",
+      "length" : 0,
+      "offset" : 94,
+      "text" : " "
+    }
+  },
+  {
+    "path" : "*\/Plank\/Sources\/plank\/Cli.swift",
+    "modification" : "insideOut-2867",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "editorReplaceText",
+      "length" : 0,
+      "offset" : 285,
+      "text" : "\""
+    }
+  },
+  {
+    "path" : "*\/ProcedureKit\/Sources\/ProcedureKit\/Any.swift",
+    "modification" : "concurrent-1715",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 1148
+    }
+  },
+  {
+    "path" : "*\/PromiseKit\/Sources\/AnyPromise.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "request" : {
+      "kind" : "editorOpen"
+    }
+  },
+  {
+    "path" : "*\/R.swift\/Sources\/RswiftCore\/Generators\/AggregatedStructGenerator.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9015",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 856
+    }
+  },
+  {
+    "path" : "*\/R.swift\/Sources\/rswift\/main.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 6857
+    }
+  },
+  {
+    "path" : "*\/Re-Lax\/ReLax\/ReLax\/ParallaxImage.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 1798
+    }
+  },
+  {
+    "path" : "*\/ReSwift\/ReSwift\/CoreTypes\/Store.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 3943
+    }
+  },
+  {
+    "path" : "*\/ReactiveCocoa\/ReactiveCocoa\/AppKit\/NSButton.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "request" : {
+      "kind" : "editorOpen"
+    }
+  },
+  {
+    "path" : "*\/ReactiveSwift\/Sources\/Action.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 4690
+    }
+  },
+  {
+    "path" : "*\/ReactiveSwift\/Sources\/Action.swift",
+    "modification" : "concurrent-2061",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9017",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 1965
+    }
+  },
+  {
+    "path" : "*\/Result\/Result\/ResultProtocol.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "request" : {
+      "kind" : "editorOpen"
+    }
+  },
+  {
+    "path" : "*\/RxSwift\/RxSwift\/Deprecated.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 10051
+    }
+  },
+  {
+    "path" : "*\/RxSwift\/RxCocoa\/Common\/Binder.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 878
+    }
+  },
+  {
+    "path" : "*\/RxSwift\/RxCocoa\/Common\/Observable+Bind.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 1800
+    }
+  },
+  {
+    "path" : "*\/RxSwift\/RxTest\/Schedulers\/TestScheduler.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 1970
+    }
+  },
+  {
+    "path" : "*\/Starscream\/Sources\/WebSocket.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "request" : {
+      "kind" : "editorOpen"
+    }
+  },
+  {
+    "path" : "*\/Surge\/Sources\/Surge\/FFT.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 1789
+    }
+  },
+  {
+    "path" : "*\/Surge\/Sources\/Surge\/Pointers.swift",
+    "modification" : "concurrent-2991",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 1582
+    }
+  },
+  {
+    "path" : "*\/SwiftDate\/Sources\/SwiftDate\/DateInRegion\/DateInRegion+Components.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 2358
+    }
+  },
+  {
+    "path" : "*\/SwiftDate\/Sources\/SwiftDate\/DateInRegion\/DateInRegion.swift",
+    "modification" : "insideOut-776",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "editorReplaceText",
+      "length" : 0,
+      "offset" : 310,
+      "text" : "', rep_date='"
+    }
+  },
+  {
+    "path" : "*\/SwiftGraph\/Sources\/SwiftGraph\/Search.swift",
+    "modification" : "concurrent-2800",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 2193
+    }
+  },
+  {
+    "path" : "*\/SwiftGraph\/Sources\/SwiftGraph\/Search.swift",
+    "modification" : "concurrent-2806",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 2582
+    }
+  },
+  {
+    "path" : "*\/SwifterSwift\/Sources\/Extensions\/AppKit\/NSImageExtensions.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 679
+    }
+  },
+  {
+    "path" : "*\/SwiftLint\/Source\/SwiftLintFramework\/Extensions\/Configuration+LintableFiles.swift",
+    "modification" : "insideOut-1111",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 225
+    }
+  },
+  {
+    "path" : "*\/SwiftLint\/Source\/swiftlint\/Extensions\/Configuration+CommandLine.swift",
+    "modification" : "insideOut-100",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "editorReplaceText",
+      "length" : 0,
+      "offset" : 50,
+      "text" : "' ("
+    }
+  },
+  {
+    "path" : "*\/swift-nio\/Sources\/NIOConcurrencyHelpers\/lock.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "request" : {
+      "kind" : "editorOpen"
+    }
+  },
+  {
+    "path" : "*\/swift-nio\/Sources\/NIOPriorityQueue\/PriorityQueue.swift",
+    "modification" : "concurrent-2857",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 2613
+    }
+  },
+  {
+    "path" : "*\/swift-nio\/Sources\/NIO\/BaseSocket.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 2168
+    }
+  },
+  {
+    "path" : "*\/swift-nio\/Sources\/NIO\/ByteBuffer-core.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "request" : {
+      "kind" : "editorOpen"
+    }
+  },
+  {
+    "path" : "*\/swift-nio\/Sources\/NIOEchoServer\/main.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 3688
+    }
+  },
+  {
+    "path" : "*\/swift-nio\/Sources\/NIOEchoClient\/main.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 3225
+    }
+  },
+  {
+    "path" : "*\/swift-nio\/Sources\/NIOChatServer\/main.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 7267
+    }
+  },
+  {
+    "path" : "*\/swift-nio\/Sources\/NIOChatClient\/main.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 2542
+    }
+  },
+  {
+    "path" : "*\/swift-nio\/Sources\/NIOHTTP1\/HTTPDecoder.swift",
+    "modification" : "concurrent-3530",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 2284
+    }
+  },
+  {
+    "path" : "*\/swift-nio\/Sources\/NIOFoundationCompat\/ByteBuffer-foundation.swift",
+    "modification" : "concurrent-3499",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 3488
+    }
+  },
+  {
+    "path" : "*\/swift-nio\/Sources\/NIOWebSocket\/Base64.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 1913
+    }
+  },
+  {
+    "path" : "*\/swift-nio\/Sources\/NIOWebSocketServer\/main.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 9947
+    }
+  },
+  {
+    "path" : "*\/SwiftyStoreKit\/SwiftyStoreKit\/InAppReceipt.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "request" : {
+      "kind" : "editorOpen"
+    }
+  },
+  {
+    "path" : "*\/Then\/Sources\/Then\/Then.swift",
+    "modification" : "concurrent-2136",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 2128
+    }
+  },
+  {
+    "path" : "*\/kommander\/Source\/Dispatcher.swift",
+    "modification" : "concurrent-2809",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 1913
+    }
+  },
+  {
+    "path" : "*\/mapper\/Sources\/Mapper.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-8566",
+    "request" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 1650
+    }
+  },
+  {
+    "path" : "*\/panelkit\/PanelKit\/PanelManager\/PanelManager+Pinning.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 2468
+    }
+  },
+  {
+    "path" : "*\/siesta\/Source\/Siesta\/Pipeline\/PipelineProcessing.swift",
+    "modification" : "concurrent-1328",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 845
+    }
+  },
+  {
+    "path" : "*\/vapor_core\/Sources\/Bits\/Byte+Digit.swift",
+    "modification" : "concurrent-280",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 200
+    }
+  },
+  {
+    "path" : "*\/vapor_core\/Sources\/Async\/Deprecated.swift",
+    "modification" : "insideOut-455",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 0
+    }
+  },
+  {
+    "path" : "*\/vapor_core\/Sources\/Core\/CodableReflection\/ReflectionDecodable.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "editorOpen"
+    }
+  },
+  {
+    "path" : "*\/vapor_database-kit\/Sources\/DatabaseKit\/Database\/DatabaseConfig.swift",
+    "modification" : "insideOut-398",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "editorReplaceText",
+      "length" : 0,
+      "offset" : 58,
+      "text" : "' is already registered."
+    }
+  },
+  {
+    "path" : "*\/vapor_multipart\/Sources\/Multipart\/FormDataDecoder.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 1231
+    }
+  },
+  {
+    "path" : "*\/vapor_routing\/Sources\/Routing\/Parameter\/Parameter.swift",
+    "modification" : "concurrent-3003",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 1553
+    }
+  },
+  {
+    "path" : "*\/vapor_service\/Sources\/Service\/Config\/Config.swift",
+    "modification" : "insideOut-211",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "editorReplaceText",
+      "length" : 0,
+      "offset" : 211,
+      "text" : "'."
+    }
+  },
+  {
+    "path" : "*\/vapor_url-encoded-form\/Sources\/URLEncodedForm\/Codable\/URLEncodedFormDecoder.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 2846
+    }
+  },
+  {
+    "path" : "*\/vapor_validation\/Sources\/Validation\/Validations.swift",
+    "modification" : "concurrent-737",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 536
+    }
   },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "NetService/Sources/NetService/Compat.swift",
-    "offset": 77,
-    "request": "CodeComplete",
-    "issue": "https://github.com/apple/swift/pull/18354 (fixed on master; rdar://problem/41217187)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "SemanticRefactoring",
-    "refactoring": "Convert To Trailing Closure",
-    "file": "launchscreensnapshot/LaunchScreenSnapshot/LaunchScreenSnapshot.swift",
-    "offset": 8942,
-    "issue": "https://github.com/apple/swift/pull/17291 (fixed on master; rdar://problem/41093898)"
-  },
-  {
-    "branches": ["master"],
-    "file": "ObjectMapper/Sources/CustomDateFormatTransform.swift",
-    "offset": 1264,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8553"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "ObjectMapper/Sources/DictionaryTransform.swift",
-    "offset": 626,
-    "request": "CodeComplete",
-    "issue": "https://bugs.swift.org/browse/SR-8565"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "Perfect/Sources/PerfectLib/Dir.swift",
-    "offset": 2466,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 11,
-    "file": "Plank/Sources/Core/FileGenerator.swift",
-    "offset": 1744,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 11,
-    "file": "ProcedureKit/Sources/ProcedureKit/Any.swift",
-    "offset": 3649,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 11,
-    "file": "ProcedureKit/Sources/ProcedureKitCloud/CloudKit.swift",
-    "offset": 554,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "PromiseKit/Sources/AnyPromise.swift",
-    "offset": 5252,
-    "request": "CodeComplete",
-    "issue": "https://github.com/apple/swift/pull/18354 (fixed on master; rdar://problem/41217187)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 19,
-    "file": "R.swift/Sources/RswiftCore/Generators/AggregatedStructGenerator.swift",
-    "offset": 675,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "CursorInfo",
-    "file": "Re-Lax/ReLax/ReLax/DataHelpers.swift",
-    "offset": 145,
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["master"],
-    "file": "Re-Lax/ReLax/ReLax/LCRFlattenedRendition.swift",
-    "offset": 1537,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8559"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "ReactiveCocoa/ReactiveCocoa/NSObject+Association.swift",
-    "offset": 3699,
-    "request": "CodeComplete",
-    "issue": "https://bugs.swift.org/browse/SR-8397"
-  },
-  {
-    "branches": ["master"],
-    "file": "ReactiveCocoa/ReactiveCocoa/AppKit/ActionProxy.swift",
-    "offset": 7,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8553"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "ReactiveSwift/Sources/Action.swift",
-    "offset": 5419,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-{
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 26,
-    "file": "Result/Result/Result.swift",
-    "offset": 7559,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "RxSwift/RxSwift/Concurrency/AsyncLock.swift",
-    "offset": 1036,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "failure": "crashed",
-    "length": 18,
-    "file": "RxSwift/RxCocoa/Common/Binder.swift",
-    "offset": 1147,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["master"],
-    "file": "RxSwift/RxCocoa/Common/Binder.swift",
-    "offset": 149,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8553"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "RxSwift/RxBlocking/BlockingObservable+Operators.swift",
-    "offset": 4157,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["master"],
-    "file": "RxSwift/RxTest/Any+Equatable.swift",
-    "offset": 296,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8553"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "RxSwift/RxTest/Platform/DeprecationWarner.swift",
-    "offset": 678,
-    "request": "CodeComplete",
-    "issue": "https://bugs.swift.org/browse/SR-8474"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 29,
-    "file": "Serpent/Sources/BridgingBox.swift",
-    "offset": 1015,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "Sourcery/Sources/SourceryRuntime/Diffable.swift",
-    "offset": 3072,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["master"],
-    "file": "Starscream/Sources/SSLSecurity.swift",
-    "offset": 2600,
-    "request": "CodeComplete",
-    "issue": "https://bugs.swift.org/browse/SR-8556"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 15,
-    "file": "Starscream/Sources/WebSocket.swift",
-    "offset": 26364,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 12,
-    "file": "SwiftDate/Sources/DateRepresentable.swift",
-    "offset": 17648,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 14,
-    "file": "SwiftGraph/Sources/SwiftGraph/Cycle.swift",
-    "offset": 3256,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "SwiftLint/Source/SwiftLintFramework/Extensions/Configuration+Cache.swift",
-    "offset": 797,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 26,
-    "file": "SwiftLint/Source/swiftlint/Commands/GenerateDocsCommand.swift",
-    "offset": 702,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["master"],
-    "file": "SwifterSwift/Sources/Extensions/AppKit/NSImageExtensions.swift",
-    "offset": 138,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8553"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "swift-nio/Sources/NIOConcurrencyHelpers/lock.swift",
-    "offset": 2633,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["master"],
-    "file": "swift-nio/Sources/NIO/BaseSocket.swift",
-    "offset": 1226,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8559"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "swift-nio/Sources/NIO/BaseSocket.swift",
-    "offset": 13934,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "swift-nio/Sources/NIOEchoServer/main.swift",
-    "offset": 2692,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "swift-nio/Sources/NIOChatClient/main.swift",
-    "offset": 1522,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "swift-nio/Sources/NIOEchoClient/main.swift",
-    "offset": 2200,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "swift-nio/Sources/NIOChatServer/main.swift",
-    "offset": 6295,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "swift-nio/Sources/NIOHTTP1/HTTPDecoder.swift",
-    "offset": 2212,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "swift-nio/Sources/NIOHTTP1Server/main.swift",
-    "offset": 23695,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "swift-nio/Sources/NIOPerformanceTester/main.swift",
-    "offset": 4028,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "swift-nio/Sources/NIOWebSocketServer/main.swift",
-    "offset": 8969,
-    "request": "CursorInfo",
-    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 30,
-    "file": "SwiftyStoreKit/SwiftyStoreKit/CompleteTransactionsController.swift",
-    "offset": 2818,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["master"],
-    "file": "SwiftyStoreKit/SwiftyStoreKit/AppleReceiptValidator.swift",
-    "offset": 2402,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8559"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "URBNJSONDecodableSPM/Sources/JSONDecodable.swift",
-    "offset": 3635,
-    "request": "CodeComplete",
-    "issue": "https://github.com/apple/swift/commit/398abdfb (fixed on master; rdar://problem/41175473)"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "SemanticRefactoring",
-    "refactoring": "Local Rename",
-    "file": "mapper/Sources/Mapper.swift",
-    "offset": 1650,
-    "issue": "https://bugs.swift.org/browse/SR-8566"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "request": "RangeInfo",
-    "length": 24,
-    "file": "panelkit/PanelKit/Controller/PanelViewController+Dragging.swift",
-    "offset": 379,
-    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
-  },
-  {
-    "branches": ["master"],
-    "file": "siesta/Source/Siesta/Configuration.swift",
-    "offset": 148,
-    "request": "CursorInfo",
-    "issue": "https://bugs.swift.org/browse/SR-8553"
-  },
-  {
-    "branches": ["swift-4.2-branch"],
-    "file": "siesta/Source/Siesta/Entity.swift",
-    "offset": 7210,
-    "request": "CodeComplete",
-    "issue": "https://github.com/apple/swift/pull/17339 (fixed on master; rdar://problem/41219750)"
-  }
 ]
