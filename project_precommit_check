@@ -68,9 +68,9 @@ supported_configs = {
         },
         '4.2': {
             'version': 'Apple Swift version 4.2 '
-                       '(swiftlang-1000.0.25.1 clang-1000.10.28.1)\n'
+                       '(swiftlang-1000.11.37.1 clang-1000.11.45.1)\n'
                        'Target: x86_64-apple-darwin17.7.0\n',
-            'description': 'Xcode 10 Beta 3 (contains Swift 4.2)',
+            'description': 'Xcode 10.0 (contains Swift 4.2)',
             'branch': 'swift-4.2-branch'
         }
     },

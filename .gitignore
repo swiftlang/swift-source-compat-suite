@@ -14,3 +14,4 @@ swift-corelibs-foundation/
 swift-corelibs-libdispatch/
 swift-corelibs-xctest/
 swiftpm/
+swift-stress-tester/

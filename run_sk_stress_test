@@ -1,0 +1,485 @@
+#!/usr/bin/env python
+# ===--- run_sk_stress_test -----------------------------------------------===
+#
+#  This source file is part of the Swift.org open source project
+#
+#  Copyright (c) 2014 - 2018 Apple Inc. and the Swift project authors
+#  Licensed under Apache License v2.0 with Runtime Library Exception
+#
+#  See https://swift.org/LICENSE.txt for license information
+#  See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
+#
+# ===----------------------------------------------------------------------===
+
+"""A run script to be executed as a Jenkins build step."""
+
+from __future__ import print_function
+import sys
+import os
+import re
+import json
+import subprocess
+import argparse
+import platform
+
+import common
+
+script_dir = os.path.abspath(os.path.dirname(__file__))
+
+
+def main():
+    if platform.system() != 'Darwin':
+        raise common.UnsupportedPlatform
+
+    common.debug_print('** RUN SOURCEKIT STRESS TESTER **')
+    os.chdir(os.path.dirname(__file__))
+
+    args = parse_args()
+    common.set_swift_branch(args.swift_branch)
+    workspace = common.private_workspace('.')
+
+    if not args.skip_tools_clone:
+        common.clone_repos()
+
+    if not args.skip_stress_tester_clone:
+        clone_stress_tester(workspace, args.swift_branch)
+
+    if not args.skip_tools_build:
+        build_swift_toolchain(workspace, args)
+
+    if not args.skip_stress_tester_build:
+        build_stress_tester(workspace, args)
+
+    if not args.skip_runner:
+        if not execute_runner(workspace, args):
+            return 1
+
+    return 0
+
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('swift_branch')
+    parser.add_argument('--sandbox', action='store_true')
+    parser.add_argument('--projects',
+                        metavar='PATH',
+                        help='JSON project file',
+                        default='projects.json')
+    parser.add_argument('--filter-by-tag',
+                        metavar='TAG',
+                        help='Only run project actions with the given tag',
+                        default='sourcekit')
+    parser.add_argument('--sourcekit-xfails',
+                        metavar='PATH',
+                        help='JSON file specifying expected sourcekit failures',
+                        default='sourcekit-xfails.json')
+    parser.add_argument('--gen-sourcekit-xfails',
+                        metavar='PATH',
+                        help='write any sourcekit failures encountered out to <PATH> in JSON; if --sourcekit-xfails is also specified, the union of its contents and any unexpected failures will be written instead')
+    parser.add_argument('--verbose',
+                        action='store_true')
+    parser.add_argument('--assertions',
+                        help='Build Swift with asserts',
+                        action='store_true')
+    parser.add_argument('--debug',
+                        help='Build Swift in debug mode',
+                        action='store_true')
+    parser.add_argument('--swiftc',
+                        metavar='PATH',
+                        help='swiftc executable')
+    parser.add_argument('--skip-tools-build',
+                        action='store_true')
+    parser.add_argument('--skip-stress-tester-build',
+                        action='store_true')
+    parser.add_argument('--skip-ci-steps',
+                        action='store_true')
+    parser.add_argument('--skip-tools-clone',
+                        action='store_true')
+    parser.add_argument('--skip-stress-tester-clone',
+                        action='store_true')
+    parser.add_argument('--skip-runner',
+                        action='store_true')
+    parser.add_argument('--add-swift-flags',
+                        metavar='FLAGS',
+                        help='add flags to each Swift invocation (note: field '
+                             'names from projects.json enclosed in {} will be '
+                             'replaced with their value)',
+                        default='')
+    parser.add_argument('--add-xcodebuild-flags',
+                        metavar='FLAGS',
+                        help='add flags to each xcodebuild invocation (note: field '
+                             'names from projects.json enclosed in {} will be '
+                             'replaced with their value)',
+                        default='')
+    return parser.parse_args()
+
+
+def get_swiftc_path(workspace, swiftc):
+    swiftc_path = (
+        swiftc if swiftc else
+        os.path.join(workspace, 'build/compat_macos/install/toolchain/usr/bin/swiftc')
+    )
+    return swiftc_path
+
+def get_stress_test_path(workspace):
+    return os.path.join(workspace, 'swift-stress-tester/SourceKitStressTester/.build/release/sk-stress-test')
+
+def get_sandbox_profile_flags():
+    return [
+        '--sandbox-profile-xcodebuild',
+        '../../../workspace-private/swift-source-compat-suite-sandbox/sandbox_xcodebuild.sb',
+        '--sandbox-profile-package',
+        '../../../workspace-private/swift-source-compat-suite-sandbox/sandbox_package.sb'
+    ]
+
+def get_sandbox_profile_flags_test():
+    return [
+        '--sandbox-profile-xcodebuild',
+        '../../../workspace-private/swift-source-compat-suite-sandbox/sandbox_xcodebuild.sb',
+        '--sandbox-profile-package',
+        '../../../workspace-private/swift-source-compat-suite-sandbox/sandbox_test.sb'
+    ]
+
+def clone_stress_tester(workspace, swift_branch):
+    clone_cmd = [
+        'git','clone', '-q', '-b', swift_branch, '--recursive',
+        'https://github.com/apple/swift-stress-tester',
+        '{}/swift-stress-tester'.format(workspace)
+    ]
+    common.check_execute(clone_cmd, timeout=9999999)
+    
+
+def execute_runner(workspace, args):
+    swiftc_path = get_swiftc_path(workspace, args.swiftc)
+    wrapper_path = os.path.join(workspace, 'swift-stress-tester/SourceKitStressTester/.build/release/sk-swiftc-wrapper')
+    wrapper_link = os.path.join(os.path.dirname(swiftc_path), 'sk-swiftc-wrapper')
+
+    # copy stress tester wrapper alongside the underlying swiftc
+    # as swiftpm seems to look for other tools relative to the provided swiftc
+    if os.path.lexists(wrapper_link):
+        os.unlink(wrapper_link)
+    os.symlink(wrapper_path, wrapper_link)
+
+    extra_runner_args = []
+    if args.sandbox:
+        extra_runner_args += get_sandbox_profile_flags()
+
+    if args.add_swift_flags:
+        extra_runner_args += ['--add-swift-flags=%s' % args.add_swift_flags]
+
+    if args.add_xcodebuild_flags:
+        extra_runner_args += ['--add-xcodebuild-flags=%s' % args.add_xcodebuild_flags]
+
+    if args.filter_by_tag:
+        extra_runner_args += ['--include-actions', '"tags" in locals() and "{}" in tags.split()'.format(args.filter_by_tag)]
+
+
+    failure_manager = FailureManager(args.sourcekit_xfails, args.swift_branch)
+    runner = StressTesterRunner(wrapper_link, get_stress_test_path(workspace), swiftc_path, failure_manager)
+    passed = runner.run(args.projects, args.swift_branch, extra_runner_args)
+
+    # output failures as json if requested and the the underlying compatibility run succeeded.
+    if not runner.compat_runner_failed and args.gen_sourcekit_xfails:
+        failure_manager.write_failures(args.gen_sourcekit_xfails, update=True)
+    return passed
+
+
+def build_swift_toolchain(workspace, args):
+    build_command = [
+        os.path.join(workspace, 'swift/utils/build-script'),
+        '--debug' if args.debug else '--release',
+        '--assertions' if args.assertions else '--no-assertions',
+        '--build-ninja',
+        '--llbuild',
+        '--swiftpm',
+        '--ios',
+        '--tvos',
+        '--watchos',
+        '--skip-build-benchmarks',
+        '--build-subdir=compat_macos',
+        '--compiler-vendor=apple',
+        '--',
+        '--darwin-install-extract-symbols',
+        '--darwin-toolchain-alias=swift',
+        '--darwin-toolchain-bundle-identifier=org.swift.compat-macos',
+        '--darwin-toolchain-display-name-short=Swift Development Snapshot'
+        '--darwin-toolchain-display-name=Swift Development Snapshot',
+        '--darwin-toolchain-name=swift-DEVELOPMENT-SNAPSHOT',
+        '--darwin-toolchain-version=3.999.999',
+        '--install-llbuild',
+        '--install-swift',
+        '--install-swiftpm',
+        '--install-destdir={}/build/compat_macos/install'.format(workspace),
+        '--install-prefix=/toolchain/usr',
+        '--install-symroot={}/build/compat_macos/symroot'.format(workspace),
+        '--installable-package={}/build/compat_macos/root.tar.gz'.format(workspace),
+        '--llvm-install-components=libclang;libclang-headers',
+        '--swift-install-components=compiler;clang-builtin-headers;stdlib;swift-syntax;sdk-overlay;license;sourcekit-xpc-service;swift-remote-mirror;swift-remote-mirror-headers',
+        '--symbols-package={}/build/compat_macos/root-symbols.tar.gz'.format(workspace),
+        '--verbose-build',
+        '--reconfigure',
+    ]
+    common.check_execute(build_command, timeout=9999999)
+
+
+def build_stress_tester(workspace, args):
+    swiftc_path = get_swiftc_path(workspace, args.swiftc)
+    bin_dir = os.path.dirname(swiftc_path)
+    lib_dir = os.path.join(os.path.dirname(bin_dir), 'lib')
+    swift = os.path.join(bin_dir, 'swift')
+    
+    build_command = [
+        swift, 'build',
+        '--package-path', os.path.join(workspace, 'swift-stress-tester/SourceKitStressTester'),
+        '-c', 'release',
+        '-Xswiftc', '-target', '-Xswiftc', 'x86_64-apple-macosx10.13',
+        # to pick up the sourcekitd framework
+        '-Xswiftc', '-Fsystem', '-Xswiftc', lib_dir,
+        '-Xlinker', '-rpath', '-Xlinker', lib_dir
+    ]
+    common.check_execute(build_command, timeout=999)
+
+class FailureKind(object):
+    """the kind of failure detected on a particular line of output."""
+    NONE = 1 
+    FAIL = 2
+    XFAIL = 3
+
+
+class FailureManager(object):
+    """parses and manages failures reported by the SourceKit stress tester."""
+
+    _error_matcher = re.compile(r'\[sk-stress-test\] error: (?P<failure>[^ ]+) invoking SourceKit request (?P<request>[^ ]+)(?: \((?P<refactoring>[^\)]+)\))? [oi]n .*/project_cache/(?P<file>.+\.swift)(?: a[ts] offset (?P<offset>\d+)(?: for length (?P<length>\d+))? with args:.*)?$')
+    _seen_matcher = re.compile(r'\[sk-stress-test\] Stress testing .*/project_cache/(?P<file>.+\.swift)(?: part \d+ of \d+):$')
+
+    def __init__(self, xfails_path, swift_branch):
+        self.swift_branch = swift_branch
+        self.xfails_path = xfails_path
+        self.xfails = self._load_applicable_xfails(xfails_path, swift_branch) if xfails_path else []
+        self.seen_files = []
+        self.expected = []
+        self.unexpected = []
+        self.unrecognized_errors = []
+
+    def process_line(self, line):
+        match = self._error_matcher.search(line)
+        if not match:
+            if line.startswith('[sk-stress-test] error:'):
+                self.unrecognized_errors.append(line)
+            else:
+                # keep track of files we actually stress test so we don't report unmatched xfails in files we didn't see
+                progress = self._seen_matcher.search(line)
+                if progress:
+                    self.seen_files.append(progress.groupdict()['file'])
+            return FailureKind.NONE, None
+
+        failure = {key: value for key, value in match.groupdict().items() if value is not None}
+        failure['branches'] = [self.swift_branch]
+
+        for key in ['offset', 'length']:
+            if key in failure:
+                failure[key] = int(failure[key])
+
+        if self._is_expected_failure(failure):
+            self.expected.append(failure)
+            return FailureKind.XFAIL, failure
+        
+        self.unexpected.append(failure)
+        return FailureKind.FAIL, failure
+
+    @property
+    def unmatched_xfails(self):
+        return [xfail for xfail in self.xfails if not xfail.get('_matched', False) and self._saw_matching_file(xfail.get('file'))]
+
+    def write_failures(self, path, update=False):
+        with open(path, 'w') as json_out:
+            failures = self.unexpected + (self.xfails if update and self.xfails else self.expected)
+            failures.sort(key=lambda f: f.get('file', ''))
+            json.dump([{key: value for key, value in failure.items() if not key.startswith('_')} for failure in failures], json_out, indent=4)
+
+    def _is_expected_failure(self, failure):
+        return any(self._xfail_matches(failure, xfail) for xfail in self.xfails)
+
+    def _saw_matching_file(self, xfail_file):
+        if not xfail_file:
+            return True
+        return any(re.match(self._wildcard_to_regex(xfail_file), seen_file) for seen_file in self.seen_files)
+
+    @classmethod
+    def _xfail_matches(cls, failure, xfail):
+      for key, value in xfail.items():
+        if key in ['issue', 'branches', '_matched']:
+          continue
+        if key in failure and re.match(cls._wildcard_to_regex(str(value)), str(failure[key])):
+          continue
+        return False
+
+      xfail['_matched'] = True
+      if 'issue' in xfail:
+        failure['issue'] = xfail['issue']
+      return True
+
+    @staticmethod
+    def _load_applicable_xfails(xfails_path, swift_branch):
+        with open(xfails_path) as json_file:
+            return [xfail for xfail in json.load(json_file) if swift_branch in xfail['branches']]
+
+    @staticmethod
+    def _wildcard_to_regex(wildcard_string):
+      regex_parts = [re.escape(item) for item in wildcard_string.split('*')]
+      return r'.*'.join(regex_parts) + r'$'
+
+
+class StressTesterRunner(object):
+    """sets up the Swift compatibility suite runner to use the stress tester's swiftc-wrapper, executes it, and processes its output for failures."""
+
+    def __init__(self, wrapper, stress_tester, swiftc, failure_manager):
+        self.wrapper = wrapper
+        self.stress_tester = stress_tester
+        self.swiftc = swiftc
+
+        self.failure_manager = failure_manager
+        self.compat_runner_failed = False
+
+    def run(self, projects_json, swift_branch, extra_runner_args=[]):
+        run_env = {
+            'SK_STRESS_TEST': self.stress_tester,
+            'SK_STRESS_SWIFTC': self.swiftc,
+            'SK_STRESS_SILENT': '',
+            'SK_STRESS_CODECOMPLETE_LIMIT': '1000' }
+        run_env.update(os.environ)
+        filtered_projects_json = self._rewrite_projects_json(projects_json, os.path.join(script_dir, 'stress-tester-projects.json'))
+
+        run_cmd = ['python', '-u', 'runner.py',
+          '--projects', filtered_projects_json,
+          '--verbose',
+          '--swiftc', self.wrapper,
+          '--swift-branch', swift_branch,
+          '--default-timeout', str(180*60),
+          '--only-latest-versions',
+          # archs overrie is set to arm64 for generic/iOS actions that would otherwise invoke the stress tester for both arm64 and armv7
+          '--add-xcodebuild-flags', 'ARCHS={archs_override}']
+
+        if extra_runner_args:
+            run_cmd.extend(extra_runner_args)
+
+        try:
+            for line in check_output_lines(run_cmd, env=run_env):
+                self._process_line(line)
+        except subprocess.CalledProcessError:
+            self.compat_runner_failed = True
+
+        self._print_summary(swift_branch)
+        return self._succeeded
+
+    @property
+    def _succeeded(self):
+        return not self.compat_runner_failed and (len(self.failure_manager.unexpected) == len(self.failure_manager.unmatched_xfails) == 0)
+
+    def _process_line(self, line):
+        (kind, failure) = self.failure_manager.process_line(line)
+        if kind == FailureKind.XFAIL:
+            print('[XFAIL][{}]{}'.format(failure['issue'] if 'issue' in failure else '<missing issue>', line))
+            return
+        print(line)
+        if kind == FailureKind.FAIL:
+            self._print_failure_instructions(failure)
+
+    def _print_failure_instructions(self, failure):
+        example = {'issue': '<issue url>'}
+
+        file_parts = failure['file'].split('/')
+        example['file'] = file_parts[0] + '/*' if len(file_parts) > 1 else '*'
+        project_json = json.dumps(example, indent=2)
+
+        example['file'] = failure['file']
+        file_json = json.dumps(example, indent=2)
+
+        example.update(failure)
+        exact_json = json.dumps(example, indent=2)
+
+        xfails_path = self.failure_manager.xfails_path        
+        path_text = ':\n  {}'.format(xfails_path) if xfails_path else '.'
+
+        print('''
+** STRESS TESTER FAILURE **
+
+Please file an issue against SourceKit with the '[sk-stress-test] error:'
+line above and add an expected failure to the JSON file passed via the
+--xfail-json option{path}
+
+To mark this specific failure as expected, include the below:
+{exact}
+
+To mark all failures in the same file as expected, include:
+{file}
+
+Or to mark all failures in a directory as expected, use a wildcard:
+{project}
+'''.format(path=path_text, exact=exact_json, file=file_json, project=project_json))
+
+    def _print_summary(self, swift_branch):
+        num_failures = len(self.failure_manager.unexpected)
+        num_xfails = len(self.failure_manager.expected)
+        unmatched = self.failure_manager.unmatched_xfails
+        xfails_path = self.failure_manager.xfails_path
+        unrecognized_errors = self.failure_manager.unrecognized_errors
+
+        print('SourceKit Stress Tester summary:')
+        
+        print('  {} underlying source compatibility build'.format('failed' if self.compat_runner_failed else 'passed'))
+        if self.compat_runner_failed:
+            print('      > treat this as a source compatibility failure')
+        
+        print('  {} unexpected stress tester failures'.format(num_failures))
+        if num_failures > 0:
+            print('      > search "** STRESS TESTER FAILURE **" for individual failures and filing instructions')
+
+        print('  {} expected stress tester failures'.format(num_xfails))
+
+        if not self.compat_runner_failed and unmatched:
+            print('  {} expected stress tester failures not seen'.format(len(unmatched)))
+            print('      > if resolved, remove "{}" from "branches" in the following entries in {} or the entire entry if no branches remain:'.format(swift_branch, xfails_path))
+            for xfail in unmatched:
+                print('      {}'.format(json.dumps(xfail)))
+
+        if unrecognized_errors:
+            print('  {} unrecognised stress tester errors (warning)'.format(len(unrecognized_errors)))
+            print('      > the SourceKit stress tester reported errors this script doesn\'t yet recognize')
+
+        print('========================================')
+        print('Result: {result}'.format(result=('PASS' if self._succeeded else 'FAIL')))
+        print('========================================')
+
+
+    @staticmethod
+    def _rewrite_projects_json(current, output):
+        with open(current) as json_file:
+            projects = json.load(json_file)
+            for project in projects:
+                for action in project['actions']:
+                    # This is used in combination with --add-xcodebuild-flags to prevent running the stress tester over the same files twice.
+                    # generic/iOS actions invoke the wrapper for both arm64 and armv7, which makes little difference for the stress tester.
+                    action['archs_override'] = 'arm64' if action.get('destination') == 'generic/platform=iOS' else '$ARCHS'
+
+        with open(output, 'w') as outfile:
+            json.dump(projects, outfile, indent=4)
+        return output
+
+def check_output_lines(cmd, env=None):
+    """a generator yielding each line the given command writes to stdout and stderr as it appears."""
+    common.shell_debug_print(cmd)
+
+    p = subprocess.Popen(cmd, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True)
+    for line in iter(p.stdout.readline, ''):
+        yield line.rstrip()
+    p.stdout.close()
+
+    return_code = p.poll()
+    if return_code:
+        raise subprocess.CalledProcessError(return_code, cmd)
+
+
+if __name__ == '__main__':
+    sys.exit(main())
+

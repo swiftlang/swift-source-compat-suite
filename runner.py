@@ -26,12 +26,17 @@ def parse_args():
     parser = argparse.ArgumentParser()
     project_future.add_arguments(parser)
     parser.add_argument('--only-latest-versions', action='store_true')
+    parser.add_argument('--default-timeout', type=int, help="override the default execute timeout (seconds)")
     return parser.parse_args()
 
 
 def main():
     """Execute specified indexed project actions."""
     args = parse_args()
+
+    if args.default_timeout:
+        common.set_default_execute_timeout(args.default_timeout)
+
     index = json.loads(open(args.projects).read())
     result = project_future.ProjectListBuilder(
         args.include_repos,

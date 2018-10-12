@@ -1,0 +1,1123 @@
+[
+  {
+    "branches": ["master"],
+    "file": "AMScrollingNavbar/Source/ScrollingNavbar+Sizes.swift",
+    "offset": 191,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8554"
+  },
+  {
+    "branches": ["master"],
+    "file": "Alamofire/Source/AFError.swift",
+    "offset": 8221,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8554"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "file": "Alamofire/Source/Alamofire.swift",
+    "offset": 3719,
+    "length": 9,
+    "request": "RangeInfo",
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["master"],
+    "file": "AsyncNinja/Sources/BaseProducer.swift",
+    "offset": 1146,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8553"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "AsyncNinja/Sources/BaseProducer.swift",
+    "offset": 1773,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["master"],
+    "file": "BlueSocket/Sources/Socket.swift",
+    "offset": 10012,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "BlueSocket/Sources/Socket.swift",
+    "offset": 30861,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["master"],
+    "file": "Chatto/Chatto/Source/Chat Items/BaseChatItemPresenter.swift",
+    "offset": 2550,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["master"],
+    "file": "Chatto/ChattoAdditions/Source/Chat Items/BaseMessage/BaseMessageModel.swift",
+    "offset": 1128,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8553"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 12,
+    "file": "Chatto/Chatto/Source/Chat Items/ChatItemCompanion.swift",
+    "offset": 1580,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 34,
+    "file": "Chatto/ChattoAdditions/Source/Chat Items/BaseMessage/Views/BaseMessageCollectionViewCell.swift",
+    "offset": 8369,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["master"],
+    "failure": "crashed",
+    "file": "CleanroomLogger/Sources/BasicLogConfiguration.swift",
+    "offset": 3132,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 8,
+    "file": "CleanroomLogger/Sources/ConcatenatingLogFormatter.swift",
+    "offset": 2348,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["master"],
+    "failure": "crashed",
+    "file": "CoreStore/Sources/AsynchronousDataTransaction.swift",
+    "offset": 2119,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 22,
+    "file": "CoreStore/Sources/CSDataStack+Observing.swift",
+    "offset": 3048,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 13,
+    "file": "cub/Sources/Cub/AST/Nodes/ArrayNode.swift",
+    "offset": 758,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["master"],
+    "file": "cub/Sources/Cub/AST/ASTNode+Validation.swift",
+    "offset": 198,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8554"
+  },
+  {
+    "branches": ["master"],
+    "request": "CursorInfo",
+    "failure": "crashed",
+    "file": "DNS/Sources/DNS/Bytes.swift",
+    "offset": 2565,
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 16,
+    "file": "DNS/Sources/DNS/Bytes.swift",
+    "offset": 6663,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 24,
+    "file": "Deferred/Sources/Deferred/Deferred.swift",
+    "offset": 2331,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "Deferred/Sources/Task/TaskAndThen.swift",
+    "offset": 2614,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["master"],
+    "file": "Dollar/Sources/Dollar.swift",
+    "offset": 5214,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["master"],
+    "file": "Dwifft/Dwifft/Dwifft+UIKit.swift",
+    "offset": 1541,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["master"],
+    "file": "Evergreen/submodules/RSCore/RSCore/AppKit/LogWindowController.swift",
+    "offset": 167,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8553"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 18,
+    "file": "Evergreen/submodules/RSCore/RSCore/RSToolbarItem.swift",
+    "offset": 1174,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["master"],
+    "failure": "crashed",
+    "file": "Evergreen/submodules/RSParser/Sources/Feeds/FeedType.swift",
+    "offset": 705,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 17,
+    "file": "Evergreen/submodules/RSDatabase/RSDatabase/DatabaseObject.swift",
+    "offset": 649,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 24,
+    "file": "Evergreen/submodules/RSWeb/RSWeb/DownloadSession.swift",
+    "offset": 3145,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["master"],
+    "file": "Evergreen/submodules/RSDatabase/RSDatabase/DatabaseTable.swift",
+    "offset": 2528,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["master"],
+    "file": "Evergreen/submodules/RSTree/RSTree/NSOutlineView+RSTree.swift",
+    "offset": 166,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8553"
+  },
+  {
+    "branches": ["master"],
+    "file": "Evergreen/submodules/RSWeb/RSWeb/Credentials.swift",
+    "offset": 152,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8553"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "Evergreen/Frameworks/Data/DatabaseID.swift",
+    "offset": 488,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["master"],
+    "file": "Evergreen/Frameworks/Data/Article.swift",
+    "offset": 151,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8553"
+  },
+  {
+    "branches": ["master"],
+    "file": "Evergreen/Frameworks/Database/ArticlesTable.swift",
+    "offset": 162,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8553"
+  },
+  {
+    "branches": ["master"],
+    "file": "Evergreen/Frameworks/Account/Account.swift",
+    "offset": 156,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8553"
+  },
+  {
+    "branches": ["master"],
+    "file": "Evergreen/AppleEvents/AppleEventUtils.swift",
+    "offset": 158,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8553"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 24,
+    "file": "Evergreen/Frameworks/Account/Account.swift",
+    "offset": 2653,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 20,
+    "file": "Evergreen/Commands/DeleteFromSidebarCommand.swift",
+    "offset": 2831,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "request": "SemanticRefactoring",
+    "refactoring": "Convert To Trailing Closure",
+    "file": "exercism-*swift/exercises/word-count/Sources/WordCountExample.swift",
+    "offset": 97,
+    "issue": "https://github.com/apple/swift/pull/17291 (fixed on master; rdar://problem/41093898)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "exercism-*swift/exercises/acronym/Sources/AcronymExample.swift",
+    "offset": 913,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "fluent/Sources/Fluent/Cache/CacheEntry.swift",
+    "offset": 534,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8042"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "fluent/Sources/FluentBenchmark/Benchmarks/Bar.swift",
+    "offset": 240,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8042"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "GRDB.swift/GRDB/Core/Cursor.swift",
+    "offset": 22555,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["master"],
+    "failure": "crashed",
+    "file": "IBAnimatable/Sources/ActivityIndicators/Animations/ActivityIndicatorAnimationBallBeat.swift",
+    "offset": 2007,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "IBAnimatable/Sources/ActivityIndicators/Animations/ActivityIndicatorAnimationBallPulseRise.swift",
+    "offset": 2460,
+    "request": "CodeComplete",
+    "issue": "https://github.com/apple/swift/pull/18665 (fixed on master; rdar://problem/42639255)"
+  },
+  {
+    "branches": ["master"],
+    "file": "JSQCoreDataKit/Source/CoreDataEntityProtocol.swift",
+    "offset": 853,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8554"
+  },
+  {
+    "branches": ["master"],
+    "file": "JSQDataSourcesKit/Source/BridgedDataSource.swift",
+    "offset": 3924,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "JSQDataSourcesKit/Source/ReusableViewConfig.swift",
+    "offset": 6930,
+    "request": "CodeComplete",
+    "issue": "https://github.com/apple/swift/commit/398abdfb (fixed on master; rdar://problem/41175473)"
+  },
+  {
+    "branches": ["master"],
+    "file": "KeychainAccess/Lib/KeychainAccess/Keychain.swift",
+    "offset": 8251,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 26,
+    "file": "KeychainAccess/Lib/KeychainAccess/Keychain.swift",
+    "offset": 18237,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["master"],
+    "request": "CursorInfo",
+    "failure": "crashed",
+    "file": "Kickstarter-Prelude/Prelude/Array.swift",
+    "offset": 2127,
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "Kickstarter-Prelude/Prelude/Optional.swift",
+    "offset": 1585,
+    "request": "CodeComplete",
+    "issue": "https://github.com/apple/swift/pull/17339 (fixed on master; rdar://problem/41219750)"
+  },
+  {
+    "branches": ["master"],
+    "failure": "crashed",
+    "file": "Kickstarter-Prelude/Prelude-UIKit/UIButton.swift",
+    "offset": 339,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "Kickstarter-Prelude/Prelude-UIKit/UIImage.swift",
+    "offset": 309,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "Kickstarter-ReactiveExtensions/Frameworks/ReactiveSwift/Sources/Action.swift",
+    "offset": 3959,
+    "request": "CodeComplete",
+    "issue": "https://github.com/apple/swift/pull/18202 (fixed on master; rdar://problem/42448618)"
+  },
+  {
+    "branches": ["master"],
+    "file": "Kingfisher/Sources/Box.swift",
+    "offset": 1223,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8553"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "Kingfisher/Sources/Image.swift",
+    "offset": 21272,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "failed",
+    "request": "SemanticRefactoring",
+    "refactoring": "Local Rename",
+    "file": "Kitura/Sources/Kitura/CodableRouter.swift",
+    "offset": 45420,
+    "issue": "https://bugs.swift.org/browse/SR-8566"
+  },
+  {
+    "branches": ["master"],
+    "request": "CursorInfo",
+    "failure": "crashed",
+    "file": "Kitura/Sources/Kitura/CodableRouter+TypeSafeMiddleware.swift",
+    "offset": 2343,
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["master"],
+    "file": "Kronos/Sources/Clock.swift",
+    "offset": 2593,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "Kronos/Sources/DNSResolver.swift",
+    "offset": 3012,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 16,
+    "file": "Lark/Sources/Lark/Client.swift",
+    "offset": 6608,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 9,
+    "file": "Lark/Sources/CodeGenerator/Generator.swift",
+    "offset": 5239,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 16,
+    "file": "Moya/Sources/Moya/AnyEncodable.swift",
+    "offset": 233,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "Moya/Sources/ReactiveMoya/MoyaProvider+Reactive.swift",
+    "offset": 382,
+    "request": "CodeComplete",
+    "issue": "https://github.com/apple/swift/pull/18202 (fixed on master; rdar://problem/42448618)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "Moya/Sources/RxMoya/MoyaProvider+Rx.swift",
+    "offset": 1536,
+    "request": "CodeComplete",
+    "issue": "https://github.com/apple/swift/pull/18202 (fixed on master; rdar://problem/42448618)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "NetService/Sources/NetService/Compat.swift",
+    "offset": 77,
+    "request": "CodeComplete",
+    "issue": "https://github.com/apple/swift/pull/18354 (fixed on master; rdar://problem/41217187)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "SemanticRefactoring",
+    "failure": "crashed",
+    "refactoring": "Convert To Trailing Closure",
+    "file": "launchscreensnapshot/LaunchScreenSnapshot/LaunchScreenSnapshot.swift",
+    "offset": 8942,
+    "issue": "https://github.com/apple/swift/pull/17291 (fixed on master; rdar://problem/41093898)"
+  },
+  {
+    "branches": ["master"],
+    "file": "ObjectMapper/Sources/CustomDateFormatTransform.swift",
+    "offset": 1264,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8553"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "ObjectMapper/Sources/DictionaryTransform.swift",
+    "offset": 626,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8565"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "Perfect/Sources/PerfectLib/Dir.swift",
+    "offset": 2466,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["master"],
+    "file": "PinkyPromise/Sources/Promise.swift",
+    "offset": 11120,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 11,
+    "file": "Plank/Sources/Core/FileGenerator.swift",
+    "offset": 1744,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["master"],
+    "failure": "crashed",
+    "file": "ProcedureKit/Sources/ProcedureKit/Any.swift",
+    "offset": 1387,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 11,
+    "file": "ProcedureKit/Sources/ProcedureKit/Any.swift",
+    "offset": 3649,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 11,
+    "file": "ProcedureKit/Sources/ProcedureKitCloud/CloudKit.swift",
+    "offset": 554,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["master"],
+    "file": "ProcedureKit/Sources/ProcedureKitCloud/CKAcceptSharesOperation.swift",
+    "offset": 1217,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8554"
+  },
+  {
+    "branches": ["master"],
+    "failure": "crashed",
+    "file": "PromiseKit/Sources/AnyPromise.swift",
+    "offset": 5184,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "PromiseKit/Sources/AnyPromise.swift",
+    "offset": 5252,
+    "request": "CodeComplete",
+    "issue": "https://github.com/apple/swift/pull/18354 (fixed on master; rdar://problem/41217187)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 19,
+    "file": "R.swift/Sources/RswiftCore/Generators/AggregatedStructGenerator.swift",
+    "offset": 675,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "CursorInfo",
+    "failure": "crashed",
+    "file": "Re-Lax/ReLax/ReLax/DataHelpers.swift",
+    "offset": 145,
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["master"],
+    "failure": "crashed",
+    "file": "Re-Lax/ReLax/ReLax/LCRFlattenedRendition.swift",
+    "offset": 1537,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["master"],
+    "file": "ReSwift/ReSwift/CoreTypes/Action.swift",
+    "offset": 2037,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "ReactiveCocoa/ReactiveCocoa/NSObject+Association.swift",
+    "offset": 3699,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8397"
+  },
+  {
+    "failure": "crashed",
+    "branches": ["master"],
+    "file": "ReactiveCocoa/ReactiveCocoa/AppKit/ActionProxy.swift",
+    "offset": 7,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8553"
+  },
+  {
+    "branches": ["master"],
+    "failure": "crashed",
+    "file": "ReactiveSwift/Sources/Action.swift",
+    "offset": 4431,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "ReactiveSwift/Sources/Action.swift",
+    "offset": 5419,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+{
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 26,
+    "file": "Result/Result/Result.swift",
+    "offset": 7559,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "RxSwift/RxSwift/Concurrency/AsyncLock.swift",
+    "offset": 1036,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["master"],
+    "failure": "crashed",
+    "file": "RxSwift/Platform/DispatchQueue+Extensions.swift",
+    "offset": 329,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 18,
+    "file": "RxSwift/RxCocoa/Common/Binder.swift",
+    "offset": 1147,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["master"],
+    "file": "RxSwift/RxCocoa/Common/Binder.swift",
+    "offset": 149,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8553"
+  },
+  {
+    "branches": ["master"],
+    "file": "RxSwift/RxBlocking/BlockingObservable+Operators.swift",
+    "offset": 3131,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "RxSwift/RxBlocking/BlockingObservable+Operators.swift",
+    "offset": 4157,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["master"],
+    "file": "RxSwift/RxTest/Any+Equatable.swift",
+    "offset": 296,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8553"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "RxSwift/RxTest/Platform/DeprecationWarner.swift",
+    "offset": 678,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8474"
+  },
+  {
+    "branches": ["master"],
+    "file": "SRP/Sources/AuthenticationFailure.swift",
+    "offset": 700,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8554"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 29,
+    "file": "Serpent/Sources/BridgingBox.swift",
+    "offset": 1015,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "Sourcery/Sources/SourceryRuntime/Diffable.swift",
+    "offset": 3072,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["master"],
+    "file": "Starscream/Sources/SSLSecurity.swift",
+    "offset": 2600,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8556"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 15,
+    "file": "Starscream/Sources/WebSocket.swift",
+    "offset": 26364,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["master"],
+    "file": "Surge/Source/Matrix.swift",
+    "offset": 3657,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8554"
+  },
+  {
+    "branches": ["master"],
+    "failure": "crashed",
+    "file": "SwiftDate/Sources/DateRepresentable.swift",
+    "offset": 11081,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 12,
+    "file": "SwiftDate/Sources/DateRepresentable.swift",
+    "offset": 17648,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["master"],
+    "request": "CursorInfo",
+    "failure": "crashed",
+    "file": "SwiftGraph/Sources/SwiftGraph/Cycle.swift",
+    "offset": 1388,
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 14,
+    "file": "SwiftGraph/Sources/SwiftGraph/Cycle.swift",
+    "offset": 3256,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "SwiftLint/Source/SwiftLintFramework/Extensions/Configuration+Cache.swift",
+    "offset": 797,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 26,
+    "file": "SwiftLint/Source/swiftlint/Commands/GenerateDocsCommand.swift",
+    "offset": 702,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["master"],
+    "file": "SwifterSwift/Sources/Extensions/AppKit/NSImageExtensions.swift",
+    "offset": 138,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8553"
+  },
+  {
+    "branches": ["master"],
+    "file": "swift-nio/Sources/NIOConcurrencyHelpers/atomics.swift",
+    "offset": 15907,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8554"
+  },
+  {
+    "branches": ["master"],
+    "file": "swift-nio/Sources/NIOPriorityQueue/Heap.swift",
+    "offset": 4260,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "swift-nio/Sources/NIOConcurrencyHelpers/lock.swift",
+    "offset": 2633,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["master"],
+    "failure": "crashed",
+    "file": "swift-nio/Sources/NIO/BaseSocket.swift",
+    "offset": 1226,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "swift-nio/Sources/NIO/BaseSocket.swift",
+    "offset": 13934,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "swift-nio/Sources/NIOEchoServer/main.swift",
+    "offset": 2692,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "swift-nio/Sources/NIOChatClient/main.swift",
+    "offset": 1522,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "swift-nio/Sources/NIOEchoClient/main.swift",
+    "offset": 2200,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "swift-nio/Sources/NIOChatServer/main.swift",
+    "offset": 6295,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["master"],
+    "file": "swift-nio/Sources/NIOChatClient/main.swift",
+    "offset": 815,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["master"],
+    "file": "swift-nio/Sources/NIOFoundationCompat/ByteBuffer-foundation.swift",
+    "offset": 4172,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["master"],
+    "file": "swift-nio/Sources/NIOChatServer/main.swift",
+    "offset": 1051,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["master"],
+    "file": "swift-nio/Sources/NIOTLS/ApplicationProtocolNegotiationHandler.swift",
+    "offset": 4010,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "swift-nio/Sources/NIOHTTP1/HTTPDecoder.swift",
+    "offset": 2212,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["master"],
+    "failure": "crashed",
+    "file": "swift-nio/Sources/NIOHTTP1/HTTPDecoder.swift",
+    "offset": 8123,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["master"],
+    "file": "swift-nio/Sources/NIOHTTP1Server/main.swift",
+    "offset": 7812,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["master"],
+    "file": "swift-nio/Sources/NIOWebSocket/Base64.swift",
+    "offset": 1773,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["master"],
+    "file": "swift-nio/Sources/NIOPerformanceTester/main.swift",
+    "offset": 2824,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["master"],
+    "file": "swift-nio/Sources/NIOWebSocketServer/main.swift",
+    "offset": 2037,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "swift-nio/Sources/NIOHTTP1Server/main.swift",
+    "offset": 23695,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "swift-nio/Sources/NIOPerformanceTester/main.swift",
+    "offset": 4028,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "swift-nio/Sources/NIOWebSocketServer/main.swift",
+    "offset": 8969,
+    "request": "CursorInfo",
+    "issue": "https://github.com/apple/swift/pull/18198 (fixed on master; rdar://problem/41100570)"
+  },
+  {
+    "branches": ["master"],
+    "file": "kommander/Source/CurrentDispatcher.swift",
+    "offset": 416,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["master"],
+    "file": "launchscreensnapshot/LaunchScreenSnapshot/LaunchScreenSnapshot.swift",
+    "offset": 7191,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["master"],
+    "file": "mapper/Sources/DefaultConvertible.swift",
+    "offset": 754,
+    "request": "CodeComplete",
+    "issue": "https://bugs.swift.org/browse/SR-8555"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 30,
+    "file": "SwiftyStoreKit/SwiftyStoreKit/CompleteTransactionsController.swift",
+    "offset": 2818,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["master"],
+    "file": "SwiftyStoreKit/SwiftyStoreKit/AppleReceiptValidator.swift",
+    "offset": 2402,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "URBNJSONDecodableSPM/Sources/JSONDecodable.swift",
+    "offset": 3635,
+    "request": "CodeComplete",
+    "issue": "https://github.com/apple/swift/commit/398abdfb (fixed on master; rdar://problem/41175473)"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "failed",
+    "request": "SemanticRefactoring",
+    "refactoring": "Local Rename",
+    "file": "mapper/Sources/Mapper.swift",
+    "offset": 1650,
+    "issue": "https://bugs.swift.org/browse/SR-8566"
+  },
+  {
+    "branches": ["master"],
+    "failure": "crashed",
+    "file": "panelkit/PanelKit/Controller/PanelNavigationController.swift",
+    "offset": 629,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8559"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "request": "RangeInfo",
+    "failure": "crashed",
+    "length": 24,
+    "file": "panelkit/PanelKit/Controller/PanelViewController+Dragging.swift",
+    "offset": 379,
+    "issue": "https://github.com/apple/swift/pull/18284 (fixed on master; rdar://problem/41147733)"
+  },
+  {
+    "branches": ["master"],
+    "file": "siesta/Source/Siesta/Configuration.swift",
+    "offset": 148,
+    "request": "CursorInfo",
+    "issue": "https://bugs.swift.org/browse/SR-8553"
+  },
+  {
+    "branches": ["swift-4.2-branch"],
+    "failure": "crashed",
+    "file": "siesta/Source/Siesta/Entity.swift",
+    "offset": 7210,
+    "request": "CodeComplete",
+    "issue": "https://github.com/apple/swift/pull/17339 (fixed on master; rdar://problem/41219750)"
+  }
+]

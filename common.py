@@ -52,7 +52,7 @@ branches = {
         'cmark': 'master',
         'ninja': 'release',
         'llbuild': 'master',
-        'swiftpm': 'master',
+        'swiftpm': 'swift-4.2-branch',
         'swift-corelibs-libdispatch': 'swift-4.2-branch',
         'swift-corelibs-foundation': 'swift-4.2-branch',
         'swift-corelibs-xctest': 'swift-4.2-branch',
@@ -141,6 +141,12 @@ def set_swift_branch(branch):
     """
     global swift_branch
     swift_branch = branch
+
+
+def set_default_execute_timeout(timeout):
+    """Override the default execute timeout"""
+    global DEFAULT_EXECUTE_TIMEOUT
+    DEFAULT_EXECUTE_TIMEOUT = timeout
 
 
 def clone_repos():
@@ -299,7 +305,7 @@ class ExecuteCommandFailure(Exception):
                     self.returncode))
 
 
-def execute(command, timeout=DEFAULT_EXECUTE_TIMEOUT,
+def execute(command, timeout=None,
             stdout=sys.stdout, stderr=sys.stderr,
             **kwargs):
     """Execute a given command with an optional timeout in seconds.
@@ -307,6 +313,8 @@ def execute(command, timeout=DEFAULT_EXECUTE_TIMEOUT,
     >>> execute(['echo', 'Hello, World!'])
     0
     """
+    if timeout is None:
+        timeout = DEFAULT_EXECUTE_TIMEOUT
     shell_debug_print(command, stderr=stderr)
     returncode = 124  # timeout return code
     try:
@@ -320,13 +328,15 @@ def execute(command, timeout=DEFAULT_EXECUTE_TIMEOUT,
     return returncode
 
 
-def check_execute_output(command, timeout=DEFAULT_EXECUTE_TIMEOUT,
+def check_execute_output(command, timeout=None,
                          stdout=sys.stdout, stderr=sys.stderr, **kwargs):
     """Check execute a given command and return its output.
 
     >>> check_execute_output(['echo', 'Hello, World!'])
     'Hello, World!\\n'
     """
+    if timeout is None:
+        timeout = DEFAULT_EXECUTE_TIMEOUT
     shell_debug_print(command, stderr=stderr)
     try:
         with Timeout(timeout):
@@ -339,7 +349,7 @@ def check_execute_output(command, timeout=DEFAULT_EXECUTE_TIMEOUT,
     return output
 
 
-def check_execute(command, timeout=DEFAULT_EXECUTE_TIMEOUT,
+def check_execute(command, timeout=None,
                   sandbox_profile=None, max_retries=1,
                   stdout=sys.stdout, stderr=sys.stderr,
                   **kwargs):
@@ -348,6 +358,8 @@ def check_execute(command, timeout=DEFAULT_EXECUTE_TIMEOUT,
     >>> check_execute(['echo', 'Hello, World!'])
     0
     """
+    if timeout is None:
+        timeout = DEFAULT_EXECUTE_TIMEOUT
     if sandbox_profile:
         if platform.system() == 'Darwin':
             command = ['sandbox-exec', '-f', sandbox_profile] + command

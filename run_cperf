@@ -50,7 +50,7 @@ def setup_workspace(instance, workspace, args):
     common.check_execute(['utils/update-checkout',
                           '--clone', '--reset-to-remote',
                           '--clean', '--scheme', args.swift_branch],
-                         cwd=swift)
+                         cwd=swift, timeout=9999999)
     if instance == NEW_INSTANCE:
         command_fetch = ['git', '-C', swift, 'fetch', 'origin',
                          'pull/%d/merge' % args.setup_workspaces_for_pr]
@@ -90,12 +90,20 @@ def main():
         with open(ws_comment, 'w') as f:
             f.write("Compilation-performance test failed")
 
+    # First _get_ all the sources (with as little a gap between
+    # fetches as possible to minimize race possibility)
     for instance in instances:
         workspace = get_workspace_for_instance(instance, args)
 
         if args.setup_workspaces_for_pr:
             setup_workspace(instance, workspace, args)
         validate_workspace(instance, workspace, args)
+
+    # Then _build and test_ both workspaces, which can take
+    # longer since we're not concerned about racing on github
+    # anymore.
+    for instance in instances:
+        workspace = get_workspace_for_instance(instance, args)
 
         if not args.skip_build:
             build_swift_toolchain(workspace, args)
@@ -403,6 +411,7 @@ def analyze_results(configs, args):
     for m in (passed_modules - failed_modules):
         common_args += ['--select-module', m]
 
+    briefpattern = r'driver.*wall|NumLLVMBytesOutput|NumInstructions'
     returncodes = []
     for config in configs:
         variant = get_variant(config, args)
@@ -418,7 +427,7 @@ def analyze_results(configs, args):
                 common_args +
                 ['--output', get_table_name('head', 'brief', variant),
                  '--divide-by', str(args.repetitions),
-                 '--select-stat', r'driver.*wall|NumLLVMBytesOutput',
+                 '--select-stat', briefpattern,
                  '--merge-timers',
                  '--delta-pct-thresh', delta_pct_thresh,
                  '--delta-usec-thresh', delta_usec_thresh,
@@ -439,7 +448,7 @@ def analyze_results(configs, args):
                     common_args +
                     ['--output',
                      get_table_name('baseline', 'brief', variant),
-                     '--select-stat', r'driver.*wall|NumLLVMBytesOutput',
+                     '--select-stat', briefpattern,
                      '--merge-timers',
                      '--divide-by', str(args.repetitions),
                      '--delta-pct-thresh', delta_pct_thresh,
@@ -557,7 +566,7 @@ def parse_args():
                         default='smoketest')
     parser.add_argument("--verbose",
                         action='store_true',
-                        default=True)
+                        default=False)
     parser.add_argument("--quiet",
                         action='store_false',
                         dest='verbose')

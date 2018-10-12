@@ -3,7 +3,7 @@
 #
 #  This source file is part of the Swift.org open source project
 #
-#  Copyright (c) 2014 - 2017 Apple Inc. and the Swift project authors
+#  Copyright (c) 2014 - 2018 Apple Inc. and the Swift project authors
 #  Licensed under Apache License v2.0 with Runtime Library Exception
 #
 #  See https://swift.org/LICENSE.txt for license information
@@ -91,6 +91,15 @@ def parse_args():
                              'names from projects.json enclosed in {} will be '
                              'replaced with their value)',
                         default='')
+    parser.add_argument("--distcc",
+                        help='Pass --distcc to the build script',
+                        action='store_true')
+    parser.add_argument("--build-config",
+                        metavar="NAME",
+                        choices=['debug', 'release'],
+                        dest='build_config',
+                        help='specify "debug" or "release" to override '
+                             'the build configuration in the projects.json file')
     return parser.parse_args()
 
 
@@ -170,6 +179,9 @@ def execute_runner(workspace, args):
     if args.add_xcodebuild_flags:
         runner_command += ['--add-xcodebuild-flags=%s' % args.add_xcodebuild_flags]
 
+    if args.build_config:
+        runner_command += ['--build-config=%s' % args.build_config]
+
     common.check_execute(runner_command, timeout=9999999)
 
 
@@ -192,18 +204,25 @@ def execute_build_incremental(workspace, args):
 
 
 def build_swift_toolchain(workspace, args):
+    build_script_args_common = [
+        '--debug' if args.debug else '--release',
+        '--assertions' if args.assertions else '--no-assertions',
+        '--build-ninja',
+        '--llbuild',
+        '--swiftpm',
+        '--skip-build-benchmarks',
+    ]
+
+    if args.distcc:
+        build_script_args_common += ['--distcc']
+
     if platform.system() == 'Darwin':
-        build_command = [
-            os.path.join(workspace, 'swift/utils/build-script'),
-            '--debug' if args.debug else '--release',
-            '--assertions' if args.assertions else '--no-assertions',
-            '--build-ninja',
-            '--llbuild',
-            '--swiftpm',
+        build_command = [os.path.join(workspace, 'swift/utils/build-script')]
+        build_command += build_script_args_common
+        build_command += [
             '--ios',
             '--tvos',
             '--watchos',
-            '--skip-build-benchmarks',
             '--build-subdir=compat_macos',
             '--compiler-vendor=apple',
             '--',
@@ -228,17 +247,12 @@ def build_swift_toolchain(workspace, args):
             '--reconfigure',
         ]
     elif platform.system() == 'Linux':
-        build_command = [
-            os.path.join(workspace, 'swift/utils/build-script'),
-            '--debug' if args.debug else '--release',
-            '--assertions' if args.assertions else '--no-assertions',
-            '--build-ninja',
-            '--llbuild',
-            '--swiftpm',
+        build_command = [os.path.join(workspace, 'swift/utils/build-script')]
+        build_command += build_script_args_common
+        build_command += [
             '--foundation',
             '--libdispatch',
             '--xctest',
-            '--skip-build-benchmarks',
             '--build-subdir=compat_linux',
             '--',
             '--install-foundation',
