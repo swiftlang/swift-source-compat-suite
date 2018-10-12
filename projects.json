@@ -2912,5 +2912,59 @@
         "tags": "sourcekit"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/pointfreeco/swift-nonempty.git",
+    "path": "NonEmpty",
+    "branch": "master",
+    "maintainer": "support@pointfree.co",
+    "compatibility": [
+      {
+        "version": "4.1",
+        "commit": "1fe8684a8c2513bbc2388a464a871a434202edc2"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "NonEmpty.xcworkspace",
+        "scheme": "NonEmpty-Package",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "NonEmpty.xcworkspace",
+        "scheme": "NonEmpty-Package",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "NonEmpty.xcworkspace",
+        "scheme": "NonEmpty-Package",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "NonEmpty.xcworkspace",
+        "scheme": "NonEmpty-Package",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
   }
 ]
