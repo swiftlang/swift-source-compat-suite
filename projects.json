@@ -613,7 +613,7 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release", 
+        "configuration": "release",
         "tags": "sourcekit",
         "xfail": {
           "compatibility": {
@@ -655,7 +655,7 @@
         "project": "xswift.xcodeproj",
         "target": "xswift",
         "destination": "generic/platform=macOS",
-        "configuration": "Release", 
+        "configuration": "Release",
         "xfail": {
           "compatibility": {
             "4.0": {
@@ -924,7 +924,7 @@
     "url": "https://github.com/kickstarter/Kickstarter-Prelude",
     "path": "Kickstarter-Prelude",
     "branch": "master",
-    "maintainer": "justins@kickstarter.com",
+    "maintainer": "appledev@kickstarter.com",
     "compatibility": [
       {
         "version": "4.0",
@@ -950,13 +950,6 @@
         "destination": "generic/platform=iOS",
         "configuration": "Release",
         "tags": "sourcekit"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "Prelude.xcodeproj",
-        "scheme": "Prelude-UIKit-tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
       }
     ]
   },
@@ -965,7 +958,7 @@
     "url": "https://github.com/kickstarter/Kickstarter-ReactiveExtensions",
     "path": "Kickstarter-ReactiveExtensions",
     "branch": "master",
-    "maintainer": "justins@kickstarter.com",
+    "maintainer": "appledev@kickstarter.com",
     "compatibility": [
       {
         "version": "4.0",
@@ -998,38 +991,6 @@
         "project": "ReactiveExtensions.xcodeproj",
         "scheme": "ReactiveExtensions-TestHelpers-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8270"
-              }
-            }
-          }
-        }
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "ReactiveExtensions.xcodeproj",
-        "scheme": "ReactiveExtensions-TestHelpers-tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8270"
-              }
-            }
-          }
-        }
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "ReactiveExtensions.xcodeproj",
-        "scheme": "ReactiveExtensions-tvOS",
-        "destination": "generic/platform=tvOS",
         "configuration": "Release",
         "xfail": {
           "compatibility": {
