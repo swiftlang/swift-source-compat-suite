@@ -880,8 +880,8 @@
     "maintainer": "kishikawakatsumi@mac.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "6e3d9679fd49c7ae8869454e76edf1306983c62c"
+        "version": "4.2",
+        "commit": "0fffcc37adcf55d3557f1e06dd0172ace582effe"
       }
     ],
     "platforms": [
