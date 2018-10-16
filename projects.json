@@ -1334,6 +1334,60 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/pointfreeco/swift-overture.git",
+    "path": "Overture",
+    "branch": "master",
+    "maintainer": "support@pointfree.co",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "1632b5dd5862bb2d377be79d5063d2161a7559e5"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Overture.xcworkspace",
+        "scheme": "Overture-Package",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Overture.xcworkspace",
+        "scheme": "Overture-Package",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Overture.xcworkspace",
+        "scheme": "Overture-Package",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Overture.xcworkspace",
+        "scheme": "Overture-Package",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/PerfectlySoft/Perfect.git",
     "path": "Perfect",
     "branch": "master",
