@@ -1225,6 +1225,31 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/ssamadgh/ModelAssistant.git",
+    "path": "ModelAssistant",
+    "branch": "master",
+    "maintainer": "ssamadgh@gmail.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "1f1d37da8e3161a374b25f0e8ca9c3f22b352b7f"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "ModelAssistant.xcodeproj",
+        "scheme": "ModelAssistant iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/Moya/Moya.git",
     "path": "Moya",
     "branch": "master",
