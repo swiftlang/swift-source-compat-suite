@@ -1187,8 +1187,8 @@
     "maintainer": "bouke@haarsma.eu",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "7604f91d757d888c456f75e19c00ea755d94fe8f"
+        "version": "4.2",
+        "commit": "af39c8ba22ff1c7318a47e06666c4fee9aa9dd50"
       }
     ],
     "platforms": [
@@ -1198,16 +1198,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "TestSwiftPackage"
