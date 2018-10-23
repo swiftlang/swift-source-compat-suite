@@ -2468,6 +2468,60 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/pointfreeco/swift-tagged.git",
+    "path": "Tagged",
+    "branch": "master",
+    "maintainer": "support@pointfree.co",
+    "compatibility": [
+      {
+        "version": "4.1",
+        "commit": "6e079815041dbd7f74d2a4ede9ab2ca4313f931b"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Tagged.xcworkspace",
+        "scheme": "Tagged-Package",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Tagged.xcworkspace",
+        "scheme": "Tagged-Package",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Tagged.xcworkspace",
+        "scheme": "Tagged-Package",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Tagged.xcworkspace",
+        "scheme": "Tagged-Package",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/devxoul/Then.git",
     "path": "Then",
     "branch": "master",
