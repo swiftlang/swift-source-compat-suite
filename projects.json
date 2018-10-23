@@ -1240,7 +1240,7 @@
     ],
     "actions": [
       {
-        "action": "BuildXcodeWorkspaceScheme",
+        "action": "BuildXcodeProjectScheme",
         "workspace": "ModelAssistant.xcodeproj",
         "scheme": "ModelAssistant iOS",
         "destination": "generic/platform=iOS",
