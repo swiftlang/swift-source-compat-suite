@@ -1321,7 +1321,16 @@
         "workspace": "NonEmpty.xcworkspace",
         "scheme": "NonEmpty-Package",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9068"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
