@@ -1241,7 +1241,7 @@
     "actions": [
       {
         "action": "BuildXcodeProjectScheme",
-        "workspace": "ModelAssistant.xcodeproj",
+        "project": "ModelAssistant.xcodeproj",
         "scheme": "ModelAssistant iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
