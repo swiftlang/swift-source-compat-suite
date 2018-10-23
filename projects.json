@@ -769,6 +769,32 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/pointfreeco/swift-html.git",
+    "path": "Html",
+    "branch": "master",
+    "maintainer": "support@pointfree.co",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "e6952b9246dd9bf27d613ed7b4791ff19136f6c8"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/IBAnimatable/IBAnimatable.git",
     "path": "IBAnimatable",
     "branch": "master",
