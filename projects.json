@@ -1332,7 +1332,16 @@
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9068"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
