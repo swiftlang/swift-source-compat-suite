@@ -1244,7 +1244,16 @@
         "project": "ModelAssistant.xcodeproj",
         "scheme": "ModelAssistant iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.2": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9102"
+              }
+            }
+          }
+        }
       }
     ]
   },
