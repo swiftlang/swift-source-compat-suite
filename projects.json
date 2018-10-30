@@ -1821,8 +1821,8 @@
     "maintainer": "Benjamin.Encz@gmail.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "db35c2e64bb9c8385a821d580c1dad6c113d073d"
+        "version": "4.2",
+        "commit": "beeb3c6368d573980a703ea37ab58e01f2a825c5"
       }
     ],
     "platforms": [
