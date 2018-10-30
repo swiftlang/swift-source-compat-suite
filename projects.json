@@ -2741,8 +2741,8 @@
     "maintainer": "alejandro.ruperez@intelygenz.com",
     "compatibility": [
       {
-        "version": "3.1",
-        "commit": "1d258f90416b82cafa2b1cf0146720ce99ceaf28"
+        "version": "4.2",
+        "commit": "03555e5e2a517f977ba8736172115f0db2c645a8"
       }
     ],
     "platforms": [
