@@ -927,8 +927,8 @@
     "maintainer": "appledev@kickstarter.com",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "7b4eff0bae4f1abaf8ccc8370153f0945e0752ae"
+        "version": "4.2",
+        "commit": "8988b02ab963294d98d8f37d1a7dc0ee392fcd8d"
       }
     ],
     "platforms": [
