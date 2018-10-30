@@ -2302,8 +2302,8 @@
     "maintainer": "rfdickerson@gmail.com",
     "compatibility": [
       {
-        "version": "3.2",
-        "commit": "64d93875a2aa9391724b039867be567ead84a11a"
+        "version": "4.2",
+        "commit": "38a328eefe5ffef13d28dcb2804d2772aecf6107"
       }
     ],
     "platforms": [
