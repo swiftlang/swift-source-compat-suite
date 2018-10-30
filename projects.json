@@ -1650,8 +1650,8 @@
     "maintainer": "danthorpe@me.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "d6389ea98ec2e0d17ab368f40045bfe48622ac67"
+        "version": "4.2",
+        "commit": "94193d59bc06689526772023428402da1e0e299f"
       }
     ],
     "platforms": [
@@ -1696,9 +1696,10 @@
         "tags": "sourcekit",
         "xfail": {
           "compatibility": {
-            "3.0": {
+            "4.2": {
               "branch": {
-                "swift-4.0-branch": "rdar://35814436"
+                "master": "https://bugs.swift.org/browse/SR-9139",
+                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-9139"
               }
             }
           }
