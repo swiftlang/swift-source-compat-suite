@@ -362,34 +362,40 @@ def get_baseline_name(variant):
 def all_driver_stats_files(configs, args):
     for config in configs:
         variant = get_variant(config, args)
-        sd_old = get_stats_dir(OLD_INSTANCE, variant)
-        sd_new = get_stats_dir(NEW_INSTANCE, variant)
-        for sd in [sd_old, sd_new]:
-            for root, dirs, files in os.walk(sd):
+        for instance in [OLD_INSTANCE, NEW_INSTANCE]:
+            for root, dirs, files in os.walk(get_stats_dir(instance, variant)):
                 for f in files:
                     m = re.match(r'stats-\d+-swift-driver-([^-]+).*\.json', f)
                     if m:
                         try:
                             with open(os.path.join(root, f)) as fp:
                                 j = json.load(fp)
-                            yield (m.group(1), j)
+                            yield (instance, m.group(1), j)
                         except ValueError:
                             # Something sufficiently bad happened that
                             # we can't read the json: build a fake one.
-                            yield (m.group(1), {})
+                            yield (instance, m.group(1), {})
 
 
 def find_module_statuses(configs, args):
     passed = set()
     failed = set()
     k = 'Driver.NumProcessFailures'
-    for (module, j) in all_driver_stats_files(configs, args):
+    instance_modules = {}
+    instance_modules[OLD_INSTANCE] = set()
+    instance_modules[NEW_INSTANCE] = set()
+
+    for (instance, module, j) in all_driver_stats_files(configs, args):
         # Treat a module as failed if there was >0 process failures,
-        # or we can't tell.
+        # or we can't tell, _or_ it's in one instance but not in the other.
+        instance_modules[instance].add(module)
         if j.get(k, 1) == 0:
             passed.add(module)
         else:
             failed.add(module)
+    mismatched_modules = instance_modules[OLD_INSTANCE].symmetric_difference(instance_modules[NEW_INSTANCE])
+    failed.update(mismatched_modules)
+    passed.difference_update(mismatched_modules)
     return (passed, failed)
 
 
