@@ -2313,8 +2313,32 @@
       {
         "action": "BuildXcodeProjectScheme",
         "project": "Surge.xcodeproj",
-        "scheme": "Surge",
+        "scheme": "Surge-iOS",
         "destination": "generic/platform=iOS",
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "Surge.xcodeproj",
+        "scheme": "Surge-macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "Surge.xcodeproj",
+        "scheme": "Surge-tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "Surge.xcodeproj",
+        "scheme": "Surge-watchOS",
+        "destination": "generic/platform=watchOS",
         "configuration": "Release",
         "tags": "sourcekit sourcekit-smoke"
       }
