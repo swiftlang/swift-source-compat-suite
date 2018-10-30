@@ -2788,8 +2788,8 @@
     "maintainer": "contact@alexruperez.com",
     "compatibility": [
       {
-        "version": "3.1",
-        "commit": "9af0557c932b69648ff5aa0c70b5468fdf65cb93"
+        "version": "4.2",
+        "commit": "f168b4fd2757cbda7092c3db8685dc2854b80003"
       }
     ],
     "platforms": [
