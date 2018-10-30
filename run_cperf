@@ -21,6 +21,7 @@ import random
 import re
 import shutil
 import sys
+import unittest
 
 import common
 
@@ -77,11 +78,32 @@ def workspace_comment():
         return None
 
 
+# Utility class for testing run_cperf against various data discovered in
+# the field; unfortunately we are not yet at the point where there's a
+# real testsuite for it, but this is a step.
+class SelfTest(unittest.TestCase):
+
+    args = None
+
+    def test_failed_modules(self):
+        configs = get_configs(self.args.suite)
+        (passed_modules, failed_modules) = find_module_statuses(configs,
+                                                                self.args)
+        print("passed: " + str(passed_modules))
+        print("failed: " + str(failed_modules))
+
+
 def main():
+
+    args = parse_args()
+    if args.self_test:
+        SelfTest.args = args
+        suite = unittest.TestLoader().loadTestsFromTestCase(SelfTest)
+        return unittest.TextTestRunner(verbosity=2).run(suite)
+
     common.debug_print('** RUN PULL-REQUEST CPERF **')
     os.chdir(os.path.dirname(__file__))
 
-    args = parse_args()
     instances = [NEW_INSTANCE, OLD_INSTANCE]
     configs = get_configs(args.suite)
 
@@ -601,6 +623,8 @@ def parse_args():
                         type=bool, default=False)
     parser.add_argument('--group-by-module',
                         type=bool, default=False)
+    parser.add_argument('--self-test',
+                        action='store_true')
     return parser.parse_args()
 
 
