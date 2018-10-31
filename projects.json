@@ -941,7 +941,7 @@
     "repository": "Git",
     "url": "https://github.com/kickstarter/ios-oss",
     "path": "kickstarter-ios-oss",
-    "branch": "master",
+    "branch": "apple-swift-compat-suite",
     "maintainer": "appledev@kickstarter.com",
     "compatibility": [
       {
