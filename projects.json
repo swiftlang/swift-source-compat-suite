@@ -939,6 +939,32 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/kickstarter/ios-oss",
+    "path": "kickstarter-ios-oss",
+    "branch": "master",
+    "maintainer": "appledev@kickstarter.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "dde143466ffd65aace512581133f62b07e43686f"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "Kickstarter.xcodeproj",
+        "scheme": "Kickstarter-iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release",
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/kickstarter/Kickstarter-Prelude",
     "path": "Kickstarter-Prelude",
     "branch": "master",
