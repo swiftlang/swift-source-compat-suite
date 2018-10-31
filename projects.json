@@ -815,6 +815,15 @@
         "scheme": "IBAnimatable",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9146"
+              }
+            }
+          }
+        },
         "tags": "sourcekit sourcekit-smoke"
       },
       {
@@ -822,7 +831,16 @@
         "workspace": "IBAnimatable.xcworkspace",
         "scheme": "IBAnimatableApp",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9146"
+              }
+            }
+          }
+        }
       }
     ]
   },
