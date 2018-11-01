@@ -619,7 +619,8 @@
           "compatibility": {
             "4.2": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8307"
+                "master": "https://bugs.swift.org/browse/SR-8307",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8307"
               }
             }
           }
@@ -660,7 +661,8 @@
           "compatibility": {
             "4.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8307"
+                "master": "https://bugs.swift.org/browse/SR-8307",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8307"
               }
             },
             "4.1": {
@@ -720,7 +722,8 @@
           "compatibility": {
             "4.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234"
+                "master": "https://bugs.swift.org/browse/SR-8234",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8234"
               }
             }
           }
@@ -756,7 +759,8 @@
           "compatibility": {
             "4.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8250"
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250"
               }
             }
           }
@@ -819,7 +823,8 @@
           "compatibility": {
             "4.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9146"
+                "master": "https://bugs.swift.org/browse/SR-9146",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9146"
               }
             }
           }
@@ -836,7 +841,8 @@
           "compatibility": {
             "4.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9146"
+                "master": "https://bugs.swift.org/browse/SR-9146",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9146"
               }
             }
           }
@@ -1016,7 +1022,8 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8270"
+                "master": "https://bugs.swift.org/browse/SR-8270",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8270"
               }
             }
           }
@@ -1032,7 +1039,8 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8270"
+                "master": "https://bugs.swift.org/browse/SR-8270",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8270"
               }
             }
           }
@@ -1193,7 +1201,8 @@
           "compatibility": {
             "4.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234"
+                "master": "https://bugs.swift.org/browse/SR-8234",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8234"
               }
             }
           }
@@ -1230,7 +1239,8 @@
           "compatibility": {
             "4.2": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9102"
+                "master": "https://bugs.swift.org/browse/SR-9102",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9102"
               }
             }
           }
@@ -1327,7 +1337,8 @@
           "compatibility": {
             "4.1": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9068"
+                "master": "https://bugs.swift.org/browse/SR-9068",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9068"
               }
             }
           }
@@ -1343,7 +1354,8 @@
           "compatibility": {
             "4.1": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9068"
+                "master": "https://bugs.swift.org/browse/SR-9068",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9068"
               }
             }
           }
@@ -1359,7 +1371,8 @@
           "compatibility": {
             "4.1": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9068"
+                "master": "https://bugs.swift.org/browse/SR-9068",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9068"
               }
             }
           }
@@ -1375,7 +1388,8 @@
           "compatibility": {
             "4.1": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9068"
+                "master": "https://bugs.swift.org/browse/SR-9068",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9068"
               }
             }
           }
@@ -1388,7 +1402,8 @@
           "compatibility": {
             "4.1": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9068"
+                "master": "https://bugs.swift.org/browse/SR-9068",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9068"
               }
             }
           }
@@ -1562,7 +1577,8 @@
           "compatibility": {
             "4.2": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8250"
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250"
               }
             }
           }
@@ -1671,6 +1687,7 @@
             "4.2": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-9139",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9139",
                 "swift-4.2-branch": "https://bugs.swift.org/browse/SR-9139"
               }
             }
@@ -2154,7 +2171,8 @@
           "compatibility": {
             "4.2": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8250"
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250"
               }
             }
           }
@@ -2187,6 +2205,7 @@
             "4.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-8046",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8046",
                 "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8046"
               }
             }
@@ -2689,7 +2708,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8250"
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250"
               }
             }
           }
