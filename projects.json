@@ -705,8 +705,8 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "f121c6b1393aacf6d1956ea9edf0dd1e9c34977f"
+        "version": "4.2",
+        "commit": "759c1088a1d9ba94f44009295fd17c20b1375524"
       }
     ],
     "platforms": [
@@ -717,17 +717,17 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
         "xfail": {
           "compatibility": {
-            "4.0": {
+            "4.2": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8234"
+                "master": "https://bugs.swift.org/browse/SR-9151",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9151"
               }
             }
           }
-        }
+        },
+        "tags": "sourcekit"
       },
       {
         "action": "TestSwiftPackage"
@@ -819,16 +819,6 @@
         "scheme": "IBAnimatable",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9146",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9146"
-              }
-            }
-          }
-        },
         "tags": "sourcekit sourcekit-smoke"
       },
       {
@@ -836,17 +826,7 @@
         "workspace": "IBAnimatable.xcworkspace",
         "scheme": "IBAnimatableApp",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9146",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9146"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       }
     ]
   },
