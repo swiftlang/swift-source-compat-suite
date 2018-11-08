@@ -667,7 +667,8 @@
             },
             "4.1": {
               "branch": {
-                 "master": "https://bugs.swift.org/browse/SR-8307"
+                 "master": "https://bugs.swift.org/browse/SR-8307",
+                 "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8307"
               }
             }
           }
@@ -1252,7 +1253,8 @@
           "compatibility": {
             "4.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234"
+                "master": "https://bugs.swift.org/browse/SR-8234",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8234"
               }
             }
           }
