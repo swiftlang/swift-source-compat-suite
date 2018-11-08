@@ -838,8 +838,8 @@
     "maintainer": "jesse@jessesquires.com",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "772920fef79fac26cf7a2c3d58f32e739249c5d5"
+        "version": "4.2",
+        "commit": "e651887d0a621c6b66ca09c2e8cea9fce691c00e"
       }
     ],
     "platforms": [
@@ -849,7 +849,7 @@
       {
         "action": "BuildXcodeProjectTarget",
         "project": "JSQCoreDataKit.xcodeproj",
-        "target": "JSQCoreDataKit-iOS",
+        "target": "JSQCoreDataKit",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
         "tags": "sourcekit"
@@ -857,8 +857,8 @@
       {
         "action": "TestXcodeProjectScheme",
         "project": "JSQCoreDataKit.xcodeproj",
-        "scheme": "JSQCoreDataKitTests",
-        "destination": "platform=iOS Simulator,name=iPhone 6s"
+        "scheme": "JSQCoreDataKit-Tests",
+        "destination": "platform=iOS Simulator,name=iPhone X"
       }
     ]
   },
