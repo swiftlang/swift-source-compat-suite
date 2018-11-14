@@ -2608,32 +2608,77 @@
         "workspace": "Tagged.xcworkspace",
         "scheme": "Tagged-Package",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9252"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Tagged.xcworkspace",
         "scheme": "Tagged-Package",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9252"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Tagged.xcworkspace",
         "scheme": "Tagged-Package",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9252"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Tagged.xcworkspace",
         "scheme": "Tagged-Package",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9252"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9252"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
