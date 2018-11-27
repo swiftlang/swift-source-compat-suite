@@ -303,8 +303,17 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
 
         other_swift_flags = []
         if swift_version:
-            other_swift_flags += ['-swift-version', swift_version.split('.')[0]]
-            initial_xcodebuild_flags += ['SWIFT_VERSION=%s' % swift_version.split('.')[0]]
+            # Only strip minor versions below 4.2
+            if swift_version >= 4.2:
+                # Continue to strip out patch versions, e.g., the '.1' in '4.2.1'
+                if swift_version.split('.').count > 2:
+                    other_swift_flags += ['-swift-version', '.'.join(swift_version.split('.')[:2])]
+                else:
+                    other_swift_flags += ['-swift-version', swift_version]
+                    initial_xcodebuild_flags += ['SWIFT_VERSION=%s' % swift_version]
+            else:
+                other_swift_flags += ['-swift-version', swift_version.split('.')[0]]
+                initial_xcodebuild_flags += ['SWIFT_VERSION=%s' % swift_version.split('.')[0]]
         if added_swift_flags:
             other_swift_flags.append(added_swift_flags)
         if other_swift_flags:
