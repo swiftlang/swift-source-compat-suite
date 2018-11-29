@@ -833,38 +833,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/plangrid/ReactiveLists.git",
-    "path": "ReactiveLists",
-    "branch": "master",
-    "maintainer": "ios.developer@plangrid.com",
-    "compatibility": [
-      {
-        "version": "4.2",
-        "commit": "7811400344880c545743564db202d59d1eabf7a5"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "ReactiveLists.xcworkspace",
-        "target": "ReactiveLists",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "tags": "sourcekit"
-      },
-      {
-        "action": "TestXcodeWorkspaceScheme",
-        "workspace": "ReactiveLists.xcworkspace",
-        "scheme": "ReactiveListsTests",
-        "destination": "platform=iOS Simulator,name=iPhone X"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/jessesquires/JSQCoreDataKit.git",
     "path": "JSQCoreDataKit",
     "branch": "master",
@@ -1907,6 +1875,38 @@
         "scheme": "ReactiveCocoa-watchOS",
         "destination": "generic/platform=watchOS",
         "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/plangrid/ReactiveLists.git",
+    "path": "ReactiveLists",
+    "branch": "master",
+    "maintainer": "ios.developer@plangrid.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "7811400344880c545743564db202d59d1eabf7a5"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "ReactiveLists.xcworkspace",
+        "scheme": "ReactiveLists",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release",
+        "tags": "sourcekit"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "ReactiveLists.xcworkspace",
+        "scheme": "ReactiveListsTests",
+        "destination": "platform=iOS Simulator,name=iPhone X"
       }
     ]
   },
