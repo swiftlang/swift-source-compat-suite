@@ -1096,17 +1096,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "swift-5.0-branch": "rdar://46189034",
-                "master": "rdar://46189034"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       }
     ]
   },
@@ -1295,17 +1285,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.2": {
-              "branch": {
-                "swift-5.0-branch": "rdar://46189034",
-                "master": "rdar://46189034"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "TestSwiftPackage"
