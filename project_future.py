@@ -303,8 +303,19 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
 
         other_swift_flags = []
         if swift_version:
-            other_swift_flags += ['-swift-version', swift_version.split('.')[0]]
-            initial_xcodebuild_flags += ['SWIFT_VERSION=%s' % swift_version.split('.')[0]]
+            if '.' not in swift_version:
+                swift_version += '.0'
+
+            major, minor = swift_version.split('.', 1)
+            # Need to use float for minor version parsing
+            # because it's possible that it would be specified
+            # as e.g. `4.0.3`
+            if int(major) == 4 and float(minor) == 2.0:
+                other_swift_flags += ['-swift-version', swift_version]
+                initial_xcodebuild_flags += ['SWIFT_VERSION=%s' % swift_version]
+            else:
+                other_swift_flags += ['-swift-version', major]
+                initial_xcodebuild_flags += ['SWIFT_VERSION=%s' % major]
         if added_swift_flags:
             other_swift_flags.append(added_swift_flags)
         if other_swift_flags:
@@ -982,7 +993,7 @@ class CompatActionBuilder(ActionBuilder):
                 return None
 
         if not self.swift_version:
-            self.swift_version = self.version['version'].split('.')[0]
+            self.swift_version = self.version['version']
         try:
             dispatch(self.root_path, self.project, self.action,
                      self.swiftc,
