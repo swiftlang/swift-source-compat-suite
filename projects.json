@@ -33,7 +33,7 @@
     "maintainer": "cnoon@alamofire.org",
     "compatibility": [
       {
-        "version": "4.2",
+        "version": "4.0",
         "commit": "a5cd9e233f24df3583f4b02f7e4722c076ab9032"
       }
     ],
@@ -576,7 +576,7 @@
     "maintainer": "brent@ranchero.com",
     "compatibility": [
       {
-        "version": "4.2",
+        "version": "4.0",
         "commit": "ce0d2450b83ec8c5dee6bb9c612b3eb06ba39c47"
       }
     ],
@@ -950,7 +950,7 @@
     "maintainer": "appledev@kickstarter.com",
     "compatibility": [
       {
-        "version": "4.2",
+        "version": "4.0",
         "commit": "8988b02ab963294d98d8f37d1a7dc0ee392fcd8d"
       }
     ],
@@ -2850,7 +2850,7 @@
     "maintainer": "contact@alexruperez.com",
     "compatibility": [
       {
-        "version": "4.2",
+        "version": "4.0",
         "commit": "f168b4fd2757cbda7092c3db8685dc2854b80003"
       }
     ],
