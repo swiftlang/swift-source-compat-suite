@@ -33,7 +33,7 @@
     "maintainer": "cnoon@alamofire.org",
     "compatibility": [
       {
-        "version": "4.2",
+        "version": "4.0",
         "commit": "a5cd9e233f24df3583f4b02f7e4722c076ab9032"
       }
     ],
@@ -576,7 +576,7 @@
     "maintainer": "brent@ranchero.com",
     "compatibility": [
       {
-        "version": "4.2",
+        "version": "4.0",
         "commit": "ce0d2450b83ec8c5dee6bb9c612b3eb06ba39c47"
       }
     ],
@@ -950,7 +950,7 @@
     "maintainer": "appledev@kickstarter.com",
     "compatibility": [
       {
-        "version": "4.2",
+        "version": "4.0",
         "commit": "8988b02ab963294d98d8f37d1a7dc0ee392fcd8d"
       }
     ],
@@ -1663,18 +1663,7 @@
         "target": "ProcedureKitCloud",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.2": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9139",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9139",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-9139"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "TestXcodeProjectTarget",
@@ -2830,7 +2819,7 @@
     "maintainer": "contact@alexruperez.com",
     "compatibility": [
       {
-        "version": "4.2",
+        "version": "4.0",
         "commit": "f168b4fd2757cbda7092c3db8685dc2854b80003"
       }
     ],
