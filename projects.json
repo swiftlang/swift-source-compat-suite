@@ -3197,5 +3197,30 @@
         "tags": "sourcekit"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/line/line-sdk-ios-swift.git",
+    "path": "line-sdk-ios-swift",
+    "branch": "master",
+    "maintainer": "dl_linesdk_cocoapods@linecorp.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "d8bb2bc535e2895b5fbe66f4872327b654d19a34"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "LineSDK.xcworkspace",
+        "scheme": "LineSDK",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      }
+    ]
   }
 ]
