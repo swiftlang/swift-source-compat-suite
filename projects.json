@@ -1215,16 +1215,7 @@
         "project": "ModelAssistant.xcodeproj",
         "scheme": "ModelAssistant iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.2": {
-              "branch": {
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9102"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       }
     ]
   },
