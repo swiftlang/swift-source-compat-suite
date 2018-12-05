@@ -239,8 +239,7 @@
         "workspace": "Chatto.xcworkspace",
         "scheme": "Chatto",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "configuration": "Release"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -359,7 +358,7 @@
         "scheme": "CoreStore OSX",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -431,7 +430,7 @@
         "scheme": "Cub macOS Release [Double]",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -820,7 +819,7 @@
         "scheme": "IBAnimatable",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -1985,7 +1984,7 @@
         "scheme": "RxSwift-macOS",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -2258,8 +2257,7 @@
         "project": "Surge.xcodeproj",
         "scheme": "Surge-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -2274,16 +2272,14 @@
         "project": "Surge.xcodeproj",
         "scheme": "Surge-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "Surge.xcodeproj",
         "scheme": "Surge-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "configuration": "Release"
       }
     ]
   },
