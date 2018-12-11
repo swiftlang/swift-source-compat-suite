@@ -1,18 +1,21 @@
 [
   {
-    "path" : "*\/Alamofire\/Source\/Request.swift",
+    "path" : "*\/Alamofire\/Source\/Result.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
-      "kind" : "editorOpen"
+      "kind" : "codeComplete",
+      "offset" : 5958
     }
   },
   {
     "path" : "*\/AsyncNinja\/Sources\/BaseProducer.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -24,7 +27,8 @@
     "path" : "*\/AsyncNinja\/Sources\/EventSource_Merge2.swift",
     "modification" : "concurrent-2781",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9378",
     "request" : {
@@ -34,30 +38,26 @@
     }
   },
   {
-    "path" : "*\/BeaconKit\/Sources\/BeaconKit\/Classes\/Parser\/LayoutFragment.swift",
+    "path" : "*\/BlueSocket\/Sources\/Socket\/SocketUtils.swift",
+    "modification" : "insideOut-2255",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
-      "kind" : "editorOpen"
-    }
-  },
-  {
-    "path" : "*\/BlueSocket\/Sources\/Socket\/Socket.swift",
-    "applicableConfigs" : [
-      "master"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
-    "request" : {
-      "kind" : "editorOpen"
+      "kind" : "editorReplaceText",
+      "length" : 0,
+      "offset" : 2226,
+      "text" : "."
     }
   },
   {
     "path" : "*\/Chatto\/Chatto\/Source\/ChatController\/BaseChatViewController.swift",
     "modification" : "concurrent-1515",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -66,31 +66,23 @@
     }
   },
   {
-    "path" : "*\/Chatto\/Chatto\/Source\/Utils.swift",
-    "applicableConfigs" : [
-      "master"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
-    "request" : {
-      "kind" : "editorOpen"
-    }
-  },
-  {
     "path" : "*\/Chatto\/ChattoAdditions\/Source\/Chat Items\/TextMessages\/Views\/TextMessageCollectionViewCellDefaultStyle.swift",
-    "modification" : "concurrent-2191",
+    "modification" : "concurrent-4106",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9387",
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
       "kind" : "cursorInfo",
-      "offset" : 2189
+      "offset" : 3033
     }
   },
   {
     "path" : "*\/CoreStore\/Sources\/AsynchronousDataTransaction.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -102,7 +94,8 @@
     "path" : "*\/CoreStore\/Sources\/CoreStoreError.swift",
     "modification" : "concurrent-4683",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -115,7 +108,8 @@
     "path" : "*\/DNS\/Sources\/DNS\/Integer+Data.swift",
     "modification" : "concurrent-460",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -127,7 +121,8 @@
     "path" : "*\/DNS\/Sources\/DNS\/Message.swift",
     "modification" : "concurrent-9359",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -139,7 +134,8 @@
     "path" : "*\/Deferred\/Sources\/Deferred\/DeferredQueue.swift",
     "modification" : "insideOut-2356",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -150,7 +146,8 @@
   {
     "path" : "*\/Deferred\/Sources\/Task\/ResultRecovery.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -162,7 +159,8 @@
     "path" : "*\/Deferred\/Sources\/Task\/TaskAndThen.swift",
     "modification" : "concurrent-893",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -174,7 +172,8 @@
     "path" : "*\/Dollar\/Sources\/Dollar.swift",
     "modification" : "concurrent-2573",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -184,46 +183,11 @@
     }
   },
   {
-    "path" : "*\/Evergreen\/submodules\/RSDatabase\/RSDatabase\/DatabaseTable.swift",
-    "modification" : "insideOut-1034",
-    "applicableConfigs" : [
-      "master"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
-      "kind" : "cursorInfo",
-      "offset" : 821
-    }
-  },
-  {
-    "path" : "*\/Evergreen\/submodules\/RSDatabase\/RSDatabase\/DatabaseTable.swift",
-    "modification" : "insideOut-1037",
-    "applicableConfigs" : [
-      "master"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
-      "kind" : "cursorInfo",
-      "offset" : 843
-    }
-  },
-  {
-    "path" : "*\/Evergreen\/submodules\/RSTree\/RSTree\/Node.swift",
-    "modification" : "insideOut-2666",
-    "applicableConfigs" : [
-      "master"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
-      "kind" : "cursorInfo",
-      "offset" : 2400
-    }
-  },
-  {
     "path" : "*\/Evergreen\/Frameworks\/Database\/Database.swift",
     "modification" : "insideOut-32",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -236,7 +200,8 @@
   {
     "path" : "*\/Evergreen\/Commands\/DeleteFromSidebarCommand.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -248,7 +213,8 @@
     "path" : "*\/Evergreen\/Evergreen\/ProgressWindow\/IndeterminateProgressWindowController.swift",
     "modification" : "concurrent-1304",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -260,7 +226,8 @@
   {
     "path" : "*\/fluent\/Sources\/Fluent\/Cache\/CacheEntry.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9003",
     "request" : {
@@ -271,7 +238,8 @@
   {
     "path" : "*\/fluent\/Sources\/FluentBenchmark\/Benchmarks\/Bar.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9003",
     "request" : {
@@ -282,7 +250,8 @@
   {
     "path" : "*\/fluent\/Sources\/FluentSQL\/SQL+Contains.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -291,22 +260,23 @@
     }
   },
   {
-    "path" : "*\/IBAnimatable\/Sources\/ActivityIndicators\/Animations\/ActivityIndicatorAnimationCircleDashStrokeSpin.swift",
-    "modification" : "concurrent-2290",
+    "path" : "*\/IBAnimatable\/Sources\/Animators\/InteractiveAnimator\/ScreenEdgePanInteractiveAnimator.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
-      "kind" : "cursorInfo",
-      "offset" : 2284
+      "kind" : "codeComplete",
+      "offset" : 508
     }
   },
   {
     "path" : "*\/IBAnimatable\/Sources\/Enums\/GradientType.swift",
     "modification" : "insideOut-3275",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -317,19 +287,10 @@
     }
   },
   {
-    "path" : "*\/KeychainAccess\/Lib\/KeychainAccess\/Keychain.swift",
-    "applicableConfigs" : [
-      "master"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
-    "request" : {
-      "kind" : "editorOpen"
-    }
-  },
-  {
     "path" : "*\/Kickstarter-Prelude\/Frameworks\/Runes\/Sources\/Runes\/Optional\/Optional+Applicative.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -340,7 +301,8 @@
   {
     "path" : "*\/Kickstarter-Prelude\/Prelude\/Either.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -351,7 +313,8 @@
   {
     "path" : "*\/Kickstarter-Prelude\/Frameworks\/Runes\/Sources\/Runes\/Optional\/Optional+Applicative.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -362,7 +325,8 @@
   {
     "path" : "*\/Kickstarter-ReactiveExtensions\/Frameworks\/ReactiveSwift\/Sources\/Action.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -374,7 +338,8 @@
     "path" : "*\/Kickstarter-ReactiveExtensions\/ReactiveExtensions\/UIKit\/Rac.swift",
     "modification" : "concurrent-495",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -383,29 +348,22 @@
     }
   },
   {
-    "path" : "*\/Kickstarter-ReactiveExtensions\/ReactiveExtensions\/helpers\/DispatchTimeInterval-Extensions.swift",
-    "applicableConfigs" : [
-      "master"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
-    "request" : {
-      "kind" : "editorOpen"
-    }
-  },
-  {
     "path" : "*\/Kingfisher\/Sources\/Filter.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
-      "kind" : "editorOpen"
+      "kind" : "codeComplete",
+      "offset" : 2791
     }
   },
   {
     "path" : "*\/Kitura\/Sources\/Kitura\/CodableRouter.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-8566",
     "request" : {
@@ -418,7 +376,8 @@
     "path" : "*\/NetService\/Sources\/NetService\/Utils.swift",
     "modification" : "insideOut-*",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371 TIMEOUT",
     "request" : {
@@ -426,43 +385,26 @@
     }
   },
   {
-    "path" : "*\/ObjectMapper\/Sources\/DictionaryTransform.swift",
+    "path" : "*\/ObjectMapper\/Sources\/ImmutableMappable.swift",
+    "modification" : "insideOut-60",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
-      "kind" : "codeComplete",
-      "offset" : 626
-    }
-  },
-  {
-    "path" : "*\/ObjectMapper\/Sources\/EnumOperators.swift",
-    "applicableConfigs" : [
-      "master"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
-      "kind" : "editorOpen"
-    }
-  },
-  {
-    "path" : "*\/Perfect\/Sources\/PerfectLib\/File.swift",
-    "modification" : "concurrent-4321",
-    "applicableConfigs" : [
-      "master"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
-      "kind" : "codeComplete",
-      "offset" : 3543
+      "kind" : "editorReplaceText",
+      "length" : 0,
+      "offset" : 51,
+      "text" : "' using "
     }
   },
   {
     "path" : "*\/Perfect\/Sources\/PerfectLib\/SysProcess.swift",
     "modification" : "insideOut-279",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -476,7 +418,8 @@
     "path" : "*\/Plank\/Sources\/Core\/JSIR.swift",
     "modification" : "insideOut-174",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -490,7 +433,8 @@
     "path" : "*\/Plank\/Sources\/plank\/Cli.swift",
     "modification" : "insideOut-2867",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -504,7 +448,8 @@
     "path" : "*\/ProcedureKit\/Sources\/ProcedureKit\/Any.swift",
     "modification" : "concurrent-1715",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -514,19 +459,35 @@
     }
   },
   {
-    "path" : "*\/PromiseKit\/Sources\/AnyPromise.swift",
+    "path" : "*\/ProcedureKit\/Sources\/ProcedureKitCloud\/CloudKit.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
-      "kind" : "editorOpen"
+      "kind" : "codeComplete",
+      "offset" : 721
+    }
+  },
+  {
+    "path" : "*\/PromiseKit\/Sources\/CustomStringConvertible.swift",
+    "modification" : "concurrent-496",
+    "applicableConfigs" : [
+      "master",
+      "swift-5.0-branch"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "cursorInfo",
+      "offset" : 490
     }
   },
   {
     "path" : "*\/R.swift\/Sources\/RswiftCore\/Generators\/AggregatedStructGenerator.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9015",
     "request" : {
@@ -537,7 +498,8 @@
   {
     "path" : "*\/R.swift\/Sources\/rswift\/main.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -546,20 +508,10 @@
     }
   },
   {
-    "path" : "*\/Re-Lax\/ReLax\/ReLax\/ParallaxImage.swift",
-    "applicableConfigs" : [
-      "master"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
-      "kind" : "codeComplete",
-      "offset" : 1798
-    }
-  },
-  {
     "path" : "*\/ReSwift\/ReSwift\/CoreTypes\/Store.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -568,19 +520,22 @@
     }
   },
   {
-    "path" : "*\/ReactiveCocoa\/ReactiveCocoa\/AppKit\/NSButton.swift",
+    "path" : "*\/ReactiveCocoa\/ReactiveCocoa\/CocoaAction.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
-      "kind" : "editorOpen"
+      "kind" : "codeComplete",
+      "offset" : 1694
     }
   },
   {
     "path" : "*\/ReactiveSwift\/Sources\/Action.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -589,31 +544,22 @@
     }
   },
   {
-    "path" : "*\/ReactiveSwift\/Sources\/Action.swift",
-    "modification" : "concurrent-2061",
-    "applicableConfigs" : [
-      "master"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9017",
-    "request" : {
-      "kind" : "cursorInfo",
-      "offset" : 1965
-    }
-  },
-  {
     "path" : "*\/Result\/Result\/ResultProtocol.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
-      "kind" : "editorOpen"
+      "kind" : "codeComplete",
+      "offset" : 1252
     }
   },
   {
     "path" : "*\/RxSwift\/RxSwift\/Deprecated.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -624,7 +570,8 @@
   {
     "path" : "*\/RxSwift\/RxCocoa\/Common\/Binder.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -635,7 +582,8 @@
   {
     "path" : "*\/RxSwift\/RxCocoa\/Common\/Observable+Bind.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -646,7 +594,8 @@
   {
     "path" : "*\/RxSwift\/RxTest\/Schedulers\/TestScheduler.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -655,19 +604,10 @@
     }
   },
   {
-    "path" : "*\/Starscream\/Sources\/WebSocket.swift",
-    "applicableConfigs" : [
-      "master"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
-    "request" : {
-      "kind" : "editorOpen"
-    }
-  },
-  {
     "path" : "*\/Surge\/Sources\/Surge\/FFT.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -679,7 +619,8 @@
     "path" : "*\/Surge\/Sources\/Surge\/Pointers.swift",
     "modification" : "concurrent-2991",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -689,21 +630,11 @@
     }
   },
   {
-    "path" : "*\/SwiftDate\/Sources\/SwiftDate\/DateInRegion\/DateInRegion+Components.swift",
-    "applicableConfigs" : [
-      "master"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
-      "kind" : "codeComplete",
-      "offset" : 2358
-    }
-  },
-  {
     "path" : "*\/SwiftDate\/Sources\/SwiftDate\/DateInRegion\/DateInRegion.swift",
     "modification" : "insideOut-776",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -714,10 +645,23 @@
     }
   },
   {
+    "path" : "*\/SwiftGraph\/Sources\/SwiftGraph\/Cycle.swift",
+    "applicableConfigs" : [
+      "master",
+      "swift-5.0-branch"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 3491
+    }
+  },
+  {
     "path" : "*\/SwiftGraph\/Sources\/SwiftGraph\/Search.swift",
     "modification" : "concurrent-2800",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -726,21 +670,10 @@
     }
   },
   {
-    "path" : "*\/SwiftGraph\/Sources\/SwiftGraph\/Search.swift",
-    "modification" : "concurrent-2806",
-    "applicableConfigs" : [
-      "master"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
-      "kind" : "cursorInfo",
-      "offset" : 2582
-    }
-  },
-  {
     "path" : "*\/SwifterSwift\/Sources\/Extensions\/AppKit\/NSImageExtensions.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -752,7 +685,8 @@
     "path" : "*\/SwiftLint\/Source\/SwiftLintFramework\/Extensions\/Configuration+LintableFiles.swift",
     "modification" : "insideOut-1111",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -764,7 +698,8 @@
     "path" : "*\/SwiftLint\/Source\/swiftlint\/Extensions\/Configuration+CommandLine.swift",
     "modification" : "insideOut-100",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -775,20 +710,11 @@
     }
   },
   {
-    "path" : "*\/swift-nio\/Sources\/NIOConcurrencyHelpers\/lock.swift",
-    "applicableConfigs" : [
-      "master"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
-    "request" : {
-      "kind" : "editorOpen"
-    }
-  },
-  {
     "path" : "*\/swift-nio\/Sources\/NIOPriorityQueue\/PriorityQueue.swift",
     "modification" : "concurrent-2857",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -799,7 +725,8 @@
   {
     "path" : "*\/swift-nio\/Sources\/NIO\/BaseSocket.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -808,19 +735,10 @@
     }
   },
   {
-    "path" : "*\/swift-nio\/Sources\/NIO\/ByteBuffer-core.swift",
-    "applicableConfigs" : [
-      "master"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
-    "request" : {
-      "kind" : "editorOpen"
-    }
-  },
-  {
     "path" : "*\/swift-nio\/Sources\/NIOEchoServer\/main.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -831,7 +749,8 @@
   {
     "path" : "*\/swift-nio\/Sources\/NIOEchoClient\/main.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -842,7 +761,8 @@
   {
     "path" : "*\/swift-nio\/Sources\/NIOChatServer\/main.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -853,7 +773,8 @@
   {
     "path" : "*\/swift-nio\/Sources\/NIOChatClient\/main.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -865,7 +786,8 @@
     "path" : "*\/swift-nio\/Sources\/NIOHTTP1\/HTTPDecoder.swift",
     "modification" : "concurrent-3530",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -877,7 +799,8 @@
     "path" : "*\/swift-nio\/Sources\/NIOFoundationCompat\/ByteBuffer-foundation.swift",
     "modification" : "concurrent-3499",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -886,9 +809,23 @@
     }
   },
   {
+    "path" : "*\/swift-nio\/Sources\/NIOTLS\/SNIHandler.swift",
+    "modification" : "concurrent-3864",
+    "applicableConfigs" : [
+      "master",
+      "swift-5.0-branch"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 3864
+    }
+  },
+  {
     "path" : "*\/swift-nio\/Sources\/NIOWebSocket\/Base64.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -899,7 +836,8 @@
   {
     "path" : "*\/swift-nio\/Sources\/NIOWebSocketServer\/main.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -908,20 +846,24 @@
     }
   },
   {
-    "path" : "*\/SwiftyStoreKit\/SwiftyStoreKit\/InAppReceipt.swift",
+    "path" : "*\/SwiftyStoreKit\/SwiftyStoreKit\/InAppReceiptVerificator.swift",
+    "modification" : "insideOut-3580",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9370",
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
-      "kind" : "editorOpen"
+      "kind" : "cursorInfo",
+      "offset" : 892
     }
   },
   {
     "path" : "*\/Then\/Sources\/Then\/Then.swift",
     "modification" : "concurrent-2136",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -933,7 +875,8 @@
     "path" : "*\/kommander\/Source\/Dispatcher.swift",
     "modification" : "concurrent-2809",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -944,7 +887,8 @@
   {
     "path" : "*\/mapper\/Sources\/Mapper.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-8566",
     "request" : {
@@ -954,9 +898,22 @@
     }
   },
   {
+    "path" : "*\/panelkit\/PanelKit\/PanelManager\/PanelManager+AutoLayout.swift",
+    "applicableConfigs" : [
+      "master",
+      "swift-5.0-branch"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 3379
+    }
+  },
+  {
     "path" : "*\/panelkit\/PanelKit\/PanelManager\/PanelManager+Pinning.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -968,7 +925,8 @@
     "path" : "*\/siesta\/Source\/Siesta\/Pipeline\/PipelineProcessing.swift",
     "modification" : "concurrent-1328",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -978,22 +936,23 @@
     }
   },
   {
-    "path" : "*\/vapor_core\/Sources\/Bits\/Byte+Digit.swift",
-    "modification" : "concurrent-280",
+    "path" : "*\/vapor_core\/Sources\/Bits\/ByteBuffer+binaryFloatingPointOperations.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
-      "kind" : "cursorInfo",
-      "offset" : 200
+      "kind" : "codeComplete",
+      "offset" : 1177
     }
   },
   {
     "path" : "*\/vapor_core\/Sources\/Async\/Deprecated.swift",
     "modification" : "insideOut-455",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -1003,19 +962,23 @@
   },
   {
     "path" : "*\/vapor_core\/Sources\/Core\/CodableReflection\/ReflectionDecodable.swift",
+    "modification" : "concurrent-6045",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
-      "kind" : "editorOpen"
+      "kind" : "cursorInfo",
+      "offset" : 4354
     }
   },
   {
     "path" : "*\/vapor_database-kit\/Sources\/DatabaseKit\/Database\/DatabaseConfig.swift",
     "modification" : "insideOut-398",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -1028,7 +991,8 @@
   {
     "path" : "*\/vapor_multipart\/Sources\/Multipart\/FormDataDecoder.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -1041,7 +1005,8 @@
     "path" : "*\/vapor_routing\/Sources\/Routing\/Parameter\/Parameter.swift",
     "modification" : "concurrent-3003",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -1053,7 +1018,8 @@
     "path" : "*\/vapor_service\/Sources\/Service\/Config\/Config.swift",
     "modification" : "insideOut-211",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -1066,7 +1032,8 @@
   {
     "path" : "*\/vapor_url-encoded-form\/Sources\/URLEncodedForm\/Codable\/URLEncodedFormDecoder.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -1079,7 +1046,8 @@
     "path" : "*\/vapor_validation\/Sources\/Validation\/Validations.swift",
     "modification" : "concurrent-737",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
