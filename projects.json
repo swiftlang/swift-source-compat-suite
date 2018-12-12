@@ -1181,8 +1181,7 @@
           "compatibility": {
             "4.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8234"
+                "master": "https://bugs.swift.org/browse/SR-8234"
               }
             }
           }
@@ -2138,7 +2137,6 @@
           "compatibility": {
             "4.0": {
               "branch": {
-                "swift-5.0-branch": "rdar://46189034",
                 "master": "rdar://46189034"
               }
             }
@@ -2408,13 +2406,11 @@
           "compatibility": {
             "4.0": {
               "branch": {
-                "swift-5.0-branch": "rdar://46189034",
                 "master": "rdar://46189034"
               }
             },
             "4.2": {
               "branch": {
-                "swift-5.0-branch": "rdar://46189034",
                 "master": "rdar://46189034"
               }
             }
