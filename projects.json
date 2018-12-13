@@ -1902,7 +1902,7 @@
         "configuration": "Release",
         "xfail" : {
           "compatibility": {
-            "4.2": {
+            "4.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-9497"
               }
