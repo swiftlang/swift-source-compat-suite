@@ -2850,7 +2850,11 @@
     "maintainer": "lsykes@urbn.com",
     "compatibility": [
       {
-        "version": "3.1",
+        "version": "4.0",
+        "commit": "6dc998583b170395e8ba03cacabe1ea44256b1bd"
+      },
+      {
+        "version": "4.2",
         "commit": "6dc998583b170395e8ba03cacabe1ea44256b1bd"
       }
     ],
@@ -2861,17 +2865,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "3.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8250",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       }
     ]
   },
