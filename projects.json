@@ -9,6 +9,10 @@
       {
         "version": "4.0",
         "commit": "de70ea613ca1648e98650fdade4f003f4223b510"
+      },
+      {
+        "version": "4.2",
+        "commit": "8bfcc8b881634c97d0b46705f0ba43f692ad8644"
       }
     ],
     "platforms": [
