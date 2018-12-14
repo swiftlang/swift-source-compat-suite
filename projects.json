@@ -1236,16 +1236,7 @@
         "workspace": "LineSDK.xcworkspace",
         "scheme": "LineSDK",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.2": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9375"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       }
     ]
   },
