@@ -79,16 +79,7 @@
         "workspace": "Alamofire.xcworkspace",
         "scheme": "iOS Example",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail" : {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9497"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       }
     ]
   },
@@ -1018,11 +1009,6 @@
                 "master": "https://bugs.swift.org/browse/SR-8270",
                 "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8270"
               }
-            },
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9497"
-              }
             }
           }
         }
@@ -1039,11 +1025,6 @@
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-8270",
                 "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8270"
-              }
-            },
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9497"
               }
             }
           }
@@ -1878,64 +1859,28 @@
         "scheme": "ReactiveCocoa-macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit",
-        "xfail" : {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9497"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail" : {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9497"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail" : {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9497"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail" : {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9497"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       }
     ]
   },
@@ -1962,64 +1907,28 @@
         "scheme": "ReactiveSwift-macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit",
-        "xfail" : {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9497"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail" : {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9497"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail" : {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9497"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail" : {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9497"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       }
     ]
   },
@@ -3200,16 +3109,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail" : {
-          "compatibility": {
-            "4.2": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9505"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       }
     ]
   },
