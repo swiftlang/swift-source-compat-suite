@@ -3114,7 +3114,8 @@
           "compatibility": {
             "4.2": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9505"
+                "master": "https://bugs.swift.org/browse/SR-9505",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9505"
               }
             }
           }
