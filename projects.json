@@ -2128,17 +2128,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9543",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9543"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "TestSwiftPackage"
@@ -2398,23 +2388,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9543",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9543"
-              }
-            },
-            "4.2": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9543",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9543"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "TestSwiftPackage"
