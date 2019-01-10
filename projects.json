@@ -2275,7 +2275,7 @@
         "scheme": "Surge-macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeProjectScheme",
