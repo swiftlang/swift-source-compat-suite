@@ -53,6 +53,33 @@
     }
   },
   {
+    "path" : "*\/Chatto\/Chatto\/Source\/ChatController\/BaseChatViewController+AccessoryViewRevealer.swift",
+    "modification" : "concurrent-1282",
+    "applicableConfigs" : [
+      "master",
+      "swift-5.0-branch"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "editorReplaceText",
+      "length" : 0,
+      "offset" : 1282,
+      "text" : "{"
+    }
+  },
+  {
+    "path" : "*\/Chatto\/Chatto\/Source\/ChatController\/BaseChatViewController+Changes.swift",
+    "applicableConfigs" : [
+      "master",
+      "swift-5.0-branch"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 9844
+    }
+  },
+  {
     "path" : "*\/Chatto\/Chatto\/Source\/ChatController\/BaseChatViewController.swift",
     "modification" : "concurrent-1515",
     "applicableConfigs" : [
@@ -63,6 +90,21 @@
     "request" : {
       "kind" : "cursorInfo",
       "offset" : 1345
+    }
+  },
+  {
+    "path" : "*\/Chatto\/ChattoAdditions\/Source\/Chat Items\/BaseMessage\/BaseMessageViewModel.swift",
+    "modification" : "concurrent-2138",
+    "applicableConfigs" : [
+      "master",
+      "swift-5.0-branch"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "editorReplaceText",
+      "length" : 0,
+      "offset" : 1542,
+      "text" : "}"
     }
   },
   {
@@ -102,6 +144,29 @@
       "kind" : "semanticRefactoring",
       "refactoring" : "Local Rename",
       "offset" : 2769
+    }
+  },
+  {
+    "path" : "*\/Dollar\/Sources\/Dollar.swift",
+    "applicableConfigs" : [
+      "master",
+      "swift-5.0-branch"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 2423
+    }
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 2844
     }
   },
   {
@@ -166,20 +231,6 @@
     "request" : {
       "kind" : "cursorInfo",
       "offset" : 887
-    }
-  },
-  {
-    "path" : "*\/Dollar\/Sources\/Dollar.swift",
-    "modification" : "concurrent-2573",
-    "applicableConfigs" : [
-      "master",
-      "swift-5.0-branch"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Local Rename",
-      "offset" : 2250
     }
   },
   {
@@ -381,7 +432,7 @@
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371 TIMEOUT",
     "request" : {
-      "kind" : "cursorInfo",
+      "kind" : "cursorInfo"
     }
   },
   {
@@ -446,16 +497,28 @@
   },
   {
     "path" : "*\/ProcedureKit\/Sources\/ProcedureKit\/Any.swift",
-    "modification" : "concurrent-1715",
+    "modification" : "concurrent-1152",
     "applicableConfigs" : [
       "master",
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Local Rename",
-      "offset" : 1148
+      "kind" : "editorReplaceText",
+      "length" : 0,
+      "offset" : 785,
+      "text" : "{"
+    }
+  },
+  {
+    "path" : "*\/ProcedureKit\/Sources\/ProcedureKit\/AnyObserver.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 3546
     }
   },
   {
@@ -544,6 +607,17 @@
     }
   },
   {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 722
+    }
+  },
+  {
     "path" : "*\/Result\/Result\/ResultProtocol.swift",
     "applicableConfigs" : [
       "master",
@@ -604,7 +678,7 @@
     }
   },
   {
-    "path" : "*\/Surge\/Sources\/Surge\/FFT.swift",
+    "path" : "*\/Surge\/Sources\/Surge\/Matrix.swift",
     "applicableConfigs" : [
       "master",
       "swift-5.0-branch"
@@ -612,7 +686,19 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
       "kind" : "codeComplete",
-      "offset" : 1789
+      "offset" : 2970
+    }
+  },
+  {
+    "path" : "*\/Surge\/Sources\/Surge\/Matrix.swift",
+    "applicableConfigs" : [
+      "master",
+      "swift-5.0-branch"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
+    "request" : {
+      "kind" : "codeComplete",
+      "offset" : 2970
     }
   },
   {
@@ -859,19 +945,6 @@
     }
   },
   {
-    "path" : "*\/Then\/Sources\/Then\/Then.swift",
-    "modification" : "concurrent-2136",
-    "applicableConfigs" : [
-      "master",
-      "swift-5.0-branch"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
-      "kind" : "cursorInfo",
-      "offset" : 2128
-    }
-  },
-  {
     "path" : "*\/kommander\/Source\/Dispatcher.swift",
     "modification" : "concurrent-2809",
     "applicableConfigs" : [
@@ -1054,5 +1127,5 @@
       "kind" : "cursorInfo",
       "offset" : 536
     }
-  },
+  }
 ]

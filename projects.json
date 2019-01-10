@@ -58,7 +58,7 @@
         "scheme": "Alamofire macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -257,7 +257,7 @@
         "scheme": "ChattoAdditions",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -463,7 +463,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit"
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "TestSwiftPackage"
@@ -1652,7 +1652,7 @@
         "target": "ProcedureKit",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -1953,7 +1953,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit"
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "TestSwiftPackage"
@@ -2033,7 +2033,7 @@
         "scheme": "RxCocoa-macOS",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
