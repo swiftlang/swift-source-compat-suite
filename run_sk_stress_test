@@ -264,7 +264,8 @@ class StressTesterRunner(object):
             results = json.load(results_file)
 
         num_failures = len(results['failures'])
-        num_xfails = len(results['expectedFailures'])
+        num_xfails = sum(len(value) for _, value in results['expectedFailures'].iteritems())
+        num_xfail_issues = len(results['expectedFailures'])
         unmatched = results['unmatchedExpectedFailures']
 
         success = num_failures == 0 and len(unmatched) == 0
@@ -279,7 +280,7 @@ class StressTesterRunner(object):
         if num_failures > 0:
             print('      > search "Detected unexpected failure:" for individual failures')
 
-        print('  {} expected stress tester failures'.format(num_xfails))
+        print('  {} expected stress tester failures tracked by {} issues'.format(num_xfails, num_xfail_issues))
 
         if not self.compat_runner_failed and unmatched:
             print('  {} expected stress tester failures not seen'.format(len(unmatched)))
