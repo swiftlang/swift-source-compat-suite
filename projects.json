@@ -1332,77 +1332,32 @@
         "workspace": "NonEmpty.xcworkspace",
         "scheme": "NonEmpty-Package",
         "destination": "generic/platform=macOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.1": {
-              "branch": {
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9068"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "NonEmpty.xcworkspace",
         "scheme": "NonEmpty-Package",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.1": {
-              "branch": {
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9068"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "NonEmpty.xcworkspace",
         "scheme": "NonEmpty-Package",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.1": {
-              "branch": {
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9068"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "NonEmpty.xcworkspace",
         "scheme": "NonEmpty-Package",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.1": {
-              "branch": {
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9068"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "4.1": {
-              "branch": {
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9068"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       },
       {
         "action": "TestSwiftPackage"
