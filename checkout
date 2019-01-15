@@ -59,8 +59,7 @@ def main():
             continue
         total_repos += 1
         for compatible_swift in repo['compatibility']:
-            project.checkout(root_path, repo,
-                             repo['compatibility'][compatible_swift]['commit'])
+            project.checkout(root_path, repo, compatible_swift['commit'])
     common.debug_print('='*40)
     common.debug_print('Repository Summary:')
     common.debug_print('      Total: %s' % total_repos)
