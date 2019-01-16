@@ -102,7 +102,7 @@ class XcodeTarget(ProjectTarget):
         try:
             build_parent_dir = common.check_execute_output([
                 'git', '-C', os.path.dirname(self._project),
-                'rev-parse', '--show-toplevel'])
+                'rev-parse', '--show-toplevel']).rstrip()
         except common.ExecuteCommandFailure as error:
             build_parent_dir = os.path.dirname(self._project)
 
