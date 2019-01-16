@@ -99,8 +99,15 @@ class XcodeTarget(ProjectTarget):
     def get_build_command(self, incremental=False):
         project_param = self.project_param
         target_param = self.target_param
-        build_dir = os.path.join(os.path.dirname(self._project),
-                                 'build')
+        try:
+            build_parent_dir = common.check_execute_output([
+                'git', '-C', os.path.dirname(self._project),
+                'rev-parse', '--show-toplevel'])
+        except common.ExecuteCommandFailure as error:
+            build_parent_dir = os.path.dirname(self._project)
+
+        build_dir = os.path.join(build_parent_dir, 'build')
+
         build = ['clean', 'build']
         if incremental:
             build = ['build']
