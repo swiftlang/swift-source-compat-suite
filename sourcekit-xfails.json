@@ -161,7 +161,8 @@
   {
     "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
     "applicableConfigs" : [
-      "master"
+      "master",
+      "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
     "request" : {
@@ -615,6 +616,19 @@
     "request" : {
       "kind" : "codeComplete",
       "offset" : 722
+    }
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "concurrent-2375",
+    "applicableConfigs" : [
+      "swift-5.0-branch"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-8566",
+    "request" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 791
     }
   },
   {
