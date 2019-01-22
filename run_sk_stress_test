@@ -263,10 +263,10 @@ class StressTesterRunner(object):
         with open(results_path) as results_file:
             results = json.load(results_file)
 
-        num_failures = len(results['failures'])
-        num_xfails = sum(len(value) for _, value in results['expectedFailures'].iteritems())
-        num_xfail_issues = len(results['expectedFailures'])
-        unmatched = results['unmatchedExpectedFailures']
+        num_failures = len(results['issues'])
+        num_xfails = sum(len(value) for _, value in results['expectedIssues'].iteritems())
+        num_xfail_issues = len(results['expectedIssues'])
+        unmatched = results['unmatchedExpectedIssues']
 
         success = num_failures == 0 and len(unmatched) == 0
 
