@@ -6,7 +6,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 5958
     }
@@ -18,7 +18,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 2560
     }
@@ -31,7 +31,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9378",
-    "request" : {
+    "issueDetail" : {
       "kind" : "semanticRefactoring",
       "refactoring" : "Local Rename",
       "offset" : 2773
@@ -45,7 +45,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "editorReplaceText",
       "length" : 0,
       "offset" : 2226,
@@ -60,7 +60,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "editorReplaceText",
       "length" : 0,
       "offset" : 1282,
@@ -74,7 +74,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 9844
     }
@@ -87,7 +87,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 1345
     }
@@ -100,7 +100,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "editorReplaceText",
       "length" : 0,
       "offset" : 1542,
@@ -115,7 +115,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 3033
     }
@@ -127,7 +127,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 6581
     }
@@ -140,7 +140,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "semanticRefactoring",
       "refactoring" : "Local Rename",
       "offset" : 2769
@@ -153,7 +153,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 2423
     }
@@ -165,7 +165,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 2844
     }
@@ -178,7 +178,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 456
     }
@@ -191,7 +191,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 5567
     }
@@ -204,7 +204,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 312
     }
@@ -216,7 +216,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 606
     }
@@ -229,7 +229,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 887
     }
@@ -242,7 +242,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "editorReplaceText",
       "length" : 0,
       "offset" : 3,
@@ -256,7 +256,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 1583
     }
@@ -269,7 +269,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "semanticRefactoring",
       "refactoring" : "Local Rename",
       "offset" : 1292
@@ -282,7 +282,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9003",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 908
     }
@@ -294,7 +294,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9003",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 955
     }
@@ -306,7 +306,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 215
     }
@@ -318,7 +318,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 508
     }
@@ -331,7 +331,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "editorReplaceText",
       "length" : 0,
       "offset" : 3275,
@@ -345,7 +345,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 1436
     }
@@ -357,7 +357,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 2903
     }
@@ -369,7 +369,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 1436
     }
@@ -381,7 +381,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 4690
     }
@@ -394,7 +394,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 458
     }
@@ -406,7 +406,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 2791
     }
@@ -418,7 +418,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-8566",
-    "request" : {
+    "issueDetail" : {
       "kind" : "semanticRefactoring",
       "refactoring" : "Local Rename",
       "offset" : 45420
@@ -432,7 +432,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371 TIMEOUT",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo"
     }
   },
@@ -444,7 +444,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "editorReplaceText",
       "length" : 0,
       "offset" : 51,
@@ -459,7 +459,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "editorReplaceText",
       "length" : 0,
       "offset" : 63,
@@ -474,7 +474,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "editorReplaceText",
       "length" : 0,
       "offset" : 94,
@@ -489,7 +489,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "editorReplaceText",
       "length" : 0,
       "offset" : 285,
@@ -504,7 +504,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "editorReplaceText",
       "length" : 0,
       "offset" : 785,
@@ -517,7 +517,7 @@
       "master"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 3546
     }
@@ -529,7 +529,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 721
     }
@@ -542,7 +542,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 490
     }
@@ -554,7 +554,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9015",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 856
     }
@@ -566,7 +566,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 6857
     }
@@ -578,7 +578,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 3943
     }
@@ -590,7 +590,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 1694
     }
@@ -602,7 +602,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 4690
     }
@@ -613,7 +613,7 @@
       "master"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 722
     }
@@ -625,7 +625,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-8566",
-    "request" : {
+    "issueDetail" : {
       "kind" : "semanticRefactoring",
       "refactoring" : "Local Rename",
       "offset" : 791
@@ -638,7 +638,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 1252
     }
@@ -650,7 +650,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 10051
     }
@@ -662,7 +662,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 878
     }
@@ -674,7 +674,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 1800
     }
@@ -686,7 +686,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 1970
     }
@@ -698,7 +698,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 2970
     }
@@ -710,7 +710,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 2970
     }
@@ -723,7 +723,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "semanticRefactoring",
       "refactoring" : "Local Rename",
       "offset" : 1582
@@ -737,7 +737,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "editorReplaceText",
       "length" : 0,
       "offset" : 310,
@@ -751,7 +751,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 3491
     }
@@ -764,7 +764,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 2193
     }
@@ -776,7 +776,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 679
     }
@@ -789,7 +789,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 225
     }
@@ -802,7 +802,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "editorReplaceText",
       "length" : 0,
       "offset" : 50,
@@ -817,7 +817,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 2613
     }
@@ -829,7 +829,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 2168
     }
@@ -841,7 +841,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 3688
     }
@@ -853,7 +853,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 3225
     }
@@ -865,7 +865,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 7267
     }
@@ -877,7 +877,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 2542
     }
@@ -890,7 +890,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 2284
     }
@@ -903,7 +903,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 3488
     }
@@ -916,7 +916,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 3864
     }
@@ -928,7 +928,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 1913
     }
@@ -940,7 +940,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 9947
     }
@@ -953,7 +953,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 892
     }
@@ -966,7 +966,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 1913
     }
@@ -978,7 +978,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-8566",
-    "request" : {
+    "issueDetail" : {
       "kind" : "semanticRefactoring",
       "refactoring" : "Local Rename",
       "offset" : 1650
@@ -991,7 +991,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 3379
     }
@@ -1003,7 +1003,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 2468
     }
@@ -1016,7 +1016,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "semanticRefactoring",
       "refactoring" : "Local Rename",
       "offset" : 845
@@ -1029,7 +1029,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 1177
     }
@@ -1042,7 +1042,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 0
     }
@@ -1055,7 +1055,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 4354
     }
@@ -1068,7 +1068,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "editorReplaceText",
       "length" : 0,
       "offset" : 58,
@@ -1082,7 +1082,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "semanticRefactoring",
       "refactoring" : "Local Rename",
       "offset" : 1231
@@ -1096,7 +1096,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 1553
     }
@@ -1109,7 +1109,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "editorReplaceText",
       "length" : 0,
       "offset" : 211,
@@ -1123,7 +1123,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "semanticRefactoring",
       "refactoring" : "Local Rename",
       "offset" : 2846
@@ -1137,7 +1137,7 @@
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
-    "request" : {
+    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 536
     }
