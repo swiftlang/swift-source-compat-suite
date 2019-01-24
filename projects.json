@@ -343,6 +343,10 @@
       {
         "version": "4.0",
         "commit": "83e6082c5646c5eb4d3130ce575ab858df168c59"
+      },
+      {
+        "version": "4.2",
+        "commit": "2863605d845cd9bb255ddd91f47f92717dec637f"
       }
     ],
     "platforms": [
