@@ -383,13 +383,6 @@
         "configuration": "Release"
       },
       {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "CoreStore.xcworkspace",
-        "scheme": "CoreStoreDemo",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
         "action": "TestXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore iOS",
