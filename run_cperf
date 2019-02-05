@@ -134,18 +134,6 @@ def main():
             execute_runner(instance, workspace, configs, args)
 
     regressions = analyze_results(configs, args)
-
-    # Crude hack to write output to workspace when in CI,
-    # regardless of --output passed.
-    if ws_comment is not None:
-        out = os.path.abspath(os.path.join(os.getcwd(),
-                                           args.output.name))
-        print("Output written to: %s" % out)
-        if out != ws_comment:
-            print("Copying %s to %s" % (out, ws_comment))
-            args.output.close()
-            shutil.copyfile(out, ws_comment)
-
     return regressions
 
 
