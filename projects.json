@@ -13,6 +13,10 @@
       {
         "version": "4.2",
         "commit": "8bfcc8b881634c97d0b46705f0ba43f692ad8644"
+      },
+      {
+        "version": "5.0",
+        "commit": "8bfcc8b881634c97d0b46705f0ba43f692ad8644"
       }
     ],
     "platforms": [
@@ -199,6 +203,10 @@
       {
         "version": "4.2",
         "commit": "fb4e74cd8eb3ce4a2b860fbf727b2dada796d77d"
+      },
+      {
+        "version": "5.0",
+        "commit": "fb4e74cd8eb3ce4a2b860fbf727b2dada796d77d"
       }
     ],
     "platforms": [
@@ -347,6 +355,10 @@
       {
         "version": "4.2",
         "commit": "2863605d845cd9bb255ddd91f47f92717dec637f"
+      },
+      {
+        "version": "5.0",
+        "commit": "2863605d845cd9bb255ddd91f47f92717dec637f"
       }
     ],
     "platforms": [
@@ -358,7 +370,17 @@
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -366,21 +388,51 @@
         "scheme": "CoreStore OSX",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit"
+        "tags": "sourcekit",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -476,6 +528,10 @@
       {
         "version": "4.2",
         "commit": "c374a6e7072ed88ed0c79299098ca2ba7c27e720"
+      },
+      {
+        "version": "5.0",
+        "commit": "c374a6e7072ed88ed0c79299098ca2ba7c27e720"
       }
     ],
     "platforms": [
@@ -494,21 +550,51 @@
         "project": "Deferred.xcodeproj",
         "scheme": "MobileDeferred",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "Deferred.xcodeproj",
         "scheme": "TVDeferred",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "Deferred.xcodeproj",
         "scheme": "NanoDeferred",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -604,6 +690,10 @@
       {
         "version": "4.2",
         "commit": "38a17de8717a2282fd4ff62cd1ce732b926bf4ab"
+      },
+      {
+        "version": "5.0",
+        "commit": "38a17de8717a2282fd4ff62cd1ce732b926bf4ab"
       }
     ],
     "platforms": [
@@ -618,6 +708,12 @@
         "xfail": {
           "compatibility": {
             "4.2": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8307",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8307"
+              }
+            },
+            "5.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-8307",
                 "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8307"
@@ -686,6 +782,10 @@
       {
         "version": "4.2",
         "commit": "270b6fa372f03809b9795e8f8b9d1c31267a0ff3"
+      },
+      {
+        "version": "5.0",
+        "commit": "270b6fa372f03809b9795e8f8b9d1c31267a0ff3"
       }
     ],
     "platforms": [
@@ -707,6 +807,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "759c1088a1d9ba94f44009295fd17c20b1375524"
+      },
+      {
+        "version": "5.0",
         "commit": "759c1088a1d9ba94f44009295fd17c20b1375524"
       }
     ],
@@ -733,6 +837,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "c0e68b17c6741e32b131ab33bbdd33524027e2af"
+      },
+      {
+        "version": "5.0",
         "commit": "c0e68b17c6741e32b131ab33bbdd33524027e2af"
       }
     ],
@@ -771,6 +879,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "e6952b9246dd9bf27d613ed7b4791ff19136f6c8"
+      },
+      {
+        "version": "5.0",
         "commit": "e6952b9246dd9bf27d613ed7b4791ff19136f6c8"
       }
     ],
@@ -830,6 +942,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "e651887d0a621c6b66ca09c2e8cea9fce691c00e"
+      },
+      {
+        "version": "5.0",
         "commit": "e651887d0a621c6b66ca09c2e8cea9fce691c00e"
       }
     ],
@@ -894,6 +1010,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "0fffcc37adcf55d3557f1e06dd0172ace582effe"
+      },
+      {
+        "version": "5.0",
         "commit": "0fffcc37adcf55d3557f1e06dd0172ace582effe"
       }
     ],
@@ -1104,6 +1224,10 @@
       {
         "version": "4.2",
         "commit": "d38491d123fb58897ecb339920cf69da479d19d0"
+      },
+      {
+        "version": "5.0",
+        "commit": "d38491d123fb58897ecb339920cf69da479d19d0"
       }
     ],
     "platforms": [
@@ -1194,6 +1318,10 @@
       {
         "version": "4.2",
         "commit": "d8bb2bc535e2895b5fbe66f4872327b654d19a34"
+      },
+      {
+        "version": "5.0",
+        "commit": "d8bb2bc535e2895b5fbe66f4872327b654d19a34"
       }
     ],
     "platforms": [
@@ -1218,6 +1346,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "e880839b9185a33acb8683413a89cca44d1955ef"
+      },
+      {
+        "version": "5.0",
         "commit": "e880839b9185a33acb8683413a89cca44d1955ef"
       }
     ],
@@ -1279,6 +1411,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "927eb171a738266b9b98fc6ca0506fb95f241b05"
+      },
+      {
+        "version": "5.0",
         "commit": "927eb171a738266b9b98fc6ca0506fb95f241b05"
       }
     ],
@@ -1361,6 +1497,10 @@
       {
         "version": "4.2",
         "commit": "ed1caa237b9742135996fefe3682b834bb394a6a"
+      },
+      {
+        "version": "5.0",
+        "commit": "ed1caa237b9742135996fefe3682b834bb394a6a"
       }
     ],
     "platforms": [
@@ -1407,6 +1547,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "1632b5dd5862bb2d377be79d5063d2161a7559e5"
+      },
+      {
+        "version": "5.0",
         "commit": "1632b5dd5862bb2d377be79d5063d2161a7559e5"
       }
     ],
@@ -1462,6 +1606,10 @@
       {
         "version": "4.2",
         "commit": "cdc17d544ec8e87da5f3b24cdbda8d02d77bb943"
+      },
+      {
+        "version": "5.0",
+        "commit": "cdc17d544ec8e87da5f3b24cdbda8d02d77bb943"
       }
     ],
     "platforms": [
@@ -1484,6 +1632,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "5c15634de4ff3152e9ccede6543c83ed93e2cf7b"
+      },
+      {
+        "version": "5.0",
         "commit": "5c15634de4ff3152e9ccede6543c83ed93e2cf7b"
       }
     ],
@@ -1513,6 +1665,12 @@
         "xfail": {
           "compatibility": {
             "4.2": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250"
+              }
+            },
+            "5.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-8250",
                 "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250"
@@ -1549,6 +1707,10 @@
       {
         "version": "4.2",
         "commit": "71a3a5ce5e38161eaf4e46a7f609f2e4523d8248"
+      },
+      {
+        "version": "5.0",
+        "commit": "71a3a5ce5e38161eaf4e46a7f609f2e4523d8248"
       }
     ],
     "maintainer": "rmalik@pinterest.com",
@@ -1577,6 +1739,10 @@
       {
         "version": "4.2",
         "commit": "94193d59bc06689526772023428402da1e0e299f"
+      },
+      {
+        "version": "5.0",
+        "commit": "94193d59bc06689526772023428402da1e0e299f"
       }
     ],
     "platforms": [
@@ -1589,14 +1755,34 @@
         "target": "ProcedureKit",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit"
+        "tags": "sourcekit",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectTarget",
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKit",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -1610,7 +1796,17 @@
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKit",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -1618,7 +1814,17 @@
         "target": "ProcedureKitCloud",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit"
+        "tags": "sourcekit",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestXcodeProjectTarget",
@@ -1686,6 +1892,10 @@
       {
         "version": "4.2",
         "commit": "f96758593573d3d1d9ae8084721033ab0bf392f6"
+      },
+      {
+        "version": "5.0",
+        "commit": "f96758593573d3d1d9ae8084721033ab0bf392f6"
       }
     ],
     "platforms": [
@@ -1737,6 +1947,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "beeb3c6368d573980a703ea37ab58e01f2a825c5"
+      },
+      {
+        "version": "5.0",
         "commit": "beeb3c6368d573980a703ea37ab58e01f2a825c5"
       }
     ],
@@ -1879,6 +2093,10 @@
       {
         "version": "4.2",
         "commit": "2fe5b325a8a54e77c545b2f511213420da133b8c"
+      },
+      {
+        "version": "5.0",
+        "commit": "2fe5b325a8a54e77c545b2f511213420da133b8c"
       }
     ],
     "maintainer": "matt@diephouse.com",
@@ -1906,6 +2124,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "5458733cb4d2a1ca6a457804921a5fac4b72fca2"
+      },
+      {
+        "version": "5.0",
         "commit": "5458733cb4d2a1ca6a457804921a5fac4b72fca2"
       }
     ],
@@ -2082,6 +2304,10 @@
       {
         "version": "4.2",
         "commit": "33ce18293ef42e5565ce285a15ee70ac9d5b121d"
+      },
+      {
+        "version": "5.0",
+        "commit": "33ce18293ef42e5565ce285a15ee70ac9d5b121d"
       }
     ],
     "platforms": [
@@ -2096,6 +2322,12 @@
         "xfail": {
           "compatibility": {
             "4.2": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250"
+              }
+            },
+            "5.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-8250",
                 "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250"
@@ -2192,6 +2424,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "38a328eefe5ffef13d28dcb2804d2772aecf6107"
+      },
+      {
+        "version": "5.0",
         "commit": "38a328eefe5ffef13d28dcb2804d2772aecf6107"
       }
     ],
@@ -2314,6 +2550,10 @@
       {
         "version": "4.2",
         "commit": "60f98ec50d74c6e6aa7c527493d844960653f3a6"
+      },
+      {
+        "version": "5.0",
+        "commit": "60f98ec50d74c6e6aa7c527493d844960653f3a6"
       }
     ],
     "maintainer": "jp@jpsim.com",
@@ -2407,6 +2647,10 @@
       {
         "version": "4.2",
         "commit": "e56d1cc41c51badcadcdff825484bf61bc48f418"
+      },
+      {
+        "version": "5.0",
+        "commit": "e56d1cc41c51badcadcdff825484bf61bc48f418"
       }
     ],
     "platforms": [
@@ -2432,6 +2676,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "b93c5d2bd883959262b4c7aabe333667dadb1ab0"
+      },
+      {
+        "version": "5.0",
         "commit": "b93c5d2bd883959262b4c7aabe333667dadb1ab0"
       }
     ],
@@ -2641,6 +2889,10 @@
       {
         "version": "4.2",
         "commit": "3edb1c0f557506d845362fda6d8564718435bfb1"
+      },
+      {
+        "version": "5.0",
+        "commit": "3edb1c0f557506d845362fda6d8564718435bfb1"
       }
     ],
     "platforms": [
@@ -2699,6 +2951,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "03555e5e2a517f977ba8736172115f0db2c645a8"
+      },
+      {
+        "version": "5.0",
         "commit": "03555e5e2a517f977ba8736172115f0db2c645a8"
       }
     ],
@@ -2776,6 +3032,10 @@
       },
       {
         "version": "4.2",
+        "commit": "d501cb83be55d67779dd2dc3e2dea53fdf78c39d"
+      },
+      {
+        "version": "5.0",
         "commit": "d501cb83be55d67779dd2dc3e2dea53fdf78c39d"
       }
     ],
@@ -2918,6 +3178,10 @@
       {
         "version": "4.2",
         "commit": "5b9796d39f201b3dd06800437abd9d774a455e57"
+      },
+      {
+        "version": "5.0",
+        "commit": "5b9796d39f201b3dd06800437abd9d774a455e57"
       }
     ],
     "platforms": [
@@ -2941,6 +3205,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "08a5764af95ccf0a08d0a510358c18628736070d"
+      },
+      {
+        "version": "5.0",
         "commit": "08a5764af95ccf0a08d0a510358c18628736070d"
       }
     ],
@@ -2966,6 +3234,10 @@
       {
         "version": "4.2",
         "commit": "3a17dbbe9be5f8c37703e4b7982c1332ad6b00c4"
+      },
+      {
+        "version": "5.0",
+        "commit": "3a17dbbe9be5f8c37703e4b7982c1332ad6b00c4"
       }
     ],
     "platforms": [
@@ -2989,6 +3261,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "e57007c23a52b68e44ebdfc70cbe882a7c4f1ec3"
+      },
+      {
+        "version": "5.0",
         "commit": "e57007c23a52b68e44ebdfc70cbe882a7c4f1ec3"
       }
     ],
@@ -3014,6 +3290,10 @@
       {
         "version": "4.2",
         "commit": "3219e328491b0853b8554c5a694add344d2c6cfb"
+      },
+      {
+        "version": "5.0",
+        "commit": "3219e328491b0853b8554c5a694add344d2c6cfb"
       }
     ],
     "platforms": [
@@ -3037,6 +3317,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "281a70b69783891900be31a9e70051b6fe19e146"
+      },
+      {
+        "version": "5.0",
         "commit": "281a70b69783891900be31a9e70051b6fe19e146"
       }
     ],
@@ -3062,6 +3346,10 @@
       {
         "version": "4.2",
         "commit": "db35b1c35aabd0f5db3abca0cfda7becfe9c43e2"
+      },
+      {
+        "version": "5.0",
+        "commit": "db35b1c35aabd0f5db3abca0cfda7becfe9c43e2"
       }
     ],
     "platforms": [
@@ -3086,6 +3374,10 @@
       {
         "version": "4.2",
         "commit": "cbfe7ef6301557d3f2d0807a98165232ae06e1c6"
+      },
+      {
+        "version": "5.0",
+        "commit": "cbfe7ef6301557d3f2d0807a98165232ae06e1c6"
       }
     ],
     "platforms": [
@@ -3109,6 +3401,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "156f8adeac3440e868da3757777884efbc6ec0cc"
+      },
+      {
+        "version": "5.0",
         "commit": "156f8adeac3440e868da3757777884efbc6ec0cc"
       }
     ],
