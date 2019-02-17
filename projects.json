@@ -232,6 +232,51 @@
   },
   {
     "repository": "Git",
+    "url": "git@github.com:DeclarativeHub/Bond.git",
+    "path": "Bond",
+    "branch": "master",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "256bb4bb2492670dd0f9957a7c0b178137b60a3a"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "maintainer": "srdan.rasic@gmail.com",
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Bond.xcworkspace",
+        "scheme": "Bond-macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Bond.xcworkspace",
+        "scheme": "Bond-iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Bond.xcworkspace",
+        "scheme": "Bond-tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "Bond.xcworkspace",
+        "scheme": "Bond-iOS",
+        "destination": "platform=iOS Simulator,name=iPhone XS"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/badoo/Chatto.git",
     "path": "Chatto",
     "branch": "master",
