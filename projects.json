@@ -232,7 +232,7 @@
   },
   {
     "repository": "Git",
-    "url": "git@github.com:DeclarativeHub/Bond.git",
+    "url": "https://github.com/DeclarativeHub/Bond.git",
     "path": "Bond",
     "branch": "master",
     "compatibility": [
@@ -2078,6 +2078,66 @@
         "scheme": "ReactiveCocoa-watchOS",
         "destination": "generic/platform=watchOS",
         "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/DeclarativeHub/ReactiveKit.git",
+    "path": "ReactiveKit",
+    "branch": "master",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "fcf4a94d8e0cdd4e312286668340609bb54ff417"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "maintainer": "srdan.rasic@gmail.com",
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "ReactiveKit.xcworkspace",
+        "scheme": "ReactiveKit-macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "ReactiveKit.xcworkspace",
+        "scheme": "ReactiveKit-iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "ReactiveKit.xcworkspace",
+        "scheme": "ReactiveKit-tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "ReactiveKit.xcworkspace",
+        "scheme": "ReactiveKit-watchOS",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "ReactiveKit.xcworkspace",
+        "scheme": "ReactiveKit-iOS",
+        "destination": "platform=iOS Simulator,name=iPhone XS"
+      },
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
       }
     ]
   },
