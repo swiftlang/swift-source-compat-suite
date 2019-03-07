@@ -74,15 +74,18 @@ class ProjectTarget(object):
 class XcodeTarget(ProjectTarget):
     """An Xcode workspace scheme."""
 
-    def __init__(self, swiftc, project, target, destination,
-                 added_xcodebuild_flags, is_workspace, has_scheme):
+    def __init__(self, swiftc, project, target, destination, env,
+                 added_xcodebuild_flags, is_workspace, has_scheme,
+                 clean_build):
         self._swiftc = swiftc
         self._project = project
         self._target = target
         self._destination = destination
+        self._env = env
         self._added_xcodebuild_flags = added_xcodebuild_flags
         self._is_workspace = is_workspace
         self._has_scheme = has_scheme
+        self._clean_build = clean_build
 
     @property
     def project_param(self):
@@ -108,14 +111,17 @@ class XcodeTarget(ProjectTarget):
 
         build_dir = os.path.join(build_parent_dir, 'build')
 
-        build = ['clean', 'build']
-        if incremental:
-            build = ['build']
+        build = []
+        if self._clean_build and not incremental:
+            build += ['clean']
+        build += ['build']
+
         dir_override = []
         if self._has_scheme:
-            dir_override = ['-derivedDataPath', build_dir]
-        else:
-            dir_override = ['SYMROOT=' + build_dir]
+            dir_override += ['-derivedDataPath', build_dir]
+        elif not 'SYMROOT' in self._env:
+            dir_override += ['SYMROOT=' + build_dir]
+        dir_override += [k + "=" + v for k, v in self._env.items()]
         command = (['xcodebuild']
                    + build
                    + [project_param, self._project,
@@ -321,6 +327,10 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
             initial_xcodebuild_flags += ['-configuration',
                                          action['configuration']]
 
+        build_env = {}
+        if 'environment' in action:
+            build_env = action['environment']
+
         other_swift_flags = []
         if swift_version:
             if '.' not in swift_version:
@@ -346,14 +356,19 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
         project_path = os.path.join(root_path, repo['path'],
                                     action[match.group(2).lower()])
         has_scheme = match.group(3).lower() == 'scheme'
+        clean_build = True
+        if 'clean_build' in action:
+            clean_build = action['clean_build']
         xcode_target = \
             XcodeTarget(swiftc,
                         project_path,
                         action[match.group(3).lower()],
                         action['destination'],
+                        build_env,
                         initial_xcodebuild_flags + added_xcodebuild_flags,
                         is_workspace,
-                        has_scheme)
+                        has_scheme,
+                        clean_build)
         if should_strip_resource_phases:
             strip_resource_phases(os.path.join(root_path, repo['path']),
                                   stdout=stdout, stderr=stderr)
