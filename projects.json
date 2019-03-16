@@ -2523,6 +2523,10 @@
       {
         "version": "4.0",
         "commit": "6c8c5d699db17f3726776656a09f058bb29d76ec"
+      },
+      {
+        "version": "4.2",
+        "commit": "f4948e01657156afbf0687cd4113990dd3c0971d"
       }
     ],
     "platforms": [
