@@ -232,13 +232,13 @@
     "path" : "*\/Dollar\/Sources\/Dollar.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 1766
+      "offset" : 14318
     },
     "applicableConfigs" : [
       "master",
       "swift-5.1-branch"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-10154"
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
   },
   {
     "path" : "*\/Dollar\/Sources\/Dollar.swift",
