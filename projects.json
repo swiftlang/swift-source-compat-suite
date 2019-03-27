@@ -1886,8 +1886,8 @@
     "maintainer": "ios.developer@plangrid.com",
     "compatibility": [
       {
-        "version": "4.2",
-        "commit": "2f06131ada093cccd411454ddab9a7dba24a9007"
+        "version": "5.0",
+        "commit": "40fe60af98138394e210672ccf31386c3ca0c951"
       }
     ],
     "platforms": [
