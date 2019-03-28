@@ -2777,8 +2777,8 @@
     "maintainer": "support@pointfree.co",
     "compatibility": [
       {
-        "version": "4.1",
-        "commit": "6e079815041dbd7f74d2a4ede9ab2ca4313f931b"
+        "version": "5.0",
+        "commit": "588090cd4f30ca323567811ac45182d93aded833"
       }
     ],
     "platforms": [
@@ -2791,82 +2791,32 @@
         "workspace": "Tagged.xcworkspace",
         "scheme": "Tagged-Package",
         "destination": "generic/platform=macOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9252",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9252"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Tagged.xcworkspace",
         "scheme": "Tagged-Package",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9252",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9252"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Tagged.xcworkspace",
         "scheme": "Tagged-Package",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9252",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9252"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Tagged.xcworkspace",
         "scheme": "Tagged-Package",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9252",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9252"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "4.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9252",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9252"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       },
       {
         "action": "TestSwiftPackage"
