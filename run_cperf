@@ -21,6 +21,7 @@ import random
 import re
 import shutil
 import sys
+import unittest
 
 import common
 
@@ -77,11 +78,32 @@ def workspace_comment():
         return None
 
 
+# Utility class for testing run_cperf against various data discovered in
+# the field; unfortunately we are not yet at the point where there's a
+# real testsuite for it, but this is a step.
+class SelfTest(unittest.TestCase):
+
+    args = None
+
+    def test_failed_modules(self):
+        configs = get_configs(self.args.suite)
+        (passed_modules, failed_modules) = find_module_statuses(configs,
+                                                                self.args)
+        print("passed: " + str(passed_modules))
+        print("failed: " + str(failed_modules))
+
+
 def main():
+
+    args = parse_args()
+    if args.self_test:
+        SelfTest.args = args
+        suite = unittest.TestLoader().loadTestsFromTestCase(SelfTest)
+        return unittest.TextTestRunner(verbosity=2).run(suite)
+
     common.debug_print('** RUN PULL-REQUEST CPERF **')
     os.chdir(os.path.dirname(__file__))
 
-    args = parse_args()
     instances = [NEW_INSTANCE, OLD_INSTANCE]
     configs = get_configs(args.suite)
 
@@ -90,12 +112,20 @@ def main():
         with open(ws_comment, 'w') as f:
             f.write("Compilation-performance test failed")
 
+    # First _get_ all the sources (with as little a gap between
+    # fetches as possible to minimize race possibility)
     for instance in instances:
         workspace = get_workspace_for_instance(instance, args)
 
         if args.setup_workspaces_for_pr:
             setup_workspace(instance, workspace, args)
         validate_workspace(instance, workspace, args)
+
+    # Then _build and test_ both workspaces, which can take
+    # longer since we're not concerned about racing on github
+    # anymore.
+    for instance in instances:
+        workspace = get_workspace_for_instance(instance, args)
 
         if not args.skip_build:
             build_swift_toolchain(workspace, args)
@@ -104,18 +134,6 @@ def main():
             execute_runner(instance, workspace, configs, args)
 
     regressions = analyze_results(configs, args)
-
-    # Crude hack to write output to workspace when in CI,
-    # regardless of --output passed.
-    if ws_comment is not None:
-        out = os.path.abspath(os.path.join(os.getcwd(),
-                                           args.output.name))
-        print("Output written to: %s" % out)
-        if out != ws_comment:
-            print("Copying %s to %s" % (out, ws_comment))
-            args.output.close()
-            shutil.copyfile(out, ws_comment)
-
     return regressions
 
 
@@ -354,34 +372,50 @@ def get_baseline_name(variant):
 def all_driver_stats_files(configs, args):
     for config in configs:
         variant = get_variant(config, args)
-        sd_old = get_stats_dir(OLD_INSTANCE, variant)
-        sd_new = get_stats_dir(NEW_INSTANCE, variant)
-        for sd in [sd_old, sd_new]:
-            for root, dirs, files in os.walk(sd):
+        for instance in [OLD_INSTANCE, NEW_INSTANCE]:
+            for root, dirs, files in os.walk(get_stats_dir(instance, variant)):
                 for f in files:
                     m = re.match(r'stats-\d+-swift-driver-([^-]+).*\.json', f)
                     if m:
                         try:
                             with open(os.path.join(root, f)) as fp:
                                 j = json.load(fp)
-                            yield (m.group(1), j)
+                            yield (config, instance, m.group(1), j)
                         except ValueError:
                             # Something sufficiently bad happened that
                             # we can't read the json: build a fake one.
-                            yield (m.group(1), {})
+                            yield (config, instance, m.group(1), {})
 
 
 def find_module_statuses(configs, args):
     passed = set()
     failed = set()
     k = 'Driver.NumProcessFailures'
-    for (module, j) in all_driver_stats_files(configs, args):
+    module_sets = {}
+    for config in configs:
+        module_sets[config] = {}
+        module_sets[config][OLD_INSTANCE] = set()
+        module_sets[config][NEW_INSTANCE] = set()
+
+    for (config, instance, module, j) in all_driver_stats_files(configs, args):
         # Treat a module as failed if there was >0 process failures,
-        # or we can't tell.
+        # or we can't tell, _or_ it's in one instance but not in the other.
+        module_sets[config][instance].add(module)
         if j.get(k, 1) == 0:
             passed.add(module)
         else:
             failed.add(module)
+
+    mismatched_modules = None
+    for config in configs:
+        for instance in [OLD_INSTANCE, NEW_INSTANCE]:
+            mods = module_sets[config][instance]
+            if mismatched_modules is None:
+                mismatched_modules = mods
+            else:
+                mismatched_modules.symmetric_difference_update(mods)
+    failed.update(mismatched_modules)
+    passed.difference_update(mismatched_modules)
     return (passed, failed)
 
 
@@ -587,6 +621,8 @@ def parse_args():
                         type=bool, default=False)
     parser.add_argument('--group-by-module',
                         type=bool, default=False)
+    parser.add_argument('--self-test',
+                        action='store_true')
     return parser.parse_args()
 
 

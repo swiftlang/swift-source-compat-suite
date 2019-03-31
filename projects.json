@@ -9,6 +9,14 @@
       {
         "version": "4.0",
         "commit": "de70ea613ca1648e98650fdade4f003f4223b510"
+      },
+      {
+        "version": "4.2",
+        "commit": "8bfcc8b881634c97d0b46705f0ba43f692ad8644"
+      },
+      {
+        "version": "5.0",
+        "commit": "8bfcc8b881634c97d0b46705f0ba43f692ad8644"
       }
     ],
     "platforms": [
@@ -33,8 +41,8 @@
     "maintainer": "cnoon@alamofire.org",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "b03b43cc381ec02eb9855085427186ef89055eef"
+        "version": "4.0",
+        "commit": "a5cd9e233f24df3583f4b02f7e4722c076ab9032"
       }
     ],
     "platforms": [
@@ -54,7 +62,7 @@
         "scheme": "Alamofire macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -167,7 +175,7 @@
     "compatibility": [
       {
         "version": "4.0",
-        "commit": "189b40655da001a9599337767687857b4cf91b36"
+        "commit": "6e6b0f86670d357d71db0a60fe3b1bb7d24dac33"
       }
     ],
     "platforms": [
@@ -177,29 +185,11 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "debug",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "TestSwiftPackage",
-        "configuration": "debug",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234"
-              }
-            }
-          }
-        }
+        "configuration": "debug"
       }
     ]
   },
@@ -211,8 +201,12 @@
     "maintainer": "babt@us.ibm.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "b0dcf15387be3641ecafea52f872fcd106cb644a"
+        "version": "4.2",
+        "commit": "fb4e74cd8eb3ce4a2b860fbf727b2dada796d77d"
+      },
+      {
+        "version": "5.0",
+        "commit": "fb4e74cd8eb3ce4a2b860fbf727b2dada796d77d"
       }
     ],
     "platforms": [
@@ -257,8 +251,7 @@
         "workspace": "Chatto.xcworkspace",
         "scheme": "Chatto",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "configuration": "Release"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -272,7 +265,7 @@
         "scheme": "ChattoAdditions",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -358,6 +351,14 @@
       {
         "version": "4.0",
         "commit": "83e6082c5646c5eb4d3130ce575ab858df168c59"
+      },
+      {
+        "version": "4.2",
+        "commit": "2863605d845cd9bb255ddd91f47f92717dec637f"
+      },
+      {
+        "version": "5.0",
+        "commit": "2863605d845cd9bb255ddd91f47f92717dec637f"
       }
     ],
     "platforms": [
@@ -369,7 +370,17 @@
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -377,28 +388,51 @@
         "scheme": "CoreStore OSX",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "CoreStore.xcworkspace",
-        "scheme": "CoreStoreDemo",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -449,7 +483,7 @@
         "scheme": "Cub macOS Release [Double]",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -478,7 +512,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit"
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "TestSwiftPackage"
@@ -493,6 +527,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "c374a6e7072ed88ed0c79299098ca2ba7c27e720"
+      },
+      {
+        "version": "5.0",
         "commit": "c374a6e7072ed88ed0c79299098ca2ba7c27e720"
       }
     ],
@@ -512,21 +550,51 @@
         "project": "Deferred.xcodeproj",
         "scheme": "MobileDeferred",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "Deferred.xcodeproj",
         "scheme": "TVDeferred",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "Deferred.xcodeproj",
         "scheme": "NanoDeferred",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestSwiftPackage"
@@ -594,7 +662,7 @@
     "maintainer": "brent@ranchero.com",
     "compatibility": [
       {
-        "version": "4.2",
+        "version": "4.0",
         "commit": "ce0d2450b83ec8c5dee6bb9c612b3eb06ba39c47"
       }
     ],
@@ -622,6 +690,10 @@
       {
         "version": "4.2",
         "commit": "38a17de8717a2282fd4ff62cd1ce732b926bf4ab"
+      },
+      {
+        "version": "5.0",
+        "commit": "38a17de8717a2282fd4ff62cd1ce732b926bf4ab"
       }
     ],
     "platforms": [
@@ -631,13 +703,20 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release", 
+        "configuration": "release",
         "tags": "sourcekit",
         "xfail": {
           "compatibility": {
             "4.2": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8307"
+                "master": "https://bugs.swift.org/browse/SR-8307",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8307"
+              }
+            },
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8307",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8307"
               }
             }
           }
@@ -673,17 +752,19 @@
         "project": "xswift.xcodeproj",
         "target": "xswift",
         "destination": "generic/platform=macOS",
-        "configuration": "Release", 
+        "configuration": "Release",
         "xfail": {
           "compatibility": {
             "4.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8307"
+                "master": "https://bugs.swift.org/browse/SR-8307",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8307"
               }
             },
             "4.1": {
               "branch": {
-                 "master": "https://bugs.swift.org/browse/SR-8307"
+                 "master": "https://bugs.swift.org/browse/SR-8307",
+                 "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8307"
               }
             }
           }
@@ -700,6 +781,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "270b6fa372f03809b9795e8f8b9d1c31267a0ff3"
+      },
+      {
+        "version": "5.0",
         "commit": "270b6fa372f03809b9795e8f8b9d1c31267a0ff3"
       }
     ],
@@ -721,8 +806,12 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "f121c6b1393aacf6d1956ea9edf0dd1e9c34977f"
+        "version": "4.2",
+        "commit": "759c1088a1d9ba94f44009295fd17c20b1375524"
+      },
+      {
+        "version": "5.0",
+        "commit": "759c1088a1d9ba94f44009295fd17c20b1375524"
       }
     ],
     "platforms": [
@@ -733,16 +822,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "TestSwiftPackage"
@@ -774,11 +854,42 @@
           "compatibility": {
             "4.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8250"
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250"
               }
             }
           }
         }
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/pointfreeco/swift-html.git",
+    "path": "Html",
+    "branch": "master",
+    "maintainer": "support@pointfree.co",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "e6952b9246dd9bf27d613ed7b4791ff19136f6c8"
+      },
+      {
+        "version": "5.0",
+        "commit": "e6952b9246dd9bf27d613ed7b4791ff19136f6c8"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
       },
       {
         "action": "TestSwiftPackage"
@@ -807,7 +918,7 @@
         "scheme": "IBAnimatable",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -826,12 +937,12 @@
     "maintainer": "jesse@jessesquires.com",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "c48fed73909a295d9aa80e22a4a0e26a04301723"
+        "version": "4.2",
+        "commit": "e651887d0a621c6b66ca09c2e8cea9fce691c00e"
       },
       {
-        "version": "3.0",
-        "commit": "5e8b8327fc87c008e718a2c1aa0a78b7eac16a53"
+        "version": "5.0",
+        "commit": "e651887d0a621c6b66ca09c2e8cea9fce691c00e"
       }
     ],
     "platforms": [
@@ -841,7 +952,7 @@
       {
         "action": "BuildXcodeProjectTarget",
         "project": "JSQCoreDataKit.xcodeproj",
-        "target": "JSQCoreDataKit-iOS",
+        "target": "JSQCoreDataKit",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
         "tags": "sourcekit"
@@ -849,8 +960,8 @@
       {
         "action": "TestXcodeProjectScheme",
         "project": "JSQCoreDataKit.xcodeproj",
-        "scheme": "JSQCoreDataKitTests",
-        "destination": "platform=iOS Simulator,name=iPhone 6s"
+        "scheme": "JSQCoreDataKit-Tests",
+        "destination": "platform=iOS Simulator,name=iPhone X"
       }
     ]
   },
@@ -864,10 +975,6 @@
       {
         "version": "4.0",
         "commit": "25ee7e2e2ab50d5e2237292ddc74973c68aee89a"
-      },
-      {
-        "version": "3.0",
-        "commit": "b764e341713d67ab9c8160929f46e55ad1e2ca07"
       }
     ],
     "platforms": [
@@ -898,8 +1005,12 @@
     "maintainer": "kishikawakatsumi@mac.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "6e3d9679fd49c7ae8869454e76edf1306983c62c"
+        "version": "4.2",
+        "commit": "0fffcc37adcf55d3557f1e06dd0172ace582effe"
+      },
+      {
+        "version": "5.0",
+        "commit": "0fffcc37adcf55d3557f1e06dd0172ace582effe"
       }
     ],
     "platforms": [
@@ -942,11 +1053,11 @@
     "url": "https://github.com/kickstarter/Kickstarter-Prelude",
     "path": "Kickstarter-Prelude",
     "branch": "master",
-    "maintainer": "stephen@stephencelis.com",
+    "maintainer": "appledev@kickstarter.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "9b2cc23ce8acf29b4b666a80a665c67cba800aac"
+        "version": "4.0",
+        "commit": "8988b02ab963294d98d8f37d1a7dc0ee392fcd8d"
       }
     ],
     "platforms": [
@@ -964,24 +1075,10 @@
       {
         "action": "BuildXcodeProjectScheme",
         "project": "Prelude.xcodeproj",
-        "scheme": "Prelude-tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "Prelude.xcodeproj",
         "scheme": "Prelude-UIKit-iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
         "tags": "sourcekit"
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "Prelude.xcodeproj",
-        "scheme": "Prelude-UIKit-tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release"
       }
     ]
   },
@@ -990,11 +1087,11 @@
     "url": "https://github.com/kickstarter/Kickstarter-ReactiveExtensions",
     "path": "Kickstarter-ReactiveExtensions",
     "branch": "master",
-    "maintainer": "stephen@stephencelis.com",
+    "maintainer": "appledev@kickstarter.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "732eab9da730699f264dceb4f423586754191d67"
+        "version": "4.0",
+        "commit": "6b7887e7b38ebd81e2d04a936e64998b0f634e98"
       }
     ],
     "platforms": [
@@ -1012,7 +1109,8 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8270"
+                "master": "https://bugs.swift.org/browse/SR-8270",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8270"
               }
             }
           }
@@ -1028,39 +1126,8 @@
           "compatibility": {
             "3.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8270"
-              }
-            }
-          }
-        }
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "ReactiveExtensions.xcodeproj",
-        "scheme": "ReactiveExtensions-TestHelpers-tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8270"
-              }
-            }
-          }
-        }
-      },
-      {
-        "action": "BuildXcodeProjectScheme",
-        "project": "ReactiveExtensions.xcodeproj",
-        "scheme": "ReactiveExtensions-tvOS",
-        "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8270"
+                "master": "https://bugs.swift.org/browse/SR-8270",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8270"
               }
             }
           }
@@ -1153,6 +1220,10 @@
       {
         "version": "4.2",
         "commit": "d38491d123fb58897ecb339920cf69da479d19d0"
+      },
+      {
+        "version": "5.0",
+        "commit": "d38491d123fb58897ecb339920cf69da479d19d0"
       }
     ],
     "platforms": [
@@ -1216,19 +1287,68 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/line/line-sdk-ios-swift.git",
+    "path": "line-sdk-ios-swift",
+    "branch": "master",
+    "maintainer": "dl_linesdk_cocoapods@linecorp.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "d8bb2bc535e2895b5fbe66f4872327b654d19a34"
+      },
+      {
+        "version": "5.0",
+        "commit": "d8bb2bc535e2895b5fbe66f4872327b654d19a34"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "LineSDK.xcworkspace",
+        "scheme": "LineSDK",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/ssamadgh/ModelAssistant.git",
+    "path": "ModelAssistant",
+    "branch": "master",
+    "maintainer": "ssamadgh@gmail.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "e880839b9185a33acb8683413a89cca44d1955ef"
+      },
+      {
+        "version": "5.0",
+        "commit": "e880839b9185a33acb8683413a89cca44d1955ef"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "ModelAssistant.xcodeproj",
+        "scheme": "ModelAssistant iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
       }
     ]
   },
@@ -1256,7 +1376,8 @@
           "compatibility": {
             "4.0": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234"
+                "master": "https://bugs.swift.org/browse/SR-8234",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8234"
               }
             }
           }
@@ -1275,8 +1396,12 @@
     "maintainer": "bouke@haarsma.eu",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "51256c161c32570267174469ac3826b7bb3da113"
+        "version": "4.2",
+        "commit": "927eb171a738266b9b98fc6ca0506fb95f241b05"
+      },
+      {
+        "version": "5.0",
+        "commit": "927eb171a738266b9b98fc6ca0506fb95f241b05"
       }
     ],
     "platforms": [
@@ -1287,16 +1412,61 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/pointfreeco/swift-nonempty.git",
+    "path": "NonEmpty",
+    "branch": "master",
+    "maintainer": "support@pointfree.co",
+    "compatibility": [
+      {
+        "version": "4.1",
+        "commit": "1fe8684a8c2513bbc2388a464a871a434202edc2"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "NonEmpty.xcworkspace",
+        "scheme": "NonEmpty-Package",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "NonEmpty.xcworkspace",
+        "scheme": "NonEmpty-Package",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "NonEmpty.xcworkspace",
+        "scheme": "NonEmpty-Package",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "NonEmpty.xcworkspace",
+        "scheme": "NonEmpty-Package",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
       },
       {
         "action": "TestSwiftPackage"
@@ -1312,6 +1482,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "ed1caa237b9742135996fefe3682b834bb394a6a"
+      },
+      {
+        "version": "5.0",
         "commit": "ed1caa237b9742135996fefe3682b834bb394a6a"
       }
     ],
@@ -1352,6 +1526,64 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/pointfreeco/swift-overture.git",
+    "path": "Overture",
+    "branch": "master",
+    "maintainer": "support@pointfree.co",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "1632b5dd5862bb2d377be79d5063d2161a7559e5"
+      },
+      {
+        "version": "5.0",
+        "commit": "1632b5dd5862bb2d377be79d5063d2161a7559e5"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Overture.xcworkspace",
+        "scheme": "Overture-Package",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Overture.xcworkspace",
+        "scheme": "Overture-Package",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Overture.xcworkspace",
+        "scheme": "Overture-Package",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Overture.xcworkspace",
+        "scheme": "Overture-Package",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/PerfectlySoft/Perfect.git",
     "path": "Perfect",
     "branch": "master",
@@ -1359,6 +1591,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "cdc17d544ec8e87da5f3b24cdbda8d02d77bb943"
+      },
+      {
+        "version": "5.0",
         "commit": "cdc17d544ec8e87da5f3b24cdbda8d02d77bb943"
       }
     ],
@@ -1382,6 +1618,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "5c15634de4ff3152e9ccede6543c83ed93e2cf7b"
+      },
+      {
+        "version": "5.0",
         "commit": "5c15634de4ff3152e9ccede6543c83ed93e2cf7b"
       }
     ],
@@ -1412,7 +1652,14 @@
           "compatibility": {
             "4.2": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8250"
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250"
+              }
+            },
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250"
               }
             }
           }
@@ -1446,6 +1693,10 @@
       {
         "version": "4.2",
         "commit": "71a3a5ce5e38161eaf4e46a7f609f2e4523d8248"
+      },
+      {
+        "version": "5.0",
+        "commit": "71a3a5ce5e38161eaf4e46a7f609f2e4523d8248"
       }
     ],
     "maintainer": "rmalik@pinterest.com",
@@ -1472,8 +1723,12 @@
     "maintainer": "danthorpe@me.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "d6389ea98ec2e0d17ab368f40045bfe48622ac67"
+        "version": "4.2",
+        "commit": "94193d59bc06689526772023428402da1e0e299f"
+      },
+      {
+        "version": "5.0",
+        "commit": "94193d59bc06689526772023428402da1e0e299f"
       }
     ],
     "platforms": [
@@ -1486,14 +1741,34 @@
         "target": "ProcedureKit",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectTarget",
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKit",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -1507,7 +1782,17 @@
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKit",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -1518,9 +1803,10 @@
         "tags": "sourcekit",
         "xfail": {
           "compatibility": {
-            "3.0": {
+            "5.0": {
               "branch": {
-                "swift-4.0-branch": "rdar://35814436"
+                "master": "https://bugs.swift.org/browse/SR-9899",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899"
               }
             }
           }
@@ -1592,6 +1878,10 @@
       {
         "version": "4.2",
         "commit": "f96758593573d3d1d9ae8084721033ab0bf392f6"
+      },
+      {
+        "version": "5.0",
+        "commit": "f96758593573d3d1d9ae8084721033ab0bf392f6"
       }
     ],
     "platforms": [
@@ -1642,8 +1932,12 @@
     "maintainer": "Benjamin.Encz@gmail.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "db35c2e64bb9c8385a821d580c1dad6c113d073d"
+        "version": "4.2",
+        "commit": "beeb3c6368d573980a703ea37ab58e01f2a825c5"
+      },
+      {
+        "version": "5.0",
+        "commit": "beeb3c6368d573980a703ea37ab58e01f2a825c5"
       }
     ],
     "platforms": [
@@ -1785,6 +2079,10 @@
       {
         "version": "4.2",
         "commit": "2fe5b325a8a54e77c545b2f511213420da133b8c"
+      },
+      {
+        "version": "5.0",
+        "commit": "2fe5b325a8a54e77c545b2f511213420da133b8c"
       }
     ],
     "maintainer": "matt@diephouse.com",
@@ -1796,7 +2094,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit"
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "TestSwiftPackage"
@@ -1811,8 +2109,12 @@
     "maintainer": "krunoslav.zaher@gmail.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "c06ebe2207ed3a74d69a9d9b9bb59b48b64a09b4"
+        "version": "4.2",
+        "commit": "5458733cb4d2a1ca6a457804921a5fac4b72fca2"
+      },
+      {
+        "version": "5.0",
+        "commit": "5458733cb4d2a1ca6a457804921a5fac4b72fca2"
       }
     ],
     "platforms": [
@@ -1820,37 +2122,8 @@
     ],
     "actions": [
       {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Pods/Pods.xcodeproj",
-        "target": "Pods-RxDataSources",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8271"
-              }
-            }
-          }
-        }
-      },
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Pods/Pods.xcodeproj",
-        "target": "Pods-Example",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8271"
-              }
-            }
-          }
-        }
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
       }
     ]
   },
@@ -1876,7 +2149,7 @@
         "scheme": "RxSwift-macOS",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -1905,7 +2178,7 @@
         "scheme": "RxCocoa-macOS",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -2017,6 +2290,10 @@
       {
         "version": "4.2",
         "commit": "33ce18293ef42e5565ce285a15ee70ac9d5b121d"
+      },
+      {
+        "version": "5.0",
+        "commit": "33ce18293ef42e5565ce285a15ee70ac9d5b121d"
       }
     ],
     "platforms": [
@@ -2032,7 +2309,14 @@
           "compatibility": {
             "4.2": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8250"
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250"
+              }
+            },
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250"
               }
             }
           }
@@ -2065,6 +2349,7 @@
             "4.0": {
               "branch": {
                 "master": "https://bugs.swift.org/browse/SR-8046",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8046",
                 "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8046"
               }
             }
@@ -2124,8 +2409,12 @@
     "maintainer": "rfdickerson@gmail.com",
     "compatibility": [
       {
-        "version": "3.2",
-        "commit": "64d93875a2aa9391724b039867be567ead84a11a"
+        "version": "4.2",
+        "commit": "38a328eefe5ffef13d28dcb2804d2772aecf6107"
+      },
+      {
+        "version": "5.0",
+        "commit": "38a328eefe5ffef13d28dcb2804d2772aecf6107"
       }
     ],
     "platforms": [
@@ -2135,10 +2424,31 @@
       {
         "action": "BuildXcodeProjectScheme",
         "project": "Surge.xcodeproj",
-        "scheme": "Surge",
+        "scheme": "Surge-iOS",
         "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "Surge.xcodeproj",
+        "scheme": "Surge-macOS",
+        "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit"
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "Surge.xcodeproj",
+        "scheme": "Surge-tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "Surge.xcodeproj",
+        "scheme": "Surge-watchOS",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
       }
     ]
   },
@@ -2199,6 +2509,10 @@
       {
         "version": "4.0",
         "commit": "6c8c5d699db17f3726776656a09f058bb29d76ec"
+      },
+      {
+        "version": "4.2",
+        "commit": "f4948e01657156afbf0687cd4113990dd3c0971d"
       }
     ],
     "platforms": [
@@ -2225,6 +2539,10 @@
       },
       {
         "version": "4.2",
+        "commit": "60f98ec50d74c6e6aa7c527493d844960653f3a6"
+      },
+      {
+        "version": "5.0",
         "commit": "60f98ec50d74c6e6aa7c527493d844960653f3a6"
       }
     ],
@@ -2319,6 +2637,10 @@
       {
         "version": "4.2",
         "commit": "e56d1cc41c51badcadcdff825484bf61bc48f418"
+      },
+      {
+        "version": "5.0",
+        "commit": "e56d1cc41c51badcadcdff825484bf61bc48f418"
       }
     ],
     "platforms": [
@@ -2344,6 +2666,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "b93c5d2bd883959262b4c7aabe333667dadb1ab0"
+      },
+      {
+        "version": "5.0",
         "commit": "b93c5d2bd883959262b4c7aabe333667dadb1ab0"
       }
     ],
@@ -2441,6 +2767,110 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/pointfreeco/swift-tagged.git",
+    "path": "Tagged",
+    "branch": "master",
+    "maintainer": "support@pointfree.co",
+    "compatibility": [
+      {
+        "version": "4.1",
+        "commit": "6e079815041dbd7f74d2a4ede9ab2ca4313f931b"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Tagged.xcworkspace",
+        "scheme": "Tagged-Package",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9252",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9252"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Tagged.xcworkspace",
+        "scheme": "Tagged-Package",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9252",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9252"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Tagged.xcworkspace",
+        "scheme": "Tagged-Package",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9252",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9252"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Tagged.xcworkspace",
+        "scheme": "Tagged-Package",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9252",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9252"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-9252",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9252"
+              }
+            }
+          }
+        }
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/devxoul/Then.git",
     "path": "Then",
     "branch": "master",
@@ -2448,6 +2878,10 @@
     "compatibility": [
       {
         "version": "4.2",
+        "commit": "3edb1c0f557506d845362fda6d8564718435bfb1"
+      },
+      {
+        "version": "5.0",
         "commit": "3edb1c0f557506d845362fda6d8564718435bfb1"
       }
     ],
@@ -2489,7 +2923,8 @@
           "compatibility": {
             "3.1": {
               "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8250"
+                "master": "https://bugs.swift.org/browse/SR-8250",
+                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250"
               }
             }
           }
@@ -2505,8 +2940,12 @@
     "maintainer": "alejandro.ruperez@intelygenz.com",
     "compatibility": [
       {
-        "version": "3.1",
-        "commit": "1d258f90416b82cafa2b1cf0146720ce99ceaf28"
+        "version": "4.2",
+        "commit": "03555e5e2a517f977ba8736172115f0db2c645a8"
+      },
+      {
+        "version": "5.0",
+        "commit": "03555e5e2a517f977ba8736172115f0db2c645a8"
       }
     ],
     "platforms": [
@@ -2552,8 +2991,8 @@
     "maintainer": "contact@alexruperez.com",
     "compatibility": [
       {
-        "version": "3.1",
-        "commit": "9af0557c932b69648ff5aa0c70b5468fdf65cb93"
+        "version": "4.0",
+        "commit": "f168b4fd2757cbda7092c3db8685dc2854b80003"
       }
     ],
     "platforms": [
@@ -2583,6 +3022,10 @@
       },
       {
         "version": "4.2",
+        "commit": "d501cb83be55d67779dd2dc3e2dea53fdf78c39d"
+      },
+      {
+        "version": "5.0",
         "commit": "d501cb83be55d67779dd2dc3e2dea53fdf78c39d"
       }
     ],
@@ -2717,14 +3160,18 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/vapor/vapor.git",
-    "path": "vapor",
+    "url": "https://github.com/vapor/console.git",
+    "path": "vapor_console",
     "branch": "master",
     "maintainer": "tanner@vapor.codes",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "652e8d8316696bd0f0bbde07da555210e81557f1"
+        "version": "4.2",
+        "commit": "5b9796d39f201b3dd06800437abd9d774a455e57"
+      },
+      {
+        "version": "5.0",
+        "commit": "5b9796d39f201b3dd06800437abd9d774a455e57"
       }
     ],
     "platforms": [
@@ -2735,17 +3182,231 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "3.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-7233",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-7233"
-              }
-            }
-          }
-	}
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/core.git",
+    "path": "vapor_core",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "08a5764af95ccf0a08d0a510358c18628736070d"
+      },
+      {
+        "version": "5.0",
+        "commit": "08a5764af95ccf0a08d0a510358c18628736070d"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/database-kit.git",
+    "path": "vapor_database-kit",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "3a17dbbe9be5f8c37703e4b7982c1332ad6b00c4"
+      },
+      {
+        "version": "5.0",
+        "commit": "3a17dbbe9be5f8c37703e4b7982c1332ad6b00c4"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/multipart.git",
+    "path": "vapor_multipart",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "e57007c23a52b68e44ebdfc70cbe882a7c4f1ec3"
+      },
+      {
+        "version": "5.0",
+        "commit": "e57007c23a52b68e44ebdfc70cbe882a7c4f1ec3"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/routing.git",
+    "path": "vapor_routing",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "3219e328491b0853b8554c5a694add344d2c6cfb"
+      },
+      {
+        "version": "5.0",
+        "commit": "3219e328491b0853b8554c5a694add344d2c6cfb"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/service.git",
+    "path": "vapor_service",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "281a70b69783891900be31a9e70051b6fe19e146"
+      },
+      {
+        "version": "5.0",
+        "commit": "281a70b69783891900be31a9e70051b6fe19e146"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/template-kit.git",
+    "path": "vapor_template-kit",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "db35b1c35aabd0f5db3abca0cfda7becfe9c43e2"
+      },
+      {
+        "version": "5.0",
+        "commit": "db35b1c35aabd0f5db3abca0cfda7becfe9c43e2"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/url-encoded-form.git",
+    "path": "vapor_url-encoded-form",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "cbfe7ef6301557d3f2d0807a98165232ae06e1c6"
+      },
+      {
+        "version": "5.0",
+        "commit": "cbfe7ef6301557d3f2d0807a98165232ae06e1c6"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/validation.git",
+    "path": "vapor_validation",
+    "branch": "master",
+    "maintainer": "tanner@vapor.codes",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "156f8adeac3440e868da3757777884efbc6ec0cc"
+      },
+      {
+        "version": "5.0",
+        "commit": "156f8adeac3440e868da3757777884efbc6ec0cc"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
       }
     ]
   }

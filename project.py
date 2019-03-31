@@ -115,6 +115,7 @@ class XcodeTarget(ProjectTarget):
                    + dir_override
                    + ['CODE_SIGN_IDENTITY=',
                       'CODE_SIGNING_REQUIRED=NO',
+                      'ENTITLEMENTS_REQUIRED=NO',
                       'ENABLE_BITCODE=NO',
                       'INDEX_ENABLE_DATA_STORE=NO',
                       'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
@@ -124,6 +125,8 @@ class XcodeTarget(ProjectTarget):
                 command += ['-configuration', value]
             else:
                 command += ['%s=%s' % (setting, value)]
+        if self._destination == 'generic/platform=watchOS':
+            command += ['ARCHS=armv7k']
 
         return command
 
@@ -233,6 +236,18 @@ def test_swift_package(path, swiftc, sandbox_profile,
                                 sandbox_profile=sandbox_profile,
                                 stdout=stdout, stderr=stderr,
                                 env=env)
+
+
+def checkout(root_path, repo, commit):
+    """Checkout an indexed repository."""
+    path = os.path.join(root_path, repo['path'])
+    if repo['repository'] == 'Git':
+        if os.path.exists(path):
+            return common.git_update(repo['url'], commit, path)
+        else:
+            return common.git_clone(repo['url'], path, tree=commit)
+    raise common.Unreachable('Unsupported repository: %s' %
+                             repo['repository'])
 
 
 def strip_resource_phases(repo_path, stdout=sys.stdout, stderr=sys.stderr):

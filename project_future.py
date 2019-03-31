@@ -74,15 +74,18 @@ class ProjectTarget(object):
 class XcodeTarget(ProjectTarget):
     """An Xcode workspace scheme."""
 
-    def __init__(self, swiftc, project, target, destination,
-                 added_xcodebuild_flags, is_workspace, has_scheme):
+    def __init__(self, swiftc, project, target, destination, env,
+                 added_xcodebuild_flags, is_workspace, has_scheme,
+                 clean_build):
         self._swiftc = swiftc
         self._project = project
         self._target = target
         self._destination = destination
+        self._env = env
         self._added_xcodebuild_flags = added_xcodebuild_flags
         self._is_workspace = is_workspace
         self._has_scheme = has_scheme
+        self._clean_build = clean_build
 
     @property
     def project_param(self):
@@ -99,16 +102,26 @@ class XcodeTarget(ProjectTarget):
     def get_build_command(self, incremental=False):
         project_param = self.project_param
         target_param = self.target_param
-        build_dir = os.path.join(os.path.dirname(self._project),
-                                 'build')
-        build = ['clean', 'build']
-        if incremental:
-            build = ['build']
+        try:
+            build_parent_dir = common.check_execute_output([
+                'git', '-C', os.path.dirname(self._project),
+                'rev-parse', '--show-toplevel']).rstrip()
+        except common.ExecuteCommandFailure as error:
+            build_parent_dir = os.path.dirname(self._project)
+
+        build_dir = os.path.join(build_parent_dir, 'build')
+
+        build = []
+        if self._clean_build and not incremental:
+            build += ['clean']
+        build += ['build']
+
         dir_override = []
         if self._has_scheme:
-            dir_override = ['-derivedDataPath', build_dir]
-        else:
-            dir_override = ['SYMROOT=' + build_dir]
+            dir_override += ['-derivedDataPath', build_dir]
+        elif not 'SYMROOT' in self._env:
+            dir_override += ['SYMROOT=' + build_dir]
+        dir_override += [k + "=" + v for k, v in self._env.items()]
         command = (['xcodebuild']
                    + build
                    + [project_param, self._project,
@@ -117,12 +130,15 @@ class XcodeTarget(ProjectTarget):
                    + dir_override
                    + ['CODE_SIGN_IDENTITY=',
                       'CODE_SIGNING_REQUIRED=NO',
+                      'ENTITLEMENTS_REQUIRED=NO',
                       'ENABLE_BITCODE=NO',
-                      '-UseNewBuildSystem=NO',
                       'INDEX_ENABLE_DATA_STORE=NO',
                       'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
                       'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO'])
         command += self._added_xcodebuild_flags
+
+        if self._destination == 'generic/platform=watchOS':
+            command += ['ARCHS=armv7k']
 
         return command
 
@@ -231,6 +247,18 @@ def test_swift_package(path, swiftc, sandbox_profile,
                                 env=env)
 
 
+def checkout(root_path, repo, commit):
+    """Checkout an indexed repository."""
+    path = os.path.join(root_path, repo['path'])
+    if repo['repository'] == 'Git':
+        if os.path.exists(path):
+            return common.git_update(repo['url'], commit, path)
+        else:
+            return common.git_clone(repo['url'], path, tree=commit)
+    raise common.Unreachable('Unsupported repository: %s' %
+                             repo['repository'])
+
+
 def strip_resource_phases(repo_path, stdout=sys.stdout, stderr=sys.stderr):
     """Strip resource build phases from a given project."""
     command = ['perl', '-i', '-00ne',
@@ -299,10 +327,25 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
             initial_xcodebuild_flags += ['-configuration',
                                          action['configuration']]
 
+        build_env = {}
+        if 'environment' in action:
+            build_env = action['environment']
+
         other_swift_flags = []
         if swift_version:
-            other_swift_flags += ['-swift-version', swift_version.split('.')[0]]
-            initial_xcodebuild_flags += ['SWIFT_VERSION=%s' % swift_version.split('.')[0]]
+            if '.' not in swift_version:
+                swift_version += '.0'
+
+            major, minor = swift_version.split('.', 1)
+            # Need to use float for minor version parsing
+            # because it's possible that it would be specified
+            # as e.g. `4.0.3`
+            if int(major) == 4 and float(minor) == 2.0:
+                other_swift_flags += ['-swift-version', swift_version]
+                initial_xcodebuild_flags += ['SWIFT_VERSION=%s' % swift_version]
+            else:
+                other_swift_flags += ['-swift-version', major]
+                initial_xcodebuild_flags += ['SWIFT_VERSION=%s' % major]
         if added_swift_flags:
             other_swift_flags.append(added_swift_flags)
         if other_swift_flags:
@@ -313,14 +356,19 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
         project_path = os.path.join(root_path, repo['path'],
                                     action[match.group(2).lower()])
         has_scheme = match.group(3).lower() == 'scheme'
+        clean_build = True
+        if 'clean_build' in action:
+            clean_build = action['clean_build']
         xcode_target = \
             XcodeTarget(swiftc,
                         project_path,
                         action[match.group(3).lower()],
                         action['destination'],
+                        build_env,
                         initial_xcodebuild_flags + added_xcodebuild_flags,
                         is_workspace,
-                        has_scheme)
+                        has_scheme,
+                        clean_build)
         if should_strip_resource_phases:
             strip_resource_phases(os.path.join(root_path, repo['path']),
                                   stdout=stdout, stderr=stderr)
@@ -980,7 +1028,7 @@ class CompatActionBuilder(ActionBuilder):
                 return None
 
         if not self.swift_version:
-            self.swift_version = self.version['version'].split('.')[0]
+            self.swift_version = self.version['version']
         try:
             dispatch(self.root_path, self.project, self.action,
                      self.swiftc,
