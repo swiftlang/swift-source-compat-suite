@@ -370,18 +370,7 @@
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "5.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9899",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-9899"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -389,54 +378,21 @@
         "scheme": "CoreStore OSX",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "5.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9899",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-9899"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "5.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9899",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-9899"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "5.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9899",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-9899"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
