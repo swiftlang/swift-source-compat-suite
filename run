@@ -100,6 +100,12 @@ def parse_args():
                         dest='build_config',
                         help='specify "debug" or "release" to override '
                              'the build configuration in the projects.json file')
+    parser.add_argument('--cmake-c-launcher',
+                        metavar="PATH",
+                        help='the absolute path to set CMAKE_C_COMPILER_LAUNCHER for build script')
+    parser.add_argument('--cmake-cxx-launcher',
+                        metavar='PATH',
+                        help='the absolute path to set CMAKE_CXX_COMPILER_LAUNCHER for build script')
     return parser.parse_args()
 
 
@@ -215,6 +221,11 @@ def build_swift_toolchain(workspace, args):
 
     if args.distcc:
         build_script_args_common += ['--distcc']
+
+    if args.cmake_c_launcher:
+        build_script_args_common += ['--cmake-c-launcher={}'.format(args.cmake_c_launcher)]
+    if args.cmake_cxx_launcher:
+        build_script_args_common += ['--cmake-cxx-launcher={}'.format(args.cmake_cxx_launcher)]
 
     if platform.system() == 'Darwin':
         build_command = [os.path.join(workspace, 'swift/utils/build-script')]
