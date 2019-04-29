@@ -182,18 +182,25 @@ def get_swiftc_path(instance, workspace, args):
 
 
 def build_swift_toolchain(workspace, args):
+    build_script_args_common = [
+        '--release',
+        '--no-assertions',
+        '--build-ninja',
+        '--llbuild',
+        '--swiftpm',
+        '--skip-build-benchmarks',
+    ]
+    if args.cmake_c_launcher:
+        build_script_args_common += ['--cmake-c-launcher={}'.format(args.cmake_c_launcher)]
+    if args.cmake_cxx_launcher:
+        build_script_args_common += ['--cmake-cxx-launcher={}'.format(args.cmake_cxx_launcher)]
     if platform.system() == 'Darwin':
-        build_command = [
-            os.path.join(workspace, 'swift/utils/build-script'),
-            '--release',
-            '--no-assertions',
-            '--build-ninja',
-            '--llbuild',
-            '--swiftpm',
+        build_command = [os.path.join(workspace, 'swift/utils/build-script')]
+        build_command += build_script_args_common
+        build_command += [
             '--ios',
             '--tvos',
             '--watchos',
-            '--skip-build-benchmarks',
             '--build-subdir=compat_macos',
             '--compiler-vendor=apple',
             '--',
@@ -218,17 +225,12 @@ def build_swift_toolchain(workspace, args):
             '--reconfigure',
         ]
     elif platform.system() == 'Linux':
-        build_command = [
-            os.path.join(workspace, 'swift/utils/build-script'),
-            '--release',
-            '--no-assertions',
-            '--build-ninja',
-            '--llbuild',
-            '--swiftpm',
+        build_command = [os.path.join(workspace, 'swift/utils/build-script')]
+        build_command += build_script_args_common
+        build_command += [
             '--foundation',
             '--libdispatch',
             '--xctest',
-            '--skip-build-benchmarks',
             '--build-subdir=compat_linux',
             '--',
             '--install-foundation',
@@ -623,6 +625,12 @@ def parse_args():
                         type=bool, default=False)
     parser.add_argument('--self-test',
                         action='store_true')
+    parser.add_argument('--cmake-c-launcher',
+                        metavar="PATH",
+                        help='the absolute path to set CMAKE_C_COMPILER_LAUNCHER for build script')
+    parser.add_argument('--cmake-cxx-launcher',
+                        metavar='PATH',
+                        help='the absolute path to set CMAKE_CXX_COMPILER_LAUNCHER for build script')
     return parser.parse_args()
 
 
