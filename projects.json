@@ -803,12 +803,8 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "4.2",
-        "commit": "c0e68b17c6741e32b131ab33bbdd33524027e2af"
-      },
-      {
         "version": "5.0",
-        "commit": "c0e68b17c6741e32b131ab33bbdd33524027e2af"
+        "commit": "7609e913619c606b7b1e3f251f18b906a1ef7272"
       }
     ],
     "maintainer": "arthur@sabintsev.com",
