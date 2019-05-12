@@ -230,17 +230,6 @@
   },
   {
     "path" : "*\/Dollar\/Sources\/Dollar.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 14318
-    },
-    "applicableConfigs" : [
-      "swift-5.1-branch"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
-  },
-  {
-    "path" : "*\/Dollar\/Sources\/Dollar.swift",
     "applicableConfigs" : [
       "swift-5.0-branch"
     ],
