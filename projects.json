@@ -471,7 +471,8 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "TestSwiftPackage"
@@ -815,6 +816,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "tags": "sourcekit sourcekit-smoke",
         "xfail": {
           "compatibility": {
             "4.0": {
@@ -2068,7 +2070,8 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "TestSwiftPackage"
