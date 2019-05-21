@@ -230,7 +230,8 @@ class StressTesterRunner(object):
             'SK_STRESS_AST_BUILD_LIMIT': '1000',
             'SK_STRESS_OUTPUT': results,
             'SK_XFAILS_PATH': self.xfails_path,
-            'SK_STRESS_ACTIVE_CONFIG': self.swift_branch}
+            'SK_STRESS_ACTIVE_CONFIG': self.swift_branch,
+            'SK_STRESS_SUPPRESS_OUTPUT': 'true'}
         run_env.update(os.environ)
         run_cmd = ['./runner.py',
           '--projects', filtered_projects,
@@ -270,6 +271,19 @@ class StressTesterRunner(object):
 
         success = num_failures == 0 and len(unmatched) == 0
 
+        if num_xfails > 0:
+            print('Expected stress tester issues:')
+            for url, issues in results['expectedIssueMessages'].iteritems():
+                for (index, issue) in enumerate(issues):
+                    self._print_issue(index, issue, url)
+            print('\n========================================')
+        if num_failures > 0:
+            print('Unexpected stress tester issues:')
+            for (index, issue) in enumerate(results['issueMessages']):
+                self._print_issue(index, issue)
+            print('\n========================================')
+
+
         print('SourceKit Stress Tester summary:')
         
         print('  {} underlying source compatibility build'.format('failed' if self.compat_runner_failed else 'passed'))
@@ -278,7 +292,7 @@ class StressTesterRunner(object):
         
         print('  {} unexpected stress tester failures'.format(num_failures))
         if num_failures > 0:
-            print('      > search "Detected unexpected failure:" for individual failures')
+            print('      > see "Unexpected stress tester issues" above for individual failures')
 
         print('  {} expected stress tester failures tracked by {} issues'.format(num_xfails, num_xfail_issues))
 
@@ -293,6 +307,13 @@ class StressTesterRunner(object):
         print('========================================')
 
         return success
+
+    @staticmethod
+    def _print_issue(index, issue, url = None):
+        if url != None:
+            print(u'\n{}. [{}] {}'.format(index + 1, url, issue))
+        else:
+            print(u'\n{}. {}'.format(index + 1, issue))
 
 
     def _filter_projects(self, output):
