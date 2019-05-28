@@ -29,7 +29,7 @@ To be accepted into the Swift source compatibility test suite, a project must:
 2. Be an *Xcode* or *Swift Package Manager* project (Carthage and CocoaPods are currently unsupported but are being explored to be supported in the future)
 3. Support building on either Linux or macOS
 4. Be contained in a publicly accessible git repository
-5. Maintain a project branch that builds against Swift 3.0 compatibility mode
+5. Maintain a project branch that builds against Swift 4.2 compatibility mode
    and passes any unit tests
 6. Have maintainers who will commit to resolve issues in a timely manner
 7. Be compatible with the latest GM/Beta versions of *Xcode* and *swiftpm*
@@ -52,7 +52,7 @@ To add a project meeting the acceptance criteria to the suite, perform the
 following steps:
 
 1. Ensure the project builds successfully at a chosen commit against
-   Swift 3.0 GM
+   Swift 4.2 GM
 2. Create a pull request against the [source compatibility suite
    repository](https://github.com/apple/swift-source-compat-suite),
    modifying **projects.json** to include a reference to the project being added
@@ -72,7 +72,7 @@ To add a new Swift Package Manager project, use the following template:
   "maintainer": "email@example.com",
   "compatibility": [
     {
-      "version": "3.0",
+      "version": "4.2",
       "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
     }
   ],
@@ -115,7 +115,7 @@ To add a new Swift Xcode workspace, use the following template:
   "maintainer": "email@example.com",
   "compatibility": [
     {
-      "version": "3.0",
+      "version": "4.2",
       "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
     }
   ],
@@ -184,7 +184,7 @@ To add a new Swift Xcode project, use the following template:
   "maintainer": "email@example.com",
   "compatibility": [
     {
-      "version": "3.0",
+      "version": "4.2",
       "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
     }
   ],
@@ -205,22 +205,22 @@ To add a new Swift Xcode project, use the following template:
 
 After adding a new project to the index, ensure it builds successfully at the
 pinned commits against the specified versions of Swift. In the examples,
-the commits are specified as being compatible with Swift 3.0, which is included
-in Xcode 8.0.
+the commits are specified as being compatible with Swift 4.2, which is included
+in Xcode 10.
 
 ~~~bash
-# Select Xcode 8.0 GM
+# Select Xcode 10 GM
 sudo xcode-select -s /Applications/Xcode.app
 # Build project at pinned commit against selected Xcode
-./project_precommit_check project-path-field --earliest-compatible-swift-version 3.0
+./project_precommit_check project-path-field --earliest-compatible-swift-version 4.2
 ~~~
 
-On Linux, you can build against the Swift 3.0 release toolchain:
+On Linux, you can build against the Swift 4.2 release toolchain:
 
 ~~~bash
-curl -O https://swift.org/builds/swift-3.0-release/ubuntu1510/swift-3.0-RELEASE/swift-3.0-RELEASE-ubuntu15.10.tar.gz
-tar xzvf swift-3.0-RELEASE-ubuntu15.10.tar.gz
-./project_precommit_check project-path-field --earliest-compatible-swift-version 3.0 --swiftc swift-3.0-RELEASE-ubuntu15.10/usr/bin/swiftc
+curl -O https://swift.org/builds/swift-4.2-release/ubuntu1604/swift-4.2-RELEASE/swift-4.2-RELEASE-ubuntu16.04.tar.gz
+tar xzvf swift-4.2-RELEASE-ubuntu16.04.tar.gz
+./project_precommit_check project-path-field --earliest-compatible-swift-version 4.2 --swiftc swift-4.2-RELEASE-ubuntu15.10/usr/bin/swiftc
 ~~~
 
 ## Maintaining Projects
@@ -266,7 +266,7 @@ visible.
 To mark an action as an expected failure, add an `xfail` entry for the correct
 Swift version and branch to the failing actions, associating each with a link
 to a JIRA reporting the relevant failure. The following is an example of an
-action that's XFAIL'd when building against Swift master branch in 3.0
+action that's XFAIL'd when building against Swift master branch in 4.2
 compatibility mode.
 
 ~~~json
@@ -278,7 +278,7 @@ compatibility mode.
   "maintainer": "email@example.com",
   "compatibility": [
     {
-      "version": "3.0",
+      "version": "4.2",
       "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
     }
   ],
@@ -294,7 +294,7 @@ compatibility mode.
       "configuration": "Release",
       "xfail": {
         "compatibility": {
-          "3.0": {
+          "4.2": {
             "branch": {
               "master": "https://bugs.swift.org/browse/SR-9999"
             }
