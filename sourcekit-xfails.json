@@ -230,6 +230,18 @@
   },
   {
     "path" : "*\/Dollar\/Sources\/Dollar.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1868
+    },
+    "applicableConfigs" : [
+      "master",
+      "swift-5.1-branch"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
+  },
+  {
+    "path" : "*\/Dollar\/Sources\/Dollar.swift",
     "applicableConfigs" : [
       "swift-5.0-branch"
     ],
@@ -249,18 +261,6 @@
       "kind" : "codeComplete",
       "offset" : 2844
     }
-  },
-  {
-    "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 5852
-    },
-    "applicableConfigs" : [
-      "master",
-      "swift-5.1-branch"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-10154"
   },
   {
     "path" : "*\/DNS\/Sources\/DNS\/Integer+Data.swift",
@@ -289,6 +289,20 @@
       "kind" : "cursorInfo",
       "offset" : 5567
     }
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/IP.swift",
+    "modification" : "concurrent-1864",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 0,
+      "offset" : 1864
+    },
+    "applicableConfigs" : [
+      "master",
+      "swift-5.1-branch"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
   },
   {
     "path" : "*\/Deferred\/Sources\/Deferred\/Deferred.swift",
@@ -1064,6 +1078,20 @@
       "kind" : "codeComplete",
       "offset" : 4690
     }
+  },
+  {
+    "path" : "*\/Result\/Result\/AnyError.swift",
+    "modification" : "concurrent-1016",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 0,
+      "offset" : 1016
+    },
+    "applicableConfigs" : [
+      "master",
+      "swift-5.1-branch"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
   },
   {
     "path" : "*\/Result\/Result\/Result.swift",
