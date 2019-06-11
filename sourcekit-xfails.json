@@ -252,6 +252,19 @@
     }
   },
   {
+    "path" : "*\/DNS\/Sources\/DNS\/Types.swift",
+    "modification" : "concurrent-1322",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 617
+    },
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
+  },
+  {
     "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
     "applicableConfigs" : [
       "swift-5.0-branch"
@@ -266,7 +279,6 @@
     "path" : "*\/DNS\/Sources\/DNS\/Integer+Data.swift",
     "modification" : "concurrent-460",
     "applicableConfigs" : [
-      "master",
       "swift-5.1-branch",
       "swift-5.0-branch"
     ],
@@ -280,7 +292,6 @@
     "path" : "*\/DNS\/Sources\/DNS\/Message.swift",
     "modification" : "concurrent-9359",
     "applicableConfigs" : [
-      "master",
       "swift-5.1-branch",
       "swift-5.0-branch"
     ],
@@ -299,7 +310,6 @@
       "offset" : 1864
     },
     "applicableConfigs" : [
-      "master",
       "swift-5.1-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
@@ -558,6 +568,18 @@
     "applicableConfigs" : [
       "master",
       "swift-5.1-branch"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
+  },
+  {
+    "path" : "*\/Guitar\/Sources\/GuitarCase.swift",
+    "modification" : "insideOut-2833",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2834
+    },
+    "applicableConfigs" : [
+      "master"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
   },
@@ -1088,7 +1110,6 @@
       "offset" : 1016
     },
     "applicableConfigs" : [
-      "master",
       "swift-5.1-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"

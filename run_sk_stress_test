@@ -261,8 +261,8 @@ class StressTesterRunner(object):
         if not os.path.isfile(results_path):
             return True
 
-        with open(results_path) as results_file:
-            results = json.load(results_file)
+        with open(results_path, 'rb') as results_file:
+            results = json.load(results_file, encoding='utf-8')
 
         num_failures = len(results['issues'])
         num_xfails = sum(len(value) for _, value in results['expectedIssues'].iteritems())
