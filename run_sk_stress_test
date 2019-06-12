@@ -21,6 +21,7 @@ import json
 import subprocess
 import argparse
 import platform
+import codecs
 
 import common
 
@@ -336,6 +337,14 @@ class StressTesterRunner(object):
                 os.remove(path)
             except OSError:
                 pass
+
+if os.isatty(sys.stdout.fileno()):
+    encoding = sys.stdout.encoding
+    errors = 'replace'
+else:
+    encoding = 'utf-8'
+    errors = None
+sys.stdout = codecs.getwriter(encoding)(sys.stdout, errors=errors)
 
 if __name__ == '__main__':
     sys.exit(main())
