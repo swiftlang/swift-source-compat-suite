@@ -2114,7 +2114,21 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "compatibility": {
+            "4.2": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-11136"
+              }
+            },
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-11136"
+              }
+            }
+          }
+        }
       }
     ]
   },
