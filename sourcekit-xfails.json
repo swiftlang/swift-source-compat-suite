@@ -1092,8 +1092,6 @@
     "path" : "*\/Result\/Result\/Result.swift",
     "modification" : "concurrent-2375",
     "applicableConfigs" : [
-      "master",
-      "swift-5.1-branch",
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-8566",
@@ -1106,8 +1104,6 @@
   {
     "path" : "*\/Result\/Result\/ResultProtocol.swift",
     "applicableConfigs" : [
-      "master",
-      "swift-5.1-branch",
       "swift-5.0-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371",
