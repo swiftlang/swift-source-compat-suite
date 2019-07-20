@@ -2702,6 +2702,33 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/apple/swift-nio-ssl",
+    "path": "swift-nio-ssl",
+    "branch": "master",
+    "maintainer": "johannesweiss@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "16de4b45c7cbe9815f995dd1539e6b7c4f0980a5"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/SwiftyJSON/SwiftyJSON.git",
     "path": "SwiftyJSON",
     "branch": "master",
