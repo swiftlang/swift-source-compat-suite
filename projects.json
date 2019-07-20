@@ -3399,5 +3399,29 @@
         "tags": "sourcekit"
       }
     ]
-  }
+  },
+  {
+  "repository": "Git",
+  "url": "https://github.com/Dimillian/MovieSwiftUI.git",
+  "path": "MovieSwift",
+  "branch": "master",
+  "maintainer": "ricouard77@gmail.com",
+  "compatibility": {
+    "5.0": {
+      "commit": "bdd10b7ba6f2da5f7eac9f86e779c2fe929417da"
+    }
+  },
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "MovieSwift.xcodeproj",
+      "target": "MovieSwift",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    }
+  ]
+}
 ]
