@@ -2620,15 +2620,74 @@
     "compatibility": [
       {
         "version": "4.2",
-        "commit": "e56d1cc41c51badcadcdff825484bf61bc48f418"
+        "commit": "381fd99df2a2a95a13172b4b18880d4217274e23"
       },
       {
         "version": "5.0",
-        "commit": "e56d1cc41c51badcadcdff825484bf61bc48f418"
+        "commit": "da23f751eee0d8287cc62824f6e0bc1f3ba2c0b6"
       }
     ],
     "platforms": [
-      "Darwin"
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-nio-http2",
+    "path": "swift-nio-http2",
+    "branch": "master",
+    "maintainer": "johannesweiss@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "492a77b1867c2d31b08a3d7db63de59a8e2399ac"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-nio-extras",
+    "path": "swift-nio-extras",
+    "branch": "master",
+    "maintainer": "johannesweiss@apple.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "0dbd54199d06c80a35b441c39ac2ef1b78778740"
+      },
+      {
+        "version": "5.0",
+        "commit": "66f9a509ed3cc56b6eb367515e421beca4a0af53"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
     ],
     "actions": [
       {
