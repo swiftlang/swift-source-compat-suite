@@ -3407,7 +3407,7 @@
   "branch": "master",
   "maintainer": "ricouard77@gmail.com",
   "compatibility": {
-    "5.0": {
+    "5.1": {
       "commit": "bdd10b7ba6f2da5f7eac9f86e779c2fe929417da"
     }
   },
