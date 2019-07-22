@@ -17,6 +17,10 @@
       {
         "version": "5.0",
         "commit": "8bfcc8b881634c97d0b46705f0ba43f692ad8644"
+      },
+      {
+        "version": "5.1",
+        "commit": "b0c94f2ceb8d452b2a9d0c6d4c1bc510ee0f5945"
       }
     ],
     "platforms": [
@@ -43,6 +47,10 @@
       {
         "version": "4.0",
         "commit": "a5cd9e233f24df3583f4b02f7e4722c076ab9032"
+      },
+      {
+        "version": "5.1",
+        "commit": "576437d07f1c7f6db5a848fb3ee6bacc6bcdba24"
       }
     ],
     "platforms": [
@@ -96,6 +104,10 @@
       {
         "version": "4.0",
         "commit": "efc83bd21d8c25ba3896debab5f66408f683a1e7"
+      },
+      {
+        "version": "5.1",
+        "commit": "7bd7ea89a2d52c2bfcce5aab3a27d92e825570c6"
       }
     ],
     "maintainer": "antonvmironov@gmail.com",
@@ -176,6 +188,10 @@
       {
         "version": "4.0",
         "commit": "6e6b0f86670d357d71db0a60fe3b1bb7d24dac33"
+      },
+      {
+        "version": "5.1",
+        "commit": "c40f343a11e6ced4a44f8689bffa3ab4338c38d1"
       }
     ],
     "platforms": [
@@ -207,6 +223,10 @@
       {
         "version": "5.0",
         "commit": "fb4e74cd8eb3ce4a2b860fbf727b2dada796d77d"
+      },
+      {
+        "version": "5.1",
+        "commit": "b5d28334b0360a137daeabc01eea2a74e9735b1a"
       }
     ],
     "platforms": [
@@ -359,6 +379,10 @@
       {
         "version": "5.0",
         "commit": "b2dba0d6fd0811ce688217b842c4177bd14a84b7"
+      },
+      {
+        "version": "5.1",
+        "commit": "67bb9340c77c9b13624b44d3a6f559229e4f5b72"
       }
     ],
     "platforms": [
@@ -424,6 +448,10 @@
       {
         "version": "4.0.3",
         "commit": "3574d3fda70091f8dea6494cafa4bca0c340b354"
+      },
+      {
+        "version": "5.1",
+        "commit": "4c7d90d715d16cba5d6bfa3741149d7175b34412"
       }
     ],
     "platforms": [
@@ -463,6 +491,10 @@
       {
         "version": "4.0",
         "commit": "04ae84dbaf423214c644590cbe0d837edfbfd411"
+      },
+      {
+        "version": "5.1",
+        "commit": "328a0cdecc07ea973fddaec4b380a068acd97920"
       }
     ],
     "platforms": [
@@ -574,6 +606,10 @@
       {
         "version": "4.0",
         "commit": "433d4ba9a3bec8aa739f05cb8505527aab7a30e7"
+      },
+      {
+        "version": "5.1",
+        "commit": "4feadc1a626424ebd5649aa9537dec361074cd32"
       }
     ],
     "platforms": [
@@ -601,6 +637,10 @@
       {
         "version": "4.0",
         "commit": "6e09d221d6589c6f620af810727cfb6a2657d911"
+      },
+      {
+        "version": "5.1",
+        "commit": "c5a9c62a56d6218bc78d97e77bfccbf984e1c95c"
       }
     ],
     "platforms": [
@@ -657,6 +697,10 @@
       {
         "version": "5.0",
         "commit": "38a17de8717a2282fd4ff62cd1ce732b926bf4ab"
+      },
+      {
+        "version": "5.1",
+        "commit": "3df5e4ab83a9ab47228a46da7263e09a2a2b0b90"
       }
     ],
     "platforms": [
@@ -779,6 +823,10 @@
       {
         "version": "5.0",
         "commit": "759c1088a1d9ba94f44009295fd17c20b1375524"
+      },
+      {
+        "version": "5.1",
+        "commit": "d290102d9cb5c425fee7260034beaa997d581d86"
       }
     ],
     "platforms": [
@@ -804,6 +852,10 @@
     "compatibility": [
       {
         "version": "5.0",
+        "commit": "7609e913619c606b7b1e3f251f18b906a1ef7272"
+      },
+      {
+        "version": "5.1",
         "commit": "7609e913619c606b7b1e3f251f18b906a1ef7272"
       }
     ],
@@ -848,6 +900,10 @@
       {
         "version": "5.0",
         "commit": "e6952b9246dd9bf27d613ed7b4791ff19136f6c8"
+      },
+      {
+        "version": "5.1",
+        "commit": "d46c496fb3185ead2991f126fd556c4003932b7a"
       }
     ],
     "platforms": [
@@ -874,6 +930,10 @@
       {
         "version": "4.0",
         "commit": "eb4acb6d78f0181dbcd9cee7bf48a8b95e39d1d7"
+      },
+      {
+        "version": "5.1",
+        "commit": "0776c5c099b308cd0cffe14f8cf89f0371153d03"
       }
     ],
     "platforms": [
@@ -911,6 +971,10 @@
       {
         "version": "5.0",
         "commit": "e651887d0a621c6b66ca09c2e8cea9fce691c00e"
+      },
+      {
+        "version": "5.1",
+        "commit": "3677371cabeb9c178d1fa17052be2edc42e1fb39"
       }
     ],
     "platforms": [
@@ -979,6 +1043,10 @@
       {
         "version": "5.0",
         "commit": "0fffcc37adcf55d3557f1e06dd0172ace582effe"
+      },
+      {
+        "version": "5.1",
+        "commit": "3a9c83cf8b8cfaecd1097916fae803e1b1d6447f"
       }
     ],
     "platforms": [
@@ -1060,6 +1128,10 @@
       {
         "version": "4.0",
         "commit": "6b7887e7b38ebd81e2d04a936e64998b0f634e98"
+      },
+      {
+        "version": "5.1",
+        "commit": "aa994f0921dca1965ae537fe77c2edc798eef230"
       }
     ],
     "platforms": [
@@ -1115,6 +1187,10 @@
       {
         "version": "4.0",
         "commit": "a5d1214220b8ddf29acf7c08c8bb42993ed56c54"
+      },
+      {
+        "version": "5.1",
+        "commit": "23ef6c73ee3bc12ee3940136aea54bd44a02e93e"
       }
     ],
     "platforms": [
@@ -1162,6 +1238,10 @@
       {
         "version": "4.0",
         "commit": "f1c3169b5b923ded814e5b1ef5a354720da93a36"
+      },
+      {
+        "version": "5.1",
+        "commit": "8578c439701ecbeea33564d151976727fad16da8"
       }
     ],
     "platforms": [
@@ -1194,6 +1274,10 @@
       {
         "version": "5.0",
         "commit": "d38491d123fb58897ecb339920cf69da479d19d0"
+      },
+      {
+        "version": "5.1",
+        "commit": "bf462b387e0925a1bfef3fe46ddc6ca6123604cf"
       }
     ],
     "platforms": [
@@ -1248,6 +1332,10 @@
       {
         "version": "4.2",
         "commit": "af39c8ba22ff1c7318a47e06666c4fee9aa9dd50"
+      },
+      {
+        "version": "5.1",
+        "commit": "b1ed2b1393f89a61c04fda9d7c1c91d47bfa680a"
       }
     ],
     "platforms": [
@@ -1278,6 +1366,10 @@
       {
         "version": "5.0",
         "commit": "d8bb2bc535e2895b5fbe66f4872327b654d19a34"
+      },
+      {
+        "version": "5.1",
+        "commit": "46911e4c94d32d16af1d02cb918c071d149f93e0"
       }
     ],
     "platforms": [
@@ -1329,8 +1421,8 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "4b3ff7e7ddd87c0ce73b39b5390c045fe1a8d4af"
+        "version": "5.1",
+        "commit": "b833221910d1b190743b64dec266aecd9404d859"
       }
     ],
     "maintainer": "ash@ashfurrow.com",
@@ -1341,18 +1433,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8234",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8234",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-8234"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "TestSwiftPackage"
@@ -1398,8 +1479,8 @@
     "maintainer": "support@pointfree.co",
     "compatibility": [
       {
-        "version": "4.1",
-        "commit": "1fe8684a8c2513bbc2388a464a871a434202edc2"
+        "version": "5.1",
+        "commit": "6c98dcee567465d85f6655d6d2ff401cebc7aff5"
       }
     ],
     "platforms": [
@@ -1410,28 +1491,28 @@
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "NonEmpty.xcworkspace",
-        "scheme": "NonEmpty-Package",
+        "scheme": "NonEmpty_macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "NonEmpty.xcworkspace",
-        "scheme": "NonEmpty-Package",
+        "scheme": "NonEmpty_iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "NonEmpty.xcworkspace",
-        "scheme": "NonEmpty-Package",
+        "scheme": "NonEmpty_tvOS",
         "destination": "generic/platform=tvOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "NonEmpty.xcworkspace",
-        "scheme": "NonEmpty-Package",
+        "scheme": "NonEmpty_watchOS",
         "destination": "generic/platform=watchOS",
         "configuration": "Release"
       },
@@ -1458,6 +1539,10 @@
       {
         "version": "5.0",
         "commit": "ed1caa237b9742135996fefe3682b834bb394a6a"
+      },
+      {
+        "version": "5.1",
+        "commit": "19d499c65b8240f1220d7cf155ccd309857f8018"
       }
     ],
     "platforms": [
@@ -1503,12 +1588,8 @@
     "maintainer": "support@pointfree.co",
     "compatibility": [
       {
-        "version": "4.2",
-        "commit": "1632b5dd5862bb2d377be79d5063d2161a7559e5"
-      },
-      {
-        "version": "5.0",
-        "commit": "1632b5dd5862bb2d377be79d5063d2161a7559e5"
+        "version": "5.1",
+        "commit": "f61b98879b61affe3236796ef4daa3d6f9ff783b"
       }
     ],
     "platforms": [
@@ -1519,28 +1600,28 @@
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Overture.xcworkspace",
-        "scheme": "Overture-Package",
+        "scheme": "Overture_macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Overture.xcworkspace",
-        "scheme": "Overture-Package",
+        "scheme": "Overture_iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Overture.xcworkspace",
-        "scheme": "Overture-Package",
+        "scheme": "Overture_tvOS",
         "destination": "generic/platform=tvOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Overture.xcworkspace",
-        "scheme": "Overture-Package",
+        "scheme": "Overture_watchOS",
         "destination": "generic/platform=watchOS",
         "configuration": "Release"
       },
@@ -1567,6 +1648,10 @@
       {
         "version": "5.0",
         "commit": "cdc17d544ec8e87da5f3b24cdbda8d02d77bb943"
+      },
+      {
+        "version": "5.1",
+        "commit": "54a66958c3d7bf25564a153296808dc82c29adb7"
       }
     ],
     "platforms": [
@@ -1594,6 +1679,10 @@
       {
         "version": "5.0",
         "commit": "5c15634de4ff3152e9ccede6543c83ed93e2cf7b"
+      },
+      {
+        "version": "5.1",
+        "commit": "131ad277b9b63e198606d46999217e9e0cc452c6"
       }
     ],
     "platforms": [
@@ -1670,6 +1759,10 @@
       {
         "version": "5.0",
         "commit": "71a3a5ce5e38161eaf4e46a7f609f2e4523d8248"
+      },
+      {
+        "version": "5.1",
+        "commit": "bc8c8fde5d73b10c252f701b272bda8fe30e4f67"
       }
     ],
     "maintainer": "rmalik@pinterest.com",
@@ -1701,7 +1794,11 @@
       },
       {
         "version": "5.0",
-        "commit": "94193d59bc06689526772023428402da1e0e299f"
+        "commit": "a7fa565e648d90083c7f10c0c6be9bf249dcdbde"
+      },
+      {
+        "version": "5.1",
+        "commit": "a7fa565e648d90083c7f10c0c6be9bf249dcdbde"
       }
     ],
     "platforms": [
@@ -1714,36 +1811,14 @@
         "target": "ProcedureKit",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "5.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9899",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-9899"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "BuildXcodeProjectTarget",
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKit",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "5.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9899",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-9899"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -1757,18 +1832,7 @@
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKit",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "5.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9899",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-9899"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -1776,18 +1840,7 @@
         "target": "ProcedureKitCloud",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "5.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9899",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9899",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-9899"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       },
       {
         "action": "TestXcodeProjectTarget",
@@ -1807,6 +1860,10 @@
       {
         "version": "4.0.3",
         "commit": "c538a244b110389483c71d5801f7944e042b5b7b"
+      },
+      {
+        "version": "5.1",
+        "commit": "8e5f5d0945afc0bb6ee16a9ac12470722590b563"
       }
     ],
     "platforms": [
@@ -1859,6 +1916,10 @@
       {
         "version": "5.0",
         "commit": "f96758593573d3d1d9ae8084721033ab0bf392f6"
+      },
+      {
+        "version": "5.1",
+        "commit": "5fd4a4e0dba3ed6e3fa303f01aa9e0256c50ac64"
       }
     ],
     "platforms": [
@@ -1885,6 +1946,10 @@
       {
         "version": "4.0",
         "commit": "4502081d713257bb414d7dffa25f10ba59fa6770"
+      },
+      {
+        "version": "5.1",
+        "commit": "38739c2e30ae554ec78704576e4509190324794c"
       }
     ],
     "platforms": [
@@ -1915,6 +1980,10 @@
       {
         "version": "5.0",
         "commit": "beeb3c6368d573980a703ea37ab58e01f2a825c5"
+      },
+      {
+        "version": "5.1",
+        "commit": "b5b1fcc401053ef03a880722250514526d1a9ad6"
       }
     ],
     "platforms": [
@@ -1961,6 +2030,10 @@
       {
         "version": "4.0",
         "commit": "72dd2096c04e66bb10a5dd0c230c7a7ceef467e9"
+      },
+      {
+        "version": "5.1",
+        "commit": "78e2c70921dfe2f291d302cb61d00c9ff1c9bced"
       }
     ],
     "platforms": [
@@ -2008,6 +2081,10 @@
       {
         "version": "4.0",
         "commit": "46fb4d4a8285286e54929add1d12f384675895c6"
+      },
+      {
+        "version": "5.1",
+        "commit": "e60a8b14536399613ded1c8e651aa31e1867f2ea"
       }
     ],
     "platforms": [
@@ -2060,6 +2137,10 @@
       {
         "version": "5.0",
         "commit": "2fe5b325a8a54e77c545b2f511213420da133b8c"
+      },
+      {
+        "version": "5.1",
+        "commit": "c30700bfcab7f555bf1d386fdd609407a94f369c"
       }
     ],
     "maintainer": "matt@diephouse.com",
@@ -2112,8 +2193,8 @@
     "maintainer": "krunoslav.zaher@gmail.com",
     "compatibility": [
       {
-        "version": "4.0.3",
-        "commit": "3e848781c7756accced855a6317a4c2ff5e8588b"
+        "version": "5.1",
+        "commit": "70b8a33c5c3f4c3b15ebf10b638d2b15cfafb814"
       }
     ],
     "platforms": [
@@ -2123,7 +2204,7 @@
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
-        "scheme": "RxSwift-macOS",
+        "scheme": "RxSwift",
         "destination": "platform=macOS",
         "configuration": "Release",
         "tags": "sourcekit"
@@ -2131,57 +2212,66 @@
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
-        "scheme": "RxSwift-iOS",
+        "scheme": "RxSwift",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
-        "scheme": "RxSwift-tvOS",
+        "scheme": "RxSwift",
         "destination": "generic/platform=tvOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
-        "scheme": "RxSwift-watchOS",
+        "scheme": "RxSwift",
         "destination": "generic/platform=watchOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
-        "scheme": "RxCocoa-macOS",
+        "scheme": "RxCocoa",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit"
+        "tags": "sourcekit",
+        "xfail": {
+          "compatibility": {
+            "5.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-11141"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
-        "scheme": "RxCocoa-iOS",
+        "scheme": "RxCocoa",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
-        "scheme": "RxCocoa-tvOS",
+        "scheme": "RxCocoa",
         "destination": "generic/platform=tvOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
-        "scheme": "RxCocoa-watchOS",
+        "scheme": "RxCocoa",
         "destination": "generic/platform=watchOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
-        "scheme": "RxBlocking-macOS",
+        "scheme": "RxBlocking",
         "destination": "platform=macOS",
         "configuration": "Release",
         "tags": "sourcekit"
@@ -2189,28 +2279,28 @@
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
-        "scheme": "RxBlocking-iOS",
+        "scheme": "RxBlocking",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
-        "scheme": "RxBlocking-tvOS",
+        "scheme": "RxBlocking",
         "destination": "generic/platform=tvOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
-        "scheme": "RxBlocking-watchOS",
+        "scheme": "RxBlocking",
         "destination": "generic/platform=watchOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
-        "scheme": "RxTests-macOS",
+        "scheme": "RxTest",
         "destination": "platform=macOS",
         "configuration": "Release",
         "tags": "sourcekit"
@@ -2218,14 +2308,14 @@
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
-        "scheme": "RxTests-iOS",
+        "scheme": "RxTest",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
-        "scheme": "RxTests-tvOS",
+        "scheme": "RxTest",
         "destination": "generic/platform=tvOS",
         "configuration": "Release"
       }
@@ -2241,6 +2331,10 @@
       {
         "version": "4.0",
         "commit": "b166838d4cf9218933c03151d62e50772460f95e"
+      },
+      {
+        "version": "5.1",
+        "commit": "8d2561b17fbac2eecd024dc6906777341307951d"
       }
     ],
     "platforms": [
@@ -2271,6 +2365,10 @@
       {
         "version": "5.0",
         "commit": "33ce18293ef42e5565ce285a15ee70ac9d5b121d"
+      },
+      {
+        "version": "5.1",
+        "commit": "61d72cd2fbe8a0e9ab69878eb585a99eb15859cc"
       }
     ],
     "platforms": [
@@ -2313,6 +2411,10 @@
       {
         "version": "4.0",
         "commit": "6e29894121e66dcbab9d3e64367464e46c5546fd"
+      },
+      {
+        "version": "5.1",
+        "commit": "20bdf697c1b49c4f98d70199b880d79c1d2c9f91"
       }
     ],
     "platforms": [
@@ -2351,6 +2453,10 @@
       {
         "version": "4.0",
         "commit": "114e5df9b6251970a069e8f1c0cbb5802759f0a9"
+      },
+      {
+        "version": "5.1",
+        "commit": "a2ed45c0b2f996cb8c335c4f270ecc68c3bd4c0f"
       }
     ],
     "platforms": [
@@ -2395,6 +2501,10 @@
       {
         "version": "5.0",
         "commit": "38a328eefe5ffef13d28dcb2804d2772aecf6107"
+      },
+      {
+        "version": "5.1",
+        "commit": "63da6b60f71c461a925450e8003bb419363d5b4d"
       }
     ],
     "platforms": [
@@ -2497,6 +2607,10 @@
       {
         "version": "4.2",
         "commit": "f4948e01657156afbf0687cd4113990dd3c0971d"
+      },
+      {
+        "version": "5.1",
+        "commit": "872092a1285fc61f03bd886f01822145eb13fde4"
       }
     ],
     "platforms": [
@@ -2528,6 +2642,10 @@
       {
         "version": "5.0",
         "commit": "60f98ec50d74c6e6aa7c527493d844960653f3a6"
+      },
+      {
+        "version": "5.1",
+        "commit": "ac8abbb3a72874eb1dedd6305ab9560e9d096eb4"
       }
     ],
     "maintainer": "jp@jpsim.com",
@@ -2556,6 +2674,10 @@
       {
         "version": "4.0",
         "commit": "d3c3fdba03cd876baf3c7f675f03ad7c3f32c811"
+      },
+      {
+        "version": "5.1",
+        "commit": "ccdc4e4d8c116de133c993370c81263b87c5a4d6"
       }
     ],
     "platforms": [
@@ -2625,6 +2747,10 @@
       {
         "version": "5.0",
         "commit": "da23f751eee0d8287cc62824f6e0bc1f3ba2c0b6"
+      },
+      {
+        "version": "5.1",
+        "commit": "5f8d3f0b404a12d459f294fdd5b3740e5b6aa8d4"
       }
     ],
     "platforms": [
@@ -2741,6 +2867,10 @@
       {
         "version": "5.0",
         "commit": "b93c5d2bd883959262b4c7aabe333667dadb1ab0"
+      },
+      {
+        "version": "5.1",
+        "commit": "bad5f2f94a71216a32c030a3586bdcfc1f7e660b"
       }
     ],
     "platforms": [
@@ -2805,6 +2935,10 @@
       {
         "version": "4.0",
         "commit": "eaa51b729fba905131c0eb534293895846272a63"
+      },
+      {
+        "version": "5.1",
+        "commit": "cf0d743f5569233b64112404186655e0a43d7dd6"
       }
     ],
     "platforms": [
@@ -2843,8 +2977,8 @@
     "maintainer": "support@pointfree.co",
     "compatibility": [
       {
-        "version": "4.1",
-        "commit": "6e079815041dbd7f74d2a4ede9ab2ca4313f931b"
+        "version": "5.1",
+        "commit": "926e8e0c3d893481b94b418118898a8b9e530353"
       }
     ],
     "platforms": [
@@ -2855,89 +2989,34 @@
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Tagged.xcworkspace",
-        "scheme": "Tagged-Package",
+        "scheme": "Tagged_macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9252",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9252",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-9252"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Tagged.xcworkspace",
-        "scheme": "Tagged-Package",
+        "scheme": "Tagged_iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9252",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9252",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-9252"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Tagged.xcworkspace",
-        "scheme": "Tagged-Package",
+        "scheme": "Tagged_tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9252",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9252",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-9252"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Tagged.xcworkspace",
-        "scheme": "Tagged-Package",
+        "scheme": "Tagged_watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9252",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9252",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-9252"
-              }
-            }
-          }
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "4.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-9252",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-9252",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-9252"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       },
       {
         "action": "TestSwiftPackage"
@@ -2958,6 +3037,10 @@
       {
         "version": "5.0",
         "commit": "3edb1c0f557506d845362fda6d8564718435bfb1"
+      },
+      {
+        "version": "5.1",
+        "commit": "96cbf16a252a504c6a1837ed37a42425fbc6555e"
       }
     ],
     "platforms": [
@@ -3022,6 +3105,10 @@
       {
         "version": "5.0",
         "commit": "03555e5e2a517f977ba8736172115f0db2c645a8"
+      },
+      {
+        "version": "5.1",
+        "commit": "03555e5e2a517f977ba8736172115f0db2c645a8"
       }
     ],
     "platforms": [
@@ -3069,6 +3156,10 @@
       {
         "version": "4.0",
         "commit": "f168b4fd2757cbda7092c3db8685dc2854b80003"
+      },
+      {
+        "version": "5.1",
+        "commit": "a4dcad1fd70e8ac41621e80dd606cbe74dd0c410"
       }
     ],
     "platforms": [
@@ -3103,6 +3194,10 @@
       {
         "version": "5.0",
         "commit": "d501cb83be55d67779dd2dc3e2dea53fdf78c39d"
+      },
+      {
+        "version": "5.1",
+        "commit": "877dc54e709058ba1698da1417dd1b92fcb4085d"
       }
     ],
     "platforms": [
@@ -3149,45 +3244,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/louisdh/panelkit.git",
-    "path": "panelkit",
-    "branch": "master",
-    "compatibility": [
-      {
-        "version": "4.0.3",
-        "commit": "3ede6efaa9d2b2502ad069b16215513f3e515119"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "maintainer": "louisdhauwe@silverfox.be",
-    "actions": [
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "PanelKit.xcworkspace",
-        "scheme": "PanelKit",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "tags": "sourcekit"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "PanelKit.xcworkspace",
-        "scheme": "Example",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "TestXcodeWorkspaceScheme",
-        "workspace": "PanelKit.xcworkspace",
-        "scheme": "PanelKitTests",
-        "destination": "platform=iOS Simulator,name=iPad Pro (12.9 inch)"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/bustoutsolutions/siesta.git",
     "path": "siesta",
     "branch": "master",
@@ -3195,6 +3251,10 @@
       {
         "version": "4.0",
         "commit": "926127231446fc5c1c8c3236033914a4006ab9a2"
+      },
+      {
+        "version": "5.1",
+        "commit": "3847e03570cafb0e40fe0fad6d89d04fb98cfabe"
       }
     ],
     "maintainer": "cantrell@pobox.com",
@@ -3248,6 +3308,10 @@
       {
         "version": "5.0",
         "commit": "5b9796d39f201b3dd06800437abd9d774a455e57"
+      },
+      {
+        "version": "5.1",
+        "commit": "fcd8c1a073536fb074dba12c988c1307ee951c96"
       }
     ],
     "platforms": [
@@ -3276,6 +3340,10 @@
       {
         "version": "5.0",
         "commit": "08a5764af95ccf0a08d0a510358c18628736070d"
+      },
+      {
+        "version": "5.1",
+        "commit": "c64f63cb21631010952f7abfef719d376ab6a441"
       }
     ],
     "platforms": [
@@ -3332,6 +3400,10 @@
       {
         "version": "5.0",
         "commit": "e57007c23a52b68e44ebdfc70cbe882a7c4f1ec3"
+      },
+      {
+        "version": "5.1",
+        "commit": "f919a01c4d10a281d6236a21b0b1d1759a72b8eb"
       }
     ],
     "platforms": [
@@ -3360,6 +3432,10 @@
       {
         "version": "5.0",
         "commit": "3219e328491b0853b8554c5a694add344d2c6cfb"
+      },
+      {
+        "version": "5.1",
+        "commit": "e6d9d65c5f9aa3b980ff722096573e52cb1f274a"
       }
     ],
     "platforms": [
@@ -3388,6 +3464,10 @@
       {
         "version": "5.0",
         "commit": "281a70b69783891900be31a9e70051b6fe19e146"
+      },
+      {
+        "version": "5.1",
+        "commit": "8698263f1b1585ea9531ddfebb2b7a8a3e73d542"
       }
     ],
     "platforms": [
@@ -3416,6 +3496,10 @@
       {
         "version": "5.0",
         "commit": "db35b1c35aabd0f5db3abca0cfda7becfe9c43e2"
+      },
+      {
+        "version": "5.1",
+        "commit": "51405c83e95e8adb09565278a5e9b959c605e56c"
       }
     ],
     "platforms": [
@@ -3444,6 +3528,10 @@
       {
         "version": "5.0",
         "commit": "cbfe7ef6301557d3f2d0807a98165232ae06e1c6"
+      },
+      {
+        "version": "5.1",
+        "commit": "82d8d63bdb76b6dd8febe916c639ab8608dbbaed"
       }
     ],
     "platforms": [
@@ -3472,6 +3560,10 @@
       {
         "version": "5.0",
         "commit": "156f8adeac3440e868da3757777884efbc6ec0cc"
+      },
+      {
+        "version": "5.1",
+        "commit": "4de213cf319b694e4ce19e5339592601d4dd3ff6"
       }
     ],
     "platforms": [
