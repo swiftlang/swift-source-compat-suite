@@ -177,7 +177,13 @@ def is_correct_swift_version(swiftc, compatibility_version):
 
 
 def check(project, swift_branch, swiftc, compatibility_version):
-    if platform.system() == 'Darwin':
+    # Please, rewrite this script.
+    # Writing into function parameters is a bad manner. You can do better.
+    # Please, rewrite it.
+    # Thanks!
+
+    # find pre-installed if we don't specify parameter --swiftc
+    if platform.system() == 'Darwin' and not swiftc:
         common.debug_print("--- Locating swiftc executable ---")
         swiftc = common.check_execute_output(['xcrun', '-f', 'swiftc']).strip()
     if not swiftc:
