@@ -3460,14 +3460,14 @@
     ]
   },
   {
-    "repository": "Base64CoderSwiftUI",
+    "repository": "Git",
     "url": "https://github.com/lolgear/Base64CoderSwiftUI.git",
     "path": "Base64CoderSwiftUI",
     "branch": "master",
     "maintainer": "gaussblurinc@gmail.com",
     "compatibility": [
       {
-        "version": "5.0",
+        "version": "5.1",
         "commit": "bd103d79396e16446056d2e571849e6c26faa6c1"
       }
     ],
