@@ -1446,6 +1446,31 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/Dimillian/MovieSwiftUI.git",
+    "path": "MovieSwift",
+    "branch": "master",
+    "maintainer": "ricouard77@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.1",
+        "commit": "c0e8c5583b3dfcd6b3daa1bcfd2814686776c562"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "MovieSwift/MovieSwift.xcodeproj",
+        "target": "MovieSwift",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/Hearst-DD/ObjectMapper.git",
     "path": "ObjectMapper",
     "branch": "master",
@@ -3399,30 +3424,5 @@
         "tags": "sourcekit"
       }
     ]
-  },
-  {
-  "repository": "Git",
-  "url": "https://github.com/Dimillian/MovieSwiftUI.git",
-  "path": "MovieSwift",
-  "branch": "master",
-  "maintainer": "ricouard77@gmail.com",
-  "compatibility": [
-    {
-      "version": "5.1",
-      "commit": "c0e8c5583b3dfcd6b3daa1bcfd2814686776c562"
-    }
-  ],
-  "platforms": [
-    "Darwin"
-  ],
-  "actions": [
-    {
-      "action": "BuildXcodeProjectTarget",
-      "project": "MovieSwift/MovieSwift.xcodeproj",
-      "target": "MovieSwift",
-      "destination": "generic/platform=iOS",
-      "configuration": "Release"
-    }
-  ]
-}
+  }
 ]
