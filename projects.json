@@ -959,6 +959,38 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/hartlco/Icro.git",
+    "path": "Icro",
+    "branch": "master",
+    "maintainer": "martin@hartl.co",
+    "compatibility": [
+      {
+        "version": "5.1",
+        "commit": "3936efe8d1978efebecaf153248c29ba631b7de9"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Icro.xcworkspace",
+        "scheme": "IcroKit",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Icro.xcworkspace",
+        "scheme": "IcroUIKit",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/jessesquires/JSQCoreDataKit.git",
     "path": "JSQCoreDataKit",
     "branch": "master",
