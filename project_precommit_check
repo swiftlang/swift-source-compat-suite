@@ -178,10 +178,12 @@ def is_correct_swift_version(swiftc, compatibility_version):
 
 def check(project, swift_branch, swiftc, compatibility_version):
     if platform.system() == 'Darwin':
+        if swiftc:
+            common.debug_print("warning: disregarding passed swiftc in favor of currently selected swiftc.")
         common.debug_print("--- Locating swiftc executable ---")
         swiftc = common.check_execute_output(['xcrun', '-f', 'swiftc']).strip()
     if not swiftc:
-        common.debug_print('error: please specify --swiftc')
+        common.debug_print('error: please specify --swiftc for non-Darwin platforms.')
         return 1
     swiftc = os.path.abspath(swiftc)
     if not is_correct_swift_version(swiftc, compatibility_version):
