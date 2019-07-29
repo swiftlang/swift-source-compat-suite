@@ -3059,40 +3059,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/urbn/URBNJSONDecodableSPM",
-    "path": "URBNJSONDecodableSPM",
-    "branch": "master",
-    "maintainer": "lsykes@urbn.com",
-    "compatibility": [
-      {
-        "version": "3.1",
-        "commit": "6dc998583b170395e8ba03cacabe1ea44256b1bd"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "3.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8250",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-8250"
-              }
-            }
-          }
-        }
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/intelygenz/Kommander-iOS.git",
     "path": "kommander",
     "branch": "master",
