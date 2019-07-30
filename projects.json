@@ -1674,11 +1674,11 @@
     "compatibility": [
       {
         "version": "4.2",
-        "commit": "5c15634de4ff3152e9ccede6543c83ed93e2cf7b"
+        "commit": "131ad277b9b63e198606d46999217e9e0cc452c6"
       },
       {
         "version": "5.0",
-        "commit": "5c15634de4ff3152e9ccede6543c83ed93e2cf7b"
+        "commit": "131ad277b9b63e198606d46999217e9e0cc452c6"
       },
       {
         "version": "5.1",
@@ -1707,25 +1707,7 @@
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": {
-          "compatibility": {
-            "4.2": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8250",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-8250"
-              }
-            },
-            "5.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8250",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-8250"
-              }
-            }
-          }
-        }
+        "configuration": "release"
       },
       {
         "action": "TestXcodeProjectScheme",
@@ -2360,11 +2342,11 @@
     "compatibility": [
       {
         "version": "4.2",
-        "commit": "33ce18293ef42e5565ce285a15ee70ac9d5b121d"
+        "commit": "61d72cd2fbe8a0e9ab69878eb585a99eb15859cc"
       },
       {
         "version": "5.0",
-        "commit": "33ce18293ef42e5565ce285a15ee70ac9d5b121d"
+        "commit": "61d72cd2fbe8a0e9ab69878eb585a99eb15859cc"
       },
       {
         "version": "5.1",
@@ -2379,25 +2361,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit",
-        "xfail": {
-          "compatibility": {
-            "4.2": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8250",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-8250"
-              }
-            },
-            "5.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8250",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-8250"
-              }
-            }
-          }
-        }
+        "tags": "sourcekit"
       }
     ]
   },
