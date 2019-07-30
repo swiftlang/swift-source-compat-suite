@@ -89,9 +89,9 @@ supported_configs = {
         },
         '5.1': {
             'version': 'Apple Swift version 5.1 '
-                       '(swiftlang-1100.0.257.2 clang-1100.0.31.3)\n'
+                       '(swiftlang-1100.0.266.1 clang-1100.0.32.1)\n'
                        'Target: x86_64-apple-darwin18.2.0\n',
-            'description': 'Xcode 11 Beta 4 (contains Swift 5.1)',
+            'description': 'Xcode 11 Beta 5 (contains Swift 5.1)',
             'branch': 'swift-5.1-branch'
         }
     },
