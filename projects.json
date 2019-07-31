@@ -722,16 +722,12 @@
     "repository": "Git",
     "url": "https://github.com/masters3d/xswift.git",
     "path": "exercism-xswift",
-    "branch": "do-not-delete-pre-4.2-compatibility",
+    "branch": "master",
     "maintainer": "cheyo@masters3d.com",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "7614aae4a87d92e2343473c619a805ace98a474e"
-      },
-      {
-        "version": "4.1",
-        "commit": "7614aae4a87d92e2343473c619a805ace98a474e"
+        "version": "5.1",
+        "commit": "b640558479638d27c0a285aae617fc133296df20"
       }
     ],
     "platforms": [
@@ -739,29 +735,9 @@
     ],
     "actions": [
       {
-        "action": "BuildXcodeProjectTarget",
-        "project": "xswift.xcodeproj",
-        "target": "xswift",
-        "destination": "generic/platform=macOS",
-        "configuration": "Release",
-        "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8307",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8307",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-8307"
-              }
-            },
-            "4.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8307",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8307",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-8307"
-              }
-            }
-          }
-        }
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
       }
     ]
   },
