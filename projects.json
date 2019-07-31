@@ -720,29 +720,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/masters3d/xswift.git",
-    "path": "exercism-xswift",
-    "branch": "master",
-    "maintainer": "cheyo@masters3d.com",
-    "compatibility": [
-      {
-        "version": "5.1",
-        "commit": "b640558479638d27c0a285aae617fc133296df20"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "tags": "sourcekit"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/vapor/fluent",
     "path": "fluent",
     "branch": "master",
