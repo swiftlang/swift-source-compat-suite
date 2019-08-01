@@ -558,19 +558,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
   },
   {
-    "path" : "*\/Guitar\/Sources\/GuitarCase.swift",
-    "modification" : "insideOut-2833",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2834
-    },
-    "applicableConfigs" : [
-      "master",
-      "swift-5.1-branch"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
-  },
-  {
     "path" : "*\/GRDB.swift\/GRDB\/Core\/Cursor.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
