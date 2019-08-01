@@ -2641,7 +2641,23 @@
         "workspace": "SwifterSwift.xcworkspace",
         "scheme": "SwifterSwift-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-11248",
+                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-11248"
+              }
+            },
+            "5.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-11248",
+                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-11248"
+              }
+            }
+          }
+        }
       },
       {
         "action": "TestXcodeWorkspaceScheme",
