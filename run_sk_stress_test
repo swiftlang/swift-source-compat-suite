@@ -232,7 +232,8 @@ class StressTesterRunner(object):
             'SK_STRESS_OUTPUT': results,
             'SK_XFAILS_PATH': self.xfails_path,
             'SK_STRESS_ACTIVE_CONFIG': self.swift_branch,
-            'SK_STRESS_SUPPRESS_OUTPUT': 'true'}
+            'SK_STRESS_SUPPRESS_OUTPUT': 'true',
+            'SK_STRESS_REWRITE_MODES': 'none concurrent insideout'}
         run_env.update(os.environ)
         run_cmd = ['./runner.py',
           '--projects', filtered_projects,

@@ -253,11 +253,11 @@
   },
   {
     "path" : "*\/DNS\/Sources\/DNS\/Types.swift",
-    "modification" : "concurrent-1322",
+    "modification" : "concurrent-1310",
     "issueDetail" : {
       "kind" : "semanticRefactoring",
       "refactoring" : "Local Rename",
-      "offset" : 617
+      "offset" : 613
     },
     "applicableConfigs" : [
       "master",
@@ -1100,6 +1100,18 @@
       "refactoring" : "Local Rename",
       "offset" : 791
     }
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "concurrent-999",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 968
+    },
+    "applicableConfigs" : [
+      "swift-5.1-branch"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
   },
   {
     "path" : "*\/Result\/Result\/ResultProtocol.swift",
