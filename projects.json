@@ -2119,7 +2119,16 @@
         "scheme": "RxCocoa",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit"
+        "tags": "sourcekit",
+        "xfail": {
+          "compatibility": {
+            "5.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-11141"
+              }
+            }
+          }
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
