@@ -2070,6 +2070,42 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/igor-makarov/RxReactiveObjC.git",
+    "path": "RxReactiveObjC",
+    "branch": "comitted-pods-for-swift-compat",
+    "maintainer": "igormaka@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "580693f3e60dc0c6219cd82cbae651f518940a7f"
+      },
+      {
+        "version": "5.1",
+        "commit": "580693f3e60dc0c6219cd82cbae651f518940a7f"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "RxReactiveObjC.xcworkspace",
+        "scheme": "RxReactiveObjCSwiftCompat",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "RxReactiveObjC.xcworkspace",
+        "scheme": "RxReactiveObjCSwiftCompat",
+        "destination": "platform=iOS Simulator,name=iPhone 7",
+        "configuration": "Debug"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/ReactiveX/RxSwift.git",
     "path": "RxSwift",
     "branch": "master",
