@@ -3483,7 +3483,17 @@
         "target": "Base64CoderSwiftUI",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit sourcekit-smoke",
+        "xfail": {
+          "compatibility": {
+            "5.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-11350",
+                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-11350"
+              }
+            }
+          }
+        }
       }
     ]
   }
