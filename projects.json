@@ -2561,7 +2561,31 @@
         "tags": "sourcekit"
       },
       {
-        "action": "TestSwiftPackage"
+        "action": "TestSwiftPackage",
+        "xfail": {
+          "compatibility": {
+            "4.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-11384"
+              }
+            },
+            "4.2": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-11384"
+              }
+            },
+            "5.0": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-11384"
+              }
+            },
+            "5.1": {
+              "branch": {
+                "master": "https://bugs.swift.org/browse/SR-11384"
+              }
+            }
+          }
+        }
       }
     ]
   },
