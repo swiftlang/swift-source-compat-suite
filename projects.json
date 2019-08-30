@@ -252,6 +252,37 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/bow-swift/bow",
+    "path": "Bow",
+    "branch": "master",
+    "maintainer": "tomas.ruiz@47deg.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "41e0d583c2d165371fa5dd8be11e2eb3b474056b"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectScheme",
+        "project": "Bow.xcodeproj",
+        "scheme": "Bow",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeProjectScheme",
+        "workspace": "Bow.xcodeproj",
+        "scheme": "Bow",
+        "destination": "platform=iOS Simulator,name=iPhone XR"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/badoo/Chatto.git",
     "path": "Chatto",
     "branch": "master",
