@@ -2683,6 +2683,37 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/dfunckt/swift-futures",
+    "path": "swift-futures",
+    "branch": "master",
+    "maintainer": "akiskesoglou@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "68500e5501ca9986e996e16736496b5b2491af87"
+      },
+      {
+        "version": "5.1",
+        "commit": "68500e5501ca9986e996e16736496b5b2491af87"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/apple/swift-nio",
     "path": "swift-nio",
     "branch": "master",
