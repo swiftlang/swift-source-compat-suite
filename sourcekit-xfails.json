@@ -260,7 +260,6 @@
       "offset" : 613
     },
     "applicableConfigs" : [
-      "master",
       "swift-5.1-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
