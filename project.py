@@ -348,8 +348,35 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
     else:
         raise common.Unimplemented("Unknown action: %s" % action['action'])
 
+def is_xfailed(xfail_args, compatible_version, platform, swift_branch, build_config):
+    """Return whether the specified swift version/platform/branch/configuration is xfailed."""
+    if isinstance(xfail_args, dict):
+        if not 'issue' in xfail_args:
+            return is_xfailed_old(xfail_args, compatible_version, platform, swift_branch)
+        xfail_args = [xfail_args]
 
-def is_xfailed(xfail_args, compatible_version, platform, swift_branch):
+    def is_or_contains(spec, arg):
+        return arg in spec if isinstance(spec, list) else spec == arg
+    def matches(spec):
+        issue = spec['issue'].split()[0]
+        current = {
+            'compatibility': compatible_version,
+            'branch': swift_branch,
+            'platform': platform,
+            'configuration': build_config.lower()
+        }
+        for key, value in current.iteritems():
+          if key in spec and not is_or_contains(spec[key], value):
+            return None
+        return issue
+
+    for spec in xfail_args:
+        issue = matches(spec)
+        if issue is not None:
+            return issue
+    return None
+
+def is_xfailed_old(xfail_args, compatible_version, platform, swift_branch):
     """Return whether the specified platform/swift_branch is xfailed."""
     xfail = xfail_args['compatibility'].get(compatible_version, {})
     if '*' in xfail:
@@ -927,11 +954,13 @@ class CompatActionBuilder(ActionBuilder):
             self.project['compatibility'][compatible_swift]['commit']
         )
         bug_identifier = None
+        build_config = self.build_config if self.build_config else self.action.get('configuration', None)
         if 'xfail' in self.action:
             bug_identifier = is_xfailed(self.action['xfail'],
                                         compatible_swift,
                                         self.current_platform,
-                                        self.swift_branch)
+                                        self.swift_branch,
+                                        build_config)
         if bug_identifier:
             error_str = 'XFAIL: {bug}, {project}, {compatibility}, {action_target}'.format(
                             bug=bug_identifier,
@@ -962,11 +991,13 @@ class CompatActionBuilder(ActionBuilder):
             self.project['compatibility'][compatible_swift]['commit']
         )
         bug_identifier = None
+        build_config = self.build_config if self.build_config else self.action.get('configuration', None)
         if 'xfail' in self.action:
             bug_identifier = is_xfailed(self.action['xfail'],
                                         compatible_swift,
                                         self.current_platform,
-                                        self.swift_branch)
+                                        self.swift_branch,
+                                        build_config)
         if bug_identifier:
             error_str = 'UPASS: {bug}, {project}, {compatibility}, {action_target}'.format(
                             bug=bug_identifier,

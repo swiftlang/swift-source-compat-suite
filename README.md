@@ -265,8 +265,8 @@ visible.
 
 To mark an action as an expected failure, add an `xfail` entry for the correct
 Swift version and branch to the failing actions, associating each with a link
-to a JIRA reporting the relevant failure. The following is an example of an
-action that's XFAIL'd when building against Swift master branch in 4.2
+to a JIRA issue reporting the relevant failure. The following is an example of
+an action that's XFAIL'd when building against Swift master branch in 4.2
 compatibility mode.
 
 ~~~json
@@ -293,13 +293,9 @@ compatibility mode.
       "destination": "generic/platform=iOS",
       "configuration": "Release",
       "xfail": {
-        "compatibility": {
-          "4.2": {
-            "branch": {
-              "master": "https://bugs.swift.org/browse/SR-9999"
-            }
-          }
-        }
+        "issue": "https://bugs.swift.org/browse/SR-9999",
+        "compatibility": "4.2",
+        "branch": "master"
       }
     }
   ]
@@ -307,4 +303,68 @@ compatibility mode.
 ~~~
 
 Additional Swift branches and versions can be added to XFAIL different
-configurations.
+configurations. The currently supported fields for XFAIL entries are:
+
+- `"compatibility"`: the Swift version(s) it fails with, e.g. `"4.0"`
+- `"branch"`: the branch(es) of the swift compiler it fails with, e.g.
+  `"swift-5.1-branch"`
+- `"platform"`: the platform(s) it fails on, e.g. `"Darwin"` or `"Linux"`
+- `"configuration"`: the build configuration(s) if fails with, i.e. `"release"`
+  or `"debug"`)
+
+Values can either be a single string literal or a list of alternative string
+literals to match against. For example the below action is expected to fail on
+both master and swift-5.1-branch in both 4.0 and 5.1 compatibility modes:
+
+~~~json
+...
+{
+  "action": "BuildXcodeProjectTarget",
+  "project": "project.xcodeproj",
+  "target": "project",
+  "destination": "generic/platform=iOS",
+  "configuration": "Release",
+  "xfail": {
+    "issue": "https://bugs.swift.org/browse/SR-9999",
+    "compatibility": ["4.0", "5.1"],
+    "branch": ["master", "swift-5.1-branch"]
+  }
+}
+...
+~~~
+
+If an action is failing for different reasons in different configurations, the
+value of the action's `"xfail"` entry can also become a list rather than
+a single entry. In this case the `"issue"` of the first item that matches will
+be reported. In the below example any failure on Linux would be reported as
+*SR-7777*, while a failure on other platforms would be reported as *SR-8888*
+using a toolchain built from the *master* branch and *SR-9999* using a
+toolchain built from *swift-5.1-branch*. If the entries were in the reverse
+order, *SR-7777* would only be reported for Linux failures with toolchains built
+from a branch other than *master* or *swift-5.1-branch*.
+
+~~~json
+...
+{
+  "action": "BuildXcodeProjectTarget",
+  "project": "project.xcodeproj",
+  "target": "project",
+  "destination": "generic/platform=iOS",
+  "configuration": "Release",
+  "xfail": [
+    {
+      "issue": "https://bugs.swift.org/browse/SR-7777",
+      "platform": "Linux"
+    },
+    {
+      "issue": "https://bugs.swift.org/browse/SR-8888",
+      "branch": "master"
+    },
+    {
+      "issue": "https://bugs.swift.org/browse/SR-9999",
+      "branch": "swift-5.1-branch"
+    }
+  ]
+}
+...
+~~~
