@@ -799,15 +799,9 @@
         "configuration": "release",
         "tags": "sourcekit sourcekit-smoke",
         "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8250",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8250",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-8250"
-              }
-            }
-          }
+            "issue": "https://bugs.swift.org/browse/SR-8250",
+            "compatibility": "4.0",
+            "branch": ["master", "swift-5.0-branch", "swift-5.1-branch"]
         }
       },
       {
@@ -2188,13 +2182,9 @@
         "configuration": "Release",
         "tags": "sourcekit",
         "xfail": {
-          "compatibility": {
-            "5.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-11141"
-              }
-            }
-          }
+          "issue": "https://bugs.swift.org/browse/SR-11141",
+          "compatibility": "5.1",
+          "branch": "master"
         }
       },
       {
@@ -2358,16 +2348,9 @@
         "configuration": "release",
         "tags": "sourcekit",
         "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-8046",
-                "swift-5.0-branch": "https://bugs.swift.org/browse/SR-8046",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-8046",
-                "swift-4.2-branch": "https://bugs.swift.org/browse/SR-8046"
-              }
-            }
-          }
+          "issue": "https://bugs.swift.org/browse/SR-8046",
+          "compatibility": "4.0",
+          "branch": ["master", "swift-5.0-branch", "swift-5.1-branch", "swift-4.2-branch"]
         }
       },
       {
@@ -2402,13 +2385,10 @@
         "destination": "generic/platform=iOS",
         "configuration": "Release",
         "xfail": {
-          "compatibility": {
-            "5.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-11587"
-              }
-            }
-          }
+          "issue": "https://bugs.swift.org/browse/SR-11587",
+          "compatibility": "5.1",
+          "branch": "master",
+          "configuration": "release"
         }
       },
       {
@@ -2418,13 +2398,10 @@
         "destination": "generic/platform=iOS",
         "configuration": "Release",
         "xfail": {
-          "compatibility": {
-            "5.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-11587"
-              }
-            }
-          }
+          "issue": "https://bugs.swift.org/browse/SR-11587",
+          "compatibility": "5.1",
+          "branch": "master",
+          "configuration": "release"
         }
       },
       {
@@ -2435,13 +2412,10 @@
         "configuration": "Release",
         "tags": "sourcekit",
         "xfail": {
-          "compatibility": {
-            "5.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-11587"
-              }
-            }
-          }
+          "issue": "https://bugs.swift.org/browse/SR-11587",
+          "compatibility": "5.1",
+          "branch": "master",
+          "configuration": "release"
         }
       }
     ]
@@ -2672,20 +2646,9 @@
         "destination": "generic/platform=watchOS",
         "configuration": "Release",
         "xfail": {
-          "compatibility": {
-            "4.0": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-11248",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-11248"
-              }
-            },
-            "5.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-11248",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-11248"
-              }
-            }
-          }
+          "issue": "https://bugs.swift.org/browse/SR-11248",
+          "compatibility": ["4.0", "5.1"],
+          "branch": ["master", "swift-5.1-branch"]
         }
       },
       {
@@ -3543,14 +3506,9 @@
         "configuration": "Release",
         "tags": "sourcekit sourcekit-smoke",
         "xfail": {
-          "compatibility": {
-            "5.1": {
-              "branch": {
-                "master": "https://bugs.swift.org/browse/SR-11350",
-                "swift-5.1-branch": "https://bugs.swift.org/browse/SR-11350"
-              }
-            }
-          }
+          "issue": "https://bugs.swift.org/browse/SR-11350",
+          "compatibility": "5.1",
+          "branch": ["master", "swift-5.1-branch"]
         }
       }
     ]
