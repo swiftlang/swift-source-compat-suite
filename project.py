@@ -348,11 +348,10 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
     else:
         raise common.Unimplemented("Unknown action: %s" % action['action'])
 
+
 def is_xfailed(xfail_args, compatible_version, platform, swift_branch, build_config):
     """Return whether the specified swift version/platform/branch/configuration is xfailed."""
     if isinstance(xfail_args, dict):
-        if not 'issue' in xfail_args:
-            return is_xfailed_old(xfail_args, compatible_version, platform, swift_branch)
         xfail_args = [xfail_args]
 
     def is_or_contains(spec, arg):
@@ -374,21 +373,6 @@ def is_xfailed(xfail_args, compatible_version, platform, swift_branch, build_con
         issue = matches(spec)
         if issue is not None:
             return issue
-    return None
-
-def is_xfailed_old(xfail_args, compatible_version, platform, swift_branch):
-    """Return whether the specified platform/swift_branch is xfailed."""
-    xfail = xfail_args['compatibility'].get(compatible_version, {})
-    if '*' in xfail:
-        return xfail['*'].split()[0]
-    if '*' in xfail.get('branch', {}):
-        return xfail['branch']['*'].split()[0]
-    if '*' in xfail.get('platform', {}):
-        return xfail['platform']['*'].split()[0]
-    if swift_branch in xfail.get('branch', {}):
-        return xfail['branch'][swift_branch].split()[0]
-    if platform in xfail.get('platform', {}):
-        return xfail['platform'][platform].split()[0]
     return None
 
 
