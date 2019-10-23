@@ -361,9 +361,14 @@ def is_xfailed(xfail_args, compatible_version, platform, swift_branch, build_con
         current = {
             'compatibility': compatible_version,
             'branch': swift_branch,
-            'platform': platform,
-            'configuration': build_config.lower()
+            'platform': platform
         }
+        if 'configuration' in spec:
+          if build_config is None:
+            raise common.Unreachable("'xfail' entry contains 'configuration' "
+                "but none supplied via '--build-config' or the containing "
+                "action's 'configuration' field.")
+          current['configuration'] = build_config.lower()
         for key, value in current.iteritems():
           if key in spec and not is_or_contains(spec[key], value):
             return None
