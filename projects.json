@@ -2331,10 +2331,6 @@
     "maintainer": "krzysztof.zablocki@pixle.pl",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "6e29894121e66dcbab9d3e64367464e46c5546fd"
-      },
-      {
         "version": "5.1",
         "commit": "6e7daf6065bc21f2be038c00fcaac520fe473b9c"
       }
@@ -2348,9 +2344,9 @@
         "configuration": "release",
         "tags": "sourcekit",
         "xfail": {
-          "issue": "https://bugs.swift.org/browse/SR-8046",
-          "compatibility": "4.0",
-          "branch": ["master", "swift-5.0-branch", "swift-5.1-branch", "swift-4.2-branch"]
+          "issue": "rdar://56786088",
+          "compatibility": "5.1",
+          "branch": ["master", "swift-5.1-branch"]
         }
       },
       {
