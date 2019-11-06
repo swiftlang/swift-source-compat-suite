@@ -2346,7 +2346,7 @@
         "xfail": {
           "issue": "rdar://56786088",
           "compatibility": "5.1",
-          "branch": ["master", "swift-5.1-branch"]
+          "branch": "master"
         }
       },
       {
