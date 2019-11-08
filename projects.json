@@ -271,7 +271,11 @@
         "project": "Bow.xcodeproj",
         "scheme": "Bow",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+            "issue": "https://bugs.swift.org/browse/SR-11740",
+            "branch": ["master"]
+        }
       },
       {
         "action": "TestXcodeProjectScheme",
