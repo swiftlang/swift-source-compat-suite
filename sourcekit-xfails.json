@@ -241,6 +241,17 @@
   },
   {
     "path" : "*\/Dollar\/Sources\/Dollar.swift",
+    "issueDetail" : {
+      "kind" : "stressTesterCrash",
+      "arguments" : "--format json --page 30\/63 --rewrite-mode concurrent --limit 1000 --request CursorInfo --request RangeInfo --request CodeComplete --request CollectExpressionType *\/Dollar\/Sources\/Dollar.swift*"
+    },
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-11908"
+  },
+  {
+    "path" : "*\/Dollar\/Sources\/Dollar.swift",
     "applicableConfigs" : [
       "swift-5.0-branch"
     ],
@@ -263,6 +274,17 @@
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
   },
+  {
+  "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
+  "issueDetail" : {
+    "kind" : "codeComplete",
+    "offset" : 1428
+  },
+  "applicableConfigs" : [
+    "master"
+  ],
+  "issueUrl" : "https://bugs.swift.org/browse/SR-11911"
+},
   {
     "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
     "applicableConfigs" : [
@@ -566,6 +588,18 @@
       "swift-5.1-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
+  },
+  {
+    "path" : "*\/Guitar\/Sources\/GuitarCase.swift",
+    "modification" : "concurrent-4210",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 4211
+    },
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-11698"
   },
   {
     "path" : "*\/IBAnimatable\/Sources\/ActivityIndicators\/Animations\/ActivityIndicatorAnimationCirclePendulum.swift",
@@ -1097,6 +1131,17 @@
       "swift-5.1-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1560
+    },
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-11698"
   },
   {
     "path" : "*\/Result\/Result\/ResultProtocol.swift",
