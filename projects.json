@@ -447,25 +447,49 @@
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "issue": "https://bugs.swift.org/browse/SR-11949",
+          "compatibility": "4.2",
+          "branch": "master",
+          "configuration": "debug"
+        }
       },
       {
         "action": "TestXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore iOS",
-        "destination": "platform=iOS Simulator,name=iPhone 7"
+        "destination": "platform=iOS Simulator,name=iPhone 7",
+        "xfail": {
+          "issue": "https://bugs.swift.org/browse/SR-11949",
+          "compatibility": "4.2",
+          "branch": "master",
+          "configuration": "debug"
+        }
       },
       {
         "action": "TestXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore OSX",
-        "destination": "platform=macOS"
+        "destination": "platform=macOS",
+        "xfail": {
+          "issue": "https://bugs.swift.org/browse/SR-11949",
+          "compatibility": "4.2",
+          "branch": "master",
+          "configuration": "debug"
+        }
       },
       {
         "action": "TestXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore tvOS",
-        "destination": "platform=tvOS Simulator,name=Apple TV 1080p"
+        "destination": "platform=tvOS Simulator,name=Apple TV 1080p",
+        "xfail": {
+          "issue": "https://bugs.swift.org/browse/SR-11949",
+          "compatibility": "4.2",
+          "branch": "master",
+          "configuration": "debug"
+        }
       }
     ]
   },
