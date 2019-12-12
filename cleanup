@@ -42,6 +42,7 @@ def main():
     paths = [
         'build',
         'swift',
+        'llvm-project',
         'llvm',
         'clang',
         'compiler-rt',

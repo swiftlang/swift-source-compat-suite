@@ -235,10 +235,20 @@
       "offset" : 1868
     },
     "applicableConfigs" : [
-      "master",
       "swift-5.1-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
+  },
+  {
+    "path" : "*\/Dollar\/Sources\/Dollar.swift",
+    "issueDetail" : {
+      "kind" : "stressTesterCrash",
+      "arguments" : "--format json --page 30\/63 --rewrite-mode concurrent --limit 1000 --request CursorInfo --request RangeInfo --request CodeComplete --request CollectExpressionType *\/Dollar\/Sources\/Dollar.swift*"
+    },
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-11908"
   },
   {
     "path" : "*\/Dollar\/Sources\/Dollar.swift",
@@ -253,18 +263,28 @@
   },
   {
     "path" : "*\/DNS\/Sources\/DNS\/Types.swift",
-    "modification" : "concurrent-1322",
+    "modification" : "concurrent-1310",
     "issueDetail" : {
       "kind" : "semanticRefactoring",
       "refactoring" : "Local Rename",
-      "offset" : 617
+      "offset" : 613
     },
     "applicableConfigs" : [
-      "master",
       "swift-5.1-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
   },
+  {
+  "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
+  "issueDetail" : {
+    "kind" : "codeComplete",
+    "offset" : 1428
+  },
+  "applicableConfigs" : [
+    "master"
+  ],
+  "issueUrl" : "https://bugs.swift.org/browse/SR-11911"
+},
   {
     "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
     "applicableConfigs" : [
@@ -558,19 +578,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
   },
   {
-    "path" : "*\/Guitar\/Sources\/GuitarCase.swift",
-    "modification" : "insideOut-2833",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2834
-    },
-    "applicableConfigs" : [
-      "master",
-      "swift-5.1-branch"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
-  },
-  {
     "path" : "*\/GRDB.swift\/GRDB\/Core\/Cursor.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
@@ -581,6 +588,18 @@
       "swift-5.1-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
+  },
+  {
+    "path" : "*\/Guitar\/Sources\/GuitarCase.swift",
+    "modification" : "concurrent-4210",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 4211
+    },
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-11698"
   },
   {
     "path" : "*\/IBAnimatable\/Sources\/ActivityIndicators\/Animations\/ActivityIndicatorAnimationCirclePendulum.swift",
@@ -1100,6 +1119,29 @@
       "refactoring" : "Local Rename",
       "offset" : 791
     }
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "concurrent-999",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 968
+    },
+    "applicableConfigs" : [
+      "swift-5.1-branch"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1560
+    },
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-11698"
   },
   {
     "path" : "*\/Result\/Result\/ResultProtocol.swift",

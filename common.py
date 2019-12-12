@@ -32,9 +32,7 @@ DEFAULT_EXECUTE_TIMEOUT = 10*60
 
 branches = {
     'master': {
-        'llvm': 'stable',
-        'clang': 'stable',
-        'compiler-rt': 'stable',
+        'llvm-project': 'swift/master',
         'swift': 'master',
         'cmark': 'master',
         'ninja': 'release',
@@ -45,9 +43,7 @@ branches = {
         'swift-corelibs-xctest': 'master',
     },
     'swift-4.2-branch': {
-        'llvm': 'swift-4.2-branch',
-        'clang': 'swift-4.2-branch',
-        'compiler-rt': 'swift-4.2-branch',
+        'llvm-project': 'swift/swift-4.2-branch',
         'swift': 'swift-4.2-branch',
         'cmark': 'master',
         'ninja': 'release',
@@ -58,8 +54,7 @@ branches = {
         'swift-corelibs-xctest': 'swift-4.2-branch',
     },
     'swift-5.0-branch': {
-        'llvm': 'swift-5.0-branch',
-        'clang': 'swift-5.0-branch',
+        'llvm-project': 'swift/swift-5.0-branch',
         'compiler-rt': 'swift-5.0-branch',
         'swift': 'swift-5.0-branch',
         'cmark': 'swift-5.0-branch',
@@ -71,9 +66,7 @@ branches = {
         'swift-corelibs-xctest': 'swift-5.0-branch',
     },
      'swift-5.1-branch': {
-        'llvm': 'swift-5.1-branch',
-        'clang': 'swift-5.1-branch',
-        'compiler-rt': 'swift-5.1-branch',
+        'llvm-project': 'swift/swift-5.1-branch',
         'swift': 'swift-5.1-branch',
         'cmark': 'swift-5.1-branch',
         'ninja': 'release',
@@ -83,23 +76,8 @@ branches = {
         'swift-corelibs-foundation': 'swift-5.1-branch',
         'swift-corelibs-xctest': 'swift-5.1-branch',
     },
-    'swift-5.1-branch-06-12-2019': {
-        'llvm': 'swift-5.1-branch',
-        'clang': 'swift-5.1-branch',
-        'compiler-rt': 'swift-5.1-branch',
-        'swift': 'swift-5.1-branch-06-12-2019',
-        'cmark': 'swift-5.1-branch',
-        'ninja': 'release',
-        'llbuild': 'swift-5.1-branch',
-        'swiftpm': 'swift-5.1-branch',
-        'swift-corelibs-libdispatch': 'swift-5.1-branch',
-        'swift-corelibs-foundation': 'swift-5.1-branch',
-        'swift-corelibs-xctest': 'swift-5.1-branch',
-    },
     'swift-4.0-branch': {
-        'llvm': 'swift-4.0-branch',
-        'clang': 'swift-4.0-branch',
-        'compiler-rt': 'swift-4.0-branch',
+        'llvm-project': 'swift/swift-4.0-branch',
         'swift': 'swift-4.0-branch',
         'cmark': 'master',
         'ninja': 'release',
@@ -110,9 +88,7 @@ branches = {
         'swift-corelibs-xctest': 'swift-4.0-branch',
     },
     'swift-4.1-branch': {
-        'llvm': 'swift-4.1-branch',
-        'clang': 'swift-4.1-branch',
-        'compiler-rt': 'swift-4.1-branch',
+        'llvm-project': 'swift/swift-4.1-branch',
         'swift': 'swift-4.1-branch',
         'cmark': 'swift-4.1-branch',
         'ninja': 'release',
@@ -123,9 +99,7 @@ branches = {
         'swift-corelibs-xctest': 'swift-4.1-branch',
     },
     'swift-3.1-branch': {
-        'llvm': 'swift-3.1-branch',
-        'clang': 'swift-3.1-branch',
-        'compiler-rt': 'swift-3.1-branch',
+        'llvm-project': 'swift/swift-3.1-branch',
         'swift': 'swift-3.1-branch',
         'cmark': 'master',
         'ninja': 'release',
@@ -136,9 +110,7 @@ branches = {
         'swift-corelibs-xctest': 'swift-3.1-branch',
     },
     'swift-3.0-branch': {
-        'llvm': 'swift-3.0-branch',
-        'clang': 'swift-3.0-branch',
-        'compiler-rt': 'swift-3.0-branch',
+        'llvm-project': 'swift/swift-3.0-branch',
         'swift': 'swift-3.0-branch',
         'cmark': 'master',
         'ninja': 'release',
@@ -187,22 +159,16 @@ def clone_repos():
     >>> check_execute(['rm', '-rf', tmpdir])
     0
     >>> repos #doctest: +NORMALIZE_WHITESPACE
-    ['clang', 'cmark', 'compiler-rt', 'llbuild', 'llvm', 'ninja', 'swift',
+    ['llvm-project', 'cmark', 'llbuild', 'ninja', 'swift',
      'swift-corelibs-foundation', 'swift-corelibs-libdispatch',
      'swift-corelibs-xctest', 'swiftpm']
     """
     cpu_count = multiprocessing.cpu_count()
     workspace = private_workspace('.')
     repos = [
-        '{} https://github.com/apple/swift-llvm.git {}/llvm '.format(
-            branches[swift_branch]['llvm'], workspace
-        ),
-        '{} https://github.com/apple/swift-clang.git {}/clang '.format(
-            branches[swift_branch]['clang'], workspace
-        ),
-        '{} https://github.com/apple/swift-compiler-rt.git '
-        '{}/compiler-rt '.format(
-            branches[swift_branch]['compiler-rt'], workspace
+        '{} https://github.com/apple/llvm-project.git '
+        '{}/llvm-project '.format(
+            branches[swift_branch]['llvm-project'], workspace
         ),
         '{} https://github.com/apple/swift.git {}/swift '.format(
             branches[swift_branch]['swift'], workspace
@@ -245,6 +211,7 @@ def clone_repos():
     process0.stdin.close()
 
     assert process0.wait() == 0
+    symlink_llvm_project(workspace)
 
 
 class Unreachable(Exception):
@@ -402,6 +369,31 @@ def check_execute(command, timeout=None,
         if returncode == 0:
             return returncode
     raise ExecuteCommandFailure(command, returncode)
+
+
+def symlink_llvm_project(workspace):
+    print("Create symlink for LLVM Project")
+    llvm_projects = ['clang',
+                     'llvm',
+                     'lldb',
+                     'compiler-rt',
+                     'libcxx',
+                     'clang-tools-extra']
+    for project in llvm_projects:
+        src_path = os.path.join(workspace,
+                                'llvm-project',
+                                project)
+        dst_path = os.path.join(workspace, project)
+        if not os.path.islink(dst_path):
+            try:
+                os.symlink(src_path, dst_path)
+            except OSError as e:
+                if e.errno == errno.EEXIST:
+                    print("File '%s' already exists. Remove it, so "
+                          "update-checkout can create the symlink to the "
+                          "llvm-monorepo." % dst_path)
+                else:
+                    raise e
 
 
 def git_submodule_update(path, stdout=sys.stdout, stderr=sys.stderr):

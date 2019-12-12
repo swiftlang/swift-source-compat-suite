@@ -193,7 +193,7 @@ def build_swift_toolchain(workspace, args):
         '--install-symroot={}/build/compat_macos/symroot'.format(workspace),
         '--installable-package={}/build/compat_macos/root.tar.gz'.format(workspace),
         '--llvm-install-components=libclang;libclang-headers',
-        '--swift-install-components=compiler;clang-builtin-headers;stdlib;sdk-overlay;license;sourcekit-xpc-service;swift-remote-mirror;swift-remote-mirror-headers',
+        '--swift-install-components=compiler;clang-builtin-headers;stdlib;sdk-overlay;parser-lib;license;sourcekit-xpc-service;swift-remote-mirror;swift-remote-mirror-headers',
         '--symbols-package={}/build/compat_macos/root-symbols.tar.gz'.format(workspace),
         '--verbose-build',
         '--reconfigure',
@@ -232,7 +232,8 @@ class StressTesterRunner(object):
             'SK_STRESS_OUTPUT': results,
             'SK_XFAILS_PATH': self.xfails_path,
             'SK_STRESS_ACTIVE_CONFIG': self.swift_branch,
-            'SK_STRESS_SUPPRESS_OUTPUT': 'true'}
+            'SK_STRESS_SUPPRESS_OUTPUT': 'true',
+            'SK_STRESS_REWRITE_MODES': 'none concurrent insideout'}
         run_env.update(os.environ)
         run_cmd = ['./runner.py',
           '--projects', filtered_projects,

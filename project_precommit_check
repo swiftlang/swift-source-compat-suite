@@ -89,9 +89,9 @@ supported_configs = {
         },
         '5.1': {
             'version': 'Apple Swift version 5.1 '
-                       '(swiftlang-1100.0.257.2 clang-1100.0.31.3)\n'
+                       '(swiftlang-1100.0.270.6 clang-1100.0.32.1)\n'
                        'Target: x86_64-apple-darwin18.2.0\n',
-            'description': 'Xcode 11 Beta 4 (contains Swift 5.1)',
+            'description': 'Xcode 11 Beta 6 (contains Swift 5.1)',
             'branch': 'swift-5.1-branch'
         }
     },
@@ -163,33 +163,35 @@ def is_correct_swift_version(swiftc, compatibility_version):
     except KeyError:
         common.debug_print("error: Project configured for unsupported platform or Swift version")
         raise
-    error_msg = "error: please select {description}".format(
-        description=supported_configs[platform.system()][compatibility_version]['description']
-    )
     if swift_version.split("\n")[0] != expected_swift_version.split("\n")[0]:
         common.debug_print("--- Version check failed ---")
         common.debug_print("Expected version:\n" + expected_swift_version)
         common.debug_print("Current version:\n" + swift_version)
-        common.debug_print(error_msg)
+        common.debug_print("warning: Unexpected swiftc version. "\
+            "Expected swiftc for Swift {compat_vers} can be found in {description}.".format(
+            description=supported_configs[platform.system()][compatibility_version]['description'],
+            compat_vers=compatibility_version)
+        )
         return False
     common.debug_print("--- Version check succeeded ---")
     return True
 
 
 def check(project, swift_branch, swiftc, compatibility_version):
-    if platform.system() == 'Darwin':
-        common.debug_print("--- Locating swiftc executable ---")
-        swiftc = common.check_execute_output(['xcrun', '-f', 'swiftc']).strip()
     if not swiftc:
-        common.debug_print('error: please specify --swiftc')
-        return 1
-    swiftc = os.path.abspath(swiftc)
-    if not is_correct_swift_version(swiftc, compatibility_version):
-        return 1
+        if platform.system() == 'Darwin':
+            common.debug_print("--- Locating swiftc executable ---")
+            swiftc = common.check_execute_output(['xcrun', '-f', 'swiftc']).strip()
+        else:
+            common.debug_print('error: please specify --swiftc for non-Darwin platforms.')
+            return 1
+    swiftc_path = os.path.abspath(swiftc)
+    if not is_correct_swift_version(swiftc_path, compatibility_version):
+        common.debug_print("warning: Continuing to build with unexpected swiftc version.\n")
     runner_command = [
         runner_path,
         '--swift-branch', swift_branch,
-        '--swiftc', swiftc,
+        '--swiftc', swiftc_path,
         '--projects', project_list,
         '--include-repos', 'path == "%s"' % project,
         '--include-versions', 'version == "%s"' % compatibility_version,
