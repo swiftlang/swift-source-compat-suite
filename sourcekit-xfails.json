@@ -275,16 +275,16 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
   },
   {
-  "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
-  "issueDetail" : {
-    "kind" : "codeComplete",
-    "offset" : 1428
+    "path" : "*\/DNS\/Sources\/DNS\/Data+Extensions.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 539
+    },
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-12032"
   },
-  "applicableConfigs" : [
-    "master"
-  ],
-  "issueUrl" : "https://bugs.swift.org/browse/SR-11911"
-},
   {
     "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
     "applicableConfigs" : [
