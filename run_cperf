@@ -182,72 +182,23 @@ def get_swiftc_path(instance, workspace, args):
 
 
 def build_swift_toolchain(workspace, args):
-    build_script_args_common = [
-        '--release',
-        '--no-assertions',
-        '--build-ninja',
-        '--llbuild',
-        '--swiftpm',
-        '--skip-build-benchmarks',
-    ]
-    if args.cmake_c_launcher:
-        build_script_args_common += ['--cmake-c-launcher={}'.format(args.cmake_c_launcher)]
-    if args.cmake_cxx_launcher:
-        build_script_args_common += ['--cmake-cxx-launcher={}'.format(args.cmake_cxx_launcher)]
     if platform.system() == 'Darwin':
-        build_command = [os.path.join(workspace, 'swift/utils/build-script')]
-        build_command += build_script_args_common
-        build_command += [
-            '--ios',
-            '--tvos',
-            '--watchos',
-            '--build-subdir=compat_macos',
-            '--compiler-vendor=apple',
-            '--',
-            '--darwin-install-extract-symbols',
-            '--darwin-toolchain-alias=swift',
-            '--darwin-toolchain-bundle-identifier=org.swift.compat-macos',
-            '--darwin-toolchain-display-name-short=Swift Development Snapshot'
-            '--darwin-toolchain-display-name=Swift Development Snapshot',
-            '--darwin-toolchain-name=swift-DEVELOPMENT-SNAPSHOT',
-            '--darwin-toolchain-version=3.999.999',
-            '--install-llbuild',
-            '--install-swift',
-            '--install-swiftpm',
-            '--install-destdir={}/build/compat_macos/install'.format(workspace),
-            '--install-prefix=/toolchain/usr',
-            '--install-symroot={}/build/compat_macos/symroot'.format(workspace),
-            '--installable-package={}/build/compat_macos/root.tar.gz'.format(workspace),
-            '--llvm-install-components=libclang;libclang-headers',
-            '--swift-install-components=compiler;clang-builtin-headers;stdlib;sdk-overlay;license;sourcekit-xpc-service;swift-remote-mirror;swift-remote-mirror-headers',
-            '--symbols-package={}/build/compat_macos/root-symbols.tar.gz'.format(workspace),
-            '--verbose-build',
-            '--reconfigure',
-        ]
+        platform_name = 'macos'
     elif platform.system() == 'Linux':
-        build_command = [os.path.join(workspace, 'swift/utils/build-script')]
-        build_command += build_script_args_common
-        build_command += [
-            '--foundation',
-            '--libdispatch',
-            '--xctest',
-            '--build-subdir=compat_linux',
-            '--',
-            '--install-foundation',
-            '--install-libdispatch',
-            '--install-llbuild',
-            '--install-swift',
-            '--install-swiftpm',
-            '--install-xctest',
-            '--install-destdir={}/build/compat_linux/install'.format(workspace),
-            '--install-prefix=/usr',
-            '--installable-package={}/build/compat_linux/root.tar.gz'.format(workspace),
-            '--swift-install-components=autolink-driver;compiler;clang-builtin-headers;stdlib;swift-remote-mirror;sdk-overlay;license',
-            '--verbose-build',
-            '--reconfigure',
-        ]
+        platform_name = 'linux'
     else:
         raise common.UnsupportedPlatform
+
+    build_command = [
+        os.path.join(workspace, 'swift/utils/build-script'),
+        '--preset=cperf,platform={}'.format(platform_name),
+        'workspace={}'.format(workspace),
+    ]
+    
+    if args.cmake_c_launcher:
+        build_command += ['--cmake-c-launcher={}'.format(args.cmake_c_launcher)]
+    if args.cmake_cxx_launcher:
+        build_command += ['--cmake-cxx-launcher={}'.format(args.cmake_cxx_launcher)]
     
     # We do run this command for a dry run, but we pass through the flag.
     if args.dry_run:
