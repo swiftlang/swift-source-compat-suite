@@ -248,6 +248,11 @@ def build_swift_toolchain(workspace, args):
         ]
     else:
         raise common.UnsupportedPlatform
+    
+    # We do run this command for a dry run, but we pass through the flag.
+    if args.dry_run:
+        build_command += ['--dry-run']
+        
     common.check_execute(build_command, timeout=9999999)
 
 
@@ -320,9 +325,10 @@ def execute_runner(instance, workspace, configs, args):
             runner_command += get_sandbox_profile_flags()
         if args.verbose:
             runner_command += ["--verbose"]
+
         for i in range(args.repetitions):
             try:
-                common.check_execute(runner_command, timeout=9999999)
+                check_execute_if_not_dry_run(args, runner_command, timeout=9999999)
             except common.ExecuteCommandFailure:
                 pass
 
@@ -421,6 +427,14 @@ def find_module_statuses(configs, args):
     return (passed, failed)
 
 
+def check_execute_if_not_dry_run(args, command, **kwargs):
+    if args.dry_run:
+        print("Not executing: {}".format(runner_command))
+        return 0
+    else:
+        return common.execute(command, **kwargs)
+
+
 def analyze_results(configs, args):
     # Make a separate random run_id for each comment, to uniquify links.
     run_id = hex(random.randint(1, 2**63))[2:]
@@ -451,7 +465,7 @@ def analyze_results(configs, args):
             if os.path.exists(baseline)
             else [])
         returncodes.append(
-            common.execute(
+            check_execute_if_not_dry_run(args,
                 common_args +
                 ['--output', get_table_name('head', 'brief', variant),
                  '--divide-by', str(args.repetitions),
@@ -461,7 +475,7 @@ def analyze_results(configs, args):
                  '--delta-usec-thresh', delta_usec_thresh,
                  '--compare-stats-dirs', sd_old, sd_new]))
         returncodes.append(
-            common.execute(
+            check_execute_if_not_dry_run(args,
                 common_args +
                 select_stats_from_baseline_args +
                 ['--output', get_table_name('head', 'detailed', variant),
@@ -472,7 +486,7 @@ def analyze_results(configs, args):
                  '--compare-stats-dirs', sd_old, sd_new]))
         if args.show_baselines and os.path.exists(baseline):
             returncodes.append(
-                common.execute(
+                check_execute_if_not_dry_run(args,
                     common_args +
                     ['--output',
                      get_table_name('baseline', 'brief', variant),
@@ -483,7 +497,7 @@ def analyze_results(configs, args):
                      '--delta-usec-thresh', delta_usec_thresh,
                      '--compare-to-csv-baseline', baseline, sd_new]))
             returncodes.append(
-                common.execute(
+                check_execute_if_not_dry_run(args,
                     common_args +
                     ['--output',
                      get_table_name('baseline', 'detailed', variant),
@@ -631,6 +645,9 @@ def parse_args():
     parser.add_argument('--cmake-cxx-launcher',
                         metavar='PATH',
                         help='the absolute path to set CMAKE_CXX_COMPILER_LAUNCHER for build script')
+    parser.add_argument('--dry-run',
+                        action='store_true',
+                        help='clone compiler sources and simulate build-script run without building anything')
     return parser.parse_args()
 
 
