@@ -1982,6 +1982,66 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/DeclarativeHub/ReactiveKit.git",
+    "path": "ReactiveKit",
+    "branch": "master",
+    "compatibility": [
+      {
+        "version": "5.1",
+        "commit": "f1fddaecf532745a3b4d34793cb2763f42de3b60"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "maintainer": "srdan.rasic@gmail.com",
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "ReactiveKit.xcworkspace",
+        "scheme": "ReactiveKit-macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "ReactiveKit.xcworkspace",
+        "scheme": "ReactiveKit-iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "ReactiveKit.xcworkspace",
+        "scheme": "ReactiveKit-tvOS",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "ReactiveKit.xcworkspace",
+        "scheme": "ReactiveKit-watchOS",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "ReactiveKit.xcworkspace",
+        "scheme": "ReactiveKit-iOS",
+        "destination": "platform=iOS Simulator,name=iPhone 11"
+      },
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/ReactiveCocoa/ReactiveSwift.git",
     "path": "ReactiveSwift",
     "branch": "master",
