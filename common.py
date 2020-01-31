@@ -42,6 +42,17 @@ branches = {
         'swift-corelibs-foundation': 'master',
         'swift-corelibs-xctest': 'master',
     },
+    'master-rebranch': {
+        'llvm-project': 'swift/master-rebranch',
+        'swift': 'master-rebranch',
+        'cmark': 'master',
+        'ninja': 'release',
+        'llbuild': 'master',
+        'swiftpm': 'master',
+        'swift-corelibs-libdispatch': 'master',
+        'swift-corelibs-foundation': 'master',
+        'swift-corelibs-xctest': 'master',
+    },
     'swift-4.2-branch': {
         'llvm-project': 'swift/swift-4.2-branch',
         'swift': 'swift-4.2-branch',
