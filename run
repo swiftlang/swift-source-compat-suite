@@ -251,7 +251,7 @@ def build_swift_toolchain(workspace, args):
             '--install-prefix=/toolchain/usr',
             '--install-symroot={}/build/compat_macos/symroot'.format(workspace),
             '--installable-package={}/build/compat_macos/root.tar.gz'.format(workspace),
-            '--llvm-install-components=libclang;libclang-headers',
+            '--llvm-install-components=libclang;libclang-headers;dsymutil',
             '--swift-install-components=compiler;clang-builtin-headers;stdlib;sdk-overlay;license;sourcekit-xpc-service;swift-remote-mirror;swift-remote-mirror-headers',
             '--symbols-package={}/build/compat_macos/root-symbols.tar.gz'.format(workspace),
             '--verbose-build',
