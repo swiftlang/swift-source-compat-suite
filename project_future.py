@@ -544,6 +544,11 @@ def add_arguments(parser):
                         nargs='?',
                         const=True,
                         default=True)
+    parser.add_argument("--project-cache-path",
+                        help='Path of the dir where all the project binaries will be placed',
+                        metavar='PATH',
+                        type=os.path.abspath,
+                        default='project_cache')
 
 def add_minimal_arguments(parser):
     """Add common arguments to parser."""
@@ -800,7 +805,6 @@ class ListBuilder(Factory):
         self.verbose = verbose
         self.subbuilder = subbuilder
         self.target = target
-        self.root_path = common.private_workspace('project_cache')
 
     def included(self, subtarget):
         return True
@@ -911,6 +915,7 @@ class ActionBuilder(Factory):
                  added_xcodebuild_flags,
                  skip_clean, build_config,
                  strip_resource_phases,
+                 project_cache_path,
                  action, project):
         self.swiftc = swiftc
         self.swift_version = swift_version
@@ -920,7 +925,7 @@ class ActionBuilder(Factory):
         self.sandbox_profile_package = sandbox_profile_package
         self.project = project
         self.action = action
-        self.root_path = common.private_workspace('project_cache')
+        self.root_path = common.private_workspace(project_cache_path)
         self.current_platform = platform.system()
         self.added_swift_flags = added_swift_flags
         self.added_xcodebuild_flags = added_xcodebuild_flags
@@ -1021,6 +1026,7 @@ class CompatActionBuilder(ActionBuilder):
                  skip_clean, build_config,
                  strip_resource_phases,
                  only_latest_versions,
+                 project_cache_path,
                  action, version, project):
         super(CompatActionBuilder, self).__init__(
             swiftc, swift_version, swift_branch,
@@ -1030,6 +1036,7 @@ class CompatActionBuilder(ActionBuilder):
             added_xcodebuild_flags,
             skip_clean, build_config,
             strip_resource_phases,
+            project_cache_path,
             action, project
         )
         self.only_latest_versions = only_latest_versions
