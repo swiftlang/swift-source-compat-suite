@@ -829,9 +829,11 @@ class ListBuilder(Factory):
                 finally:
                     if output_fd is not sys.stdout:
                         output_fd.close()
+                        log_basename = os.path.basename(log_filename)
+                        log_dirname = os.path.dirname(log_filename)
                         os.rename(
                             log_filename,
-                            '%s_%s' % (subbuilder_result, log_filename),
+                            log_dirname + os.path.sep + '%s_%s' % (subbuilder_result, log_basename),
                         )
 
         return results
@@ -870,9 +872,10 @@ class ProjectBuilder(ListBuilder):
 
 
 class VersionBuilder(ListBuilder):
-    def __init__(self, include, exclude, verbose, subbuilder, target, project):
+    def __init__(self, include, exclude, verbose, project_cache_path, subbuilder, target, project):
         super(VersionBuilder, self).__init__(include, exclude, verbose, subbuilder, target)
         self.project = project
+        self.project_cache_path = project_cache_path
 
     def included(self, subtarget):
         action = subtarget
@@ -900,6 +903,8 @@ class VersionBuilder(ListBuilder):
         log_filename = re.sub(
             r"[^\w\_\.]+", "-", identifier
         ).strip('-').strip('_') + '.log'
+
+        log_filename = self.project_cache_path + os.path.sep + log_filename
         if self.verbose:
             fd = sys.stdout
         else:

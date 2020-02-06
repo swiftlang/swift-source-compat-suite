@@ -50,6 +50,7 @@ def main():
                 args.include_actions,
                 args.exclude_actions,
                 args.verbose,
+                args.project_cache_path,
                 project_future.CompatActionBuilder.factory(
                     args.swiftc,
                     args.swift_version,
