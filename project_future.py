@@ -900,6 +900,8 @@ class VersionBuilder(ListBuilder):
             ([scheme_target] if scheme_target else []) +
             ([destination] if destination else [])
         )
+        if not os.path.exists(self.project_cache_path):
+            common.check_execute(['mkdir', '-p', self.project_cache_path])
         log_filename = re.sub(
             r"[^\w\_\.]+", "-", identifier
         ).strip('-').strip('_') + '.log'
