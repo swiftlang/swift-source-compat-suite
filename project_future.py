@@ -317,7 +317,8 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
             action['action']
         )
 
-        initial_xcodebuild_flags = ['SWIFT_EXEC=%s' % swiftc]
+        initial_xcodebuild_flags = ['SWIFT_EXEC=%s' % swiftc,
+                                    '-IDEPackageSupportDisableManifestSandbox=YES']
 
         if build_config == 'debug':
             initial_xcodebuild_flags += ['-configuration', 'Debug']
