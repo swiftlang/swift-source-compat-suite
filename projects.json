@@ -1434,8 +1434,8 @@
     "maintainer": "ricouard77@gmail.com",
     "compatibility": [
       {
-        "version": "5.1",
-        "commit": "c0e8c5583b3dfcd6b3daa1bcfd2814686776c562"
+        "version": "5.2",
+        "commit": "3702c6dc4b61dc43a778620eec5a5ca490e2a3fb"
       }
     ],
     "platforms": [
