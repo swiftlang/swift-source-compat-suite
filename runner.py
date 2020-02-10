@@ -37,6 +37,11 @@ def main():
     if args.default_timeout:
         common.set_default_execute_timeout(args.default_timeout)
 
+    # DISABLED DUE TO: rdar://59302454.
+    # To track removing this line: rdar://59302467.
+    xcodebuild_flags = args.add_xcodebuild_flags
+    xcodebuild_flags += 'DEBUG_INFORMATION_FORMAT=dwarf'
+
     index = json.loads(open(args.projects).read())
     result = project_future.ProjectListBuilder(
         args.include_repos,
@@ -57,7 +62,7 @@ def main():
                     args.sandbox_profile_xcodebuild,
                     args.sandbox_profile_package,
                     args.add_swift_flags,
-                    args.add_xcodebuild_flags,
+                    xcodebuild_flags,
                     args.skip_clean,
                     args.build_config,
                     args.strip_resource_phases,
