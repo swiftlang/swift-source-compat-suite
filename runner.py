@@ -61,8 +61,7 @@ def main():
                     args.skip_clean,
                     args.build_config,
                     args.strip_resource_phases,
-                    args.only_latest_versions,
-                    args.project_cache_path
+                    args.only_latest_versions
                 ),
             ),
         ),
