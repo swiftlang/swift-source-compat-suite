@@ -2434,26 +2434,14 @@
         "project": "examples/AutobahnTest/Autobahn.xcodeproj",
         "scheme": "Starscream",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "issue": "https://bugs.swift.org/browse/SR-11587",
-          "compatibility": "5.1",
-          "branch": "master",
-          "configuration": "release"
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "examples/SimpleTest/SimpleTest.xcodeproj",
         "scheme": "Starscream",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "issue": "https://bugs.swift.org/browse/SR-11587",
-          "compatibility": "5.1",
-          "branch": "master",
-          "configuration": "release"
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -2461,13 +2449,7 @@
         "scheme": "Starscream",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit",
-        "xfail": {
-          "issue": "https://bugs.swift.org/browse/SR-11587",
-          "compatibility": "5.1",
-          "branch": "master",
-          "configuration": "release"
-        }
+        "tags": "sourcekit"
       }
     ]
   },
