@@ -620,6 +620,15 @@ def parse_args():
     parser.add_argument('--cmake-cxx-launcher',
                         metavar='PATH',
                         help='the absolute path to set CMAKE_CXX_COMPILER_LAUNCHER for build script')
+    parser.add_argument("--distcc",
+                        help='Build Swift pass distcc as cmake-*-launcher to build-script',
+                        action='store_true')
+    parser.add_argument("--debug",
+                        help='Build Swift in debug mode',
+                        action='store_true')
+    parser.add_argument("--assertions",
+                        help='Build Swift with assertions enabled',
+                        action='store_true')
     return parser.parse_args()
 
 
