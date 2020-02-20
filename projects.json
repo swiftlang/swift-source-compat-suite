@@ -801,7 +801,7 @@
         "xfail": {
             "issue": "https://bugs.swift.org/browse/SR-8250",
             "compatibility": "4.0",
-            "branch": ["master", "swift-5.0-branch", "swift-5.1-branch"]
+            "branch": ["master", "swift-5.0-branch", "swift-5.1-branch", "swift-5.2-branch"]
         }
       },
       {
@@ -2244,7 +2244,7 @@
         "xfail": {
           "issue": "https://bugs.swift.org/browse/SR-11141",
           "compatibility": "5.1",
-          "branch": "master"
+          "branch": ["master", "swift-5.2-branch"]
         }
       },
       {
@@ -2681,7 +2681,7 @@
         "xfail": {
           "issue": "https://bugs.swift.org/browse/SR-11248",
           "compatibility": ["4.0", "5.1"],
-          "branch": ["master", "swift-5.1-branch"]
+          "branch": ["master", "swift-5.1-branch", "swift-5.2-branch"]
         }
       },
       {
@@ -3572,7 +3572,7 @@
         "xfail": {
           "issue": "https://bugs.swift.org/browse/SR-11350",
           "compatibility": "5.1",
-          "branch": ["master", "swift-5.1-branch"]
+          "branch": ["master", "swift-5.1-branch", "swift-5.2-branch"]
         }
       }
     ]
