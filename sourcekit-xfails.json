@@ -590,16 +590,16 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
   },
   {
-    "path" : "*\/Guitar\/Sources\/GuitarCase.swift",
-    "modification" : "concurrent-4210",
+    "path" : "*\/Guitar\/Sources\/GuitarChord.swift",
     "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 4211
+      "kind" : "rangeInfo",
+      "length" : 50,
+      "offset" : 367
     },
     "applicableConfigs" : [
       "master"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-11698"
+    "issueUrl" : "https://bugs.swift.org/browse/SR-12283"
   },
   {
     "path" : "*\/IBAnimatable\/Sources\/ActivityIndicators\/Animations\/ActivityIndicatorAnimationCirclePendulum.swift",
@@ -1136,12 +1136,12 @@
     "path" : "*\/Result\/Result\/Result.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 1560
+      "offset" : 1580
     },
     "applicableConfigs" : [
       "master"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-11698"
+    "issueUrl" : "https://bugs.swift.org/browse/SR-12282"
   },
   {
     "path" : "*\/Result\/Result\/ResultProtocol.swift",
