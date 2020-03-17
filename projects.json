@@ -3622,5 +3622,30 @@
         }
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/Quick/Nimble",
+    "path": "Nimble",
+    "branch": "master",
+    "maintainer": "suicaicoca@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.1",
+        "commit": "eea5843b34beb559dd51cf004953f75028e47add"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
   }
 ]
