@@ -283,6 +283,37 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/carekit-apple/CareKit.git",
+    "path": "CareKit",
+    "branch": "master",
+    "maintainer": "erik_h@apple.com",
+    "compatibility": [
+      {
+        "version": "5.1",
+        "commit": "f5cbdc9ef0139b53b18ca0921133486ac242e22e"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "CKWorkspace.xcworkspace",
+        "scheme": "CareKit",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "CKWorkspace.xcworkspace",
+        "scheme": "CareKit",
+        "destination": "platform=iOS Simulator,name=iPhone 11 Pro Max"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/badoo/Chatto.git",
     "path": "Chatto",
     "branch": "master",
