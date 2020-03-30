@@ -1459,6 +1459,31 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/Dimillian/MovieSwiftUI.git",
+    "path": "MovieSwift",
+    "branch": "master",
+    "maintainer": "ricouard77@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.2",
+        "commit": "3702c6dc4b61dc43a778620eec5a5ca490e2a3fb"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "MovieSwift/MovieSwift.xcodeproj",
+        "target": "MovieSwift",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/ethanhuang13/NSAttributedStringBuilder.git",
     "path": "NSAttributedStringBuilder",
     "branch": "master",
