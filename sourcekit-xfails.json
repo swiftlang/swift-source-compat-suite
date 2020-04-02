@@ -278,12 +278,12 @@
     "path" : "*\/DNS\/Sources\/DNS\/Data+Extensions.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 539
+      "offset" : 548
     },
     "applicableConfigs" : [
       "master"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-12032"
+    "issueUrl" : "https://bugs.swift.org/browse/SR-12489"
   },
   {
     "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
@@ -590,16 +590,16 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
   },
   {
-    "path" : "*\/Guitar\/Sources\/GuitarChord.swift",
+    "path" : "*\/Guitar\/Sources\/GuitarPadding.swift",
+    "modification" : "concurrent-2985",
     "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 50,
-      "offset" : 367
+      "kind" : "cursorInfo",
+      "offset" : 2473
     },
     "applicableConfigs" : [
       "master"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-12283"
+    "issueUrl" : "https://bugs.swift.org/browse/SR-12490"
   },
   {
     "path" : "*\/IBAnimatable\/Sources\/ActivityIndicators\/Animations\/ActivityIndicatorAnimationCirclePendulum.swift",
