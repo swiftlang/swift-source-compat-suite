@@ -3335,6 +3335,32 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/bustoutsolutions/siesta.git",
+    "path": "siesta-swiftpm",
+    "branch": "master",
+    "compatibility": [
+      {
+        "version": "5.1",
+        "commit": "cb9c1bf6dbb89028798b9179fe4d1e1762586057"
+      }
+    ],
+    "maintainer": "cantrell@pobox.com",
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/vapor/console.git",
     "path": "vapor_console",
     "branch": "master",
