@@ -3284,16 +3284,12 @@
   {
     "repository": "Git",
     "url": "https://github.com/bustoutsolutions/siesta.git",
-    "path": "siesta",
+    "path": "siesta-legacy",
     "branch": "master",
     "compatibility": [
       {
         "version": "4.0",
         "commit": "926127231446fc5c1c8c3236033914a4006ab9a2"
-      },
-      {
-        "version": "5.1",
-        "commit": "3847e03570cafb0e40fe0fad6d89d04fb98cfabe"
       }
     ],
     "maintainer": "cantrell@pobox.com",
@@ -3336,7 +3332,7 @@
   {
     "repository": "Git",
     "url": "https://github.com/bustoutsolutions/siesta.git",
-    "path": "siesta-swiftpm",
+    "path": "siesta",
     "branch": "master",
     "compatibility": [
       {
@@ -3349,6 +3345,36 @@
       "Darwin"
     ],
     "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Siesta.xcodeproj",
+        "target": "Siesta iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Siesta.xcodeproj",
+        "target": "Siesta macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release",
+        "tags": "sourcekit"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Siesta.xcodeproj",
+        "target": "SiestaUI iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Siesta.xcodeproj",
+        "target": "SiestaUI macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release",
+        "tags": "sourcekit"
+      },
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
