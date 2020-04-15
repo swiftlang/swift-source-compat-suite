@@ -3728,7 +3728,7 @@
   {
     "repository": "Git",
     "url": "https://github.com/raywenderlich/vapor-til.git",
-    "path": "project",
+    "path": "vapor-til",
     "branch": "master",
     "maintainer": "0xtimc@gmail.com",
     "compatibility": {
@@ -3750,7 +3750,7 @@
   {
     "repository": "Git",
     "url": "https://github.com/brokenhandsio/SteamPressExample.git",
-    "path": "project",
+    "path": "steampressexample",
     "branch": "master",
     "maintainer": "0xtimc@gmail.com",
     "compatibility": {
@@ -3776,7 +3776,7 @@
   {
     "repository": "Git",
     "url": "https://github.com/brokenhandsio/SteamPress.git",
-    "path": "project",
+    "path": "steampress",
     "branch": "master",
     "maintainer": "0xtimc@gmail.com",
     "compatibility": {
