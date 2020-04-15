@@ -3724,5 +3724,82 @@
         "action": "TestSwiftPackage"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/raywenderlich/vapor-til.git",
+    "path": "project",
+    "branch": "master",
+    "maintainer": "0xtimc@gmail.com",
+    "compatibility": {
+      "4.2": {
+        "commit": "0b37f4569bec2dd45886324568da697841339028"
+      }
+    },
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/brokenhandsio/SteamPressExample.git",
+    "path": "project",
+    "branch": "master",
+    "maintainer": "0xtimc@gmail.com",
+    "compatibility": {
+      "4.2": {
+        "commit": "135a2029c6829a1f066cc97554d71d6fbdfe8dab"
+      },
+      "5.2": {
+        "version": "5.2",
+        "commit": "3eb31ac3a7dc84577386630e4da61dab1750c00e"
+      }
+    },
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/brokenhandsio/SteamPress.git",
+    "path": "project",
+    "branch": "master",
+    "maintainer": "0xtimc@gmail.com",
+    "compatibility": {
+      "4.2": {
+        "commit": "c0253ba08a91b285bdbc4fff65d339a206884b89"
+      },
+      "5.1": {
+        "version": "5.1",
+        "commit": "56851f476abcb56c0ecf92dce1ce7e29044ac78a"
+      }
+    },
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
   }
 ]
