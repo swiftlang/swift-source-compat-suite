@@ -1478,7 +1478,8 @@
         "project": "MovieSwift/MovieSwift.xcodeproj",
         "target": "MovieSwift",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
       }
     ]
   },
