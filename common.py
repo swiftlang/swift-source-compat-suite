@@ -42,6 +42,17 @@ branches = {
         'swift-corelibs-foundation': 'master',
         'swift-corelibs-xctest': 'master',
     },
+    'release/5.3': {
+        'llvm-project': 'swift/release/5.3',
+        'swift': 'release/5.3',
+        'cmark': 'release/5.3',
+        'ninja': 'release',
+        'llbuild': 'release/5.3',
+        'swiftpm': 'release/5.3',
+        'swift-corelibs-libdispatch': 'release/5.3',
+        'swift-corelibs-foundation': 'release/5.3',
+        'swift-corelibs-xctest': 'release/5.3',
+    },
     'swift-5.2-branch': {
         'llvm-project': 'swift/swift-5.2-branch',
         'swift': 'swift-5.2-branch',
