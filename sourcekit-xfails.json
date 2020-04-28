@@ -246,7 +246,8 @@
       "arguments" : "--format json --page 30\/63 --rewrite-mode concurrent --limit 1000 --request CursorInfo --request RangeInfo --request CodeComplete --request CollectExpressionType *\/Dollar\/Sources\/Dollar.swift*"
     },
     "applicableConfigs" : [
-      "master"
+      "master",
+      "release/5.3"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-11908"
   },
@@ -1128,7 +1129,8 @@
       "offset" : 1580
     },
     "applicableConfigs" : [
-      "master"
+      "master",
+      "release/5.3"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-12282"
   },
