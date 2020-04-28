@@ -278,12 +278,13 @@
     "path" : "*\/DNS\/Sources\/DNS\/Data+Extensions.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 548
+      "offset" : 1027
     },
     "applicableConfigs" : [
-      "master"
+      "master",
+      "release/5.3"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-12489"
+    "issueUrl" : "https://bugs.swift.org/browse/SR-12690"
   },
   {
     "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
