@@ -209,6 +209,7 @@ def build_swift_package(path, swiftc, configuration, sandbox_profile,
         clean_swift_package(path, swiftc, sandbox_profile,
                             stdout=stdout, stderr=stderr)
     env = os.environ
+    env['DYLD_LIBRARY_PATH'] = get_stdlib_platform_path(swiftc, 'macOS')
     env['SWIFT_EXEC'] = swiftc
     command = [swift, 'build', '-C', path, '--verbose',
                '--configuration', configuration]
