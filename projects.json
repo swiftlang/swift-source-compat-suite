@@ -3780,30 +3780,5 @@
         "action": "TestSwiftPackage"
       }
     ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/raywenderlich/vapor-til.git",
-    "path": "vapor-til",
-    "branch": "master",
-    "maintainer": "0xtimc@gmail.com",
-    "compatibility": [
-      {
-        "version": "4.2",
-        "commit": "0b37f4569bec2dd45886324568da697841339028"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release"
-      }
-    ]
-  },
-  
-  
+  }
 ]
