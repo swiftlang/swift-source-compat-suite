@@ -1479,6 +1479,12 @@
         "target": "MovieSwift",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
+        "xfail": {
+          "issue": "rdar://62928937",
+          "compatibility": "5.2",
+          "configuration": "Debug",
+          "branch": ["master"]
+        },
         "tags": "sourcekit sourcekit-smoke"
       }
     ]
