@@ -55,6 +55,9 @@ branches = {
         'swift-corelibs-libdispatch': 'release/5.3',
         'swift-corelibs-foundation': 'release/5.3',
         'swift-corelibs-xctest': 'release/5.3',
+        'swift-argument-parser': '0.0.5',
+        'swift-driver': 'master',
+        'yams': '3.0.1',
     },
     'swift-5.2-branch': {
         'llvm-project': 'swift/swift-5.2-branch',
@@ -66,6 +69,9 @@ branches = {
         'swift-corelibs-libdispatch': 'swift-5.2-branch',
         'swift-corelibs-foundation': 'swift-5.2-branch',
         'swift-corelibs-xctest': 'swift-5.2-branch',
+        'swift-argument-parser': '0.0.5',
+        'swift-driver': 'master',
+        'yams': '3.0.1',
     },
     'master-rebranch': {
         'llvm-project': 'swift/master-rebranch',
