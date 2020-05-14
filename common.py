@@ -41,9 +41,6 @@ branches = {
         'swift-corelibs-libdispatch': 'master',
         'swift-corelibs-foundation': 'master',
         'swift-corelibs-xctest': 'master',
-        'swift-argument-parser': '0.0.5',
-        'swift-driver': 'master',
-        'yams': '3.0.1',
     },
     'release/5.3': {
         'llvm-project': 'swift/release/5.3',
@@ -233,18 +230,6 @@ def clone_repos():
         '{} https://github.com/apple/swift-corelibs-xctest.git '
         '{}/swift-corelibs-xctest '.format(
             branches[swift_branch]['swift-corelibs-xctest'], workspace
-        ),
-        '{} https://github.com/apple/swift-argument-parser.git '
-        '{}/swift-argument-parser '.format(
-            branches[swift_branch]['swift-argument-parser'], workspace
-        ),
-        '{} https://github.com/apple/swift-driver.git '
-        '{}/swift-driver '.format(
-            branches[swift_branch]['swift-driver'], workspace
-        ),
-        '{} https://github.com/jpsim/Yams.git '
-        '{}/yams '.format(
-            branches[swift_branch]['yams'], workspace
         ),
     ]
 
