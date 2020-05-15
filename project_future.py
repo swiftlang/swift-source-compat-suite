@@ -211,12 +211,9 @@ def build_swift_package(path, swiftc, configuration, sandbox_profile,
     env = os.environ
     env['DYLD_LIBRARY_PATH'] = get_stdlib_platform_path(swiftc, 'macOS')
     env['SWIFT_EXEC'] = swiftc
-    print("=============")
-    print(os.listdir(get_stdlib_platform_path(swiftc, 'macOS')))
-    print("=============")
-    print(env)
-    print("=============")
-    exit(1)
+    env['DYLD_PRINT_LIBRARIES'] = 'YES'
+    env['DYLD_PRINT_ENV'] = 'YES'
+    env['DYLD_PRINT_OPTS'] = 'YES'
     command = [swift, 'build', '-C', path, '--verbose',
                '--configuration', configuration]
     if (swift_branch not in ['swift-3.0-branch',
