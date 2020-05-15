@@ -140,6 +140,8 @@ class XcodeTarget(ProjectTarget):
         if self._destination == 'generic/platform=watchOS':
             command += ['ARCHS=armv7k']
 
+        command = ['env']
+
         return command
 
     def get_test_command(self, incremental=False):
@@ -214,14 +216,15 @@ def build_swift_package(path, swiftc, configuration, sandbox_profile,
     env['DYLD_PRINT_LIBRARIES'] = 'YES'
     env['DYLD_PRINT_ENV'] = 'YES'
     env['DYLD_PRINT_OPTS'] = 'YES'
-    command = [swift, 'build', '-C', path, '--verbose',
-               '--configuration', configuration]
-    if (swift_branch not in ['swift-3.0-branch',
-                             'swift-3.1-branch']):
-        command.insert(2, '--disable-sandbox')
-    if added_swift_flags is not None:
-        for flag in added_swift_flags.split():
-            command += ["-Xswiftc", flag]
+    command = ['env']
+    #command = [swift, 'build', '-C', path, '--verbose',
+    #           '--configuration', configuration]
+    #if (swift_branch not in ['swift-3.0-branch',
+    #                         'swift-3.1-branch']):
+    #    command.insert(2, '--disable-sandbox')
+    #if added_swift_flags is not None:
+    #    for flag in added_swift_flags.split():
+    #        command += ["-Xswiftc", flag]
     return common.check_execute(command, timeout=3600,
                                 sandbox_profile=sandbox_profile,
                                 stdout=stdout, stderr=stderr,
