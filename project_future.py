@@ -213,6 +213,9 @@ def build_swift_package(path, swiftc, configuration, sandbox_profile,
     env = os.environ
     env['DYLD_LIBRARY_PATH'] = get_stdlib_platform_path(swiftc, 'macOS')
     env['SWIFT_EXEC'] = '/bogus/path'
+    env['SWIFT_EXEC_2'] = '/another/path'
+    env['__DYLD_LIBRARY_PATH'] = get_stdlib_platform_path(swiftc, 'macOS')
+    env['SWIFT_EXEC_DYLD_LIBRARY_PATH'] = get_stdlib_platform_path(swiftc, 'macOS')
     env['DYLD_PRINT_LIBRARIES'] = 'YES'
     env['DYLD_PRINT_ENV'] = 'YES'
     env['DYLD_PRINT_OPTS'] = 'YES'
