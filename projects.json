@@ -1,6 +1,32 @@
 [
   {
     "repository": "Git",
+    "url": "https://github.com/Dimillian/ACHNBrowserUI.git",
+    "path": "ACHNBrowserUI",
+    "branch": "master",
+    "maintainer": "ricouard77@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.1",
+        "commit": "9ec9f432eaa5ba3105d27df70f67c3037ddc999d"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "ACHNBrowserUI/ACHNBrowserUI.xcodeproj",
+        "target": "ACHNBrowserUI",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/andreamazz/AMScrollingNavbar.git",
     "path": "AMScrollingNavbar",
     "branch": "master",
