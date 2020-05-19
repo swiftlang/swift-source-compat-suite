@@ -8,7 +8,7 @@
     "compatibility": [
       {
         "version": "5.1",
-        "commit": "9ec9f432eaa5ba3105d27df70f67c3037ddc999d"
+        "commit": "5b393fb6af26f86d8f77cbc2272115d605b1e793"
       }
     ],
     "platforms": [
@@ -1491,8 +1491,8 @@
     "maintainer": "ricouard77@gmail.com",
     "compatibility": [
       {
-        "version": "5.2",
-        "commit": "3702c6dc4b61dc43a778620eec5a5ca490e2a3fb"
+        "version": "5.1",
+        "commit": "237010a51afd6923fdfac09f5bc88dd206c49e3a"
       }
     ],
     "platforms": [
