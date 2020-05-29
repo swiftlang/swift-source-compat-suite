@@ -3705,7 +3705,7 @@
     "compatibility": [
       {
         "version": "5.1",
-        "commit": "bd103d79396e16446056d2e571849e6c26faa6c1"
+        "commit": "f94c86027607f411e1b2e2f7373df375dc0173d6"
       }
     ],
     "platforms": [
@@ -3718,12 +3718,7 @@
         "target": "Base64CoderSwiftUI",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke",
-        "xfail": {
-          "issue": "https://bugs.swift.org/browse/SR-11350",
-          "compatibility": "5.1",
-          "branch": ["master", "swift-5.1-branch", "swift-5.2-branch"]
-        }
+        "tags": "sourcekit sourcekit-smoke"
       }
     ]
   },
