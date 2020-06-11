@@ -40,7 +40,7 @@ def main():
     # DISABLED DUE TO: rdar://59302454.
     # To track removing this line: rdar://59302467.
     xcodebuild_flags = args.add_xcodebuild_flags
-    xcodebuild_flags += 'DEBUG_INFORMATION_FORMAT=dwarf'
+    xcodebuild_flags += (' ' if xcodebuild_flags else '') + 'DEBUG_INFORMATION_FORMAT=dwarf'
 
     index = json.loads(open(args.projects).read())
     result = project_future.ProjectListBuilder(
