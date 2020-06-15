@@ -9,6 +9,10 @@
       {
         "version": "5.1",
         "commit": "5b393fb6af26f86d8f77cbc2272115d605b1e793"
+      },
+      {
+        "version": "5.2",
+        "commit": "3f14c4f7b9dfd70aefe95c022950bcdc59ec91b5"
       }
     ],
     "platforms": [
