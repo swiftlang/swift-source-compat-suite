@@ -93,6 +93,13 @@ supported_configs = {
                        'Target: x86_64-apple-darwin18.2.0\n',
             'description': 'Xcode 11 Beta 6 (contains Swift 5.1)',
             'branch': 'swift-5.1-branch'
+        },
+        '5.2': {
+            'version': 'Apple Swift version 5.2.4 '
+                       '(swiftlang-1103.0.32.9 clang-1103.0.32.53)\n'
+                       'Target: x86_64-apple-darwin18.2.0\n',
+            'description': 'Xcode 11.5 (contains Swift 5.2.4)',
+            'branch': 'swift-5.2-branch'
         }
     },
     # NOTE: Linux isn't fully supported yet
