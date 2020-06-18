@@ -348,6 +348,10 @@
       {
         "version": "4.0.3",
         "commit": "3e4b1a7167b066b1472fe217778461f9d7bd46fd"
+      },
+      {
+        "version": "5.2",
+        "commit": "158a1fb2b72470d097650275b0d5731566eb2a23"
       }
     ],
     "platforms": [
