@@ -22,18 +22,20 @@
         "destination": "generic/platform=iOS",
         "configuration": "Release",
         "tags": "sourcekit sourcekit-smoke",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-13197",
-            "compatibility": "5.1",
-            "branch": "master",
-            "configuration": "debug"
-        },
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-13198",
-            "compatibility": "5.1",
-            "branch": "swift-5.3-branch",
-            "configuration": "debug"
-        }
+        "xfail": [
+            {
+                "issue": "https://bugs.swift.org/browse/SR-13197",
+                "compatibility": "5.1",
+                "branch": "master",
+                "configuration": "debug"
+            },
+            {
+                "issue": "https://bugs.swift.org/browse/SR-13198",
+                "compatibility": "5.1",
+                "branch": "swift-5.3-branch",
+                "configuration": "debug"
+            }
+        ]
       }
     ]
   },
