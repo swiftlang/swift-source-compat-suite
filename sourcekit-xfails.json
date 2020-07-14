@@ -22,6 +22,17 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-12959"
   },
   {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/environments\/Items.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1277
+    },
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-12985"
+  },
+  {
     "path" : "*\/Alamofire\/Source\/Result.swift",
     "applicableConfigs" : [
       "master",
@@ -251,6 +262,18 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
   },
   {
+    "path" : "*\/Dollar\/Sources\/AutoCurry.swift",
+    "modification" : "insideOut-113",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 113
+    },
+    "applicableConfigs" : [
+      "master"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-13219"
+  },
+  {
     "path" : "*\/Dollar\/Sources\/Dollar.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
@@ -327,9 +350,10 @@
       "offset" : 160
     },
     "applicableConfigs" : [
-      "release\/5.3"
+      "release\/5.3",
+      "master"
     ],
-    "issueUrl" : "https://github.com/apple/swift/pull/32281 (fixed on master)"
+    "issueUrl" : "<issue url>"
   },
   {
     "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/ContentView.swift",
@@ -369,14 +393,15 @@
   },
   {
     "path" : "*\/DNS\/Sources\/DNS\/IP.swift",
+    "modification" : "insideOut-643",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 903
+      "offset" : 113
     },
     "applicableConfigs" : [
       "master"
     ],
-    "issueUrl" : "<issue url>"
+    "issueUrl" : "https://bugs.swift.org/browse/SR-13219"
   },
   {
     "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
