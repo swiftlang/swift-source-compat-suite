@@ -2705,6 +2705,32 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/nicklockwood/SwiftFormat.git",
+    "path": "SwiftFormat",
+    "branch": "master",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "d42194f66bfb0e721037a2fac28cd2402bb68f68"
+      }
+    ],
+    "maintainer": "nick@charcoaldesign.co.uk",
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/davecom/SwiftGraph.git",
     "path": "SwiftGraph",
     "branch": "master",
