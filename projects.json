@@ -1480,35 +1480,65 @@
         "workspace": "NonEmpty.xcworkspace",
         "scheme": "NonEmpty_macOS",
         "destination": "generic/platform=macOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "issue": "rdar://67259506",
+          "compatibilty": "5.1",
+          "branch": "master"
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "NonEmpty.xcworkspace",
         "scheme": "NonEmpty_iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "issue": "rdar://67259506",
+          "compatibilty": "5.1",
+          "branch": "master"
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "NonEmpty.xcworkspace",
         "scheme": "NonEmpty_tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "issue": "rdar://67259506",
+          "compatibilty": "5.1",
+          "branch": "master"
+        }
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "NonEmpty.xcworkspace",
         "scheme": "NonEmpty_watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": {
+          "issue": "rdar://67259506",
+          "compatibilty": "5.1",
+          "branch": "master"
+        }
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": {
+          "issue": "rdar://67259506",
+          "compatibilty": "5.1",
+          "branch": "master"
+        }
       },
       {
-        "action": "TestSwiftPackage"
+        "action": "TestSwiftPackage",
+        "xfail": {
+          "issue": "rdar://67259506",
+          "compatibilty": "5.1",
+          "branch": "master"
+        }
       }
     ]
   },
