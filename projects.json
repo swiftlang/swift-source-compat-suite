@@ -1113,7 +1113,14 @@
         "scheme": "Prelude-iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-13548",
+            "compatibility": ["4.0"],
+            "branch": "master"
+          }
+        ]
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -1121,7 +1128,14 @@
         "scheme": "Prelude-UIKit-iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-13548",
+            "compatibility": ["4.0"],
+            "branch": "master"
+          }
+        ]
       }
     ]
   },
@@ -1151,7 +1165,14 @@
         "scheme": "ReactiveExtensions-iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-13548",
+            "compatibility": ["4.0", "5.1"],
+            "branch": "master"
+          }
+        ]
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -2203,28 +2224,56 @@
         "scheme": "ReactiveSwift-macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-13548",
+            "compatibility": ["4.0"],
+            "branch": "master"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-13548",
+            "compatibility": ["4.0"],
+            "branch": "master"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-13548",
+            "compatibility": ["4.0"],
+            "branch": "master"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-13548",
+            "compatibility": ["4.0"],
+            "branch": "master"
+          }
+        ]
       }
     ]
   },
