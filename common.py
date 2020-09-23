@@ -31,18 +31,18 @@ except NameError:
 DEFAULT_EXECUTE_TIMEOUT = 10*60
 
 branches = {
-    'master': {
+    'main': {
         'llvm-project': 'swift/master',
-        'swift': 'master',
-        'cmark': 'master',
+        'swift': 'main',
+        'cmark': 'main',
         'ninja': 'release',
-        'llbuild': 'master',
-        'swiftpm': 'master',
-        'swift-corelibs-libdispatch': 'master',
-        'swift-corelibs-foundation': 'master',
-        'swift-corelibs-xctest': 'master',
+        'llbuild': 'main',
+        'swiftpm': 'main',
+        'swift-corelibs-libdispatch': 'main',
+        'swift-corelibs-foundation': 'main',
+        'swift-corelibs-xctest': 'main',
         'swift-argument-parser': '0.3.0',
-        'swift-driver': 'master',
+        'swift-driver': 'main',
         'yams': '3.0.1',
     },
     'release/5.3': {
@@ -76,15 +76,15 @@ branches = {
     'master-rebranch': {
         'llvm-project': 'swift/master-rebranch',
         'swift': 'master-rebranch',
-        'cmark': 'master',
+        'cmark': 'main',
         'ninja': 'release',
-        'llbuild': 'master',
-        'swiftpm': 'master',
-        'swift-corelibs-libdispatch': 'master',
-        'swift-corelibs-foundation': 'master',
-        'swift-corelibs-xctest': 'master',
+        'llbuild': 'main',
+        'swiftpm': 'main',
+        'swift-corelibs-libdispatch': 'main',
+        'swift-corelibs-foundation': 'main',
+        'swift-corelibs-xctest': 'main',
         'swift-argument-parser': '0.3.0',
-        'swift-driver': 'master',
+        'swift-driver': 'main',
         'yams': '3.0.1',
     },
     'swift-4.2-branch': {
