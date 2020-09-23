@@ -32,7 +32,7 @@ DEFAULT_EXECUTE_TIMEOUT = 10*60
 
 branches = {
     'main': {
-        'llvm-project': 'swift/master',
+        'llvm-project': 'swift/main',
         'swift': 'main',
         'cmark': 'main',
         'ninja': 'release',
@@ -56,7 +56,7 @@ branches = {
         'swift-corelibs-foundation': 'release/5.3',
         'swift-corelibs-xctest': 'release/5.3',
         'swift-argument-parser': '0.3.0',
-        'swift-driver': 'master',
+        'swift-driver': 'main',
         'yams': '3.0.1',
     },
     'swift-5.2-branch': {
@@ -71,20 +71,6 @@ branches = {
         'swift-corelibs-xctest': 'swift-5.2-branch',
         'swift-argument-parser': '0.3.0',
         'swift-driver': 'master',
-        'yams': '3.0.1',
-    },
-    'master-rebranch': {
-        'llvm-project': 'swift/master-rebranch',
-        'swift': 'master-rebranch',
-        'cmark': 'main',
-        'ninja': 'release',
-        'llbuild': 'main',
-        'swiftpm': 'main',
-        'swift-corelibs-libdispatch': 'main',
-        'swift-corelibs-foundation': 'main',
-        'swift-corelibs-xctest': 'main',
-        'swift-argument-parser': '0.3.0',
-        'swift-driver': 'main',
         'yams': '3.0.1',
     },
     'swift-4.2-branch': {
