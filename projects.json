@@ -34,6 +34,11 @@
                 "compatibility": "5.1",
                 "branch": "release/5.3",
                 "configuration": "debug"
+            },
+            {
+                "issue": "https://bugs.swift.org/browse/SR-13592",
+                "compatibility": "5.1",
+                "branch": ["main", "release/5.3"]
             }
         ]
       }
