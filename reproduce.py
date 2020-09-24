@@ -14,11 +14,11 @@
 """Easily reproduce project compatibility failures.
 
 Usage:
-    # Build master Swift and execute all Alamofire build targets
-    ./reproduce.py master --project-path Alamofire
+    # Build main Swift and execute all Alamofire build targets
+    ./reproduce.py main --project-path Alamofire
 
     # Execute all Alamofire build targets using existing Swift
-    ./reproduce.py master --project-path Alamofire --swiftc path/to/swiftc
+    ./reproduce.py main --project-path Alamofire --swiftc path/to/swiftc
 """
 
 import argparse

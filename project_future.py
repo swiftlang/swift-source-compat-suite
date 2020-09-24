@@ -38,7 +38,7 @@ swift_branch = None
 def set_swift_branch(branch):
     """Configure the library for a specific branch.
 
-    >>> set_swift_branch('master')
+    >>> set_swift_branch('main')
     """
     global swift_branch
     swift_branch = branch
@@ -502,7 +502,7 @@ def add_arguments(parser):
     parser.add_argument('--swift-branch',
                         metavar='BRANCH',
                         help='Swift branch configuration to use',
-                        default='master')
+                        default='main')
     parser.add_argument('--sandbox-profile-xcodebuild',
                         metavar='FILE',
                         help='sandbox xcodebuild build and test operations '
@@ -610,7 +610,7 @@ def add_minimal_arguments(parser):
     parser.add_argument('--swift-branch',
                         metavar='BRANCH',
                         help='Swift branch configuration to use',
-                        default='master')
+                        default='main')
 
 
 def evaluate_predicate(element, predicate):
