@@ -70,15 +70,15 @@ branches = {
         'swift-corelibs-foundation': 'swift-5.2-branch',
         'swift-corelibs-xctest': 'swift-5.2-branch',
         'swift-argument-parser': '0.3.0',
-        'swift-driver': 'master',
+        'swift-driver': 'main',
         'yams': '3.0.1',
     },
     'swift-4.2-branch': {
         'llvm-project': 'swift/swift-4.2-branch',
         'swift': 'swift-4.2-branch',
-        'cmark': 'master',
+        'cmark': 'main',
         'ninja': 'release',
-        'llbuild': 'master',
+        'llbuild': 'main',
         'swiftpm': 'swift-4.2-branch',
         'swift-corelibs-libdispatch': 'swift-4.2-branch',
         'swift-corelibs-foundation': 'swift-4.2-branch',
@@ -110,7 +110,7 @@ branches = {
     'swift-4.0-branch': {
         'llvm-project': 'swift/swift-4.0-branch',
         'swift': 'swift-4.0-branch',
-        'cmark': 'master',
+        'cmark': 'main',
         'ninja': 'release',
         'llbuild': 'swift-4.0-branch',
         'swiftpm': 'swift-4.0-branch',
@@ -132,7 +132,7 @@ branches = {
     'swift-3.1-branch': {
         'llvm-project': 'swift/swift-3.1-branch',
         'swift': 'swift-3.1-branch',
-        'cmark': 'master',
+        'cmark': 'main',
         'ninja': 'release',
         'llbuild': 'swift-3.1-branch',
         'swiftpm': 'swift-3.1-branch',
@@ -143,19 +143,19 @@ branches = {
     'swift-3.0-branch': {
         'llvm-project': 'swift/swift-3.0-branch',
         'swift': 'swift-3.0-branch',
-        'cmark': 'master',
+        'cmark': 'main',
         'ninja': 'release',
     },
 }
 
 swiftc_operation = {
-    'master': '-typecheck',
+    'main': '-typecheck',
     'swift-3.1-branch': '-typecheck',
     'swift-3.0-branch': '-parse',
 }
 
 swiftc_version = {
-    'master': '3',
+    'main': '3',
     'swift-3.1-branch': '3',
     'swift-3.0-branch': None,
 }
@@ -166,7 +166,7 @@ swift_branch = None
 def set_swift_branch(branch):
     """Configure the common library for a specific branch.
 
-    >>> set_swift_branch('master')
+    >>> set_swift_branch('main')
     """
     global swift_branch
     swift_branch = branch
@@ -182,7 +182,7 @@ def clone_repos():
     """Clone Swift and dependencies in parallel.
 
     >>> import tempfile
-    >>> set_swift_branch('master')
+    >>> set_swift_branch('main')
     >>> tmpdir = tempfile.mkdtemp()
     >>> with DirectoryContext(tmpdir):
     ...     clone_repos()
