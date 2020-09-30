@@ -44,6 +44,7 @@ branches = {
         'swift-argument-parser': '0.3.0',
         'swift-driver': 'main',
         'yams': '3.0.1',
+        'swift-tools-support-core': 'main',
     },
     'release/5.3': {
         'llvm-project': 'swift/release/5.3',
@@ -58,6 +59,7 @@ branches = {
         'swift-argument-parser': '0.3.0',
         'swift-driver': 'main',
         'yams': '3.0.1',
+        'swift-tools-support-core': 'main',
     },
     'swift-5.2-branch': {
         'llvm-project': 'swift/swift-5.2-branch',
@@ -240,6 +242,10 @@ def clone_repos():
         '{} https://github.com/jpsim/Yams.git '
         '{}/yams '.format(
             branches[swift_branch]['yams'], workspace
+        ),
+        '{} https://github.com/apple/swift-tools-support-core.git '
+        '{}/swift-tools-support-core '.format(
+            branches[swift_branch]['swift-tools-support-core'], workspace
         ),
     ]
 
