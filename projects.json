@@ -3419,12 +3419,7 @@
         "project": "Siesta.xcodeproj",
         "target": "SiestaUI iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-13623",
-            "compatibility": "4.0",
-            "branch": "main"
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -3472,12 +3467,7 @@
         "project": "Siesta.xcodeproj",
         "target": "SiestaUI iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-13623",
-            "compatibility": "5.1",
-            "branch": "main"
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectTarget",
