@@ -291,15 +291,7 @@
         "workspace": "BlueSocket.xcworkspace",
         "scheme": "Socket-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "rdar://problem/68590340",
-            "compatibility": ["4.2", "5.0", "5.1"],
-            "branch": "main",
-            "configuration": "debug"
-          }
-        ]
+        "configuration": "Release"
       }
     ]
   },
