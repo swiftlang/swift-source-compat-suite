@@ -58,6 +58,7 @@ def main():
         'swift-driver',
         'swift-argument-parser',
         'yams',
+        'swift-tools-support-core',
     ]
 
     if args.cleanup_cache:
