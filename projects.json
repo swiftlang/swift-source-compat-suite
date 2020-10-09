@@ -878,12 +878,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit sourcekit-smoke",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-8250",
-            "compatibility": "4.0",
-            "branch": ["main", "swift-5.0-branch", "swift-5.1-branch", "swift-5.2-branch"]
-        }
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "TestSwiftPackage"
@@ -2377,7 +2372,7 @@
         "xfail": {
           "issue": "https://bugs.swift.org/browse/SR-11141",
           "compatibility": "5.1",
-          "branch": ["main", "swift-5.2-branch", "release/5.3"]
+          "branch": ["main", "release/5.3"]
         }
       },
       {
@@ -2584,24 +2579,14 @@
         "project": "examples/AutobahnTest/Autobahn.xcodeproj",
         "scheme": "Starscream",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "issue": "https://bugs.swift.org/browse/SR-12322",
-          "compatibility": "5.1",
-          "branch": ["swift-5.2-branch"]
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "examples/SimpleTest/SimpleTest.xcodeproj",
         "scheme": "Starscream",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": {
-          "issue": "https://bugs.swift.org/browse/SR-12322",
-          "compatibility": "5.1",
-          "branch": ["swift-5.2-branch"]
-        }
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -2609,12 +2594,7 @@
         "scheme": "Starscream",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled",
-        "xfail": {
-          "issue": "https://bugs.swift.org/browse/SR-12322",
-          "compatibility": "5.1",
-          "branch": ["swift-5.2-branch"]
-        }
+        "tags": "sourcekit-disabled"
       }
     ]
   },
