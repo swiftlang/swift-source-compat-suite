@@ -747,7 +747,7 @@
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Evergreen.xcworkspace",
         "scheme": "Evergreen",
-        "destination": "generic/platform=macOS",
+        "destination": "generic/platform=macOS,arch=x86_64",
         "configuration": "Release",
         "tags": "sourcekit-disabled"
       }
