@@ -743,6 +743,9 @@
         "workspace": "Evergreen.xcworkspace",
         "scheme": "Evergreen",
         "destination": "generic/platform=macOS",
+        "environment": {
+            "ARCHS": "x86_64"
+        },
         "configuration": "Release",
         "tags": "sourcekit-disabled"
       }
