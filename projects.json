@@ -24,12 +24,6 @@
         "tags": "sourcekit sourcekit-smoke",
         "xfail": [
             {
-                "issue": "https://bugs.swift.org/browse/SR-13197",
-                "compatibility": "5.1",
-                "branch": "main",
-                "configuration": "debug"
-            },
-            {
                 "issue": "https://bugs.swift.org/browse/SR-13198",
                 "compatibility": "5.1",
                 "branch": "release/5.3",
