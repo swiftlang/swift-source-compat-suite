@@ -803,12 +803,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-13189",
-            "compatibility": ["5.0", "4.2"],
-            "branch": "main"
-        }
+        "tags": "sourcekit-disabled"
       }
     ]
   },
@@ -1221,12 +1216,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-13189",
-            "compatibility": ["4.0", "5.1"],
-            "branch": "main"
-        }
+        "tags": "sourcekit-disabled"
       }
     ]
   },
@@ -1407,12 +1397,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-13189",
-            "compatibility": "5.1",
-            "branch": "main"
-        }
+        "tags": "sourcekit-disabled"
       },
       {
         "action": "TestSwiftPackage"
@@ -2468,12 +2453,7 @@
         "xfail": [
             {
                 "issue": "https://bugs.swift.org/browse/SR-13190",
-                "compatibility": "5.1",
-                "branch": "main"
-            },
-            {
-                "issue": "https://bugs.swift.org/browse/SR-13189",
-                "compatibility": "4.0",
+                "compatibility": ["4.0", "5.1"],
                 "branch": "main"
             }
         ]
@@ -2534,12 +2514,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-13189",
-            "compatibility": "5.1",
-            "branch": "main"
-        }
+        "tags": "sourcekit-disabled"
       },
       {
         "action": "TestSwiftPackage"
@@ -2760,12 +2735,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-13189",
-            "compatibility": ["5.1", "5.0", "4.2", "4.0"],
-            "branch": "main"
-        }
+        "tags": "sourcekit-disabled"
       },
       {
         "action": "TestSwiftPackage"
@@ -3444,12 +3414,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-13189",
-            "compatibility": "5.1",
-            "branch": "main"
-        }
+        "tags": "sourcekit-disabled"
       },
       {
         "action": "TestSwiftPackage"
@@ -3484,12 +3449,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-13189",
-            "compatibility": ["5.0", "4.2"],
-            "branch": "main"
-        }
+        "tags": "sourcekit-disabled"
       }
     ]
   },
@@ -3549,12 +3509,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-13189",
-            "compatibility": ["5.0", "4.2"],
-            "branch": "main"
-        }
+        "tags": "sourcekit-disabled"
       }
     ]
   },
@@ -3586,12 +3541,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-13189",
-            "compatibility": ["5.1", "5.0", "4.2"],
-            "branch": "main"
-        }
+        "tags": "sourcekit-disabled"
       }
     ]
   },
@@ -3623,12 +3573,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-13189",
-            "compatibility": ["5.0", "4.2"],
-            "branch": "main"
-        }
+        "tags": "sourcekit-disabled"
       }
     ]
   },
@@ -3660,12 +3605,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-13189",
-            "compatibility": ["5.0", "4.2"],
-            "branch": "main"
-        }
+        "tags": "sourcekit-disabled"
       }
     ]
   },
@@ -3697,12 +3637,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-13189",
-            "compatibility": ["5.1", "5.0", "4.2"],
-            "branch": "main"
-        }
+        "tags": "sourcekit-disabled"
       }
     ]
   },
