@@ -62,6 +62,9 @@ def parse_args():
     parser.add_argument("--debug",
                         help='Build Swift in debug mode',
                         action='store_true')
+    parser.add_argument("--filter-by-tag",
+                        metavar='TAG',
+                        help='Only run project actions with the given tag')
     parser.add_argument("--test",
                         help='Only run test actions',
                         action='store_true')
@@ -162,6 +165,8 @@ def execute_runner(workspace, args):
     swiftc_path = get_swiftc_path(workspace, args.swiftc)
     if args.test:
         action_filter = 'action.startswith("TestSwiftPackage")'
+    elif args.filter_by_tag:
+        action_filter = '"tags" in locals() and "{}" in tags.split()'.format(args.filter_by_tag)
     else:
         action_filter = 'action.startswith("Build")'
     runner_command = [

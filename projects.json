@@ -197,7 +197,8 @@
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -227,7 +228,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "debug",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage",
@@ -592,7 +593,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit sourcekit-smoke swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -619,7 +620,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -765,7 +766,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -795,7 +796,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
@@ -826,7 +827,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -857,7 +858,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit sourcekit-smoke swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -891,7 +892,8 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -1208,7 +1210,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
@@ -1271,7 +1273,8 @@
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -1301,7 +1304,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -1389,7 +1392,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -1420,7 +1423,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -1474,7 +1477,8 @@
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -1525,7 +1529,8 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -1634,7 +1639,8 @@
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -1669,7 +1675,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
@@ -1714,7 +1720,8 @@
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "swiftpm"
       },
       {
         "action": "TestXcodeProjectScheme",
@@ -1763,7 +1770,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -1918,7 +1925,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -2130,7 +2137,8 @@
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -2217,7 +2225,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit sourcekit-smoke swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -2246,7 +2254,8 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "swiftpm"
       }
     ]
   },
@@ -2441,7 +2450,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled",
+        "tags": "sourcekit-disabled swiftpm",
         "xfail": [
             {
                 "issue": "https://bugs.swift.org/browse/SR-13190",
@@ -2483,7 +2492,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
@@ -2506,7 +2515,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -2691,7 +2700,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
@@ -2727,7 +2736,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -2827,7 +2836,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -2862,7 +2871,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -2889,7 +2898,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -2920,7 +2929,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -2947,7 +2956,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -3117,7 +3126,8 @@
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -3151,7 +3161,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -3302,7 +3312,8 @@
       },
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -3406,7 +3417,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -3441,7 +3452,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
@@ -3473,7 +3484,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
@@ -3501,7 +3512,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
@@ -3533,7 +3544,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
@@ -3565,7 +3576,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
@@ -3597,7 +3608,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
@@ -3629,7 +3640,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
@@ -3661,7 +3672,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
@@ -3693,7 +3704,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
@@ -3741,7 +3752,8 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
