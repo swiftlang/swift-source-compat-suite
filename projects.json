@@ -2055,7 +2055,7 @@
           {
             "issue": "rdar://problem/68590422",
             "compatibility": ["4.0", "5.1"],
-            "branch": "main",
+            "branch": ["main", "release/5.4"],
             "configuration": "debug"
           }
         ]
@@ -2070,7 +2070,7 @@
           {
             "issue": "rdar://problem/68590422",
             "compatibility": ["4.0", "5.1"],
-            "branch": "main",
+            "branch": ["main", "release/5.4"],
             "configuration": "debug"
           }
         ]
@@ -2350,7 +2350,7 @@
         "xfail": {
           "issue": "https://bugs.swift.org/browse/SR-11141",
           "compatibility": "5.1",
-          "branch": ["main", "release/5.3"]
+          "branch": ["main", "release/5.3", "release/5.4"]
         }
       },
       {
@@ -2455,7 +2455,7 @@
             {
                 "issue": "https://bugs.swift.org/browse/SR-13190",
                 "compatibility": ["4.0", "5.1"],
-                "branch": "main"
+                "branch": ["main", "release/5.4"]
             }
         ]
       },
