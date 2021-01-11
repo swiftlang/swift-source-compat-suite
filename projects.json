@@ -2965,6 +2965,31 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/apple/swift-numerics",
+    "path": "swift-numerics",
+    "branch": "main",
+    "maintainer": "stephentyrone@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.2",
+        "commit": "ae364a28f0eaf368b6a538a224d9ab20d88562c7"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/SwiftyJSON/SwiftyJSON.git",
     "path": "SwiftyJSON",
     "branch": "master",
