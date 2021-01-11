@@ -2623,6 +2623,31 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/apple/swift-algorithms",
+    "path": "swift-algorithms",
+    "branch": "main",
+    "maintainer": "natecook@apple.com",
+    "compatibility": [
+      {
+        "version": "5.2",
+        "commit": "3864606e00177c3438db075df56659cdfbc01ca8"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/malcommac/SwiftDate",
     "path": "SwiftDate",
     "branch": "master",
