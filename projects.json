@@ -2882,7 +2882,7 @@
     "repository": "Git",
     "url": "https://github.com/apple/swift-log",
     "path": "swift-log",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "ktoso@apple.com",
     "compatibility": [
       {
