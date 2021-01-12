@@ -2909,7 +2909,7 @@
     "repository": "Git",
     "url": "https://github.com/apple/swift-metrics",
     "path": "swift-metrics",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "ktoso@apple.com",
     "compatibility": [
       {
