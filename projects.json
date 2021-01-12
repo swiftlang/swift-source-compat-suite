@@ -2981,7 +2981,8 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
