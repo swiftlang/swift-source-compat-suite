@@ -2634,7 +2634,8 @@
       }
     ],
     "platforms": [
-      "Darwin"
+      "Darwin",
+      "Linux"
     ],
     "actions": [
       {
