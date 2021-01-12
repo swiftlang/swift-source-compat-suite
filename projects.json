@@ -2654,6 +2654,32 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/apple/swift-argument-parser",
+    "path": "swift-argument-parser",
+    "branch": "main",
+    "maintainer": "natecook@apple.com",
+    "compatibility": [
+      {
+        "version": "5.2",
+        "commit": "41f5fe52a34b2c7b9938996387fabfaca21918bd"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/malcommac/SwiftDate",
     "path": "SwiftDate",
     "branch": "master",
