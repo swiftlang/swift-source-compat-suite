@@ -2878,7 +2878,7 @@
     "repository": "Git",
     "url": "https://github.com/apple/swift-nio",
     "path": "swift-nio",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "johannesweiss@apple.com",
     "compatibility": [
       {
@@ -2892,6 +2892,14 @@
       {
         "version": "5.1",
         "commit": "5f8d3f0b404a12d459f294fdd5b3740e5b6aa8d4"
+      },
+      {
+        "version": "5.2",
+        "commit": "b671e557fd093cb84123a48c3d77806737926968"
+      },
+      {
+        "version": "5.3",
+        "commit": "b671e557fd093cb84123a48c3d77806737926968"
       }
     ],
     "platforms": [
@@ -2913,12 +2921,24 @@
     "repository": "Git",
     "url": "https://github.com/apple/swift-nio-http2",
     "path": "swift-nio-http2",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "johannesweiss@apple.com",
     "compatibility": [
       {
         "version": "5.0",
         "commit": "492a77b1867c2d31b08a3d7db63de59a8e2399ac"
+      },
+      {
+        "version": "5.1",
+        "commit": "59941f680326d41d00e3351972883f3377f8320b"
+      },
+      {
+        "version": "5.2",
+        "commit": "59941f680326d41d00e3351972883f3377f8320b"
+      },
+      {
+        "version": "5.3",
+        "commit": "59941f680326d41d00e3351972883f3377f8320b"
       }
     ],
     "platforms": [
@@ -2940,7 +2960,7 @@
     "repository": "Git",
     "url": "https://github.com/apple/swift-nio-extras",
     "path": "swift-nio-extras",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "johannesweiss@apple.com",
     "compatibility": [
       {
@@ -2950,6 +2970,18 @@
       {
         "version": "5.0",
         "commit": "66f9a509ed3cc56b6eb367515e421beca4a0af53"
+      },
+      {
+        "version": "5.1",
+        "commit": "e8d4442cf7a39828f54fb6851aa94767c8b7c9a5"
+      },
+      {
+        "version": "5.2",
+        "commit": "e8d4442cf7a39828f54fb6851aa94767c8b7c9a5"
+      },
+      {
+        "version": "5.3",
+        "commit": "e8d4442cf7a39828f54fb6851aa94767c8b7c9a5"
       }
     ],
     "platforms": [
@@ -2971,12 +3003,133 @@
     "repository": "Git",
     "url": "https://github.com/apple/swift-nio-ssl",
     "path": "swift-nio-ssl",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "johannesweiss@apple.com",
     "compatibility": [
       {
         "version": "5.0",
         "commit": "16de4b45c7cbe9815f995dd1539e6b7c4f0980a5"
+      },
+      {
+        "version": "5.1",
+        "commit": "62bf5083df970e67c886210fa5b857eacf044b7c"
+      },
+      {
+        "version": "5.2",
+        "commit": "62bf5083df970e67c886210fa5b857eacf044b7c"
+      },
+      {
+        "version": "5.3",
+        "commit": "62bf5083df970e67c886210fa5b857eacf044b7c"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-nio-ssh",
+    "path": "swift-nio-ssh",
+    "branch": "main",
+    "maintainer": "johannesweiss@apple.com",
+    "compatibility": [
+      {
+        "version": "5.1",
+        "commit": "3860f75de5554e4dc4a02d6955f0607cd8bde250"
+      },
+      {
+        "version": "5.2",
+        "commit": "3860f75de5554e4dc4a02d6955f0607cd8bde250"
+      },
+      {
+        "version": "5.3",
+        "commit": "3860f75de5554e4dc4a02d6955f0607cd8bde250"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-nio-transport-services",
+    "path": "swift-nio-transport-services",
+    "branch": "main",
+    "maintainer": "johannesweiss@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "9fc0d32e072181e5ef90a178bd67dfc7edbd1533"
+      },
+      {
+        "version": "5.1",
+        "commit": "9fc0d32e072181e5ef90a178bd67dfc7edbd1533"
+      },
+      {
+        "version": "5.2",
+        "commit": "9fc0d32e072181e5ef90a178bd67dfc7edbd1533"
+      },
+      {
+        "version": "5.3",
+        "commit": "9fc0d32e072181e5ef90a178bd67dfc7edbd1533"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-crypto",
+    "path": "swift-crypto",
+    "branch": "main",
+    "maintainer": "johannesweiss@apple.com",
+    "compatibility": [
+      {
+        "version": "5.1",
+        "commit": "8f4bfa5bc1951440c15710e9e893721aa4b2765c"
+      },
+      {
+        "version": "5.2",
+        "commit": "8f4bfa5bc1951440c15710e9e893721aa4b2765c"
+      },
+      {
+        "version": "5.3",
+        "commit": "8f4bfa5bc1951440c15710e9e893721aa4b2765c"
       }
     ],
     "platforms": [
