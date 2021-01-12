@@ -2263,16 +2263,28 @@
     "repository": "Git",
     "url": "https://github.com/igor-makarov/RxReactiveObjC.git",
     "path": "RxReactiveObjC",
-    "branch": "comitted-pods-for-swift-compat",
+    "branch": "main",
     "maintainer": "igormaka@gmail.com",
     "compatibility": [
       {
+        "version": "4.2",
+        "commit": "ec478bb68edbb8f10a7982bcffe9f1779de4e58b"
+      },
+      {
         "version": "5.0",
-        "commit": "580693f3e60dc0c6219cd82cbae651f518940a7f"
+        "commit": "ec478bb68edbb8f10a7982bcffe9f1779de4e58b"
       },
       {
         "version": "5.1",
-        "commit": "580693f3e60dc0c6219cd82cbae651f518940a7f"
+        "commit": "ec478bb68edbb8f10a7982bcffe9f1779de4e58b"
+      },
+      {
+        "version": "5.2",
+        "commit": "ec478bb68edbb8f10a7982bcffe9f1779de4e58b"
+      },
+      {
+        "version": "5.3",
+        "commit": "ec478bb68edbb8f10a7982bcffe9f1779de4e58b"
       }
     ],
     "platforms": [
@@ -2280,18 +2292,11 @@
     ],
     "actions": [
       {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "RxReactiveObjC.xcworkspace",
-        "scheme": "RxReactiveObjCSwiftCompat",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
       },
       {
-        "action": "TestXcodeWorkspaceScheme",
-        "workspace": "RxReactiveObjC.xcworkspace",
-        "scheme": "RxReactiveObjCSwiftCompat",
-        "destination": "platform=iOS Simulator,name=iPhone 7",
-        "configuration": "Debug"
+        "action": "TestSwiftPackage"
       }
     ]
   },
