@@ -2967,7 +2967,7 @@
     "repository": "Git",
     "url": "https://github.com/apple/swift-distributed-tracing",
     "path": "swift-distributed-tracing",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "ktoso@apple.com",
     "compatibility": [
       {
