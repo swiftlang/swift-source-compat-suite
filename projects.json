@@ -2911,6 +2911,37 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/apple/swift-log",
+    "path": "swift-log",
+    "branch": "main",
+    "maintainer": "ktoso@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "16cfcc60e49d940c93367e5fe0e0533bd27e9733"
+      },
+      {
+        "version": "5.2",
+        "commit": "16cfcc60e49d940c93367e5fe0e0533bd27e9733"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/apple/swift-nio-http2",
     "path": "swift-nio-http2",
     "branch": "master",
