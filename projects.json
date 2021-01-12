@@ -2965,6 +2965,32 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/apple/swift-system",
+    "path": "swift-system",
+    "branch": "main",
+    "maintainer": "milseman@apple.com",
+    "compatibility": [
+      {
+        "version": "5.2",
+        "commit": "0627d28e6ae514940c6ee061acfd36a3c231b87f"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/SwiftyJSON/SwiftyJSON.git",
     "path": "SwiftyJSON",
     "branch": "master",
