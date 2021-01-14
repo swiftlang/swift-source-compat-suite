@@ -3316,6 +3316,37 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/apple/swift-distributed-tracing",
+    "path": "swift-distributed-tracing",
+    "branch": "main",
+    "maintainer": "ktoso@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "73f2b523f0f1b04b0c58979a10fafc7860819889"
+      },
+      {
+        "version": "5.2",
+        "commit": "73f2b523f0f1b04b0c58979a10fafc7860819889"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/SwiftyJSON/SwiftyJSON.git",
     "path": "SwiftyJSON",
     "branch": "master",
