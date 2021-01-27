@@ -2950,7 +2950,8 @@
         "xfail": {
           "issue": "https://bugs.swift.org/browse/SR-14090",
           "compatibility": ["5.0", "5.1"],
-          "branch": ["main"]
+          "branch": ["main"],
+          "configuration": "release"
         }
       },
       {
