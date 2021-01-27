@@ -2946,12 +2946,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": {
-          "issue": "https://bugs.swift.org/browse/SR-14090",
-          "compatibility": ["5.0", "5.1"],
-          "branch": ["main"]
-        }
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
