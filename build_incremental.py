@@ -18,7 +18,7 @@ import json
 import sys
 
 import common
-import project
+import project_future
 
 
 def parse_args():
