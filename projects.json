@@ -2680,6 +2680,33 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/apple/swift-atomics",
+    "path": "swift-atomics",
+    "branch": "main",
+    "maintainer": "klorentey@apple.com",
+    "compatibility": [
+      {
+        "version": "5.2",
+        "commit": "df9f811f19a852fa7b78af9cffa8ec447eaeb40a"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/malcommac/SwiftDate",
     "path": "SwiftDate",
     "branch": "master",
