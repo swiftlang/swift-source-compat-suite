@@ -858,12 +858,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": {
-            "issue": "https://bugs.swift.org/browse/SR-14068",
-            "compatibility": ["5.2", "5.3"],
-            "branch": ["main"]
-        }
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
