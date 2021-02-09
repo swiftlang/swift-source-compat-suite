@@ -77,6 +77,7 @@ branches = {
         'swift-driver': 'main',
         'yams': '3.0.1',
         'swift-tools-support-core': 'main',
+        'swift-crypto': 'main',
     },
     'swift-5.2-branch': {
         'llvm-project': 'swift/swift-5.2-branch',
