@@ -45,6 +45,7 @@ branches = {
         'swift-driver': 'main',
         'yams': '3.0.1',
         'swift-tools-support-core': 'main',
+        'swift-crypto': 'main',
     },
     'release/5.4': {
         'llvm-project': 'swift/release/5.4',
@@ -60,6 +61,7 @@ branches = {
         'swift-driver': 'main',
         'yams': '3.0.1',
         'swift-tools-support-core': 'main',
+        'swift-crypto': 'main',
     },
     'release/5.3': {
         'llvm-project': 'swift/release/5.3',
@@ -261,6 +263,10 @@ def clone_repos():
         '{} https://github.com/apple/swift-tools-support-core.git '
         '{}/swift-tools-support-core '.format(
             branches[swift_branch]['swift-tools-support-core'], workspace
+        ),
+        '{} https://github.com/apple/swift-crypto.git '
+        '{}/swift-crypto '.format(
+            branches[swift_branch]['swift-crypto'], workspace
         ),
     ]
 
