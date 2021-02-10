@@ -675,7 +675,14 @@
         "scheme": "Dollar",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit sourcekit-smoke",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-14182",
+            "compatibility": ["4.0", "5.1"],
+            "branch": ["main"]
+          }
+        ]
       }
     ]
   },
