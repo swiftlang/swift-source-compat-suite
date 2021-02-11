@@ -2050,30 +2050,14 @@
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "rdar://problem/68590422",
-            "compatibility": ["4.0", "5.1"],
-            "branch": ["main", "release/5.4"],
-            "configuration": "debug"
-          }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "rdar://problem/68590422",
-            "compatibility": ["4.0", "5.1"],
-            "branch": ["main", "release/5.4"],
-            "configuration": "debug"
-          }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
