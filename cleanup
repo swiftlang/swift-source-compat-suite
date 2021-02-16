@@ -59,6 +59,7 @@ def main():
         'swift-argument-parser',
         'yams',
         'swift-tools-support-core',
+        'swift-crypto',
     ]
 
     if args.cleanup_cache:
