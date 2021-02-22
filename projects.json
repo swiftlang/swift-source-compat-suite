@@ -836,6 +836,37 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/grpc/grpc-swift",
+    "path": "grpc-swift",
+    "branch": "main",
+    "maintainer": "gbarnett@apple.com",
+    "compatibility": [
+      {
+        "version": "5.2",
+        "commit": "a45db1b439bc85b9e18f7ee1a5bf3ec564107819"
+      },
+      {
+        "version": "5.3",
+        "commit": "a45db1b439bc85b9e18f7ee1a5bf3ec564107819"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/artsabintsev/Guitar.git",
     "path": "Guitar",
     "branch": "master",
