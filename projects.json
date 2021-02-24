@@ -2744,12 +2744,8 @@
     "maintainer": "me@danielemargutti.com",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "744a8ce947f71e951e9f0f240b07d1a4f1f8b84e"
-      },
-      {
-        "version": "5.0",
-        "commit": "a462ce32f65881c68525e34d982d20d300cbf6d9"
+        "version": "5.3",
+        "commit": "6190d0cefff3013e77ed567e6b074f324e5c5bf5"
       }
     ],
     "platforms": [
