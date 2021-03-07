@@ -45,7 +45,7 @@ branches = {
         'swift-driver': 'main',
         'yams': '3.0.1',
         'swift-tools-support-core': 'main',
-        'swift-crypto': '1.1.4',
+        'swift-crypto': '1.1.5',
     },
     'release/5.4': {
         'llvm-project': 'swift/release/5.4',
@@ -61,7 +61,7 @@ branches = {
         'swift-driver': 'release/5.4',
         'yams': '3.0.1',
         'swift-tools-support-core': 'release/5.4',
-        'swift-crypto': '1.1.4',
+        'swift-crypto': '1.1.5',
     },
     'release/5.3': {
         'llvm-project': 'swift/release/5.3',
@@ -77,7 +77,7 @@ branches = {
         'swift-driver': 'main',
         'yams': '3.0.1',
         'swift-tools-support-core': 'main',
-        'swift-crypto': '1.1.4',
+        'swift-crypto': '1.1.5',
     },
     'swift-5.2-branch': {
         'llvm-project': 'swift/swift-5.2-branch',
