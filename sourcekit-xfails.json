@@ -24,13 +24,35 @@
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/environments\/Items.swift",
     "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1277
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Convert Call to Async Alternative",
+      "offset" : 5645
     },
     "applicableConfigs" : [
       "main"
     ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14328"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/environments\/Items.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1277
+    },
+    "applicableConfigs" : [],
     "issueUrl" : "https://bugs.swift.org/browse/SR-12985"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/SceneDelegate.swift",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Convert Call to Async Alternative",
+      "offset" : 2976
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14328"
   },
   {
     "path" : "*\/Alamofire\/Source\/Result.swift",
@@ -280,7 +302,6 @@
       "offset" : 8423
     },
     "applicableConfigs" : [
-      "main",
       "release\/5.3"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-12957"
@@ -297,15 +318,16 @@
     }
   },
   {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/UI\/Sources\/UI\/badges\/NotificationBadge.swift",
+    "path" : "*\/Dollar\/Sources\/Dollar.swift",
     "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 209
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Convert Call to Async Alternative",
+      "offset" : 8474
     },
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-13658"
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14328"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Packages\/UI\/Sources\/UI\/badges\/PopularityBadge.swift",
@@ -344,26 +366,26 @@
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/launch\/AppDelegate.swift",
+    "modification" : "insideOut-640",
+    "issueDetail" : {
+      "kind" : "conformingMethodList",
+      "offset" : 5
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14327"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/launch\/AppDelegate.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 160
     },
     "applicableConfigs" : [
-      "release\/5.3",
-      "main"
+      "release\/5.3"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
-  },
-  {
-    "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/ContentView.swift",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 211
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-13658"
   },
   {
     "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/ContentView.swift",
@@ -372,6 +394,7 @@
       "offset" : 304
     },
     "applicableConfigs" : [
+      "main",
       "release\/5.3"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-12965"
@@ -423,6 +446,17 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-13219"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1652
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14317"
   },
   {
     "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
@@ -727,6 +761,18 @@
       "swift-5.1-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
+  },
+  {
+  "path" : "*\/Guitar\/Sources\/Guitar.swift",
+    "modification" : "insideOut-182",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 19
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14319"
   },
   {
     "path" : "*\/IBAnimatable\/Sources\/ActivityIndicators\/Animations\/ActivityIndicatorAnimationCirclePendulum.swift",
@@ -1233,6 +1279,18 @@
       "kind" : "codeComplete",
       "offset" : 4690
     }
+  },
+  {
+    "path" : "*\/Result\/Result\/AnyError.swift",
+    "modification" : "insideOut-319",
+    "issueDetail" : {
+      "kind" : "conformingMethodList",
+      "offset" : 5
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14327"
   },
   {
     "path" : "*\/Result\/Result\/Result.swift",
