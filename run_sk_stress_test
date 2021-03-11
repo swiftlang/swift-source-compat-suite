@@ -323,9 +323,17 @@ class StressTesterRunner(object):
             projects = json.load(json_file)
             for project in projects:
                 for action in project['actions']:
-                    # This is used in combination with --add-xcodebuild-flags to prevent running the stress tester over the same files twice.
-                    # generic/iOS actions invoke the wrapper for both arm64 and armv7, which makes little difference for the stress tester.
-                    action['archs_override'] = 'arm64' if action.get('destination') == 'generic/platform=iOS' else '$ARCHS'
+                    # This is used in combination with --add-xcodebuild-flags
+                    # to prevent running the stress tester over the same files
+                    # for difference architectures. generic/iOS actions
+                    # normally invoke the wrapper for both arm64 and armv7 and
+                    # generic/macOS actions for arm64 and x86_64.
+                    if action.get('destination') == 'generic/platform=iOS':
+                        action['archs_override'] = 'arm64'
+                    elif action.get('destination') == 'generic/platform=macOS':
+                        action['archs_override'] = 'x86_64'
+                    else:
+                        action['archs_override'] = '$ARCHS'
 
         with open(output, 'w') as outfile:
             json.dump(projects, outfile, indent=4)
