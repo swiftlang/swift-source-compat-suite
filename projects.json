@@ -1155,14 +1155,28 @@
         "scheme": "ReactiveExtensions-iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "rdar://problem/75437284",
+            "compatibility": ["5.1"],
+            "branch": ["main"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "ReactiveExtensions.xcodeproj",
         "scheme": "ReactiveExtensions-TestHelpers-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "rdar://problem/75437284",
+            "compatibility": ["5.1"],
+            "branch": ["main"]
+          }
+        ]
       }
     ]
   },
