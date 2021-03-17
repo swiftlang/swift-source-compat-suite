@@ -388,6 +388,17 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
   },
   {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/bottomMenu\/BottomMenu.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 929
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-12959"
+  },
+  {
     "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/ContentView.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
@@ -434,6 +445,18 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-12690"
+  },
+  {
+    "path" : "*\/DNS\/Package.swift",
+    "modification" : "insideOut-152",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 48
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14318"
   },
   {
     "path" : "*\/DNS\/Sources\/DNS\/IP.swift",
@@ -773,6 +796,18 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-14319"
+  },
+  {
+    "path" : "*\/Guitar\/Package.swift",
+    "modification" : "insideOut-50",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 50
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14318"
   },
   {
     "path" : "*\/IBAnimatable\/Sources\/ActivityIndicators\/Animations\/ActivityIndicatorAnimationCirclePendulum.swift",
@@ -1329,13 +1364,26 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-13703"
   },
   {
+    "path" : "*\/Result\/Package@swift-5.swift",
+    "modification" : "insideOut-183",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 54
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14318"
+  },
+  {
     "path" : "*\/Result\/Result\/Result.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 5343
     },
     "applicableConfigs" : [
-      "release\/5.3"
+      "release\/5.3",
+      "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-13704"
   },
