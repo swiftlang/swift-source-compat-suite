@@ -217,55 +217,55 @@ def clone_repos():
     cpu_count = multiprocessing.cpu_count()
     workspace = private_workspace('.')
     repos = [
-        '{} https://github.com/apple/llvm-project.git '
+        '{} git@github.com:apple/llvm-project.git '
         '{}/llvm-project '.format(
             branches[swift_branch]['llvm-project'], workspace
         ),
-        '{} https://github.com/apple/swift.git {}/swift '.format(
+        '{} git@github.com:apple/swift.git {}/swift '.format(
             branches[swift_branch]['swift'], workspace
         ),
-        '{} https://github.com/apple/swift-cmark.git {}/cmark '.format(
+        '{} git@github.com:apple/swift-cmark.git {}/cmark '.format(
             branches[swift_branch]['cmark'], workspace
         ),
-        '{} https://github.com/ninja-build/ninja.git {}/ninja '.format(
+        '{} git@github.com:ninja-build/ninja.git {}/ninja '.format(
             branches[swift_branch]['ninja'], workspace
         ),
-        '{} https://github.com/apple/swift-llbuild.git {}/llbuild '.format(
+        '{} git@github.com:apple/swift-llbuild.git {}/llbuild '.format(
             branches[swift_branch]['llbuild'], workspace
         ),
-        '{} https://github.com/apple/swift-package-manager.git '
+        '{} git@github.com:apple/swift-package-manager.git '
         '{}/swiftpm '.format(
             branches[swift_branch]['swiftpm'], workspace
         ),
-        '{} https://github.com/apple/swift-corelibs-foundation.git '
+        '{} git@github.com:apple/swift-corelibs-foundation.git '
         '{}/swift-corelibs-foundation '.format(
             branches[swift_branch]['swift-corelibs-foundation'], workspace
         ),
-        '{} https://github.com/apple/swift-corelibs-libdispatch.git '
+        '{} git@github.com:apple/swift-corelibs-libdispatch.git '
         '{}/swift-corelibs-libdispatch '.format(
             branches[swift_branch]['swift-corelibs-libdispatch'], workspace
         ),
-        '{} https://github.com/apple/swift-corelibs-xctest.git '
+        '{} git@github.com:apple/swift-corelibs-xctest.git '
         '{}/swift-corelibs-xctest '.format(
             branches[swift_branch]['swift-corelibs-xctest'], workspace
         ),
-        '{} https://github.com/apple/swift-argument-parser.git '
+        '{} git@github.com:apple/swift-argument-parser.git '
         '{}/swift-argument-parser '.format(
             branches[swift_branch]['swift-argument-parser'], workspace
         ),
-        '{} https://github.com/apple/swift-driver.git '
+        '{} git@github.com:apple/swift-driver.git '
         '{}/swift-driver '.format(
             branches[swift_branch]['swift-driver'], workspace
         ),
-        '{} https://github.com/jpsim/Yams.git '
+        '{} git@github.com:jpsim/Yams.git '
         '{}/yams '.format(
             branches[swift_branch]['yams'], workspace
         ),
-        '{} https://github.com/apple/swift-tools-support-core.git '
+        '{} git@github.com:apple/swift-tools-support-core.git '
         '{}/swift-tools-support-core '.format(
             branches[swift_branch]['swift-tools-support-core'], workspace
         ),
-        '{} https://github.com/apple/swift-crypto.git '
+        '{} git@github.com:apple/swift-crypto.git '
         '{}/swift-crypto '.format(
             branches[swift_branch]['swift-crypto'], workspace
         ),
