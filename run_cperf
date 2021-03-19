@@ -576,7 +576,7 @@ def parse_args():
     parser.add_argument('swift_branch')
     parser.add_argument('--sandbox', action='store_true')
     parser.add_argument('--url', type=str,
-                        default="https://github.com/apple/swift")
+                        default="git@github.com:apple/swift.git")
     parser.add_argument('--suite',
                         metavar='(smoketest|full)',
                         help='cperf suite to run',
