@@ -711,6 +711,37 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/xmartlabs/Eureka.git",
+    "path": "Eureka",
+    "branch": "master",
+    "maintainer": "mathias@xmartlabs.com",
+    "compatibility": [
+      {
+        "version": "5.2",
+        "commit": "523af88efc83cdaf39b415446be1ca1529f5664d"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Eureka.xcworkspace",
+        "scheme": "Eureka",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "Eureka.xcworkspace",
+        "scheme": "Eureka",
+        "destination": "platform=iOS Simulator,name=iPhone 12"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/brentsimmons/Evergreen.git",
     "path": "Evergreen",
     "branch": "master",
@@ -3377,7 +3408,7 @@
     "compatibility": [
       {
         "version": "5.2",
-        "commit": "0627d28e6ae514940c6ee061acfd36a3c231b87f"  
+        "commit": "0627d28e6ae514940c6ee061acfd36a3c231b87f"
       }
     ],
     "platforms": [
