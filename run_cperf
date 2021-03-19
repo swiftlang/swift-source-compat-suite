@@ -49,7 +49,7 @@ def setup_workspace(instance, workspace, args):
     if not os.path.exists(swift):
         common.git_clone(args.url, swift, tree=args.swift_branch)
     common.check_execute(['utils/update-checkout',
-                          '--clone', '--reset-to-remote',
+                          '--clone-with-ssh', '--reset-to-remote',
                           '--clean', '--scheme', args.swift_branch],
                          cwd=swift, timeout=9999999)
     if instance == NEW_INSTANCE:
