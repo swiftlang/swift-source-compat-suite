@@ -366,18 +366,6 @@
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/launch\/AppDelegate.swift",
-    "modification" : "insideOut-640",
-    "issueDetail" : {
-      "kind" : "conformingMethodList",
-      "offset" : 5
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14327"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/launch\/AppDelegate.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 160
@@ -1316,18 +1304,6 @@
     }
   },
   {
-    "path" : "*\/Result\/Result\/AnyError.swift",
-    "modification" : "insideOut-319",
-    "issueDetail" : {
-      "kind" : "conformingMethodList",
-      "offset" : 5
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14327"
-  },
-  {
     "path" : "*\/Result\/Result\/Result.swift",
     "modification" : "concurrent-2375",
     "applicableConfigs" : [
@@ -1351,17 +1327,6 @@
       "swift-5.1-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1560
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-13703"
   },
   {
     "path" : "*\/Result\/Package@swift-5.swift",
