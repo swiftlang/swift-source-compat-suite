@@ -435,18 +435,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-12690"
   },
   {
-    "path" : "*\/DNS\/Package.swift",
-    "modification" : "insideOut-152",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 48
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14318"
-  },
-  {
     "path" : "*\/DNS\/Sources\/DNS\/IP.swift",
     "modification" : "insideOut-643",
     "issueDetail" : {
@@ -772,30 +760,6 @@
       "swift-5.1-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
-  },
-  {
-  "path" : "*\/Guitar\/Sources\/Guitar.swift",
-    "modification" : "insideOut-182",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 19
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14319"
-  },
-  {
-    "path" : "*\/Guitar\/Package.swift",
-    "modification" : "insideOut-50",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 50
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14318"
   },
   {
     "path" : "*\/IBAnimatable\/Sources\/ActivityIndicators\/Animations\/ActivityIndicatorAnimationCirclePendulum.swift",
@@ -1327,18 +1291,6 @@
       "swift-5.1-branch"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-9371"
-  },
-  {
-    "path" : "*\/Result\/Package@swift-5.swift",
-    "modification" : "insideOut-183",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 54
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14318"
   },
   {
     "path" : "*\/Result\/Result\/Result.swift",
