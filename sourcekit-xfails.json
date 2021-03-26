@@ -448,17 +448,6 @@
   },
   {
     "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1652
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14317"
-  },
-  {
-    "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
     "applicableConfigs" : [
       "swift-5.0-branch"
     ],
