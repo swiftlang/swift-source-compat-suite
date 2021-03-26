@@ -1250,10 +1250,10 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/IBM-Swift/Kitura.git",
+    "url": "https://github.com/Kitura/Kitura.git",
     "path": "Kitura",
     "branch": "master",
-    "maintainer": "i.partridge@uk.ibm.com",
+    "maintainer": "danny@dannysung.com",
     "compatibility": [
       {
         "version": "4.0",
