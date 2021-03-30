@@ -42,10 +42,7 @@ def main():
     xcodebuild_flags = args.add_xcodebuild_flags
     xcodebuild_flags += (' ' if xcodebuild_flags else '') + 'DEBUG_INFORMATION_FORMAT=dwarf'
 
-    # FIXME: using swift-driver in the source compatibility test suite
-    # is blocked by rdar://75486433
     swift_flags = args.add_swift_flags
-    swift_flags += (' ' if swift_flags else '') + '-disallow-use-new-driver'
 
     index = json.loads(open(args.projects).read())
     result = project_future.ProjectListBuilder(
