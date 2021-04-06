@@ -104,8 +104,8 @@ supported_configs = {
         '5.3': {
             'version': 'Apple Swift version 5.3.2 '
                        '(swiftlang-1200.0.45 clang-1200.0.32.28)\n'
-                       'Target: x86_64-apple-darwin18.2.0\n',
-            'description': 'Xcode 12.5 (contains Swift 5.3.3)',
+                       'Target: x86_64-apple-darwin20.3.0\n',
+            'description': 'Xcode 12.4 (contains Swift 5.3.2)',
             'branch': 'swift-5.3-branch'
         }
     },
