@@ -4293,5 +4293,59 @@
         "action": "TestSwiftPackage"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-collections",
+    "path": "swift-collections",
+    "branch": "main",
+    "maintainer": "klorentey@apple.com",
+    "compatibility": [
+      {
+        "version": "5.3",
+        "commit": "2d719d75a2065f213e58a5164384a3d2fcf9b59a"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-collections-benchmark",
+    "path": "swift-collections-benchmark",
+    "branch": "main",
+    "maintainer": "klorentey@apple.com",
+    "compatibility": [
+      {
+        "version": "5.3",
+        "commit": "49297647d1c0855eb33ec18cd6ee1181727c159b"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
   }
 ]
