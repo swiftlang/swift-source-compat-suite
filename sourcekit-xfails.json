@@ -67,18 +67,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14328"
   },
   {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/preferences\/AppUserDefaults.swift",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 113,
-      "offset" : 209
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-12958"
-  },
-  {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/bottomMenu\/BottomMenu.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
@@ -99,18 +87,6 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-12965"
-  },
-  {
-    "path" : "*\/DNS\/Sources\/DNS\/Integer+Data.swift",
-    "modification" : "concurrent-478",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 232
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14429"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Packages\/UI\/Sources\/UI\/badges\/RoundedBadge.swift",
@@ -145,5 +121,28 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-14431"
+  },
+  {
+    "path" : "\/Users\/buildnode\/jenkins\/workspace\/swift-main-sourcekitd-stress-tester\/swift-source-compat-suite\/project_cache\/DNS\/Sources\/DNS\/Integer+Data.swift",
+    "modification" : "concurrent-530",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 248
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14454"
+  },
+  {
+    "path" : "\/Users\/buildnode\/jenkins\/workspace\/swift-main-sourcekitd-stress-tester\/swift-source-compat-suite\/project_cache\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/services\/APIService.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1611
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14455"
   }
 ]
