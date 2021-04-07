@@ -133,7 +133,7 @@ def clone_swift_syntax(workspace, swift_branch):
         '{}/swift-syntax'.format(workspace)
     ]
     common.check_execute(syntax_clone_cmd, timeout=-1)
-    
+
 
 def execute_runner(workspace, args):
     swiftc_path = get_swiftc_path(workspace, args.swiftc)
@@ -201,6 +201,16 @@ def build_swift_toolchain(workspace, args):
     common.check_execute(build_command, timeout=9999999)
 
 
+def processed_files_contain(processed_files, file_path):
+        """
+        Returns `True` if a path in `processed_files` contains `file_path` as a substring, `False` otherwise
+        """
+        for processed_file in processed_files:
+            if file_path in processed_file:
+                return True
+        return False
+
+
 class StressTesterRunner(object):
     """sets up the Swift compatibility suite runner to use the stress tester's swiftc-wrapper, executes it, and processes its output for failures."""
 
@@ -254,17 +264,28 @@ class StressTesterRunner(object):
         except common.ExecuteCommandFailure:
             self.compat_runner_failed = True
 
-        success = self._process_output(results)
+        success = self._process_output(results, self.xfails_path)
 
         return success
 
 
-    def _process_output(self, results_path):
+    def _process_output(self, results_path, xfails_path):
         if not os.path.isfile(results_path):
             return True
 
         with open(results_path, 'rb') as results_file:
             results = json.load(results_file, encoding='utf-8')
+        with open(xfails_path, 'rb') as xfails_path:
+            xfails = json.load(xfails_path, encoding='utf-8')
+
+        xfails_not_processed = []
+        for xfail in xfails:
+            # The XFails start with '*' to match any path prefix. Remove it so we can perform substring matching in processed_files_contain
+            xfailed_file = xfail['path']
+            if xfailed_file[0] == '*':
+                xfailed_file = xfailed_file[1:]
+            if not processed_files_contain(results['processedFiles'], xfailed_file):
+                xfails_not_processed.append(xfail)
 
         num_failures = len(results['issues'])
         num_xfails = sum(len(value) for _, value in results['expectedIssues'].iteritems())
@@ -279,6 +300,19 @@ class StressTesterRunner(object):
                 for (index, issue) in enumerate(issues):
                     self._print_issue(index, issue, url)
             print('\n========================================')
+
+        if len(xfails_not_processed) > 0:
+            print('XFails not processed:')
+            print('The files that are covered by these XFails were not tested in the current Stress Tester Run.')
+            print('The reason for this might be:')
+            print(' * The project that contains the file was not tested in the current run')
+            print(' * A different file from the same compiler invocation failed and thus this file was not tested')
+            print(' * The file has been removed in the original project')
+            print('')
+            for xfail in xfails_not_processed:
+                print('      {}'.format(json.dumps(xfail)))
+            print('\n========================================')
+
         if num_failures > 0:
             print('Unexpected stress tester issues:')
             for (index, issue) in enumerate(results['issueMessages']):
@@ -287,11 +321,15 @@ class StressTesterRunner(object):
 
 
         print('SourceKit Stress Tester summary:')
-        
+
         print('  {} underlying source compatibility build'.format('failed' if self.compat_runner_failed else 'passed'))
         if self.compat_runner_failed:
             print('      > treat this as a source compatibility failure')
-        
+
+        print('  {} XFails not processed'.format(len(xfails_not_processed)))
+        if num_failures > 0:
+            print('      > see "XFails not processed" how to handle them. This is an info, not an error')
+
         print('  {} unexpected stress tester failures'.format(num_failures))
         if num_failures > 0:
             print('      > see "Unexpected stress tester issues" above for individual failures')
