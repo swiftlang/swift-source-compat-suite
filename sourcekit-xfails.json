@@ -11,17 +11,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-12973"
   },
   {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/env\/UIState.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 771
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-12959"
-  },
-  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/environments\/Items.swift",
     "issueDetail" : {
       "kind" : "semanticRefactoring",
@@ -65,17 +54,6 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-14328"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/bottomMenu\/BottomMenu.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 929
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-12959"
   },
   {
     "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/ContentView.swift",
@@ -123,7 +101,7 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14431"
   },
   {
-    "path" : "\/Users\/buildnode\/jenkins\/workspace\/swift-main-sourcekitd-stress-tester\/swift-source-compat-suite\/project_cache\/DNS\/Sources\/DNS\/Integer+Data.swift",
+    "path" : "*\/project_cache\/DNS\/Sources\/DNS\/Integer+Data.swift",
     "modification" : "concurrent-530",
     "issueDetail" : {
       "kind" : "cursorInfo",
@@ -135,7 +113,7 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14454"
   },
   {
-    "path" : "\/Users\/buildnode\/jenkins\/workspace\/swift-main-sourcekitd-stress-tester\/swift-source-compat-suite\/project_cache\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/services\/APIService.swift",
+    "path" : "*\/project_cache\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/services\/APIService.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 1611
