@@ -98,7 +98,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14431"
+    "issueUrl" : "https://bugs.swift.org/browse/SR-8898"
   },
   {
     "path" : "*\/project_cache\/DNS\/Sources\/DNS\/Integer+Data.swift",
