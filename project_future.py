@@ -333,7 +333,7 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
         if 'environment' in action:
             build_env = action['environment']
 
-        other_swift_flags = []
+        other_swift_flags = ['-disable-incremental-imports']
         if swift_version:
             if '.' not in swift_version:
                 swift_version += '.0'
