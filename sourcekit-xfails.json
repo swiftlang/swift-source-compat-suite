@@ -23,15 +23,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14328"
   },
   {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/environments\/Items.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1277
-    },
-    "applicableConfigs" : [],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-12985"
-  },
-  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/SceneDelegate.swift",
     "issueDetail" : {
       "kind" : "semanticRefactoring",
@@ -56,17 +47,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14328"
   },
   {
-    "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/ContentView.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 304
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-12965"
-  },
-  {
     "path" : "*\/MovieSwift\/MovieSwift\/Packages\/UI\/Sources\/UI\/badges\/RoundedBadge.swift",
     "modification" : "concurrent-844",
     "issueDetail" : {
@@ -79,17 +59,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14430"
   },
   {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/launch\/SceneDelegate.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2285
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14432"
-  },
-  {
     "path" : "*\/Result\/Result\/Result.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
@@ -98,7 +67,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14431"
+    "issueUrl" : "https://bugs.swift.org/browse/SR-8898"
   },
   {
     "path" : "*\/project_cache\/DNS\/Sources\/DNS\/Integer+Data.swift",
@@ -111,16 +80,5 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-14454"
-  },
-  {
-    "path" : "*\/project_cache\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/services\/APIService.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1611
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14455"
   }
 ]
