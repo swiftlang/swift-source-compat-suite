@@ -231,7 +231,7 @@
         "tags": "sourcekit-disabled swiftpm",
         "xfail": [
           {
-            "issue": "https://bugs.swift.org/browse/SR-14477",
+            "issue": "rdar://problem/76359678",
             "compatibility": ["5.1", "4.0"],
             "branch": ["main"]
           }
