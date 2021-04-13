@@ -228,14 +228,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "debug",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-          {
-            "issue": "rdar://problem/76359678",
-            "compatibility": ["5.1", "4.0"],
-            "branch": ["main"]
-          }
-        ]
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage",
