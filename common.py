@@ -282,7 +282,6 @@ def clone_repos():
     process0.stdin.close()
 
     assert process0.wait() == 0
-    symlink_llvm_project(workspace)
 
 
 class Unreachable(Exception):
@@ -440,31 +439,6 @@ def check_execute(command, timeout=None,
         if returncode == 0:
             return returncode
     raise ExecuteCommandFailure(command, returncode)
-
-
-def symlink_llvm_project(workspace):
-    print("Create symlink for LLVM Project")
-    llvm_projects = ['clang',
-                     'llvm',
-                     'lldb',
-                     'compiler-rt',
-                     'libcxx',
-                     'clang-tools-extra']
-    for project in llvm_projects:
-        src_path = os.path.join(workspace,
-                                'llvm-project',
-                                project)
-        dst_path = os.path.join(workspace, project)
-        if not os.path.islink(dst_path):
-            try:
-                os.symlink(src_path, dst_path)
-            except OSError as e:
-                if e.errno == errno.EEXIST:
-                    print("File '%s' already exists. Remove it, so "
-                          "update-checkout can create the symlink to the "
-                          "llvm-monorepo." % dst_path)
-                else:
-                    raise e
 
 
 def git_submodule_update(path, stdout=sys.stdout, stderr=sys.stderr):
