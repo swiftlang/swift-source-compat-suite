@@ -80,5 +80,27 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-14454"
+  },
+  {
+    "path" : "*\/project_cache\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/bottomMenu\/BottomMenu.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1723
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14494"
+  },
+  {
+    "path" : "*\/project_cache\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/ContentView.swift",
+    "issueDetail" : {
+      "kind" : "typeContextInfo",
+      "offset" : 310
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14495"
   }
 ]
