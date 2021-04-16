@@ -1,5 +1,16 @@
 [
   {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 7449
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-8898"
+  },
+  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/UI\/Sources\/UI\/ItemImage.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
@@ -47,30 +58,7 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14328"
   },
   {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/UI\/Sources\/UI\/badges\/RoundedBadge.swift",
-    "modification" : "concurrent-844",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 684
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14430"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 7449
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-8898"
-  },
-  {
-    "path" : "*\/project_cache\/DNS\/Sources\/DNS\/Integer+Data.swift",
+    "path" : "*\/DNS\/Sources\/DNS\/Integer+Data.swift",
     "modification" : "concurrent-530",
     "issueDetail" : {
       "kind" : "cursorInfo",
@@ -82,7 +70,7 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14454"
   },
   {
-    "path" : "*\/project_cache\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/bottomMenu\/BottomMenu.swift",
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/bottomMenu\/BottomMenu.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 1723
@@ -93,7 +81,7 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14494"
   },
   {
-    "path" : "*\/project_cache\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/ContentView.swift",
+    "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/ContentView.swift",
     "issueDetail" : {
       "kind" : "typeContextInfo",
       "offset" : 310
@@ -102,5 +90,38 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-14495"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/UI\/Sources\/UI\/extensions\/View.swift",
+    "issueDetail" : {
+      "kind" : "conformingMethodList",
+      "offset" : 378
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14495"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 9931
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14497"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/services\/APIService.swift",
+    "issueDetail" : {
+      "kind" : "typeContextInfo",
+      "offset" : 1158
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14498"
   }
 ]
