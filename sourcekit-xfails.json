@@ -114,14 +114,14 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14497"
   },
   {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/services\/APIService.swift",
+    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/services\/ImageService.swift",
     "issueDetail" : {
-      "kind" : "typeContextInfo",
-      "offset" : 1158
+      "kind" : "codeComplete",
+      "offset" : 1093
     },
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14498"
+    "issueUrl" : "https://github.com/apple/swift/pull/36943"
   }
 ]
