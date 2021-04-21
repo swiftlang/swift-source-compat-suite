@@ -1219,10 +1219,6 @@
     "maintainer": "onev@onevcat.com",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "a5d1214220b8ddf29acf7c08c8bb42993ed56c54"
-      },
-      {
         "version": "5.1",
         "commit": "23ef6c73ee3bc12ee3940136aea54bd44a02e93e"
       }
