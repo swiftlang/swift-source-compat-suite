@@ -1219,12 +1219,8 @@
     "maintainer": "onev@onevcat.com",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "a5d1214220b8ddf29acf7c08c8bb42993ed56c54"
-      },
-      {
         "version": "5.1",
-        "commit": "23ef6c73ee3bc12ee3940136aea54bd44a02e93e"
+        "commit": "44450a8f564d7c0165f736ba2250649ff8d3e556"
       }
     ],
     "platforms": [
@@ -1241,7 +1237,7 @@
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Kingfisher.xcworkspace",
-        "scheme": "Kingfisher-macOS",
+        "scheme": "Kingfisher",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
         "tags": "sourcekit-disabled"
@@ -1249,14 +1245,14 @@
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Kingfisher.xcworkspace",
-        "scheme": "Kingfisher-tvOS",
+        "scheme": "Kingfisher",
         "destination": "generic/platform=tvOS",
         "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Kingfisher.xcworkspace",
-        "scheme": "Kingfisher-watchOS",
+        "scheme": "Kingfisher",
         "destination": "generic/platform=watchOS",
         "configuration": "Release"
       }
