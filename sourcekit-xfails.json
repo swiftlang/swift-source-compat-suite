@@ -11,17 +11,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-8898"
   },
   {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/UI\/Sources\/UI\/ItemImage.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 600
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-12973"
-  },
-  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/environments\/Items.swift",
     "issueDetail" : {
       "kind" : "semanticRefactoring",
@@ -67,39 +56,6 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-14494"
-  },
-  {
-    "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/ContentView.swift",
-    "issueDetail" : {
-      "kind" : "typeContextInfo",
-      "offset" : 310
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14495"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/UI\/Sources\/UI\/extensions\/View.swift",
-    "issueDetail" : {
-      "kind" : "conformingMethodList",
-      "offset" : 378
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14495"
-  },
-  {
-    "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 9931
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14497"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/services\/ImageService.swift",
