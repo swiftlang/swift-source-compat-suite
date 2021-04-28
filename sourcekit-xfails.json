@@ -11,42 +11,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-8898"
   },
   {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/environments\/Items.swift",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Convert Call to Async Alternative",
-      "offset" : 5645
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14328"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/SceneDelegate.swift",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Convert Call to Async Alternative",
-      "offset" : 2976
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14328"
-  },
-  {
-    "path" : "*\/Dollar\/Sources\/Dollar.swift",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Convert Call to Async Alternative",
-      "offset" : 8474
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14328"
-  },
-  {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/bottomMenu\/BottomMenu.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
@@ -67,5 +31,49 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/pull/36943"
+  },
+  {
+  "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/UI\/Sources\/UI\/ProgressView.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1176
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14544"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/UI\/Sources\/UI\/extensions\/View.swift",
+    "issueDetail" : {
+      "kind" : "conformingMethodList",
+      "offset" : 378
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14545"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Integer+Data.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 194
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14546"
+  },
+  {
+    "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/Model.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1909
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14547"
   }
 ]
