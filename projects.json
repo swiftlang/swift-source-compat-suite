@@ -650,6 +650,33 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/SusanDoggie/Doggie.git",
+    "path": "Doggie",
+    "branch": "main",
+    "maintainer": "susan.doggie@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.3",
+        "commit": "a2d58a0775670b71b756c071ac744b304d05a99f"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/ankurp/Dollar.git",
     "path": "Dollar",
     "branch": "master",
