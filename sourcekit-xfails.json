@@ -44,6 +44,17 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14544"
   },
   {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/environments\/Items.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1904
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14544"
+  },
+  {
     "path" : "*\/MovieSwift\/MovieSwift\/Packages\/UI\/Sources\/UI\/extensions\/View.swift",
     "issueDetail" : {
       "kind" : "conformingMethodList",
@@ -75,5 +86,28 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-14547"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/extensions\/View.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2446
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14572"
+  },
+  {
+    "path" : "*\/Dollar\/Sources\/Dollar.swift",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Convert Call to Async Alternative",
+      "offset" : 8474
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14573"
   }
 ]
