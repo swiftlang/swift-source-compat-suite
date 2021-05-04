@@ -673,6 +673,13 @@
       {
         "action": "TestSwiftPackage"
       }
+    ],
+    "xfail": [
+        {
+            "issue": "https://bugs.swift.org/browse/SR-14580",
+            "compatibility": "5.3",
+            "branch": ["main", "release/5.5"]
+        }
     ]
   },
   {
