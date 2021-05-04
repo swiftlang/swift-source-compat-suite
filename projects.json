@@ -20,8 +20,7 @@
         "project": "ACHNBrowserUI/ACHNBrowserUI.xcodeproj",
         "target": "ACHNBrowserUI",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "configuration": "Release"
       }
     ]
   },
