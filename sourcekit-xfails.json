@@ -11,28 +11,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-8898"
   },
   {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/bottomMenu\/BottomMenu.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1723
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14494"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/services\/ImageService.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1093
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/pull/36943"
-  },
-  {
   "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/UI\/Sources\/UI\/ProgressView.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
