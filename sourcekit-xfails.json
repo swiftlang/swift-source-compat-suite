@@ -33,6 +33,17 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14544"
   },
   {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/custom list\/CustomListDetail.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 4085
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14544"
+  },
+  {
     "path" : "*\/MovieSwift\/MovieSwift\/Packages\/UI\/Sources\/UI\/extensions\/View.swift",
     "issueDetail" : {
       "kind" : "conformingMethodList",
@@ -87,5 +98,16 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-14573"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/services\/ImageService.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1093
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14618"
   }
 ]
