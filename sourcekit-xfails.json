@@ -88,26 +88,14 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14572"
   },
   {
-    "path" : "*\/Dollar\/Sources\/Dollar.swift",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Convert Call to Async Alternative",
-      "offset" : 8474
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14573"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/services\/ImageService.swift",
+    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/utils\/ImageLoader.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 1093
+      "offset" : 986
     },
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14618"
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14627"
   }
 ]
