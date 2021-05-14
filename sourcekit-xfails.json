@@ -97,5 +97,39 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-14627"
+  },
+  {
+    "path" : "*\/Dollar\/Sources\/Dollar.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 5654
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14636"
+  },
+  {
+    "path" : "*\/Dollar\/Sources\/Dollar.swift",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 5654
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14637"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/SceneDelegate.swift",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Convert Function to Async",
+      "offset" : 355
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14637"
   }
 ]
