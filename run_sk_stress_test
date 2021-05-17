@@ -22,6 +22,7 @@ import subprocess
 import argparse
 import platform
 import codecs
+from analyze_request_durations import analyze_request_durations
 
 import common
 
@@ -230,9 +231,10 @@ class StressTesterRunner(object):
         # temporary file paths
         filtered_projects = os.path.join(script_dir, 'stress-tester-projects.json')
         results = os.path.join(script_dir, 'stress-tester-results.json')
+        request_durations = os.path.join(script_dir, 'stress-tester-request-durations.json')
 
         # remove temporary files if they already exist
-        self._cleanup([filtered_projects, results])
+        self._cleanup([filtered_projects, results, request_durations])
 
         run_env = {
             'SK_STRESS_TEST': self.stress_tester,
@@ -243,7 +245,9 @@ class StressTesterRunner(object):
             'SK_XFAILS_PATH': self.xfails_path,
             'SK_STRESS_ACTIVE_CONFIG': self.swift_branch,
             'SK_STRESS_SUPPRESS_OUTPUT': 'true',
-            'SK_STRESS_REWRITE_MODES': 'none concurrent insideout'}
+            'SK_STRESS_REWRITE_MODES': 'none concurrent insideout',
+            'SK_STRESS_REQUEST_DURATIONS_FILE': request_durations,
+        }
         run_env.update(os.environ)
         run_cmd = ['./runner.py',
           '--projects', filtered_projects,
@@ -263,6 +267,8 @@ class StressTesterRunner(object):
             common.check_execute(run_cmd, timeout=-1, env=run_env)
         except common.ExecuteCommandFailure:
             self.compat_runner_failed = True
+
+        analyze_request_durations(request_durations)
 
         success = self._process_output(results, self.xfails_path)
 
