@@ -55,6 +55,18 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14545"
   },
   {
+    "path" : "*\/Dollar\/Sources\/Dollar.swift",
+    "modification" : "concurrent-2318",
+    "issueDetail" : {
+      "kind" : "conformingMethodList",
+      "offset" : 2320
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14545"
+  },
+  {
     "path" : "*\/DNS\/Sources\/DNS\/Integer+Data.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
@@ -64,17 +76,6 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-14546"
-  },
-  {
-    "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/Model.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1909
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14547"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/extensions\/View.swift",
@@ -99,21 +100,11 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14627"
   },
   {
-    "path" : "*\/Dollar\/Sources\/Dollar.swift",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/SceneDelegate.swift",
     "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 5654
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14636"
-  },
-  {
-    "path" : "*\/Dollar\/Sources\/Dollar.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 5654
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Convert Function to Async",
+      "offset" : 355
     },
     "applicableConfigs" : [
       "main"
@@ -121,11 +112,11 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14637"
   },
   {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/SceneDelegate.swift",
+    "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/Model.swift",
     "issueDetail" : {
       "kind" : "semanticRefactoring",
       "refactoring" : "Convert Function to Async",
-      "offset" : 355
+      "offset" : 4723
     },
     "applicableConfigs" : [
       "main"
