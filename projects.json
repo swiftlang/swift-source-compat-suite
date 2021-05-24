@@ -650,6 +650,46 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/SusanDoggie/Doggie.git",
+    "path": "Doggie",
+    "branch": "main",
+    "maintainer": "susan.doggie@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.3",
+        "commit": "a2d58a0775670b71b756c071ac744b304d05a99f"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "swiftpm",
+        "xfail": [
+            {
+                "issue": "https://bugs.swift.org/browse/SR-12736",
+                "platform": "Linux",
+                "compatibility": "5.3",
+                "branch": ["main", "release/5.5", "release/5.4"]
+            },
+            {
+                "issue": "https://bugs.swift.org/browse/SR-14580",
+                "compatibility": "5.3",
+                "branch": ["main", "release/5.5"]
+            }
+        ]
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/ankurp/Dollar.git",
     "path": "Dollar",
     "branch": "master",
