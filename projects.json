@@ -2526,7 +2526,15 @@
         "scheme": "RxTest",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-14655",
+            "compatibility": ["5.1"],
+            "branch": ["main"],
+            "configuration": "release"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
