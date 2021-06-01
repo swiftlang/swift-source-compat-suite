@@ -98,29 +98,5 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-14627"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/SceneDelegate.swift",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Convert Function to Async",
-      "offset" : 355
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14637"
-  },
-  {
-    "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/Model.swift",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Convert Function to Async",
-      "offset" : 4723
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14637"
   }
 ]
