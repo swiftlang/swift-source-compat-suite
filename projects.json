@@ -4396,5 +4396,29 @@
         "action": "TestSwiftPackage"
       }
     ]
-  }
+  },
+  {
+     "repository": "Git",
+     "url": "https://github.com/sroebert/mqtt-nio",
+     "path": "mqtt-nio",
+     "branch": "main",
+     "maintainer": "steven@roebert.nl",
+     "compatibility": [
+       {
+         "version": "5.1",
+         "commit": "17794a4ac977b7a30fe6aac669c3a1b3ce55cc21"
+       }
+     ],
+     "platforms": [
+       "Darwin",
+       "Linux"
+     ],
+     "actions": [
+       {
+         "action": "BuildSwiftPackage",
+         "configuration": "release",
+         "tags": "swiftpm"
+       }
+     ]
+   }
 ]
