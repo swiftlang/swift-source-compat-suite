@@ -44,6 +44,10 @@ def main():
 
     swift_flags = args.add_swift_flags
 
+    time_reporter = None
+    if args.report_time_path:
+        time_reporter = project_future.TimeReporter(args.report_time_path)
+
     index = json.loads(open(args.projects).read())
     result = project_future.ProjectListBuilder(
         args.include_repos,
@@ -69,7 +73,8 @@ def main():
                     args.build_config,
                     args.strip_resource_phases,
                     args.only_latest_versions,
-                    args.project_cache_path
+                    args.project_cache_path,
+                    time_reporter
                 ),
             ),
         ),
