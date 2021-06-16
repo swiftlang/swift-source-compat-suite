@@ -418,7 +418,14 @@
         "project": "CleanroomLogger.xcodeproj",
         "scheme": "CleanroomLogger",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "rdar://problem/79408360",
+            "compatibility": "4.0",
+            "branch": ["main"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -433,14 +440,28 @@
         "project": "CleanroomLogger.xcodeproj",
         "scheme": "CleanroomLogger",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "rdar://problem/79408360",
+            "compatibility": "4.0",
+            "branch": ["main"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "CleanroomLogger.xcodeproj",
         "scheme": "CleanroomLogger",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "rdar://problem/79408360",
+            "compatibility": "4.0",
+            "branch": ["main"]
+          }
+        ]
       },
       {
         "action": "TestXcodeProjectScheme",
@@ -627,21 +648,42 @@
         "project": "Deferred.xcodeproj",
         "scheme": "MobileDeferred",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+           {
+             "issue": "rdar://problem/79408360",
+             "compatibility": "5.1",
+             "branch": ["main"]
+           }
+        ]
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "Deferred.xcodeproj",
         "scheme": "TVDeferred",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+           {
+             "issue": "rdar://problem/79408360",
+             "compatibility": "5.1",
+             "branch": ["main"]
+           }
+        ]
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "Deferred.xcodeproj",
         "scheme": "NanoDeferred",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+           {
+             "issue": "rdar://problem/79408360",
+             "compatibility": "5.1",
+             "branch": ["main"]
+           }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -2075,7 +2117,14 @@
         "scheme": "ReLax",
         "destination": "generic/platform=tvOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+           {
+             "issue": "rdar://problem/79408360",
+             "compatibility": ["4.0", "5.1"],
+             "branch": ["main"]
+           }
+        ]
       }
     ]
   },
@@ -2725,7 +2774,15 @@
         "project": "Surge.xcodeproj",
         "scheme": "Surge-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+           {
+             "issue": "rdar://problem/79408360",
+             "platform": "iOS",
+             "compatibility": ["4.2", "5.0", "5.1"],
+             "branch": ["main"]
+           }
+        ]
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -2740,14 +2797,30 @@
         "project": "Surge.xcodeproj",
         "scheme": "Surge-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+           {
+             "issue": "rdar://problem/79408360",
+             "platform": "tvOS",
+             "compatibility": ["4.2", "5.0", "5.1"],
+             "branch": ["main"]
+           }
+        ]
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "Surge.xcodeproj",
         "scheme": "Surge-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+           {
+             "issue": "rdar://problem/79408360",
+             "platform": "watchOS",
+             "compatibility": ["4.2", "5.0", "5.1"],
+             "branch": ["main"]
+           }
+        ]
       }
     ]
   },
