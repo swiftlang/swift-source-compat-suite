@@ -44,6 +44,18 @@ def set_swift_branch(branch):
     swift_branch = branch
     common.set_swift_branch(branch)
 
+class TimeReporter(object):
+    def __init__(self, file_path):
+        self._file_path = file_path
+        self._time_data = {}
+
+    def update(self, project, elapsed):
+        self._time_data[project + '.compile_time'] = elapsed
+
+    def __del__(self):
+        if self._file_path and self._time_data:
+            with open(self._file_path, 'w+') as f:
+                json.dump(self._time_data, f)
 
 class ProjectTarget(object):
     """An abstract project target."""
@@ -164,6 +176,21 @@ class XcodeTarget(ProjectTarget):
 
         return command
 
+    def build(self, sandbox_profile, stdout=sys.stdout, stderr=sys.stderr,
+              incremental=False, time_reporter=None):
+        """Build the project target."""
+
+        start_time = None
+        if time_reporter:
+            start_time = time.time()
+        returncode = common.check_execute(self.get_build_command(incremental=incremental),
+                                          sandbox_profile=sandbox_profile,
+                                          stdout=stdout, stderr=stdout)
+        if returncode == 0 and time_reporter:
+            elapsed = time.time() - start_time
+            time_reporter.update(self._target, elapsed)
+
+        return returncode
 
 def get_stdlib_platform_path(swiftc, destination):
     """Return the corresponding stdlib name for a destination."""
@@ -277,7 +304,7 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
              added_swift_flags, added_xcodebuild_flags,
              build_config, should_strip_resource_phases=False,
              stdout=sys.stdout, stderr=sys.stderr,
-             incremental=False):
+             incremental=False, time_reporter = None):
     """Call functions corresponding to actions."""
 
     substitutions = action.copy()
@@ -377,7 +404,8 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
         if match.group(1) == 'Build':
             return xcode_target.build(sandbox_profile_xcodebuild,
                                       stdout=stdout, stderr=stderr,
-                                      incremental=incremental)
+                                      incremental=incremental,
+                                      time_reporter=time_reporter)
         else:
             return xcode_target.test(sandbox_profile_xcodebuild,
                                      stdout=stdout, stderr=stderr,
@@ -551,6 +579,9 @@ def add_arguments(parser):
                         metavar='PATH',
                         type=os.path.abspath,
                         default='project_cache')
+    parser.add_argument("--report-time-path",
+                        help='export time for building each xcode build target to the specified json file',
+                        type=os.path.abspath)
 
 def add_minimal_arguments(parser):
     """Add common arguments to parser."""
@@ -918,6 +949,7 @@ class ActionBuilder(Factory):
                  skip_clean, build_config,
                  strip_resource_phases,
                  project_cache_path,
+                 time_reporter,
                  action, project):
         self.swiftc = swiftc
         self.swift_version = swift_version
@@ -934,6 +966,7 @@ class ActionBuilder(Factory):
         self.skip_clean = skip_clean
         self.build_config = build_config
         self.strip_resource_phases = strip_resource_phases
+        self.time_reporter = time_reporter
         self.init()
 
     def init(self):
@@ -991,6 +1024,7 @@ class ActionBuilder(Factory):
                      self.added_xcodebuild_flags,
                      self.build_config,
                      incremental=self.skip_clean,
+                     time_reporter=self.time_reporter,
                      stdout=stdout, stderr=stderr)
         except common.ExecuteCommandFailure as error:
             return self.failed(identifier, error)
@@ -1029,6 +1063,7 @@ class CompatActionBuilder(ActionBuilder):
                  strip_resource_phases,
                  only_latest_versions,
                  project_cache_path,
+                 time_reporter,
                  action, version, project):
         super(CompatActionBuilder, self).__init__(
             swiftc, swift_version, swift_branch,
@@ -1039,6 +1074,7 @@ class CompatActionBuilder(ActionBuilder):
             skip_clean, build_config,
             strip_resource_phases,
             project_cache_path,
+            time_reporter,
             action, project
         )
         self.only_latest_versions = only_latest_versions
@@ -1065,6 +1101,7 @@ class CompatActionBuilder(ActionBuilder):
                      self.build_config,
                      incremental=self.skip_clean,
                      should_strip_resource_phases=self.strip_resource_phases,
+                     time_reporter=self.time_reporter,
                      stdout=stdout, stderr=stderr)
         except common.ExecuteCommandFailure as error:
             return self.failed(identifier, error)
@@ -1210,6 +1247,7 @@ class IncrementalActionBuilder(ActionBuilder):
                  sandbox_profile_package,
                  added_swift_flags, build_config,
                  strip_resource_phases,
+                 time_reporter,
                  project, action):
         super(IncrementalActionBuilder,
               self).__init__(swiftc, swift_version, swift_branch,
@@ -1219,6 +1257,7 @@ class IncrementalActionBuilder(ActionBuilder):
                              skip_clean=True,
                              build_config=build_config,
                              strip_resource_phases=strip_resource_phases,
+                             time_reporter=time_reporter,
                              project=project,
                              action=action)
         self.proj_path = os.path.join(self.root_path, self.project['path'])
@@ -1324,6 +1363,7 @@ class IncrementalActionBuilder(ActionBuilder):
                      self.added_xcodebuild_flags,
                      self.build_config,
                      should_strip_resource_phases=False,
+                     time_reporter=self.time_reporter,
                      stdout=stdout, stderr=stderr,
                      incremental=incremental)
         except common.ExecuteCommandFailure as error:
