@@ -578,7 +578,7 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14693"
   },
   {
-    "path" : "\/Volumes\/swift-ci\/jenkins\/workspace\/swift-main-sourcekitd-stress-tester\/swift-source-compat-suite\/project_cache\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesHome\/grid\/rows\/MoviesHomeGridMoviesRow.swift",
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesHome\/grid\/rows\/MoviesHomeGridMoviesRow.swift",
     "modification" : "concurrent-1181",
     "issueDetail" : {
       "kind" : "codeComplete",
@@ -590,7 +590,7 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14693"
   },
   {
-  "path" : "\/Volumes\/swift-ci\/jenkins\/workspace\/swift-main-sourcekitd-stress-tester\/swift-source-compat-suite\/project_cache\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesHome\/grid\/rows\/MoviesHomeGridMoviesRow.swift",
+  "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesHome\/grid\/rows\/MoviesHomeGridMoviesRow.swift",
   "modification" : "concurrent-1188",
   "issueDetail" : {
     "kind" : "codeComplete",
@@ -1342,7 +1342,7 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14687"
   },
   {
-    "path" : "\/Volumes\/swift-ci\/jenkins\/workspace\/swift-main-sourcekitd-stress-tester\/swift-source-compat-suite\/project_cache\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoriesView.swift",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoriesView.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 1859
@@ -1353,7 +1353,7 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14687"
   },
   {
-    "path" : "\/Volumes\/swift-ci\/jenkins\/workspace\/swift-main-sourcekitd-stress-tester\/swift-source-compat-suite\/project_cache\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoryDetailView.swift",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoryDetailView.swift",
     "modification" : "concurrent-528",
     "issueDetail" : {
       "kind" : "codeComplete",
@@ -1519,7 +1519,7 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14889"
   },
   {
-  "path" : "\/Volumes\/swift-ci\/jenkins\/workspace\/swift-main-sourcekitd-stress-tester\/swift-source-compat-suite\/project_cache\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoriesView.swift",
+  "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoriesView.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 602
@@ -1530,7 +1530,7 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14890"
   },
   {
-    "path" : "\/Volumes\/swift-ci\/jenkins\/workspace\/swift-main-sourcekitd-stress-tester\/swift-source-compat-suite\/project_cache\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListDetailView.swift",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListDetailView.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 724
