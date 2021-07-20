@@ -60,6 +60,10 @@ def main():
         'yams',
         'swift-tools-support-core',
         'swift-crypto',
+        'swift-atomics',
+        'swift-collections',
+        'swift-numerics',
+        'swift-system',
     ]
 
     if args.cleanup_cache:
