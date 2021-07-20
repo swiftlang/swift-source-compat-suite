@@ -46,6 +46,10 @@ branches = {
         'yams': '4.0.2',
         'swift-tools-support-core': 'main',
         'swift-crypto': '1.1.5',
+        'swift-atomics': '0.0.3',
+        'swift-collections': '0.0.4',
+        'swift-numerics': '0.1.0',
+        'swift-system': '0.0.2',
     },
     'release/5.5': {
         'llvm-project': 'swift/release/5.5',
@@ -62,6 +66,10 @@ branches = {
         'yams': '4.0.2',
         'swift-tools-support-core': 'release/5.5',
         'swift-crypto': '1.1.5',
+        'swift-atomics': '0.0.3',
+        'swift-collections': '0.0.4',
+        'swift-numerics': '0.1.0',
+        'swift-system': '0.0.2',
     },
     'release/5.4': {
         'llvm-project': 'swift/release/5.4',
@@ -78,6 +86,10 @@ branches = {
         'yams': '3.0.1',
         'swift-tools-support-core': 'release/5.4',
         'swift-crypto': '1.1.5',
+        'swift-atomics': '0.0.3',
+        'swift-collections': '0.0.4',
+        'swift-numerics': '0.1.0',
+        'swift-system': '0.0.2',
     },
     'release/5.3': {
         'llvm-project': 'swift/release/5.3',
@@ -284,6 +296,22 @@ def clone_repos():
         '{} git@github.com:apple/swift-crypto.git '
         '{}/swift-crypto '.format(
             branches[swift_branch]['swift-crypto'], workspace
+        ),
+        '{} git@github.com:apple/swift-atomics.git '
+        '{}/swift-atomics '.format(
+            branches[swift_branch]['swift-atomics'], workspace
+        ),
+        '{} git@github.com:apple/swift-collections.git '
+        '{}/swift-collections '.format(
+            branches[swift_branch]['swift-collections'], workspace
+        ),
+        '{} git@github.com:apple/swift-numerics.git '
+        '{}/swift-numerics '.format(
+            branches[swift_branch]['swift-numerics'], workspace
+        ),
+        '{} git@github.com:apple/swift-system.git '
+        '{}/swift-system '.format(
+            branches[swift_branch]['swift-system'], workspace
         ),
     ]
 
