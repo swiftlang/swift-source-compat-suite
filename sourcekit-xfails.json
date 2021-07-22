@@ -1420,28 +1420,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14708"
   },
   {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayNookazonSection.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 809
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14709"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayNookazonSection.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 822
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14709"
-  },
-  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
