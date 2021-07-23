@@ -33,41 +33,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-8898"
   },
   {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/wrappers\/UserDefaultWrapper.swift",
-    "modification" : "concurrent-1036",
-    "issueDetail" : {
-      "kind" : "conformingMethodList",
-      "offset" : 1037
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14545"
-  },
-  {
-    "path" : "*\/Dollar\/Sources\/Dollar.swift",
-    "modification" : "concurrent-2318",
-    "issueDetail" : {
-      "kind" : "conformingMethodList",
-      "offset" : 2320
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14545"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/UI\/Sources\/UI\/extensions\/View.swift",
-    "issueDetail" : {
-      "kind" : "conformingMethodList",
-      "offset" : 378
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14545"
-  },
-  {
     "path" : "*\/DNS\/Sources\/DNS\/Integer+Data.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
@@ -270,65 +235,6 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 1407
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14694"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/items\/detail\/ItemDetailView.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1512
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14694"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/items\/detail\/ItemDetailView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2360
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14694"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/items\/detail\/ItemDetailView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2374
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14694"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/items\/detail\/ItemDetailView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2794
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14694"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/items\/detail\/ItemDetailView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
       "offset" : 3207
     },
     "applicableConfigs" : [
@@ -341,17 +247,6 @@
     "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 3302
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14694"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/TurnipsView.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 6668
     },
     "applicableConfigs" : [
       "main"
@@ -1844,17 +1739,5 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-14894"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "insideOut-215",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 184
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14901"
   }
 ]
