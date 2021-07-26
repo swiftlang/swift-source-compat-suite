@@ -165,28 +165,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14572"
   },
   {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/utils\/ImageLoader.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 986
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14627"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/utils\/ImageLoader.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 997
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14627"
-  },
-  {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/base\/MoviesList.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
