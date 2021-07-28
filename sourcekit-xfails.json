@@ -1460,41 +1460,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14755"
   },
   {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/utils\/ImageLoader.swift",
-    "modification" : "concurrent-654",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 655
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14687"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/UI\/Sources\/UI\/fields\/SearchTextObservable.swift",
-    "modification" : "concurrent-626",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 627
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14687"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoriesView.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1859
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14687"
-  },
-  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModifiers\/AdaptsToSoftwareKeyboard.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
