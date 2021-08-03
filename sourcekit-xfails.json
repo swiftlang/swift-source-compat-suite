@@ -1326,17 +1326,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14736"
   },
   {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayView.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1574
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14737"
-  },
-  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/TurnipsFormView.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
