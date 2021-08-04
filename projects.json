@@ -941,7 +941,14 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "rdar://81180448",
+            "compatibility": ["5.2", "5.3"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -3182,7 +3189,14 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "rdar://81180448",
+            "compatibility": ["5.0"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -3221,7 +3235,14 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "rdar://81180448",
+            "compatibility": ["5.0", "5.1", "5.2", "5.3"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -3299,7 +3320,7 @@
         "xfail": [
           {
             "issue": "rdar://81180448",
-            "compatibility": ["4.2"],
+            "compatibility": ["4.2", "5.0", "5.1", "5.2", "5.3"],
             "branch": ["main", "release/5.5"]
           }
         ]
@@ -3341,7 +3362,14 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "rdar://81180448",
+            "compatibility": ["5.0", "5.1", "5.2", "5.3"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -3376,7 +3404,14 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "rdar://81180448",
+            "compatibility": ["5.1", "5.2", "5.3"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -3415,7 +3450,14 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "rdar://81180448",
+            "compatibility": ["5.0", "5.1", "5.2", "5.3"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -3560,7 +3602,14 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "rdar://81180448",
+            "compatibility": ["5.2"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -4251,7 +4300,7 @@
         "xfail": [
           {
             "issue": "rdar://81180448",
-            "compatibility": ["4.2", "5.0"],
+            "compatibility": ["4.2", "5.0", "5.1"],
             "branch": ["main", "release/5.5"]
           }
         ]
