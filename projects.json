@@ -3102,11 +3102,11 @@
       },
       {
         "version": "5.2",
-        "commit": "b671e557fd093cb84123a48c3d77806737926968"
+        "commit": "9a992ee3de1f8da9f2968fc96b26714834f3105f"
       },
       {
         "version": "5.3",
-        "commit": "b671e557fd093cb84123a48c3d77806737926968"
+        "commit": "9a992ee3de1f8da9f2968fc96b26714834f3105f"
       }
     ],
     "platforms": [
@@ -3121,7 +3121,7 @@
         "xfail": [
           {
             "issue": "rdar://81180448",
-            "compatibility": ["4.2", "5.0", "5.1", "5.2", "5.3"],
+            "compatibility": ["4.2", "5.0", "5.1"],
             "branch": ["main", "release/5.5"]
           }
         ]
