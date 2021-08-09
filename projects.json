@@ -2541,9 +2541,9 @@
         "tags": "sourcekit-disabled",
         "xfail": [
           {
-            "issue": "https://bugs.swift.org/browse/SR-14655",
+            "issue": "https://bugs.swift.org/browse/SR-14655;rdar://81276100",
             "compatibility": ["5.1"],
-            "branch": ["main"],
+            "branch": ["main", "release/5.5"],
             "configuration": "release"
           }
         ]
