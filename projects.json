@@ -3533,7 +3533,14 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15060",
+            "compatibility": ["5.0", "5.2"],
+            "branch": ["main"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
