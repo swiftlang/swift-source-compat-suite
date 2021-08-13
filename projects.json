@@ -3538,7 +3538,7 @@
           {
             "issue": "https://bugs.swift.org/browse/SR-15060",
             "compatibility": ["5.0", "5.2"],
-            "branch": ["main"]
+            "branch": ["main", "release/5.5"]
           }
         ]
       },
