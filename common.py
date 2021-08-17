@@ -47,7 +47,7 @@ branches = {
         'swift-tools-support-core': 'main',
         'swift-crypto': '1.1.5',
         'swift-atomics': '0.0.3',
-        'swift-collections': '0.0.4',
+        'swift-collections': '0.0.5',
         'swift-numerics': '0.1.0',
         'swift-system': '0.0.2',
     },
