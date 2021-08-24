@@ -2543,8 +2543,7 @@
           {
             "issue": "https://bugs.swift.org/browse/SR-14655;rdar://81276100",
             "compatibility": ["5.1"],
-            "branch": ["main", "release/5.5"],
-            "configuration": "release"
+            "branch": ["main", "release/5.5"]
           }
         ]
       },
@@ -2553,14 +2552,28 @@
         "workspace": "Rx.xcworkspace",
         "scheme": "RxTest",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-14655;rdar://81276100",
+            "compatibility": ["5.1"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
         "scheme": "RxTest",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-14655;rdar://81276100",
+            "compatibility": ["5.1"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       }
     ]
   },
