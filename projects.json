@@ -1265,6 +1265,11 @@
             "issue": "rdar://problem/75437284",
             "compatibility": ["5.1"],
             "branch": ["main", "release/5.5"]
+          },
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15107",
+            "compatibility": ["4.0"],
+            "branch": ["main", "release/5.5"]
           }
         ]
       }
