@@ -4041,7 +4041,14 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15105",
+            "compatibility": ["5.1"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -4440,7 +4447,15 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "swiftpm"
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15105",
+            "compatibility": ["5.1"],
+            "branch": ["main", "release/5.5"],
+            "configuration": "debug"
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
