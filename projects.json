@@ -810,7 +810,14 @@
             "ARCHS": "x86_64"
         },
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15106",
+            "compatibility": ["4.0"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       }
     ]
   },
