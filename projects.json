@@ -1296,7 +1296,14 @@
         "workspace": "Kingfisher.xcworkspace",
         "scheme": "Kingfisher",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15109",
+            "compatibility": ["5.1"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -2249,7 +2256,14 @@
         "workspace": "ReactiveKit.xcworkspace",
         "scheme": "ReactiveKit-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15109",
+            "compatibility": ["5.1"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
