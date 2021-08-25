@@ -1604,7 +1604,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-15112"
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14894"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListFormView.swift",
@@ -1616,7 +1616,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-15112"
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14894"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListFormView.swift",
@@ -1628,7 +1628,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-15112"
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14894"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListFormView.swift",
@@ -1640,7 +1640,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-15112"
+    "issueUrl" : "https://bugs.swift.org/browse/SR-14894"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListFormView.swift",
