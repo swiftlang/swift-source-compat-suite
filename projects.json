@@ -21,7 +21,14 @@
         "target": "ACHNBrowserUI",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit sourcekit-smoke",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15116",
+            "compatibility": ["5.1"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       }
     ]
   },
@@ -1650,7 +1657,14 @@
         "target": "MovieSwift",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit sourcekit-smoke",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15116",
+            "compatibility": ["5.1"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       }
     ]
   },
