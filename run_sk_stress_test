@@ -22,7 +22,6 @@ import subprocess
 import argparse
 import platform
 import codecs
-from analyze_request_durations import analyze_request_durations
 
 import common
 
@@ -266,8 +265,6 @@ class StressTesterRunner(object):
             common.check_execute(run_cmd, timeout=-1, env=run_env)
         except common.ExecuteCommandFailure:
             self.compat_runner_failed = True
-
-        analyze_request_durations(request_durations)
 
         success = self._process_output(results, self.xfails_path)
 
