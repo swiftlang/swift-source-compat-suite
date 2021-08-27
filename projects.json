@@ -3518,7 +3518,7 @@
     "compatibility": [
       {
         "version": "5.2",
-        "commit": "73f2b523f0f1b04b0c58979a10fafc7860819889"
+        "commit": "7a89c904d80fd2dc7c6071806f38d5d0b2d5a1b5"
       }
     ],
     "platforms": [
@@ -3529,14 +3529,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-          {
-            "issue": "https://bugs.swift.org/browse/SR-15060",
-            "compatibility": ["5.0", "5.2"],
-            "branch": ["release/5.5"]
-          }
-        ]
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
