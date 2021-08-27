@@ -21,7 +21,14 @@
         "target": "ACHNBrowserUI",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit sourcekit-smoke",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15116",
+            "compatibility": ["5.1"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       }
     ]
   },
@@ -810,7 +817,14 @@
             "ARCHS": "x86_64"
         },
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15106",
+            "compatibility": ["4.0"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       }
     ]
   },
@@ -1258,6 +1272,11 @@
             "issue": "rdar://problem/75437284",
             "compatibility": ["5.1"],
             "branch": ["main", "release/5.5"]
+          },
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15107",
+            "compatibility": ["4.0"],
+            "branch": ["main", "release/5.5"]
           }
         ]
       }
@@ -1284,7 +1303,14 @@
         "workspace": "Kingfisher.xcworkspace",
         "scheme": "Kingfisher",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15109",
+            "compatibility": ["5.1"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -1631,7 +1657,14 @@
         "target": "MovieSwift",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit sourcekit-smoke",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15116",
+            "compatibility": ["5.1"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       }
     ]
   },
@@ -2237,7 +2270,14 @@
         "workspace": "ReactiveKit.xcworkspace",
         "scheme": "ReactiveKit-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15109",
+            "compatibility": ["5.1"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -2543,8 +2583,7 @@
           {
             "issue": "https://bugs.swift.org/browse/SR-14655;rdar://81276100",
             "compatibility": ["5.1"],
-            "branch": ["main", "release/5.5"],
-            "configuration": "release"
+            "branch": ["main", "release/5.5"]
           }
         ]
       },
@@ -2553,14 +2592,28 @@
         "workspace": "Rx.xcworkspace",
         "scheme": "RxTest",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-14655;rdar://81276100",
+            "compatibility": ["5.1"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
         "scheme": "RxTest",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-14655;rdar://81276100",
+            "compatibility": ["5.1"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       }
     ]
   },
@@ -4028,7 +4081,14 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15105",
+            "compatibility": ["5.1"],
+            "branch": ["main", "release/5.5"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -4427,7 +4487,15 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "swiftpm"
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15105",
+            "compatibility": ["5.1"],
+            "branch": ["main", "release/5.5"],
+            "configuration": "debug"
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
