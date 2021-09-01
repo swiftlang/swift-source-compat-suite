@@ -1361,6 +1361,11 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "tags": "sourcekit-disabled swiftpm"
+        ,"xfail": {
+          "issue": "https://bugs.swift.org/browse/SR-15146",
+          "compatibility": "5.1",
+          "branch": "master"
+        }
       }
     ]
   },
@@ -2458,6 +2463,11 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release"
+        ,"xfail": {
+          "issue": "https://bugs.swift.org/browse/SR-15145",
+          "compatibility": ["4.2", "5.0", "5.1", "5.2" ,"5.3"],
+          "branch": "main"
+        }
       },
       {
         "action": "TestSwiftPackage"
