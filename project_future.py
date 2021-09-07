@@ -131,7 +131,7 @@ class XcodeTarget(ProjectTarget):
         dir_override = []
         if self._has_scheme:
             dir_override += ['-derivedDataPath', build_dir]
-        elif not 'SYMROOT' in self._env:
+        elif 'SYMROOT' not in self._env:
             dir_override += ['SYMROOT=' + build_dir]
         dir_override += [k + "=" + v for k, v in self._env.items()]
         command = (['xcodebuild']
@@ -421,6 +421,7 @@ def is_xfailed(xfail_args, compatible_version, platform, swift_branch, build_con
 
     def is_or_contains(spec, arg):
         return arg in spec if isinstance(spec, list) else spec == arg
+    
     def matches(spec):
         issue = spec['issue'].split()[0]
         current = {
