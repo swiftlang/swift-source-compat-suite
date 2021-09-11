@@ -42,6 +42,10 @@ def main():
     xcodebuild_flags = args.add_xcodebuild_flags
     xcodebuild_flags += (' ' if xcodebuild_flags else '') + 'DEBUG_INFORMATION_FORMAT=dwarf'
 
+    # Use clang for building xcode projects.
+    if args.clang:
+        xcodebuild_flags += ' CC=%s' % args.clang
+
     swift_flags = args.add_swift_flags
 
     time_reporter = None
