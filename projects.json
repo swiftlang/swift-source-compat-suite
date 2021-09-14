@@ -3,7 +3,7 @@
     "repository": "Git",
     "url": "https://github.com/Dimillian/ACHNBrowserUI.git",
     "path": "ACHNBrowserUI",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "ricouard77@gmail.com",
     "compatibility": [
       {
@@ -796,7 +796,7 @@
     "repository": "Git",
     "url": "https://github.com/brentsimmons/Evergreen.git",
     "path": "Evergreen",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "brent@ranchero.com",
     "compatibility": [
       {
@@ -832,7 +832,7 @@
     "repository": "Git",
     "url": "https://github.com/exercism/swift.git",
     "path": "exercism-swift",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "cheyo@masters3d.com",
     "compatibility": [
       {
@@ -867,7 +867,7 @@
     "repository": "Git",
     "url": "https://github.com/vapor/fluent",
     "path": "fluent",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "tanner@vapor.codes",
     "compatibility": [
       {
@@ -990,7 +990,7 @@
     "repository": "Git",
     "url": "https://github.com/pointfreeco/swift-html.git",
     "path": "Html",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "support@pointfree.co",
     "compatibility": [
       {
@@ -1062,7 +1062,7 @@
     "repository": "Git",
     "url": "https://github.com/jessesquires/JSQCoreDataKit.git",
     "path": "JSQCoreDataKit",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "jesse@jessesquires.com",
     "compatibility": [
       {
@@ -1751,7 +1751,7 @@
     "repository": "Git",
     "url": "https://github.com/pointfreeco/swift-overture.git",
     "path": "Overture",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "support@pointfree.co",
     "compatibility": [
       {
@@ -2398,7 +2398,7 @@
     "repository": "Git",
     "url": "https://github.com/RxSwiftCommunity/RxDataSources",
     "path": "RxDataSources",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "krunoslav.zaher@gmail.com",
     "compatibility": [
       {
@@ -2466,7 +2466,7 @@
     "repository": "Git",
     "url": "https://github.com/ReactiveX/RxSwift.git",
     "path": "RxSwift",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "krunoslav.zaher@gmail.com",
     "compatibility": [
       {
@@ -4079,7 +4079,7 @@
     "repository": "Git",
     "url": "https://github.com/vapor/console.git",
     "path": "vapor_console",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "tanner@vapor.codes",
     "compatibility": [
       {
@@ -4111,7 +4111,7 @@
     "repository": "Git",
     "url": "https://github.com/vapor/core.git",
     "path": "vapor_core",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "tanner@vapor.codes",
     "compatibility": [
       {
@@ -4171,7 +4171,7 @@
     "repository": "Git",
     "url": "https://github.com/vapor/multipart.git",
     "path": "vapor_multipart",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "tanner@vapor.codes",
     "compatibility": [
       {
@@ -4203,7 +4203,7 @@
     "repository": "Git",
     "url": "https://github.com/vapor/routing.git",
     "path": "vapor_routing",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "tanner@vapor.codes",
     "compatibility": [
       {
@@ -4389,7 +4389,7 @@
     "repository": "Git",
     "url": "https://github.com/Quick/Nimble",
     "path": "Nimble",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "suicaicoca@gmail.com",
     "compatibility": [
       {
