@@ -266,6 +266,11 @@ class StressTesterRunner(object):
         except common.ExecuteCommandFailure:
             self.compat_runner_failed = True
 
+        if os.path.isfile(request_durations):
+            print('\n---------- Raw request durations for further analysis ----------\n')
+            with open(request_durations, 'r') as request_durations_file:
+                print(request_durations_file.read())
+
         success = self._process_output(results, self.xfails_path)
 
         return success
