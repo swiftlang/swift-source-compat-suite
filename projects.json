@@ -1354,11 +1354,6 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "tags": "sourcekit-disabled swiftpm"
-        ,"xfail": {
-          "issue": "https://bugs.swift.org/browse/SR-15146",
-          "compatibility": "5.1",
-          "branch": "master"
-        }
       }
     ]
   },
