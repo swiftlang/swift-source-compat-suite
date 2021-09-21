@@ -907,6 +907,10 @@
       {
         "version": "5.1",
         "commit": "d290102d9cb5c425fee7260034beaa997d581d86"
+      },
+      {
+        "version": "5.3",
+        "commit": "d290102d9cb5c425fee7260034beaa997d581d86"
       }
     ],
     "platforms": [
