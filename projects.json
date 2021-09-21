@@ -3214,7 +3214,7 @@
   },
   {
     "repository": "Git",
-    "url": "git@github.com:swift-server/async-http-client",
+    "url": "https://github.com/swift-server/async-http-client",
     "path": "async-http-client",
     "branch": "main",
     "maintainer": "ktoso@apple.com",
