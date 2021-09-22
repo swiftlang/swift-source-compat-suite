@@ -54,7 +54,16 @@ def main():
         'swift-corelibs-libdispatch',
         'swift-corelibs-xctest',
         'swift-stress-tester',
-        'swift-syntax'
+        'swift-syntax',
+        'swift-driver',
+        'swift-argument-parser',
+        'yams',
+        'swift-tools-support-core',
+        'swift-crypto',
+        'swift-atomics',
+        'swift-collections',
+        'swift-numerics',
+        'swift-system',
     ]
 
     if args.cleanup_cache:

@@ -31,23 +31,102 @@ except NameError:
 DEFAULT_EXECUTE_TIMEOUT = 10*60
 
 branches = {
-    'master': {
-        'llvm-project': 'swift/master',
-        'swift': 'master',
-        'cmark': 'master',
+    'main': {
+        'llvm-project': 'swift/main',
+        'swift': 'main',
+        'cmark': 'main',
         'ninja': 'release',
-        'llbuild': 'master',
-        'swiftpm': 'master',
-        'swift-corelibs-libdispatch': 'master',
-        'swift-corelibs-foundation': 'master',
-        'swift-corelibs-xctest': 'master',
+        'llbuild': 'main',
+        'swiftpm': 'main',
+        'swift-corelibs-libdispatch': 'main',
+        'swift-corelibs-foundation': 'main',
+        'swift-corelibs-xctest': 'main',
+        'swift-argument-parser': '0.4.4',
+        'swift-driver': 'main',
+        'yams': '4.0.2',
+        'swift-tools-support-core': 'main',
+        'swift-crypto': '1.1.5',
+        'swift-atomics': '0.0.3',
+        'swift-collections': '0.0.5',
+        'swift-numerics': '0.1.0',
+        'swift-system': '0.0.2',
+    },
+    'release/5.5': {
+        'llvm-project': 'swift/release/5.5',
+        'swift': 'release/5.5',
+        'cmark': 'release/5.5',
+        'ninja': 'release',
+        'llbuild': 'release/5.5',
+        'swiftpm': 'release/5.5',
+        'swift-corelibs-libdispatch': 'release/5.5',
+        'swift-corelibs-foundation': 'release/5.5',
+        'swift-corelibs-xctest': 'release/5.5',
+        'swift-argument-parser': '0.4.3',
+        'swift-driver': 'release/5.5',
+        'yams': '4.0.2',
+        'swift-tools-support-core': 'release/5.5',
+        'swift-crypto': '1.1.5',
+        'swift-atomics': '0.0.3',
+        'swift-collections': '0.0.4',
+        'swift-numerics': '0.1.0',
+        'swift-system': '0.0.2',
+    },
+    'release/5.4': {
+        'llvm-project': 'swift/release/5.4',
+        'swift': 'release/5.4',
+        'cmark': 'release/5.4',
+        'ninja': 'release',
+        'llbuild': 'release/5.4',
+        'swiftpm': 'release/5.4',
+        'swift-corelibs-libdispatch': 'release/5.4',
+        'swift-corelibs-foundation': 'release/5.4',
+        'swift-corelibs-xctest': 'release/5.4',
+        'swift-argument-parser': '0.3.0',
+        'swift-driver': 'release/5.4',
+        'yams': '3.0.1',
+        'swift-tools-support-core': 'release/5.4',
+        'swift-crypto': '1.1.5',
+        'swift-atomics': '0.0.3',
+        'swift-collections': '0.0.4',
+        'swift-numerics': '0.1.0',
+        'swift-system': '0.0.2',
+    },
+    'release/5.3': {
+        'llvm-project': 'swift/release/5.3',
+        'swift': 'release/5.3',
+        'cmark': 'release/5.3',
+        'ninja': 'release',
+        'llbuild': 'release/5.3',
+        'swiftpm': 'release/5.3',
+        'swift-corelibs-libdispatch': 'release/5.3',
+        'swift-corelibs-foundation': 'release/5.3',
+        'swift-corelibs-xctest': 'release/5.3',
+        'swift-argument-parser': '0.3.0',
+        'swift-driver': 'main',
+        'yams': '3.0.1',
+        'swift-tools-support-core': 'main',
+        'swift-crypto': '1.1.5',
+    },
+    'swift-5.2-branch': {
+        'llvm-project': 'swift/swift-5.2-branch',
+        'swift': 'swift-5.2-branch',
+        'cmark': 'swift-5.2-branch',
+        'ninja': 'release',
+        'llbuild': 'swift-5.2-branch',
+        'swiftpm': 'swift-5.2-branch',
+        'swift-corelibs-libdispatch': 'swift-5.2-branch',
+        'swift-corelibs-foundation': 'swift-5.2-branch',
+        'swift-corelibs-xctest': 'swift-5.2-branch',
+        'swift-argument-parser': '0.3.0',
+        'swift-driver': 'main',
+        'yams': '3.0.1',
     },
     'swift-4.2-branch': {
         'llvm-project': 'swift/swift-4.2-branch',
         'swift': 'swift-4.2-branch',
-        'cmark': 'master',
+        'cmark': 'main',
         'ninja': 'release',
-        'llbuild': 'master',
+        'llbuild': 'main',
         'swiftpm': 'swift-4.2-branch',
         'swift-corelibs-libdispatch': 'swift-4.2-branch',
         'swift-corelibs-foundation': 'swift-4.2-branch',
@@ -79,7 +158,7 @@ branches = {
     'swift-4.0-branch': {
         'llvm-project': 'swift/swift-4.0-branch',
         'swift': 'swift-4.0-branch',
-        'cmark': 'master',
+        'cmark': 'main',
         'ninja': 'release',
         'llbuild': 'swift-4.0-branch',
         'swiftpm': 'swift-4.0-branch',
@@ -101,7 +180,7 @@ branches = {
     'swift-3.1-branch': {
         'llvm-project': 'swift/swift-3.1-branch',
         'swift': 'swift-3.1-branch',
-        'cmark': 'master',
+        'cmark': 'main',
         'ninja': 'release',
         'llbuild': 'swift-3.1-branch',
         'swiftpm': 'swift-3.1-branch',
@@ -112,19 +191,19 @@ branches = {
     'swift-3.0-branch': {
         'llvm-project': 'swift/swift-3.0-branch',
         'swift': 'swift-3.0-branch',
-        'cmark': 'master',
+        'cmark': 'main',
         'ninja': 'release',
     },
 }
 
 swiftc_operation = {
-    'master': '-typecheck',
+    'main': '-typecheck',
     'swift-3.1-branch': '-typecheck',
     'swift-3.0-branch': '-parse',
 }
 
 swiftc_version = {
-    'master': '3',
+    'main': '3',
     'swift-3.1-branch': '3',
     'swift-3.0-branch': None,
 }
@@ -135,7 +214,7 @@ swift_branch = None
 def set_swift_branch(branch):
     """Configure the common library for a specific branch.
 
-    >>> set_swift_branch('master')
+    >>> set_swift_branch('main')
     """
     global swift_branch
     swift_branch = branch
@@ -151,7 +230,7 @@ def clone_repos():
     """Clone Swift and dependencies in parallel.
 
     >>> import tempfile
-    >>> set_swift_branch('master')
+    >>> set_swift_branch('main')
     >>> tmpdir = tempfile.mkdtemp()
     >>> with DirectoryContext(tmpdir):
     ...     clone_repos()
@@ -166,37 +245,73 @@ def clone_repos():
     cpu_count = multiprocessing.cpu_count()
     workspace = private_workspace('.')
     repos = [
-        '{} https://github.com/apple/llvm-project.git '
+        '{} git@github.com:apple/llvm-project.git '
         '{}/llvm-project '.format(
             branches[swift_branch]['llvm-project'], workspace
         ),
-        '{} https://github.com/apple/swift.git {}/swift '.format(
+        '{} git@github.com:apple/swift.git {}/swift '.format(
             branches[swift_branch]['swift'], workspace
         ),
-        '{} https://github.com/apple/swift-cmark.git {}/cmark '.format(
+        '{} git@github.com:apple/swift-cmark.git {}/cmark '.format(
             branches[swift_branch]['cmark'], workspace
         ),
-        '{} https://github.com/ninja-build/ninja.git {}/ninja '.format(
+        '{} git@github.com:ninja-build/ninja.git {}/ninja '.format(
             branches[swift_branch]['ninja'], workspace
         ),
-        '{} https://github.com/apple/swift-llbuild.git {}/llbuild '.format(
+        '{} git@github.com:apple/swift-llbuild.git {}/llbuild '.format(
             branches[swift_branch]['llbuild'], workspace
         ),
-        '{} https://github.com/apple/swift-package-manager.git '
+        '{} git@github.com:apple/swift-package-manager.git '
         '{}/swiftpm '.format(
             branches[swift_branch]['swiftpm'], workspace
         ),
-        '{} https://github.com/apple/swift-corelibs-foundation.git '
+        '{} git@github.com:apple/swift-corelibs-foundation.git '
         '{}/swift-corelibs-foundation '.format(
             branches[swift_branch]['swift-corelibs-foundation'], workspace
         ),
-        '{} https://github.com/apple/swift-corelibs-libdispatch.git '
+        '{} git@github.com:apple/swift-corelibs-libdispatch.git '
         '{}/swift-corelibs-libdispatch '.format(
             branches[swift_branch]['swift-corelibs-libdispatch'], workspace
         ),
-        '{} https://github.com/apple/swift-corelibs-xctest.git '
+        '{} git@github.com:apple/swift-corelibs-xctest.git '
         '{}/swift-corelibs-xctest '.format(
             branches[swift_branch]['swift-corelibs-xctest'], workspace
+        ),
+        '{} git@github.com:apple/swift-argument-parser.git '
+        '{}/swift-argument-parser '.format(
+            branches[swift_branch]['swift-argument-parser'], workspace
+        ),
+        '{} git@github.com:apple/swift-driver.git '
+        '{}/swift-driver '.format(
+            branches[swift_branch]['swift-driver'], workspace
+        ),
+        '{} git@github.com:jpsim/Yams.git '
+        '{}/yams '.format(
+            branches[swift_branch]['yams'], workspace
+        ),
+        '{} git@github.com:apple/swift-tools-support-core.git '
+        '{}/swift-tools-support-core '.format(
+            branches[swift_branch]['swift-tools-support-core'], workspace
+        ),
+        '{} git@github.com:apple/swift-crypto.git '
+        '{}/swift-crypto '.format(
+            branches[swift_branch]['swift-crypto'], workspace
+        ),
+        '{} git@github.com:apple/swift-atomics.git '
+        '{}/swift-atomics '.format(
+            branches[swift_branch]['swift-atomics'], workspace
+        ),
+        '{} git@github.com:apple/swift-collections.git '
+        '{}/swift-collections '.format(
+            branches[swift_branch]['swift-collections'], workspace
+        ),
+        '{} git@github.com:apple/swift-numerics.git '
+        '{}/swift-numerics '.format(
+            branches[swift_branch]['swift-numerics'], workspace
+        ),
+        '{} git@github.com:apple/swift-system.git '
+        '{}/swift-system '.format(
+            branches[swift_branch]['swift-system'], workspace
         ),
     ]
 
@@ -211,7 +326,6 @@ def clone_repos():
     process0.stdin.close()
 
     assert process0.wait() == 0
-    symlink_llvm_project(workspace)
 
 
 class Unreachable(Exception):
@@ -369,31 +483,6 @@ def check_execute(command, timeout=None,
         if returncode == 0:
             return returncode
     raise ExecuteCommandFailure(command, returncode)
-
-
-def symlink_llvm_project(workspace):
-    print("Create symlink for LLVM Project")
-    llvm_projects = ['clang',
-                     'llvm',
-                     'lldb',
-                     'compiler-rt',
-                     'libcxx',
-                     'clang-tools-extra']
-    for project in llvm_projects:
-        src_path = os.path.join(workspace,
-                                'llvm-project',
-                                project)
-        dst_path = os.path.join(workspace, project)
-        if not os.path.islink(dst_path):
-            try:
-                os.symlink(src_path, dst_path)
-            except OSError as e:
-                if e.errno == errno.EEXIST:
-                    print("File '%s' already exists. Remove it, so "
-                          "update-checkout can create the symlink to the "
-                          "llvm-monorepo." % dst_path)
-                else:
-                    raise e
 
 
 def git_submodule_update(path, stdout=sys.stdout, stderr=sys.stderr):

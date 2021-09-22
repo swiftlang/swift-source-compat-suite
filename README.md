@@ -244,13 +244,13 @@ To build all projects against a specified Swift compiler locally, use the
 `runner.py` utility as shown below.
 
 ~~~bash
-./runner.py --swift-branch master --projects projects.json --include-actions 'action.startswith("Build")' --swiftc path/to/swiftc
+./runner.py --swift-branch main --projects projects.json --include-actions 'action.startswith("Build")' --swiftc path/to/swiftc
 ~~~
 
 Use the `--include-repos` flag to build a specific project.
 
 ~~~bash
-./runner.py --swift-branch master --projects projects.json --include-actions 'action.startswith("Build")' --include-repos 'path == "Alamofire"' --swiftc path/to/swiftc
+./runner.py --swift-branch main --projects projects.json --include-actions 'action.startswith("Build")' --include-repos 'path == "Alamofire"' --swiftc path/to/swiftc
 ~~~
 
 By default, build output is redirected to per-action `.log` files in the current
@@ -266,7 +266,7 @@ visible.
 To mark an action as an expected failure, add an `xfail` entry for the correct
 Swift version and branch to the failing actions, associating each with a link
 to a JIRA issue reporting the relevant failure. The following is an example of
-an action that's XFAIL'd when building against Swift master branch in 4.2
+an action that's XFAIL'd when building against Swift main branch in 4.2
 compatibility mode.
 
 ~~~json
@@ -295,7 +295,7 @@ compatibility mode.
       "xfail": {
         "issue": "https://bugs.swift.org/browse/SR-9999",
         "compatibility": "4.2",
-        "branch": "master"
+        "branch": "main"
       }
     }
   ]
@@ -314,7 +314,7 @@ configurations. The currently supported fields for XFAIL entries are:
 
 Values can either be a single string literal or a list of alternative string
 literals to match against. For example the below action is expected to fail on
-both master and swift-5.1-branch in both 4.0 and 5.1 compatibility modes:
+both main and swift-5.1-branch in both 4.0 and 5.1 compatibility modes:
 
 ~~~json
 ...
@@ -327,7 +327,7 @@ both master and swift-5.1-branch in both 4.0 and 5.1 compatibility modes:
   "xfail": {
     "issue": "https://bugs.swift.org/browse/SR-9999",
     "compatibility": ["4.0", "5.1"],
-    "branch": ["master", "swift-5.1-branch"]
+    "branch": ["main", "swift-5.1-branch"]
   }
 }
 ...
@@ -341,7 +341,7 @@ be reported. In the below example any failure on Linux would be reported as
 using a toolchain built from the *master* branch and *SR-9999* using a
 toolchain built from *swift-5.1-branch*. If the entries were in the reverse
 order, *SR-7777* would only be reported for Linux failures with toolchains built
-from a branch other than *master* or *swift-5.1-branch*.
+from a branch other than *main* or *swift-5.1-branch*.
 
 ~~~json
 ...
@@ -358,7 +358,7 @@ from a branch other than *master* or *swift-5.1-branch*.
     },
     {
       "issue": "https://bugs.swift.org/browse/SR-8888",
-      "branch": "master"
+      "branch": "main"
     },
     {
       "issue": "https://bugs.swift.org/browse/SR-9999",

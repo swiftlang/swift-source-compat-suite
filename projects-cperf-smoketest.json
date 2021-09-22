@@ -7,8 +7,8 @@
     "maintainer": "cnoon@alamofire.org",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "b03b43cc381ec02eb9855085427186ef89055eef"
+        "version": "5.1",
+        "commit": "576437d07f1c7f6db5a848fb3ee6bacc6bcdba24"
       }
     ],
     "platforms": [
@@ -32,8 +32,8 @@
     "maintainer": "onev@onevcat.com",
     "compatibility": [
       {
-        "version": "3.0",
-        "commit": "5cfa0dd5c9fc48e1c31f574ad8eaa31a3a9d4003"
+        "version": "5.1",
+        "commit": "23ef6c73ee3bc12ee3940136aea54bd44a02e93e"
       }
     ],
     "platforms": [
@@ -56,8 +56,8 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "e5532fc81474ced9908965c5e4d5a91135fb2e2d"
+        "version": "5.1",
+        "commit": "78e2c70921dfe2f291d302cb61d00c9ff1c9bced"
       }
     ],
     "platforms": [
@@ -81,8 +81,8 @@
     "branch": "master",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "549d4c97664bea31af61a4d3d6184dc3e970880a"
+        "version": "5.1",
+        "commit": "ac8abbb3a72874eb1dedd6305ab9560e9d096eb4"
       }
     ],
     "maintainer": "jp@jpsim.com",

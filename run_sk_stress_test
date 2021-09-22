@@ -133,7 +133,7 @@ def clone_swift_syntax(workspace, swift_branch):
         '{}/swift-syntax'.format(workspace)
     ]
     common.check_execute(syntax_clone_cmd, timeout=-1)
-    
+
 
 def execute_runner(workspace, args):
     swiftc_path = get_swiftc_path(workspace, args.swiftc)
@@ -192,13 +192,23 @@ def build_swift_toolchain(workspace, args):
         '--install-prefix=/toolchain/usr',
         '--install-symroot={}/build/compat_macos/symroot'.format(workspace),
         '--installable-package={}/build/compat_macos/root.tar.gz'.format(workspace),
-        '--llvm-install-components=libclang;libclang-headers',
+        '--llvm-install-components=libclang;libclang-headers;dsymutil',
         '--swift-install-components=compiler;clang-builtin-headers;stdlib;sdk-overlay;parser-lib;license;sourcekit-xpc-service;swift-remote-mirror;swift-remote-mirror-headers',
         '--symbols-package={}/build/compat_macos/root-symbols.tar.gz'.format(workspace),
         '--verbose-build',
         '--reconfigure',
     ]
     common.check_execute(build_command, timeout=9999999)
+
+
+def processed_files_contain(processed_files, file_path):
+        """
+        Returns `True` if a path in `processed_files` contains `file_path` as a substring, `False` otherwise
+        """
+        for processed_file in processed_files:
+            if file_path in processed_file:
+                return True
+        return False
 
 
 class StressTesterRunner(object):
@@ -220,9 +230,10 @@ class StressTesterRunner(object):
         # temporary file paths
         filtered_projects = os.path.join(script_dir, 'stress-tester-projects.json')
         results = os.path.join(script_dir, 'stress-tester-results.json')
+        request_durations = os.path.join(script_dir, 'stress-tester-request-durations.json')
 
         # remove temporary files if they already exist
-        self._cleanup([filtered_projects, results])
+        self._cleanup([filtered_projects, results, request_durations])
 
         run_env = {
             'SK_STRESS_TEST': self.stress_tester,
@@ -232,8 +243,9 @@ class StressTesterRunner(object):
             'SK_STRESS_OUTPUT': results,
             'SK_XFAILS_PATH': self.xfails_path,
             'SK_STRESS_ACTIVE_CONFIG': self.swift_branch,
-            'SK_STRESS_SUPPRESS_OUTPUT': 'true',
-            'SK_STRESS_REWRITE_MODES': 'none concurrent insideout'}
+            'SK_STRESS_REWRITE_MODES': 'none concurrent insideout',
+            'SK_STRESS_REQUEST_DURATIONS_FILE': request_durations,
+        }
         run_env.update(os.environ)
         run_cmd = ['./runner.py',
           '--projects', filtered_projects,
@@ -254,17 +266,33 @@ class StressTesterRunner(object):
         except common.ExecuteCommandFailure:
             self.compat_runner_failed = True
 
-        success = self._process_output(results)
+        if os.path.isfile(request_durations):
+            print('\n---------- Raw request durations for further analysis ----------\n')
+            with open(request_durations, 'r') as request_durations_file:
+                print(request_durations_file.read())
+
+        success = self._process_output(results, self.xfails_path)
 
         return success
 
 
-    def _process_output(self, results_path):
+    def _process_output(self, results_path, xfails_path):
         if not os.path.isfile(results_path):
             return True
 
         with open(results_path, 'rb') as results_file:
             results = json.load(results_file, encoding='utf-8')
+        with open(xfails_path, 'rb') as xfails_path:
+            xfails = json.load(xfails_path, encoding='utf-8')
+
+        xfails_not_processed = []
+        for xfail in xfails:
+            # The XFails start with '*' to match any path prefix. Remove it so we can perform substring matching in processed_files_contain
+            xfailed_file = xfail['path']
+            if xfailed_file[0] == '*':
+                xfailed_file = xfailed_file[1:]
+            if not processed_files_contain(results['processedFiles'], xfailed_file):
+                xfails_not_processed.append(xfail)
 
         num_failures = len(results['issues'])
         num_xfails = sum(len(value) for _, value in results['expectedIssues'].iteritems())
@@ -279,6 +307,19 @@ class StressTesterRunner(object):
                 for (index, issue) in enumerate(issues):
                     self._print_issue(index, issue, url)
             print('\n========================================')
+
+        if len(xfails_not_processed) > 0:
+            print('XFails not processed:')
+            print('The files that are covered by these XFails were not tested in the current Stress Tester Run.')
+            print('The reason for this might be:')
+            print(' * The project that contains the file was not tested in the current run')
+            print(' * A different file from the same compiler invocation failed and thus this file was not tested')
+            print(' * The file has been removed in the original project')
+            print('')
+            for xfail in xfails_not_processed:
+                print('      {}'.format(json.dumps(xfail)))
+            print('\n========================================')
+
         if num_failures > 0:
             print('Unexpected stress tester issues:')
             for (index, issue) in enumerate(results['issueMessages']):
@@ -287,11 +328,15 @@ class StressTesterRunner(object):
 
 
         print('SourceKit Stress Tester summary:')
-        
+
         print('  {} underlying source compatibility build'.format('failed' if self.compat_runner_failed else 'passed'))
         if self.compat_runner_failed:
             print('      > treat this as a source compatibility failure')
-        
+
+        print('  {} XFails not processed'.format(len(xfails_not_processed)))
+        if num_failures > 0:
+            print('      > see "XFails not processed" how to handle them. This is an info, not an error')
+
         print('  {} unexpected stress tester failures'.format(num_failures))
         if num_failures > 0:
             print('      > see "Unexpected stress tester issues" above for individual failures')
@@ -323,9 +368,17 @@ class StressTesterRunner(object):
             projects = json.load(json_file)
             for project in projects:
                 for action in project['actions']:
-                    # This is used in combination with --add-xcodebuild-flags to prevent running the stress tester over the same files twice.
-                    # generic/iOS actions invoke the wrapper for both arm64 and armv7, which makes little difference for the stress tester.
-                    action['archs_override'] = 'arm64' if action.get('destination') == 'generic/platform=iOS' else '$ARCHS'
+                    # This is used in combination with --add-xcodebuild-flags
+                    # to prevent running the stress tester over the same files
+                    # for difference architectures. generic/iOS actions
+                    # normally invoke the wrapper for both arm64 and armv7 and
+                    # generic/macOS actions for arm64 and x86_64.
+                    if action.get('destination') == 'generic/platform=iOS':
+                        action['archs_override'] = 'arm64'
+                    elif action.get('destination') == 'generic/platform=macOS':
+                        action['archs_override'] = 'x86_64'
+                    else:
+                        action['archs_override'] = '$ARCHS'
 
         with open(output, 'w') as outfile:
             json.dump(projects, outfile, indent=4)
