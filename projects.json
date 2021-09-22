@@ -840,10 +840,6 @@
         "commit": "3df5e4ab83a9ab47228a46da7263e09a2a2b0b90"
       },
       {
-        "version": "5.0",
-        "commit": "3df5e4ab83a9ab47228a46da7263e09a2a2b0b90"
-      },
-      {
         "version": "5.1",
         "commit": "3df5e4ab83a9ab47228a46da7263e09a2a2b0b90"
       }
@@ -936,10 +932,6 @@
     "maintainer": "gbarnett@apple.com",
     "compatibility": [
       {
-        "version": "5.2",
-        "commit": "a45db1b439bc85b9e18f7ee1a5bf3ec564107819"
-      },
-      {
         "version": "5.3",
         "commit": "a45db1b439bc85b9e18f7ee1a5bf3ec564107819"
       }
@@ -965,10 +957,6 @@
     "path": "Guitar",
     "branch": "master",
     "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "7609e913619c606b7b1e3f251f18b906a1ef7272"
-      },
       {
         "version": "5.1",
         "commit": "7609e913619c606b7b1e3f251f18b906a1ef7272"
@@ -1844,10 +1832,6 @@
         "commit": "131ad277b9b63e198606d46999217e9e0cc452c6"
       },
       {
-        "version": "5.0",
-        "commit": "131ad277b9b63e198606d46999217e9e0cc452c6"
-      },
-      {
         "version": "5.1",
         "commit": "131ad277b9b63e198606d46999217e9e0cc452c6"
       }
@@ -1941,10 +1925,6 @@
       {
         "version": "4.2",
         "commit": "94193d59bc06689526772023428402da1e0e299f"
-      },
-      {
-        "version": "5.0",
-        "commit": "a7fa565e648d90083c7f10c0c6be9bf249dcdbde"
       },
       {
         "version": "5.1",
@@ -2432,18 +2412,6 @@
         "commit": "ec478bb68edbb8f10a7982bcffe9f1779de4e58b"
       },
       {
-        "version": "5.0",
-        "commit": "ec478bb68edbb8f10a7982bcffe9f1779de4e58b"
-      },
-      {
-        "version": "5.1",
-        "commit": "ec478bb68edbb8f10a7982bcffe9f1779de4e58b"
-      },
-      {
-        "version": "5.2",
-        "commit": "ec478bb68edbb8f10a7982bcffe9f1779de4e58b"
-      },
-      {
         "version": "5.3",
         "commit": "ec478bb68edbb8f10a7982bcffe9f1779de4e58b"
       }
@@ -2660,10 +2628,6 @@
     "compatibility": [
       {
         "version": "4.2",
-        "commit": "61d72cd2fbe8a0e9ab69878eb585a99eb15859cc"
-      },
-      {
-        "version": "5.0",
         "commit": "61d72cd2fbe8a0e9ab69878eb585a99eb15859cc"
       },
       {
@@ -3107,10 +3071,6 @@
     "maintainer": "akiskesoglou@gmail.com",
     "compatibility": [
       {
-        "version": "5.0",
-        "commit": "68500e5501ca9986e996e16736496b5b2491af87"
-      },
-      {
         "version": "5.1",
         "commit": "68500e5501ca9986e996e16736496b5b2491af87"
       }
@@ -3150,10 +3110,6 @@
         "commit": "5f8d3f0b404a12d459f294fdd5b3740e5b6aa8d4"
       },
       {
-        "version": "5.2",
-        "commit": "9a992ee3de1f8da9f2968fc96b26714834f3105f"
-      },
-      {
         "version": "5.3",
         "commit": "9a992ee3de1f8da9f2968fc96b26714834f3105f"
       }
@@ -3187,10 +3143,6 @@
     "branch": "main",
     "maintainer": "ktoso@apple.com",
     "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "16cfcc60e49d940c93367e5fe0e0533bd27e9733"
-      },
       {
         "version": "5.2",
         "commit": "16cfcc60e49d940c93367e5fe0e0533bd27e9733"
@@ -3250,14 +3202,6 @@
         "commit": "492a77b1867c2d31b08a3d7db63de59a8e2399ac"
       },
       {
-        "version": "5.1",
-        "commit": "59941f680326d41d00e3351972883f3377f8320b"
-      },
-      {
-        "version": "5.2",
-        "commit": "59941f680326d41d00e3351972883f3377f8320b"
-      },
-      {
         "version": "5.3",
         "commit": "59941f680326d41d00e3351972883f3377f8320b"
       }
@@ -3284,10 +3228,6 @@
     "branch": "main",
     "maintainer": "ktoso@apple.com",
     "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "68e6cb29387754df21d96cb35d09b6ad0f59300f"
-      },
       {
         "version": "5.2",
         "commit": "68e6cb29387754df21d96cb35d09b6ad0f59300f"
@@ -3324,14 +3264,6 @@
         "commit": "66f9a509ed3cc56b6eb367515e421beca4a0af53"
       },
       {
-        "version": "5.1",
-        "commit": "e8d4442cf7a39828f54fb6851aa94767c8b7c9a5"
-      },
-      {
-        "version": "5.2",
-        "commit": "e8d4442cf7a39828f54fb6851aa94767c8b7c9a5"
-      },
-      {
         "version": "5.3",
         "commit": "e8d4442cf7a39828f54fb6851aa94767c8b7c9a5"
       }
@@ -3363,14 +3295,6 @@
         "commit": "16de4b45c7cbe9815f995dd1539e6b7c4f0980a5"
       },
       {
-        "version": "5.1",
-        "commit": "62bf5083df970e67c886210fa5b857eacf044b7c"
-      },
-      {
-        "version": "5.2",
-        "commit": "62bf5083df970e67c886210fa5b857eacf044b7c"
-      },
-      {
         "version": "5.3",
         "commit": "62bf5083df970e67c886210fa5b857eacf044b7c"
       }
@@ -3397,14 +3321,6 @@
     "branch": "main",
     "maintainer": "johannesweiss@apple.com",
     "compatibility": [
-      {
-        "version": "5.1",
-        "commit": "3860f75de5554e4dc4a02d6955f0607cd8bde250"
-      },
-      {
-        "version": "5.2",
-        "commit": "3860f75de5554e4dc4a02d6955f0607cd8bde250"
-      },
       {
         "version": "5.3",
         "commit": "3860f75de5554e4dc4a02d6955f0607cd8bde250"
@@ -3433,18 +3349,6 @@
     "maintainer": "johannesweiss@apple.com",
     "compatibility": [
       {
-        "version": "5.0",
-        "commit": "9fc0d32e072181e5ef90a178bd67dfc7edbd1533"
-      },
-      {
-        "version": "5.1",
-        "commit": "9fc0d32e072181e5ef90a178bd67dfc7edbd1533"
-      },
-      {
-        "version": "5.2",
-        "commit": "9fc0d32e072181e5ef90a178bd67dfc7edbd1533"
-      },
-      {
         "version": "5.3",
         "commit": "9fc0d32e072181e5ef90a178bd67dfc7edbd1533"
       }
@@ -3471,14 +3375,6 @@
     "branch": "main",
     "maintainer": "johannesweiss@apple.com",
     "compatibility": [
-      {
-        "version": "5.1",
-        "commit": "8f4bfa5bc1951440c15710e9e893721aa4b2765c"
-      },
-      {
-        "version": "5.2",
-        "commit": "8f4bfa5bc1951440c15710e9e893721aa4b2765c"
-      },
       {
         "version": "5.3",
         "commit": "8f4bfa5bc1951440c15710e9e893721aa4b2765c"
@@ -3822,10 +3718,6 @@
         "commit": "03555e5e2a517f977ba8736172115f0db2c645a8"
       },
       {
-        "version": "5.0",
-        "commit": "03555e5e2a517f977ba8736172115f0db2c645a8"
-      },
-      {
         "version": "5.1",
         "commit": "03555e5e2a517f977ba8736172115f0db2c645a8"
       }
@@ -3908,10 +3800,6 @@
       },
       {
         "version": "4.2",
-        "commit": "d501cb83be55d67779dd2dc3e2dea53fdf78c39d"
-      },
-      {
-        "version": "5.0",
         "commit": "d501cb83be55d67779dd2dc3e2dea53fdf78c39d"
       },
       {
