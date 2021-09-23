@@ -2422,6 +2422,13 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
+        "xfail": [
+          {
+            "issue": "https://bugs.swift.org/browse/SR-15232",
+            "compatibility": ["4.2", "5.3"],
+            "branch": ["main"]
+          }
+        ],
         "configuration": "release"
       },
       {
@@ -3307,6 +3314,12 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "xfail": [
+          {
+            "issue": "rdar://83452858",
+            "compatibility": ["5.0"]
+          }
+        ],
         "tags": "sourcekit-disabled swiftpm"
       },
       {
