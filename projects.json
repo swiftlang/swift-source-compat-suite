@@ -664,7 +664,7 @@
     "compatibility": [
       {
         "version": "5.3",
-        "commit": "a2d58a0775670b71b756c071ac744b304d05a99f"
+        "commit": "513009659ac98941d057b5e35b783da4828aa933"
       }
     ],
     "platforms": [
@@ -679,19 +679,13 @@
         "xfail": [
             {
                 "issue": "https://bugs.swift.org/browse/SR-12736",
-                "platform": "Linux",
                 "compatibility": "5.3",
                 "branch": ["main", "release/5.5", "release/5.4"]
             },
             {
-                "issue": "https://bugs.swift.org/browse/SR-14580",
-                "compatibility": "5.3",
-                "branch": ["main", "release/5.5"]
-            },
-            {
                 "issue": "https://bugs.swift.org/browse/SR-14659",
                 "compatibility": "5.3",
-                "branch": ["release/5.4"]
+                "branch": ["main", "release/5.5", "release/5.4"]
             }
         ]
       },
