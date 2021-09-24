@@ -66,6 +66,9 @@ def parse_args():
                         metavar='TAG',
                         help='Only run project actions with the given tag',
                         default='sourcekit')
+    parser.add_argument('--filter-by-project',
+                        metavar='TAG',
+                        help='Only stress test the given project')
     parser.add_argument('--sourcekit-xfails',
                         metavar='PATH',
                         help='JSON file specifying expected sourcekit failures',
@@ -152,6 +155,9 @@ def execute_runner(workspace, args):
 
     if args.filter_by_tag:
         extra_runner_args += ['--include-actions', '"tags" in locals() and "{}" in tags.split()'.format(args.filter_by_tag)]
+    
+    if args.filter_by_project:
+        extra_runner_args += ['--include-repos', 'path == "{}"'.format(args.filter_by_project)]
 
     runner = StressTesterRunner(wrapper_path, stress_tester_path, swiftc_path, args.projects, args.swift_branch, os.path.abspath(args.sourcekit_xfails))
     passed = runner.run(extra_runner_args)
