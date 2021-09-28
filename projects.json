@@ -2420,7 +2420,7 @@
           {
             "issue": "https://bugs.swift.org/browse/SR-15232",
             "compatibility": ["4.2", "5.3"],
-            "branch": ["main"]
+            "branch": ["main", "release/5.5"]
           }
         ],
         "configuration": "release"
