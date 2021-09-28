@@ -65,6 +65,7 @@ def main():
                     args.swiftc,
                     args.swift_version,
                     args.swift_branch,
+                    args.job_type,
                     args.sandbox_profile_xcodebuild,
                     args.sandbox_profile_package,
                     swift_flags,
