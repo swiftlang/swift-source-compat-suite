@@ -3308,6 +3308,13 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "xfail": [
+          {
+            "issue": "rdar://83452858",
+            "compatibility": ["5.0"],
+            "branch": ["release/5.5"]
+          }
+        ],
         "tags": "sourcekit-disabled swiftpm"
       },
       {
