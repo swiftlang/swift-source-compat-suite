@@ -21,14 +21,7 @@
         "target": "ACHNBrowserUI",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke",
-        "xfail": [
-          {
-            "issue": "https://bugs.swift.org/browse/SR-15116",
-            "compatibility": ["5.1"],
-            "branch": ["main", "release/5.5"]
-          }
-        ]
+        "tags": "sourcekit sourcekit-smoke"
       }
     ]
   },
@@ -811,14 +804,7 @@
             "ARCHS": "x86_64"
         },
         "configuration": "Release",
-        "tags": "sourcekit-disabled",
-        "xfail": [
-          {
-            "issue": "https://bugs.swift.org/browse/SR-15106",
-            "compatibility": ["4.0"],
-            "branch": ["main", "release/5.5"]
-          }
-        ]
+        "tags": "sourcekit-disabled"
       }
     ]
   },
@@ -1636,14 +1622,7 @@
         "target": "MovieSwift",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke",
-        "xfail": [
-          {
-            "issue": "https://bugs.swift.org/browse/SR-15116",
-            "compatibility": ["5.1"],
-            "branch": ["main", "release/5.5"]
-          }
-        ]
+        "tags": "sourcekit sourcekit-smoke"
       }
     ]
   },
@@ -2241,14 +2220,7 @@
         "workspace": "ReactiveKit.xcworkspace",
         "scheme": "ReactiveKit-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "https://bugs.swift.org/browse/SR-15109",
-            "compatibility": ["5.1"],
-            "branch": ["main", "release/5.5"]
-          }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -3955,14 +3927,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-          {
-            "issue": "https://bugs.swift.org/browse/SR-15105",
-            "compatibility": ["5.1"],
-            "branch": ["main", "release/5.5"]
-          }
-        ]
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
