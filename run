@@ -184,8 +184,7 @@ def execute_runner(workspace, args):
     if args.verbose:
         runner_command += ["--verbose"]
 
-    if args.add_swift_flags:
-        runner_command += ['--add-swift-flags=%s' % args.add_swift_flags]
+    runner_command += ['--add-swift-flags="-Xfrontend -enable-experimental-lexical-lifetimes -Xfrontend -sil-verify-all"']
 
     if args.add_xcodebuild_flags:
         runner_command += ['--add-xcodebuild-flags=%s' % args.add_xcodebuild_flags]
