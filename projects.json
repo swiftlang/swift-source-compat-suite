@@ -2977,7 +2977,7 @@
   {
     "repository": "Git",
     "url": "https://github.com/realm/SwiftLint.git",
-    "path": "SwiftLint",
+    "path": "SwiftLint-Legacy",
     "branch": "master",
     "compatibility": [
       {
@@ -2995,6 +2995,36 @@
       {
         "version": "5.1",
         "commit": "ac8abbb3a72874eb1dedd6305ab9560e9d096eb4"
+      }
+    ],
+    "maintainer": "jp@jpsim.com",
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/realm/SwiftLint.git",
+    "path": "SwiftLint",
+    "branch": "master",
+    "compatibility": [
+      {
+        "version": "5.2",
+        "commit": "180d94132758dd183124ab1e63d6aa8e10023ec2"
+      },
+      {
+        "version": "5.3",
+        "commit": "e820e750b08bd67bc9d98f4817868e9bc3d5d865"
       }
     ],
     "maintainer": "jp@jpsim.com",
