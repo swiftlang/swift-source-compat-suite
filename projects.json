@@ -3289,7 +3289,7 @@
     "url": "https://github.com/apple/swift-nio-ssl",
     "path": "swift-nio-ssl",
     "branch": "main",
-    "maintainer": "johannesweiss@apple.com",
+    "maintainer": "cbenfield@apple.com",
     "compatibility": [
       {
         "version": "5.0",
@@ -3297,7 +3297,7 @@
       },
       {
         "version": "5.3",
-        "commit": "62bf5083df970e67c886210fa5b857eacf044b7c"
+        "commit": "5e68c1ded15619bb281b273fa8c2d8fd7f7b2b7d"
       }
     ],
     "platforms": [
@@ -3308,13 +3308,6 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "xfail": [
-          {
-            "issue": "rdar://83452858",
-            "compatibility": ["5.0"],
-            "branch": ["release/5.5"]
-          }
-        ],
         "tags": "sourcekit-disabled swiftpm"
       },
       {
