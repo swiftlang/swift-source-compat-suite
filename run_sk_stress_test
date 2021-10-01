@@ -258,6 +258,7 @@ class StressTesterRunner(object):
           '--verbose',
           '--swiftc', self.wrapper,
           '--swift-branch', self.swift_branch,
+          '--job-type', 'stress-tester',
           '--default-timeout', str(-1),
           '--only-latest-versions',
           # archs override is set to arm64 for generic/iOS actions that would otherwise invoke the stress tester for both arm64 and armv7
@@ -284,7 +285,7 @@ class StressTesterRunner(object):
 
     def _process_output(self, results_path, xfails_path):
         if not os.path.isfile(results_path):
-            return True
+            return not self.compat_runner_failed
 
         with open(results_path, 'rb') as results_file:
             results = json.load(results_file, encoding='utf-8')
@@ -305,7 +306,7 @@ class StressTesterRunner(object):
         num_xfail_issues = len(results['expectedIssues'])
         unmatched = results['unmatchedExpectedIssues']
 
-        success = num_failures == 0 and len(unmatched) == 0
+        success = self.compat_runner_failed == False and num_failures == 0 and len(unmatched) == 0
 
         if num_xfails > 0:
             print('Expected stress tester issues:')
@@ -336,9 +337,7 @@ class StressTesterRunner(object):
         print('SourceKit Stress Tester summary:')
 
         print('  {} underlying source compatibility build'.format('failed' if self.compat_runner_failed else 'passed'))
-        if self.compat_runner_failed:
-            print('      > treat this as a source compatibility failure')
-
+        
         print('  {} XFails not processed'.format(len(xfails_not_processed)))
         if num_failures > 0:
             print('      > see "XFails not processed" how to handle them. This is an info, not an error')

@@ -26,7 +26,8 @@
           {
             "issue": "https://bugs.swift.org/browse/SR-15116",
             "compatibility": ["5.1"],
-            "branch": ["main", "release/5.5"]
+            "branch": ["main", "release/5.5"],
+            "job": ["source-compat"]
           }
         ]
       }
@@ -680,12 +681,14 @@
             {
                 "issue": "https://bugs.swift.org/browse/SR-12736",
                 "compatibility": "5.3",
-                "branch": ["main", "release/5.5", "release/5.4"]
+                "branch": ["main", "release/5.5", "release/5.4"],
+                "job": ["source-compat"]
             },
             {
                 "issue": "https://bugs.swift.org/browse/SR-14659",
                 "compatibility": "5.3",
-                "branch": ["main", "release/5.5", "release/5.4"]
+                "branch": ["main", "release/5.5", "release/5.4"],
+                "job": ["source-compat"]
             }
         ]
       },
@@ -816,7 +819,8 @@
           {
             "issue": "https://bugs.swift.org/browse/SR-15106",
             "compatibility": ["4.0"],
-            "branch": ["main", "release/5.5"]
+            "branch": ["main", "release/5.5"],
+            "job": ["source-compat"]
           }
         ]
       }
@@ -1236,7 +1240,8 @@
           {
             "issue": "rdar://problem/75437284",
             "compatibility": ["5.1"],
-            "branch": ["main", "release/5.5"]
+            "branch": ["main", "release/5.5"],
+            "job": ["source-compat"]
           }
         ]
       },
@@ -1250,12 +1255,14 @@
           {
             "issue": "rdar://problem/75437284",
             "compatibility": ["5.1"],
-            "branch": ["main", "release/5.5"]
+            "branch": ["main", "release/5.5"],
+            "job": ["source-compat"]
           },
           {
             "issue": "https://bugs.swift.org/browse/SR-15107",
             "compatibility": ["4.0"],
-            "branch": ["main", "release/5.5"]
+            "branch": ["main", "release/5.5"],
+            "job": ["source-compat"]
           }
         ]
       }
@@ -1287,7 +1294,8 @@
           {
             "issue": "https://bugs.swift.org/browse/SR-15109",
             "compatibility": ["5.1"],
-            "branch": ["main", "release/5.5"]
+            "branch": ["main", "release/5.5"],
+            "job": ["source-compat"]
           }
         ]
       },
@@ -1641,7 +1649,8 @@
           {
             "issue": "https://bugs.swift.org/browse/SR-15116",
             "compatibility": ["5.1"],
-            "branch": ["main", "release/5.5"]
+            "branch": ["main", "release/5.5"],
+            "job": ["source-compat"]
           }
         ]
       }
@@ -2184,7 +2193,8 @@
             "issue": "rdar://problem/68590422",
             "compatibility": ["4.0", "5.1"],
             "branch": ["release/5.4"],
-            "configuration": "debug"
+            "configuration": "debug",
+            "job": ["source-compat"]
           }
         ]
       },
@@ -2199,7 +2209,8 @@
             "issue": "rdar://problem/68590422",
             "compatibility": ["4.0", "5.1"],
             "branch": ["release/5.4"],
-            "configuration": "debug"
+            "configuration": "debug",
+            "job": ["source-compat"]
           }
         ]
       },
@@ -2246,7 +2257,8 @@
           {
             "issue": "https://bugs.swift.org/browse/SR-15109",
             "compatibility": ["5.1"],
-            "branch": ["main", "release/5.5"]
+            "branch": ["main", "release/5.5"],
+            "job": ["source-compat"]
           }
         ]
       },
@@ -2420,7 +2432,8 @@
           {
             "issue": "https://bugs.swift.org/browse/SR-15232",
             "compatibility": ["4.2", "5.3"],
-            "branch": ["main", "release/5.5"]
+            "branch": ["main", "release/5.5"],
+            "job": ["source-compat"]
           }
         ],
         "configuration": "release"
@@ -2485,7 +2498,8 @@
         "xfail": {
           "issue": "https://bugs.swift.org/browse/SR-11141",
           "compatibility": "5.1",
-          "branch": ["main", "release/5.3", "release/5.4", "release/5.5"]
+          "branch": ["main", "release/5.3", "release/5.4", "release/5.5"],
+          "job": ["source-compat"]
         }
       },
       {
@@ -2549,7 +2563,8 @@
           {
             "issue": "https://bugs.swift.org/browse/SR-14655;rdar://81276100",
             "compatibility": ["5.1"],
-            "branch": ["main", "release/5.5"]
+            "branch": ["main", "release/5.5"],
+            "job": ["source-compat"]
           }
         ]
       },
@@ -2563,7 +2578,8 @@
           {
             "issue": "https://bugs.swift.org/browse/SR-14655;rdar://81276100",
             "compatibility": ["5.1"],
-            "branch": ["main", "release/5.5"]
+            "branch": ["main", "release/5.5"],
+            "job": ["source-compat"]
           }
         ]
       },
@@ -2577,7 +2593,8 @@
           {
             "issue": "https://bugs.swift.org/browse/SR-14655;rdar://81276100",
             "compatibility": ["5.1"],
-            "branch": ["main", "release/5.5"]
+            "branch": ["main", "release/5.5"],
+            "job": ["source-compat"]
           }
         ]
       }
@@ -2611,7 +2628,8 @@
             {
                 "issue": "https://bugs.swift.org/browse/SR-13190",
                 "compatibility": ["4.0", "5.1"],
-                "branch": ["main", "release/5.4", "release/5.5"]
+                "branch": ["main", "release/5.4", "release/5.5"],
+                "job": ["source-compat"]
             }
         ]
       },
@@ -3128,7 +3146,8 @@
           {
             "issue": "rdar://81180448",
             "compatibility": ["4.2", "5.0", "5.1"],
-            "branch": ["main", "release/5.5"]
+            "branch": ["main", "release/5.5"],
+            "job": ["source-compat"]
           }
         ]
       },
@@ -3960,7 +3979,8 @@
           {
             "issue": "https://bugs.swift.org/browse/SR-15105",
             "compatibility": ["5.1"],
-            "branch": ["main", "release/5.5"]
+            "branch": ["main", "release/5.5"],
+            "job": ["source-compat"]
           }
         ]
       },
@@ -4304,7 +4324,8 @@
             "issue": "https://bugs.swift.org/browse/SR-15105",
             "compatibility": ["5.1"],
             "branch": ["main", "release/5.5"],
-            "configuration": "debug"
+            "configuration": "debug",
+            "job": ["source-compat"]
           }
         ]
       },

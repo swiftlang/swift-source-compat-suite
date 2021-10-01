@@ -414,8 +414,8 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
         raise common.Unimplemented("Unknown action: %s" % action['action'])
 
 
-def is_xfailed(xfail_args, compatible_version, platform, swift_branch, build_config):
-    """Return whether the specified swift version/platform/branch/configuration is xfailed."""
+def is_xfailed(xfail_args, compatible_version, platform, swift_branch, build_config, job_type):
+    """Return whether the specified swift version/platform/branch/configuration/job is xfailed."""
     if isinstance(xfail_args, dict):
         xfail_args = [xfail_args]
 
@@ -427,7 +427,8 @@ def is_xfailed(xfail_args, compatible_version, platform, swift_branch, build_con
         current = {
             'compatibility': compatible_version,
             'branch': swift_branch,
-            'platform': platform
+            'platform': platform,
+            'job': job_type,
         }
         if 'configuration' in spec:
           if build_config is None:
@@ -583,6 +584,9 @@ def add_arguments(parser):
     parser.add_argument("--report-time-path",
                         help='export time for building each xcode build target to the specified json file',
                         type=os.path.abspath)
+    parser.add_argument("--job-type",
+                        help="The type of job to run. This influences which projects are XFailed, for example the stress tester tracks its XFails under a different job type. Defaults to 'source-compat'.",
+                        default='source-compat')
 
 def add_minimal_arguments(parser):
     """Add common arguments to parser."""
@@ -942,7 +946,7 @@ class VersionBuilder(ListBuilder):
 
 
 class ActionBuilder(Factory):
-    def __init__(self, swiftc, swift_version, swift_branch,
+    def __init__(self, swiftc, swift_version, swift_branch, job_type,
                  sandbox_profile_xcodebuild,
                  sandbox_profile_package,
                  added_swift_flags,
@@ -968,6 +972,7 @@ class ActionBuilder(Factory):
         self.build_config = build_config
         self.strip_resource_phases = strip_resource_phases
         self.time_reporter = time_reporter
+        self.job_type = job_type
         self.init()
 
     def init(self):
@@ -1055,7 +1060,7 @@ class ActionBuilder(Factory):
 
 class CompatActionBuilder(ActionBuilder):
     def __init__(self,
-                 swiftc, swift_version, swift_branch,
+                 swiftc, swift_version, swift_branch, job_type,
                  sandbox_profile_xcodebuild,
                  sandbox_profile_package,
                  added_swift_flags,
@@ -1067,7 +1072,7 @@ class CompatActionBuilder(ActionBuilder):
                  time_reporter,
                  action, version, project):
         super(CompatActionBuilder, self).__init__(
-            swiftc, swift_version, swift_branch,
+            swiftc, swift_version, swift_branch, job_type,
             sandbox_profile_xcodebuild,
             sandbox_profile_package,
             added_swift_flags,
@@ -1136,7 +1141,8 @@ class CompatActionBuilder(ActionBuilder):
                                         self.version['version'],
                                         self.current_platform,
                                         self.swift_branch,
-                                        build_config)
+                                        build_config,
+                                        self.job_type)
         if bug_identifier:
             error_str = 'XFAIL: {bug}, {project}, {compatibility}, {commit}, {action_target}'.format(
                             bug=bug_identifier,
@@ -1170,7 +1176,8 @@ class CompatActionBuilder(ActionBuilder):
                                         self.version['version'],
                                         self.current_platform,
                                         self.swift_branch,
-                                        build_config)
+                                        build_config,
+                                        self.job_type)
         if bug_identifier:
             error_str = 'UPASS: {bug}, {project}, {compatibility}, {commit}, {action_target}'.format(
                             bug=bug_identifier,
@@ -1243,7 +1250,7 @@ def have_same_trees(full, incr, d):
 
 class IncrementalActionBuilder(ActionBuilder):
 
-    def __init__(self, swiftc, swift_version, swift_branch,
+    def __init__(self, swiftc, swift_version, swift_branch, job_type,
                  sandbox_profile_xcodebuild,
                  sandbox_profile_package,
                  added_swift_flags, build_config,
@@ -1251,7 +1258,7 @@ class IncrementalActionBuilder(ActionBuilder):
                  time_reporter,
                  project, action):
         super(IncrementalActionBuilder,
-              self).__init__(swiftc, swift_version, swift_branch,
+              self).__init__(swiftc, swift_version, swift_branch, job_type,
                              sandbox_profile_xcodebuild,
                              sandbox_profile_package,
                              added_swift_flags,
