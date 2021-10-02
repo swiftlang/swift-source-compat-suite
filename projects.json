@@ -3114,7 +3114,7 @@
     "url": "https://github.com/apple/swift-nio",
     "path": "swift-nio",
     "branch": "main",
-    "maintainer": "johannesweiss@apple.com",
+    "maintainer": "cbenfield@apple.com",
     "compatibility": [
       {
         "version": "4.2",
@@ -3130,7 +3130,7 @@
       },
       {
         "version": "5.3",
-        "commit": "9a992ee3de1f8da9f2968fc96b26714834f3105f"
+        "commit": "6aa9347d9bc5bbfe6a84983aec955c17ffea96ef"
       }
     ],
     "platforms": [
@@ -3215,7 +3215,7 @@
     "url": "https://github.com/apple/swift-nio-http2",
     "path": "swift-nio-http2",
     "branch": "main",
-    "maintainer": "johannesweiss@apple.com",
+    "maintainer": "cbenfield@apple.com",
     "compatibility": [
       {
         "version": "5.0",
@@ -3223,7 +3223,7 @@
       },
       {
         "version": "5.3",
-        "commit": "59941f680326d41d00e3351972883f3377f8320b"
+        "commit": "326f7f9a8c8c8402e3691adac04911cac9f9d87f"
       }
     ],
     "platforms": [
@@ -3273,7 +3273,7 @@
     "url": "https://github.com/apple/swift-nio-extras",
     "path": "swift-nio-extras",
     "branch": "main",
-    "maintainer": "johannesweiss@apple.com",
+    "maintainer": "cbenfield@apple.com",
     "compatibility": [
       {
         "version": "4.2",
@@ -3285,7 +3285,7 @@
       },
       {
         "version": "5.3",
-        "commit": "e8d4442cf7a39828f54fb6851aa94767c8b7c9a5"
+        "commit": "f73ca5ee9c6806800243f1ac415fcf82de9a4c91"
       }
     ],
     "platforms": [
@@ -3346,11 +3346,11 @@
     "url": "https://github.com/apple/swift-nio-ssh",
     "path": "swift-nio-ssh",
     "branch": "main",
-    "maintainer": "johannesweiss@apple.com",
+    "maintainer": "cbenfield@apple.com",
     "compatibility": [
       {
         "version": "5.3",
-        "commit": "3860f75de5554e4dc4a02d6955f0607cd8bde250"
+        "commit": "09778e0388bda898c7592887f2ec84bb81ef21eb"
       }
     ],
     "platforms": [
@@ -3373,11 +3373,11 @@
     "url": "https://github.com/apple/swift-nio-transport-services",
     "path": "swift-nio-transport-services",
     "branch": "main",
-    "maintainer": "johannesweiss@apple.com",
+    "maintainer": "cbenfield@apple.com",
     "compatibility": [
       {
         "version": "5.3",
-        "commit": "9fc0d32e072181e5ef90a178bd67dfc7edbd1533"
+        "commit": "e7f5278a26442dc46783ba7e063643d524e414a0"
       }
     ],
     "platforms": [
@@ -3400,11 +3400,11 @@
     "url": "https://github.com/apple/swift-crypto",
     "path": "swift-crypto",
     "branch": "main",
-    "maintainer": "johannesweiss@apple.com",
+    "maintainer": "cbenfield@apple.com",
     "compatibility": [
       {
         "version": "5.3",
-        "commit": "8f4bfa5bc1951440c15710e9e893721aa4b2765c"
+        "commit": "127d3745c37b5705e4bc8d16c7951c48dcc3332c"
       }
     ],
     "platforms": [
