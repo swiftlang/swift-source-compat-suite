@@ -311,6 +311,10 @@ configurations. The currently supported fields for XFAIL entries are:
 - `"platform"`: the platform(s) it fails on, e.g. `"Darwin"` or `"Linux"`
 - `"configuration"`: the build configuration(s) if fails with, i.e. `"release"`
   or `"debug"`)
+- `"job"`: Allows XFailing the project for only the source compatibility build 
+  or the SourceKit Stress Tester. Use `"source-compat"` to only XFail the Source 
+  Compatibility Suite CI job and `"stress-test"` to only stress test the 
+  SourceKit Stress Tester CI job.
 
 Values can either be a single string literal or a list of alternative string
 literals to match against. For example the below action is expected to fail on
