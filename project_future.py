@@ -643,6 +643,9 @@ def add_arguments(parser):
     parser.add_argument("--report-time-path",
                         help='export time for building each xcode build target to the specified json file',
                         type=os.path.abspath)
+    parser.add_argument("--clang",
+                        help='clang executable to build Xcode projects',
+                        type=os.path.abspath)
     parser.add_argument("--job-type",
                         help="The type of job to run. This influences which projects are XFailed, for example the stress tester tracks its XFails under a different job type. Defaults to 'source-compat'.",
                         default='source-compat')
