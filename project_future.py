@@ -86,13 +86,14 @@ class ProjectTarget(object):
 class XcodeTarget(ProjectTarget):
     """An Xcode workspace scheme."""
 
-    def __init__(self, swiftc, project, target, destination, env,
+    def __init__(self, swiftc, project, target, destination, pretargets, env,
                  added_xcodebuild_flags, is_workspace, has_scheme,
                  clean_build):
         self._swiftc = swiftc
         self._project = project
         self._target = target
         self._destination = destination
+        self._pretargets = pretargets
         self._env = env
         self._added_xcodebuild_flags = added_xcodebuild_flags
         self._is_workspace = is_workspace
@@ -124,7 +125,7 @@ class XcodeTarget(ProjectTarget):
         build_dir = os.path.join(build_parent_dir, 'build')
 
         build = []
-        if self._clean_build and not incremental:
+        if self._clean_build and not incremental and not self._pretargets:
             build += ['clean']
         build += ['build']
 
@@ -139,6 +140,55 @@ class XcodeTarget(ProjectTarget):
                    + [project_param, self._project,
                       target_param, self._target,
                       '-destination', self._destination]
+                   + dir_override
+                   + ['CODE_SIGN_IDENTITY=',
+                      'CODE_SIGNING_REQUIRED=NO',
+                      'ENTITLEMENTS_REQUIRED=NO',
+                      'ENABLE_BITCODE=NO',
+                      'INDEX_ENABLE_DATA_STORE=NO',
+                      'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
+                      'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO'])
+        command += self._added_xcodebuild_flags
+
+        if self._destination == 'generic/platform=watchOS':
+            command += ['ARCHS=armv7k']
+
+        return command
+
+    def get_prebuild_command(self, incremental=False):
+        project_param = self.project_param
+        target_param = self.target_param
+        try:
+            build_parent_dir = common.check_execute_output([
+                'git', '-C', os.path.dirname(self._project),
+                'rev-parse', '--show-toplevel']).rstrip()
+        except common.ExecuteCommandFailure as error:
+            build_parent_dir = os.path.dirname(self._project)
+
+        build_dir = os.path.join(build_parent_dir, 'build')
+
+        build = []
+        if self._clean_build and not incremental:
+            build += ['clean']
+
+        if self._pretargets:
+            build += ['build']
+
+        dir_override = []
+        if self._has_scheme:
+            dir_override += ['-derivedDataPath', build_dir]
+        elif not 'SYMROOT' in self._env:
+            dir_override += ['SYMROOT=' + build_dir]
+        dir_override += [k + "=" + v for k, v in self._env.items()]
+
+        project_target_params = [project_param, self._project,
+                                 '-destination', self._destination]
+        for pretarget in self._pretargets:
+            project_target_params += [target_param, pretarget]
+
+        command = (['xcodebuild']
+                   + build
+                   + project_target_params
                    + dir_override
                    + ['CODE_SIGN_IDENTITY=',
                       'CODE_SIGNING_REQUIRED=NO',
@@ -180,6 +230,10 @@ class XcodeTarget(ProjectTarget):
               incremental=False, time_reporter=None):
         """Build the project target."""
 
+        if self._pretargets:
+            common.check_execute(self.get_prebuild_command(incremental=incremental),
+                                 sandbox_profile=sandbox_profile,
+                                 stdout=stdout, stderr=stdout)
         start_time = None
         if time_reporter:
             start_time = time.time()
@@ -360,6 +414,10 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
         if 'environment' in action:
             build_env = action['environment']
 
+        pretargets = []
+        if 'pretargets' in action:
+            pretargets = action['pretargets']
+
         other_swift_flags = []
         if swift_version:
             if '.' not in swift_version:
@@ -393,6 +451,7 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
                         project_path,
                         action[match.group(3).lower()],
                         action['destination'],
+                        pretargets,
                         build_env,
                         initial_xcodebuild_flags + added_xcodebuild_flags,
                         is_workspace,
