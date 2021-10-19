@@ -1402,13 +1402,6 @@
         "configuration": "Release"
       },
       {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Kronos.xcodeproj",
-        "target": "Kronos",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "tags": "swiftpm"
