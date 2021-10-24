@@ -479,7 +479,11 @@
       },
       {
         "version": "5.1",
-        "commit": "67bb9340c77c9b13624b44d3a6f559229e4f5b72"
+        "commit": "b4489301ac65dc36509583eb69731e8862fe0a20"
+      },
+      {
+        "version": "5.3",
+        "commit": "a40df37192622b093321fc2003f4a5cbe3860ffb"
       }
     ],
     "platforms": [
