@@ -3897,7 +3897,7 @@
     "repository": "Git",
     "url": "https://github.com/bustoutsolutions/siesta.git",
     "path": "siesta-legacy",
-    "branch": "master",
+    "branch": "main",
     "compatibility": [
       {
         "version": "4.0",
@@ -3945,7 +3945,7 @@
     "repository": "Git",
     "url": "https://github.com/bustoutsolutions/siesta.git",
     "path": "siesta",
-    "branch": "master",
+    "branch": "main",
     "compatibility": [
       {
         "version": "5.1",
