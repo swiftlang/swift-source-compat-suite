@@ -280,8 +280,8 @@ def clean_swift_package(path, swiftc, sandbox_profile,
                                 stdout=stdout, stderr=stderr)
 
 
-def build_swift_package(path, swiftc, configuration, sandbox_profile,
-                        stdout=sys.stdout, stderr=sys.stderr,
+def build_swift_package(path, swiftc, swift_version, configuration,
+                        sandbox_profile, stdout=sys.stdout, stderr=sys.stderr,
                         added_swift_flags=None,
                         incremental=False):
     """Build a Swift package manager project."""
@@ -297,6 +297,20 @@ def build_swift_package(path, swiftc, configuration, sandbox_profile,
     if (swift_branch not in ['swift-3.0-branch',
                              'swift-3.1-branch']):
         command.insert(2, '--disable-sandbox')
+
+    if swift_version:
+        if '.' not in swift_version:
+            swift_version += '.0'
+
+        major, minor = swift_version.split('.', 1)
+        # Need to use float for minor version parsing
+        # because it's possible that it would be specified
+        # as e.g. `4.0.3`
+        if int(major) == 4 and float(minor) == 2.0:
+            command += ['-Xswiftc', '-swift-version', '-Xswiftc', swift_version]
+        else:
+            command += ['-Xswiftc', '-swift-version', '-Xswiftc', major]
+
     if added_swift_flags is not None:
         for flag in added_swift_flags.split():
             command += ["-Xswiftc", flag]
@@ -379,7 +393,7 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
         if not build_config:
             build_config = action['configuration']
         return build_swift_package(os.path.join(root_path, repo['path']),
-                                   swiftc,
+                                   swiftc, swift_version,
                                    build_config,
                                    sandbox_profile_package,
                                    stdout=stdout, stderr=stderr,
