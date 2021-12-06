@@ -49,7 +49,7 @@ branches = {
         'swift-atomics': '1.0.2',
         'swift-collections': '1.0.1',
         'swift-numerics': '1.0.1',
-        'swift-system': '1.1.0',
+        'swift-system': '1.1.1',
     },
     'release/5.5': {
         'llvm-project': 'swift/release/5.5',
