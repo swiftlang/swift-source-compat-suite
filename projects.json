@@ -2786,7 +2786,7 @@
     "maintainer": "guillaume.lessard@apple.com",
     "compatibility": [
       {
-        "version": "5.1",
+        "version": "5.0",
         "commit": "6f72db4c56431d2a2aba0ea41697f60f7cd5917e"
       }
     ],
