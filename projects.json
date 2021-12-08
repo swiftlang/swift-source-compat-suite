@@ -3350,6 +3350,39 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/abertelrud/swift-protobuf-plugin-example.git",
+    "path": "swift-protobuf-plugin-example",
+    "branch": "main",
+    "maintainer": "anders@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "85bec04626e571ae8391175285e0cf111140fddc"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "SwiftPM plugins are only supported in SwiftPM 5.6 and later",
+            "compatibility": ["5.0"],
+            "branch": ["release/5.5"]
+          }
+        ]
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/apple/swift-system",
     "path": "swift-system",
     "branch": "main",
