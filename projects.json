@@ -667,15 +667,15 @@
         "tags": "swiftpm",
         "xfail": [
             {
-                "issue": "https://bugs.swift.org/browse/SR-12736",
+                "issue": "https://bugs.swift.org/browse/SR-15450",
                 "compatibility": "5.0",
-                "branch": ["main", "release/5.5", "release/5.4"],
+                "branch": ["release/5.5"],
                 "job": ["source-compat"]
             },
             {
-                "issue": "https://bugs.swift.org/browse/SR-14659",
+                "issue": "https://bugs.swift.org/browse/SR-15451",
                 "compatibility": "5.0",
-                "branch": ["main", "release/5.5", "release/5.4"],
+                "branch": ["main"],
                 "job": ["source-compat"]
             }
         ]
