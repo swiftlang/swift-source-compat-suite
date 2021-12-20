@@ -2780,6 +2780,32 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/apple/swift-standard-library-preview.git",
+    "path": "swift-standard-library-preview",
+    "branch": "main",
+    "maintainer": "guillaume.lessard@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "6f72db4c56431d2a2aba0ea41697f60f7cd5917e"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/malcommac/SwiftDate",
     "path": "SwiftDate",
     "branch": "master",
