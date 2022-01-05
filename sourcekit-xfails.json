@@ -1294,28 +1294,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14736"
   },
   {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/TurnipsFormView.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 898
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14738"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/TurnipsFormView.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1082
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14738"
-  },
-  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/items\/detail\/ItemDetailView.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
@@ -1573,5 +1551,17 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-15495"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartView.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2841
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-15687"
   }
 ]
