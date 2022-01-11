@@ -79,7 +79,8 @@ def main():
                     args.strip_resource_phases,
                     args.only_latest_versions,
                     args.project_cache_path,
-                    time_reporter
+                    time_reporter,
+                    args.override_swift_exec
                 ),
             ),
         ),

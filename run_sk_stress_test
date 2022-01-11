@@ -84,6 +84,12 @@ def parse_args():
     parser.add_argument('--swiftc',
                         metavar='PATH',
                         help='swiftc executable')
+    parser.add_argument('--sk-swiftc-wrapper',
+                        metavar='PATH',
+                        help='sk-swiftc-wrapper executable')
+    parser.add_argument('--sk-stress-test',
+                        metavar='PATH',
+                        help='sk-stress-test executable')
     parser.add_argument('--skip-tools-build',
                         action='store_true')
     parser.add_argument('--skip-ci-steps',
@@ -106,12 +112,27 @@ def parse_args():
                         default='')
     return parser.parse_args()
 
-def get_swiftc_path(workspace, swiftc):
-    swiftc_path = (
-        swiftc if swiftc else
-        os.path.join(workspace, 'build/compat_macos/install/toolchain/usr/bin/swiftc')
-    )
-    return swiftc_path
+def get_swiftc_path(workspace, args):
+    if args.swiftc:
+        return args.swiftc
+    else:
+        return os.path.join(workspace, 'build/compat_macos/install/toolchain/usr/bin/swiftc')
+
+def get_sk_swiftc_wrapper_path(workspace, args):
+    if args.sk_swiftc_wrapper:
+        return args.sk_swiftc_wrapper
+    else:
+        # If not explicitly specified, fall back to finding `sk-swiftc-wrapper` next to `swiftc`
+        swiftc_path = get_swiftc_path(workspace, args)
+        return os.path.join(os.path.dirname(swiftc_path), 'sk-swiftc-wrapper')
+
+def get_sk_stress_test_path(workspace, args):
+    if args.sk_stress_test:
+        return args.sk_stress_test
+    else:
+        # If not explicitly specified, fall back to finding `sk-stress-test` next to `swiftc`
+        swiftc_path = get_swiftc_path(workspace, args)
+        return os.path.join(os.path.dirname(swiftc_path), 'sk-stress-test')
 
 def get_sandbox_profile_flags():
     return [
@@ -139,9 +160,9 @@ def clone_swift_syntax(workspace, swift_branch):
 
 
 def execute_runner(workspace, args):
-    swiftc_path = get_swiftc_path(workspace, args.swiftc)
-    wrapper_path = os.path.join(os.path.dirname(swiftc_path), 'sk-swiftc-wrapper')
-    stress_tester_path = os.path.join(os.path.dirname(swiftc_path), 'sk-stress-test')
+    swiftc_path = get_swiftc_path(workspace, args)
+    wrapper_path = get_sk_swiftc_wrapper_path(workspace, args)
+    stress_tester_path = get_sk_stress_test_path(workspace, args)
 
     extra_runner_args = []
     if args.sandbox:
@@ -256,7 +277,8 @@ class StressTesterRunner(object):
         run_cmd = ['./runner.py',
           '--projects', filtered_projects,
           '--verbose',
-          '--swiftc', self.wrapper,
+          '--swiftc', self.swiftc,
+          '--override-swift-exec', self.wrapper,
           '--swift-branch', self.swift_branch,
           '--job-type', 'stress-tester',
           '--default-timeout', str(-1),
