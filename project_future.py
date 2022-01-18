@@ -283,7 +283,8 @@ def clean_swift_package(path, swiftc, sandbox_profile,
 def build_swift_package(path, swiftc, swift_version, configuration,
                         sandbox_profile, stdout=sys.stdout, stderr=sys.stderr,
                         added_swift_flags=None,
-                        incremental=False):
+                        incremental=False,
+                        override_swift_exec=None):
     """Build a Swift package manager project."""
     swift = os.path.join(os.path.dirname(swiftc), 'swift')
     if not incremental:
@@ -291,7 +292,7 @@ def build_swift_package(path, swiftc, swift_version, configuration,
                             stdout=stdout, stderr=stderr)
     env = os.environ
     env['DYLD_LIBRARY_PATH'] = get_stdlib_platform_path(swiftc, 'macOS')
-    env['SWIFT_EXEC'] = swiftc
+    env['SWIFT_EXEC'] = override_swift_exec or swiftc
     command = [swift, 'build', '-C', path, '--verbose',
                '--configuration', configuration]
     if (swift_branch not in ['swift-3.0-branch',
@@ -323,13 +324,14 @@ def build_swift_package(path, swiftc, swift_version, configuration,
 def test_swift_package(path, swiftc, sandbox_profile,
                        stdout=sys.stdout, stderr=sys.stderr,
                        added_swift_flags=None,
-                       incremental=False):
+                       incremental=False,
+                       override_swift_exec=None):
     """Test a Swift package manager project."""
     swift = os.path.join(os.path.dirname(swiftc), 'swift')
     if not incremental:
         clean_swift_package(path, swiftc, sandbox_profile)
     env = os.environ
-    env['SWIFT_EXEC'] = swiftc
+    env['SWIFT_EXEC'] = override_swift_exec or swiftc
     command = [swift, 'test', '-C', path, '--verbose']
     if added_swift_flags is not None:
         for flag in added_swift_flags.split():
@@ -372,7 +374,7 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
              added_swift_flags, added_xcodebuild_flags,
              build_config, should_strip_resource_phases=False,
              stdout=sys.stdout, stderr=sys.stderr,
-             incremental=False, time_reporter = None):
+             incremental=False, time_reporter = None, override_swift_exec=None):
     """Call functions corresponding to actions."""
 
     substitutions = action.copy()
@@ -398,14 +400,16 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
                                    sandbox_profile_package,
                                    stdout=stdout, stderr=stderr,
                                    added_swift_flags=added_swift_flags,
-                                   incremental=incremental)
+                                   incremental=incremental,
+                                   override_swift_exec=override_swift_exec)
     elif action['action'] == 'TestSwiftPackage':
         return test_swift_package(os.path.join(root_path, repo['path']),
                                   swiftc,
                                   sandbox_profile_package,
                                   stdout=stdout, stderr=stderr,
                                   added_swift_flags=added_swift_flags,
-                                  incremental=incremental)
+                                  incremental=incremental,
+                                  override_swift_exec=override_swift_exec)
     elif re.match(r'^(Build|Test)Xcode(Workspace|Project)(Scheme|Target)$',
                   action['action']):
         match = re.match(
@@ -413,7 +417,7 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
             action['action']
         )
 
-        initial_xcodebuild_flags = ['SWIFT_EXEC=%s' % swiftc,
+        initial_xcodebuild_flags = ['SWIFT_EXEC=%s' % (override_swift_exec or swiftc),
                                     '-IDEPackageSupportDisableManifestSandbox=YES']
 
         if build_config == 'debug':
@@ -543,11 +547,18 @@ def add_arguments(parser):
                             help='swiftc executable',
                             required=True,
                             type=os.path.abspath)
+        parser.add_argument('--override-swift-exec',
+                            metavar='PATH',
+                            help='override the SWIFT_EXEC that is used to build the projects',
+                            type=os.path.abspath)
     else:
         parser.add_argument('--swiftc',
                             metavar='PATH',
                             help='swiftc executable',
                             required=True)
+        parser.add_argument('--override-swift-exec',
+                            metavar='PATH',
+                            help='override the SWIFT_EXEC that is used to build the projects')
     parser.add_argument('--projects',
                         metavar='PATH',
                         required=True,
@@ -1031,6 +1042,7 @@ class ActionBuilder(Factory):
                  strip_resource_phases,
                  project_cache_path,
                  time_reporter,
+                 override_swift_exec,
                  action, project):
         self.swiftc = swiftc
         self.swift_version = swift_version
@@ -1049,6 +1061,7 @@ class ActionBuilder(Factory):
         self.strip_resource_phases = strip_resource_phases
         self.time_reporter = time_reporter
         self.job_type = job_type
+        self.override_swift_exec = override_swift_exec
         self.init()
 
     def init(self):
@@ -1107,7 +1120,8 @@ class ActionBuilder(Factory):
                      self.build_config,
                      incremental=self.skip_clean,
                      time_reporter=self.time_reporter,
-                     stdout=stdout, stderr=stderr)
+                     stdout=stdout, stderr=stderr,
+                     override_swift_exec=self.override_swift_exec)
         except common.ExecuteCommandFailure as error:
             return self.failed(identifier, error)
         else:
@@ -1146,6 +1160,7 @@ class CompatActionBuilder(ActionBuilder):
                  only_latest_versions,
                  project_cache_path,
                  time_reporter,
+                 override_swift_exec,
                  action, version, project):
         super(CompatActionBuilder, self).__init__(
             swiftc, swift_version, swift_branch, job_type,
@@ -1157,6 +1172,7 @@ class CompatActionBuilder(ActionBuilder):
             strip_resource_phases,
             project_cache_path,
             time_reporter,
+            override_swift_exec,
             action, project
         )
         self.only_latest_versions = only_latest_versions
@@ -1184,7 +1200,8 @@ class CompatActionBuilder(ActionBuilder):
                      incremental=self.skip_clean,
                      should_strip_resource_phases=self.strip_resource_phases,
                      time_reporter=self.time_reporter,
-                     stdout=stdout, stderr=stderr)
+                     stdout=stdout, stderr=stderr,
+                     override_swift_exec=self.override_swift_exec)
         except common.ExecuteCommandFailure as error:
             return self.failed(identifier, error)
         else:
@@ -1331,7 +1348,7 @@ class IncrementalActionBuilder(ActionBuilder):
                  sandbox_profile_package,
                  added_swift_flags, build_config,
                  strip_resource_phases,
-                 time_reporter,
+                 time_reporter, override_swift_exec,
                  project, action):
         super(IncrementalActionBuilder,
               self).__init__(swiftc, swift_version, swift_branch, job_type,
@@ -1342,6 +1359,7 @@ class IncrementalActionBuilder(ActionBuilder):
                              build_config=build_config,
                              strip_resource_phases=strip_resource_phases,
                              time_reporter=time_reporter,
+                             override_swift_exec=override_swift_exec,
                              project=project,
                              action=action)
         self.proj_path = os.path.join(self.root_path, self.project['path'])
@@ -1449,7 +1467,8 @@ class IncrementalActionBuilder(ActionBuilder):
                      should_strip_resource_phases=False,
                      time_reporter=self.time_reporter,
                      stdout=stdout, stderr=stderr,
-                     incremental=incremental)
+                     incremental=incremental,
+                     override_swift_exec=self.override_swift_exec)
         except common.ExecuteCommandFailure as error:
             return self.failed(identifier, error)
         else:
