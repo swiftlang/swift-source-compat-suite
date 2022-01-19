@@ -67,7 +67,7 @@ def parse_args():
                         help='Only run project actions with the given tag',
                         default='sourcekit')
     parser.add_argument('--filter-by-project',
-                        metavar='TAG',
+                        metavar='PROJECT',
                         help='Only stress test the given project')
     parser.add_argument('--sourcekit-xfails',
                         metavar='PATH',
