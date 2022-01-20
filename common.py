@@ -32,7 +32,7 @@ DEFAULT_EXECUTE_TIMEOUT = 10*60
 
 branches = {
     'main': {
-        'llvm-project': 'stable/20210726',
+        'llvm-project': 'stable/20211026',
         'swift': 'main',
         'cmark': 'main',
         'ninja': 'release',
