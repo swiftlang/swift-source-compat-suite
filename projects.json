@@ -202,7 +202,16 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "swiftpm"
+        "tags": "swiftpm",
+        "xfail": [
+            {
+                "issue": "rdar://83373076",
+                "platform": "Linux",
+                "compatibility": "5.0",
+                "branch": ["main", "release/5.6"],
+                "job": ["source-compat"]
+            }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -1307,7 +1316,24 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+            {
+                "issue": "rdar://83373628",
+                "platform": "Linux",
+                "compatibility": "5.0",
+                "branch": ["main", "release/5.6"],
+                "job": ["source-compat"]
+            },
+            {
+                "issue": "rdar://83373628",
+                "platform": "Linux",
+                "compatibility": "4.0",
+                "branch": ["main", "release/5.6"],
+                "job": ["source-compat"]
+            }
+
+        ]
       }
     ]
   },
@@ -1753,7 +1779,16 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+            {
+                "issue": "rdar://83373864",
+                "platform": "Linux",
+                "compatibility": "4.2",
+                "branch": ["main", "release/5.6"],
+                "job": ["source-compat"]
+            }
+        ]
       }
     ]
   },
@@ -2959,7 +2994,16 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+            {
+                "issue": "rdar://83374141",
+                "platform": "Linux",
+                "compatibility": "5.0",
+                "branch": ["main", "release/5.6"],
+                "job": ["source-compat"]
+            }
+        ]
       },
       {
         "action": "TestSwiftPackage"
