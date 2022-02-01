@@ -1332,7 +1332,7 @@
     "repository": "Git",
     "url": "https://github.com/lyft/Kronos.git",
     "path": "Kronos",
-    "branch": "master",
+    "branch": "main",
     "maintainer": "Reflejo@gmail.com",
     "compatibility": [
       {
