@@ -272,7 +272,7 @@ def clean_swift_package(path, swiftc, sandbox_profile,
     if swift_branch == 'swift-3.0-branch':
         command = [swift, 'build', '-C', path, '--clean']
     else:
-        command = [swift, 'package', '-C', path, 'clean']
+        command = [swift, 'package', '--package-path', path, 'clean']
     if (swift_branch not in ['swift-3.0-branch',
                              'swift-3.1-branch']):
         command.insert(2, '--disable-sandbox')
@@ -293,7 +293,7 @@ def build_swift_package(path, swiftc, swift_version, configuration,
     env = os.environ
     env['DYLD_LIBRARY_PATH'] = get_stdlib_platform_path(swiftc, 'macOS')
     env['SWIFT_EXEC'] = override_swift_exec or swiftc
-    command = [swift, 'build', '-C', path, '--verbose',
+    command = [swift, 'build', '--package-path', path, '--verbose',
                '--configuration', configuration]
     if (swift_branch not in ['swift-3.0-branch',
                              'swift-3.1-branch']):
