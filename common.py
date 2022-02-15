@@ -50,6 +50,7 @@ branches = {
         'swift-collections': '1.0.1',
         'swift-numerics': '1.0.1',
         'swift-system': '1.1.1',
+        'swift-experimental-string-processing': 'dev/6',
     },
     'release/5.6': {
         'llvm-project': 'swift/release/5.6',
@@ -157,7 +158,7 @@ def clone_repos():
     >>> repos #doctest: +NORMALIZE_WHITESPACE
     ['llvm-project', 'cmark', 'llbuild', 'ninja', 'swift',
      'swift-corelibs-foundation', 'swift-corelibs-libdispatch',
-     'swift-corelibs-xctest', 'swiftpm']
+     'swift-corelibs-xctest', 'swiftpm', 'swift-experimental-string-processing']
     """
     cpu_count = multiprocessing.cpu_count()
     workspace = private_workspace('.')
@@ -229,6 +230,10 @@ def clone_repos():
         '{} git@github.com:apple/swift-system.git '
         '{}/swift-system '.format(
             branches[swift_branch]['swift-system'], workspace
+        ),
+        '{} git@github.com:apple/swift-experimental-string-processing.git '
+        '{}/swift-experimental-string-processing '.format(
+            branches[swift_branch]['swift-experimental-string-processing'], workspace
         ),
     ]
 
