@@ -110,6 +110,12 @@ def parse_args():
                              'names from projects.json enclosed in {} will be '
                              'replaced with their value)',
                         default='')
+    parser.add_argument('--cmake-c-launcher',
+                        metavar="PATH",
+                        help='the absolute path to set CMAKE_C_COMPILER_LAUNCHER for build-script')
+    parser.add_argument('--cmake-cxx-launcher',
+                        metavar='PATH',
+                        help='the absolute path to set CMAKE_CXX_COMPILER_LAUNCHER for build-script')
     return parser.parse_args()
 
 def get_swiftc_path(workspace, args):
@@ -225,6 +231,10 @@ def build_swift_toolchain(workspace, args):
         '--verbose-build',
         '--reconfigure',
     ]
+    if args.cmake_c_launcher:
+        build_command += ['--cmake-c-launcher={}'.format(args.cmake_c_launcher)]
+    if args.cmake_cxx_launcher:
+        build_command += ['--cmake-cxx-launcher={}'.format(args.cmake_cxx_launcher)]
     common.check_execute(build_command, timeout=9999999)
 
 
