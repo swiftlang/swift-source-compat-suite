@@ -235,17 +235,6 @@
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/base\/MoviesList.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 5596
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14694"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/base\/MoviesList.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
       "offset" : 5685
     },
     "applicableConfigs" : [
