@@ -50,7 +50,7 @@ branches = {
         'swift-collections': '1.0.1',
         'swift-numerics': '1.0.1',
         'swift-system': '1.1.1',
-        'swift-experimental-string-processing': 'dev/6',
+        'swift-experimental-string-processing': 'dev/8',
     },
     'release/5.6': {
         'llvm-project': 'swift/release/5.6',
