@@ -235,28 +235,6 @@
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/base\/MoviesList.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 5685
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14694"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/base\/MoviesList.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 5703
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14694"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/base\/MoviesList.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
       "offset" : 5722
     },
     "applicableConfigs" : [
@@ -268,29 +246,7 @@
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/base\/MoviesList.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 5778
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14694"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/base\/MoviesList.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
       "offset" : 5828
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14694"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/base\/MoviesList.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 5892
     },
     "applicableConfigs" : [
       "main"
