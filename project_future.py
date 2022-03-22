@@ -1056,7 +1056,12 @@ class ActionBuilder(Factory):
         self.current_platform = platform.system()
         self.added_swift_flags = added_swift_flags
         self.added_xcodebuild_flags = added_xcodebuild_flags
-        self.skip_clean = skip_clean
+        # Make sure Xcode build folder is not cleaned by 'git' when
+        # 'clean_build' is explicitly set 'false'.
+        clean_build = True
+        if 'clean_build' in action:
+            clean_build = action['clean_build']
+        self.skip_clean = skip_clean or not clean_build
         self.build_config = build_config
         self.strip_resource_phases = strip_resource_phases
         self.time_reporter = time_reporter
