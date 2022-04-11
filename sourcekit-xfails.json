@@ -494,72 +494,6 @@
     "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
   },
   {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/mysteryIslands\/MysteryIslandDetail.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 745
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14708"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/mysteryIslands\/MysteryIslandDetail.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 982
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14708"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/mysteryIslands\/MysteryIslandRow.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 670
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14708"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayCurrentlyAvailableSection.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2431
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14708"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayCurrentlyAvailableSection.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2447
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14708"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/TurnipIslandRow.swift",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 730
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14708"
-  },
-  {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
@@ -675,54 +609,6 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-15496"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/preferences\/AppUserDefaults.swift",
-    "modification" : "insideOut-252",
-    "issueDetail" : {
-      "kind" : "collectExpressionType"
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-15497"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/preferences\/AppUserDefaults.swift",
-    "modification" : "insideOut-253",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 234,
-      "offset" : 19
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-15497"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/preferences\/AppUserDefaults.swift",
-    "modification" : "insideOut-406",
-    "issueDetail" : {
-      "kind" : "collectExpressionType"
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-15497"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/preferences\/AppUserDefaults.swift",
-    "modification" : "insideOut-413",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 17,
-      "offset" : 154
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-15497"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
@@ -922,6 +808,18 @@
     "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 5650
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-16056"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/TurnipsView.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 6389
     },
     "applicableConfigs" : [
       "main"
