@@ -644,7 +644,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "<issue url>"
+    "issueUrl" : "https://bugs.swift.org/browse/SR-15499"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
@@ -825,5 +825,113 @@
       "main"
     ],
     "issueUrl" : "https://bugs.swift.org/browse/SR-16056"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/TurnipsView.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 6697
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://bugs.swift.org/browse/SR-16056"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/DiscoverFilter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1965
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "rdar://92156002"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/DiscoverFilter.swift",
+    "modification" : "insideOut-989",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 681
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "rdar://92156002"
+  },
+  {
+    "path" : "*\/Result\/Result\/AnyError.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 808
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "rdar://92156002"
+  },
+  {
+    "path" : "*\/Result\/Result\/AnyError.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 897
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "rdar://92156002"
+  },
+  {
+    "path" : "*\/Result\/Result\/AnyError.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 991
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "rdar://92156002"
+  },
+  {
+    "path" : "*\/Result\/Result\/AnyError.swift",
+    "modification" : "concurrent-733",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 733
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "rdar://92156002"
+  },
+  {
+    "path" : "*\/Result\/Result\/AnyError.swift",
+    "modification" : "concurrent-897",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 897
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "rdar://92156002"
+  },
+  {
+    "path" : "*\/Result\/Result\/AnyError.swift",
+    "modification" : "concurrent-991",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 991
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "rdar://92156002"
   }
 ]
