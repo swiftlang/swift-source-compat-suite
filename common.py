@@ -34,7 +34,7 @@ branches = {
     'main': {
         'llvm-project': 'stable/20211026',
         'swift': 'main',
-        'cmark': 'main',
+        'cmark': 'gfm',
         'ninja': 'release',
         'llbuild': 'main',
         'swiftpm': 'main',
