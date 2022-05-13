@@ -8,7 +8,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-8898"
+    "issueUrl" : "https://github.com/apple/swift/issues/51404"
   },
   {
     "path" : "*\/Result\/Result\/Result.swift",
@@ -19,7 +19,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-8898"
+    "issueUrl" : "https://github.com/apple/swift/issues/51404"
   },
   {
     "path" : "*\/Result\/Result\/Result.swift",
@@ -30,7 +30,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-8898"
+    "issueUrl" : "https://github.com/apple/swift/issues/51404"
   },
   {
     "path" : "*\/DNS\/Sources\/DNS\/Integer+Data.swift",
@@ -41,7 +41,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14546"
+    "issueUrl" : "https://github.com/apple/swift/issues/56898"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -52,7 +52,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -63,7 +63,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -74,7 +74,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -85,7 +85,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -96,7 +96,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -107,7 +107,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -120,7 +120,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -132,7 +132,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -144,7 +144,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -157,7 +157,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -169,7 +169,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -182,7 +182,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -195,7 +195,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -207,7 +207,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -220,7 +220,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -232,7 +232,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -245,7 +245,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -258,7 +258,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -270,7 +270,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
@@ -283,7 +283,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
@@ -294,7 +294,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
@@ -305,7 +305,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
@@ -316,7 +316,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
@@ -327,7 +327,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
@@ -338,7 +338,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
@@ -351,7 +351,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
@@ -363,7 +363,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
@@ -376,7 +376,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
@@ -389,7 +389,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
@@ -402,7 +402,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
@@ -414,7 +414,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14695"
+    "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
   {
   "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoriesView.swift",
@@ -425,7 +425,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14890"
+    "issueUrl" : "https://github.com/apple/swift/issues/57237"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListDetailView.swift",
@@ -436,7 +436,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-14890"
+    "issueUrl" : "https://github.com/apple/swift/issues/57237"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayView.swift",
@@ -448,7 +448,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-15113"
+    "issueUrl" : "https://github.com/apple/swift/issues/57439"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListFormView.swift",
@@ -460,7 +460,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-15171"
+    "issueUrl" : "https://github.com/apple/swift/issues/57494"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListFormView.swift",
@@ -472,7 +472,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-15171"
+    "issueUrl" : "https://github.com/apple/swift/issues/57494"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListFormView.swift",
@@ -484,7 +484,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-15171"
+    "issueUrl" : "https://github.com/apple/swift/issues/57494"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/services\/NotificationsManager.swift",
@@ -496,7 +496,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-16013"
+    "issueUrl" : "https://github.com/apple/swift/issues/58274"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModels\/CategoriesSearchViewModel.swift",
@@ -508,7 +508,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-16014"
+    "issueUrl" : "https://github.com/apple/swift/issues/58275"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModels\/ItemsViewModel.swift",
@@ -520,7 +520,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-16014"
+    "issueUrl" : "https://github.com/apple/swift/issues/58275"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModels\/VillagersViewModel.swift",
@@ -532,7 +532,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-16014"
+    "issueUrl" : "https://github.com/apple/swift/issues/58275"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModels\/VillagersViewModel.swift",
@@ -544,7 +544,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-16014"
+    "issueUrl" : "https://github.com/apple/swift/issues/58275"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Packages\/UI\/Sources\/UI\/fields\/SearchTextObservable.swift",
@@ -556,7 +556,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-16014"
+    "issueUrl" : "https://github.com/apple/swift/issues/58275"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayView.swift",
@@ -568,7 +568,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-16015"
+    "issueUrl" : "https://github.com/apple/swift/issues/58276"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/settings\/SettingsView.swift",
@@ -580,7 +580,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-16055"
+    "issueUrl" : "https://github.com/apple/swift/issues/58316"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/TurnipsView.swift",
@@ -592,7 +592,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-16056"
+    "issueUrl" : "https://github.com/apple/swift/issues/58317"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/TurnipsView.swift",
@@ -604,7 +604,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-16056"
+    "issueUrl" : "https://github.com/apple/swift/issues/58317"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/TurnipsView.swift",
@@ -616,7 +616,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "https://bugs.swift.org/browse/SR-16056"
+    "issueUrl" : "https://github.com/apple/swift/issues/58317"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/DiscoverFilter.swift",
@@ -628,7 +628,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "rdar://92156002"
+    "issueUrl" : "https://github.com/apple/swift/issues/58891"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/DiscoverFilter.swift",
@@ -640,7 +640,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "rdar://92156002"
+    "issueUrl" : "https://github.com/apple/swift/issues/58891"
   },
   {
     "path" : "*\/Result\/Result\/AnyError.swift",
@@ -652,7 +652,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "rdar://92156002"
+    "issueUrl" : "https://github.com/apple/swift/issues/58891"
   },
   {
     "path" : "*\/Result\/Result\/AnyError.swift",
@@ -664,7 +664,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "rdar://92156002"
+    "issueUrl" : "https://github.com/apple/swift/issues/58891"
   },
   {
     "path" : "*\/Result\/Result\/AnyError.swift",
@@ -676,7 +676,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "rdar://92156002"
+    "issueUrl" : "https://github.com/apple/swift/issues/58891"
   },
   {
     "path" : "*\/Result\/Result\/AnyError.swift",
@@ -688,7 +688,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "rdar://92156002"
+    "issueUrl" : "https://github.com/apple/swift/issues/58891"
   },
   {
     "path" : "*\/Result\/Result\/AnyError.swift",
@@ -700,7 +700,7 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "rdar://92156002"
+    "issueUrl" : "https://github.com/apple/swift/issues/58891"
   },
   {
     "path" : "*\/Result\/Result\/AnyError.swift",
@@ -712,6 +712,6 @@
     "applicableConfigs" : [
       "main"
     ],
-    "issueUrl" : "rdar://92156002"
+    "issueUrl" : "https://github.com/apple/swift/issues/58891"
   }
 ]
