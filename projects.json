@@ -1272,14 +1272,30 @@
         "workspace": "Kingfisher.xcworkspace",
         "scheme": "Kingfisher",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "rdar://94154905",
+            "compatibility": "5.0",
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Kingfisher.xcworkspace",
         "scheme": "Kingfisher",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "rdar://94154905",
+            "compatibility": "5.0",
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       }
     ]
   },
