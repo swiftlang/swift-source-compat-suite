@@ -314,11 +314,12 @@
     "path": "BreadBuddy",
     "branch": "master",
     "maintainer": "max@bracket.ltd",
-    "compatibility": {
-      "5.6.1": {
+    "compatibility": [
+      {
+        "version": "5.0",
         "commit": "28558470aa2ef75a96156ab00aa6d42d05eac884"
       }
-    },
+    ],
     "platforms": [
       "Darwin"
     ],
