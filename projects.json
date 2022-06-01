@@ -653,7 +653,7 @@
     "compatibility": [
       {
         "version": "5.0",
-        "commit": "513009659ac98941d057b5e35b783da4828aa933"
+        "commit": "96594678095747b012ffd2899a82c688cbd88c14"
       }
     ],
     "platforms": [
@@ -667,15 +667,15 @@
         "tags": "swiftpm",
         "xfail": [
             {
-                "issue": "https://bugs.swift.org/browse/SR-15450",
+                "issue": "https://github.com/apple/swift/issues/57755",
                 "compatibility": "5.0",
                 "branch": ["release/5.5"],
                 "job": ["source-compat"]
             },
             {
-                "issue": "https://bugs.swift.org/browse/SR-15451",
+                "issue": "https://github.com/apple/swift/issues/59193",
                 "compatibility": "5.0",
-                "branch": ["main", "release/5.6"],
+                "branch": ["main"],
                 "job": ["source-compat"]
             }
         ]
