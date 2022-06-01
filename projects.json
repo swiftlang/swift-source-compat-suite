@@ -4351,5 +4351,31 @@
          "tags": "swiftpm"
        }
      ]
+   },
+   {
+     "repository": "Git",
+     "url": "https://github.com/LiarPrincess/Violet",
+     "path": "violet",
+     "branch": "main",
+     "maintainer": "mail@liarprincess.me",
+     "compatibility": [
+       {
+         "version": "5.3",
+         "commit": "8217bfb0761c1630c94b88cc1fbe842bba40eb3d"
+       }
+     ],
+     "platforms": [
+       "Darwin",
+       "Linux"
+     ],
+     "actions": [
+       {
+         "action": "BuildSwiftPackage",
+         "configuration": "release"
+       },
+       {
+         "action": "TestSwiftPackage"
+       }
+     ]
    }
 ]
