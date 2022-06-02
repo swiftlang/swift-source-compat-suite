@@ -293,7 +293,7 @@ compatibility mode.
       "destination": "generic/platform=iOS",
       "configuration": "Release",
       "xfail": {
-        "issue": "https://bugs.swift.org/browse/SR-9999",
+        "issue": "https://github.com/apple/swift/issues/9999",
         "compatibility": "4.2",
         "branch": "main"
       }
@@ -329,7 +329,7 @@ both main and swift-5.1-branch in both 4.0 and 5.1 compatibility modes:
   "destination": "generic/platform=iOS",
   "configuration": "Release",
   "xfail": {
-    "issue": "https://bugs.swift.org/browse/SR-9999",
+    "issue": "https://github.com/apple/swift/issues/9999",
     "compatibility": ["4.0", "5.1"],
     "branch": ["main", "swift-5.1-branch"]
   }
@@ -357,15 +357,15 @@ from a branch other than *main* or *swift-5.1-branch*.
   "configuration": "Release",
   "xfail": [
     {
-      "issue": "https://bugs.swift.org/browse/SR-7777",
+      "issue": "https://github.com/apple/swift/issues/7777",
       "platform": "Linux"
     },
     {
-      "issue": "https://bugs.swift.org/browse/SR-8888",
+      "issue": "https://github.com/apple/swift/issues/8888",
       "branch": "main"
     },
     {
-      "issue": "https://bugs.swift.org/browse/SR-9999",
+      "issue": "https://github.com/apple/swift/issues/9999",
       "branch": "swift-5.1-branch"
     }
   ]
