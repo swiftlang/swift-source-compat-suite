@@ -52,7 +52,7 @@ branches = {
         'swift-system': '1.1.1',
         'swift-experimental-string-processing': 'swift/main',
     },
-    'main': {
+    'release/5.7': {
         'llvm-project': 'swift/release/5.7',
         'swift': 'release/5.7',
         'cmark': 'release/5.7',
