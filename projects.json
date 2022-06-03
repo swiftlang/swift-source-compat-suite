@@ -24,9 +24,9 @@
         "tags": "sourcekit sourcekit-smoke",
         "xfail": [
           {
-            "issue": "https://bugs.swift.org/browse/SR-15116",
+            "issue": "https://github.com/apple/swift/issues/57442",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           }
         ]
@@ -675,7 +675,7 @@
             {
                 "issue": "https://github.com/apple/swift/issues/59193",
                 "compatibility": "5.0",
-                "branch": ["main"],
+                "branch": ["main", "release/5.7"],
                 "job": ["source-compat"]
             }
         ]
@@ -805,9 +805,9 @@
         "tags": "sourcekit-disabled",
         "xfail": [
           {
-            "issue": "https://bugs.swift.org/browse/SR-15106",
+            "issue": "https://github.com/apple/swift/issues/57432",
             "compatibility": ["4.0"],
-            "branch": ["main", "release/5.5", "release/5.6"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           }
         ]
@@ -1200,7 +1200,7 @@
           {
             "issue": "rdar://problem/75437284",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           }
         ]
@@ -1215,13 +1215,13 @@
           {
             "issue": "rdar://problem/75437284",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           },
           {
-            "issue": "https://bugs.swift.org/browse/SR-15107",
+            "issue": "https://github.com/apple/swift/issues/57433",
             "compatibility": ["4.0"],
-            "branch": ["main", "release/5.5", "release/5.6"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           }
         ]
@@ -1252,9 +1252,9 @@
         "configuration": "Release",
         "xfail": [
           {
-            "issue": "https://bugs.swift.org/browse/SR-15109",
+            "issue": "https://github.com/apple/swift/issues/57435",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           }
         ]
@@ -1272,14 +1272,30 @@
         "workspace": "Kingfisher.xcworkspace",
         "scheme": "Kingfisher",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "rdar://94154905",
+            "compatibility": "5.0",
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Kingfisher.xcworkspace",
         "scheme": "Kingfisher",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "rdar://94154905",
+            "compatibility": "5.0",
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       }
     ]
   },
@@ -1313,14 +1329,14 @@
                 "issue": "rdar://83373628",
                 "platform": "Linux",
                 "compatibility": "5.0",
-                "branch": ["main", "release/5.6"],
+                "branch": ["main", "release/5.6", "release/5.7"],
                 "job": ["source-compat"]
             },
             {
                 "issue": "rdar://83373628",
                 "platform": "Linux",
                 "compatibility": "4.0",
-                "branch": ["main", "release/5.6"],
+                "branch": ["main", "release/5.6", "release/5.7"],
                 "job": ["source-compat"]
             }
 
@@ -1609,9 +1625,9 @@
         "tags": "sourcekit sourcekit-smoke",
         "xfail": [
           {
-            "issue": "https://bugs.swift.org/browse/SR-15116",
+            "issue": "https://github.com/apple/swift/issues/57442",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           }
         ]
@@ -1776,7 +1792,7 @@
                 "issue": "rdar://83373864",
                 "platform": "Linux",
                 "compatibility": "4.2",
-                "branch": ["main", "release/5.6"],
+                "branch": ["main", "release/5.6", "release/5.7"],
                 "job": ["source-compat"]
             }
         ]
@@ -2202,9 +2218,9 @@
         "configuration": "Release",
         "xfail": [
           {
-            "issue": "https://bugs.swift.org/browse/SR-15109",
+            "issue": "https://github.com/apple/swift/issues/57435",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           }
         ]
@@ -2369,9 +2385,9 @@
         "action": "BuildSwiftPackage",
         "xfail": [
           {
-            "issue": "https://bugs.swift.org/browse/SR-15232",
+            "issue": "https://github.com/apple/swift/issues/57554",
             "compatibility": ["4.2", "5.0"],
-            "branch": ["main", "release/5.5", "release/5.6"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           }
         ],
@@ -2435,9 +2451,9 @@
         "configuration": "Release",
         "tags": "sourcekit-disabled",
         "xfail": {
-          "issue": "https://bugs.swift.org/browse/SR-11141",
+          "issue": "https://github.com/apple/swift/issues/53532",
           "compatibility": "5.0",
-          "branch": ["main", "release/5.3", "release/5.4", "release/5.5", "release/5.6"],
+          "branch": ["main", "release/5.3", "release/5.4", "release/5.5", "release/5.6", "release/5.7"],
           "job": ["source-compat"]
         }
       },
@@ -2500,9 +2516,9 @@
         "tags": "sourcekit-disabled",
         "xfail": [
           {
-            "issue": "https://bugs.swift.org/browse/SR-14655;rdar://81276100",
+            "issue": "https://github.com/apple/swift/issues/57007;rdar://81276100",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           }
         ]
@@ -2515,9 +2531,9 @@
         "configuration": "Release",
         "xfail": [
           {
-            "issue": "https://bugs.swift.org/browse/SR-14655;rdar://81276100",
+            "issue": "https://github.com/apple/swift/issues/57007;rdar://81276100",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           }
         ]
@@ -2530,9 +2546,9 @@
         "configuration": "Release",
         "xfail": [
           {
-            "issue": "https://bugs.swift.org/browse/SR-14655;rdar://81276100",
+            "issue": "https://github.com/apple/swift/issues/57007;rdar://81276100",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           }
         ]
@@ -2565,7 +2581,7 @@
         "tags": "sourcekit-disabled swiftpm",
         "xfail": [
             {
-                "issue": "https://bugs.swift.org/browse/SR-13190",
+                "issue": "https://github.com/apple/swift/issues/55630",
                 "compatibility": ["4.0", "5.0"],
                 "branch": ["release/5.4", "release/5.5", "release/5.6"],
                 "job": ["source-compat"]
@@ -2997,7 +3013,7 @@
                 "issue": "rdar://83374141",
                 "platform": "Linux",
                 "compatibility": "5.0",
-                "branch": ["main", "release/5.6"],
+                "branch": ["main", "release/5.6", "release/5.7"],
                 "job": ["source-compat"]
             }
         ]
@@ -3132,7 +3148,7 @@
           {
             "issue": "rdar://81180448",
             "compatibility": ["4.2", "5.0"],
-            "branch": ["main", "release/5.5", "release/5.6"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           }
         ]
@@ -3969,9 +3985,9 @@
         "tags": "sourcekit-disabled swiftpm",
         "xfail": [
           {
-            "issue": "https://bugs.swift.org/browse/SR-15105",
+            "issue": "https://github.com/apple/swift/issues/57431",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           }
         ]
@@ -4245,9 +4261,9 @@
         "tags": "swiftpm",
         "xfail": [
           {
-            "issue": "https://bugs.swift.org/browse/SR-15105",
+            "issue": "https://github.com/apple/swift/issues/57431",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "configuration": "debug",
             "job": ["source-compat"]
           }
@@ -4333,6 +4349,32 @@
          "action": "BuildSwiftPackage",
          "configuration": "release",
          "tags": "swiftpm"
+       }
+     ]
+   },
+   {
+     "repository": "Git",
+     "url": "https://github.com/LiarPrincess/Violet",
+     "path": "violet",
+     "branch": "main",
+     "maintainer": "mail@liarprincess.me",
+     "compatibility": [
+       {
+         "version": "5.3",
+         "commit": "8217bfb0761c1630c94b88cc1fbe842bba40eb3d"
+       }
+     ],
+     "platforms": [
+       "Darwin",
+       "Linux"
+     ],
+     "actions": [
+       {
+         "action": "BuildSwiftPackage",
+         "configuration": "release"
+       },
+       {
+         "action": "TestSwiftPackage"
        }
      ]
    }
