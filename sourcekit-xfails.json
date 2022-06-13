@@ -713,17 +713,5 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58891"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1477",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1012
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/59315"
   }
 ]
