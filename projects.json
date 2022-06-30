@@ -3177,8 +3177,8 @@
     "maintainer": "ktoso@apple.com",
     "compatibility": [
       {
-        "version": "5.0",
-        "commit": "a72c5adce3986ff6b5092ae0464a8f2675087860"
+        "version": "5.4",
+        "commit": "794dc9d42720af97cedd395e8cd2add9173ffd9a"
       }
     ],
     "platforms": [
