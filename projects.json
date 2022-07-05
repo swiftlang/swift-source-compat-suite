@@ -3408,7 +3408,15 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "swiftpm"
+        "tags": "swiftpm",
+        "xfail": [
+            {
+                "issue": "rdar://96437311",
+                "compatibility": "5.0",
+                "branch": ["main"],
+                "job": ["source-compat"]
+            }
+        ]
       },
       {
         "action": "TestSwiftPackage"
