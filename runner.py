@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # ===--- runner.py --------------------------------------------------------===
 #
 #  This source file is part of the Swift.org open source project
@@ -52,7 +52,9 @@ def main():
     if args.report_time_path:
         time_reporter = project_future.TimeReporter(args.report_time_path)
 
-    index = json.loads(open(args.projects).read())
+    with open(args.projects) as projects:
+        index = json.loads(projects.read())
+
     result = project_future.ProjectListBuilder(
         args.include_repos,
         args.exclude_repos,
