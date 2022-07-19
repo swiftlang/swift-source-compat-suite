@@ -41,18 +41,20 @@ def main():
     # pylint: disable=I0011,C0111
     args = parse_args()
 
-    parsed_project_index = sorted(
-        json.JSONDecoder(
-            object_pairs_hook=collections.OrderedDict
-        ).decode(open(args.project_index).read()),
-        key=lambda repo: repo['path']
-    )
+    with open(args.project_index) as project_index:
+        parsed_project_index = sorted(
+            json.JSONDecoder(
+                object_pairs_hook=collections.OrderedDict
+            ).decode(project_index.read()),
+            key=lambda repo: repo['path']
+        )
 
     json_string = strip_trailing_whitespace(
         json.dumps(parsed_project_index, sort_keys=False, indent=2)
     )
 
-    open(args.project_index, 'w').write(json_string)
+    with open(args.project_index, 'w') as project_index:
+        project_index.write(json_string)
 
     return 0
 

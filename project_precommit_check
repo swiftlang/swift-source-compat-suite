@@ -147,7 +147,10 @@ def parse_args():
 
 def validate(project_path, compatibility_version):
     common.debug_print("--- Validating %s Swift version %s compatibility ---" % (project_path, compatibility_version))
-    index = json.loads(open(project_list).read())
+
+    with open(project_list) as projects:
+        index = json.loads(projects.read())
+
     project = next((p for p in index if p['path'] == project_path), None)
     if not project:
         common.debug_print("error: Unable to find %s in project index ---" % project_path)
