@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # ===--- run_sk_stress_test -----------------------------------------------===
 #
 #  This source file is part of the Swift.org open source project
@@ -13,12 +13,9 @@
 
 """A run script to be executed as a Jenkins build step."""
 
-from __future__ import print_function
 import sys
 import os
-import re
 import json
-import subprocess
 import argparse
 import platform
 import codecs

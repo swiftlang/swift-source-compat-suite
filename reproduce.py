@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # ===--- reproduce.py -----------------------------------------------------===
 #
 #  This source file is part of the Swift.org open source project
@@ -26,11 +26,6 @@ import os
 import sys
 
 import common
-
-try:
-    raw_input          # Python 2
-except NameError:
-    raw_input = input  # Python 3
 
 
 def parse_args():

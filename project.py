@@ -16,7 +16,6 @@
 import os
 import platform
 import re
-import subprocess
 import shutil
 import filecmp
 import sys
