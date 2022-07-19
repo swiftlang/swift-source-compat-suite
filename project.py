@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # ===--- project.py -------------------------------------------------------===
 #
 #  This source file is part of the Swift.org open source project
@@ -26,11 +26,6 @@ import argparse
 import shlex
 
 import common
-
-try:
-    basestring        # Python 2
-except NameError:
-    basestring = str  # Python 3
 
 swift_branch = None
 
@@ -134,7 +129,7 @@ class XcodeTarget(ProjectTarget):
             dir_override += ['-derivedDataPath', build_dir]
         elif 'SYMROOT' not in self._env:
             dir_override += ['SYMROOT=' + build_dir]
-        dir_override += [k + "=" + v for k, v in self._env.items()]
+        dir_override += [f"{k}={v}" for k, v in self._env]
         command = (['xcodebuild']
                    + build
                    + [project_param, self._project,
@@ -179,7 +174,7 @@ class XcodeTarget(ProjectTarget):
             dir_override += ['-derivedDataPath', build_dir]
         elif not 'SYMROOT' in self._env:
             dir_override += ['SYMROOT=' + build_dir]
-        dir_override += [k + "=" + v for k, v in self._env.items()]
+        dir_override += [f"{k}={v}" for k, v in self._env]
 
         project_target_params = [project_param, self._project,
                                  '-destination', self._destination]
@@ -513,7 +508,7 @@ def is_xfailed(xfail_args, compatible_version, platform, swift_branch, build_con
                 "but none supplied via '--build-config' or the containing "
                 "action's 'configuration' field.")
           current['configuration'] = build_config.lower()
-        for key, value in current.iteritems():
+        for key, value in current.items():
           if key in spec and not is_or_contains(spec[key], value):
             return None
         return issue
@@ -740,7 +735,7 @@ def evaluate_predicate(element, predicate):
     """Evaluate predicate in context of index element fields."""
     # pylint: disable=I0011,W0122,W0123
     for key in element:
-        if isinstance(element[key], basestring):
+        if isinstance(element[key], str):
             exec(key + ' = """' + element[key] + '"""')
     return eval(predicate)
 
@@ -776,10 +771,10 @@ def dict_get(dictionary, *args, **kwargs):
 
 
 def enum(*sequential, **named):
-    enums = dict(zip(sequential, range(len(sequential))), **named)
-    reverse = dict((value, key) for key, value in enums.iteritems())
-    keys = enums.keys()
-    values = enums.values()
+    enums = dict(list(zip(sequential, list(range(len(sequential))))), **named)
+    reverse = dict((value, key) for key, value in iter(enums.items()))
+    keys = list(enums.keys())
+    values = list(enums.values())
     enums['keys'] = keys
     enums['values'] = values
     enums['reverse_mapping'] = reverse
@@ -1438,7 +1433,7 @@ class IncrementalActionBuilder(ActionBuilder):
                 common.debug_print(message, stderr=stdout)
 
     def excluded_by_limit(self, limits):
-        for (kind, value) in limits.items():
+        for kind, value in limits.items():
             if self.action.get(kind) != value:
                 return True
         return False
