@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # ===--- common.py --------------------------------------------------------===
 #
 #  This source file is part of the Swift.org open source project
@@ -12,7 +12,6 @@
 # ===----------------------------------------------------------------------===
 
 """A library containing common utility functionality."""
-from __future__ import print_function
 
 import multiprocessing
 import os
@@ -22,11 +21,6 @@ import signal
 import subprocess
 import sys
 import shlex
-
-try:
-    basestring        # Python 2
-except NameError:
-    basestring = str  # Python 3
 
 DEFAULT_EXECUTE_TIMEOUT = 10*60
 
@@ -392,7 +386,7 @@ def check_execute_output(command, timeout=None,
         with Timeout(timeout):
             output = subprocess.check_output(
                 command, stderr=stderr, **kwargs
-            )
+            ).decode('utf-8')
     except subprocess.CalledProcessError as e:
         debug_print(e, stderr=stderr)
         raise
@@ -553,7 +547,7 @@ def popen(*args, **kwargs):
 
 
 def call(c):
-    if isinstance(c, basestring):
+    if isinstance(c, str):
         c = shlex.split(c)
     formatted = [x.format(**os.environ) for x in c]
     shell_debug_print(c)
