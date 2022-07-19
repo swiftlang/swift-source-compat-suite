@@ -89,7 +89,7 @@ def main():
         should_clone = False
         if have_existing_dirs and not args.skip_cleanup:
             if not args.no_prompt:
-                response = raw_input(
+                response = input(
                     'Delete all build and source directories '
                     'in current working directory? (y/n): '
                 ).strip().lower()
