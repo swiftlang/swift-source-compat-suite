@@ -24,6 +24,7 @@ import json
 import time
 import argparse
 import shlex
+from enum import Enum
 
 import common
 
@@ -770,32 +771,20 @@ def dict_get(dictionary, *args, **kwargs):
         raise KeyError
 
 
-def enum(*sequential, **named):
-    enums = dict(list(zip(sequential, list(range(len(sequential))))), **named)
-    reverse = dict((value, key) for key, value in iter(enums.items()))
-    keys = list(enums.keys())
-    values = list(enums.values())
-    enums['keys'] = keys
-    enums['values'] = values
-    enums['reverse_mapping'] = reverse
-    return type('Enum', (object,), enums)
+class ResultEnum(Enum):
+    FAIL = 0
+    XFAIL = 1
+    PASS = 2
+    UPASS = 3
 
 
-ResultEnum = enum(
-    'FAIL',
-    'XFAIL',
-    'PASS',
-    'UPASS'
-)
-
-
-class Result(ResultEnum):
+class Result:
     def __init__(self, result, text):
         self.result = result
         self.text = text
 
     def __str__(self):
-        return ResultEnum.reverse_mapping[self.result]
+        return self.result.name
 
 
 class ActionResult(Result):
@@ -804,23 +793,23 @@ class ActionResult(Result):
 
 class ListResult(Result):
     def __init__(self):
-        self.subresults = {value: [] for value in ResultEnum.values}
+        self.subresults = {result_enum: [] for result_enum in ResultEnum}
 
     def add(self, result):
         if result:
             self.subresults[result.result].append(result)
 
     def xfails(self):
-        return self.subresults[Result.XFAIL]
+        return self.subresults[ResultEnum.XFAIL]
 
     def fails(self):
-        return self.subresults[Result.FAIL]
+        return self.subresults[ResultEnum.FAIL]
 
     def upasses(self):
-        return self.subresults[Result.UPASS]
+        return self.subresults[ResultEnum.UPASS]
 
     def passes(self):
-        return self.subresults[Result.PASS]
+        return self.subresults[ResultEnum.PASS]
 
     def all(self):
         return [i for l in self.subresults.values() for i in l]
@@ -839,24 +828,24 @@ class ListResult(Result):
 
     @property
     def result(self):
-        if self.subresults[Result.FAIL]:
-            return Result.FAIL
-        elif self.subresults[Result.UPASS]:
-            return Result.UPASS
-        elif self.subresults[Result.XFAIL]:
-            return Result.XFAIL
-        elif self.subresults[Result.PASS]:
-            return Result.PASS
+        if self.subresults[ResultEnum.FAIL]:
+            return ResultEnum.FAIL
+        elif self.subresults[ResultEnum.UPASS]:
+            return ResultEnum.UPASS
+        elif self.subresults[ResultEnum.XFAIL]:
+            return ResultEnum.XFAIL
+        elif self.subresults[ResultEnum.PASS]:
+            return ResultEnum.PASS
         else:
-            return Result.PASS
+            return ResultEnum.PASS
 
     def __add__(self, other):
         n = self.__class__()
         n.subresults = {
-            Result.__dict__[x]:
-            (self.subresults[Result.__dict__[x]] +
-             other.subresults[Result.__dict__[x]])
-            for x in Result.__dict__ if not x.startswith('_')}
+            ResultEnum.__dict__[x]:
+            (self.subresults[ResultEnum.__dict__[x]] +
+             other.subresults[ResultEnum.__dict__[x]])
+            for x in ResultEnum.__dict__ if not x.startswith('_')}
         return n
 
 
@@ -865,13 +854,13 @@ class ProjectListResult(ListResult):
         output = ""
 
         xfails = [ar for ar in self.recursive_all()
-                  if ar.result == Result.XFAIL]
+                  if ar.result == ResultEnum.XFAIL]
         fails = [ar for ar in self.recursive_all()
-                 if ar.result == Result.FAIL]
+                 if ar.result == ResultEnum.FAIL]
         upasses = [ar for ar in self.recursive_all()
-                   if ar.result == Result.UPASS]
+                   if ar.result == ResultEnum.UPASS]
         passes = [ar for ar in self.recursive_all()
-                  if ar.result == Result.PASS]
+                  if ar.result == ResultEnum.PASS]
 
         if xfails:
             output += ('='*40) + '\n'
@@ -905,7 +894,7 @@ class ProjectListResult(ListResult):
         output += 'Repository Summary:' + '\n'
         output += '      Total: %s' % len(self.all()) + '\n'
         output += '='*40 + '\n'
-        output += 'Result: ' + Result.__str__(self) + '\n'
+        output += 'Result: ' + self.result.name + '\n'
         output += '='*40
         return output
 
@@ -1130,20 +1119,20 @@ class ActionBuilder(Factory):
     def failed(self, identifier, error):
         if 'xfail' in self.action:
             error_str = 'XFAIL: %s: %s' % (identifier, error)
-            result = ActionResult(Result.XFAIL, error_str)
+            result = ActionResult(ResultEnum.XFAIL, error_str)
         else:
             error_str = 'FAIL: %s: %s' % (identifier, error)
-            result = ActionResult(Result.FAIL, error_str)
+            result = ActionResult(ResultEnum.FAIL, error_str)
         common.debug_print(error_str)
         return result
 
     def succeeded(self, identifier):
         if 'xfail' in self.action:
             error_str = 'UPASS: %s: %s' % (identifier, self.action)
-            result = ActionResult(Result.UPASS, error_str)
+            result = ActionResult(ResultEnum.UPASS, error_str)
         else:
             error_str = 'PASS: %s: %s' % (identifier, self.action)
-            result = ActionResult(Result.PASS, error_str)
+            result = ActionResult(ResultEnum.PASS, error_str)
         common.debug_print(error_str)
         return result
 
@@ -1246,7 +1235,7 @@ class CompatActionBuilder(ActionBuilder):
                         )
             if 'destination' in self.action:
                 error_str += ', ' + self.action['destination']
-            result = ActionResult(Result.XFAIL, error_str)
+            result = ActionResult(ResultEnum.XFAIL, error_str)
         else:
             error_str = 'FAIL: {project}, {compatibility}, {commit}, {action_target}'.format(
                             project=self.project['path'],
@@ -1256,7 +1245,7 @@ class CompatActionBuilder(ActionBuilder):
                         )
             if 'destination' in self.action:
                 error_str += ', ' + self.action['destination']
-            result = ActionResult(Result.FAIL, error_str)
+            result = ActionResult(ResultEnum.FAIL, error_str)
         common.debug_print(error_str)
         return result
 
@@ -1281,7 +1270,7 @@ class CompatActionBuilder(ActionBuilder):
                         )
             if 'destination' in self.action:
                 error_str += ', ' + self.action['destination']
-            result = ActionResult(Result.UPASS, error_str)
+            result = ActionResult(ResultEnum.UPASS, error_str)
         else:
             error_str = 'PASS: {project}, {compatibility}, {commit}, {action_target}'.format(
                             project=self.project['path'],
@@ -1291,7 +1280,7 @@ class CompatActionBuilder(ActionBuilder):
                         )
             if 'destination' in self.action:
                 error_str += ', ' + self.action['destination']
-            result = ActionResult(Result.PASS, error_str)
+            result = ActionResult(ResultEnum.PASS, error_str)
         common.debug_print(error_str)
         return result
 
@@ -1428,7 +1417,7 @@ class IncrementalActionBuilder(ActionBuilder):
                        (os.path.relpath(full),
                         os.path.basename(incr)))
             if self.expect_determinism():
-                raise EarlyExit(ActionResult(Result.FAIL, message))
+                raise EarlyExit(ActionResult(ResultEnum.FAIL, message))
             else:
                 common.debug_print(message, stderr=stdout)
 
@@ -1439,7 +1428,7 @@ class IncrementalActionBuilder(ActionBuilder):
         return False
 
     def build(self, stdout=sys.stdout):
-        action_result = ActionResult(Result.PASS, "")
+        action_result = ActionResult(ResultEnum.PASS, "")
         try:
             if 'incremental' in self.project:
                 for vers in self.project['incremental']:
@@ -1491,7 +1480,7 @@ class IncrementalActionBuilder(ActionBuilder):
         os.makedirs(self.incr_path)
         prev = None
         seq = 0
-        action_result = ActionResult(Result.PASS, "")
+        action_result = ActionResult(ResultEnum.PASS, "")
         for sha in commits:
             proj = self.project['path']
             ident = "%s-%03d-%.7s" % (identifier, seq, sha)
