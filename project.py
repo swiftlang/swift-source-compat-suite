@@ -129,7 +129,7 @@ class XcodeTarget(ProjectTarget):
             dir_override += ['-derivedDataPath', build_dir]
         elif 'SYMROOT' not in self._env:
             dir_override += ['SYMROOT=' + build_dir]
-        dir_override += [f"{k}={v}" for k, v in self._env]
+        dir_override += [f"{k}={v}" for k, v in self._env.items()]
         command = (['xcodebuild']
                    + build
                    + [project_param, self._project,
@@ -174,7 +174,7 @@ class XcodeTarget(ProjectTarget):
             dir_override += ['-derivedDataPath', build_dir]
         elif not 'SYMROOT' in self._env:
             dir_override += ['SYMROOT=' + build_dir]
-        dir_override += [f"{k}={v}" for k, v in self._env]
+        dir_override += [f"{k}={v}" for k, v in self._env.items()]
 
         project_target_params = [project_param, self._project,
                                  '-destination', self._destination]
