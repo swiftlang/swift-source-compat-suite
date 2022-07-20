@@ -19,6 +19,7 @@ import sys
 
 import common
 import project
+import os
 
 
 def parse_args():
@@ -55,42 +56,69 @@ def main():
     with open(args.projects) as projects:
         index = json.loads(projects.read())
 
-    result = project.ProjectListBuilder(
+    action_builder = project.CompatActionBuilder.factory(
+        args.swiftc,
+        args.swift_version,
+        args.swift_branch,
+        args.job_type,
+        args.sandbox_profile_xcodebuild,
+        args.sandbox_profile_package,
+        swift_flags,
+        xcodebuild_flags,
+        args.skip_clean,
+        args.build_config,
+        args.strip_resource_phases,
+        args.only_latest_versions,
+        args.project_cache_path,
+        time_reporter,
+        args.override_swift_exec
+    )
+
+    version_builder = project.VersionBuilder.factory(
+        args.include_actions,
+        args.exclude_actions,
+        args.verbose,
+        action_builder,
+    )
+
+    project_builder = project.ProjectBuilder.factory(
+        args.include_versions,
+        args.exclude_versions,
+        args.verbose,
+        version_builder,
+    )
+
+    project_list_builder = project.ProjectListBuilder(
         args.include_repos,
         args.exclude_repos,
         args.verbose,
-        project.ProjectBuilder.factory(
-            args.include_versions,
-            args.exclude_versions,
-            args.verbose,
-            project.VersionBuilder.factory(
-                args.include_actions,
-                args.exclude_actions,
-                args.verbose,
-                project.CompatActionBuilder.factory(
-                    args.swiftc,
-                    args.swift_version,
-                    args.swift_branch,
-                    args.job_type,
-                    args.sandbox_profile_xcodebuild,
-                    args.sandbox_profile_package,
-                    swift_flags,
-                    xcodebuild_flags,
-                    args.skip_clean,
-                    args.build_config,
-                    args.strip_resource_phases,
-                    args.only_latest_versions,
-                    args.project_cache_path,
-                    time_reporter,
-                    args.override_swift_exec
-                ),
-            ),
-        ),
-        index
-    ).build()
-    common.debug_print(str(result))
-    return 0 if result.result in [project.ResultEnum.PASS,
-                                  project.ResultEnum.XFAIL] else 1
+        project_builder,
+        index)
+
+    ###################################
+    # PARALLELIZE
+    results = project_list_builder.new_result()
+    for subtarget in project_list_builder.subtargets():
+        if project_list_builder.included(subtarget):
+            (log_filename, output_fd) = project_list_builder.output_fd(subtarget)
+            subbuilder_result = None
+            try:
+                subbuilder_result = project_list_builder.subbuilder(
+                    *([subtarget] + project_list_builder.payload())).build(
+                    stdout=output_fd
+                )
+                results.add(subbuilder_result)
+            finally:
+                if output_fd is not sys.stdout:
+                    output_fd.close()
+                    os.rename(
+                        log_filename,
+                        '%s_%s' % (subbuilder_result, log_filename),
+                    )
+
+    common.debug_print(str(results))
+    return 0 if results.result in [project.ResultEnum.PASS,
+                                   project.ResultEnum.XFAIL] else 1
 
 if __name__ == '__main__':
     sys.exit(main())
