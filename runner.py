@@ -15,6 +15,7 @@
 
 import argparse
 import json
+import multiprocessing
 import sys
 
 import common
@@ -70,7 +71,7 @@ def parse_args():
 
 def main():
     """Execute specified indexed project actions."""
-    thread_pool = futures.ProcessPoolExecutor(max_workers=8)
+    thread_pool = futures.ProcessPoolExecutor(max_workers=multiprocessing.cpu_count())
     submited_futures = []
 
     start = time.time()
