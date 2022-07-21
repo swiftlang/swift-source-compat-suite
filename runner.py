@@ -19,8 +19,47 @@ import sys
 
 import common
 import project
-import os
 
+import time
+from concurrent import futures
+
+THREAD_POOL = futures.ProcessPoolExecutor(max_workers=8)
+FUTURES = []
+
+def build_project_async(_project, args, xcodebuild_flags, time_reporter):
+    action_builder = project.CompatActionBuilder.factory(
+        args.swiftc,
+        args.swift_version,
+        args.swift_branch,
+        args.job_type,
+        args.sandbox_profile_xcodebuild,
+        args.sandbox_profile_package,
+        args.add_swift_flags,
+        xcodebuild_flags,
+        args.skip_clean,
+        args.build_config,
+        args.strip_resource_phases,
+        args.only_latest_versions,
+        args.project_cache_path,
+        time_reporter,
+        args.override_swift_exec
+    )
+
+    version_builder = project.VersionBuilder.factory(
+        args.include_actions,
+        args.exclude_actions,
+        args.verbose,
+        action_builder,
+    )
+
+    project_builder = project.ProjectBuilder(
+        args.include_versions,
+        args.exclude_versions,
+        args.verbose,
+        version_builder,
+        target=_project
+    )
+    return project_builder.build()
 
 def parse_args():
     """Return parsed command line arguments."""
@@ -33,6 +72,7 @@ def parse_args():
 
 def main():
     """Execute specified indexed project actions."""
+    start = time.time()
     args = parse_args()
 
     if args.default_timeout:
@@ -95,28 +135,30 @@ def main():
         project_builder,
         index)
 
+    # Setup results object
+    results = project_list_builder.new_result()
+
     ###################################
     # PARALLELIZE
-    results = project_list_builder.new_result()
-    for subtarget in project_list_builder.subtargets():
-        if project_list_builder.included(subtarget):
-            (log_filename, output_fd) = project_list_builder.output_fd(subtarget)
-            subbuilder_result = None
-            try:
-                subbuilder_result = project_list_builder.subbuilder(
-                    *([subtarget] + project_list_builder.payload())).build(
-                    stdout=output_fd
-                )
-                results.add(subbuilder_result)
-            finally:
-                if output_fd is not sys.stdout:
-                    output_fd.close()
-                    os.rename(
-                        log_filename,
-                        '%s_%s' % (subbuilder_result, log_filename),
-                    )
+    for _project in project_list_builder.subtargets():
+        # Call async worker function. Within that function
+        #   1.) Create Project Object which is primed for building
+        #   2.) Build the project and all associated version
+        #   3.) Trigger a callback on the future with the result
+        if not project_list_builder.included(_project):
+            continue
+        f= THREAD_POOL.submit(build_project_async, _project, args, xcodebuild_flags, time_reporter)
+        FUTURES.append(f)
+
+    # Cleanup in main process
+    futures.wait(FUTURES)
+    for _future in FUTURES:
+        results.add(_future.result())
 
     common.debug_print(str(results))
+    end = time.time()
+    print(f"TIME = {end-start}")
+
     return 0 if results.result in [project.ResultEnum.PASS,
                                    project.ResultEnum.XFAIL] else 1
 
