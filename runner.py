@@ -23,8 +23,6 @@ import project
 import time
 from concurrent import futures
 
-THREAD_POOL = futures.ProcessPoolExecutor(max_workers=8)
-FUTURES = []
 
 def build_project_async(_project, args, xcodebuild_flags, time_reporter):
     action_builder = project.CompatActionBuilder.factory(
@@ -72,6 +70,9 @@ def parse_args():
 
 def main():
     """Execute specified indexed project actions."""
+    thread_pool = futures.ProcessPoolExecutor(max_workers=8)
+    submited_futures = []
+
     start = time.time()
     args = parse_args()
 
@@ -139,7 +140,7 @@ def main():
     results = project_list_builder.new_result()
 
     ###################################
-    # PARALLELIZE
+    # PARALLELIZE across worker pool
     for _project in project_list_builder.subtargets():
         # Call async worker function. Within that function
         #   1.) Create Project Object which is primed for building
@@ -147,12 +148,13 @@ def main():
         #   3.) Trigger a callback on the future with the result
         if not project_list_builder.included(_project):
             continue
-        f= THREAD_POOL.submit(build_project_async, _project, args, xcodebuild_flags, time_reporter)
-        FUTURES.append(f)
+        worker = thread_pool.submit(build_project_async, _project, args, xcodebuild_flags, time_reporter)
+        submited_futures.append(worker)
+    ###################################
 
     # Cleanup in main process
-    futures.wait(FUTURES)
-    for _future in FUTURES:
+    futures.wait(submited_futures)
+    for _future in submited_futures:
         results.add(_future.result())
 
     common.debug_print(str(results))
