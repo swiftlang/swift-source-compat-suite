@@ -258,7 +258,7 @@ def clone_repos():
     ], stdin=subprocess.PIPE)
 
     for repo in repos:
-        process0.stdin.write(repo)
+        process0.stdin.write(repo.encode('utf-8'))
 
     process0.stdin.close()
 
