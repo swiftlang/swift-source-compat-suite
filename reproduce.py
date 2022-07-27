@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # ===--- reproduce.py -----------------------------------------------------===
 #
 #  This source file is part of the Swift.org open source project
@@ -26,11 +26,6 @@ import os
 import sys
 
 import common
-
-try:
-    raw_input          # Python 2
-except NameError:
-    raw_input = input  # Python 3
 
 
 def parse_args():
@@ -94,7 +89,7 @@ def main():
         should_clone = False
         if have_existing_dirs and not args.skip_cleanup:
             if not args.no_prompt:
-                response = raw_input(
+                response = input(
                     'Delete all build and source directories '
                     'in current working directory? (y/n): '
                 ).strip().lower()

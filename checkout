@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # ===--- checkout  --------------------------------------------------------===
 #
 #  This source file is part of the Swift.org open source project
@@ -19,7 +19,7 @@ import argparse
 import sys
 
 import common
-import project_future
+import project
 
 
 def parse_args():
@@ -44,7 +44,10 @@ def main():
     """Clone and checkout pinned commits for indexed projects."""
     os.chdir(os.path.dirname(__file__))
     args = parse_args()
-    index = json.loads(open(args.projects).read())
+
+    with open(args.projects) as projects:
+        index = json.loads(projects.read())
+
     root_path = common.private_workspace('project_cache')
     total_repos = 0
 
@@ -59,7 +62,7 @@ def main():
             continue
         total_repos += 1
         for compatible_swift in repo['compatibility']:
-            project_future.checkout(root_path, repo, compatible_swift['commit'])
+            project.checkout(root_path, repo, compatible_swift['commit'])
     common.debug_print('='*40)
     common.debug_print('Repository Summary:')
     common.debug_print('      Total: %s' % total_repos)

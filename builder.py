@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # ===--- builder.py -------------------------------------------------------===
 #
 #  This source file is part of the Swift.org open source project
@@ -18,7 +18,7 @@ import json
 import sys
 
 import common
-import project_future
+import project
 
 
 def parse_args():
@@ -31,7 +31,10 @@ def parse_args():
 def main():
     """Execute specified indexed project actions."""
     args = parse_args()
-    index = json.loads(open(args.projects).read())
+
+    with open(args.projects) as projects:
+        index = json.loads(projects.read())
+
     result = project.ProjectListBuilder(
         args.include_repos,
         args.exclude_repos,

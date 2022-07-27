@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # ===--- runner.py --------------------------------------------------------===
 #
 #  This source file is part of the Swift.org open source project
@@ -18,13 +18,13 @@ import json
 import sys
 
 import common
-import project_future
+import project
 
 
 def parse_args():
     """Return parsed command line arguments."""
     parser = argparse.ArgumentParser()
-    project_future.add_arguments(parser)
+    project.add_arguments(parser)
     parser.add_argument('--only-latest-versions', action='store_true')
     parser.add_argument('--default-timeout', type=int, help="override the default execute timeout (seconds)")
     return parser.parse_args()
@@ -50,22 +50,24 @@ def main():
 
     time_reporter = None
     if args.report_time_path:
-        time_reporter = project_future.TimeReporter(args.report_time_path)
+        time_reporter = project.TimeReporter(args.report_time_path)
 
-    index = json.loads(open(args.projects).read())
-    result = project_future.ProjectListBuilder(
+    with open(args.projects) as projects:
+        index = json.loads(projects.read())
+
+    result = project.ProjectListBuilder(
         args.include_repos,
         args.exclude_repos,
         args.verbose,
-        project_future.ProjectBuilder.factory(
+        project.ProjectBuilder.factory(
             args.include_versions,
             args.exclude_versions,
             args.verbose,
-            project_future.VersionBuilder.factory(
+            project.VersionBuilder.factory(
                 args.include_actions,
                 args.exclude_actions,
                 args.verbose,
-                project_future.CompatActionBuilder.factory(
+                project.CompatActionBuilder.factory(
                     args.swiftc,
                     args.swift_version,
                     args.swift_branch,
@@ -87,8 +89,8 @@ def main():
         index
     ).build()
     common.debug_print(str(result))
-    return 0 if result.result in [project_future.ResultEnum.PASS,
-                                  project_future.ResultEnum.XFAIL] else 1
+    return 0 if result.result in [project.ResultEnum.PASS,
+                                  project.ResultEnum.XFAIL] else 1
 
 if __name__ == '__main__':
     sys.exit(main())
