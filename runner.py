@@ -21,10 +21,11 @@ import sys
 import common
 import project
 
-import time
 from concurrent import futures
 
 
+# We create factories in the async function rather then pass them in because they are not pickle-able.
+# A better solution should be developed.
 def build_project_async(_project, args, xcodebuild_flags, time_reporter):
     action_builder = project.CompatActionBuilder.factory(
         args.swiftc,
@@ -62,6 +63,7 @@ def build_project_async(_project, args, xcodebuild_flags, time_reporter):
 
 def parse_args():
     """Return parsed command line arguments."""
+    # There is no arg for process count yet. There should be
     parser = argparse.ArgumentParser()
     project.add_arguments(parser)
     parser.add_argument('--only-latest-versions', action='store_true')
@@ -74,7 +76,6 @@ def main():
     thread_pool = futures.ProcessPoolExecutor(max_workers=multiprocessing.cpu_count())
     submited_futures = []
 
-    start = time.time()
     args = parse_args()
 
     if args.default_timeout:
@@ -98,55 +99,24 @@ def main():
     with open(args.projects) as projects:
         index = json.loads(projects.read())
 
-    action_builder = project.CompatActionBuilder.factory(
-        args.swiftc,
-        args.swift_version,
-        args.swift_branch,
-        args.job_type,
-        args.sandbox_profile_xcodebuild,
-        args.sandbox_profile_package,
-        swift_flags,
-        xcodebuild_flags,
-        args.skip_clean,
-        args.build_config,
-        args.strip_resource_phases,
-        args.only_latest_versions,
-        args.project_cache_path,
-        time_reporter,
-        args.override_swift_exec
-    )
-
-    version_builder = project.VersionBuilder.factory(
-        args.include_actions,
-        args.exclude_actions,
-        args.verbose,
-        action_builder,
-    )
-
-    project_builder = project.ProjectBuilder.factory(
-        args.include_versions,
-        args.exclude_versions,
-        args.verbose,
-        version_builder,
-    )
-
     project_list_builder = project.ProjectListBuilder(
         args.include_repos,
         args.exclude_repos,
         args.verbose,
-        project_builder,
+        None,  # Just don't worry about building with this object. We use this for inclusion/exclusion for now
         index)
 
     # Setup results object
     results = project_list_builder.new_result()
 
     ###################################
-    # PARALLELIZE across worker pool
+    # PARALLELIZE builds for projects across worker pool. We parallelize at the project level to avoid conflicting
+    # git operations and to avoid the need for multiple source checkouts of a project.
     for _project in project_list_builder.subtargets():
         # Call async worker function. Within that function
-        #   1.) Create Project Object which is primed for building
-        #   2.) Build the project and all associated version
-        #   3.) Trigger a callback on the future with the result
+        #   1.) Create ProjectBuilder Object which is primed for building
+        #   2.) Build the project and all associated versions
+        #   3.) Return the result object which will be examined later
         if not project_list_builder.included(_project):
             continue
         worker = thread_pool.submit(build_project_async, _project, args, xcodebuild_flags, time_reporter)
@@ -159,9 +129,6 @@ def main():
         results.add(_future.result())
 
     common.debug_print(str(results))
-    end = time.time()
-    print(f"TIME = {end-start}")
-
     return 0 if results.result in [project.ResultEnum.PASS,
                                    project.ResultEnum.XFAIL] else 1
 
