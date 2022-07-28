@@ -326,9 +326,9 @@ class StressTesterRunner(object):
             return not self.compat_runner_failed
 
         with open(results_path, 'r') as results_file:
-            results = json.load(results_file, encoding='utf-8')
+            results = json.load(results_file)
         with open(xfails_path, 'r') as xfails_file:
-            xfails = json.load(xfails_file, encoding='utf-8')
+            xfails = json.load(xfails_file)
 
         xfails_not_processed = []
         for xfail in xfails:
@@ -340,7 +340,7 @@ class StressTesterRunner(object):
                 xfails_not_processed.append(xfail)
 
         num_failures = len(results['issues'])
-        num_xfails = sum(len(value) for _, value in results['expectedIssues'].iteritems())
+        num_xfails = sum(len(value) for _, value in results['expectedIssues'].items())
         num_xfail_issues = len(results['expectedIssues'])
         unmatched = results['unmatchedExpectedIssues']
 
@@ -348,7 +348,7 @@ class StressTesterRunner(object):
 
         if num_xfails > 0:
             print('Expected stress tester issues:')
-            for url, issues in results['expectedIssueMessages'].iteritems():
+            for url, issues in results['expectedIssueMessages'].items():
                 for (index, issue) in enumerate(issues):
                     self._print_issue(index, issue, url)
             print('\n========================================')
