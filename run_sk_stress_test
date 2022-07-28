@@ -18,14 +18,14 @@ import os
 import json
 import argparse
 import platform
-import codecs
 
 import common
+from typing import List
 
 script_dir = os.path.abspath(os.path.dirname(__file__))
 
 
-def main():
+def main() -> int:
     if platform.system() != 'Darwin':
         raise common.UnsupportedPlatform
 
@@ -51,7 +51,7 @@ def main():
     return 0
 
 
-def parse_args():
+def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument('swift_branch')
     parser.add_argument('--sandbox', action='store_true')
@@ -97,15 +97,19 @@ def parse_args():
                         action='store_true')
     parser.add_argument('--add-swift-flags',
                         metavar='FLAGS',
-                        help='add flags to each Swift invocation (note: field '
-                             'names from projects.json enclosed in {} will be '
-                             'replaced with their value)',
+                        help='''
+                             add flags to each Swift invocation (note: field
+                             names from projects.json enclosed in {} will be
+                             replaced with their value)
+                             ''',
                         default='')
     parser.add_argument('--add-xcodebuild-flags',
                         metavar='FLAGS',
-                        help='add flags to each xcodebuild invocation (note: field '
-                             'names from projects.json enclosed in {} will be '
-                             'replaced with their value)',
+                        help='''
+                             add flags to each xcodebuild invocation (note: field
+                             names from projects.json enclosed in {} will be
+                             replaced with their value)
+                             ''',
                         default='')
     parser.add_argument('--cmake-c-launcher',
                         metavar="PATH",
@@ -115,13 +119,13 @@ def parse_args():
                         help='the absolute path to set CMAKE_CXX_COMPILER_LAUNCHER for build-script')
     return parser.parse_args()
 
-def get_swiftc_path(workspace, args):
+def get_swiftc_path(workspace: str, args: argparse.Namespace) -> str:
     if args.swiftc:
         return args.swiftc
     else:
         return os.path.join(workspace, 'build/compat_macos/install/toolchain/usr/bin/swiftc')
 
-def get_sk_swiftc_wrapper_path(workspace, args):
+def get_sk_swiftc_wrapper_path(workspace: str, args: argparse.Namespace) -> str:
     if args.sk_swiftc_wrapper:
         return args.sk_swiftc_wrapper
     else:
@@ -129,7 +133,7 @@ def get_sk_swiftc_wrapper_path(workspace, args):
         swiftc_path = get_swiftc_path(workspace, args)
         return os.path.join(os.path.dirname(swiftc_path), 'sk-swiftc-wrapper')
 
-def get_sk_stress_test_path(workspace, args):
+def get_sk_stress_test_path(workspace: str, args: argparse.Namespace) -> str:
     if args.sk_stress_test:
         return args.sk_stress_test
     else:
@@ -137,7 +141,7 @@ def get_sk_stress_test_path(workspace, args):
         swiftc_path = get_swiftc_path(workspace, args)
         return os.path.join(os.path.dirname(swiftc_path), 'sk-stress-test')
 
-def get_sandbox_profile_flags():
+def get_sandbox_profile_flags() -> List[str]:
     return [
         '--sandbox-profile-xcodebuild',
         '../../../workspace-private/swift-source-compat-suite-sandbox/sandbox_xcodebuild.sb',
@@ -145,7 +149,7 @@ def get_sandbox_profile_flags():
         '../../../workspace-private/swift-source-compat-suite-sandbox/sandbox_package.sb'
     ]
 
-def clone_stress_tester(workspace, swift_branch):
+def clone_stress_tester(workspace: str, swift_branch: str) -> None:
     stress_clone_cmd = [
         'git','clone', '-q', '-b', swift_branch, '--recursive',
         'https://github.com/apple/swift-stress-tester',
@@ -153,7 +157,7 @@ def clone_stress_tester(workspace, swift_branch):
     ]
     common.check_execute(stress_clone_cmd, timeout=-1)
 
-def clone_swift_syntax(workspace, swift_branch):
+def clone_swift_syntax(workspace: str, swift_branch: str) -> None:
     syntax_clone_cmd = [
         'git','clone', '-q', '-b', swift_branch, '--recursive',
         'https://github.com/apple/swift-syntax',
@@ -162,7 +166,7 @@ def clone_swift_syntax(workspace, swift_branch):
     common.check_execute(syntax_clone_cmd, timeout=-1)
 
 
-def execute_runner(workspace, args):
+def execute_runner(workspace: str, args: argparse.Namespace) -> bool:
     swiftc_path = get_swiftc_path(workspace, args)
     wrapper_path = get_sk_swiftc_wrapper_path(workspace, args)
     stress_tester_path = get_sk_stress_test_path(workspace, args)
@@ -189,7 +193,7 @@ def execute_runner(workspace, args):
     return passed
 
 
-def build_swift_toolchain(workspace, args):
+def build_swift_toolchain(workspace: str, args: argparse.Namespace) -> None:
     build_command = [
         os.path.join(workspace, 'swift/utils/build-script'),
         '--debug' if args.debug else '--release',
@@ -209,7 +213,7 @@ def build_swift_toolchain(workspace, args):
         '--darwin-install-extract-symbols',
         '--darwin-toolchain-alias=swift',
         '--darwin-toolchain-bundle-identifier=org.swift.compat-macos',
-        '--darwin-toolchain-display-name-short=Swift Development Snapshot'
+        '--darwin-toolchain-display-name-short=Swift Development Snapshot',
         '--darwin-toolchain-display-name=Swift Development Snapshot',
         '--darwin-toolchain-name=swift-DEVELOPMENT-SNAPSHOT',
         '--darwin-toolchain-version=3.999.999',
@@ -235,32 +239,37 @@ def build_swift_toolchain(workspace, args):
     common.check_execute(build_command, timeout=9999999)
 
 
-def processed_files_contain(processed_files, file_path):
-        """
-        Returns `True` if a path in `processed_files` contains `file_path` as a substring, `False` otherwise
-        """
-        for processed_file in processed_files:
-            if file_path in processed_file:
-                return True
-        return False
+def processed_files_contain(processed_files: List[str], file_path: str) -> bool:
+    """
+    Returns `True` if a path in `processed_files` contains `file_path` as a substring, `False` otherwise
+    """
+    for processed_file in processed_files:
+        if file_path in processed_file:
+            return True
+    return False
 
 
 class StressTesterRunner(object):
     """sets up the Swift compatibility suite runner to use the stress tester's swiftc-wrapper, executes it, and processes its output for failures."""
 
-    def __init__(self, wrapper, stress_tester, swiftc, projects, branch, xfails):
+    wrapper: str
+    stress_tester: str
+    swiftc: str
+    branch: str
+
+    def __init__(self, wrapper: str, stress_tester: str, swiftc: str, projects_path: str, branch: str, xfails_path: str):
         self.wrapper = wrapper
         self.stress_tester = stress_tester
         self.swiftc = swiftc
 
-        self.xfails_path = xfails
-        self.projects_path = projects
+        self.xfails_path = xfails_path
+        self.projects_path = projects_path
         self.swift_branch = branch
 
         self.compat_runner_failed = False
 
 
-    def run(self, extra_runner_args=[]):
+    def run(self, extra_runner_args: List[str] = []) -> bool:
         # temporary file paths
         filtered_projects = os.path.join(script_dir, 'stress-tester-projects.json')
         results = os.path.join(script_dir, 'stress-tester-results.json')
@@ -312,14 +321,14 @@ class StressTesterRunner(object):
         return success
 
 
-    def _process_output(self, results_path, xfails_path):
+    def _process_output(self, results_path: str, xfails_path: str) -> bool:
         if not os.path.isfile(results_path):
             return not self.compat_runner_failed
 
-        with open(results_path, 'rb') as results_file:
+        with open(results_path, 'r') as results_file:
             results = json.load(results_file, encoding='utf-8')
-        with open(xfails_path, 'rb') as xfails_path:
-            xfails = json.load(xfails_path, encoding='utf-8')
+        with open(xfails_path, 'r') as xfails_file:
+            xfails = json.load(xfails_file, encoding='utf-8')
 
         xfails_not_processed = []
         for xfail in xfails:
@@ -390,14 +399,14 @@ class StressTesterRunner(object):
         return success
 
     @staticmethod
-    def _print_issue(index, issue, url = None):
+    def _print_issue(index: int, issue, url = None):
         if url != None:
             print(u'\n{}. [{}] {}'.format(index + 1, url, issue))
         else:
             print(u'\n{}. {}'.format(index + 1, issue))
 
 
-    def _filter_projects(self, output):
+    def _filter_projects(self, output: str) -> str:
         with open(self.projects_path) as json_file:
             projects = json.load(json_file)
             for project in projects:
@@ -419,20 +428,12 @@ class StressTesterRunner(object):
         return output
 
     @staticmethod
-    def _cleanup(paths):
+    def _cleanup(paths: List[str]) -> None:
         for path in paths:
             try:
                 os.remove(path)
             except OSError:
                 pass
-
-if os.isatty(sys.stdout.fileno()):
-    encoding = sys.stdout.encoding
-    errors = 'replace'
-else:
-    encoding = 'utf-8'
-    errors = None
-sys.stdout = codecs.getwriter(encoding)(sys.stdout, errors=errors)
 
 if __name__ == '__main__':
     sys.exit(main())
