@@ -749,6 +749,7 @@ def included_element(include_predicates, exclude_predicates, element):
                  for ip in include_predicates)))
 
 
+# ToDo : Convert this to a proper interface Builder which has all the methods in question
 class Factory(object):
     @classmethod
     def factory(cls, *factoryargs):
@@ -906,31 +907,32 @@ class VersionResult(ListResult):
     pass
 
 
-class ListBuilder(Factory):
-    def __init__(self, include, exclude, verbose, subbuilder, target):
+class ListBuilder:
+    def __init__(self, include, exclude, verbose, subbuilder):
         self.include = include
         self.exclude = exclude
         self.verbose = verbose
         self.subbuilder = subbuilder
-        self.target = target
 
     def included(self, subtarget):
         return True
 
-    def subtargets(self):
-        return self.target
+    def get_subtargets(self, target):
+        return target
 
-    def payload(self):
+    def payload(self, target):
         return []
 
-    def build(self, stdout=sys.stdout):
+    def build(self, target=None, build_payload=None, stdout=sys.stdout):
         results = self.new_result()
-        for subtarget in self.subtargets():
+        for subtarget in self.get_subtargets(target):
             if self.included(subtarget):
-                (log_filename, output_fd) = self.output_fd(subtarget)
+                (log_filename, output_fd) = self.output_fd(target, subtarget)
                 subbuilder_result = None
                 try:
-                    subbuilder_result = self.subbuilder(*([subtarget] + self.payload())).build(
+                    subbuilder_result = self.subbuilder.build(
+                        target=subtarget,
+                        build_payload=self.payload(target),
                         stdout=output_fd
                     )
                     results.add(subbuilder_result)
@@ -947,7 +949,7 @@ class ListBuilder(Factory):
     def new_result(self):
         return ListResult()
 
-    def output_fd(self, subtarget):
+    def output_fd(self, current_target, subtarget):
         return (None, sys.stdout)
 
 
@@ -961,27 +963,44 @@ class ProjectListBuilder(ListBuilder):
     def new_result(self):
         return ProjectListResult()
 
+    def build(self, target=None, build_payload=None, stdout=sys.stdout):
+        from concurrent import futures
+        import multiprocessing
+        thread_pool = futures.ProcessPoolExecutor(max_workers=multiprocessing.cpu_count())
+        submited_futures = []
+        results = self.new_result()
+
+        # Parallel
+        for subtarget in self.get_subtargets(target):
+            if self.included(subtarget):
+                worker = thread_pool.submit(self.subbuilder.build, subtarget, build_payload, None)
+                submited_futures.append(worker)
+        # ###################################
+        #
+        # Cleanup in main process
+        futures.wait(submited_futures)
+        for _future in submited_futures:
+            results.add(_future.result())
+
+        return results
+
 
 class ProjectBuilder(ListBuilder):
-    def payload(self):
-        return [self.target]
+    def payload(self, target):
+        return [target]
 
     def included(self, subtarget):
         version = subtarget
         return included_element(self.include, self.exclude, version)
 
-    def subtargets(self):
-        return self.target['compatibility']
+    def get_subtargets(self, target):
+        return target['compatibility']
 
     def new_result(self):
         return ProjectResult()
 
 
 class VersionBuilder(ListBuilder):
-    def __init__(self, include, exclude, verbose, subbuilder, target, project):
-        super(VersionBuilder, self).__init__(include, exclude, verbose, subbuilder, target)
-        self.project = project
-
     def included(self, subtarget):
         action = subtarget
         return included_element(self.include, self.exclude, action)
@@ -989,19 +1008,30 @@ class VersionBuilder(ListBuilder):
     def new_result(self):
         return VersionResult()
 
-    def subtargets(self):
+    def get_subtargets(self, target):
         return self.project['actions']
 
-    def payload(self):
-        return [self.target, self.project]
+    def _process_payload(self, project):
+        self.project = project
 
-    def output_fd(self, subtarget):
+    def build(self, target=None, build_payload=None, stdout=sys.stdout):
+        # Process the build payload before starting work. Capture the project.
+        self._process_payload(*build_payload)
+        assert self.project is not None
+
+        # Call super method
+        super().build(target=target, build_payload=self.payload(target), stdout=stdout)
+
+    def payload(self, target):
+        return [self.project, target]
+
+    def output_fd(self, current_target, subtarget):
         scheme_target = dict_get(subtarget, 'scheme', 'target', default=False)
         destination = dict_get(subtarget, 'destination', default=False)
         project_identifier = dict_get(self.project, 'path', default="") + " " + \
                              dict_get(subtarget, 'project', default="").split('-')[0]
         identifier = '_'.join(
-            [x.strip() for x in [project_identifier, self.target['version'], subtarget['action']]] +
+            [x.strip() for x in [project_identifier, current_target['version'], subtarget['action']]] +
             ([scheme_target] if scheme_target else []) +
             ([destination] if destination else [])
         )
@@ -1015,7 +1045,7 @@ class VersionBuilder(ListBuilder):
         return (log_filename, fd)
 
 
-class ActionBuilder(Factory):
+class ActionBuilder:
     def __init__(self, swiftc, swift_version, swift_branch, job_type,
                  sandbox_profile_xcodebuild,
                  sandbox_profile_package,
@@ -1025,26 +1055,20 @@ class ActionBuilder(Factory):
                  strip_resource_phases,
                  project_cache_path,
                  time_reporter,
-                 override_swift_exec,
-                 action, project):
+                 override_swift_exec):
         self.swiftc = swiftc
         self.swift_version = swift_version
         self.swift_branch = swift_branch
         set_swift_branch(swift_branch)
         self.sandbox_profile_xcodebuild = sandbox_profile_xcodebuild
         self.sandbox_profile_package = sandbox_profile_package
-        self.project = project
-        self.action = action
         self.root_path = common.private_workspace(project_cache_path)
         self.current_platform = platform.system()
         self.added_swift_flags = added_swift_flags
         self.added_xcodebuild_flags = added_xcodebuild_flags
         # Make sure Xcode build folder is not cleaned by 'git' when
         # 'clean_build' is explicitly set 'false'.
-        clean_build = True
-        if 'clean_build' in action:
-            clean_build = action['clean_build']
-        self.skip_clean = skip_clean or not clean_build
+        self.skip_clean = skip_clean
         self.build_config = build_config
         self.strip_resource_phases = strip_resource_phases
         self.time_reporter = time_reporter
@@ -1055,7 +1079,22 @@ class ActionBuilder(Factory):
     def init(self):
         pass
 
-    def build(self, stdout=sys.stdout):
+    def _process_payload(self, project, ):
+        self.project = project
+
+    def build(self, target=None, build_payload=None, stdout=sys.stdout):
+        # Process the build payload before starting work. Capture the project and action.
+        self._process_payload(*build_payload)
+        self.action = target
+
+        assert self.project is not None
+        assert self.action
+
+        clean_build = True
+        if 'clean_build' in self.action:
+            clean_build = self.action['clean_build']
+        self.skip_clean = self.skip_clean or not clean_build
+
         self.checkout_branch(self.project['branch'],
                              stdout=stdout, stderr=stdout)
         return self.dispatch(self.project['branch'],
@@ -1148,8 +1187,7 @@ class CompatActionBuilder(ActionBuilder):
                  only_latest_versions,
                  project_cache_path,
                  time_reporter,
-                 override_swift_exec,
-                 action, version, project):
+                 override_swift_exec):
         super(CompatActionBuilder, self).__init__(
             swiftc, swift_version, swift_branch, job_type,
             sandbox_profile_xcodebuild,
@@ -1161,10 +1199,8 @@ class CompatActionBuilder(ActionBuilder):
             project_cache_path,
             time_reporter,
             override_swift_exec,
-            action, project
         )
         self.only_latest_versions = only_latest_versions
-        self.version = version
 
     def dispatch(self, identifier, stdout=sys.stdout, stderr=sys.stderr):
         if self.only_latest_versions:
@@ -1195,7 +1231,27 @@ class CompatActionBuilder(ActionBuilder):
         else:
             return self.succeeded(identifier)
 
-    def build(self, stdout=sys.stdout):
+    def _process_payload_int(self, project, version):
+        self.project = project
+        self.version = version
+
+
+    def build(self, target=None, build_payload=None, stdout=sys.stdout):
+        self._process_payload_int(*build_payload)
+        self.action=target
+
+        assert self.project is not None
+        assert self.action
+        assert self.version
+
+
+        # Make sure Xcode build folder is not cleaned by 'git' when
+        # 'clean_build' is explicitly set 'false'.
+        clean_build = True
+        if 'clean_build' in self.action:
+            clean_build = self.action['clean_build']
+        self.skip_clean = self.skip_clean or not clean_build
+
         scheme_target = dict_get(self.action, 'scheme', 'target', default=False)
         # FIXME: Why isn't this used?
         identifier = ': '.join(
