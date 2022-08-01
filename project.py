@@ -13,16 +13,17 @@
 
 """A library containing common project building functionality."""
 
+import argparse
+import filecmp
+import json
 import os
 import platform
 import re
-import shutil
-import filecmp
-import sys
-import json
-import time
-import argparse
 import shlex
+import shutil
+import sys
+import time
+from abc import abstractmethod
 from enum import Enum
 
 import common
@@ -749,14 +750,57 @@ def included_element(include_predicates, exclude_predicates, element):
                  for ip in include_predicates)))
 
 
-# ToDo : Convert this to a proper interface Builder which has all the methods in question
-class Factory(object):
-    @classmethod
-    def factory(cls, *factoryargs):
-        def init(*initargs):
-            return cls(*(factoryargs + initargs))
-        return init
+class Builder:
+    def __init__(self, include, exclude, verbose, subbuilder):
+        self.include = include
+        self.exclude = exclude
+        self.verbose = verbose
+        self.subbuilder = subbuilder
 
+    # This is inherently the alternative to using dynamic un-pickle-able factory methods. Rather than create a bunch
+    # of Builders with various targets passed to the constructor, lets create a very small set of builders (~4) and
+    # call build() on them for each target which needs to be built. We pass the target and payload directly into
+    # build() rather than the object constructors. This is because the many builder objects were identical except for
+    # their target/payload. This will make the objects pickle-able and reduce memory overhead significantly.
+    @abstractmethod
+    def _process_build_payload(self, payload):
+        """Process the payload for the associated build process. Save any internal variables you need here.
+
+        e.g. variable=payload['var_name']
+        """
+        raise NotImplementedError
+
+    @abstractmethod
+    def build(self, target=None, build_payload=None, stdout=sys.stdout):
+        """Build the intended target using the optional build_payload which contains extras used for building."""
+        raise NotImplementedError
+
+    @abstractmethod
+    def _subtarget_included(self, subtarget):
+        """Determine if the subtarget provided should be included in the build."""
+        raise NotImplementedError
+
+    @abstractmethod
+    def _get_subtargets(self, target):
+        """Get the list of subtargets to build() for the provided target. Returns a list of subtargets to build."""
+        raise NotImplementedError
+
+    @abstractmethod
+    def _get_subtarget_payload(self, target):
+        """Get the payload that should be provided to build() for the given subtarget.
+
+        Returns a dict of extras which are passed to build()."""
+        raise NotImplementedError
+
+    @abstractmethod
+    def _new_result(self):
+        """Create a new Result object to store build results in."""
+        raise NotImplementedError
+
+    @abstractmethod
+    def _output_fd(self, current_target, subtarget):
+        """Determine the file handle to output build log information to."""
+        raise NotImplementedError
 
 def dict_get(dictionary, *args, **kwargs):
     """Return first value in dictionary by iterating through keys"""
@@ -907,32 +951,37 @@ class VersionResult(ListResult):
     pass
 
 
-class ListBuilder:
-    def __init__(self, include, exclude, verbose, subbuilder):
-        self.include = include
-        self.exclude = exclude
-        self.verbose = verbose
-        self.subbuilder = subbuilder
+class ListBuilder(Builder):
+    def _process_build_payload(self, payload):
+        return
 
-    def included(self, subtarget):
+    def _subtarget_included(self, subtarget):
         return True
 
-    def get_subtargets(self, target):
+    def _get_subtargets(self, target):
         return target
 
-    def payload(self, target):
-        return []
+    def _get_subtarget_payload(self, target):
+        return {}
+
+    def _new_result(self):
+        return ListResult()
+
+    def _output_fd(self, current_target, subtarget):
+        return (None, sys.stdout)
 
     def build(self, target=None, build_payload=None, stdout=sys.stdout):
-        results = self.new_result()
-        for subtarget in self.get_subtargets(target):
-            if self.included(subtarget):
-                (log_filename, output_fd) = self.output_fd(target, subtarget)
+        results = self._new_result()
+        self._process_build_payload(build_payload)
+
+        for subtarget in self._get_subtargets(target):
+            if self._subtarget_included(subtarget):
+                (log_filename, output_fd) = self._output_fd(target, subtarget)
                 subbuilder_result = None
                 try:
                     subbuilder_result = self.subbuilder.build(
                         target=subtarget,
-                        build_payload=self.payload(target),
+                        build_payload=self._get_subtarget_payload(target),
                         stdout=output_fd
                     )
                     results.add(subbuilder_result)
@@ -946,33 +995,28 @@ class ListBuilder:
 
         return results
 
-    def new_result(self):
-        return ListResult()
-
-    def output_fd(self, current_target, subtarget):
-        return (None, sys.stdout)
-
 
 class ProjectListBuilder(ListBuilder):
-    def included(self, subtarget):
+    def _subtarget_included(self, subtarget):
         project = subtarget
         return (('platforms' not in project or
                  platform.system() in project['platforms']) and
                 included_element(self.include, self.exclude, project))
 
-    def new_result(self):
+    def _new_result(self):
         return ProjectListResult()
 
     def build(self, target=None, build_payload=None, stdout=sys.stdout):
+        #ToDo: Extract this upward (the imports)
         from concurrent import futures
         import multiprocessing
         thread_pool = futures.ProcessPoolExecutor(max_workers=multiprocessing.cpu_count())
         submited_futures = []
-        results = self.new_result()
+        results = self._new_result()
 
         # Parallel
-        for subtarget in self.get_subtargets(target):
-            if self.included(subtarget):
+        for subtarget in self._get_subtargets(target):
+            if self._subtarget_included(subtarget):
                 worker = thread_pool.submit(self.subbuilder.build, subtarget, build_payload, None)
                 submited_futures.append(worker)
         # ###################################
@@ -986,46 +1030,46 @@ class ProjectListBuilder(ListBuilder):
 
 
 class ProjectBuilder(ListBuilder):
-    def payload(self, target):
-        return [target]
+    def _get_subtarget_payload(self, target):
+        return {
+            'project': target,
+        }
 
-    def included(self, subtarget):
+    def _subtarget_included(self, subtarget):
         version = subtarget
         return included_element(self.include, self.exclude, version)
 
-    def get_subtargets(self, target):
+    def _get_subtargets(self, target):
         return target['compatibility']
 
-    def new_result(self):
+    def _new_result(self):
         return ProjectResult()
 
 
 class VersionBuilder(ListBuilder):
-    def included(self, subtarget):
+    def _subtarget_included(self, subtarget):
         action = subtarget
         return included_element(self.include, self.exclude, action)
 
-    def new_result(self):
+    def _new_result(self):
         return VersionResult()
 
-    def get_subtargets(self, target):
+    def _get_subtargets(self, target):
         return self.project['actions']
 
-    def _process_payload(self, project):
-        self.project = project
+    def _process_build_payload(self, payload):
+        self.project = payload['project']
 
-    def build(self, target=None, build_payload=None, stdout=sys.stdout):
-        # Process the build payload before starting work. Capture the project.
-        self._process_payload(*build_payload)
+    def _get_subtarget_payload(self, target):
+        return {
+            'project': self.project,
+            'version': target
+        }
+
+    def _output_fd(self, current_target, subtarget):
+        # Ensure the payload was processed correctly
         assert self.project is not None
 
-        # Call super method
-        super().build(target=target, build_payload=self.payload(target), stdout=stdout)
-
-    def payload(self, target):
-        return [self.project, target]
-
-    def output_fd(self, current_target, subtarget):
         scheme_target = dict_get(subtarget, 'scheme', 'target', default=False)
         destination = dict_get(subtarget, 'destination', default=False)
         project_identifier = dict_get(self.project, 'path', default="") + " " + \
@@ -1045,7 +1089,7 @@ class VersionBuilder(ListBuilder):
         return (log_filename, fd)
 
 
-class ActionBuilder:
+class ActionBuilder(Builder):
     def __init__(self, swiftc, swift_version, swift_branch, job_type,
                  sandbox_profile_xcodebuild,
                  sandbox_profile_package,
@@ -1079,16 +1123,12 @@ class ActionBuilder:
     def init(self):
         pass
 
-    def _process_payload(self, project, ):
-        self.project = project
+    def _process_build_payload(self, payload):
+        self.project = payload['project']
 
     def build(self, target=None, build_payload=None, stdout=sys.stdout):
-        # Process the build payload before starting work. Capture the project and action.
-        self._process_payload(*build_payload)
+        self._process_build_payload(build_payload)
         self.action = target
-
-        assert self.project is not None
-        assert self.action
 
         clean_build = True
         if 'clean_build' in self.action:
@@ -1231,19 +1271,13 @@ class CompatActionBuilder(ActionBuilder):
         else:
             return self.succeeded(identifier)
 
-    def _process_payload_int(self, project, version):
-        self.project = project
-        self.version = version
-
+    def _process_build_payload(self, payload):
+        self.project = payload['project']
+        self.version = payload['version']
 
     def build(self, target=None, build_payload=None, stdout=sys.stdout):
-        self._process_payload_int(*build_payload)
+        self._process_build_payload(build_payload)
         self.action=target
-
-        assert self.project is not None
-        assert self.action
-        assert self.version
-
 
         # Make sure Xcode build folder is not cleaned by 'git' when
         # 'clean_build' is explicitly set 'false'.
@@ -1482,7 +1516,7 @@ class IncrementalActionBuilder(ActionBuilder):
                 return True
         return False
 
-    def build(self, stdout=sys.stdout):
+    def build(self, target=None, build_payload=None, stdout=sys.stdout):
         action_result = ActionResult(ResultEnum.PASS, "")
         try:
             if 'incremental' in self.project:
