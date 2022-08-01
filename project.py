@@ -1019,10 +1019,12 @@ class ProjectListBuilder(ListBuilder):
         submited_futures = []
         results = self._new_result()
 
+        common.debug_print(f"Building projects across {self.processes} parallel processes", stderr=stdout)
+
         # For each project that needs building, submit a future to build said project
         for subtarget in self._get_subtargets(target):
             if self._subtarget_included(subtarget):
-                worker = thread_pool.submit(self.subbuilder.build, subtarget, build_payload, None)
+                worker = thread_pool.submit(self.subbuilder.build, subtarget, build_payload)
                 submited_futures.append(worker)
 
         # Cleanup in main process
