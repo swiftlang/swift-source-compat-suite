@@ -17,7 +17,7 @@ import sys
 import os
 import argparse
 import platform
-
+import time
 import common
 
 script_dir = os.path.abspath(os.path.dirname(__file__))
@@ -35,7 +35,10 @@ def main():
         common.clone_repos()
 
     if not args.skip_build:
+        start_build_t = time.time()
         build_swift_toolchain(workspace, args)
+        end_build_t = time.time()
+        print(f"SWIFT TC BUILD TIME (s) = {end_build_t - start_build_t}")
 
     additional_runner_args = []
     if args.clang_source_path or args.clang:
@@ -45,12 +48,14 @@ def main():
         if clang:
             additional_runner_args = ['--clang', clang]
 
+    runner_start_t = time.time()
     if not args.skip_runner:
         if args.test_incremental:
             execute_build_incremental(workspace, args, additional_runner_args)
         else:
             execute_runner(workspace, args, additional_runner_args)
-
+    runner_end_t = time.time()
+    print(f"COMPAT RUNNER TIME (s) = {runner_end_t - runner_start_t}")
     return 0
 
 
