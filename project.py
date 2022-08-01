@@ -16,6 +16,7 @@
 import argparse
 import filecmp
 import json
+import multiprocessing
 import os
 import platform
 import re
@@ -24,6 +25,7 @@ import shutil
 import sys
 import time
 from abc import abstractmethod
+from concurrent import futures
 from enum import Enum
 
 import common
@@ -997,6 +999,11 @@ class ListBuilder(Builder):
 
 
 class ProjectListBuilder(ListBuilder):
+    """Build a list of projects using multiple processes if specified."""
+    def __init__(self, include, exclude, verbose, subbuilder, processes=multiprocessing.cpu_count()):
+        super().__init__(include, exclude, verbose, subbuilder)
+        self.processes = processes
+
     def _subtarget_included(self, subtarget):
         project = subtarget
         return (('platforms' not in project or
@@ -1007,20 +1014,17 @@ class ProjectListBuilder(ListBuilder):
         return ProjectListResult()
 
     def build(self, target=None, build_payload=None, stdout=sys.stdout):
-        #ToDo: Extract this upward (the imports)
-        from concurrent import futures
-        import multiprocessing
-        thread_pool = futures.ProcessPoolExecutor(max_workers=multiprocessing.cpu_count())
+        # Setup process pool to submit work to
+        thread_pool = futures.ProcessPoolExecutor(max_workers=self.processes)
         submited_futures = []
         results = self._new_result()
 
-        # Parallel
+        # For each project that needs building, submit a future to build said project
         for subtarget in self._get_subtargets(target):
             if self._subtarget_included(subtarget):
                 worker = thread_pool.submit(self.subbuilder.build, subtarget, build_payload, None)
                 submited_futures.append(worker)
-        # ###################################
-        #
+
         # Cleanup in main process
         futures.wait(submited_futures)
         for _future in submited_futures:

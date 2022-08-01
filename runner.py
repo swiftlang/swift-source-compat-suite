@@ -15,51 +15,11 @@
 
 import argparse
 import json
-import multiprocessing
 import sys
 
 import common
 import project
 
-from concurrent import futures
-
-
-# We create factories in the async function rather then pass them in because they are not pickle-able.
-# A better solution should be developed.
-# def build_project_async(_project, args, xcodebuild_flags, time_reporter):
-#     action_builder = project.CompatActionBuilder.factory(
-#         args.swiftc,
-#         args.swift_version,
-#         args.swift_branch,
-#         args.job_type,
-#         args.sandbox_profile_xcodebuild,
-#         args.sandbox_profile_package,
-#         args.add_swift_flags,
-#         xcodebuild_flags,
-#         args.skip_clean,
-#         args.build_config,
-#         args.strip_resource_phases,
-#         args.only_latest_versions,
-#         args.project_cache_path,
-#         time_reporter,
-#         args.override_swift_exec
-#     )
-#
-#     version_builder = project.VersionBuilder.factory(
-#         args.include_actions,
-#         args.exclude_actions,
-#         args.verbose,
-#         action_builder,
-#     )
-#
-#     project_builder = project.ProjectBuilder(
-#         args.include_versions,
-#         args.exclude_versions,
-#         args.verbose,
-#         version_builder,
-#         target=_project
-#     )
-#     return project_builder.build_subtarget()
 
 def parse_args():
     """Return parsed command line arguments."""
@@ -73,9 +33,6 @@ def parse_args():
 
 def main():
     """Execute specified indexed project actions."""
-    thread_pool = futures.ProcessPoolExecutor(max_workers=multiprocessing.cpu_count())
-    submited_futures = []
-
     args = parse_args()
 
     if args.default_timeout:
@@ -106,7 +63,7 @@ def main():
         args.job_type,
         args.sandbox_profile_xcodebuild,
         args.sandbox_profile_package,
-        args.add_swift_flags,
+        swift_flags,
         xcodebuild_flags,
         args.skip_clean,
         args.build_config,
@@ -139,26 +96,6 @@ def main():
 
     # Setup results object
     results = project_list_builder.build(target=index, build_payload=None)
-
-    ##### MOVE ALL THIS
-    # ###################################
-    # # PARALLELIZE builds for projects across worker pool. We parallelize at the project level to avoid conflicting
-    # # git operations and to avoid the need for multiple source checkouts of a project.
-    # for _project in project_list_builder.subtargets():
-    #     # Call async worker function. Within that function
-    #     #   1.) Create ProjectBuilder Object which is primed for building
-    #     #   2.) Build the project and all associated versions
-    #     #   3.) Return the result object which will be examined later
-    #     if not project_list_builder.included(_project):
-    #         continue
-    #     worker = thread_pool.submit(build_project_async, _project, args, xcodebuild_flags, time_reporter)
-    #     submited_futures.append(worker)
-    # ###################################
-    #
-    # # Cleanup in main process
-    # futures.wait(submited_futures)
-    # for _future in submited_futures:
-    #     results.add(_future.result())
 
     common.debug_print(str(results))
     return 0 if results.result in [project.ResultEnum.PASS,
