@@ -749,12 +749,22 @@ def included_element(include_predicates, exclude_predicates, element):
                  for ip in include_predicates)))
 
 
-class Factory(object):
+class FactoryBuilder:
+    """Class used by a Factory to encapsulate the class needed to build + the arguments.
+
+    This allows the Factory to be pickle-able"""
+    def __init__(self, builder_class, factoryargs):
+        self.builder = builder_class
+        self.factory_args = factoryargs
+
+    def initialize(self, *initargs):
+        return self.builder(*(self.factory_args + initargs))
+
+
+class Factory:
     @classmethod
     def factory(cls, *factoryargs):
-        def init(*initargs):
-            return cls(*(factoryargs + initargs))
-        return init
+        return FactoryBuilder(cls, factoryargs)
 
 
 def dict_get(dictionary, *args, **kwargs):
@@ -930,7 +940,7 @@ class ListBuilder(Factory):
                 (log_filename, output_fd) = self.output_fd(subtarget)
                 subbuilder_result = None
                 try:
-                    subbuilder_result = self.subbuilder(*([subtarget] + self.payload())).build(
+                    subbuilder_result = self.subbuilder.initialize(*([subtarget] + self.payload())).build(
                         stdout=output_fd
                     )
                     results.add(subbuilder_result)
