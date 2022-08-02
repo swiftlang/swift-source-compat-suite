@@ -1256,12 +1256,11 @@ class CompatActionBuilder(ActionBuilder):
                       key=lambda x: [float(y) for y in x['version'].split('.')])[0]['version']:
                 return None
 
-        if not self.swift_version:
-            self.swift_version = self.version['version']
+        swift_version = self.swift_version if self.swift_version is not None else self.version['version']
         try:
             dispatch(self.root_path, self.project, self.action,
                      self.swiftc,
-                     self.swift_version,
+                     swift_version,
                      self.sandbox_profile_xcodebuild,
                      self.sandbox_profile_package,
                      self.added_swift_flags,
