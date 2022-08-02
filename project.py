@@ -12,7 +12,7 @@
 # ===----------------------------------------------------------------------===
 
 """A library containing common project building functionality."""
-
+import multiprocessing
 import os
 import platform
 import re
@@ -23,6 +23,7 @@ import json
 import time
 import argparse
 import shlex
+from concurrent import futures
 from enum import Enum
 
 import common
@@ -970,6 +971,31 @@ class ProjectListBuilder(ListBuilder):
 
     def new_result(self):
         return ProjectListResult()
+
+    def build(self, stdout=sys.stdout):
+        # Setup process pool to submit work to
+        processes = multiprocessing.cpu_count()
+        thread_pool = futures.ProcessPoolExecutor(max_workers=processes)
+        submited_futures = []
+
+        # Create results object to store results
+        results = self.new_result()
+
+        common.debug_print(f"Building projects across {processes} parallel processes", stderr=stdout)
+
+        # For each project that needs building, submit a future to build said project
+        for subtarget in self.subtargets():
+            if self.included(subtarget):
+                project_subbuilder = self.subbuilder.initialize(*([subtarget] + self.payload()))
+                worker = thread_pool.submit(project_subbuilder.build)
+                submited_futures.append(worker)
+
+        # Cleanup in main process
+        futures.wait(submited_futures)
+        for _future in submited_futures:
+            results.add(_future.result())
+
+        return results
 
 
 class ProjectBuilder(ListBuilder):
