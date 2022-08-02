@@ -2573,7 +2573,7 @@
             {
                 "issue": "rdar://91670339",
                 "compatibility": ["4.0"],
-                "branch": ["main"],
+                "branch": ["main", "release/5.7"],
                 "job": ["source-compat"]
             }
         ]
