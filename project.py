@@ -84,7 +84,9 @@ class XcodeTarget(ProjectTarget):
 
     def __init__(self, swiftc, project, target, destination, pretargets, env,
                  added_xcodebuild_flags, is_workspace, has_scheme,
-                 clean_build):
+                 clean_build,
+                 stdout,
+                 stderr):
         self._swiftc = swiftc
         self._project = project
         self._target = target
@@ -95,6 +97,8 @@ class XcodeTarget(ProjectTarget):
         self._is_workspace = is_workspace
         self._has_scheme = has_scheme
         self._clean_build = clean_build
+        self.stdout = stdout,
+        self.stderr = stderr
 
     @property
     def project_param(self):
@@ -114,7 +118,10 @@ class XcodeTarget(ProjectTarget):
         try:
             build_parent_dir = common.check_execute_output([
                 'git', '-C', os.path.dirname(self._project),
-                'rev-parse', '--show-toplevel']).rstrip()
+                'rev-parse', '--show-toplevel'],
+                stdout=self.stdout,
+                stderr=self.stderr,
+            ).rstrip()
         except common.ExecuteCommandFailure as error:
             build_parent_dir = os.path.dirname(self._project)
 
@@ -157,7 +164,10 @@ class XcodeTarget(ProjectTarget):
         try:
             build_parent_dir = common.check_execute_output([
                 'git', '-C', os.path.dirname(self._project),
-                'rev-parse', '--show-toplevel']).rstrip()
+                'rev-parse', '--show-toplevel'],
+                stdout=self.stdout,
+                stderr=self.stderr,
+            ).rstrip()
         except common.ExecuteCommandFailure as error:
             build_parent_dir = os.path.dirname(self._project)
 
@@ -470,7 +480,9 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
                         initial_xcodebuild_flags + added_xcodebuild_flags,
                         is_workspace,
                         has_scheme,
-                        clean_build)
+                        clean_build,
+                        stdout,
+                        stderr)
         if should_strip_resource_phases:
             strip_resource_phases(os.path.join(root_path, repo['path']),
                                   stdout=stdout, stderr=stderr)
@@ -981,14 +993,16 @@ class ProjectListBuilder(ListBuilder):
         # Create results object to store results
         results = self.new_result()
 
-        common.debug_print(f"Building projects across {processes} parallel processes", stderr=stdout)
+        projects_to_build = [subtarget for subtarget in self.subtargets() if self.included(subtarget)]
+        common.debug_print(
+            f"Building {len(projects_to_build)} projects across {processes} parallel processes\n"
+        )
 
         # For each project that needs building, submit a future to build said project
-        for subtarget in self.subtargets():
-            if self.included(subtarget):
-                project_subbuilder = self.subbuilder.initialize(*([subtarget] + self.payload()))
-                worker = thread_pool.submit(project_subbuilder.build)
-                submited_futures.append(worker)
+        for project in projects_to_build:
+            project_subbuilder = self.subbuilder.initialize(*([project] + self.payload()))
+            worker = thread_pool.submit(project_subbuilder.build)
+            submited_futures.append(worker)
 
         # Cleanup in main process
         futures.wait(submited_futures)
