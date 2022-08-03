@@ -682,6 +682,10 @@ def add_arguments(parser):
     parser.add_argument("--job-type",
                         help="The type of job to run. This influences which projects are XFailed, for example the stress tester tracks its XFails under a different job type. Defaults to 'source-compat'.",
                         default='source-compat')
+    parser.add_argument('--process-count',
+                        type=int,
+                        help='Number of parallel process to spawn when building projects',
+                        default=multiprocessing.cpu_count())
 
 def add_minimal_arguments(parser):
     """Add common arguments to parser."""
@@ -975,6 +979,10 @@ class ListBuilder(Factory):
 
 
 class ProjectListBuilder(ListBuilder):
+    def __init__(self, include, exclude, verbose,  process_count, subbuilder, target):
+        super().__init__(include, exclude, verbose, subbuilder, target)
+        self.processes = process_count
+
     def included(self, subtarget):
         project = subtarget
         return (('platforms' not in project or
@@ -986,27 +994,26 @@ class ProjectListBuilder(ListBuilder):
 
     def build(self, stdout=sys.stdout):
         # Setup process pool to submit work to
-        processes = multiprocessing.cpu_count()
-        thread_pool = futures.ProcessPoolExecutor(max_workers=processes)
-        submited_futures = []
+        thread_pool = futures.ProcessPoolExecutor(max_workers=self.processes)
+        submitted_futures = []
 
         # Create results object to store results
         results = self.new_result()
 
         projects_to_build = [subtarget for subtarget in self.subtargets() if self.included(subtarget)]
         common.debug_print(
-            f"Building {len(projects_to_build)} projects across {processes} parallel processes\n"
+            f"Building {len(projects_to_build)} projects across {self.processes} parallel processes\n"
         )
 
         # For each project that needs building, submit a future to build said project
         for project in projects_to_build:
             project_subbuilder = self.subbuilder.initialize(*([project] + self.payload()))
             worker = thread_pool.submit(project_subbuilder.build)
-            submited_futures.append(worker)
+            submitted_futures.append(worker)
 
         # Cleanup in main process
-        futures.wait(submited_futures)
-        for _future in submited_futures:
+        futures.wait(submitted_futures)
+        for _future in submitted_futures:
             results.add(_future.result())
 
         return results
