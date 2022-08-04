@@ -148,7 +148,7 @@ class XcodeTarget(ProjectTarget):
         if self._destination == 'generic/platform=watchOS':
             command += ['ARCHS=armv7k']
         if self._destination == 'generic/platform=iOS':
-            command += ["EXCLUDED_ARCHS='armv7 armv7s'"]
+            command += ['EXCLUDED_ARCHS=armv7 armv7s']
 
         return command
 
