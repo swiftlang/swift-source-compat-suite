@@ -9,6 +9,9 @@ integration system](https://ci.swift.org), allowing Swift compiler developers to
 understand the compatibility impact their changes have on real-world Swift
 projects.
 
+## Python Support
+The Source compatibility suite currently supports Python 3.8+. You may experience performance issues if you attempt to execute any of the associated files with a lesser version of Python 3.
+
 ## Current List of Projects
 
 The <a href="https://swift.org/source-compatibility/#current-list-of-projects">current list of projects</a> can be viewed on Swift.org.
