@@ -12,7 +12,7 @@
 # ===----------------------------------------------------------------------===
 
 """A library containing common project building functionality."""
-
+import multiprocessing
 import os
 import platform
 import re
@@ -23,6 +23,7 @@ import json
 import time
 import argparse
 import shlex
+from concurrent import futures
 from enum import Enum
 
 import common
@@ -83,7 +84,9 @@ class XcodeTarget(ProjectTarget):
 
     def __init__(self, swiftc, project, target, destination, pretargets, env,
                  added_xcodebuild_flags, is_workspace, has_scheme,
-                 clean_build):
+                 clean_build,
+                 stdout,
+                 stderr):
         self._swiftc = swiftc
         self._project = project
         self._target = target
@@ -94,6 +97,8 @@ class XcodeTarget(ProjectTarget):
         self._is_workspace = is_workspace
         self._has_scheme = has_scheme
         self._clean_build = clean_build
+        self.stdout = stdout,
+        self.stderr = stderr
 
     @property
     def project_param(self):
@@ -113,7 +118,10 @@ class XcodeTarget(ProjectTarget):
         try:
             build_parent_dir = common.check_execute_output([
                 'git', '-C', os.path.dirname(self._project),
-                'rev-parse', '--show-toplevel']).rstrip()
+                'rev-parse', '--show-toplevel'],
+                stdout=self.stdout,
+                stderr=self.stderr,
+            ).rstrip()
         except common.ExecuteCommandFailure as error:
             build_parent_dir = os.path.dirname(self._project)
 
@@ -158,7 +166,10 @@ class XcodeTarget(ProjectTarget):
         try:
             build_parent_dir = common.check_execute_output([
                 'git', '-C', os.path.dirname(self._project),
-                'rev-parse', '--show-toplevel']).rstrip()
+                'rev-parse', '--show-toplevel'],
+                stdout=self.stdout,
+                stderr=self.stderr,
+            ).rstrip()
         except common.ExecuteCommandFailure as error:
             build_parent_dir = os.path.dirname(self._project)
 
@@ -471,7 +482,9 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
                         initial_xcodebuild_flags + added_xcodebuild_flags,
                         is_workspace,
                         has_scheme,
-                        clean_build)
+                        clean_build,
+                        stdout,
+                        stderr)
         if should_strip_resource_phases:
             strip_resource_phases(os.path.join(root_path, repo['path']),
                                   stdout=stdout, stderr=stderr)
@@ -671,6 +684,10 @@ def add_arguments(parser):
     parser.add_argument("--job-type",
                         help="The type of job to run. This influences which projects are XFailed, for example the stress tester tracks its XFails under a different job type. Defaults to 'source-compat'.",
                         default='source-compat')
+    parser.add_argument('--process-count',
+                        type=int,
+                        help='Number of parallel process to spawn when building projects',
+                        default=multiprocessing.cpu_count())
 
 def add_minimal_arguments(parser):
     """Add common arguments to parser."""
@@ -751,12 +768,22 @@ def included_element(include_predicates, exclude_predicates, element):
                  for ip in include_predicates)))
 
 
-class Factory(object):
+class FactoryBuilder:
+    """Class used by a Factory to encapsulate the class needed to build + the arguments.
+
+    This allows the Factory to be pickle-able"""
+    def __init__(self, builder_class, factoryargs):
+        self.builder = builder_class
+        self.factory_args = factoryargs
+
+    def initialize(self, *initargs):
+        return self.builder(*(self.factory_args + initargs))
+
+
+class Factory:
     @classmethod
     def factory(cls, *factoryargs):
-        def init(*initargs):
-            return cls(*(factoryargs + initargs))
-        return init
+        return FactoryBuilder(cls, factoryargs)
 
 
 def dict_get(dictionary, *args, **kwargs):
@@ -932,7 +959,7 @@ class ListBuilder(Factory):
                 (log_filename, output_fd) = self.output_fd(subtarget)
                 subbuilder_result = None
                 try:
-                    subbuilder_result = self.subbuilder(*([subtarget] + self.payload())).build(
+                    subbuilder_result = self.subbuilder.initialize(*([subtarget] + self.payload())).build(
                         stdout=output_fd
                     )
                     results.add(subbuilder_result)
@@ -954,6 +981,10 @@ class ListBuilder(Factory):
 
 
 class ProjectListBuilder(ListBuilder):
+    def __init__(self, include, exclude, verbose,  process_count, subbuilder, target):
+        super().__init__(include, exclude, verbose, subbuilder, target)
+        self.processes = process_count
+
     def included(self, subtarget):
         project = subtarget
         return (('platforms' not in project or
@@ -962,6 +993,32 @@ class ProjectListBuilder(ListBuilder):
 
     def new_result(self):
         return ProjectListResult()
+
+    def build(self, stdout=sys.stdout):
+        # Setup process pool to submit work to
+        thread_pool = futures.ProcessPoolExecutor(max_workers=self.processes)
+        submitted_futures = []
+
+        # Create results object to store results
+        results = self.new_result()
+
+        projects_to_build = [subtarget for subtarget in self.subtargets() if self.included(subtarget)]
+        common.debug_print(
+            f"Building {len(projects_to_build)} projects across {self.processes} parallel processes\n"
+        )
+
+        # For each project that needs building, submit a future to build said project
+        for project in projects_to_build:
+            project_subbuilder = self.subbuilder.initialize(*([project] + self.payload()))
+            worker = thread_pool.submit(project_subbuilder.build)
+            submitted_futures.append(worker)
+
+        # Cleanup in main process
+        futures.wait(submitted_futures)
+        for _future in submitted_futures:
+            results.add(_future.result())
+
+        return results
 
 
 class ProjectBuilder(ListBuilder):

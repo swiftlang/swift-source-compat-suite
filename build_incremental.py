@@ -39,6 +39,7 @@ def main():
         args.include_repos,
         args.exclude_repos,
         args.verbose,
+        args.process_count,
         project.ProjectBuilder.factory(
             args.include_actions,
             args.exclude_actions,
