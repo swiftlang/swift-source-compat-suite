@@ -326,7 +326,7 @@
     "actions": [
       {
         "action": "BuildXcodeProjectTarget",
-        "project": "BreadBuddy/BreadBuddy.xcodeproj",
+        "project": "BreadBuddy.xcodeproj",
         "target": "BreadBuddy",
         "destination": "generic/platform=iOS",
         "configuration": "Release"
