@@ -27,6 +27,7 @@ DEFAULT_EXECUTE_TIMEOUT = 10*60
 branches = {
     'main': {
         'llvm-project': 'stable/20220421',
+        'swift-llvm-bindings': 'stable/20220421',
         'swift': 'main',
         'cmark': 'gfm',
         'ninja': 'release',
@@ -171,8 +172,8 @@ def clone_repos():
     >>> check_execute(['rm', '-rf', tmpdir])
     0
     >>> repos #doctest: +NORMALIZE_WHITESPACE
-    ['llvm-project', 'cmark', 'llbuild', 'ninja', 'swift',
-     'swift-corelibs-foundation', 'swift-corelibs-libdispatch',
+    ['llvm-project', 'swift-llvm-bindings', 'cmark', 'llbuild', 'ninja',
+     'swift', 'swift-corelibs-foundation', 'swift-corelibs-libdispatch',
      'swift-corelibs-xctest', 'swiftpm', 'swift-experimental-string-processing']
     """
     cpu_count = multiprocessing.cpu_count()
@@ -251,6 +252,14 @@ def clone_repos():
             branches[swift_branch]['swift-experimental-string-processing'], workspace
         ),
     ]
+    if swift_branch not in ['release/5.7', 'release/5.6',
+                            'release/5.5', 'release/5.4']:
+        repos += [
+            '{} git@github.com:apple/swift-llvm-bindings.git '
+            '{}/swift-llvm-bindings '.format(
+                branches[swift_branch]['swift-llvm-bindings'], workspace
+            ),
+        ]
 
     process0 = subprocess.Popen([
         'xargs', '-P%s' % cpu_count, '-n3',
