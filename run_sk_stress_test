@@ -299,6 +299,8 @@ class StressTesterRunner(object):
           '--job-type', 'stress-tester',
           '--default-timeout', str(-1),
           '--only-latest-versions',
+          # Don't build projects in parallel because stress testing a single project already utilises the CPU 100% and stress testing multiple causes timeouts.
+          '--process-count', '1',
           # archs override is set to arm64 for generic/iOS actions that would otherwise invoke the stress tester for both arm64 and armv7
           '--add-xcodebuild-flags', 'ARCHS={archs_override}']
 
