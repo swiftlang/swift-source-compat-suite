@@ -3382,7 +3382,7 @@
     "compatibility": [
       {
         "version": "5.0",
-        "commit": "ae364a28f0eaf368b6a538a224d9ab20d88562c7"
+        "commit": "2624562948fd284a3e64ad9e96706f51d9a6a6e9"
       }
     ],
     "platforms": [
@@ -3392,15 +3392,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "swiftpm",
-        "xfail": [
-            {
-                "issue": "rdar://96437311",
-                "compatibility": "5.0",
-                "branch": ["main"],
-                "job": ["source-compat"]
-            }
-        ]
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
