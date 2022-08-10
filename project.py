@@ -994,6 +994,16 @@ class ProjectListBuilder(ListBuilder):
     def new_result(self):
         return ProjectListResult()
 
+    def start_process(self, project_subbuilder, default_timeout):
+        """
+        Sets the default timeout in the global variable of a newly started subprocess 
+        and builds `project_subbuilder` afterwards.
+        If we invoked project_subbilder.build() immediately in the new process, it would
+        not inherit the default timeout from the parent process.
+        """
+        common.set_default_execute_timeout(default_timeout)
+        project_subbuilder.build()
+
     def build(self, stdout=sys.stdout):
         # Setup process pool to submit work to
         thread_pool = futures.ProcessPoolExecutor(max_workers=self.processes)
@@ -1010,7 +1020,7 @@ class ProjectListBuilder(ListBuilder):
         # For each project that needs building, submit a future to build said project
         for project in projects_to_build:
             project_subbuilder = self.subbuilder.initialize(*([project] + self.payload()))
-            worker = thread_pool.submit(project_subbuilder.build)
+            worker = thread_pool.submit(self.start_process, project_subbuilder, common.DEFAULT_EXECUTE_TIMEOUT)
             submitted_futures.append(worker)
 
         # Cleanup in main process
