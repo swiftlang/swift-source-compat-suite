@@ -3095,10 +3095,6 @@
     "maintainer": "cbenfield@apple.com",
     "compatibility": [
       {
-        "version": "4.2",
-        "commit": "f5448fbbc24495a6659ef64df4dd3c1fc4a0fb11"
-      },
-      {
         "version": "5.0",
         "commit": "f5448fbbc24495a6659ef64df4dd3c1fc4a0fb11"
       }
@@ -3111,15 +3107,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift-nio/issues/2241",
-            "compatibility": ["4.2"],
-            "branch": ["main", "release/5.6", "release/5.7"],
-            "job": ["source-compat"]
-          }
-        ]
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
