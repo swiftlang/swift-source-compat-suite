@@ -3096,11 +3096,11 @@
     "compatibility": [
       {
         "version": "4.2",
-        "commit": "381fd99df2a2a95a13172b4b18880d4217274e23"
+        "commit": "f5448fbbc24495a6659ef64df4dd3c1fc4a0fb11"
       },
       {
         "version": "5.0",
-        "commit": "da23f751eee0d8287cc62824f6e0bc1f3ba2c0b6"
+        "commit": "f5448fbbc24495a6659ef64df4dd3c1fc4a0fb11"
       }
     ],
     "platforms": [
@@ -3114,9 +3114,9 @@
         "tags": "sourcekit-disabled swiftpm",
         "xfail": [
           {
-            "issue": "rdar://81180448",
-            "compatibility": ["4.2", "5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
+            "issue": "TODO-CREATE-A-NEW-RADAR",
+            "compatibility": ["4.2"],
+            "branch": ["main", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           }
         ]
