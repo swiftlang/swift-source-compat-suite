@@ -1002,7 +1002,7 @@ class ProjectListBuilder(ListBuilder):
         not inherit the default timeout from the parent process.
         """
         common.set_default_execute_timeout(default_timeout)
-        project_subbuilder.build()
+        return project_subbuilder.build()
 
     def build(self, stdout=sys.stdout):
         # Setup process pool to submit work to
