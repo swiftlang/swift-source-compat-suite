@@ -27,7 +27,7 @@
             "issue": "https://github.com/apple/swift/issues/60577",
             "compatibility": ["5.0"],
             "branch": ["main"],
-            "job": ["stress-tester"]
+            "job": ["source-compat", "stress-tester"]
           }
         ]
       }
