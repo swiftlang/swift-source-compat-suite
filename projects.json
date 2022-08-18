@@ -28,6 +28,12 @@
             "compatibility": ["5.0"],
             "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
+          },
+          {
+            "issue": "https://github.com/apple/swift/issues/60577",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["stress-tester"]
           }
         ]
       }
