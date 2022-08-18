@@ -24,12 +24,6 @@
         "tags": "sourcekit sourcekit-smoke",
         "xfail": [
           {
-            "issue": "https://github.com/apple/swift/issues/57442",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
-            "job": ["source-compat"]
-          },
-          {
             "issue": "https://github.com/apple/swift/issues/60577",
             "compatibility": ["5.0"],
             "branch": ["main"],
@@ -311,6 +305,33 @@
         "workspace": "Bow.xcodeproj",
         "scheme": "Bow",
         "destination": "platform=iOS Simulator,name=iPhone XR"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/glimpseio/BricBrac",
+    "path": "BricBrac",
+    "branch": "main",
+    "maintainer": "marc@glimpse.io",
+    "compatibility": [
+      {
+        "version": "5.3",
+        "commit": "92447f2c02b62c373f60d8e76e684a645fcd570a"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
       }
     ]
   },
@@ -1612,15 +1633,7 @@
         "target": "MovieSwift",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/57442",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
-            "job": ["source-compat"]
-          }
-        ]
+        "tags": "sourcekit sourcekit-smoke"
       }
     ]
   },
