@@ -680,7 +680,7 @@
     "compatibility": [
       {
         "version": "5.0",
-        "commit": "513009659ac98941d057b5e35b783da4828aa933"
+        "commit": "96594678095747b012ffd2899a82c688cbd88c14"
       }
     ],
     "platforms": [
@@ -700,9 +700,9 @@
                 "job": ["source-compat"]
             },
             {
-                "issue": "https://github.com/apple/swift/issues/57756",
+                "issue": "https://github.com/apple/swift/issues/60627",
                 "compatibility": "5.0",
-                "branch": ["main", "release/5.6", "release/5.7"],
+                "branch": ["main"],
                 "job": ["source-compat"]
             }
         ]
