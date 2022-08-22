@@ -21,7 +21,7 @@
         "target": "ACHNBrowserUI",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke",
+        "tags": "sourcekit",
         "xfail": [
           {
             "issue": "https://github.com/apple/swift/issues/60577",
