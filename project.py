@@ -808,9 +808,10 @@ class ResultEnum(Enum):
 
 
 class Result:
-    def __init__(self, result, text):
+    def __init__(self, result, text, logfile=None):
         self.result = result
         self.text = text
+        self.logfile = logfile
 
     def __str__(self):
         return self.result.name
@@ -1013,6 +1014,7 @@ class ListBuilder(Factory):
                     subbuilder_result = self.subbuilder.initialize(*([subtarget] + self.payload())).build(
                         stdout=output_fd
                     )
+                    subbuilder_result.logfile = log_filename
                     results.add(subbuilder_result)
                 finally:
                     if output_fd is not sys.stdout:
