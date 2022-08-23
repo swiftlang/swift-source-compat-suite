@@ -961,23 +961,24 @@ class ProjectListResult(ListResult):
             # Take everything after FAIL:
             junit_case_name = _fail.text.split('FAIL:')[1].strip()
 
-            test_cases.append(
-                TestCase(name=junit_case_name,
-                         stderr=f'This project failed to build. <ATTACH BUILD LOG>')
-            )
+            test_case = TestCase(name=junit_case_name)
+            with open(f'{_fail}_{_fail.logfile}') as build_log:
+                test_case.add_failure_info(message=f'This project failed to build.',
+                                           output=build_log.read())
+            test_cases.append(test_case)
 
         for _upass in upasses:
             # Take everything after the first ',' (after the linked issue):
             junit_case_name = _upass.text.split(',', 1)[1].strip()
 
-            test_cases.append(
-                TestCase(name=junit_case_name,
-                         stderr=f'This project built succesfully, which was unexpected')
-            )
+            test_case = TestCase(name=junit_case_name)
+            test_case.add_failure_info(message='This project built successfully, which was unexpected')
+            test_cases.append(test_case)
 
         ts = TestSuite("Source Compat Project Builds", test_cases)
 
         return to_xml_report_string([ts])
+
 
 class ProjectResult(ListResult):
     pass
