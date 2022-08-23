@@ -25,6 +25,7 @@ import argparse
 import shlex
 from concurrent import futures
 from enum import Enum
+from junit_xml import to_xml_report_string, TestSuite, TestCase
 
 import common
 
@@ -508,7 +509,7 @@ def is_xfailed(xfail_args, compatible_version, platform, swift_branch, build_con
 
     def is_or_contains(spec, arg):
         return arg in spec if isinstance(spec, list) else spec == arg
-    
+
     def matches(spec):
         issue = spec['issue'].split()[0]
         current = {
@@ -926,6 +927,56 @@ class ProjectListResult(ListResult):
         output += '='*40
         return output
 
+    def xml_string(self):
+        xfails = [ar for ar in self.recursive_all()
+                  if ar.result == ResultEnum.XFAIL]
+        fails = [ar for ar in self.recursive_all()
+                 if ar.result == ResultEnum.FAIL]
+        upasses = [ar for ar in self.recursive_all()
+                   if ar.result == ResultEnum.UPASS]
+        passes = [ar for ar in self.recursive_all()
+                  if ar.result == ResultEnum.PASS]
+
+        test_cases = []
+
+        for _pass in passes:
+            # Take everything after PASS:
+            junit_case_name = _pass.text.split('PASS:')[1].strip()
+
+            test_cases.append(
+                TestCase(name=junit_case_name, stdout='This project passed. Emitting build log to save XML space')
+            )
+
+        for _xfail in xfails:
+            # Take everything after the first ',' (after the linked issue):
+            junit_case_name = _xfail.text.split(',', 1)[1].strip()
+
+            test_cases.append(
+                TestCase(name=junit_case_name,
+                         stdout=f'This project failed as expected. See {_xfail.text.split("XFAIL:")[1].split(",")[0]}')
+            )
+
+        for _fail in fails:
+            # Take everything after FAIL:
+            junit_case_name = _fail.text.split('FAIL:')[1].strip()
+
+            test_cases.append(
+                TestCase(name=junit_case_name,
+                         stderr=f'This project failed to build. <ATTACH BUILD LOG>')
+            )
+
+        for _upass in upasses:
+            # Take everything after the first ',' (after the linked issue):
+            junit_case_name = _upass.text.split(',', 1)[1].strip()
+
+            test_cases.append(
+                TestCase(name=junit_case_name,
+                         stderr=f'This project built succesfully, which was unexpected')
+            )
+
+        ts = TestSuite("Source Compat Project Builds", test_cases)
+
+        return to_xml_report_string([ts])
 
 class ProjectResult(ListResult):
     pass
