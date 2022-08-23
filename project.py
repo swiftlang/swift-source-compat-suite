@@ -941,7 +941,7 @@ class ProjectListResult(ListResult):
         test_cases = []
 
         for _pass in passes:
-            # Take everything after PASS:
+            # Parse everything after PASS:
             junit_case_name = _pass.text.split('PASS:')[1].strip()
 
             test_cases.append(
@@ -949,16 +949,18 @@ class ProjectListResult(ListResult):
             )
 
         for _xfail in xfails:
-            # Take everything after the first ',' (after the linked issue):
+            # Parse everything after the first ',' (after the linked issue):
             junit_case_name = _xfail.text.split(',', 1)[1].strip()
+            # Parse linked xfailure reason
+            xfail_link = _xfail.text.split("XFAIL:")[1].split(",")[0]
 
             test_cases.append(
                 TestCase(name=junit_case_name,
-                         stdout=f'This project failed as expected. See {_xfail.text.split("XFAIL:")[1].split(",")[0]}')
+                         stdout=f'This project failed as expected. See {xfail_link}')
             )
 
         for _fail in fails:
-            # Take everything after FAIL:
+            # Parse everything after FAIL:
             junit_case_name = _fail.text.split('FAIL:')[1].strip()
 
             test_case = TestCase(name=junit_case_name)
@@ -971,12 +973,15 @@ class ProjectListResult(ListResult):
             # Take everything after the first ',' (after the linked issue):
             junit_case_name = _upass.text.split(',', 1)[1].strip()
 
+            # Parse linked xfailure reason
+            xfail_link = _upass.text.split("UPASS:")[1].split(",")[0]
+
             test_case = TestCase(name=junit_case_name)
-            test_case.add_failure_info(message='This project built successfully, which was unexpected')
+            test_case.add_failure_info(message=f'This project built successfully, which was unexpected. '
+                                               f'Excepted failure: {xfail_link}')
             test_cases.append(test_case)
 
         ts = TestSuite("Source Compat Project Builds", test_cases)
-
         return to_xml_report_string([ts])
 
 
