@@ -703,6 +703,7 @@
                 "issue": "https://github.com/apple/swift/issues/60627",
                 "compatibility": "5.0",
                 "branch": ["main"],
+                "configuration": "release",
                 "job": ["source-compat"]
             }
         ]
