@@ -933,10 +933,10 @@ class ProjectListResult(ListResult):
 
     def xml_string(self):
         status_message = {
-            ResultEnum.PASS: 'This project passed. Emitting build log to save XML space',
+            ResultEnum.PASS: 'This project built successfully',
             ResultEnum.FAIL: 'This project failed to build',
-            ResultEnum.UPASS: 'This project built successfully, which was unexpected',
-            ResultEnum.XFAIL: 'This project failed to build as expected. Emitting build log to save XML space'
+            ResultEnum.UPASS: 'This project built successfully, but it was expected to fail',
+            ResultEnum.XFAIL: 'This project failed to build as expected'
         }
 
         action_results = self.recursive_all()
@@ -968,7 +968,7 @@ class ProjectListResult(ListResult):
             else:
                 xml_report += f"<testcase classname='build' name='{junit_testcase_name}'>\n"
                 xml_report += f"<failure type='failure' message='{status_message[action_result.result]}. " \
-                              f"{xfail_link}'>{build_log}</failure>"
+                              f"{xfail_link}'>Build log: {build_log}</failure>"
                 xml_report += "</testcase>\n"
 
         xml_report += "</testsuite>\n"
