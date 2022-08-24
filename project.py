@@ -25,7 +25,7 @@ import argparse
 import shlex
 from concurrent import futures
 from enum import Enum
-from junit_xml import to_xml_report_string, TestSuite, TestCase
+from xml.sax.saxutils import escape
 
 import common
 
@@ -689,6 +689,9 @@ def add_arguments(parser):
                         type=int,
                         help='Number of parallel process to spawn when building projects',
                         default=multiprocessing.cpu_count())
+    parser.add_argument('--junit',
+                        action='store_true',
+                        help='Write a junit.xml file containing the project build results')
 
 def add_minimal_arguments(parser):
     """Add common arguments to parser."""
@@ -929,60 +932,43 @@ class ProjectListResult(ListResult):
         return output
 
     def xml_string(self):
-        xfails = [ar for ar in self.recursive_all()
-                  if ar.result == ResultEnum.XFAIL]
-        fails = [ar for ar in self.recursive_all()
-                 if ar.result == ResultEnum.FAIL]
-        upasses = [ar for ar in self.recursive_all()
-                   if ar.result == ResultEnum.UPASS]
-        passes = [ar for ar in self.recursive_all()
-                  if ar.result == ResultEnum.PASS]
+        status_message = {
+            ResultEnum.PASS: 'This project passed. Emitting build log to save XML space. ',
+            ResultEnum.FAIL: 'This project failed to build. ',
+            ResultEnum.UPASS: 'This project built successfully, which was unexpected. ',
+            ResultEnum.XFAIL: 'This project failed to build as expected. Emitting build log to save XML space. '
+        }
 
-        test_cases = []
+        action_results = self.recursive_all()
 
-        for _pass in passes:
-            # Parse everything after PASS:
-            junit_case_name = _pass.text.split('PASS:')[1].strip()
+        # Build out Junit Report
+        xml_report = f"<testsuite tests='{len(action_results)}'>\n"
+        for action_result in action_results:
+            with open(f'{action_result}_{action_result.logfile}') as build_log:
+                build_output = escape(build_log.read())
 
-            test_cases.append(
-                TestCase(name=junit_case_name, stdout='This project passed. Emitting build log to save XML space')
-            )
+            if action_result.result == ResultEnum.XFAIL or action_result.result == ResultEnum.UPASS:
+                # Parse both the junit test name and the xfail link out from the result
+                junit_testcase_name = action_result.text.split(',', 1)[1].strip()
+                xfail_link = action_result.text.split(f'{action_result}:')[1].split(",")[0].strip()
+            else:
+                # Parse everything after [PASS|FAIL]: to get the testcase name
+                junit_testcase_name = action_result.text.split(f'{action_result}:')[1].strip()
+                xfail_link = ''
 
-        for _xfail in xfails:
-            # Parse everything after the first ',' (after the linked issue):
-            junit_case_name = _xfail.text.split(',', 1)[1].strip()
-            # Parse linked xfailure reason
-            xfail_link = _xfail.text.split("XFAIL:")[1].split(",")[0]
+            # Add necessary stdout to the testcase. Append build log in the case of an unexpected failure/upass
+            if action_result.result == ResultEnum.PASS or action_result.result == ResultEnum.XFAIL:
+                xml_report += f"<testcase classname='build' name='{junit_testcase_name}'>\n"
+                xml_report += f"<system-out>{status_message[action_result.result]}. {xfail_link}</system-out>"
+                xml_report += "</testcase>\n"
+            else:
+                xml_report += f"<testcase classname='build' name='{junit_testcase_name}'>\n"
+                xml_report += f"<failure type='failure' message='{status_message[action_result.result]}. " \
+                              f"{xfail_link}'>{build_output}</failure>"
+                xml_report += "</testcase>\n"
 
-            test_cases.append(
-                TestCase(name=junit_case_name,
-                         stdout=f'This project failed as expected. See {xfail_link}')
-            )
-
-        for _fail in fails:
-            # Parse everything after FAIL:
-            junit_case_name = _fail.text.split('FAIL:')[1].strip()
-
-            test_case = TestCase(name=junit_case_name)
-            with open(f'{_fail}_{_fail.logfile}') as build_log:
-                test_case.add_failure_info(message=f'This project failed to build.',
-                                           output=build_log.read())
-            test_cases.append(test_case)
-
-        for _upass in upasses:
-            # Take everything after the first ',' (after the linked issue):
-            junit_case_name = _upass.text.split(',', 1)[1].strip()
-
-            # Parse linked xfailure reason
-            xfail_link = _upass.text.split("UPASS:")[1].split(",")[0]
-
-            test_case = TestCase(name=junit_case_name)
-            test_case.add_failure_info(message=f'This project built successfully, which was unexpected. '
-                                               f'Excepted failure: {xfail_link}')
-            test_cases.append(test_case)
-
-        ts = TestSuite("Source Compat Project Builds", test_cases)
-        return to_xml_report_string([ts])
+        xml_report += "</testsuite>\n"
+        return xml_report
 
 
 class ProjectResult(ListResult):
