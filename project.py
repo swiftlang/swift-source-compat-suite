@@ -933,10 +933,10 @@ class ProjectListResult(ListResult):
 
     def xml_string(self):
         status_message = {
-            ResultEnum.PASS: 'This project passed. Emitting build log to save XML space. ',
-            ResultEnum.FAIL: 'This project failed to build. ',
-            ResultEnum.UPASS: 'This project built successfully, which was unexpected. ',
-            ResultEnum.XFAIL: 'This project failed to build as expected. Emitting build log to save XML space. '
+            ResultEnum.PASS: 'This project passed. Emitting build log to save XML space',
+            ResultEnum.FAIL: 'This project failed to build',
+            ResultEnum.UPASS: 'This project built successfully, which was unexpected',
+            ResultEnum.XFAIL: 'This project failed to build as expected. Emitting build log to save XML space'
         }
 
         action_results = self.recursive_all()
@@ -944,8 +944,11 @@ class ProjectListResult(ListResult):
         # Build out Junit Report
         xml_report = f"<testsuite tests='{len(action_results)}'>\n"
         for action_result in action_results:
-            with open(f'{action_result}_{action_result.logfile}') as build_log:
-                build_output = escape(build_log.read())
+            build_url = os.environ.get('BUILD_URL')
+            if build_url:
+                build_log = build_url + f'artifact/swift-source-compat-suite/{action_result}_{action_result.logfile}'
+            else:
+                build_log = ''
 
             if action_result.result == ResultEnum.XFAIL or action_result.result == ResultEnum.UPASS:
                 # Parse both the junit test name and the xfail link out from the result
@@ -959,12 +962,13 @@ class ProjectListResult(ListResult):
             # Add necessary stdout to the testcase. Append build log in the case of an unexpected failure/upass
             if action_result.result == ResultEnum.PASS or action_result.result == ResultEnum.XFAIL:
                 xml_report += f"<testcase classname='build' name='{junit_testcase_name}'>\n"
-                xml_report += f"<system-out>{status_message[action_result.result]}. {xfail_link}</system-out>"
+                xml_report += f"<system-out>{status_message[action_result.result]}. {xfail_link}\n" \
+                              f"Build log: {build_log}</system-out>"
                 xml_report += "</testcase>\n"
             else:
                 xml_report += f"<testcase classname='build' name='{junit_testcase_name}'>\n"
                 xml_report += f"<failure type='failure' message='{status_message[action_result.result]}. " \
-                              f"{xfail_link}'>{build_output}</failure>"
+                              f"{xfail_link}'>{build_log}</failure>"
                 xml_report += "</testcase>\n"
 
         xml_report += "</testsuite>\n"
