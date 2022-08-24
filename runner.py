@@ -91,10 +91,9 @@ def main():
     ).build()
     common.debug_print(str(result))
 
-    # Write Junit (ToDo: Wrap this around a flag)
-    xml = result.xml_string()
-    with open('results.xml', 'w') as results:
-        results.write(xml)
+    if args.junit:
+        with open('results.xml', 'w') as results:
+            results.write(result.xml_string())
 
     return 0 if result.result in [project.ResultEnum.PASS,
                                   project.ResultEnum.XFAIL] else 1
