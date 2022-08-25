@@ -25,7 +25,6 @@ import argparse
 import shlex
 from concurrent import futures
 from enum import Enum
-from xml.sax.saxutils import escape
 
 import common
 
@@ -948,15 +947,15 @@ class ProjectListResult(ListResult):
             if build_url:
                 build_log = build_url + f'artifact/swift-source-compat-suite/{action_result}_{action_result.logfile}'
             else:
-                build_log = ''
+                build_log = f'{action_result}_{action_result.logfile}'
 
             if action_result.result == ResultEnum.XFAIL or action_result.result == ResultEnum.UPASS:
-                # Parse both the junit test name and the xfail link out from the result
-                junit_testcase_name = action_result.text.split(',', 1)[1].strip()
-                xfail_link = action_result.text.split(f'{action_result}:')[1].split(",")[0].strip()
+                result_text_match = re.compile(r"(XFAIL|UPASS):(.*?),(.*?)$").search(action_result.text)
+                xfail_link = result_text_match.group(2)
+                junit_testcase_name = result_text_match.group(3)
             else:
-                # Parse everything after [PASS|FAIL]: to get the testcase name
-                junit_testcase_name = action_result.text.split(f'{action_result}:')[1].strip()
+                result_text_match = re.compile(r"(PASS|FAIL):(.*?)$").search(action_result.text)
+                junit_testcase_name = result_text_match.group(2)
                 xfail_link = ''
 
             # Add necessary stdout to the testcase. Append build log in the case of an unexpected failure/upass
