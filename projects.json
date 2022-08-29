@@ -21,15 +21,7 @@
         "target": "ACHNBrowserUI",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/60577",
-            "compatibility": ["5.0"],
-            "branch": ["main"],
-            "job": ["source-compat", "stress-tester"]
-          }
-        ]
+        "tags": "sourcekit"
       }
     ]
   },
@@ -1452,15 +1444,7 @@
         "workspace": "LineSDK.xcworkspace",
         "scheme": "LineSDK",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": [
-            {
-                "issue": "https://github.com/apple/swift/issues/60577",
-                "compatibility": ["4.2", "5.0"],
-                "branch": ["main"],
-                "job": ["source-compat"]
-            }
-        ]
+        "configuration": "Release"
       }
     ]
   },
