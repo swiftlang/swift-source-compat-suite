@@ -21,7 +21,7 @@
         "target": "ACHNBrowserUI",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit"
+        "tags": "sourcekit sourcekit-smoke"
       }
     ]
   },
