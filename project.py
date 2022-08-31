@@ -1008,7 +1008,8 @@ class ListBuilder(Factory):
                     subbuilder_result = self.subbuilder.initialize(*([subtarget] + self.payload())).build(
                         stdout=output_fd
                     )
-                    subbuilder_result.logfile = log_filename
+                    if subbuilder_result:
+                        subbuilder_result.logfile = log_filename
                     results.add(subbuilder_result)
                 finally:
                     if output_fd is not sys.stdout:
