@@ -717,6 +717,18 @@
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
   {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChart.swift",
+    "modification" : "insideOut-177",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 125
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/60192"
+  },
+  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/extensions\/View.swift",
     "modification" : "unmodified",
     "issueDetail" : {
