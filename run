@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # ===--- run --------------------------------------------------------------===
 #
 #  This source file is part of the Swift.org open source project
 #
-#  Copyright (c) 2014 - 2018 Apple Inc. and the Swift project authors
+#  Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
 #  Licensed under Apache License v2.0 with Runtime Library Exception
 #
 #  See https://swift.org/LICENSE.txt for license information
@@ -37,11 +37,19 @@ def main():
     if not args.skip_build:
         build_swift_toolchain(workspace, args)
 
+    additional_runner_args = []
+    if args.clang_source_path or args.clang:
+        clang = args.clang
+        if args.clang_source_path:
+            clang = build_clang(workspace, args)
+        if clang:
+            additional_runner_args = ['--clang', clang]
+
     if not args.skip_runner:
         if args.test_incremental:
-            execute_build_incremental(workspace, args)
+            execute_build_incremental(workspace, args, additional_runner_args)
         else:
-            execute_runner(workspace, args)
+            execute_runner(workspace, args, additional_runner_args)
 
     return 0
 
@@ -57,11 +65,14 @@ def parse_args():
     parser.add_argument("--verbose",
                         action='store_true')
     parser.add_argument("--assertions",
-                        help='Build Swift with asserts',
+                        help='Build Swift and/or Clang with asserts',
                         action='store_true')
     parser.add_argument("--debug",
-                        help='Build Swift in debug mode',
+                        help='Build Swift and/or Clang in debug mode',
                         action='store_true')
+    parser.add_argument("--filter-by-tag",
+                        metavar='TAG',
+                        help='Only run project actions with the given tag')
     parser.add_argument("--test",
                         help='Only run test actions',
                         action='store_true')
@@ -71,6 +82,17 @@ def parse_args():
     parser.add_argument('--swiftc',
                         metavar='PATH',
                         help='swiftc executable')
+    clang_arguments = parser.add_mutually_exclusive_group()
+    clang_arguments.add_argument('--clang-source-path',
+                                 metavar="PATH",
+                                 help='Path to llvm-project source. Build a new clang '
+                                      'executable from the given path and uses it to '
+                                      'build Xcode projects',
+                                 type=os.path.abspath)
+    clang_arguments.add_argument('--clang',
+                                 metavar="PATH",
+                                 help='clang executable to build Xcode projects',
+                                 type=os.path.abspath)
     parser.add_argument('--skip-build',
                         action='store_true')
     parser.add_argument('--skip-ci-steps',
@@ -100,6 +122,12 @@ def parse_args():
                         dest='build_config',
                         help='specify "debug" or "release" to override '
                              'the build configuration in the projects.json file')
+    parser.add_argument('--cmake-c-launcher',
+                        metavar="PATH",
+                        help='the absolute path to set CMAKE_C_COMPILER_LAUNCHER for build script')
+    parser.add_argument('--cmake-cxx-launcher',
+                        metavar='PATH',
+                        help='the absolute path to set CMAKE_CXX_COMPILER_LAUNCHER for build script')
     return parser.parse_args()
 
 
@@ -152,10 +180,12 @@ def get_sandbox_profile_flags_test():
     return sandbox_flags
 
 
-def execute_runner(workspace, args):
+def execute_runner(workspace, args, additional_runner_args):
     swiftc_path = get_swiftc_path(workspace, args.swiftc)
     if args.test:
         action_filter = 'action.startswith("TestSwiftPackage")'
+    elif args.filter_by_tag:
+        action_filter = '"tags" in locals() and "{}" in tags.split()'.format(args.filter_by_tag)
     else:
         action_filter = 'action.startswith("Build")'
     runner_command = [
@@ -182,10 +212,12 @@ def execute_runner(workspace, args):
     if args.build_config:
         runner_command += ['--build-config=%s' % args.build_config]
 
+    runner_command += additional_runner_args
+
     common.check_execute(runner_command, timeout=9999999)
 
 
-def execute_build_incremental(workspace, args):
+def execute_build_incremental(workspace, args, additional_runner_args):
     swiftc_path = get_swiftc_path(workspace, args.swiftc)
     runner_command = [
         './build_incremental.py',
@@ -200,78 +232,94 @@ def execute_build_incremental(workspace, args):
     ]
     if args.sandbox:
         runner_command += get_sandbox_profile_flags()
+    runner_command += additional_runner_args
     common.check_execute(runner_command, timeout=9999999)
 
+def get_preset_name(args):
+    platform_name = None
+    if platform.system() == 'Darwin':
+        platform_name = 'macos'
+    elif platform.system() == 'Linux':
+        platform_name = 'linux'
+    else:
+        raise common.UnsupportedPlatform
+    assert(platform_name is not None)
+
+    build_type = ''
+    if args.debug:
+        build_type = build_type + 'D'
+    else:
+        build_type = build_type + 'R'
+
+    if args.assertions:
+        build_type = build_type + 'A'
+
+    preset = 'source_compat_suite_%s_%s'
+    return preset % (platform_name, build_type)
 
 def build_swift_toolchain(workspace, args):
+    build_script_preset = get_preset_name(args)
+
     build_script_args_common = [
-        '--debug' if args.debug else '--release',
-        '--assertions' if args.assertions else '--no-assertions',
-        '--build-ninja',
-        '--llbuild',
-        '--swiftpm',
-        '--skip-build-benchmarks',
+        '--preset=%s' % build_script_preset
     ]
 
     if args.distcc:
         build_script_args_common += ['--distcc']
+    if args.cmake_c_launcher:
+        build_script_args_common += ['--cmake-c-launcher={}'.format(args.cmake_c_launcher)]
+    if args.cmake_cxx_launcher:
+        build_script_args_common += ['--cmake-cxx-launcher={}'.format(args.cmake_cxx_launcher)]
+
+    build_command = [os.path.join(workspace, 'swift/utils/build-script')]
+    build_command += build_script_args_common
 
     if platform.system() == 'Darwin':
-        build_command = [os.path.join(workspace, 'swift/utils/build-script')]
-        build_command += build_script_args_common
         build_command += [
-            '--ios',
-            '--tvos',
-            '--watchos',
-            '--build-subdir=compat_macos',
-            '--compiler-vendor=apple',
-            '--',
-            '--darwin-install-extract-symbols',
-            '--darwin-toolchain-alias=swift',
-            '--darwin-toolchain-bundle-identifier=org.swift.compat-macos',
-            '--darwin-toolchain-display-name-short=Swift Development Snapshot'
-            '--darwin-toolchain-display-name=Swift Development Snapshot',
-            '--darwin-toolchain-name=swift-DEVELOPMENT-SNAPSHOT',
-            '--darwin-toolchain-version=3.999.999',
-            '--install-llbuild',
-            '--install-swift',
-            '--install-swiftpm',
-            '--install-destdir={}/build/compat_macos/install'.format(workspace),
-            '--install-prefix=/toolchain/usr',
-            '--install-symroot={}/build/compat_macos/symroot'.format(workspace),
-            '--installable-package={}/build/compat_macos/root.tar.gz'.format(workspace),
-            '--llvm-install-components=libclang;libclang-headers',
-            '--swift-install-components=compiler;clang-builtin-headers;stdlib;sdk-overlay;license;sourcekit-xpc-service;swift-remote-mirror;swift-remote-mirror-headers',
-            '--symbols-package={}/build/compat_macos/root-symbols.tar.gz'.format(workspace),
-            '--verbose-build',
-            '--reconfigure',
+            'install_destdir={}/build/compat_macos/install'.format(workspace),
+            'install_prefix=/toolchain/usr',
+            'install_symroot={}/build/compat_macos/symroot'.format(workspace),
+            'installable_package={}/build/compat_macos/root.tar.gz'.format(workspace),
+            'symbols_package={}/build/compat_macos/root-symbols.tar.gz'.format(workspace),
         ]
     elif platform.system() == 'Linux':
-        build_command = [os.path.join(workspace, 'swift/utils/build-script')]
-        build_command += build_script_args_common
         build_command += [
-            '--foundation',
-            '--libdispatch',
-            '--xctest',
-            '--build-subdir=compat_linux',
-            '--',
-            '--install-foundation',
-            '--install-libdispatch',
-            '--install-llbuild',
-            '--install-swift',
-            '--install-swiftpm',
-            '--install-xctest',
-            '--install-destdir={}/build/compat_linux/install'.format(workspace),
-            '--install-prefix=/usr',
-            '--installable-package={}/build/compat_linux/root.tar.gz'.format(workspace),
-            '--swift-install-components=autolink-driver;compiler;clang-builtin-headers;stdlib;swift-remote-mirror;sdk-overlay;license',
-            '--verbose-build',
-            '--reconfigure',
+            'install_destdir={}/build/compat_linux/install'.format(workspace),
+            'install_prefix=/usr',
+            'installable_package={}/build/compat_linux/root.tar.gz'.format(workspace),
         ]
     else:
         raise common.UnsupportedPlatform
     common.check_execute(build_command, timeout=9999999)
 
+def build_clang(workspace, args):
+    build_path = os.path.join(workspace, 'build_clang_source_compat')
+    source_path = os.path.join(args.clang_source_path, 'llvm')
+    common.check_execute(['mkdir', '-p', build_path])
+
+    with common.DirectoryContext(build_path):
+        # Get path to the ninja binary
+        ninja_path = common.check_execute_output(['xcrun', '--find', 'ninja']).strip().decode("utf-8")
+
+        build_type = "Debug" if args.debug else "Release"
+        assert_on = "True" if args.assertions or args.debug else "False"
+
+        # Generate a Ninja project with CMake
+        cmake_command = [
+            'xcrun', 'cmake', '-G', 'Ninja',
+            '-DCMAKE_MAKE_PROGRAM={}'.format(ninja_path),
+            '-DLLVM_ENABLE_PROJECTS=clang;llvm',
+            '-DCMAKE_BUILD_TYPE={}'.format(build_type),
+            '-DLLVM_ENABLE_ASSERTIONS={}'.format(assert_on),
+            '-DCLANG_APPLE_BUILD_VERSION_STRING=13000000',
+            '-DLLVM_TARGETS_TO_BUILD=X86;AArch64;ARM',
+            source_path]
+        common.check_execute(cmake_command)
+
+        # Build the Ninja project to produce the clang executable
+        common.check_execute(['xcrun', 'ninja'])
+
+    return os.path.join(build_path, 'bin', 'clang')
 
 if __name__ == '__main__':
     sys.exit(main())

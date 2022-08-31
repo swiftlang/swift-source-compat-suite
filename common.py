@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # ===--- common.py --------------------------------------------------------===
 #
 #  This source file is part of the Swift.org open source project
 #
-#  Copyright (c) 2014 - 2017 Apple Inc. and the Swift project authors
+#  Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
 #  Licensed under Apache License v2.0 with Runtime Library Exception
 #
 #  See https://swift.org/LICENSE.txt for license information
@@ -12,7 +12,6 @@
 # ===----------------------------------------------------------------------===
 
 """A library containing common utility functionality."""
-from __future__ import print_function
 
 import multiprocessing
 import os
@@ -23,110 +22,122 @@ import subprocess
 import sys
 import shlex
 
-try:
-    basestring        # Python 2
-except NameError:
-    basestring = str  # Python 3
-
 DEFAULT_EXECUTE_TIMEOUT = 10*60
 
 branches = {
-    'master': {
-        'llvm': 'stable',
-        'clang': 'stable',
-        'compiler-rt': 'stable',
-        'swift': 'master',
-        'cmark': 'master',
+    'main': {
+        'llvm-project': 'stable/20220421',
+        'swift-llvm-bindings': 'stable/20220421',
+        'swift': 'main',
+        'cmark': 'gfm',
         'ninja': 'release',
-        'llbuild': 'master',
-        'swiftpm': 'master',
-        'swift-corelibs-libdispatch': 'master',
-        'swift-corelibs-foundation': 'master',
-        'swift-corelibs-xctest': 'master',
+        'llbuild': 'main',
+        'swiftpm': 'main',
+        'swift-corelibs-libdispatch': 'main',
+        'swift-corelibs-foundation': 'main',
+        'swift-corelibs-xctest': 'main',
+        'swift-argument-parser': '1.0.3',
+        'swift-driver': 'main',
+        'yams': '4.0.2',
+        'swift-tools-support-core': 'main',
+        'swift-crypto': '1.1.5',
+        'swift-atomics': '1.0.2',
+        'swift-collections': '1.0.1',
+        'swift-numerics': '1.0.1',
+        'swift-system': '1.1.1',
+        'swift-experimental-string-processing': 'swift/main',
     },
-    'swift-4.2-branch': {
-        'llvm': 'swift-4.2-branch',
-        'clang': 'swift-4.2-branch',
-        'compiler-rt': 'swift-4.2-branch',
-        'swift': 'swift-4.2-branch',
-        'cmark': 'master',
+    'release/5.7': {
+        'llvm-project': 'swift/release/5.7',
+        'swift': 'release/5.7',
+        'cmark': 'release/5.7',
         'ninja': 'release',
-        'llbuild': 'master',
-        'swiftpm': 'swift-4.2-branch',
-        'swift-corelibs-libdispatch': 'swift-4.2-branch',
-        'swift-corelibs-foundation': 'swift-4.2-branch',
-        'swift-corelibs-xctest': 'swift-4.2-branch',
+        'llbuild': 'release/5.7',
+        'swiftpm': 'release/5.7',
+        'swift-corelibs-libdispatch': 'release/5.7',
+        'swift-corelibs-foundation': 'release/5.7',
+        'swift-corelibs-xctest': 'release/5.7',
+        'swift-argument-parser': '1.0.3',
+        'swift-driver': 'release/5.7',
+        'yams': '4.0.2',
+        'swift-tools-support-core': 'release/5.7',
+        'swift-crypto': '1.1.5',
+        'swift-atomics': '1.0.2',
+        'swift-collections': '1.0.1',
+        'swift-numerics': '1.0.1',
+        'swift-system': '1.1.1',
+        'swift-experimental-string-processing': 'swift/release/5.7',
     },
-    'swift-5.0-branch': {
-        'llvm': 'swift-4.1-branch',
-        'clang': 'swift-4.1-branch',
-        'compiler-rt': 'swift-4.1-branch',
-        'swift': 'swift-5.0-branch',
-        'cmark': 'master',
+    'release/5.6': {
+        'llvm-project': 'swift/release/5.6',
+        'swift': 'release/5.6',
+        'cmark': 'release/5.6',
         'ninja': 'release',
-        'llbuild': 'swift-4.1-branch',
-        'swiftpm': 'swift-4.1-branch',
-        'swift-corelibs-libdispatch': 'swift-4.1-branch',
-        'swift-corelibs-foundation': 'swift-4.1-branch',
-        'swift-corelibs-xctest': 'swift-4.1-branch',
+        'llbuild': 'release/5.6',
+        'swiftpm': 'release/5.6',
+        'swift-corelibs-libdispatch': 'release/5.6',
+        'swift-corelibs-foundation': 'release/5.6',
+        'swift-corelibs-xctest': 'release/5.6',
+        'swift-argument-parser': '1.0.3',
+        'swift-driver': 'release/5.6',
+        'yams': '4.0.2',
+        'swift-tools-support-core': 'release/5.6',
+        'swift-crypto': '1.1.5',
+        'swift-atomics': '1.0.2',
+        'swift-collections': '1.0.1',
+        'swift-numerics': '1.0.1',
+        'swift-system': '1.1.1',
     },
-    'swift-4.0-branch': {
-        'llvm': 'swift-4.0-branch',
-        'clang': 'swift-4.0-branch',
-        'compiler-rt': 'swift-4.0-branch',
-        'swift': 'swift-4.0-branch',
-        'cmark': 'master',
+    'release/5.5': {
+        'llvm-project': 'swift/release/5.5',
+        'swift': 'release/5.5',
+        'cmark': 'release/5.5',
         'ninja': 'release',
-        'llbuild': 'swift-4.0-branch',
-        'swiftpm': 'swift-4.0-branch',
-        'swift-corelibs-libdispatch': 'swift-4.0-branch',
-        'swift-corelibs-foundation': 'swift-4.0-branch',
-        'swift-corelibs-xctest': 'swift-4.0-branch',
+        'llbuild': 'release/5.5',
+        'swiftpm': 'release/5.5',
+        'swift-corelibs-libdispatch': 'release/5.5',
+        'swift-corelibs-foundation': 'release/5.5',
+        'swift-corelibs-xctest': 'release/5.5',
+        'swift-argument-parser': '0.4.3',
+        'swift-driver': 'release/5.5',
+        'yams': '4.0.2',
+        'swift-tools-support-core': 'release/5.5',
+        'swift-crypto': '1.1.5',
+        'swift-atomics': '0.0.3',
+        'swift-collections': '0.0.4',
+        'swift-numerics': '0.1.0',
+        'swift-system': '0.0.2',
     },
-    'swift-4.1-branch': {
-        'llvm': 'swift-4.1-branch',
-        'clang': 'swift-4.1-branch',
-        'compiler-rt': 'swift-4.1-branch',
-        'swift': 'swift-4.1-branch',
-        'cmark': 'swift-4.1-branch',
+    'release/5.4': {
+        'llvm-project': 'swift/release/5.4',
+        'swift': 'release/5.4',
+        'cmark': 'release/5.4',
         'ninja': 'release',
-        'llbuild': 'swift-4.1-branch',
-        'swiftpm': 'swift-4.1-branch',
-        'swift-corelibs-libdispatch': 'swift-4.1-branch',
-        'swift-corelibs-foundation': 'swift-4.1-branch',
-        'swift-corelibs-xctest': 'swift-4.1-branch',
-    },
-    'swift-3.1-branch': {
-        'llvm': 'swift-3.1-branch',
-        'clang': 'swift-3.1-branch',
-        'compiler-rt': 'swift-3.1-branch',
-        'swift': 'swift-3.1-branch',
-        'cmark': 'master',
-        'ninja': 'release',
-        'llbuild': 'swift-3.1-branch',
-        'swiftpm': 'swift-3.1-branch',
-        'swift-corelibs-libdispatch': 'swift-3.1-branch',
-        'swift-corelibs-foundation': 'swift-3.1-branch',
-        'swift-corelibs-xctest': 'swift-3.1-branch',
-    },
-    'swift-3.0-branch': {
-        'llvm': 'swift-3.0-branch',
-        'clang': 'swift-3.0-branch',
-        'compiler-rt': 'swift-3.0-branch',
-        'swift': 'swift-3.0-branch',
-        'cmark': 'master',
-        'ninja': 'release',
+        'llbuild': 'release/5.4',
+        'swiftpm': 'release/5.4',
+        'swift-corelibs-libdispatch': 'release/5.4',
+        'swift-corelibs-foundation': 'release/5.4',
+        'swift-corelibs-xctest': 'release/5.4',
+        'swift-argument-parser': '0.3.0',
+        'swift-driver': 'release/5.4',
+        'yams': '3.0.1',
+        'swift-tools-support-core': 'release/5.4',
+        'swift-crypto': '1.1.5',
+        'swift-atomics': '0.0.3',
+        'swift-collections': '0.0.4',
+        'swift-numerics': '0.1.0',
+        'swift-system': '0.0.2',
     },
 }
 
 swiftc_operation = {
-    'master': '-typecheck',
+    'main': '-typecheck',
     'swift-3.1-branch': '-typecheck',
     'swift-3.0-branch': '-parse',
 }
 
 swiftc_version = {
-    'master': '3',
+    'main': '3',
     'swift-3.1-branch': '3',
     'swift-3.0-branch': None,
 }
@@ -137,7 +148,7 @@ swift_branch = None
 def set_swift_branch(branch):
     """Configure the common library for a specific branch.
 
-    >>> set_swift_branch('master')
+    >>> set_swift_branch('main')
     """
     global swift_branch
     swift_branch = branch
@@ -153,7 +164,7 @@ def clone_repos():
     """Clone Swift and dependencies in parallel.
 
     >>> import tempfile
-    >>> set_swift_branch('master')
+    >>> set_swift_branch('main')
     >>> tmpdir = tempfile.mkdtemp()
     >>> with DirectoryContext(tmpdir):
     ...     clone_repos()
@@ -161,52 +172,94 @@ def clone_repos():
     >>> check_execute(['rm', '-rf', tmpdir])
     0
     >>> repos #doctest: +NORMALIZE_WHITESPACE
-    ['clang', 'cmark', 'compiler-rt', 'llbuild', 'llvm', 'ninja', 'swift',
-     'swift-corelibs-foundation', 'swift-corelibs-libdispatch',
-     'swift-corelibs-xctest', 'swiftpm']
+    ['llvm-project', 'swift-llvm-bindings', 'cmark', 'llbuild', 'ninja',
+     'swift', 'swift-corelibs-foundation', 'swift-corelibs-libdispatch',
+     'swift-corelibs-xctest', 'swiftpm', 'swift-experimental-string-processing']
     """
     cpu_count = multiprocessing.cpu_count()
     workspace = private_workspace('.')
     repos = [
-        '{} https://github.com/apple/swift-llvm.git {}/llvm '.format(
-            branches[swift_branch]['llvm'], workspace
+        '{} git@github.com:apple/llvm-project.git '
+        '{}/llvm-project '.format(
+            branches[swift_branch]['llvm-project'], workspace
         ),
-        '{} https://github.com/apple/swift-clang.git {}/clang '.format(
-            branches[swift_branch]['clang'], workspace
-        ),
-        '{} https://github.com/apple/swift-compiler-rt.git '
-        '{}/compiler-rt '.format(
-            branches[swift_branch]['compiler-rt'], workspace
-        ),
-        '{} https://github.com/apple/swift.git {}/swift '.format(
+        '{} git@github.com:apple/swift.git {}/swift '.format(
             branches[swift_branch]['swift'], workspace
         ),
-        '{} https://github.com/apple/swift-cmark.git {}/cmark '.format(
+        '{} git@github.com:apple/swift-cmark.git {}/cmark '.format(
             branches[swift_branch]['cmark'], workspace
         ),
-        '{} https://github.com/ninja-build/ninja.git {}/ninja '.format(
+        '{} git@github.com:ninja-build/ninja.git {}/ninja '.format(
             branches[swift_branch]['ninja'], workspace
         ),
-        '{} https://github.com/apple/swift-llbuild.git {}/llbuild '.format(
+        '{} git@github.com:apple/swift-llbuild.git {}/llbuild '.format(
             branches[swift_branch]['llbuild'], workspace
         ),
-        '{} https://github.com/apple/swift-package-manager.git '
+        '{} git@github.com:apple/swift-package-manager.git '
         '{}/swiftpm '.format(
             branches[swift_branch]['swiftpm'], workspace
         ),
-        '{} https://github.com/apple/swift-corelibs-foundation.git '
+        '{} git@github.com:apple/swift-corelibs-foundation.git '
         '{}/swift-corelibs-foundation '.format(
             branches[swift_branch]['swift-corelibs-foundation'], workspace
         ),
-        '{} https://github.com/apple/swift-corelibs-libdispatch.git '
+        '{} git@github.com:apple/swift-corelibs-libdispatch.git '
         '{}/swift-corelibs-libdispatch '.format(
             branches[swift_branch]['swift-corelibs-libdispatch'], workspace
         ),
-        '{} https://github.com/apple/swift-corelibs-xctest.git '
+        '{} git@github.com:apple/swift-corelibs-xctest.git '
         '{}/swift-corelibs-xctest '.format(
             branches[swift_branch]['swift-corelibs-xctest'], workspace
         ),
+        '{} git@github.com:apple/swift-argument-parser.git '
+        '{}/swift-argument-parser '.format(
+            branches[swift_branch]['swift-argument-parser'], workspace
+        ),
+        '{} git@github.com:apple/swift-driver.git '
+        '{}/swift-driver '.format(
+            branches[swift_branch]['swift-driver'], workspace
+        ),
+        '{} git@github.com:jpsim/Yams.git '
+        '{}/yams '.format(
+            branches[swift_branch]['yams'], workspace
+        ),
+        '{} git@github.com:apple/swift-tools-support-core.git '
+        '{}/swift-tools-support-core '.format(
+            branches[swift_branch]['swift-tools-support-core'], workspace
+        ),
+        '{} git@github.com:apple/swift-crypto.git '
+        '{}/swift-crypto '.format(
+            branches[swift_branch]['swift-crypto'], workspace
+        ),
+        '{} git@github.com:apple/swift-atomics.git '
+        '{}/swift-atomics '.format(
+            branches[swift_branch]['swift-atomics'], workspace
+        ),
+        '{} git@github.com:apple/swift-collections.git '
+        '{}/swift-collections '.format(
+            branches[swift_branch]['swift-collections'], workspace
+        ),
+        '{} git@github.com:apple/swift-numerics.git '
+        '{}/swift-numerics '.format(
+            branches[swift_branch]['swift-numerics'], workspace
+        ),
+        '{} git@github.com:apple/swift-system.git '
+        '{}/swift-system '.format(
+            branches[swift_branch]['swift-system'], workspace
+        ),
+        '{} git@github.com:apple/swift-experimental-string-processing.git '
+        '{}/swift-experimental-string-processing '.format(
+            branches[swift_branch]['swift-experimental-string-processing'], workspace
+        ),
     ]
+    if swift_branch not in ['release/5.7', 'release/5.6',
+                            'release/5.5', 'release/5.4']:
+        repos += [
+            '{} git@github.com:apple/swift-llvm-bindings.git '
+            '{}/swift-llvm-bindings '.format(
+                branches[swift_branch]['swift-llvm-bindings'], workspace
+            ),
+        ]
 
     process0 = subprocess.Popen([
         'xargs', '-P%s' % cpu_count, '-n3',
@@ -214,7 +267,7 @@ def clone_repos():
     ], stdin=subprocess.PIPE)
 
     for repo in repos:
-        process0.stdin.write(repo)
+        process0.stdin.write(repo.encode('utf-8'))
 
     process0.stdin.close()
 
@@ -342,7 +395,7 @@ def check_execute_output(command, timeout=None,
         with Timeout(timeout):
             output = subprocess.check_output(
                 command, stderr=stderr, **kwargs
-            )
+            ).decode('utf-8')
     except subprocess.CalledProcessError as e:
         debug_print(e, stderr=stderr)
         raise
@@ -503,7 +556,7 @@ def popen(*args, **kwargs):
 
 
 def call(c):
-    if isinstance(c, basestring):
+    if isinstance(c, str):
         c = shlex.split(c)
     formatted = [x.format(**os.environ) for x in c]
     shell_debug_print(c)

@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # ===--- project.py -------------------------------------------------------===
 #
 #  This source file is part of the Swift.org open source project
 #
-#  Copyright (c) 2014 - 2017 Apple Inc. and the Swift project authors
+#  Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
 #  Licensed under Apache License v2.0 with Runtime Library Exception
 #
 #  See https://swift.org/LICENSE.txt for license information
@@ -12,24 +12,21 @@
 # ===----------------------------------------------------------------------===
 
 """A library containing common project building functionality."""
-
+import multiprocessing
 import os
 import platform
 import re
-import subprocess
 import shutil
 import filecmp
 import sys
 import json
 import time
 import argparse
+import shlex
+from concurrent import futures
+from enum import Enum
 
 import common
-
-try:
-    basestring        # Python 2
-except NameError:
-    basestring = str  # Python 3
 
 swift_branch = None
 
@@ -37,12 +34,24 @@ swift_branch = None
 def set_swift_branch(branch):
     """Configure the library for a specific branch.
 
-    >>> set_swift_branch('master')
+    >>> set_swift_branch('main')
     """
     global swift_branch
     swift_branch = branch
     common.set_swift_branch(branch)
 
+class TimeReporter(object):
+    def __init__(self, file_path):
+        self._file_path = file_path
+        self._time_data = {}
+
+    def update(self, project, elapsed):
+        self._time_data[project + '.compile_time'] = elapsed
+
+    def __del__(self):
+        if self._file_path and self._time_data:
+            with open(self._file_path, 'w+') as f:
+                json.dump(self._time_data, f)
 
 class ProjectTarget(object):
     """An abstract project target."""
@@ -73,14 +82,23 @@ class ProjectTarget(object):
 class XcodeTarget(ProjectTarget):
     """An Xcode workspace scheme."""
 
-    def __init__(self, project, target, destination, build_settings,
-                 is_workspace, has_scheme):
+    def __init__(self, swiftc, project, target, destination, pretargets, env,
+                 added_xcodebuild_flags, is_workspace, has_scheme,
+                 clean_build,
+                 stdout,
+                 stderr):
+        self._swiftc = swiftc
         self._project = project
         self._target = target
         self._destination = destination
-        self._build_settings = build_settings
+        self._pretargets = pretargets
+        self._env = env
+        self._added_xcodebuild_flags = added_xcodebuild_flags
         self._is_workspace = is_workspace
         self._has_scheme = has_scheme
+        self._clean_build = clean_build
+        self.stdout = stdout,
+        self.stderr = stderr
 
     @property
     def project_param(self):
@@ -97,16 +115,29 @@ class XcodeTarget(ProjectTarget):
     def get_build_command(self, incremental=False):
         project_param = self.project_param
         target_param = self.target_param
-        build_dir = os.path.join(os.path.dirname(self._project),
-                                 'build')
-        build = ['clean', 'build']
-        if incremental:
-            build = ['build']
+        try:
+            build_parent_dir = common.check_execute_output([
+                'git', '-C', os.path.dirname(self._project),
+                'rev-parse', '--show-toplevel'],
+                stdout=self.stdout,
+                stderr=self.stderr,
+            ).rstrip()
+        except common.ExecuteCommandFailure as error:
+            build_parent_dir = os.path.dirname(self._project)
+
+        build_dir = os.path.join(build_parent_dir, 'build')
+
+        build = []
+        if self._clean_build and not incremental and not self._pretargets:
+            build += ['clean']
+        build += ['build']
+
         dir_override = []
         if self._has_scheme:
-            dir_override = ['-derivedDataPath', build_dir]
-        else:
-            dir_override = ['SYMROOT=' + build_dir]
+            dir_override += ['-derivedDataPath', build_dir]
+        elif 'SYMROOT' not in self._env:
+            dir_override += ['SYMROOT=' + build_dir]
+        dir_override += [f"{k}={v}" for k, v in self._env.items()]
         command = (['xcodebuild']
                    + build
                    + [project_param, self._project,
@@ -115,15 +146,67 @@ class XcodeTarget(ProjectTarget):
                    + dir_override
                    + ['CODE_SIGN_IDENTITY=',
                       'CODE_SIGNING_REQUIRED=NO',
+                      'ENTITLEMENTS_REQUIRED=NO',
                       'ENABLE_BITCODE=NO',
                       'INDEX_ENABLE_DATA_STORE=NO',
                       'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
                       'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO'])
-        for setting, value in self._build_settings.iteritems():
-            if setting == 'CONFIGURATION':
-                command += ['-configuration', value]
-            else:
-                command += ['%s=%s' % (setting, value)]
+        command += self._added_xcodebuild_flags
+
+        if self._destination == 'generic/platform=watchOS':
+            command += ['ARCHS=armv7k']
+        if self._destination == 'generic/platform=iOS':
+            command += ['EXCLUDED_ARCHS=armv7 armv7s']
+
+        return command
+
+    def get_prebuild_command(self, incremental=False):
+        project_param = self.project_param
+        target_param = self.target_param
+        try:
+            build_parent_dir = common.check_execute_output([
+                'git', '-C', os.path.dirname(self._project),
+                'rev-parse', '--show-toplevel'],
+                stdout=self.stdout,
+                stderr=self.stderr,
+            ).rstrip()
+        except common.ExecuteCommandFailure as error:
+            build_parent_dir = os.path.dirname(self._project)
+
+        build_dir = os.path.join(build_parent_dir, 'build')
+
+        build = []
+        if self._clean_build and not incremental:
+            build += ['clean']
+
+        if self._pretargets:
+            build += ['build']
+
+        dir_override = []
+        if self._has_scheme:
+            dir_override += ['-derivedDataPath', build_dir]
+        elif not 'SYMROOT' in self._env:
+            dir_override += ['SYMROOT=' + build_dir]
+        dir_override += [f"{k}={v}" for k, v in self._env.items()]
+
+        project_target_params = [project_param, self._project,
+                                 '-destination', self._destination]
+        for pretarget in self._pretargets:
+            project_target_params += [target_param, pretarget]
+
+        command = (['xcodebuild']
+                   + build
+                   + project_target_params
+                   + dir_override
+                   + ['CODE_SIGN_IDENTITY=',
+                      'CODE_SIGNING_REQUIRED=NO',
+                      'ENTITLEMENTS_REQUIRED=NO',
+                      'ENABLE_BITCODE=NO',
+                      'INDEX_ENABLE_DATA_STORE=NO',
+                      'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
+                      'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO'])
+        command += self._added_xcodebuild_flags
+
         if self._destination == 'generic/platform=watchOS':
             command += ['ARCHS=armv7k']
 
@@ -143,15 +226,33 @@ class XcodeTarget(ProjectTarget):
                       # TODO: stdlib search code
                       'SWIFT_LIBRARY_PATH=%s' %
                       get_stdlib_platform_path(
-                          self._build_settings['SWIFT_EXEC'],
+                          self._swiftc,
                           self._destination)]
                    + ['INDEX_ENABLE_DATA_STORE=NO',
                       'GCC_TREAT_WARNINGS_AS_ERRORS=NO'])
-        for setting, value in self._build_settings.iteritems():
-            command += ['%s=%s' % (setting, value)]
+        command += self._added_xcodebuild_flags
 
         return command
 
+    def build(self, sandbox_profile, stdout=sys.stdout, stderr=sys.stderr,
+              incremental=False, time_reporter=None):
+        """Build the project target."""
+
+        if self._pretargets:
+            common.check_execute(self.get_prebuild_command(incremental=incremental),
+                                 sandbox_profile=sandbox_profile,
+                                 stdout=stdout, stderr=stdout)
+        start_time = None
+        if time_reporter:
+            start_time = time.time()
+        returncode = common.check_execute(self.get_build_command(incremental=incremental),
+                                          sandbox_profile=sandbox_profile,
+                                          stdout=stdout, stderr=stdout)
+        if returncode == 0 and time_reporter:
+            elapsed = time.time() - start_time
+            time_reporter.update(self._target, elapsed)
+
+        return returncode
 
 def get_stdlib_platform_path(swiftc, destination):
     """Return the corresponding stdlib name for a destination."""
@@ -179,7 +280,7 @@ def clean_swift_package(path, swiftc, sandbox_profile,
     if swift_branch == 'swift-3.0-branch':
         command = [swift, 'build', '-C', path, '--clean']
     else:
-        command = [swift, 'package', '-C', path, 'clean']
+        command = [swift, 'package', '--package-path', path, 'clean']
     if (swift_branch not in ['swift-3.0-branch',
                              'swift-3.1-branch']):
         command.insert(2, '--disable-sandbox')
@@ -187,23 +288,38 @@ def clean_swift_package(path, swiftc, sandbox_profile,
                                 stdout=stdout, stderr=stderr)
 
 
-def build_swift_package(path, swiftc, configuration, sandbox_profile,
-                        stdout=sys.stdout, stderr=sys.stderr,
+def build_swift_package(path, swiftc, swift_version, configuration,
+                        sandbox_profile, stdout=sys.stdout, stderr=sys.stderr,
                         added_swift_flags=None,
-                        incremental=False):
+                        incremental=False,
+                        override_swift_exec=None):
     """Build a Swift package manager project."""
     swift = os.path.join(os.path.dirname(swiftc), 'swift')
     if not incremental:
         clean_swift_package(path, swiftc, sandbox_profile,
                             stdout=stdout, stderr=stderr)
     env = os.environ
-    env['SWIFT_EXEC'] = swiftc
-    env['SWIFT_SOURCE_COMPAT_SUITE'] = "1"
-    command = [swift, 'build', '-C', path, '--verbose',
+    env['DYLD_LIBRARY_PATH'] = get_stdlib_platform_path(swiftc, 'macOS')
+    env['SWIFT_EXEC'] = override_swift_exec or swiftc
+    command = [swift, 'build', '--package-path', path, '--verbose',
                '--configuration', configuration]
     if (swift_branch not in ['swift-3.0-branch',
                              'swift-3.1-branch']):
         command.insert(2, '--disable-sandbox')
+
+    if swift_version:
+        if '.' not in swift_version:
+            swift_version += '.0'
+
+        major, minor = swift_version.split('.', 1)
+        # Need to use float for minor version parsing
+        # because it's possible that it would be specified
+        # as e.g. `4.0.3`
+        if int(major) == 4 and float(minor) == 2.0:
+            command += ['-Xswiftc', '-swift-version', '-Xswiftc', swift_version]
+        else:
+            command += ['-Xswiftc', '-swift-version', '-Xswiftc', major]
+
     if added_swift_flags is not None:
         for flag in added_swift_flags.split():
             command += ["-Xswiftc", flag]
@@ -216,14 +332,14 @@ def build_swift_package(path, swiftc, configuration, sandbox_profile,
 def test_swift_package(path, swiftc, sandbox_profile,
                        stdout=sys.stdout, stderr=sys.stderr,
                        added_swift_flags=None,
-                       incremental=False):
+                       incremental=False,
+                       override_swift_exec=None):
     """Test a Swift package manager project."""
     swift = os.path.join(os.path.dirname(swiftc), 'swift')
     if not incremental:
         clean_swift_package(path, swiftc, sandbox_profile)
     env = os.environ
-    env['SWIFT_EXEC'] = swiftc
-    env['SWIFT_SOURCE_COMPAT_SUITE'] = "1"
+    env['SWIFT_EXEC'] = override_swift_exec or swiftc
     command = [swift, 'test', '-C', path, '--verbose']
     if added_swift_flags is not None:
         for flag in added_swift_flags.split():
@@ -235,6 +351,18 @@ def test_swift_package(path, swiftc, sandbox_profile,
                                 sandbox_profile=sandbox_profile,
                                 stdout=stdout, stderr=stderr,
                                 env=env)
+
+
+def checkout(root_path, repo, commit):
+    """Checkout an indexed repository."""
+    path = os.path.join(root_path, repo['path'])
+    if repo['repository'] == 'Git':
+        if os.path.exists(path):
+            return common.git_update(repo['url'], commit, path)
+        else:
+            return common.git_clone(repo['url'], path, tree=commit)
+    raise common.Unreachable('Unsupported repository: %s' %
+                             repo['repository'])
 
 
 def strip_resource_phases(repo_path, stdout=sys.stdout, stderr=sys.stderr):
@@ -251,37 +379,45 @@ def strip_resource_phases(repo_path, stdout=sys.stdout, stderr=sys.stderr):
 
 def dispatch(root_path, repo, action, swiftc, swift_version,
              sandbox_profile_xcodebuild, sandbox_profile_package,
-             added_swift_flags, build_config, should_strip_resource_phases=False,
+             added_swift_flags, added_xcodebuild_flags,
+             build_config, should_strip_resource_phases=False,
              stdout=sys.stdout, stderr=sys.stderr,
-             incremental=False):
+             incremental=False, time_reporter = None, override_swift_exec=None):
     """Call functions corresponding to actions."""
 
+    substitutions = action.copy()
+    substitutions.update(repo)
     if added_swift_flags:
         # Support added swift flags specific to the current repository and
         # action by passing their fields as keyword arguments to format, e.g.
         # so that {path} in '-index-store-path /tmp/index/{path}' is replaced
         # with the value of repo's path field.
-        substitutions = action.copy()
-        substitutions.update(repo)
         added_swift_flags = added_swift_flags.format(**substitutions)
+    if added_xcodebuild_flags:
+        added_xcodebuild_flags = \
+            shlex.split(added_xcodebuild_flags.format(**substitutions))
+    else:
+        added_xcodebuild_flags = []
 
     if action['action'] == 'BuildSwiftPackage':
         if not build_config:
             build_config = action['configuration']
         return build_swift_package(os.path.join(root_path, repo['path']),
-                                   swiftc,
+                                   swiftc, swift_version,
                                    build_config,
                                    sandbox_profile_package,
                                    stdout=stdout, stderr=stderr,
                                    added_swift_flags=added_swift_flags,
-                                   incremental=incremental)
+                                   incremental=incremental,
+                                   override_swift_exec=override_swift_exec)
     elif action['action'] == 'TestSwiftPackage':
         return test_swift_package(os.path.join(root_path, repo['path']),
                                   swiftc,
                                   sandbox_profile_package,
                                   stdout=stdout, stderr=stderr,
                                   added_swift_flags=added_swift_flags,
-                                  incremental=incremental)
+                                  incremental=incremental,
+                                  override_swift_exec=override_swift_exec)
     elif re.match(r'^(Build|Test)Xcode(Workspace|Project)(Scheme|Target)$',
                   action['action']):
         match = re.match(
@@ -289,45 +425,74 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
             action['action']
         )
 
-        build_settings = {
-            'SWIFT_EXEC': swiftc
-        }
+        initial_xcodebuild_flags = ['SWIFT_EXEC=%s' % (override_swift_exec or swiftc),
+                                    '-IDEPackageSupportDisableManifestSandbox=YES']
 
         if build_config == 'debug':
-            build_settings['CONFIGURATION'] = 'Debug'
+            initial_xcodebuild_flags += ['-configuration', 'Debug']
         elif build_config == 'release':
-            build_settings['CONFIGURATION'] = 'Release'
+            initial_xcodebuild_flags += ['-configuration', 'Release']
         elif 'configuration' in action:
-            build_settings['CONFIGURATION'] = action['configuration']
+            initial_xcodebuild_flags += ['-configuration',
+                                         action['configuration']]
+
+        build_env = {}
+        if 'environment' in action:
+            build_env = action['environment']
+
+        pretargets = []
+        if 'pretargets' in action:
+            pretargets = action['pretargets']
 
         other_swift_flags = []
         if swift_version:
-            other_swift_flags += ['-swift-version', swift_version]
-            build_settings['SWIFT_VERSION'] = swift_version
+            if '.' not in swift_version:
+                swift_version += '.0'
+
+            major, minor = swift_version.split('.', 1)
+            # Need to use float for minor version parsing
+            # because it's possible that it would be specified
+            # as e.g. `4.0.3`
+            if int(major) == 4 and float(minor) == 2.0:
+                other_swift_flags += ['-swift-version', swift_version]
+                initial_xcodebuild_flags += ['SWIFT_VERSION=%s' % swift_version]
+            else:
+                other_swift_flags += ['-swift-version', major]
+                initial_xcodebuild_flags += ['SWIFT_VERSION=%s' % major]
         if added_swift_flags:
             other_swift_flags.append(added_swift_flags)
         if other_swift_flags:
             other_swift_flags = ['$(OTHER_SWIFT_FLAGS)'] + other_swift_flags
-            build_settings['OTHER_SWIFT_FLAGS'] = ' '.join(other_swift_flags)
+            initial_xcodebuild_flags += ['OTHER_SWIFT_FLAGS=%s' % ' '.join(other_swift_flags)]
 
         is_workspace = match.group(2).lower() == 'workspace'
         project_path = os.path.join(root_path, repo['path'],
                                     action[match.group(2).lower()])
         has_scheme = match.group(3).lower() == 'scheme'
+        clean_build = True
+        if 'clean_build' in action:
+            clean_build = action['clean_build']
         xcode_target = \
-            XcodeTarget(project_path,
+            XcodeTarget(swiftc,
+                        project_path,
                         action[match.group(3).lower()],
                         action['destination'],
-                        build_settings,
+                        pretargets,
+                        build_env,
+                        initial_xcodebuild_flags + added_xcodebuild_flags,
                         is_workspace,
-                        has_scheme)
+                        has_scheme,
+                        clean_build,
+                        stdout,
+                        stderr)
         if should_strip_resource_phases:
             strip_resource_phases(os.path.join(root_path, repo['path']),
                                   stdout=stdout, stderr=stderr)
         if match.group(1) == 'Build':
             return xcode_target.build(sandbox_profile_xcodebuild,
                                       stdout=stdout, stderr=stderr,
-                                      incremental=incremental)
+                                      incremental=incremental,
+                                      time_reporter=time_reporter)
         else:
             return xcode_target.test(sandbox_profile_xcodebuild,
                                      stdout=stdout, stderr=stderr,
@@ -336,19 +501,37 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
         raise common.Unimplemented("Unknown action: %s" % action['action'])
 
 
-def is_xfailed(xfail_args, compatible_version, platform, swift_branch):
-    """Return whether the specified platform/swift_branch is xfailed."""
-    xfail = xfail_args['compatibility'].get(compatible_version, {})
-    if '*' in xfail:
-        return xfail['*'].split()[0]
-    if '*' in xfail.get('branch', {}):
-        return xfail['branch']['*'].split()[0]
-    if '*' in xfail.get('platform', {}):
-        return xfail['platform']['*'].split()[0]
-    if swift_branch in xfail.get('branch', {}):
-        return xfail['branch'][swift_branch].split()[0]
-    if platform in xfail.get('platform', {}):
-        return xfail['platform'][platform].split()[0]
+def is_xfailed(xfail_args, compatible_version, platform, swift_branch, build_config, job_type):
+    """Return whether the specified swift version/platform/branch/configuration/job is xfailed."""
+    if isinstance(xfail_args, dict):
+        xfail_args = [xfail_args]
+
+    def is_or_contains(spec, arg):
+        return arg in spec if isinstance(spec, list) else spec == arg
+
+    def matches(spec):
+        issue = spec['issue'].split()[0]
+        current = {
+            'compatibility': compatible_version,
+            'branch': swift_branch,
+            'platform': platform,
+            'job': job_type,
+        }
+        if 'configuration' in spec:
+          if build_config is None:
+            raise common.Unreachable("'xfail' entry contains 'configuration' "
+                "but none supplied via '--build-config' or the containing "
+                "action's 'configuration' field.")
+          current['configuration'] = build_config.lower()
+        for key, value in current.items():
+          if key in spec and not is_or_contains(spec[key], value):
+            return None
+        return issue
+
+    for spec in xfail_args:
+        issue = matches(spec)
+        if issue is not None:
+            return issue
     return None
 
 
@@ -374,11 +557,18 @@ def add_arguments(parser):
                             help='swiftc executable',
                             required=True,
                             type=os.path.abspath)
+        parser.add_argument('--override-swift-exec',
+                            metavar='PATH',
+                            help='override the SWIFT_EXEC that is used to build the projects',
+                            type=os.path.abspath)
     else:
         parser.add_argument('--swiftc',
                             metavar='PATH',
                             help='swiftc executable',
                             required=True)
+        parser.add_argument('--override-swift-exec',
+                            metavar='PATH',
+                            help='override the SWIFT_EXEC that is used to build the projects')
     parser.add_argument('--projects',
                         metavar='PATH',
                         required=True,
@@ -401,6 +591,22 @@ def add_arguments(parser):
                         help='a Python predicate to determine '
                              'whether to exclude a repo '
                              '(example: \'path == "Alamofire"\')')
+    parser.add_argument('--include-versions',
+                        metavar='PREDICATE',
+                        default=[],
+                        action='append',
+                        help='a Python predicate to determine '
+                             'whether to include a Swift version '
+                             '(example: '
+                             '\'version == "3.0"\')')
+    parser.add_argument('--exclude-versions',
+                        metavar='PREDICATE',
+                        default=[],
+                        action='append',
+                        help='a Python predicate to determine '
+                             'whether to exclude a Swift version '
+                             '(example: '
+                             '\'version == "3.0"\')')
     parser.add_argument('--include-actions',
                         metavar='PREDICATE',
                         default=[],
@@ -420,7 +626,7 @@ def add_arguments(parser):
     parser.add_argument('--swift-branch',
                         metavar='BRANCH',
                         help='Swift branch configuration to use',
-                        default='master')
+                        default='main')
     parser.add_argument('--sandbox-profile-xcodebuild',
                         metavar='FILE',
                         help='sandbox xcodebuild build and test operations '
@@ -437,6 +643,12 @@ def add_arguments(parser):
     parser.add_argument("--add-swift-flags",
                         metavar="FLAGS",
                         help='add flags to each Swift invocation (note: field '
+                             'names from projects.json enclosed in {} will be '
+                             'replaced with their value)',
+                        default='')
+    parser.add_argument("--add-xcodebuild-flags",
+                        metavar="FLAGS",
+                        help='add flags to each xcodebuild invocation (note: field '
                              'names from projects.json enclosed in {} will be '
                              'replaced with their value)',
                         default='')
@@ -458,6 +670,27 @@ def add_arguments(parser):
                         nargs='?',
                         const=True,
                         default=True)
+    parser.add_argument("--project-cache-path",
+                        help='Path of the dir where all the project binaries will be placed',
+                        metavar='PATH',
+                        type=os.path.abspath,
+                        default='project_cache')
+    parser.add_argument("--report-time-path",
+                        help='export time for building each xcode build target to the specified json file',
+                        type=os.path.abspath)
+    parser.add_argument("--clang",
+                        help='clang executable to build Xcode projects',
+                        type=os.path.abspath)
+    parser.add_argument("--job-type",
+                        help="The type of job to run. This influences which projects are XFailed, for example the stress tester tracks its XFails under a different job type. Defaults to 'source-compat'.",
+                        default='source-compat')
+    parser.add_argument('--process-count',
+                        type=int,
+                        help='Number of parallel process to spawn when building projects',
+                        default=multiprocessing.cpu_count())
+    parser.add_argument('--junit',
+                        action='store_true',
+                        help='Write a junit.xml file containing the project build results')
 
 def add_minimal_arguments(parser):
     """Add common arguments to parser."""
@@ -482,6 +715,22 @@ def add_minimal_arguments(parser):
                         help='a Python predicate to determine '
                              'whether to exclude a repo '
                              '(example: \'path == "Alamofire"\')')
+    parser.add_argument('--include-versions',
+                        metavar='PREDICATE',
+                        default=[],
+                        action='append',
+                        help='a Python predicate to determine '
+                             'whether to include a Swift version '
+                             '(example: '
+                             '\'version == "3.0"\')')
+    parser.add_argument('--exclude-versions',
+                        metavar='PREDICATE',
+                        default=[],
+                        action='append',
+                        help='a Python predicate to determine '
+                             'whether to exclude a Swift version '
+                             '(example: '
+                             '\'version == "3.0"\')')
     parser.add_argument('--include-actions',
                         metavar='PREDICATE',
                         default=[],
@@ -501,14 +750,14 @@ def add_minimal_arguments(parser):
     parser.add_argument('--swift-branch',
                         metavar='BRANCH',
                         help='Swift branch configuration to use',
-                        default='master')
+                        default='main')
 
 
 def evaluate_predicate(element, predicate):
     """Evaluate predicate in context of index element fields."""
     # pylint: disable=I0011,W0122,W0123
     for key in element:
-        if isinstance(element[key], basestring):
+        if isinstance(element[key], str):
             exec(key + ' = """' + element[key] + '"""')
     return eval(predicate)
 
@@ -522,12 +771,22 @@ def included_element(include_predicates, exclude_predicates, element):
                  for ip in include_predicates)))
 
 
-class Factory(object):
+class FactoryBuilder:
+    """Class used by a Factory to encapsulate the class needed to build + the arguments.
+
+    This allows the Factory to be pickle-able"""
+    def __init__(self, builder_class, factoryargs):
+        self.builder = builder_class
+        self.factory_args = factoryargs
+
+    def initialize(self, *initargs):
+        return self.builder(*(self.factory_args + initargs))
+
+
+class Factory:
     @classmethod
     def factory(cls, *factoryargs):
-        def init(*initargs):
-            return cls(*(factoryargs + initargs))
-        return init
+        return FactoryBuilder(cls, factoryargs)
 
 
 def dict_get(dictionary, *args, **kwargs):
@@ -543,32 +802,21 @@ def dict_get(dictionary, *args, **kwargs):
         raise KeyError
 
 
-def enum(*sequential, **named):
-    enums = dict(zip(sequential, range(len(sequential))), **named)
-    reverse = dict((value, key) for key, value in enums.iteritems())
-    keys = enums.keys()
-    values = enums.values()
-    enums['keys'] = keys
-    enums['values'] = values
-    enums['reverse_mapping'] = reverse
-    return type('Enum', (object,), enums)
+class ResultEnum(Enum):
+    FAIL = 0
+    XFAIL = 1
+    PASS = 2
+    UPASS = 3
 
 
-ResultEnum = enum(
-    'FAIL',
-    'XFAIL',
-    'PASS',
-    'UPASS'
-)
-
-
-class Result(ResultEnum):
-    def __init__(self, result, text):
+class Result:
+    def __init__(self, result, text, logfile=None):
         self.result = result
         self.text = text
+        self.logfile = logfile
 
     def __str__(self):
-        return ResultEnum.reverse_mapping[self.result]
+        return self.result.name
 
 
 class ActionResult(Result):
@@ -577,46 +825,59 @@ class ActionResult(Result):
 
 class ListResult(Result):
     def __init__(self):
-        self.subresults = {value: [] for value in ResultEnum.values}
+        self.subresults = {result_enum: [] for result_enum in ResultEnum}
 
     def add(self, result):
-        self.subresults[result.result].append(result)
+        if result:
+            self.subresults[result.result].append(result)
 
     def xfails(self):
-        return self.subresults[Result.XFAIL]
+        return self.subresults[ResultEnum.XFAIL]
 
     def fails(self):
-        return self.subresults[Result.FAIL]
+        return self.subresults[ResultEnum.FAIL]
 
     def upasses(self):
-        return self.subresults[Result.UPASS]
+        return self.subresults[ResultEnum.UPASS]
 
     def passes(self):
-        return self.subresults[Result.PASS]
+        return self.subresults[ResultEnum.PASS]
 
     def all(self):
         return [i for l in self.subresults.values() for i in l]
 
+    def recursive_all(self):
+        stack = self.all()
+        actions = []
+        while stack:
+            result = stack.pop(0)
+            if isinstance(result, ActionResult):
+                actions.append(result)
+            else:
+                for r in result.all():
+                    stack.insert(0, r)
+        return actions
+
     @property
     def result(self):
-        if self.subresults[Result.FAIL]:
-            return Result.FAIL
-        elif self.subresults[Result.UPASS]:
-            return Result.UPASS
-        elif self.subresults[Result.XFAIL]:
-            return Result.XFAIL
-        elif self.subresults[Result.PASS]:
-            return Result.PASS
+        if self.subresults[ResultEnum.FAIL]:
+            return ResultEnum.FAIL
+        elif self.subresults[ResultEnum.UPASS]:
+            return ResultEnum.UPASS
+        elif self.subresults[ResultEnum.XFAIL]:
+            return ResultEnum.XFAIL
+        elif self.subresults[ResultEnum.PASS]:
+            return ResultEnum.PASS
         else:
-            return Result.PASS
+            return ResultEnum.PASS
 
     def __add__(self, other):
         n = self.__class__()
         n.subresults = {
-            Result.__dict__[x]:
-            (self.subresults[Result.__dict__[x]] +
-             other.subresults[Result.__dict__[x]])
-            for x in Result.__dict__ if not x.startswith('_')}
+            ResultEnum.__dict__[x]:
+            (self.subresults[ResultEnum.__dict__[x]] +
+             other.subresults[ResultEnum.__dict__[x]])
+            for x in ResultEnum.__dict__ if not x.startswith('_')}
         return n
 
 
@@ -624,10 +885,14 @@ class ProjectListResult(ListResult):
     def __str__(self):
         output = ""
 
-        xfails = [ar for pr in self.all() for ar in pr.xfails()]
-        fails = [ar for pr in self.all() for ar in pr.fails()]
-        upasses = [ar for pr in self.all() for ar in pr.upasses()]
-        passes = [ar for pr in self.all() for ar in pr.passes()]
+        xfails = [ar for ar in self.recursive_all()
+                  if ar.result == ResultEnum.XFAIL]
+        fails = [ar for ar in self.recursive_all()
+                 if ar.result == ResultEnum.FAIL]
+        upasses = [ar for ar in self.recursive_all()
+                   if ar.result == ResultEnum.UPASS]
+        passes = [ar for ar in self.recursive_all()
+                  if ar.result == ResultEnum.PASS]
 
         if xfails:
             output += ('='*40) + '\n'
@@ -661,12 +926,58 @@ class ProjectListResult(ListResult):
         output += 'Repository Summary:' + '\n'
         output += '      Total: %s' % len(self.all()) + '\n'
         output += '='*40 + '\n'
-        output += 'Result: ' + Result.__str__(self) + '\n'
+        output += 'Result: ' + self.result.name + '\n'
         output += '='*40
         return output
 
+    def xml_string(self):
+        status_message = {
+            ResultEnum.PASS: 'This project built successfully',
+            ResultEnum.FAIL: 'This project failed to build',
+            ResultEnum.UPASS: 'This project built successfully, but it was expected to fail',
+            ResultEnum.XFAIL: 'This project failed to build as expected'
+        }
+
+        action_results = self.recursive_all()
+        build_url = os.environ.get('BUILD_URL')
+
+        # Build out Junit Report
+        xml_report = f"<testsuite tests='{len(action_results)}'>\n"
+        for action_result in action_results:
+            # Create a link to the build log if running in a CI environment (Jenkins)
+            if build_url:
+                build_log = build_url + f'artifact/swift-source-compat-suite/{action_result}_{action_result.logfile}'
+            else:
+                build_log = f'{action_result}_{action_result.logfile}'
+
+            if action_result.result == ResultEnum.XFAIL or action_result.result == ResultEnum.UPASS:
+                match = re.compile(r"(XFAIL|UPASS):(.*?),(.*?)$").search(action_result.text)
+                xfail_link = match.group(2)
+                junit_testcase_name = match.group(3)
+            else:
+                match = re.compile(r"(PASS|FAIL):(.*?)$").search(action_result.text)
+                junit_testcase_name = match.group(2)
+                xfail_link = ''
+
+            # Create testcase. Add status message and a link to the build log
+            xml_report += f"<testcase classname='build' name='{junit_testcase_name}'>\n"
+            if action_result.result == ResultEnum.PASS or action_result.result == ResultEnum.XFAIL:
+                xml_report += f"<system-out>{status_message[action_result.result]}. {xfail_link}\n" \
+                              f"Build log: {build_log}</system-out>"
+            else:
+                xml_report += f"<failure type='failure' message='{status_message[action_result.result]}. " \
+                              f"{xfail_link}'>Build log: {build_log}</failure>"
+            xml_report += "</testcase>\n"
+
+        xml_report += "</testsuite>\n"
+        return xml_report
+
 
 class ProjectResult(ListResult):
+    pass
+
+
+class VersionResult(ListResult):
     pass
 
 
@@ -677,7 +988,6 @@ class ListBuilder(Factory):
         self.verbose = verbose
         self.subbuilder = subbuilder
         self.target = target
-        self.root_path = common.private_workspace('project_cache')
 
     def included(self, subtarget):
         return True
@@ -685,8 +995,8 @@ class ListBuilder(Factory):
     def subtargets(self):
         return self.target
 
-    def attach(self, subtarget):
-        return (subtarget,)
+    def payload(self):
+        return []
 
     def build(self, stdout=sys.stdout):
         results = self.new_result()
@@ -695,9 +1005,11 @@ class ListBuilder(Factory):
                 (log_filename, output_fd) = self.output_fd(subtarget)
                 subbuilder_result = None
                 try:
-                    subbuilder_result = self.subbuilder(*self.attach(subtarget)).build(
+                    subbuilder_result = self.subbuilder.initialize(*([subtarget] + self.payload())).build(
                         stdout=output_fd
                     )
+                    if subbuilder_result:
+                        subbuilder_result.logfile = log_filename
                     results.add(subbuilder_result)
                 finally:
                     if output_fd is not sys.stdout:
@@ -717,6 +1029,10 @@ class ListBuilder(Factory):
 
 
 class ProjectListBuilder(ListBuilder):
+    def __init__(self, include, exclude, verbose,  process_count, subbuilder, target):
+        super().__init__(include, exclude, verbose, subbuilder, target)
+        self.processes = process_count
+
     def included(self, subtarget):
         project = subtarget
         return (('platforms' not in project or
@@ -726,33 +1042,88 @@ class ProjectListBuilder(ListBuilder):
     def new_result(self):
         return ProjectListResult()
 
+    def start_process(self, project_subbuilder, default_timeout):
+        """
+        Sets the default timeout in the global variable of a newly started subprocess 
+        and builds `project_subbuilder` afterwards.
+        If we invoked project_subbilder.build() immediately in the new process, it would
+        not inherit the default timeout from the parent process.
+        """
+        common.set_default_execute_timeout(default_timeout)
+        return project_subbuilder.build()
+
+    def build(self, stdout=sys.stdout):
+        # Setup process pool to submit work to
+        thread_pool = futures.ProcessPoolExecutor(max_workers=self.processes)
+        submitted_futures = []
+
+        # Create results object to store results
+        results = self.new_result()
+
+        projects_to_build = [subtarget for subtarget in self.subtargets() if self.included(subtarget)]
+        common.debug_print(
+            f"Building {len(projects_to_build)} projects across {self.processes} parallel processes\n"
+        )
+
+        # For each project that needs building, submit a future to build said project
+        for project in projects_to_build:
+            project_subbuilder = self.subbuilder.initialize(*([project] + self.payload()))
+            worker = thread_pool.submit(self.start_process, project_subbuilder, common.DEFAULT_EXECUTE_TIMEOUT)
+            submitted_futures.append(worker)
+
+        # Cleanup in main process
+        futures.wait(submitted_futures)
+        for _future in submitted_futures:
+            results.add(_future.result())
+
+        return results
+
 
 class ProjectBuilder(ListBuilder):
+    def payload(self):
+        return [self.target]
+
+    def included(self, subtarget):
+        version = subtarget
+        return included_element(self.include, self.exclude, version)
+
+    def subtargets(self):
+        return self.target['compatibility']
+
+    def new_result(self):
+        return ProjectResult()
+
+
+class VersionBuilder(ListBuilder):
+    def __init__(self, include, exclude, verbose, subbuilder, target, project):
+        super(VersionBuilder, self).__init__(include, exclude, verbose, subbuilder, target)
+        self.project = project
+
     def included(self, subtarget):
         action = subtarget
         return included_element(self.include, self.exclude, action)
 
     def new_result(self):
-        return ProjectResult()
+        return VersionResult()
 
     def subtargets(self):
-        return self.target['actions']
+        return self.project['actions']
 
-    def attach(self, subtarget):
-        return (self.target, subtarget)
+    def payload(self):
+        return [self.target, self.project]
 
     def output_fd(self, subtarget):
         scheme_target = dict_get(subtarget, 'scheme', 'target', default=False)
         destination = dict_get(subtarget, 'destination', default=False)
-        project_identifier = dict_get(self.target, 'path', default=False) + " " + \
+        project_identifier = dict_get(self.project, 'path', default="") + " " + \
                              dict_get(subtarget, 'project', default="").split('-')[0]
-        identifier = ': '.join(
-            [subtarget['action'], project_identifier] +
+        identifier = '_'.join(
+            [x.strip() for x in [project_identifier, self.target['version'], subtarget['action']]] +
             ([scheme_target] if scheme_target else []) +
             ([destination] if destination else [])
         )
         log_filename = re.sub(
-            r"[^\w\_]+", "-", identifier.replace(': ', '_')
+            r"[^\w\_\.]+", "-", identifier
         ).strip('-').strip('_') + '.log'
         if self.verbose:
             fd = sys.stdout
@@ -761,15 +1132,18 @@ class ProjectBuilder(ListBuilder):
         return (log_filename, fd)
 
 
-
 class ActionBuilder(Factory):
-    def __init__(self, swiftc, swift_version, swift_branch,
+    def __init__(self, swiftc, swift_version, swift_branch, job_type,
                  sandbox_profile_xcodebuild,
                  sandbox_profile_package,
                  added_swift_flags,
+                 added_xcodebuild_flags,
                  skip_clean, build_config,
                  strip_resource_phases,
-                 project, action):
+                 project_cache_path,
+                 time_reporter,
+                 override_swift_exec,
+                 action, project):
         self.swiftc = swiftc
         self.swift_version = swift_version
         self.swift_branch = swift_branch
@@ -778,12 +1152,21 @@ class ActionBuilder(Factory):
         self.sandbox_profile_package = sandbox_profile_package
         self.project = project
         self.action = action
-        self.root_path = common.private_workspace('project_cache')
+        self.root_path = common.private_workspace(project_cache_path)
         self.current_platform = platform.system()
         self.added_swift_flags = added_swift_flags
-        self.skip_clean = skip_clean
+        self.added_xcodebuild_flags = added_xcodebuild_flags
+        # Make sure Xcode build folder is not cleaned by 'git' when
+        # 'clean_build' is explicitly set 'false'.
+        clean_build = True
+        if 'clean_build' in action:
+            clean_build = action['clean_build']
+        self.skip_clean = skip_clean or not clean_build
         self.build_config = build_config
         self.strip_resource_phases = strip_resource_phases
+        self.time_reporter = time_reporter
+        self.job_type = job_type
+        self.override_swift_exec = override_swift_exec
         self.init()
 
     def init(self):
@@ -838,9 +1221,12 @@ class ActionBuilder(Factory):
                      self.sandbox_profile_xcodebuild,
                      self.sandbox_profile_package,
                      self.added_swift_flags,
+                     self.added_xcodebuild_flags,
                      self.build_config,
                      incremental=self.skip_clean,
-                     stdout=stdout, stderr=stderr)
+                     time_reporter=self.time_reporter,
+                     stdout=stdout, stderr=stderr,
+                     override_swift_exec=self.override_swift_exec)
         except common.ExecuteCommandFailure as error:
             return self.failed(identifier, error)
         else:
@@ -849,27 +1235,64 @@ class ActionBuilder(Factory):
     def failed(self, identifier, error):
         if 'xfail' in self.action:
             error_str = 'XFAIL: %s: %s' % (identifier, error)
-            result = ActionResult(Result.XFAIL, error_str)
+            result = ActionResult(ResultEnum.XFAIL, error_str)
         else:
             error_str = 'FAIL: %s: %s' % (identifier, error)
-            result = ActionResult(Result.FAIL, error_str)
+            result = ActionResult(ResultEnum.FAIL, error_str)
         common.debug_print(error_str)
         return result
 
     def succeeded(self, identifier):
         if 'xfail' in self.action:
             error_str = 'UPASS: %s: %s' % (identifier, self.action)
-            result = ActionResult(Result.UPASS, error_str)
+            result = ActionResult(ResultEnum.UPASS, error_str)
         else:
             error_str = 'PASS: %s: %s' % (identifier, self.action)
-            result = ActionResult(Result.PASS, error_str)
+            result = ActionResult(ResultEnum.PASS, error_str)
         common.debug_print(error_str)
         return result
 
 
 class CompatActionBuilder(ActionBuilder):
+    def __init__(self,
+                 swiftc, swift_version, swift_branch, job_type,
+                 sandbox_profile_xcodebuild,
+                 sandbox_profile_package,
+                 added_swift_flags,
+                 added_xcodebuild_flags,
+                 skip_clean, build_config,
+                 strip_resource_phases,
+                 only_latest_versions,
+                 project_cache_path,
+                 time_reporter,
+                 override_swift_exec,
+                 action, version, project):
+        super(CompatActionBuilder, self).__init__(
+            swiftc, swift_version, swift_branch, job_type,
+            sandbox_profile_xcodebuild,
+            sandbox_profile_package,
+            added_swift_flags,
+            added_xcodebuild_flags,
+            skip_clean, build_config,
+            strip_resource_phases,
+            project_cache_path,
+            time_reporter,
+            override_swift_exec,
+            action, project
+        )
+        self.only_latest_versions = only_latest_versions
+        self.version = version
 
     def dispatch(self, identifier, stdout=sys.stdout, stderr=sys.stderr):
+        if self.only_latest_versions:
+            if self.version['version'] != \
+               sorted(self.project['compatibility'],
+                      reverse=True,
+                      key=lambda x: [float(y) for y in x['version'].split('.')])[0]['version']:
+                return None
+
+        if not self.swift_version:
+            self.swift_version = self.version['version']
         try:
             dispatch(self.root_path, self.project, self.action,
                      self.swiftc,
@@ -877,10 +1300,13 @@ class CompatActionBuilder(ActionBuilder):
                      self.sandbox_profile_xcodebuild,
                      self.sandbox_profile_package,
                      self.added_swift_flags,
+                     self.added_xcodebuild_flags,
                      self.build_config,
                      incremental=self.skip_clean,
                      should_strip_resource_phases=self.strip_resource_phases,
-                     stdout=stdout, stderr=stderr)
+                     time_reporter=self.time_reporter,
+                     stdout=stdout, stderr=stderr,
+                     override_swift_exec=self.override_swift_exec)
         except common.ExecuteCommandFailure as error:
             return self.failed(identifier, error)
         else:
@@ -888,91 +1314,89 @@ class CompatActionBuilder(ActionBuilder):
 
     def build(self, stdout=sys.stdout):
         scheme_target = dict_get(self.action, 'scheme', 'target', default=False)
+        # FIXME: Why isn't this used?
         identifier = ': '.join(
-            [self.action['action'], self.project['path']] +
+            [self.project['path'], self.version['version'], self.action['action']] +
             ([scheme_target] if scheme_target else [])
         )
-        for compatible_swift in self.project['compatibility'].keys()[:1]:
-            if len(self.project['compatibility'][compatible_swift]['commit']) != 40:
-                common.debug_print("ERROR: Commits must be 40 character SHA hashes")
-                exit(1)
-            self.checkout_sha(
-                self.project['compatibility'][compatible_swift]['commit'],
-                stdout=stdout, stderr=stdout
-            )
-            action_result = self.dispatch(compatible_swift,
-                                          stdout=stdout, stderr=stdout)
-            if action_result.result not in [ResultEnum.PASS,
-                                            ResultEnum.XFAIL]:
-                return action_result
+        if len(self.version['commit']) != 40:
+            common.debug_print("ERROR: Commits must be 40 character SHA hashes")
+            exit(1)
+        self.checkout_sha(
+            self.version['commit'],
+            stdout=stdout, stderr=stdout
+        )
+        action_result = self.dispatch('%s, %s' % (self.version['version'], self.version['commit'][:6]),
+                                      stdout=stdout, stderr=stdout)
         return action_result
 
     def failed(self, identifier, error):
-        compatible_swift = identifier
-        compatible_swift_message = (
-            compatible_swift + '=' +
-            self.project['compatibility'][compatible_swift]['commit']
-        )
+        version_commit = self.version['commit'][:6]
         bug_identifier = None
+        build_config = self.build_config if self.build_config else self.action.get('configuration', None)
         if 'xfail' in self.action:
             bug_identifier = is_xfailed(self.action['xfail'],
-                                        compatible_swift,
+                                        self.version['version'],
                                         self.current_platform,
-                                        self.swift_branch)
+                                        self.swift_branch,
+                                        build_config,
+                                        self.job_type)
         if bug_identifier:
-            error_str = 'XFAIL: {bug}, {project}, {compatibility}, {action_target}'.format(
+            error_str = 'XFAIL: {bug}, {project}, {compatibility}, {commit}, {action_target}'.format(
                             bug=bug_identifier,
                             project=self.project['path'],
-                            compatibility=compatible_swift,
+                            compatibility=self.version['version'],
+                            commit=version_commit,
                             action_target = dict_get(self.action, 'scheme', 'target', default="Swift Package")
                         )
             if 'destination' in self.action:
                 error_str += ', ' + self.action['destination']
-            result = ActionResult(Result.XFAIL, error_str)
+            result = ActionResult(ResultEnum.XFAIL, error_str)
         else:
-            error_str = 'FAIL: {project}, {compatibility}, {action_target}'.format(
+            error_str = 'FAIL: {project}, {compatibility}, {commit}, {action_target}'.format(
                             project=self.project['path'],
-                            compatibility=compatible_swift,
+                            compatibility=self.version['version'],
+                            commit=version_commit,
                             action_target = dict_get(self.action, 'scheme', 'target', default="Swift Package")
                         )
             if 'destination' in self.action:
                 error_str += ', ' + self.action['destination']
-            error_str += ', ' + str(error)
-            result = ActionResult(Result.FAIL, error_str)
+            result = ActionResult(ResultEnum.FAIL, error_str)
         common.debug_print(error_str)
         return result
 
     def succeeded(self, identifier):
-        compatible_swift = identifier
-        compatible_swift_message = (
-            compatible_swift + '=' +
-            self.project['compatibility'][compatible_swift]['commit']
-        )
+        version_commit = self.version['commit'][:6]
         bug_identifier = None
+        build_config = self.build_config if self.build_config else self.action.get('configuration', None)
         if 'xfail' in self.action:
             bug_identifier = is_xfailed(self.action['xfail'],
-                                        compatible_swift,
+                                        self.version['version'],
                                         self.current_platform,
-                                        self.swift_branch)
+                                        self.swift_branch,
+                                        build_config,
+                                        self.job_type)
         if bug_identifier:
-            error_str = 'UPASS: {bug}, {project}, {compatibility}, {action_target}'.format(
+            error_str = 'UPASS: {bug}, {project}, {compatibility}, {commit}, {action_target}'.format(
                             bug=bug_identifier,
                             project=self.project['path'],
-                            compatibility=compatible_swift,
+                            compatibility=self.version['version'],
+                            commit=version_commit,
                             action_target = dict_get(self.action, 'scheme', 'target', default="Swift Package")
                         )
             if 'destination' in self.action:
                 error_str += ', ' + self.action['destination']
-            result = ActionResult(Result.UPASS, error_str)
+            result = ActionResult(ResultEnum.UPASS, error_str)
         else:
-            error_str = 'PASS: {project}, {compatibility}, {action_target}'.format(
+            error_str = 'PASS: {project}, {compatibility}, {commit}, {action_target}'.format(
                             project=self.project['path'],
-                            compatibility=compatible_swift,
+                            compatibility=self.version['version'],
+                            commit=version_commit,
                             action_target = dict_get(self.action, 'scheme', 'target', default="Swift Package")
                         )
             if 'destination' in self.action:
                 error_str += ', ' + self.action['destination']
-            result = ActionResult(Result.PASS, error_str)
+            result = ActionResult(ResultEnum.PASS, error_str)
         common.debug_print(error_str)
         return result
 
@@ -1024,20 +1448,23 @@ def have_same_trees(full, incr, d):
 
 class IncrementalActionBuilder(ActionBuilder):
 
-    def __init__(self, swiftc, swift_version, swift_branch,
+    def __init__(self, swiftc, swift_version, swift_branch, job_type,
                  sandbox_profile_xcodebuild,
                  sandbox_profile_package,
                  added_swift_flags, build_config,
                  strip_resource_phases,
+                 time_reporter, override_swift_exec,
                  project, action):
         super(IncrementalActionBuilder,
-              self).__init__(swiftc, swift_version, swift_branch,
+              self).__init__(swiftc, swift_version, swift_branch, job_type,
                              sandbox_profile_xcodebuild,
                              sandbox_profile_package,
                              added_swift_flags,
                              skip_clean=True,
                              build_config=build_config,
                              strip_resource_phases=strip_resource_phases,
+                             time_reporter=time_reporter,
+                             override_swift_exec=override_swift_exec,
                              project=project,
                              action=action)
         self.proj_path = os.path.join(self.root_path, self.project['path'])
@@ -1106,18 +1533,18 @@ class IncrementalActionBuilder(ActionBuilder):
                        (os.path.relpath(full),
                         os.path.basename(incr)))
             if self.expect_determinism():
-                raise EarlyExit(ActionResult(Result.FAIL, message))
+                raise EarlyExit(ActionResult(ResultEnum.FAIL, message))
             else:
                 common.debug_print(message, stderr=stdout)
 
     def excluded_by_limit(self, limits):
-        for (kind, value) in limits.items():
+        for kind, value in limits.items():
             if self.action.get(kind) != value:
                 return True
         return False
 
     def build(self, stdout=sys.stdout):
-        action_result = ActionResult(Result.PASS, "")
+        action_result = ActionResult(ResultEnum.PASS, "")
         try:
             if 'incremental' in self.project:
                 for vers in self.project['incremental']:
@@ -1140,10 +1567,13 @@ class IncrementalActionBuilder(ActionBuilder):
                      self.sandbox_profile_xcodebuild,
                      self.sandbox_profile_package,
                      self.added_swift_flags,
+                     self.added_xcodebuild_flags,
                      self.build_config,
                      should_strip_resource_phases=False,
+                     time_reporter=self.time_reporter,
                      stdout=stdout, stderr=stderr,
-                     incremental=incremental)
+                     incremental=incremental,
+                     override_swift_exec=self.override_swift_exec)
         except common.ExecuteCommandFailure as error:
             return self.failed(identifier, error)
         else:
@@ -1166,7 +1596,7 @@ class IncrementalActionBuilder(ActionBuilder):
         os.makedirs(self.incr_path)
         prev = None
         seq = 0
-        action_result = ActionResult(Result.PASS, "")
+        action_result = ActionResult(ResultEnum.PASS, "")
         for sha in commits:
             proj = self.project['path']
             ident = "%s-%03d-%.7s" % (identifier, seq, sha)

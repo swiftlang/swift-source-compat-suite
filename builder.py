@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # ===--- builder.py -------------------------------------------------------===
 #
 #  This source file is part of the Swift.org open source project
 #
-#  Copyright (c) 2014 - 2017 Apple Inc. and the Swift project authors
+#  Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
 #  Licensed under Apache License v2.0 with Runtime Library Exception
 #
 #  See https://swift.org/LICENSE.txt for license information
@@ -31,11 +31,15 @@ def parse_args():
 def main():
     """Execute specified indexed project actions."""
     args = parse_args()
-    index = json.loads(open(args.projects).read())
+
+    with open(args.projects) as projects:
+        index = json.loads(projects.read())
+
     result = project.ProjectListBuilder(
         args.include_repos,
         args.exclude_repos,
         args.verbose,
+        args.process_count,
         project.ProjectBuilder.factory(
             args.include_actions,
             args.exclude_actions,

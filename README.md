@@ -9,6 +9,9 @@ integration system](https://ci.swift.org), allowing Swift compiler developers to
 understand the compatibility impact their changes have on real-world Swift
 projects.
 
+## Python Support
+The Source compatibility suite currently supports Python 3.8+. You may experience performance issues if you attempt to execute any of the associated files with a lesser version of Python 3.
+
 ## Current List of Projects
 
 The <a href="https://swift.org/source-compatibility/#current-list-of-projects">current list of projects</a> can be viewed on Swift.org.
@@ -29,7 +32,7 @@ To be accepted into the Swift source compatibility test suite, a project must:
 2. Be an *Xcode* or *Swift Package Manager* project (Carthage and CocoaPods are currently unsupported but are being explored to be supported in the future)
 3. Support building on either Linux or macOS
 4. Be contained in a publicly accessible git repository
-5. Maintain a project branch that builds against Swift 3.0 compatibility mode
+5. Maintain a project branch that builds against Swift 4.2 compatibility mode
    and passes any unit tests
 6. Have maintainers who will commit to resolve issues in a timely manner
 7. Be compatible with the latest GM/Beta versions of *Xcode* and *swiftpm*
@@ -52,7 +55,7 @@ To add a project meeting the acceptance criteria to the suite, perform the
 following steps:
 
 1. Ensure the project builds successfully at a chosen commit against
-   Swift 3.0 GM
+   Swift 4.2 GM
 2. Create a pull request against the [source compatibility suite
    repository](https://github.com/apple/swift-source-compat-suite),
    modifying **projects.json** to include a reference to the project being added
@@ -72,7 +75,7 @@ To add a new Swift Package Manager project, use the following template:
   "maintainer": "email@example.com",
   "compatibility": [
     {
-      "version": "3.0",
+      "version": "4.2",
       "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
     }
   ],
@@ -115,7 +118,7 @@ To add a new Swift Xcode workspace, use the following template:
   "maintainer": "email@example.com",
   "compatibility": [
     {
-      "version": "3.0",
+      "version": "4.2",
       "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
     }
   ],
@@ -184,7 +187,7 @@ To add a new Swift Xcode project, use the following template:
   "maintainer": "email@example.com",
   "compatibility": [
     {
-      "version": "3.0",
+      "version": "4.2",
       "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
     }
   ],
@@ -205,22 +208,22 @@ To add a new Swift Xcode project, use the following template:
 
 After adding a new project to the index, ensure it builds successfully at the
 pinned commits against the specified versions of Swift. In the examples,
-the commits are specified as being compatible with Swift 3.0, which is included
-in Xcode 8.0.
+the commits are specified as being compatible with Swift 4.2, which is included
+in Xcode 10.
 
 ~~~bash
-# Select Xcode 8.0 GM
+# Select Xcode 10 GM
 sudo xcode-select -s /Applications/Xcode.app
 # Build project at pinned commit against selected Xcode
-./project_precommit_check project-path-field --earliest-compatible-swift-version 3.0
+./project_precommit_check project-path-field --earliest-compatible-swift-version 4.2
 ~~~
 
-On Linux, you can build against the Swift 3.0 release toolchain:
+On Linux, you can build against the Swift 4.2 release toolchain:
 
 ~~~bash
-curl -O https://swift.org/builds/swift-3.0-release/ubuntu1510/swift-3.0-RELEASE/swift-3.0-RELEASE-ubuntu15.10.tar.gz
-tar xzvf swift-3.0-RELEASE-ubuntu15.10.tar.gz
-./project_precommit_check project-path-field --earliest-compatible-swift-version 3.0 --swiftc swift-3.0-RELEASE-ubuntu15.10/usr/bin/swiftc
+curl -O https://swift.org/builds/swift-4.2-release/ubuntu1604/swift-4.2-RELEASE/swift-4.2-RELEASE-ubuntu16.04.tar.gz
+tar xzvf swift-4.2-RELEASE-ubuntu16.04.tar.gz
+./project_precommit_check project-path-field --earliest-compatible-swift-version 4.2 --swiftc swift-4.2-RELEASE-ubuntu15.10/usr/bin/swiftc
 ~~~
 
 ## Maintaining Projects
@@ -244,13 +247,13 @@ To build all projects against a specified Swift compiler locally, use the
 `runner.py` utility as shown below.
 
 ~~~bash
-./runner.py --swift-branch master --projects projects.json --include-actions 'action.startswith("Build")' --swiftc path/to/swiftc
+./runner.py --swift-branch main --projects projects.json --include-actions 'action.startswith("Build")' --swiftc path/to/swiftc
 ~~~
 
 Use the `--include-repos` flag to build a specific project.
 
 ~~~bash
-./runner.py --swift-branch master --projects projects.json --include-actions 'action.startswith("Build")' --include-repos 'path == "Alamofire"' --swiftc path/to/swiftc
+./runner.py --swift-branch main --projects projects.json --include-actions 'action.startswith("Build")' --include-repos 'path == "Alamofire"' --swiftc path/to/swiftc
 ~~~
 
 By default, build output is redirected to per-action `.log` files in the current
@@ -265,8 +268,8 @@ visible.
 
 To mark an action as an expected failure, add an `xfail` entry for the correct
 Swift version and branch to the failing actions, associating each with a link
-to a JIRA reporting the relevant failure. The following is an example of an
-action that's XFAIL'd when building against Swift master branch in 3.0
+to a JIRA issue reporting the relevant failure. The following is an example of
+an action that's XFAIL'd when building against Swift main branch in 4.2
 compatibility mode.
 
 ~~~json
@@ -278,7 +281,7 @@ compatibility mode.
   "maintainer": "email@example.com",
   "compatibility": [
     {
-      "version": "3.0",
+      "version": "4.2",
       "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
     }
   ],
@@ -293,13 +296,9 @@ compatibility mode.
       "destination": "generic/platform=iOS",
       "configuration": "Release",
       "xfail": {
-        "compatibility": {
-          "3.0": {
-            "branch": {
-              "master": "https://bugs.swift.org/browse/SR-9999"
-            }
-          }
-        }
+        "issue": "https://github.com/apple/swift/issues/9999",
+        "compatibility": "4.2",
+        "branch": "main"
       }
     }
   ]
@@ -307,4 +306,72 @@ compatibility mode.
 ~~~
 
 Additional Swift branches and versions can be added to XFAIL different
-configurations.
+configurations. The currently supported fields for XFAIL entries are:
+
+- `"compatibility"`: the Swift version(s) it fails with, e.g. `"4.0"`
+- `"branch"`: the branch(es) of the swift compiler it fails with, e.g.
+  `"swift-5.1-branch"`
+- `"platform"`: the platform(s) it fails on, e.g. `"Darwin"` or `"Linux"`
+- `"configuration"`: the build configuration(s) if fails with, i.e. `"release"`
+  or `"debug"`)
+- `"job"`: Allows XFailing the project for only the source compatibility build 
+  or the SourceKit Stress Tester. Use `"source-compat"` to only XFail the Source 
+  Compatibility Suite CI job and `"stress-test"` to only stress test the 
+  SourceKit Stress Tester CI job.
+
+Values can either be a single string literal or a list of alternative string
+literals to match against. For example the below action is expected to fail on
+both main and swift-5.1-branch in both 4.0 and 5.1 compatibility modes:
+
+~~~json
+...
+{
+  "action": "BuildXcodeProjectTarget",
+  "project": "project.xcodeproj",
+  "target": "project",
+  "destination": "generic/platform=iOS",
+  "configuration": "Release",
+  "xfail": {
+    "issue": "https://github.com/apple/swift/issues/9999",
+    "compatibility": ["4.0", "5.1"],
+    "branch": ["main", "swift-5.1-branch"]
+  }
+}
+...
+~~~
+
+If an action is failing for different reasons in different configurations, the
+value of the action's `"xfail"` entry can also become a list rather than
+a single entry. In this case the `"issue"` of the first item that matches will
+be reported. In the below example any failure on Linux would be reported as
+*SR-7777*, while a failure on other platforms would be reported as *SR-8888*
+using a toolchain built from the *master* branch and *SR-9999* using a
+toolchain built from *swift-5.1-branch*. If the entries were in the reverse
+order, *SR-7777* would only be reported for Linux failures with toolchains built
+from a branch other than *main* or *swift-5.1-branch*.
+
+~~~json
+...
+{
+  "action": "BuildXcodeProjectTarget",
+  "project": "project.xcodeproj",
+  "target": "project",
+  "destination": "generic/platform=iOS",
+  "configuration": "Release",
+  "xfail": [
+    {
+      "issue": "https://github.com/apple/swift/issues/7777",
+      "platform": "Linux"
+    },
+    {
+      "issue": "https://github.com/apple/swift/issues/8888",
+      "branch": "main"
+    },
+    {
+      "issue": "https://github.com/apple/swift/issues/9999",
+      "branch": "swift-5.1-branch"
+    }
+  ]
+}
+...
+~~~

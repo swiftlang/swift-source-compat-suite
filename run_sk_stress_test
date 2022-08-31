@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # ===--- run_sk_stress_test -----------------------------------------------===
 #
 #  This source file is part of the Swift.org open source project
 #
-#  Copyright (c) 2014 - 2018 Apple Inc. and the Swift project authors
+#  Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
 #  Licensed under Apache License v2.0 with Runtime Library Exception
 #
 #  See https://swift.org/LICENSE.txt for license information
@@ -13,21 +13,19 @@
 
 """A run script to be executed as a Jenkins build step."""
 
-from __future__ import print_function
 import sys
 import os
-import re
 import json
-import subprocess
 import argparse
 import platform
 
 import common
+from typing import List
 
 script_dir = os.path.abspath(os.path.dirname(__file__))
 
 
-def main():
+def main() -> int:
     if platform.system() != 'Darwin':
         raise common.UnsupportedPlatform
 
@@ -40,15 +38,11 @@ def main():
 
     if not args.skip_tools_clone:
         common.clone_repos()
-
-    if not args.skip_stress_tester_clone:
+        clone_swift_syntax(workspace, args.swift_branch)
         clone_stress_tester(workspace, args.swift_branch)
 
     if not args.skip_tools_build:
         build_swift_toolchain(workspace, args)
-
-    if not args.skip_stress_tester_build:
-        build_stress_tester(workspace, args)
 
     if not args.skip_runner:
         if not execute_runner(workspace, args):
@@ -57,7 +51,7 @@ def main():
     return 0
 
 
-def parse_args():
+def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument('swift_branch')
     parser.add_argument('--sandbox', action='store_true')
@@ -69,13 +63,13 @@ def parse_args():
                         metavar='TAG',
                         help='Only run project actions with the given tag',
                         default='sourcekit')
+    parser.add_argument('--filter-by-project',
+                        metavar='PROJECT',
+                        help='Only stress test the given project')
     parser.add_argument('--sourcekit-xfails',
                         metavar='PATH',
                         help='JSON file specifying expected sourcekit failures',
                         default='sourcekit-xfails.json')
-    parser.add_argument('--gen-sourcekit-xfails',
-                        metavar='PATH',
-                        help='write any sourcekit failures encountered out to <PATH> in JSON; if --sourcekit-xfails is also specified, the union of its contents and any unexpected failures will be written instead')
     parser.add_argument('--verbose',
                         action='store_true')
     parser.add_argument('--assertions',
@@ -87,44 +81,67 @@ def parse_args():
     parser.add_argument('--swiftc',
                         metavar='PATH',
                         help='swiftc executable')
+    parser.add_argument('--sk-swiftc-wrapper',
+                        metavar='PATH',
+                        help='sk-swiftc-wrapper executable')
+    parser.add_argument('--sk-stress-test',
+                        metavar='PATH',
+                        help='sk-stress-test executable')
     parser.add_argument('--skip-tools-build',
-                        action='store_true')
-    parser.add_argument('--skip-stress-tester-build',
                         action='store_true')
     parser.add_argument('--skip-ci-steps',
                         action='store_true')
     parser.add_argument('--skip-tools-clone',
                         action='store_true')
-    parser.add_argument('--skip-stress-tester-clone',
-                        action='store_true')
     parser.add_argument('--skip-runner',
                         action='store_true')
     parser.add_argument('--add-swift-flags',
                         metavar='FLAGS',
-                        help='add flags to each Swift invocation (note: field '
-                             'names from projects.json enclosed in {} will be '
-                             'replaced with their value)',
+                        help='''
+                             add flags to each Swift invocation (note: field
+                             names from projects.json enclosed in {} will be
+                             replaced with their value)
+                             ''',
                         default='')
     parser.add_argument('--add-xcodebuild-flags',
                         metavar='FLAGS',
-                        help='add flags to each xcodebuild invocation (note: field '
-                             'names from projects.json enclosed in {} will be '
-                             'replaced with their value)',
+                        help='''
+                             add flags to each xcodebuild invocation (note: field
+                             names from projects.json enclosed in {} will be
+                             replaced with their value)
+                             ''',
                         default='')
+    parser.add_argument('--cmake-c-launcher',
+                        metavar="PATH",
+                        help='the absolute path to set CMAKE_C_COMPILER_LAUNCHER for build-script')
+    parser.add_argument('--cmake-cxx-launcher',
+                        metavar='PATH',
+                        help='the absolute path to set CMAKE_CXX_COMPILER_LAUNCHER for build-script')
     return parser.parse_args()
 
+def get_swiftc_path(workspace: str, args: argparse.Namespace) -> str:
+    if args.swiftc:
+        return args.swiftc
+    else:
+        return os.path.join(workspace, 'build/compat_macos/install/toolchain/usr/bin/swiftc')
 
-def get_swiftc_path(workspace, swiftc):
-    swiftc_path = (
-        swiftc if swiftc else
-        os.path.join(workspace, 'build/compat_macos/install/toolchain/usr/bin/swiftc')
-    )
-    return swiftc_path
+def get_sk_swiftc_wrapper_path(workspace: str, args: argparse.Namespace) -> str:
+    if args.sk_swiftc_wrapper:
+        return args.sk_swiftc_wrapper
+    else:
+        # If not explicitly specified, fall back to finding `sk-swiftc-wrapper` next to `swiftc`
+        swiftc_path = get_swiftc_path(workspace, args)
+        return os.path.join(os.path.dirname(swiftc_path), 'sk-swiftc-wrapper')
 
-def get_stress_test_path(workspace):
-    return os.path.join(workspace, 'swift-stress-tester/SourceKitStressTester/.build/release/sk-stress-test')
+def get_sk_stress_test_path(workspace: str, args: argparse.Namespace) -> str:
+    if args.sk_stress_test:
+        return args.sk_stress_test
+    else:
+        # If not explicitly specified, fall back to finding `sk-stress-test` next to `swiftc`
+        swiftc_path = get_swiftc_path(workspace, args)
+        return os.path.join(os.path.dirname(swiftc_path), 'sk-stress-test')
 
-def get_sandbox_profile_flags():
+def get_sandbox_profile_flags() -> List[str]:
     return [
         '--sandbox-profile-xcodebuild',
         '../../../workspace-private/swift-source-compat-suite-sandbox/sandbox_xcodebuild.sb',
@@ -132,33 +149,27 @@ def get_sandbox_profile_flags():
         '../../../workspace-private/swift-source-compat-suite-sandbox/sandbox_package.sb'
     ]
 
-def get_sandbox_profile_flags_test():
-    return [
-        '--sandbox-profile-xcodebuild',
-        '../../../workspace-private/swift-source-compat-suite-sandbox/sandbox_xcodebuild.sb',
-        '--sandbox-profile-package',
-        '../../../workspace-private/swift-source-compat-suite-sandbox/sandbox_test.sb'
-    ]
-
-def clone_stress_tester(workspace, swift_branch):
-    clone_cmd = [
+def clone_stress_tester(workspace: str, swift_branch: str) -> None:
+    stress_clone_cmd = [
         'git','clone', '-q', '-b', swift_branch, '--recursive',
         'https://github.com/apple/swift-stress-tester',
         '{}/swift-stress-tester'.format(workspace)
     ]
-    common.check_execute(clone_cmd, timeout=9999999)
-    
+    common.check_execute(stress_clone_cmd, timeout=-1)
 
-def execute_runner(workspace, args):
-    swiftc_path = get_swiftc_path(workspace, args.swiftc)
-    wrapper_path = os.path.join(workspace, 'swift-stress-tester/SourceKitStressTester/.build/release/sk-swiftc-wrapper')
-    wrapper_link = os.path.join(os.path.dirname(swiftc_path), 'sk-swiftc-wrapper')
+def clone_swift_syntax(workspace: str, swift_branch: str) -> None:
+    syntax_clone_cmd = [
+        'git','clone', '-q', '-b', swift_branch, '--recursive',
+        'https://github.com/apple/swift-syntax',
+        '{}/swift-syntax'.format(workspace)
+    ]
+    common.check_execute(syntax_clone_cmd, timeout=-1)
 
-    # copy stress tester wrapper alongside the underlying swiftc
-    # as swiftpm seems to look for other tools relative to the provided swiftc
-    if os.path.lexists(wrapper_link):
-        os.unlink(wrapper_link)
-    os.symlink(wrapper_path, wrapper_link)
+
+def execute_runner(workspace: str, args: argparse.Namespace) -> bool:
+    swiftc_path = get_swiftc_path(workspace, args)
+    wrapper_path = get_sk_swiftc_wrapper_path(workspace, args)
+    stress_tester_path = get_sk_stress_test_path(workspace, args)
 
     extra_runner_args = []
     if args.sandbox:
@@ -172,19 +183,17 @@ def execute_runner(workspace, args):
 
     if args.filter_by_tag:
         extra_runner_args += ['--include-actions', '"tags" in locals() and "{}" in tags.split()'.format(args.filter_by_tag)]
+    
+    if args.filter_by_project:
+        extra_runner_args += ['--include-repos', 'path == "{}"'.format(args.filter_by_project)]
 
+    runner = StressTesterRunner(wrapper_path, stress_tester_path, swiftc_path, args.projects, args.swift_branch, os.path.abspath(args.sourcekit_xfails))
+    passed = runner.run(extra_runner_args)
 
-    failure_manager = FailureManager(args.sourcekit_xfails, args.swift_branch)
-    runner = StressTesterRunner(wrapper_link, get_stress_test_path(workspace), swiftc_path, failure_manager)
-    passed = runner.run(args.projects, args.swift_branch, extra_runner_args)
-
-    # output failures as json if requested and the the underlying compatibility run succeeded.
-    if not runner.compat_runner_failed and args.gen_sourcekit_xfails:
-        failure_manager.write_failures(args.gen_sourcekit_xfails, update=True)
     return passed
 
 
-def build_swift_toolchain(workspace, args):
+def build_swift_toolchain(workspace: str, args: argparse.Namespace) -> None:
     build_command = [
         os.path.join(workspace, 'swift/utils/build-script'),
         '--debug' if args.debug else '--release',
@@ -192,6 +201,8 @@ def build_swift_toolchain(workspace, args):
         '--build-ninja',
         '--llbuild',
         '--swiftpm',
+        '--swiftsyntax',
+        '--skstresstester',
         '--ios',
         '--tvos',
         '--watchos',
@@ -202,283 +213,229 @@ def build_swift_toolchain(workspace, args):
         '--darwin-install-extract-symbols',
         '--darwin-toolchain-alias=swift',
         '--darwin-toolchain-bundle-identifier=org.swift.compat-macos',
-        '--darwin-toolchain-display-name-short=Swift Development Snapshot'
+        '--darwin-toolchain-display-name-short=Swift Development Snapshot',
         '--darwin-toolchain-display-name=Swift Development Snapshot',
         '--darwin-toolchain-name=swift-DEVELOPMENT-SNAPSHOT',
         '--darwin-toolchain-version=3.999.999',
         '--install-llbuild',
         '--install-swift',
         '--install-swiftpm',
+        '--install-swiftsyntax',
+        '--install-skstresstester',
         '--install-destdir={}/build/compat_macos/install'.format(workspace),
         '--install-prefix=/toolchain/usr',
         '--install-symroot={}/build/compat_macos/symroot'.format(workspace),
         '--installable-package={}/build/compat_macos/root.tar.gz'.format(workspace),
-        '--llvm-install-components=libclang;libclang-headers',
-        '--swift-install-components=compiler;clang-builtin-headers;stdlib;swift-syntax;sdk-overlay;license;sourcekit-xpc-service;swift-remote-mirror;swift-remote-mirror-headers',
+        '--llvm-install-components=libclang;libclang-headers;dsymutil',
+        '--swift-install-components=compiler;clang-builtin-headers;stdlib;sdk-overlay;parser-lib;license;sourcekit-xpc-service;swift-remote-mirror;swift-remote-mirror-headers',
         '--symbols-package={}/build/compat_macos/root-symbols.tar.gz'.format(workspace),
         '--verbose-build',
         '--reconfigure',
     ]
+    if args.cmake_c_launcher:
+        build_command += ['--cmake-c-launcher={}'.format(args.cmake_c_launcher)]
+    if args.cmake_cxx_launcher:
+        build_command += ['--cmake-cxx-launcher={}'.format(args.cmake_cxx_launcher)]
     common.check_execute(build_command, timeout=9999999)
 
 
-def build_stress_tester(workspace, args):
-    swiftc_path = get_swiftc_path(workspace, args.swiftc)
-    bin_dir = os.path.dirname(swiftc_path)
-    lib_dir = os.path.join(os.path.dirname(bin_dir), 'lib')
-    swift = os.path.join(bin_dir, 'swift')
-    
-    build_command = [
-        swift, 'build',
-        '--package-path', os.path.join(workspace, 'swift-stress-tester/SourceKitStressTester'),
-        '-c', 'release',
-        '-Xswiftc', '-target', '-Xswiftc', 'x86_64-apple-macosx10.13',
-        # to pick up the sourcekitd framework
-        '-Xswiftc', '-Fsystem', '-Xswiftc', lib_dir,
-        '-Xlinker', '-rpath', '-Xlinker', lib_dir
-    ]
-    common.check_execute(build_command, timeout=999)
-
-class FailureKind(object):
-    """the kind of failure detected on a particular line of output."""
-    NONE = 1 
-    FAIL = 2
-    XFAIL = 3
-
-
-class FailureManager(object):
-    """parses and manages failures reported by the SourceKit stress tester."""
-
-    _error_matcher = re.compile(r'\[sk-stress-test\] error: (?P<failure>[^ ]+) invoking SourceKit request (?P<request>[^ ]+)(?: \((?P<refactoring>[^\)]+)\))? [oi]n .*/project_cache/(?P<file>.+\.swift)(?: a[ts] offset (?P<offset>\d+)(?: for length (?P<length>\d+))? with args:.*)?$')
-    _seen_matcher = re.compile(r'\[sk-stress-test\] Stress testing .*/project_cache/(?P<file>.+\.swift)(?: part \d+ of \d+):$')
-
-    def __init__(self, xfails_path, swift_branch):
-        self.swift_branch = swift_branch
-        self.xfails_path = xfails_path
-        self.xfails = self._load_applicable_xfails(xfails_path, swift_branch) if xfails_path else []
-        self.seen_files = []
-        self.expected = []
-        self.unexpected = []
-        self.unrecognized_errors = []
-
-    def process_line(self, line):
-        match = self._error_matcher.search(line)
-        if not match:
-            if line.startswith('[sk-stress-test] error:'):
-                self.unrecognized_errors.append(line)
-            else:
-                # keep track of files we actually stress test so we don't report unmatched xfails in files we didn't see
-                progress = self._seen_matcher.search(line)
-                if progress:
-                    self.seen_files.append(progress.groupdict()['file'])
-            return FailureKind.NONE, None
-
-        failure = {key: value for key, value in match.groupdict().items() if value is not None}
-        failure['branches'] = [self.swift_branch]
-
-        for key in ['offset', 'length']:
-            if key in failure:
-                failure[key] = int(failure[key])
-
-        if self._is_expected_failure(failure):
-            self.expected.append(failure)
-            return FailureKind.XFAIL, failure
-        
-        self.unexpected.append(failure)
-        return FailureKind.FAIL, failure
-
-    @property
-    def unmatched_xfails(self):
-        return [xfail for xfail in self.xfails if not xfail.get('_matched', False) and self._saw_matching_file(xfail.get('file'))]
-
-    def write_failures(self, path, update=False):
-        with open(path, 'w') as json_out:
-            failures = self.unexpected + (self.xfails if update and self.xfails else self.expected)
-            failures.sort(key=lambda f: f.get('file', ''))
-            json.dump([{key: value for key, value in failure.items() if not key.startswith('_')} for failure in failures], json_out, indent=4)
-
-    def _is_expected_failure(self, failure):
-        return any(self._xfail_matches(failure, xfail) for xfail in self.xfails)
-
-    def _saw_matching_file(self, xfail_file):
-        if not xfail_file:
+def processed_files_contain(processed_files: List[str], file_path: str) -> bool:
+    """
+    Returns `True` if a path in `processed_files` contains `file_path` as a substring, `False` otherwise
+    """
+    for processed_file in processed_files:
+        if file_path in processed_file:
             return True
-        return any(re.match(self._wildcard_to_regex(xfail_file), seen_file) for seen_file in self.seen_files)
-
-    @classmethod
-    def _xfail_matches(cls, failure, xfail):
-      for key, value in xfail.items():
-        if key in ['issue', 'branches', '_matched']:
-          continue
-        if key in failure and re.match(cls._wildcard_to_regex(str(value)), str(failure[key])):
-          continue
-        return False
-
-      xfail['_matched'] = True
-      if 'issue' in xfail:
-        failure['issue'] = xfail['issue']
-      return True
-
-    @staticmethod
-    def _load_applicable_xfails(xfails_path, swift_branch):
-        with open(xfails_path) as json_file:
-            return [xfail for xfail in json.load(json_file) if swift_branch in xfail['branches']]
-
-    @staticmethod
-    def _wildcard_to_regex(wildcard_string):
-      regex_parts = [re.escape(item) for item in wildcard_string.split('*')]
-      return r'.*'.join(regex_parts) + r'$'
+    return False
 
 
 class StressTesterRunner(object):
     """sets up the Swift compatibility suite runner to use the stress tester's swiftc-wrapper, executes it, and processes its output for failures."""
 
-    def __init__(self, wrapper, stress_tester, swiftc, failure_manager):
+    wrapper: str
+    stress_tester: str
+    swiftc: str
+    branch: str
+
+    def __init__(self, wrapper: str, stress_tester: str, swiftc: str, projects_path: str, branch: str, xfails_path: str):
         self.wrapper = wrapper
         self.stress_tester = stress_tester
         self.swiftc = swiftc
 
-        self.failure_manager = failure_manager
+        self.xfails_path = xfails_path
+        self.projects_path = projects_path
+        self.swift_branch = branch
+
         self.compat_runner_failed = False
 
-    def run(self, projects_json, swift_branch, extra_runner_args=[]):
+
+    def run(self, extra_runner_args: List[str] = []) -> bool:
+        # temporary file paths
+        filtered_projects = os.path.join(script_dir, 'stress-tester-projects.json')
+        results = os.path.join(script_dir, 'stress-tester-results.json')
+        request_durations = os.path.join(script_dir, 'stress-tester-request-durations.json')
+
+        # remove temporary files if they already exist
+        self._cleanup([filtered_projects, results, request_durations])
+
         run_env = {
             'SK_STRESS_TEST': self.stress_tester,
             'SK_STRESS_SWIFTC': self.swiftc,
-            'SK_STRESS_SILENT': '',
-            'SK_STRESS_CODECOMPLETE_LIMIT': '1000' }
+            'SK_STRESS_SILENT': 'true',
+            'SK_STRESS_AST_BUILD_LIMIT': '1000',
+            'SK_STRESS_OUTPUT': results,
+            'SK_XFAILS_PATH': self.xfails_path,
+            'SK_STRESS_ACTIVE_CONFIG': self.swift_branch,
+            'SK_STRESS_REWRITE_MODES': 'none concurrent insideout',
+            'SK_STRESS_REQUEST_DURATIONS_FILE': request_durations,
+        }
         run_env.update(os.environ)
-        filtered_projects_json = self._rewrite_projects_json(projects_json, os.path.join(script_dir, 'stress-tester-projects.json'))
-
-        run_cmd = ['python', '-u', 'runner.py',
-          '--projects', filtered_projects_json,
+        run_cmd = ['./runner.py',
+          '--projects', filtered_projects,
           '--verbose',
-          '--swiftc', self.wrapper,
-          '--swift-branch', swift_branch,
-          '--default-timeout', str(180*60),
+          '--swiftc', self.swiftc,
+          '--override-swift-exec', self.wrapper,
+          '--swift-branch', self.swift_branch,
+          '--job-type', 'stress-tester',
+          '--default-timeout', str(-1),
           '--only-latest-versions',
-          # archs overrie is set to arm64 for generic/iOS actions that would otherwise invoke the stress tester for both arm64 and armv7
+          # Don't build projects in parallel because stress testing a single project already utilises the CPU 100% and stress testing multiple causes timeouts.
+          '--process-count', '1',
+          # archs override is set to arm64 for generic/iOS actions that would otherwise invoke the stress tester for both arm64 and armv7
           '--add-xcodebuild-flags', 'ARCHS={archs_override}']
 
         if extra_runner_args:
             run_cmd.extend(extra_runner_args)
 
+        self._filter_projects(filtered_projects)
         try:
-            for line in check_output_lines(run_cmd, env=run_env):
-                self._process_line(line)
-        except subprocess.CalledProcessError:
+            common.check_execute(run_cmd, timeout=-1, env=run_env)
+        except common.ExecuteCommandFailure:
             self.compat_runner_failed = True
 
-        self._print_summary(swift_branch)
-        return self._succeeded
+        if os.path.isfile(request_durations):
+            print('\n---------- Raw request durations for further analysis ----------\n')
+            with open(request_durations, 'r') as request_durations_file:
+                print(request_durations_file.read())
 
-    @property
-    def _succeeded(self):
-        return not self.compat_runner_failed and (len(self.failure_manager.unexpected) == len(self.failure_manager.unmatched_xfails) == 0)
+        success = self._process_output(results, self.xfails_path)
 
-    def _process_line(self, line):
-        (kind, failure) = self.failure_manager.process_line(line)
-        if kind == FailureKind.XFAIL:
-            print('[XFAIL][{}]{}'.format(failure['issue'] if 'issue' in failure else '<missing issue>', line))
-            return
-        print(line)
-        if kind == FailureKind.FAIL:
-            self._print_failure_instructions(failure)
+        return success
 
-    def _print_failure_instructions(self, failure):
-        example = {'issue': '<issue url>'}
 
-        file_parts = failure['file'].split('/')
-        example['file'] = file_parts[0] + '/*' if len(file_parts) > 1 else '*'
-        project_json = json.dumps(example, indent=2)
+    def _process_output(self, results_path: str, xfails_path: str) -> bool:
+        if not os.path.isfile(results_path):
+            return not self.compat_runner_failed
 
-        example['file'] = failure['file']
-        file_json = json.dumps(example, indent=2)
+        with open(results_path, 'r') as results_file:
+            results = json.load(results_file)
+        with open(xfails_path, 'r') as xfails_file:
+            xfails = json.load(xfails_file)
 
-        example.update(failure)
-        exact_json = json.dumps(example, indent=2)
+        xfails_not_processed = []
+        for xfail in xfails:
+            # The XFails start with '*' to match any path prefix. Remove it so we can perform substring matching in processed_files_contain
+            xfailed_file = xfail['path']
+            if xfailed_file[0] == '*':
+                xfailed_file = xfailed_file[1:]
+            if not processed_files_contain(results['processedFiles'], xfailed_file):
+                xfails_not_processed.append(xfail)
 
-        xfails_path = self.failure_manager.xfails_path        
-        path_text = ':\n  {}'.format(xfails_path) if xfails_path else '.'
+        num_failures = len(results['issues'])
+        num_xfails = sum(len(value) for _, value in results['expectedIssues'].items())
+        num_xfail_issues = len(results['expectedIssues'])
+        unmatched = results['unmatchedExpectedIssues']
 
-        print('''
-** STRESS TESTER FAILURE **
+        success = self.compat_runner_failed == False and num_failures == 0 and len(unmatched) == 0
 
-Please file an issue against SourceKit with the '[sk-stress-test] error:'
-line above and add an expected failure to the JSON file passed via the
---xfail-json option{path}
+        if num_xfails > 0:
+            print('Expected stress tester issues:')
+            for url, issues in results['expectedIssueMessages'].items():
+                for (index, issue) in enumerate(issues):
+                    self._print_issue(index, issue, url)
+            print('\n========================================')
 
-To mark this specific failure as expected, include the below:
-{exact}
+        if len(xfails_not_processed) > 0:
+            print('XFails not processed:')
+            print('The files that are covered by these XFails were not tested in the current Stress Tester Run.')
+            print('The reason for this might be:')
+            print(' * The project that contains the file was not tested in the current run')
+            print(' * A different file from the same compiler invocation failed and thus this file was not tested')
+            print(' * The file has been removed in the original project')
+            print('')
+            for xfail in xfails_not_processed:
+                print('      {}'.format(json.dumps(xfail)))
+            print('\n========================================')
 
-To mark all failures in the same file as expected, include:
-{file}
+        if num_failures > 0:
+            print('Unexpected stress tester issues:')
+            for (index, issue) in enumerate(results['issueMessages']):
+                self._print_issue(index, issue)
+            print('\n========================================')
 
-Or to mark all failures in a directory as expected, use a wildcard:
-{project}
-'''.format(path=path_text, exact=exact_json, file=file_json, project=project_json))
-
-    def _print_summary(self, swift_branch):
-        num_failures = len(self.failure_manager.unexpected)
-        num_xfails = len(self.failure_manager.expected)
-        unmatched = self.failure_manager.unmatched_xfails
-        xfails_path = self.failure_manager.xfails_path
-        unrecognized_errors = self.failure_manager.unrecognized_errors
 
         print('SourceKit Stress Tester summary:')
-        
+
         print('  {} underlying source compatibility build'.format('failed' if self.compat_runner_failed else 'passed'))
-        if self.compat_runner_failed:
-            print('      > treat this as a source compatibility failure')
         
+        print('  {} XFails not processed'.format(len(xfails_not_processed)))
+        if num_failures > 0:
+            print('      > see "XFails not processed" how to handle them. This is an info, not an error')
+
         print('  {} unexpected stress tester failures'.format(num_failures))
         if num_failures > 0:
-            print('      > search "** STRESS TESTER FAILURE **" for individual failures and filing instructions')
+            print('      > see "Unexpected stress tester issues" above for individual failures')
 
-        print('  {} expected stress tester failures'.format(num_xfails))
+        print('  {} expected stress tester failures tracked by {} issues'.format(num_xfails, num_xfail_issues))
 
         if not self.compat_runner_failed and unmatched:
             print('  {} expected stress tester failures not seen'.format(len(unmatched)))
-            print('      > if resolved, remove "{}" from "branches" in the following entries in {} or the entire entry if no branches remain:'.format(swift_branch, xfails_path))
+            print('      > if resolved, remove "{}" from "branches" in the following entries in {} or the entire entry if no branches remain:'.format(self.swift_branch, self.xfails_path))
             for xfail in unmatched:
                 print('      {}'.format(json.dumps(xfail)))
 
-        if unrecognized_errors:
-            print('  {} unrecognised stress tester errors (warning)'.format(len(unrecognized_errors)))
-            print('      > the SourceKit stress tester reported errors this script doesn\'t yet recognize')
-
         print('========================================')
-        print('Result: {result}'.format(result=('PASS' if self._succeeded else 'FAIL')))
+        print('Result: {result}'.format(result=('PASS' if success else 'FAIL')))
         print('========================================')
 
+        return success
 
     @staticmethod
-    def _rewrite_projects_json(current, output):
-        with open(current) as json_file:
+    def _print_issue(index: int, issue, url = None):
+        if url != None:
+            print(u'\n{}. [{}] {}'.format(index + 1, url, issue))
+        else:
+            print(u'\n{}. {}'.format(index + 1, issue))
+
+
+    def _filter_projects(self, output: str) -> str:
+        with open(self.projects_path) as json_file:
             projects = json.load(json_file)
             for project in projects:
                 for action in project['actions']:
-                    # This is used in combination with --add-xcodebuild-flags to prevent running the stress tester over the same files twice.
-                    # generic/iOS actions invoke the wrapper for both arm64 and armv7, which makes little difference for the stress tester.
-                    action['archs_override'] = 'arm64' if action.get('destination') == 'generic/platform=iOS' else '$ARCHS'
+                    # This is used in combination with --add-xcodebuild-flags
+                    # to prevent running the stress tester over the same files
+                    # for difference architectures. generic/iOS actions
+                    # normally invoke the wrapper for both arm64 and armv7 and
+                    # generic/macOS actions for arm64 and x86_64.
+                    if action.get('destination') == 'generic/platform=iOS':
+                        action['archs_override'] = 'arm64'
+                    elif action.get('destination') == 'generic/platform=macOS':
+                        action['archs_override'] = 'x86_64'
+                    else:
+                        action['archs_override'] = '$ARCHS'
 
         with open(output, 'w') as outfile:
             json.dump(projects, outfile, indent=4)
         return output
 
-def check_output_lines(cmd, env=None):
-    """a generator yielding each line the given command writes to stdout and stderr as it appears."""
-    common.shell_debug_print(cmd)
-
-    p = subprocess.Popen(cmd, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True)
-    for line in iter(p.stdout.readline, ''):
-        yield line.rstrip()
-    p.stdout.close()
-
-    return_code = p.poll()
-    if return_code:
-        raise subprocess.CalledProcessError(return_code, cmd)
-
+    @staticmethod
+    def _cleanup(paths: List[str]) -> None:
+        for path in paths:
+            try:
+                os.remove(path)
+            except OSError:
+                pass
 
 if __name__ == '__main__':
     sys.exit(main())
