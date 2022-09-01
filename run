@@ -128,6 +128,9 @@ def parse_args():
     parser.add_argument('--cmake-cxx-launcher',
                         metavar='PATH',
                         help='the absolute path to set CMAKE_CXX_COMPILER_LAUNCHER for build script')
+    parser.add_argument('--junit',
+                        action='store_true',
+                        help='Write a junit.xml file containing the project build results')
     return parser.parse_args()
 
 
@@ -211,6 +214,9 @@ def execute_runner(workspace, args, additional_runner_args):
 
     if args.build_config:
         runner_command += ['--build-config=%s' % args.build_config]
+
+    if args.junit:
+        runner_command += ['--junit']
 
     runner_command += additional_runner_args
 
