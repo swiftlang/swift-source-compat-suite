@@ -1198,12 +1198,12 @@
     "maintainer": "appledev@kickstarter.com",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "6b7887e7b38ebd81e2d04a936e64998b0f634e98"
+        "version": "4.2",
+        "commit": "e3f7786b5bcc7b99c14b9fd313302bb59d9c3fe9"
       },
       {
         "version": "5.0",
-        "commit": "aa994f0921dca1965ae537fe77c2edc798eef230"
+        "commit": "e3f7786b5bcc7b99c14b9fd313302bb59d9c3fe9"
       }
     ],
     "platforms": [
@@ -1216,36 +1216,14 @@
         "scheme": "ReactiveExtensions-iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled",
-        "xfail": [
-          {
-            "issue": "rdar://problem/75437284",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
-            "job": ["source-compat"]
-          }
-        ]
+        "tags": "sourcekit-disabled"
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "ReactiveExtensions.xcodeproj",
         "scheme": "ReactiveExtensions-TestHelpers-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "rdar://problem/75437284",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
-            "job": ["source-compat"]
-          },
-          {
-            "issue": "https://github.com/apple/swift/issues/57433",
-            "compatibility": ["4.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
-            "job": ["source-compat"]
-          }
-        ]
+        "configuration": "Release"
       }
     ]
   },
