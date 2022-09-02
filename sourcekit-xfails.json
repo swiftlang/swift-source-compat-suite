@@ -643,6 +643,18 @@
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
   {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChart.swift",
+    "modification" : "insideOut-225",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 199
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/60192"
+  },
+  {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
     "modification" : "insideOut-212",
     "issueDetail" : {
