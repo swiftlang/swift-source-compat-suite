@@ -46,6 +46,7 @@ branches = {
         'swift-numerics': '1.0.1',
         'swift-system': '1.1.1',
         'swift-experimental-string-processing': 'swift/main',
+        'swift-syntax': 'main',
     },
     'release/5.7': {
         'llvm-project': 'swift/release/5.7',
@@ -258,6 +259,10 @@ def clone_repos():
             '{} git@github.com:apple/swift-llvm-bindings.git '
             '{}/swift-llvm-bindings '.format(
                 branches[swift_branch]['swift-llvm-bindings'], workspace
+            ),
+            '{} git@github.com:apple/swift-syntax.git '
+            '{}/swift-syntax '.format(
+                branches[swift_branch]['swift-syntax'], workspace
             ),
         ]
 
