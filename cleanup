@@ -66,6 +66,7 @@ def main():
         'swift-numerics',
         'swift-system',
         'swift-experimental-string-processing',
+        'swift-syntax',
     ]
 
     if args.cleanup_cache:
