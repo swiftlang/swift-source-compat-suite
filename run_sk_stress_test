@@ -158,12 +158,14 @@ def clone_stress_tester(workspace: str, swift_branch: str) -> None:
     common.check_execute(stress_clone_cmd, timeout=-1)
 
 def clone_swift_syntax(workspace: str, swift_branch: str) -> None:
-    syntax_clone_cmd = [
-        'git','clone', '-q', '-b', swift_branch, '--recursive',
-        'https://github.com/apple/swift-syntax',
-        '{}/swift-syntax'.format(workspace)
-    ]
-    common.check_execute(syntax_clone_cmd, timeout=-1)
+    if swift_branch in ['release/5.7', 'release/5.6',
+                        'release/5.5', 'release/5.4']:
+        syntax_clone_cmd = [
+            'git', 'clone', '-q', '-b', swift_branch, '--recursive',
+            'https://github.com/apple/swift-syntax',
+            '{}/swift-syntax'.format(workspace)
+        ]
+        common.check_execute(syntax_clone_cmd, timeout=-1)
 
 
 def execute_runner(workspace: str, args: argparse.Namespace) -> bool:
