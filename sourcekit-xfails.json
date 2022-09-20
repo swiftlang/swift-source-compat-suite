@@ -803,5 +803,137 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60702"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Types.swift",
+    "modification" : "concurrent-922",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 574
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/61201"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Types.swift",
+    "modification" : "concurrent-930",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 675
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/61201"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Types.swift",
+    "modification" : "concurrent-934",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 726
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/61201"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Types.swift",
+    "modification" : "concurrent-942",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 828
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/61201"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Types.swift",
+    "modification" : "concurrent-946",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 942
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/61201"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Types.swift",
+    "modification" : "concurrent-1020",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 848
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/61201"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Types.swift",
+    "modification" : "concurrent-1336",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 834
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/61201"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Types.swift",
+    "modification" : "concurrent-1358",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 997
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/61201"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Types.swift",
+    "modification" : "concurrent-1364",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 1078
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/61201"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Types.swift",
+    "modification" : "concurrent-1386",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 1242
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/61201"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Types.swift",
+    "modification" : "concurrent-1392",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 1386
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/61201"
   }
 ]
