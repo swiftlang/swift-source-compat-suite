@@ -2354,11 +2354,11 @@
     "url": "https://github.com/ReactiveX/RxSwift.git",
     "path": "RxSwift",
     "branch": "main",
-    "maintainer": "krunoslav.zaher@gmail.com",
+    "maintainer": "freak4pc@gmail.com",
     "compatibility": [
       {
         "version": "5.0",
-        "commit": "70b8a33c5c3f4c3b15ebf10b638d2b15cfafb814"
+        "commit": "b4307ba0b6425c0ba4178e138799946c3da594f8"
       }
     ],
     "platforms": [
@@ -2397,16 +2397,39 @@
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
+        "scheme": "RxRelay",
+        "destination": "platform=macOS",
+        "configuration": "Release",
+        "tags": "sourcekit-disabled"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxRelay",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxRelay",
+        "destination": "generic/platform=tvOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
+        "scheme": "RxRelay",
+        "destination": "generic/platform=watchOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Rx.xcworkspace",
         "scheme": "RxCocoa",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled",
-        "xfail": {
-          "issue": "https://github.com/apple/swift/issues/53532",
-          "compatibility": "5.0",
-          "branch": ["main", "release/5.3", "release/5.4", "release/5.5", "release/5.6", "release/5.7"],
-          "job": ["source-compat"]
-        }
+        "tags": "sourcekit-disabled"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -2464,45 +2487,21 @@
         "scheme": "RxTest",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/57007;rdar://81276100",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
-            "job": ["source-compat"]
-          }
-        ]
+        "tags": "sourcekit-disabled"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
         "scheme": "RxTest",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/57007;rdar://81276100",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
-            "job": ["source-compat"]
-          }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
         "scheme": "RxTest",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/57007;rdar://81276100",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
-            "job": ["source-compat"]
-          }
-        ]
+        "configuration": "Release"
       }
     ]
   },
