@@ -3237,7 +3237,7 @@
       },
       {
         "version": "5.0",
-        "commit": "66f9a509ed3cc56b6eb367515e421beca4a0af53"
+        "commit": "55f37f388c2cbe717395176fbe8984354d8488d2"
       }
     ],
     "platforms": [
@@ -3448,7 +3448,15 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "swiftpm"
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "Tests fail to build with --build-tests on the release config <ToDo: Add Radar>",
+            "compatibility": ["5.0"],
+            "configuration": "release",
+            "branch": ["main", "release/5.6", "release/5.7"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -3492,7 +3500,7 @@
     "compatibility": [
       {
         "version": "5.0",
-        "commit": "0fd434556ce4c66bc803e867f6903587c69e55a2"
+        "commit": "e9619146a1198253c587f6f34c0869d3a98b0c76"
       }
     ],
     "platforms": [
