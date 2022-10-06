@@ -2716,6 +2716,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "swiftpm"
       },
       {
@@ -2742,6 +2743,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "swiftpm"
       },
       {
@@ -2769,6 +2771,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "swiftpm"
       },
       {
@@ -2795,7 +2798,8 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "build_tests": "true"
       },
       {
         "action": "TestSwiftPackage"
@@ -3093,6 +3097,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "sourcekit-disabled swiftpm",
         "xfail": [
           {
@@ -3128,6 +3133,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "sourcekit-disabled swiftpm"
       },
       {
@@ -3182,6 +3188,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "sourcekit-disabled swiftpm"
       },
       {
@@ -3209,6 +3216,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "sourcekit-disabled swiftpm"
       },
       {
@@ -3240,6 +3248,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "sourcekit-disabled swiftpm"
       },
       {
@@ -3267,6 +3276,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "sourcekit-disabled swiftpm"
       },
       {
@@ -3294,6 +3304,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "sourcekit-disabled swiftpm"
       },
       {
@@ -3321,6 +3332,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "sourcekit-disabled swiftpm"
       },
       {
@@ -3348,6 +3360,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "sourcekit-disabled swiftpm"
       },
       {
@@ -3374,6 +3387,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "swiftpm"
       },
       {
@@ -3433,6 +3447,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "swiftpm"
       },
       {
@@ -3460,6 +3475,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "sourcekit-disabled swiftpm"
       },
       {
@@ -3487,6 +3503,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "sourcekit-disabled swiftpm"
       },
       {
@@ -4244,6 +4261,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "swiftpm"
       },
       {
@@ -4271,6 +4289,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
+        "build_tests": "true",
         "tags": "swiftpm"
       },
       {
