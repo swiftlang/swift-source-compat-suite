@@ -3587,7 +3587,15 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "ToDo: File radar. Tests fail to build",
+            "compatibility": ["5.0"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -4337,6 +4345,12 @@
             "compatibility": ["5.0"],
             "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "configuration": "debug",
+            "job": ["source-compat"]
+          },
+          {
+            "issue": "ToDo: File issue. Tests fail to build",
+            "compatibility": ["5.0"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           }
         ]
