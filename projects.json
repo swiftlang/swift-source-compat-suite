@@ -1782,12 +1782,6 @@
                 "compatibility": "4.2",
                 "branch": ["main", "release/5.6", "release/5.7"],
                 "job": ["source-compat"]
-            },
-            {
-                "issue": "ToDo: Create an issue for this. Tests failed to build. Passes with a revision update",
-                "compatibility": "4.2",
-                "branch": ["main", "release/5.6", "release/5.7"],
-                "job": ["source-compat"]
             }
         ]
       }
@@ -2026,15 +2020,7 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-          {
-            "issue": "ToDo: This project fails to build tests. File issue",
-            "compatibility": ["4.2", "5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
-            "job": ["source-compat"]
-          }
-        ]
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
