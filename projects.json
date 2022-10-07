@@ -2831,7 +2831,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "build_tests": "false. TODO. File issue to figure out why this hangs forever",
+        "build_tests": "true",
         "tags": "swiftpm"
       },
       {
