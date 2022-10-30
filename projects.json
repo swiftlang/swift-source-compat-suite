@@ -2513,12 +2513,8 @@
     "maintainer": "bouke@haarsma.eu",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "b166838d4cf9218933c03151d62e50772460f95e"
-      },
-      {
         "version": "5.0",
-        "commit": "8d2561b17fbac2eecd024dc6906777341307951d"
+        "commit": "c01934477cb0aa14b4da5c3cb61d447bd6393ce0"
       }
     ],
     "platforms": [
@@ -2528,21 +2524,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-            {
-                "issue": "https://github.com/apple/swift/issues/55630",
-                "compatibility": ["4.0", "5.0"],
-                "branch": ["release/5.4", "release/5.5", "release/5.6"],
-                "job": ["source-compat"]
-            },
-            {
-                "issue": "rdar://91670339",
-                "compatibility": ["4.0"],
-                "branch": ["main", "release/5.7"],
-                "job": ["source-compat"]
-            }
-        ]
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
