@@ -3406,6 +3406,12 @@
             "issue": "SwiftPM plugins are only supported in SwiftPM 5.6 and later",
             "compatibility": ["5.0"],
             "branch": ["release/5.5"]
+          },
+          {
+            "issue": "rdar://101685791",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"]
           }
         ]
       },
