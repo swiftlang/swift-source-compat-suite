@@ -36,7 +36,7 @@ branches = {
         'swift-corelibs-libdispatch': 'main',
         'swift-corelibs-foundation': 'main',
         'swift-corelibs-xctest': 'main',
-        'swift-argument-parser': '1.0.3',
+        'swift-argument-parser': '1.1.4',
         'swift-driver': 'main',
         'yams': '4.0.2',
         'swift-tools-support-core': 'main',
