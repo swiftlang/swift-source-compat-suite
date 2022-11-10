@@ -498,15 +498,7 @@
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/61905",
-            "compatibility": ["4.0", "4.2"],
-            "branch": ["main"],
-            "job": ["source-compat"]
-          }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -514,45 +506,21 @@
         "scheme": "CoreStore OSX",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/61905",
-            "compatibility": ["4.0", "4.2"],
-            "branch": ["main"],
-            "job": ["source-compat"]
-          }
-        ]
+        "tags": "sourcekit-disabled"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/61905",
-            "compatibility": ["4.0", "4.2"],
-            "branch": ["main"],
-            "job": ["source-compat"]
-          }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/61905",
-            "compatibility": ["4.0", "4.2"],
-            "branch": ["main"],
-            "job": ["source-compat"]
-          }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
