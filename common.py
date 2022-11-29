@@ -38,7 +38,7 @@ branches = {
         'swift-corelibs-xctest': 'main',
         'swift-argument-parser': '1.0.3',
         'swift-driver': 'main',
-        'yams': '4.0.2',
+        'yams': '5.0.1',
         'swift-tools-support-core': 'main',
         'swift-crypto': '1.1.5',
         'swift-atomics': '1.0.2',
