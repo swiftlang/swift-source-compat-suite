@@ -40,7 +40,7 @@ branches = {
         'swift-driver': 'main',
         'yams': '4.0.2',
         'swift-tools-support-core': 'main',
-        'swift-crypto': '1.1.5',
+        'swift-crypto': '2.2.1',
         'swift-atomics': '1.0.2',
         'swift-collections': '1.0.1',
         'swift-numerics': '1.0.1',
