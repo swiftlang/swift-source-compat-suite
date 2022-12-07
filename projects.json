@@ -678,6 +678,10 @@
       {
         "version": "5.0",
         "commit": "96594678095747b012ffd2899a82c688cbd88c14"
+      },
+      {
+        "version": "5.7",
+        "commit": "c44863228a515385f212be96638286634e7fb462"
       }
     ],
     "platforms": [
