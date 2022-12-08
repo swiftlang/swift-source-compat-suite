@@ -33,6 +33,30 @@
     "issueUrl" : "https://github.com/apple/swift/issues/51404"
   },
   {
+    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 79
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/51404"
+  },
+  {
+    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 5606
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/51404"
+  },
+  {
     "path" : "*\/DNS\/Sources\/DNS\/Integer+Data.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
@@ -933,5 +957,65 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/61488"
+  },
+  {
+    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 6378
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62457"
+  },
+  {
+    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 6397
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62457"
+  },
+    {
+    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 6419
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62457"
+  },
+  {
+    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 6440
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62457"
+  },
+  {
+    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 4115
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62459"
   }
 ]
