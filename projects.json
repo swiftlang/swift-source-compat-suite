@@ -323,7 +323,16 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "swiftpm"
+        "tags": "swiftpm",
+        "xfail": [
+            {
+                "issue": "https://github.com/apple/swift/issues/62438",
+                "platform": "Linux",
+                "compatibility": "5.3",
+                "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
+                "job": ["source-compat"]
+            }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -3559,6 +3568,7 @@
         "xfail": [
           {
             "issue": "https://github.com/apple/swift/issues/61622",
+            "platform": "Darwin",
             "compatibility": ["5.0"],
             "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
