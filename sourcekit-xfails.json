@@ -1005,17 +1005,5 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/62457"
-  },
-  {
-    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 4115
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/62459"
   }
 ]
