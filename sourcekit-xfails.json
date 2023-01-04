@@ -632,42 +632,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/57439"
   },
   {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListFormView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2436
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57494"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListFormView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2445
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57494"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListFormView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2447
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57494"
-  },
-  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/services\/NotificationsManager.swift",
     "modification" : "unmodified",
     "issueDetail" : {
@@ -762,42 +726,6 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58316"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/TurnipsView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 5650
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/58317"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/TurnipsView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 6389
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/58317"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/TurnipsView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 6697
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/58317"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChart.swift",
@@ -1005,5 +933,194 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/62457"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModifiers\/DismissingKeyboardOnSwipe.swift",
+    "modification" : "insideOut-544",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 110,
+      "offset" : 30
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62840"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModifiers\/DismissingKeyboardOnSwipe.swift",
+    "modification" : "insideOut-548",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 140
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62840"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModifiers\/DismissingKeyboardOnSwipe.swift",
+    "modification" : "insideOut-549",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 12,
+      "offset" : 140
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62840"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModifiers\/DismissingKeyboardOnSwipe.swift",
+    "modification" : "insideOut-562",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 270,
+      "offset" : 292
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62840"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModifiers\/DismissingKeyboardOnSwipe.swift",
+    "modification" : "insideOut-579",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 145
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62840"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModifiers\/DismissingKeyboardOnSwipe.swift",
+    "modification" : "insideOut-587",
+    "issueDetail" : {
+      "kind" : "collectExpressionType"
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62840"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModifiers\/DismissingKeyboardOnSwipe.swift",
+    "modification" : "insideOut-589",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 26,
+      "offset" : 0
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62840"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModifiers\/DismissingKeyboardOnSwipe.swift",
+    "modification" : "insideOut-591",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 18,
+      "offset" : 0
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62840"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/custom list\/CustomListForm.swift",
+    "modification" : "insideOut-1127",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 35
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62840"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DiscoverCoverImage.swift",
+    "modification" : "concurrent-1028",
+    "issueDetail" : {
+      "kind" : "collectExpressionType"
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62848"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DiscoverCoverImage.swift",
+    "modification" : "concurrent-1164",
+    "issueDetail" : {
+      "kind" : "collectExpressionType"
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62848"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/shared\/images\/BigMoviePosterImage.swift",
+    "modification" : "concurrent-895",
+    "issueDetail" : {
+      "kind" : "collectExpressionType"
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62848"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/shared\/images\/FullscreenMoviePosterImage.swift",
+    "modification" : "concurrent-429",
+    "issueDetail" : {
+      "kind" : "collectExpressionType"
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62848"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/shared\/images\/FullscreenMoviePosterImage.swift",
+    "modification" : "concurrent-962",
+    "issueDetail" : {
+      "kind" : "collectExpressionType"
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62848"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/shared\/images\/MovieBackdropImage.swift",
+    "modification" : "concurrent-1031",
+    "issueDetail" : {
+      "kind" : "collectExpressionType"
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62848"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/views\/MoviePosterImage.swift",
+    "modification" : "concurrent-849",
+    "issueDetail" : {
+      "kind" : "collectExpressionType"
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62848"
   }
 ]
