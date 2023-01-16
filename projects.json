@@ -807,6 +807,36 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/nicklockwood/Expression.git",
+    "path": "Expression",
+    "branch": "master",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "d8bb2bc535e2895b5fbe66f4872327b654d19a34"
+      },
+      {
+        "version": "5.0",
+        "commit": "d8bb2bc535e2895b5fbe66f4872327b654d19a34"
+      }
+    ],
+    "maintainer": "nick@charcoaldesign.co.uk",
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/brentsimmons/Evergreen.git",
     "path": "Evergreen",
     "branch": "main",
