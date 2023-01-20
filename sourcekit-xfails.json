@@ -933,5 +933,41 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/62457"
+  },
+  {
+    "path" : "*\/DNS\/Tests\/DNSTests\/DNSTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 15
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63049"
+  },
+  {
+    "path" : "*\/DNS\/Tests\/DNSTests\/FuzzTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 15
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63049"
+  },
+  {
+    "path" : "*\/DNS\/Tests\/DNSTests\/IPTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 15
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63049"
   }
 ]
