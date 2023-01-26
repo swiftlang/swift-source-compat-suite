@@ -2407,28 +2407,64 @@
         "scheme": "RxRelay",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/63242",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "configuration": "release"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
         "scheme": "RxRelay",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/63242",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "configuration": "release"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
         "scheme": "RxRelay",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/63242",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "configuration": "release"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
         "scheme": "RxRelay",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/63242",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "configuration": "release"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -2436,28 +2472,64 @@
         "scheme": "RxCocoa",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/63242",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "configuration": "release"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
         "scheme": "RxCocoa",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/63242",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "configuration": "release"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
         "scheme": "RxCocoa",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/63242",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "configuration": "release"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
         "scheme": "RxCocoa",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/63242",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "configuration": "release"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -2465,28 +2537,64 @@
         "scheme": "RxBlocking",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/63242",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "configuration": "release"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
         "scheme": "RxBlocking",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/63242",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "configuration": "release"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
         "scheme": "RxBlocking",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/63242",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "configuration": "release"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Rx.xcworkspace",
         "scheme": "RxBlocking",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/63242",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "configuration": "release"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
