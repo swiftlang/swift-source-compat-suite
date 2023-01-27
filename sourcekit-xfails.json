@@ -875,6 +875,19 @@
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
   {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModels\/ItemsViewModel.swift",
+    "modification" : "insideOut-508",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 16,
+      "offset" : 135
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/60192"
+  },
+  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoriesView.swift",
     "modification" : "unmodified",
     "issueDetail" : {
