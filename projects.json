@@ -3089,6 +3089,13 @@
                 "compatibility": "5.0",
                 "branch": ["main", "release/5.6", "release/5.7", "release/5.8"],
                 "job": ["source-compat"]
+            },
+            {
+                "issue": "https://github.com/apple/swift/issues/63269",
+                "platform": "Darwin",
+                "compatibility": "5.0",
+                "branch": ["main"],
+                "job": ["source-compat"]
             }
         ]
       },
