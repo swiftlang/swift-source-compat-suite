@@ -776,6 +776,31 @@
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
   {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/extensions\/Path.swift",
+    "modification" : "insideOut-907",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 904
+    },
+    "applicableConfigs" : [
+      "main", "release/5.8"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/60192"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModels\/ItemsViewModel.swift",
+    "modification" : "insideOut-489",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 16,
+      "offset" : 135
+    },
+    "applicableConfigs" : [
+      "main", "release/5.8"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/60192"
+  },
+  {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
     "modification" : "insideOut-253",
     "issueDetail" : {
@@ -843,6 +868,68 @@
       "kind" : "rangeInfo",
       "length" : 16,
       "offset" : 262
+    },
+    "applicableConfigs" : [
+      "main", "release/5.8"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/60192"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
+    "modification" : "insideOut-231",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 73
+    },
+    "applicableConfigs" : [
+      "main", "release/5.8"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/60192"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
+    "modification" : "insideOut-231",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 5,
+      "offset" : 72
+    },
+    "applicableConfigs" : [
+      "main", "release/5.8"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/60192"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
+    "modification" : "insideOut-242",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 77
+    },
+    "applicableConfigs" : [
+      "main", "release/5.8"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/60192"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
+    "modification" : "insideOut-242",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 165,
+      "offset" : 77
+    },
+    "applicableConfigs" : [
+      "main", "release/5.8"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/60192"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
+    "modification" : "insideOut-258",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 244
     },
     "applicableConfigs" : [
       "main", "release/5.8"
@@ -969,5 +1056,29 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/63049"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 3382
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63374"
+  },
+  {
+    "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/ContentView.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2021
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63374"
   }
 ]
