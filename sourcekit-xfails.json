@@ -1080,5 +1080,173 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/63374"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/MysteryIsland.swift",
+    "modification" : "concurrent-687",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 680
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63453#issuecomment-1419128302"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/services\/TurnipPredictionsService.swift",
+    "modification" : "concurrent-1511",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 1505
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63453#issuecomment-1419128302"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/representables\/DocumentPickerView.swift",
+    "modification" : "concurrent-1311",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 1309
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63453#issuecomment-1419128302"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModels\/UserListFormViewModel.swift",
+    "modification" : "concurrent-531",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 528
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63453#issuecomment-1419128302"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/base\/MoviesSearch.swift",
+    "modification" : "concurrent-494",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 316
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63453#issuecomment-1419128302"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/DiscoverFilter.swift",
+    "modification" : "concurrent-1355",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 1349
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63453#issuecomment-1419128302"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/DiscoverFilter.swift",
+    "modification" : "concurrent-1330",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 1322
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63453#issuecomment-1419128302"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModels\/ItemDetailViewModel.swift",
+    "modification" : "concurrent-1349",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 1347
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63453#issuecomment-1419135734"
+  },
+  {
+    "path" : "*\/Guitar\/Sources\/Guitar.swift",
+    "modification" : "concurrent-1933",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 1927
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63453#issuecomment-1419135734"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/actions\/MoviesActions.swift",
+    "modification" : "concurrent-983",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 979
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63453#issuecomment-1419135734"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/state\/AppState.swift",
+    "modification" : "concurrent-1819",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 1814
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63453#issuecomment-1419135734"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/state\/AppState.swift",
+    "modification" : "concurrent-1891",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 1889
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63453#issuecomment-1419135734"
+  },
+  {
+    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
+    "modification" : "concurrent-834",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 710
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63453#issuecomment-1419154699"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/settings\/SettingsView.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1387
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63455"
   }
 ]
