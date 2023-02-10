@@ -292,7 +292,8 @@ def build_swift_package(path, swiftc, swift_version, configuration,
                         sandbox_profile, stdout=sys.stdout, stderr=sys.stderr,
                         added_swift_flags=None,
                         incremental=False,
-                        override_swift_exec=None):
+                        override_swift_exec=None,
+                        build_tests=False):
     """Build a Swift package manager project."""
     swift = os.path.join(os.path.dirname(swiftc), 'swift')
     if not incremental:
@@ -306,6 +307,10 @@ def build_swift_package(path, swiftc, swift_version, configuration,
     if (swift_branch not in ['swift-3.0-branch',
                              'swift-3.1-branch']):
         command.insert(2, '--disable-sandbox')
+
+    if build_tests:
+        command += ['--build-tests']
+        added_swift_flags += ' -enable-testing'
 
     if swift_version:
         if '.' not in swift_version:
@@ -409,7 +414,8 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
                                    stdout=stdout, stderr=stderr,
                                    added_swift_flags=added_swift_flags,
                                    incremental=incremental,
-                                   override_swift_exec=override_swift_exec)
+                                   override_swift_exec=override_swift_exec,
+                                   build_tests=action.get('build_tests') == 'true')
     elif action['action'] == 'TestSwiftPackage':
         return test_swift_package(os.path.join(root_path, repo['path']),
                                   swiftc,
@@ -508,7 +514,7 @@ def is_xfailed(xfail_args, compatible_version, platform, swift_branch, build_con
 
     def is_or_contains(spec, arg):
         return arg in spec if isinstance(spec, list) else spec == arg
-    
+
     def matches(spec):
         issue = spec['issue'].split()[0]
         current = {
@@ -688,6 +694,9 @@ def add_arguments(parser):
                         type=int,
                         help='Number of parallel process to spawn when building projects',
                         default=multiprocessing.cpu_count())
+    parser.add_argument('--junit',
+                        action='store_true',
+                        help='Write a junit.xml file containing the project build results')
 
 def add_minimal_arguments(parser):
     """Add common arguments to parser."""
@@ -807,9 +816,10 @@ class ResultEnum(Enum):
 
 
 class Result:
-    def __init__(self, result, text):
+    def __init__(self, result, text, logfile=None):
         self.result = result
         self.text = text
+        self.logfile = logfile
 
     def __str__(self):
         return self.result.name
@@ -926,6 +936,48 @@ class ProjectListResult(ListResult):
         output += '='*40
         return output
 
+    def xml_string(self):
+        status_message = {
+            ResultEnum.PASS: 'This project built successfully',
+            ResultEnum.FAIL: 'This project failed to build',
+            ResultEnum.UPASS: 'This project built successfully, but it was expected to fail',
+            ResultEnum.XFAIL: 'This project failed to build as expected'
+        }
+
+        action_results = self.recursive_all()
+        build_url = os.environ.get('BUILD_URL')
+
+        # Build out Junit Report
+        xml_report = f"<testsuite tests='{len(action_results)}'>\n"
+        for action_result in action_results:
+            # Create a link to the build log if running in a CI environment (Jenkins)
+            if build_url:
+                build_log = build_url + f'artifact/swift-source-compat-suite/{action_result}_{action_result.logfile}'
+            else:
+                build_log = f'{action_result}_{action_result.logfile}'
+
+            if action_result.result == ResultEnum.XFAIL or action_result.result == ResultEnum.UPASS:
+                match = re.compile(r"(XFAIL|UPASS):(.*?),(.*?)$").search(action_result.text)
+                xfail_link = match.group(2)
+                junit_testcase_name = match.group(3)
+            else:
+                match = re.compile(r"(PASS|FAIL):(.*?)$").search(action_result.text)
+                junit_testcase_name = match.group(2)
+                xfail_link = ''
+
+            # Create testcase. Add status message and a link to the build log
+            xml_report += f"<testcase classname='build' name='{junit_testcase_name}'>\n"
+            if action_result.result == ResultEnum.PASS or action_result.result == ResultEnum.XFAIL:
+                xml_report += f"<system-out>{status_message[action_result.result]}. {xfail_link}\n" \
+                              f"Build log: {build_log}</system-out>"
+            else:
+                xml_report += f"<failure type='failure' message='{status_message[action_result.result]}. " \
+                              f"{xfail_link}'>Build log: {build_log}</failure>"
+            xml_report += "</testcase>\n"
+
+        xml_report += "</testsuite>\n"
+        return xml_report
+
 
 class ProjectResult(ListResult):
     pass
@@ -962,6 +1014,8 @@ class ListBuilder(Factory):
                     subbuilder_result = self.subbuilder.initialize(*([subtarget] + self.payload())).build(
                         stdout=output_fd
                     )
+                    if subbuilder_result:
+                        subbuilder_result.logfile = log_filename
                     results.add(subbuilder_result)
                 finally:
                     if output_fd is not sys.stdout:

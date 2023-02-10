@@ -43,6 +43,7 @@ def main():
         'build',
         'swift',
         'llvm-project',
+        'swift-llvm-bindings',
         'llvm',
         'clang',
         'compiler-rt',
@@ -65,6 +66,7 @@ def main():
         'swift-numerics',
         'swift-system',
         'swift-experimental-string-processing',
+        'swift-syntax',
     ]
 
     if args.cleanup_cache:

@@ -26,7 +26,8 @@ DEFAULT_EXECUTE_TIMEOUT = 10*60
 
 branches = {
     'main': {
-        'llvm-project': 'stable/20211026',
+        'llvm-project': 'stable/20220421',
+        'swift-llvm-bindings': 'stable/20220421',
         'swift': 'main',
         'cmark': 'gfm',
         'ninja': 'release',
@@ -35,16 +36,40 @@ branches = {
         'swift-corelibs-libdispatch': 'main',
         'swift-corelibs-foundation': 'main',
         'swift-corelibs-xctest': 'main',
-        'swift-argument-parser': '1.0.3',
+        'swift-argument-parser': '1.1.4',
         'swift-driver': 'main',
-        'yams': '4.0.2',
+        'yams': '5.0.1',
         'swift-tools-support-core': 'main',
-        'swift-crypto': '1.1.5',
+        'swift-crypto': '2.2.3',
         'swift-atomics': '1.0.2',
         'swift-collections': '1.0.1',
         'swift-numerics': '1.0.1',
         'swift-system': '1.1.1',
         'swift-experimental-string-processing': 'swift/main',
+        'swift-syntax': 'main',
+    },
+    'release/5.8': {
+        'llvm-project': 'swift/release/5.8',
+        'swift-llvm-bindings': 'swift/release/5.8',
+        'swift': 'release/5.8',
+        'cmark': 'release/5.8',
+        'ninja': 'release',
+        'llbuild': 'release/5.8',
+        'swiftpm': 'release/5.8',
+        'swift-corelibs-libdispatch': 'release/5.8',
+        'swift-corelibs-foundation': 'release/5.8',
+        'swift-corelibs-xctest': 'release/5.8',
+        'swift-argument-parser': '1.0.3',
+        'swift-driver': 'release/5.8',
+        'yams': '5.0.1',
+        'swift-tools-support-core': 'release/5.8',
+        'swift-crypto': '2.2.3',
+        'swift-atomics': '1.0.2',
+        'swift-collections': '1.0.1',
+        'swift-numerics': '1.0.1',
+        'swift-system': '1.1.1',
+        'swift-experimental-string-processing': 'swift/release/5.8',
+        'swift-syntax': 'release/5.8',
     },
     'release/5.7': {
         'llvm-project': 'swift/release/5.7',
@@ -171,8 +196,8 @@ def clone_repos():
     >>> check_execute(['rm', '-rf', tmpdir])
     0
     >>> repos #doctest: +NORMALIZE_WHITESPACE
-    ['llvm-project', 'cmark', 'llbuild', 'ninja', 'swift',
-     'swift-corelibs-foundation', 'swift-corelibs-libdispatch',
+    ['llvm-project', 'swift-llvm-bindings', 'cmark', 'llbuild', 'ninja',
+     'swift', 'swift-corelibs-foundation', 'swift-corelibs-libdispatch',
      'swift-corelibs-xctest', 'swiftpm', 'swift-experimental-string-processing']
     """
     cpu_count = multiprocessing.cpu_count()
@@ -251,6 +276,18 @@ def clone_repos():
             branches[swift_branch]['swift-experimental-string-processing'], workspace
         ),
     ]
+    if swift_branch not in ['release/5.7', 'release/5.6',
+                            'release/5.5', 'release/5.4']:
+        repos += [
+            '{} git@github.com:apple/swift-llvm-bindings.git '
+            '{}/swift-llvm-bindings '.format(
+                branches[swift_branch]['swift-llvm-bindings'], workspace
+            ),
+            '{} git@github.com:apple/swift-syntax.git '
+            '{}/swift-syntax '.format(
+                branches[swift_branch]['swift-syntax'], workspace
+            ),
+        ]
 
     process0 = subprocess.Popen([
         'xargs', '-P%s' % cpu_count, '-n3',
