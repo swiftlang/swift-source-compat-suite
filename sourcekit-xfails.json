@@ -978,7 +978,7 @@
       "offset" : 3382
     },
     "applicableConfigs" : [
-      "main", "release/5.8"
+      "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/63374"
   },
@@ -990,7 +990,7 @@
       "offset" : 2021
     },
     "applicableConfigs" : [
-      "main", "release/5.8"
+      "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/63374"
   },
