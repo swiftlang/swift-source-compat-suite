@@ -971,18 +971,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/63049"
   },
   {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 3382
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/63374"
-  },
-  {
     "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/ContentView.swift",
     "modification" : "unmodified",
     "issueDetail" : {
