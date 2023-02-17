@@ -700,6 +700,12 @@
                 "compatibility": "5.0",
                 "branch": ["release/5.5"],
                 "job": ["source-compat"]
+            },
+            {
+                "issue": "https://github.com/apple/swift/issues/63737",
+                "compatibility": "5.7",
+                "branch": ["main"],
+                "job": ["source-compat"]
             }
         ]
       },
