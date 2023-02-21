@@ -3163,7 +3163,7 @@
     "compatibility": [
       {
         "version": "5.7",
-        "commit": "d816a10b70a6d537b2aa666ff735888b7ba40ab4"
+        "commit": "e024c1fae5d2b17346c8a2c4482675a70f35fccc"
       }
     ],
     "platforms": [
@@ -3173,7 +3173,8 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "debug",
+        "build_tests": "true",
+        "configuration": "release",
         "tags": "sourcekit-disabled swiftpm"
       },
       {
