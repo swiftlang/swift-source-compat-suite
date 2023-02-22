@@ -3156,6 +3156,34 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/apple/swift-distributed-actors",
+    "path": "swift-distributed-actors",
+    "branch": "main",
+    "maintainer": "ktoso@apple.com",
+    "compatibility": [
+      {
+        "version": "5.7",
+        "commit": "e024c1fae5d2b17346c8a2c4482675a70f35fccc"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/swift-server/async-http-client",
     "path": "async-http-client",
     "branch": "main",
