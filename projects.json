@@ -3094,10 +3094,6 @@
     "maintainer": "cbenfield@apple.com",
     "compatibility": [
       {
-        "version": "4.2",
-        "commit": "381fd99df2a2a95a13172b4b18880d4217274e23"
-      },
-      {
         "version": "5.0",
         "commit": "e855380cb5234e96b760d93e0bfdc403e381e928"
       }
@@ -3114,9 +3110,10 @@
         "tags": "sourcekit-disabled swiftpm",
         "xfail": [
           {
-            "issue": "rdar://81180448",
-            "compatibility": ["4.2", "5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8"],
+            "issue": "https://github.com/apple/swift/issues/63846",
+            "configuration": "release",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
             "job": ["source-compat"]
           }
         ]
