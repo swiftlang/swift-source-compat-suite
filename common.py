@@ -40,7 +40,9 @@ branches = {
         'swift-driver': 'main',
         'yams': '5.0.1',
         'swift-tools-support-core': 'main',
-        'swift-crypto': '2.2.3',
+        'swift-crypto': '2.3.0',
+        'swift-asn1': 'main',
+        'swift-certificates': 'main',
         'swift-atomics': '1.0.2',
         'swift-collections': '1.0.1',
         'swift-numerics': '1.0.1',
@@ -254,6 +256,14 @@ def clone_repos():
         '{} git@github.com:apple/swift-crypto.git '
         '{}/swift-crypto '.format(
             branches[swift_branch]['swift-crypto'], workspace
+        ),
+        '{} git@github.com:apple/swift-asn1.git '
+        '{}/swift-asn1 '.format(
+            branches[swift_branch]['swift-asn1'], workspace
+        ),
+        '{} git@github.com:apple/swift-certificates.git '
+        '{}/swift-certificates '.format(
+            branches[swift_branch]['swift-certificates'], workspace
         ),
         '{} git@github.com:apple/swift-atomics.git '
         '{}/swift-atomics '.format(
