@@ -26,8 +26,8 @@ DEFAULT_EXECUTE_TIMEOUT = 10*60
 
 branches = {
     'main': {
-        'llvm-project': 'stable/20220421',
-        'swift-llvm-bindings': 'stable/20220421',
+        'llvm-project': 'stable/20221013',
+        'swift-llvm-bindings': 'stable/20221013',
         'swift': 'main',
         'cmark': 'gfm',
         'ninja': 'release',
@@ -257,14 +257,6 @@ def clone_repos():
         '{}/swift-crypto '.format(
             branches[swift_branch]['swift-crypto'], workspace
         ),
-        '{} git@github.com:apple/swift-asn1.git '
-        '{}/swift-asn1 '.format(
-            branches[swift_branch]['swift-asn1'], workspace
-        ),
-        '{} git@github.com:apple/swift-certificates.git '
-        '{}/swift-certificates '.format(
-            branches[swift_branch]['swift-certificates'], workspace
-        ),
         '{} git@github.com:apple/swift-atomics.git '
         '{}/swift-atomics '.format(
             branches[swift_branch]['swift-atomics'], workspace
@@ -296,6 +288,19 @@ def clone_repos():
             '{} git@github.com:apple/swift-syntax.git '
             '{}/swift-syntax '.format(
                 branches[swift_branch]['swift-syntax'], workspace
+            ),
+        ]
+
+    if swift_branch not in ['release/5.8', 'release/5.7', 'release/5.6',
+                            'release/5.5', 'release/5.4']:
+        repos += [
+            '{} git@github.com:apple/swift-asn1.git '
+            '{}/swift-asn1 '.format(
+                branches[swift_branch]['swift-asn1'], workspace
+            ),
+            '{} git@github.com:apple/swift-certificates.git '
+            '{}/swift-certificates '.format(
+                branches[swift_branch]['swift-certificates'], workspace
             ),
         ]
 
