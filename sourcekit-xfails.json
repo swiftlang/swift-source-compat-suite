@@ -1085,5 +1085,18 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/63611"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/representables\/DocumentPickerView.swift",
+    "modification" : "concurrent-971",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 968
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64264"
   }
 ]
