@@ -3182,11 +3182,12 @@
       {
         "action": "BuildSwiftPackage",
         "build_tests": "true",
-        "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
+        "configuration": "debug",
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": {
+          "issue": "https://github.com/apple/swift-distributed-actors/issues/1113",
+          "configuration": "release"
+        }
       }
     ]
   },
