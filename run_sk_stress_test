@@ -300,6 +300,7 @@ class StressTesterRunner(object):
           '--swift-branch', self.swift_branch,
           '--job-type', 'stress-tester',
           '--default-timeout', str(-1),
+          '--build-config', 'debug',
           '--only-latest-versions',
           # Don't build projects in parallel because stress testing a single project already utilises the CPU 100% and stress testing multiple causes timeouts.
           '--process-count', '1',
