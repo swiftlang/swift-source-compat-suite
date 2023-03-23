@@ -26,8 +26,8 @@ DEFAULT_EXECUTE_TIMEOUT = 10*60
 
 branches = {
     'main': {
-        'llvm-project': 'stable/20220421',
-        'swift-llvm-bindings': 'stable/20220421',
+        'llvm-project': 'stable/20221013',
+        'swift-llvm-bindings': 'stable/20221013',
         'swift': 'main',
         'cmark': 'gfm',
         'ninja': 'release',
@@ -36,17 +36,42 @@ branches = {
         'swift-corelibs-libdispatch': 'main',
         'swift-corelibs-foundation': 'main',
         'swift-corelibs-xctest': 'main',
-        'swift-argument-parser': '1.0.3',
+        'swift-argument-parser': '1.2.2',
         'swift-driver': 'main',
         'yams': '5.0.1',
         'swift-tools-support-core': 'main',
-        'swift-crypto': '1.1.5',
+        'swift-crypto': '2.4.0',
+        'swift-asn1': '0.7.0',
+        'swift-certificates': '0.1.0',
         'swift-atomics': '1.0.2',
         'swift-collections': '1.0.1',
         'swift-numerics': '1.0.1',
         'swift-system': '1.1.1',
         'swift-experimental-string-processing': 'swift/main',
         'swift-syntax': 'main',
+    },
+    'release/5.8': {
+        'llvm-project': 'swift/release/5.8',
+        'swift-llvm-bindings': 'swift/release/5.8',
+        'swift': 'release/5.8',
+        'cmark': 'release/5.8',
+        'ninja': 'release',
+        'llbuild': 'release/5.8',
+        'swiftpm': 'release/5.8',
+        'swift-corelibs-libdispatch': 'release/5.8',
+        'swift-corelibs-foundation': 'release/5.8',
+        'swift-corelibs-xctest': 'release/5.8',
+        'swift-argument-parser': '1.0.3',
+        'swift-driver': 'release/5.8',
+        'yams': '5.0.1',
+        'swift-tools-support-core': 'release/5.8',
+        'swift-crypto': '2.2.3',
+        'swift-atomics': '1.0.2',
+        'swift-collections': '1.0.1',
+        'swift-numerics': '1.0.1',
+        'swift-system': '1.1.1',
+        'swift-experimental-string-processing': 'swift/release/5.8',
+        'swift-syntax': 'release/5.8',
     },
     'release/5.7': {
         'llvm-project': 'swift/release/5.7',
@@ -263,6 +288,19 @@ def clone_repos():
             '{} git@github.com:apple/swift-syntax.git '
             '{}/swift-syntax '.format(
                 branches[swift_branch]['swift-syntax'], workspace
+            ),
+        ]
+
+    if swift_branch not in ['release/5.8', 'release/5.7', 'release/5.6',
+                            'release/5.5', 'release/5.4']:
+        repos += [
+            '{} git@github.com:apple/swift-asn1.git '
+            '{}/swift-asn1 '.format(
+                branches[swift_branch]['swift-asn1'], workspace
+            ),
+            '{} git@github.com:apple/swift-certificates.git '
+            '{}/swift-certificates '.format(
+                branches[swift_branch]['swift-certificates'], workspace
             ),
         ]
 

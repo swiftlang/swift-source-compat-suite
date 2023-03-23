@@ -6,7 +6,7 @@
       "offset" : 7449
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/51404"
   },
@@ -17,7 +17,7 @@
       "offset" : 7836
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/51404"
   },
@@ -28,7 +28,31 @@
       "offset" : 8038
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/51404"
+  },
+  {
+    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 79
+    },
+    "applicableConfigs" : [
+      "main", "release/5.8"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/51404"
+  },
+  {
+    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 5606
+    },
+    "applicableConfigs" : [
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/51404"
   },
@@ -39,7 +63,7 @@
       "offset" : 194
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/56898"
   },
@@ -50,7 +74,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -61,7 +85,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -72,7 +96,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -83,7 +107,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -94,7 +118,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -105,7 +129,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -118,7 +142,7 @@
       "offset" : 248
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -130,7 +154,7 @@
       "offset" : 250
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -142,7 +166,7 @@
       "offset" : 279
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -155,7 +179,7 @@
       "offset" : 279
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -167,7 +191,7 @@
       "offset" : 315
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -180,7 +204,7 @@
       "offset" : 315
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -193,7 +217,7 @@
       "offset" : 387
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -205,7 +229,7 @@
       "offset" : 389
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -218,7 +242,7 @@
       "offset" : 421
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -230,7 +254,7 @@
       "offset" : 421
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -243,7 +267,7 @@
       "offset" : 769
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -256,7 +280,7 @@
       "offset" : 828
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -268,7 +292,7 @@
       "offset" : 830
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -281,7 +305,7 @@
       "offset" : 879
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -293,7 +317,7 @@
       "offset" : 376
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -305,7 +329,7 @@
       "offset" : 411
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -317,7 +341,7 @@
       "offset" : 444
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -329,7 +353,7 @@
       "offset" : 857
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -341,7 +365,7 @@
       "offset" : 872
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -353,7 +377,7 @@
       "offset" : 878
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -364,7 +388,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -375,7 +399,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -386,7 +410,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -397,7 +421,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -408,7 +432,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -421,7 +445,7 @@
       "offset" : 277
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -433,7 +457,7 @@
       "offset" : 279
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -446,7 +470,7 @@
       "offset" : 342
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -459,7 +483,7 @@
       "offset" : 501
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -472,7 +496,7 @@
       "offset" : 1006
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -484,7 +508,7 @@
       "offset" : 1008
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -496,7 +520,7 @@
       "offset" : 263
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -508,7 +532,7 @@
       "offset" : 301
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -520,7 +544,7 @@
       "offset" : 307
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -532,7 +556,7 @@
       "offset" : 316
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -544,7 +568,7 @@
       "offset" : 1026
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -556,7 +580,7 @@
       "offset" : 1036
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -568,7 +592,7 @@
       "offset" : 1044
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -580,7 +604,7 @@
       "offset" : 1045
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -591,7 +615,7 @@
       "offset" : 724
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57237"
   },
@@ -603,45 +627,9 @@
       "offset" : 2745
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57439"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListFormView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2436
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57494"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListFormView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2445
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57494"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListFormView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2447
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57494"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/services\/NotificationsManager.swift",
@@ -651,7 +639,7 @@
       "offset" : 1890
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58274"
   },
@@ -663,7 +651,7 @@
       "offset" : 754
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58275"
   },
@@ -675,7 +663,7 @@
       "offset" : 2140
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58275"
   },
@@ -687,7 +675,7 @@
       "offset" : 1132
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58275"
   },
@@ -699,7 +687,7 @@
       "offset" : 1823
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58275"
   },
@@ -711,7 +699,7 @@
       "offset" : 976
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58275"
   },
@@ -723,7 +711,7 @@
       "offset" : 1517
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58276"
   },
@@ -735,45 +723,9 @@
       "offset" : 2373
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58316"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/TurnipsView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 5650
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/58317"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/TurnipsView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 6389
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/58317"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/TurnipsView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 6697
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/58317"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChart.swift",
@@ -783,7 +735,7 @@
       "offset" : 125
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
@@ -795,7 +747,7 @@
       "offset" : 125
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
@@ -807,7 +759,7 @@
       "offset" : 125
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
@@ -819,94 +771,94 @@
       "offset" : 131
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/60192"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/extensions\/Path.swift",
+    "modification" : "insideOut-907",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 904
+    },
+    "applicableConfigs" : [
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModels\/ItemsViewModel.swift",
-    "modification" : "insideOut-496",
+    "modification" : "insideOut-489",
     "issueDetail" : {
       "kind" : "rangeInfo",
-      "length" : 13,
+      "length" : 16,
       "offset" : 135
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
-    "modification" : "insideOut-253",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 72
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/60192"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
-    "modification" : "insideOut-254",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 73
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/60192"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
-    "modification" : "insideOut-258",
+    "modification" : "insideOut-231",
     "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 73
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
-    "modification" : "insideOut-258",
+    "modification" : "insideOut-231",
     "issueDetail" : {
       "kind" : "rangeInfo",
       "length" : 5,
       "offset" : 72
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
-    "modification" : "insideOut-276",
+    "modification" : "insideOut-242",
     "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 77
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
-    "modification" : "insideOut-278",
+    "modification" : "insideOut-242",
     "issueDetail" : {
       "kind" : "rangeInfo",
-      "length" : 16,
-      "offset" : 262
+      "length" : 165,
+      "offset" : 77
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/60192"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
+    "modification" : "insideOut-258",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 244
+    },
+    "applicableConfigs" : [
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
@@ -916,6 +868,18 @@
     "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 884
+    },
+    "applicableConfigs" : [
+      "main", "release/5.8"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/60192"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChart.swift",
+    "modification" : "insideOut-177",
+    "issueDetail" : {
+      "kind" : "conformingMethodList",
+      "offset" : 131
     },
     "applicableConfigs" : [
       "main"
@@ -930,8 +894,530 @@
       "offset" : 602
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.8"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/61488"
+  },
+  {
+    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 6378
+    },
+    "applicableConfigs" : [
+      "main", "release/5.8"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62457"
+  },
+  {
+    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 6397
+    },
+    "applicableConfigs" : [
+      "main", "release/5.8"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62457"
+  },
+    {
+    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 6419
+    },
+    "applicableConfigs" : [
+      "main", "release/5.8"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62457"
+  },
+  {
+    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 6440
+    },
+    "applicableConfigs" : [
+      "main", "release/5.8"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/62457"
+  },
+  {
+    "path" : "*\/DNS\/Tests\/DNSTests\/DNSTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 15
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63049"
+  },
+  {
+    "path" : "*\/DNS\/Tests\/DNSTests\/FuzzTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 15
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63049"
+  },
+  {
+    "path" : "*\/DNS\/Tests\/DNSTests\/IPTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 15
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63049"
+  },
+  {
+    "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/ContentView.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2021
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63374"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartValuesView.swift",
+    "modification" : "concurrent-741",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 734
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63610"
+  },
+  {
+    "path" : "*\/DNS\/Tests\/DNSTests\/FuzzTests.swift",
+    "modification" : "concurrent-183",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 179
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63611"
+  },
+  {
+    "path" : "*\/Dollar\/Sources\/Dollar.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 43395
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63611"
+  },
+  {
+    "path" : "*\/Dollar\/Sources\/Dollar.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 43490
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63611"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 6494
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63611"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 6517
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63611"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 6581
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63611"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 6604
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63611"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/representables\/DocumentPickerView.swift",
+    "modification" : "concurrent-971",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 968
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64264"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/extensions\/Array.swift",
+    "modification" : "concurrent-492",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 489
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/extensions\/Array.swift",
+    "modification" : "concurrent-605",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 602
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartGrid.swift",
+    "modification" : "concurrent-1130",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 1127
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartGrid.swift",
+    "modification" : "concurrent-1241",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 1229
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartValuesView.swift",
+    "modification" : "concurrent-678",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 506
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/Data+Extensions.swift",
+    "modification" : "concurrent-590",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 193
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/Guitar\/Sources\/GuitarNSRangeExtension.swift",
+    "modification" : "concurrent-743",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 739
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/Guitar\/Sources\/GuitarNSRangeExtension.swift",
+    "modification" : "concurrent-892",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 888
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/utils\/ImageLoader.swift",
+    "modification" : "concurrent-1203",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 1198
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/peopleDetail\/PeopleDetail.swift",
+    "modification" : "concurrent-1523",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 1283
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/extensions\/Font.swift",
+    "modification" : "concurrent-596",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 593
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/views\/modifiers\/PosterStyle.swift",
+    "modification" : "concurrent-552",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 547
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 6501
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 6525
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 6550
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 6558
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 6588
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 6612
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 6637
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 6645
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 6989
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 6997
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/project_cache\/DNS\/Tests\/DNSTests\/FuzzTests.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 165
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/DNS\/Tests\/DNSTests\/FuzzTests.swift",
+    "modification" : "concurrent-412",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 165
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
   }
 ]

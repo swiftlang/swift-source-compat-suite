@@ -706,6 +706,14 @@
                 "compatibility": "5.7",
                 "branch": ["main"],
                 "job": ["source-compat"]
+            },
+            {
+                "issue": "https://github.com/apple/swift/issues/64319",
+                "compatibility": "5.0",
+                "branch": ["main"],
+                "configuration": "release",
+                "job": ["source-compat"],
+                "platform": "Darwin"
             }
         ]
       },
@@ -808,43 +816,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/brentsimmons/Evergreen.git",
-    "path": "Evergreen",
-    "branch": "main",
-    "maintainer": "brent@ranchero.com",
-    "compatibility": [
-      {
-        "version": "4.0",
-        "commit": "ce0d2450b83ec8c5dee6bb9c612b3eb06ba39c47"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Evergreen.xcworkspace",
-        "scheme": "Evergreen",
-        "destination": "generic/platform=macOS",
-        "environment": {
-            "ARCHS": "x86_64"
-        },
-        "configuration": "Release",
-        "tags": "sourcekit-disabled",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/57432",
-            "compatibility": ["4.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
-            "job": ["source-compat"]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/exercism/swift.git",
     "path": "exercism-swift",
     "branch": "main",
@@ -873,8 +844,9 @@
           {
             "issue": "https://github.com/apple/swift/issues/61614",
             "compatibility": ["4.2", "5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
-            "job": ["source-compat"]
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8"],
+            "job": ["source-compat"],
+            "configuration": "debug"
           }
         ]
       },
@@ -1327,14 +1299,14 @@
                 "issue": "rdar://83373628",
                 "platform": "Linux",
                 "compatibility": "5.0",
-                "branch": ["main", "release/5.6", "release/5.7"],
+                "branch": ["main", "release/5.6", "release/5.7", "release/5.8"],
                 "job": ["source-compat"]
             },
             {
                 "issue": "rdar://83373628",
                 "platform": "Linux",
                 "compatibility": "4.0",
-                "branch": ["main", "release/5.6", "release/5.7"],
+                "branch": ["main", "release/5.6", "release/5.7", "release/5.8"],
                 "job": ["source-compat"]
             }
 
@@ -1540,7 +1512,16 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+            {
+                "issue": "https://github.com/apple/swift/issues/64251",
+                "platform": "Linux",
+                "compatibility": ["5.0", "4.2"],
+                "branch": ["main"],
+                "job": ["source-compat"]
+            }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -1790,7 +1771,7 @@
                 "issue": "rdar://83373864",
                 "platform": "Linux",
                 "compatibility": "4.2",
-                "branch": ["main", "release/5.6", "release/5.7"],
+                "branch": ["main", "release/5.6", "release/5.7", "release/5.8"],
                 "job": ["source-compat"]
             }
         ]
@@ -2383,7 +2364,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/57554",
             "compatibility": ["4.2", "5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8"],
             "job": ["source-compat"]
           }
         ],
@@ -2606,8 +2587,9 @@
             {
                 "issue": "https://github.com/apple/swift/issues/61615",
                 "compatibility": ["4.2", "5.0"],
-                "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
-                "job": ["source-compat"]
+                "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8"],
+                "job": ["source-compat"],
+                "configuration": "debug"
             }
         ]
       }
@@ -2980,8 +2962,9 @@
           {
             "issue": "https://github.com/apple/swift/issues/61616",
             "compatibility": ["4.0", "4.2"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
-            "job": ["source-compat"]
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8"],
+            "job": ["source-compat"],
+            "configuration": "debug"
           }
         ]
       },
@@ -3017,7 +3000,7 @@
                 "issue": "rdar://83374141",
                 "platform": "Linux",
                 "compatibility": "5.0",
-                "branch": ["main", "release/5.6", "release/5.7"],
+                "branch": ["main", "release/5.6", "release/5.7", "release/5.8"],
                 "job": ["source-compat"]
             }
         ]
@@ -3132,12 +3115,8 @@
     "maintainer": "cbenfield@apple.com",
     "compatibility": [
       {
-        "version": "4.2",
-        "commit": "381fd99df2a2a95a13172b4b18880d4217274e23"
-      },
-      {
         "version": "5.0",
-        "commit": "da23f751eee0d8287cc62824f6e0bc1f3ba2c0b6"
+        "commit": "45167b8006448c79dda4b7bd604e07a034c15c49"
       }
     ],
     "platforms": [
@@ -3149,15 +3128,7 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-          {
-            "issue": "rdar://81180448",
-            "compatibility": ["4.2", "5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
-            "job": ["source-compat"]
-          }
-        ]
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -3189,6 +3160,35 @@
       },
       {
         "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-distributed-actors",
+    "path": "swift-distributed-actors",
+    "branch": "main",
+    "maintainer": "ktoso@apple.com",
+    "compatibility": [
+      {
+        "version": "5.7",
+        "commit": "e024c1fae5d2b17346c8a2c4482675a70f35fccc"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "debug",
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": {
+          "issue": "https://github.com/apple/swift-distributed-actors/issues/1113",
+          "configuration": "release"
+        }
       }
     ]
   },
@@ -3501,15 +3501,7 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/61617",
-            "compatibility": ["5.0"],
-            "configuration": "release",
-            "branch": ["main", "release/5.6", "release/5.7"]
-          }
-        ]
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -3569,9 +3561,11 @@
         "xfail": [
           {
             "issue": "https://github.com/apple/swift/issues/61622",
+            "platform": "Darwin",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
-            "job": ["source-compat"]
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8"],
+            "job": ["source-compat"],
+            "configuration": "debug"
           }
         ]
       },
@@ -4027,7 +4021,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/57431",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8"],
             "job": ["source-compat"]
           }
         ]
@@ -4188,8 +4182,9 @@
           {
             "issue": "https://github.com/apple/swift/issues/61624",
             "compatibility": ["4.2"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
-            "job": ["source-compat"]
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8"],
+            "job": ["source-compat"],
+            "configuration": "debug"
           }
         ]
       }
@@ -4321,14 +4316,8 @@
           {
             "issue": "https://github.com/apple/swift/issues/57431",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
+            "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8"],
             "configuration": "debug",
-            "job": ["source-compat"]
-          },
-          {
-            "issue": "https://github.com/apple/swift/issues/61625",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7"],
             "job": ["source-compat"]
           }
         ]

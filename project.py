@@ -308,8 +308,12 @@ def build_swift_package(path, swiftc, swift_version, configuration,
                              'swift-3.1-branch']):
         command.insert(2, '--disable-sandbox')
 
-    if build_tests:
+    if build_tests and configuration == 'debug':
         command += ['--build-tests']
+
+        if sys.platform == "linux":
+            command += ['--enable-test-discovery']
+
         added_swift_flags += ' -enable-testing'
 
     if swift_version:

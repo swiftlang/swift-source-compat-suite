@@ -61,6 +61,8 @@ def main():
         'yams',
         'swift-tools-support-core',
         'swift-crypto',
+        'swift-certificates',
+        'swift-asn1',
         'swift-atomics',
         'swift-collections',
         'swift-numerics',
