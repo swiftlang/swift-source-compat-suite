@@ -51,8 +51,8 @@ branches = {
         'swift-syntax': 'main',
     },
     'release/5.9': {
-        'llvm-project': 'stable/20221013',
-        'swift-llvm-bindings': 'stable/20221013',
+        'llvm-project': 'swift/release/5.9',
+        'swift-llvm-bindings': 'swift/release/5.9',
         'swift': 'release/5.9',
         'cmark': 'release/5.9',
         'ninja': 'release',
