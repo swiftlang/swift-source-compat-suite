@@ -899,54 +899,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/61488"
   },
   {
-    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 6378
-    },
-    "applicableConfigs" : [
-      "main", "release/5.8"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/62457"
-  },
-  {
-    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 6397
-    },
-    "applicableConfigs" : [
-      "main", "release/5.8"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/62457"
-  },
-    {
-    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 6419
-    },
-    "applicableConfigs" : [
-      "main", "release/5.8"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/62457"
-  },
-  {
-    "path" : "*\/Result\/Tests\/ResultTests\/ResultTests.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 6440
-    },
-    "applicableConfigs" : [
-      "main", "release/5.8"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/62457"
-  },
-  {
     "path" : "*\/DNS\/Tests\/DNSTests\/DNSTests.swift",
     "modification" : "unmodified",
     "issueDetail" : {
@@ -1099,19 +1051,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/63611"
   },
   {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/representables\/DocumentPickerView.swift",
-    "modification" : "concurrent-971",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Local Rename",
-      "offset" : 968
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/64264"
-  },
-  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/extensions\/Array.swift",
     "modification" : "concurrent-492",
     "issueDetail" : {
@@ -1170,18 +1109,6 @@
       "kind" : "semanticRefactoring",
       "refactoring" : "Local Rename",
       "offset" : 506
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/64512"
-  },
-  {
-    "path" : "*\/DNS\/Sources\/DNS\/Data+Extensions.swift",
-    "modification" : "concurrent-590",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 193
     },
     "applicableConfigs" : [
       "main"
