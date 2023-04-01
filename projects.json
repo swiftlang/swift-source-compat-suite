@@ -877,24 +877,20 @@
     "compatibility": [
       {
         "version": "4.2",
-        "commit": "759c1088a1d9ba94f44009295fd17c20b1375524"
+        "commit": "5ee47c3c2765bdfde0f44c2ea9a263f6aa252d63"
       },
       {
-        "version": "5.0",
-        "commit": "759c1088a1d9ba94f44009295fd17c20b1375524"
+        "version": "5.1",
+        "commit": "5ee47c3c2765bdfde0f44c2ea9a263f6aa252d63"
       },
-       {
-         "version": "5.1",
-         "commit": "d290102d9cb5c425fee7260034beaa997d581d86"
-       },
-       {
-         "version": "5.3",
-         "commit": "dd7e7f39e8e4d7a22d258d9809a882f914690b01"
-       },
-       {
-         "version": "5.7",
-         "commit": "2d19cab2b525f885ee8d7efec96093431f6b5f20"
-       }
+      {
+        "version": "5.3",
+        "commit": "dd7e7f39e8e4d7a22d258d9809a882f914690b01"
+      },
+      {
+        "version": "5.7",
+        "commit": "2d19cab2b525f885ee8d7efec96093431f6b5f20"
+      }
     ],
     "platforms": [
       "Darwin"
