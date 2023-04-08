@@ -2627,6 +2627,30 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/Mikroservices/Smtp.git",
+    "path": "Smtp",
+    "branch": "master",
+    "maintainer": "clack@passivelogic.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "e8f09e1715bdb88499b2722dbd1df140be475d1a"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/krzysztofzablocki/Sourcery.git",
     "path": "Sourcery",
     "branch": "master",
