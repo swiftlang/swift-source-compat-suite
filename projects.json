@@ -696,6 +696,12 @@
                 "compatibility": "5.0",
                 "branch": ["release/5.5"],
                 "job": ["source-compat"]
+            },
+            {
+                "issue": "https://github.com/apple/swift/issues/65200",
+                "compatibility": "5.0",
+                "branch": ["main", "release/5.9"],
+                "job": ["source-compat"]
             }
         ]
       },
@@ -881,7 +887,15 @@
       {
         "action": "BuildSwiftPackage",
         "build_tests": "true",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/65205",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "configuration": "Debug"
+          }
+        ]
       }
     ]
   },
@@ -929,7 +943,15 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/65205",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "configuration": "Debug"
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -1636,7 +1658,15 @@
         "target": "MovieSwift",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit sourcekit-smoke",
+        "xfail": [
+            {
+                "issue": "https://github.com/apple/swift/issues/65203",
+                "compatibility": ["5.0"],
+                "branch": ["main", "release/5.9", "release/5.8"],
+                "job": ["source-compat"]
+            }
+        ]
       }
     ]
   },
@@ -1940,7 +1970,15 @@
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKit",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/65197",
+            "compatibility": ["4.2", "5.0"],
+            "branch": ["main", "release/5.9", "release/5.8"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -2006,7 +2044,15 @@
         "project": "PromiseKit.xcodeproj",
         "target": "PromiseKit",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/65197",
+            "compatibility": ["4.0", "5.0"],
+            "branch": ["main", "release/5.9", "release/5.8"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -2041,7 +2087,15 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/65204",
+            "compatibility": ["4.2", "5.0"],
+            "branch": ["main", "release/5.9", "release/5.8"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -2645,7 +2699,15 @@
       {
         "action": "BuildSwiftPackage",
         "build_tests": "true",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/65205",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "configuration": "Debug"
+          }
+        ]
       }
     ]
   },
@@ -2846,7 +2908,15 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "swiftpm"
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/65205",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "configuration": "Debug"
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -3239,10 +3309,14 @@
         "build_tests": "true",
         "configuration": "debug",
         "tags": "sourcekit-disabled swiftpm",
-        "xfail": {
-          "issue": "https://github.com/apple/swift-distributed-actors/issues/1113",
-          "configuration": "release"
-        }
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/65011",
+            "compatibility": ["5.7"],
+            "branch": ["main"],
+            "platform": "Darwin"
+          }
+        ]
       }
     ]
   },
@@ -3267,7 +3341,15 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/65205",
+            "compatibility": ["5.4"],
+            "branch": ["main"],
+            "configuration": "Debug"
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -3383,7 +3465,15 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/65205",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "configuration": "Debug"
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -3439,7 +3529,15 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/65205",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "configuration": "Debug"
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -3524,9 +3622,9 @@
         "tags": "sourcekit-disabled swiftpm",
         "xfail": [
           {
-            "issue": "SwiftPM plugins are only supported in SwiftPM 5.6 and later",
+            "issue": "https://github.com/apple/swift/issues/65202",
             "compatibility": ["5.0"],
-            "branch": ["release/5.5"]
+            "branch": ["main", "release/5.9", "release/5.8"]
           }
         ]
       },
@@ -3959,7 +4057,15 @@
         "project": "Mapper.xcodeproj",
         "target": "Mapper",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/65197",
+            "compatibility": ["4.0", "4.2", "5.0"],
+            "branch": ["main", "release/5.9", "release/5.8"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "BuildSwiftPackage",
