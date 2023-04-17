@@ -696,12 +696,6 @@
                 "compatibility": "5.0",
                 "branch": ["release/5.5"],
                 "job": ["source-compat"]
-            },
-            {
-                "issue": "https://github.com/apple/swift/issues/65200",
-                "compatibility": "5.0",
-                "branch": ["main", "release/5.9"],
-                "job": ["source-compat"]
             }
         ]
       },
