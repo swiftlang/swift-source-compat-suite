@@ -678,6 +678,10 @@
       {
         "version": "5.0",
         "commit": "96594678095747b012ffd2899a82c688cbd88c14"
+      },
+      {
+        "version": "5.7",
+        "commit": "421a7ab0e6a30e3b48283d6ac49fcec59415a7e9"
       }
     ],
     "platforms": [
@@ -695,6 +699,12 @@
                 "issue": "https://github.com/apple/swift/issues/57755",
                 "compatibility": "5.0",
                 "branch": ["release/5.5"],
+                "job": ["source-compat"]
+            },
+            {
+                "issue": "https://github.com/apple/swift/issues/63737",
+                "compatibility": "5.7",
+                "branch": ["main", "release/5.9"],
                 "job": ["source-compat"]
             }
         ]
@@ -3282,15 +3292,7 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "debug",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/65011",
-            "compatibility": ["5.7"],
-            "branch": ["main"],
-            "platform": "Darwin"
-          }
-        ]
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
@@ -3659,17 +3661,7 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/61622",
-            "platform": "Darwin",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8", "release/5.9"],
-            "job": ["source-compat"],
-            "configuration": "debug"
-          }
-        ]
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
