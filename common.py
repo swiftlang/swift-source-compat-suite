@@ -52,17 +52,22 @@ def set_default_execute_timeout(timeout):
 def clone_repos(swift_branch):
     """Clone Swift and dependencies using update-checkout."""
     workspace = private_workspace('.')
+    swift = os.path.join(workspace, "swift")
 
     # Clone swift checkout
-    if not pathlib.Path(f"{workspace}/swift").exists():
-        check_execute(
-            ["git", "clone", "-q", "-b", "main", "--recursive", "git@github.com:apple/swift.git", f"{workspace}/swift"],
-            timeout=60*30
-        )
+    if not os.path.exists(swift):
+        git_clone('git@github.com:apple/swift.git', swift, tree=swift_branch)
 
     # Update checkout
-    checkout_cmd = build_command = [os.path.join(workspace, 'swift/utils/update-checkout')]
-    build_command += ["--clone", "--reset-to-remote", "--scheme", swift_branch, '-j', str(multiprocessing.cpu_count())]
+    checkout_cmd = [os.path.join(swift, 'utils/update-checkout')]
+    checkout_cmd += [
+        "--clone-with-ssh",
+        "--reset-to-remote",
+        "--scheme",
+        swift_branch,
+        '-j',
+        str(multiprocessing.cpu_count())
+    ]
     check_execute(checkout_cmd, timeout=60*30)
 
 
