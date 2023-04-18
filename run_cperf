@@ -47,11 +47,7 @@ def setup_workspace(instance, workspace, args):
         os.makedirs(workspace)
     swift = os.path.join(workspace, "swift")
     if not os.path.exists(swift):
-        common.git_clone(args.url, swift, tree=args.swift_branch)
-    common.check_execute(['utils/update-checkout',
-                          '--clone-with-ssh', '--reset-to-remote',
-                          '--clean', '--scheme', args.swift_branch],
-                         cwd=swift, timeout=9999999)
+        common.clone_repos(swift_branch=args.swift_branch)
     if instance == NEW_INSTANCE:
         command_fetch = ['git', '-C', swift, 'fetch', 'origin',
                          'pull/%d/merge' % args.setup_workspaces_for_pr]

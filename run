@@ -32,7 +32,7 @@ def main():
     workspace = common.private_workspace('.')
 
     if not args.skip_clone:
-        common.clone_repos()
+        common.clone_repos(swift_branch=args.swift_branch)
 
     if not args.skip_build:
         build_swift_toolchain(workspace, args)

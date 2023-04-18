@@ -37,9 +37,7 @@ def main() -> int:
     workspace = common.private_workspace('.')
 
     if not args.skip_tools_clone:
-        common.clone_repos()
-        clone_swift_syntax(workspace, args.swift_branch)
-        clone_stress_tester(workspace, args.swift_branch)
+        common.clone_repos(swift_branch=args.swift_branch)
 
     if not args.skip_tools_build:
         build_swift_toolchain(workspace, args)
@@ -148,25 +146,6 @@ def get_sandbox_profile_flags() -> List[str]:
         '--sandbox-profile-package',
         '../../../workspace-private/swift-source-compat-suite-sandbox/sandbox_package.sb'
     ]
-
-def clone_stress_tester(workspace: str, swift_branch: str) -> None:
-    stress_clone_cmd = [
-        'git','clone', '-q', '-b', swift_branch, '--recursive',
-        'https://github.com/apple/swift-stress-tester',
-        '{}/swift-stress-tester'.format(workspace)
-    ]
-    common.check_execute(stress_clone_cmd, timeout=-1)
-
-def clone_swift_syntax(workspace: str, swift_branch: str) -> None:
-    if swift_branch in ['release/5.7', 'release/5.6',
-                        'release/5.5', 'release/5.4']:
-        syntax_clone_cmd = [
-            'git', 'clone', '-q', '-b', swift_branch, '--recursive',
-            'https://github.com/apple/swift-syntax',
-            '{}/swift-syntax'.format(workspace)
-        ]
-        common.check_execute(syntax_clone_cmd, timeout=-1)
-
 
 def execute_runner(workspace: str, args: argparse.Namespace) -> bool:
     swiftc_path = get_swiftc_path(workspace, args)
