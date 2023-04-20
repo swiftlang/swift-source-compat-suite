@@ -3737,6 +3737,35 @@
     ]
   },
   {
+      "repository": "Git",
+      "url": "https://github.com/advantagefse/json-logic-swift.git",
+      "path": "json-logic-swift",
+      "branch": "master",
+      "maintainer": "christos.koninis@gmail.com",
+      "compatibility": [{
+              "version": "4.2",
+              "commit": "a048b09190e2a80f563ecd7425ca21547407a5ab"
+          },
+          {
+              "version": "5.0",
+              "commit": "a048b09190e2a80f563ecd7425ca21547407a5ab"
+          }
+      ],
+      "platforms": [
+          "Darwin",
+          "Linux"
+      ],
+      "actions": [{
+              "action": "BuildSwiftPackage",
+              "configuration": "release",
+              "build_tests": "true"
+          },
+          {
+              "action": "TestSwiftPackage"
+          }
+      ]
+  },
+  {
     "repository": "Git",
     "url": "https://github.com/bizz84/SwiftyStoreKit",
     "path": "SwiftyStoreKit",
