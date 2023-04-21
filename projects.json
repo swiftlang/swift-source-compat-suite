@@ -704,7 +704,8 @@
             {
                 "issue": "https://github.com/apple/swift/issues/63737",
                 "compatibility": "5.7",
-                "branch": ["main", "release/5.9"],
+                "platform": "Darwin",
+                "branch": ["main", "release/5.9", "release/5.8"],
                 "job": ["source-compat"]
             }
         ]
