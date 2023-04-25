@@ -3285,16 +3285,9 @@
       {
         "action": "BuildSwiftPackage",
         "build_tests": "true",
+        "build_tests_release": "true",
         "configuration": "debug",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/65011",
-            "compatibility": ["5.7"],
-            "branch": ["main"],
-            "platform": "Darwin"
-          }
-        ]
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
