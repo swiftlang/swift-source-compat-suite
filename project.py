@@ -308,7 +308,7 @@ def build_swift_package(path, swiftc, swift_version, configuration,
                              'swift-3.1-branch']):
         command.insert(2, '--disable-sandbox')
 
-    if build_tests and configuration == 'debug':
+    if build_tests:
         command += ['--build-tests']
 
         if sys.platform == "linux":
@@ -411,6 +411,10 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
     if action['action'] == 'BuildSwiftPackage':
         if not build_config:
             build_config = action['configuration']
+
+        build_tests = (action.get('build_tests') == 'true' and build_config == 'debug') \
+                      or (action.get('build_tests_release') and build_config == 'release')
+
         return build_swift_package(os.path.join(root_path, repo['path']),
                                    swiftc, swift_version,
                                    build_config,
@@ -419,7 +423,7 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
                                    added_swift_flags=added_swift_flags,
                                    incremental=incremental,
                                    override_swift_exec=override_swift_exec,
-                                   build_tests=action.get('build_tests') == 'true')
+                                   build_tests=build_tests)
     elif action['action'] == 'TestSwiftPackage':
         return test_swift_package(os.path.join(root_path, repo['path']),
                                   swiftc,

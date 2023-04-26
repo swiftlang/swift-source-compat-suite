@@ -24,15 +24,7 @@ import sys
 import shlex
 
 DEFAULT_EXECUTE_TIMEOUT = 10*60
-
-swiftc_version = {
-    'main': '3',
-    'swift-3.1-branch': '3',
-    'swift-3.0-branch': None,
-}
-
 swift_branch = None
-
 
 def set_swift_branch(branch):
     """Configure the common library for a specific branch.
