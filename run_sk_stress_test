@@ -290,6 +290,7 @@ class StressTesterRunner(object):
             'SK_STRESS_ACTIVE_CONFIG': self.swift_branch,
             'SK_STRESS_REWRITE_MODES': 'none concurrent insideout',
             'SK_STRESS_REQUEST_DURATIONS_FILE': request_durations,
+            'EnableSwiftBuildSystemIntegration': 'NO'
         }
         run_env.update(os.environ)
         run_cmd = ['./runner.py',
