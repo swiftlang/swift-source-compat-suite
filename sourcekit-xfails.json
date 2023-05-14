@@ -875,6 +875,18 @@
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
   {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/extensions\/Path.swift",
+    "modification" : "insideOut-895",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 889
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/60192"
+  },
+  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChart.swift",
     "modification" : "insideOut-177",
     "issueDetail" : {
@@ -1334,66 +1346,6 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModels\/ItemDetailViewModel.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2256
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65817"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoriesView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2113
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65817"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListDetailView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 3428
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65817"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/services\/ImageService.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1093
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65817"
-  },
-  {
-    "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/ContentView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1936
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65817"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/custom list\/CustomListDetail.swift",
