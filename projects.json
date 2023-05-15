@@ -1652,15 +1652,7 @@
         "target": "MovieSwift",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke",
-        "xfail": [
-            {
-                "issue": "https://github.com/apple/swift/issues/65203",
-                "compatibility": ["5.0"],
-                "branch": ["main", "release/5.9", "release/5.8"],
-                "job": ["source-compat"]
-            }
-        ]
+        "tags": "sourcekit sourcekit-smoke"
       }
     ]
   },
