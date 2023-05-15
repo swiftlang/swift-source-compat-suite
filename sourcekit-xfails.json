@@ -1116,30 +1116,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
   {
-    "path" : "*\/Guitar\/Sources\/GuitarNSRangeExtension.swift",
-    "modification" : "concurrent-743",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 739
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/64512"
-  },
-  {
-    "path" : "*\/Guitar\/Sources\/GuitarNSRangeExtension.swift",
-    "modification" : "concurrent-892",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 888
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/64512"
-  },
-  {
     "path" : "*\/MovieSwift\/MovieSwift\/Packages\/Backend\/Sources\/Backend\/utils\/ImageLoader.swift",
     "modification" : "concurrent-1203",
     "issueDetail" : {
@@ -1521,6 +1497,18 @@
     "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 1830
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/65895"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1583
     },
     "applicableConfigs" : [
       "main"
