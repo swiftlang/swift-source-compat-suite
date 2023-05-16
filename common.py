@@ -46,7 +46,7 @@ branches = {
         'swift-atomics': '1.0.2',
         'swift-collections': '1.0.1',
         'swift-numerics': '1.0.1',
-        'swift-system': '1.1.1',
+        'swift-system': '1.2.1',
         'swift-experimental-string-processing': 'swift/main',
         'swift-syntax': 'main',
     },
