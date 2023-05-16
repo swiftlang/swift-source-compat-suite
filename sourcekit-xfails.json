@@ -776,6 +776,18 @@
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
   {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChart.swift",
+    "modification" : "insideOut-188",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 173
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/60192"
+  },
+  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/extensions\/Path.swift",
     "modification" : "insideOut-907",
     "issueDetail" : {
@@ -1508,6 +1520,18 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
+      "offset" : 1583
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/65895"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "typeContextInfo",
       "offset" : 1583
     },
     "applicableConfigs" : [
