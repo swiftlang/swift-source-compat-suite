@@ -945,7 +945,15 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+            {
+                "issue": "rdar://109999583",
+                "compatibility": ["4.2", "5.1", "5.3", "5.7"],
+                "branch": ["main"],
+                "job": ["source-compat"]
+            }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -973,7 +981,15 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+            {
+                "issue": "rdar://109999583",
+                "compatibility": "5.0",
+                "branch": ["main"],
+                "job": ["source-compat"]
+            }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -1950,14 +1966,30 @@
         "target": "ProcedureKit",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+            {
+                "issue": "rdar://109999674",
+                "compatibility": ["4.2", "5.0"],
+                "branch": ["main"],
+                "job": ["source-compat"]
+            }
+        ]
       },
       {
         "action": "BuildXcodeProjectTarget",
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKit",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+            {
+                "issue": "rdar://109999674",
+                "compatibility": ["4.2", "5.0"],
+                "branch": ["main"],
+                "job": ["source-compat"]
+            }
+        ]
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -1979,7 +2011,15 @@
         "project": "ProcedureKit.xcodeproj",
         "target": "ProcedureKit",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+            {
+                "issue": "rdar://109999674",
+                "compatibility": ["4.2", "5.0"],
+                "branch": ["main"],
+                "job": ["source-compat"]
+            }
+        ]
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -1987,7 +2027,15 @@
         "target": "ProcedureKitCloud",
         "destination": "platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+            {
+                "issue": "rdar://109999674",
+                "compatibility": ["4.2", "5.0"],
+                "branch": ["main"],
+                "job": ["source-compat"]
+            }
+        ]
       },
       {
         "action": "TestXcodeProjectTarget",
