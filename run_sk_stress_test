@@ -174,49 +174,28 @@ def execute_runner(workspace: str, args: argparse.Namespace) -> bool:
     return passed
 
 
+def get_preset_name(args):
+    build_type = ''
+    if args.debug:
+        build_type = build_type + 'D'
+    else:
+        build_type = build_type + 'R'
+
+    if args.assertions:
+        build_type = build_type + 'A'
+
+    return f'sourcekit_stress_test_macos_{build_type}'
+
 def build_swift_toolchain(workspace: str, args: argparse.Namespace) -> None:
     build_command = [
         os.path.join(workspace, 'swift/utils/build-script'),
-        '--debug' if args.debug else '--release',
-        '--assertions' if args.assertions else '--no-assertions',
-        '--build-ninja',
-        '--llbuild',
-        '--swiftpm',
-        '--swiftsyntax',
-        '--skstresstester',
-        '--ios',
-        '--tvos',
-        '--watchos',
-        '--skip-build-benchmarks',
-        '--build-subdir=compat_macos',
-        '--compiler-vendor=apple',
-        '--',
-        '--darwin-install-extract-symbols',
-        '--darwin-toolchain-alias=swift',
-        '--darwin-toolchain-bundle-identifier=org.swift.compat-macos',
-        '--darwin-toolchain-display-name-short=Swift Development Snapshot',
-        '--darwin-toolchain-display-name=Swift Development Snapshot',
-        '--darwin-toolchain-name=swift-DEVELOPMENT-SNAPSHOT',
-        '--darwin-toolchain-version=3.999.999',
-        '--install-llbuild',
-        '--install-swift',
-        '--install-swiftpm',
-        '--install-swiftsyntax',
-        '--install-skstresstester',
-        '--install-destdir={}/build/compat_macos/install'.format(workspace),
-        '--install-prefix=/toolchain/usr',
-        '--install-symroot={}/build/compat_macos/symroot'.format(workspace),
-        '--installable-package={}/build/compat_macos/root.tar.gz'.format(workspace),
-        '--llvm-install-components=libclang;libclang-headers;dsymutil',
-        '--swift-install-components=compiler;clang-builtin-headers;stdlib;sdk-overlay;license;sourcekit-xpc-service;swift-remote-mirror;swift-remote-mirror-headers',
-        '--symbols-package={}/build/compat_macos/root-symbols.tar.gz'.format(workspace),
-        '--verbose-build',
-        '--reconfigure',
+        f'--preset={get_preset_name(args)}',
+        f'install_destdir={workspace}/build/compat_macos/install',
+        f'install_prefix=/toolchain/usr',
+        f'install_symroot={workspace}/build/compat_macos/symroot',
+        f'installable_package={workspace}/build/compat_macos/root.tar.gz',
+        f'symbols_package={workspace}/build/compat_macos/root-symbols.tar.gz',
     ]
-    if args.cmake_c_launcher:
-        build_command += ['--cmake-c-launcher={}'.format(args.cmake_c_launcher)]
-    if args.cmake_cxx_launcher:
-        build_command += ['--cmake-cxx-launcher={}'.format(args.cmake_cxx_launcher)]
     common.check_execute(build_command, timeout=9999999)
 
 
@@ -269,6 +248,7 @@ class StressTesterRunner(object):
             'SK_STRESS_ACTIVE_CONFIG': self.swift_branch,
             'SK_STRESS_REWRITE_MODES': 'none concurrent insideout',
             'SK_STRESS_REQUEST_DURATIONS_FILE': request_durations,
+            'EnableSwiftBuildSystemIntegration': 'NO'
         }
         run_env.update(os.environ)
         run_cmd = ['./runner.py',
