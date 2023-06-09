@@ -2919,7 +2919,8 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "TestSwiftPackage"
