@@ -2903,6 +2903,31 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/kishikawakatsumi/swift-power-assert",
+    "path": "swift-power-assert",
+    "branch": "main",
+    "maintainer": "kishikawakatsumi@mac.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "a60cb50b141d723ec51c1788fe454e93d468d5de"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/apple/swift-standard-library-preview.git",
     "path": "swift-standard-library-preview",
     "branch": "main",
