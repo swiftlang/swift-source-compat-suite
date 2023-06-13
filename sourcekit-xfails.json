@@ -1336,6 +1336,19 @@
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
   {
+    "path" : "*\/swift-power-assert\/Sources\/StringWidth\/StringWidth.swift",
+    "modification" : "concurrent-438",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 433
+    },
+    "applicableConfigs" : [
+      "main", "release/5.9"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/custom list\/CustomListDetail.swift",
     "modification" : "unmodified",
     "issueDetail" : {
