@@ -2920,7 +2920,15 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit sourcekit-smoke"
+        "tags": "sourcekit sourcekit-smoke",
+        "xfail": [
+            {
+                "issue": "Only Supports 5.9+",
+                "compatibility": "5.0",
+                "branch": ["release/5.8"],
+                "job": ["source-compat"]
+            }
+        ]
       },
       {
         "action": "TestSwiftPackage"
