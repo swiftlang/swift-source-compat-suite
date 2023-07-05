@@ -4592,5 +4592,41 @@
          "action": "TestSwiftPackage"
        }
      ]
-   }
+   },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-foundation",
+    "path": "swift-foundation",
+    "branch": "main",
+    "maintainer": "jschonfeld@apple.com",
+    "compatibility": [
+      {
+        "version": "5.9",
+        "commit": "9e852364819c44cb12e1c1ff26201d96007b4ae7"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "Only Supports 5.9+",
+            "compatibility": ["5.9"],
+            "branch": ["release/5.8"],
+            "job": ["source-compat"]
+          }
+        ]
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  }
 ]
