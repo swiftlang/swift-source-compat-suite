@@ -4598,7 +4598,7 @@
     "url": "https://github.com/apple/swift-foundation",
     "path": "swift-foundation",
     "branch": "main",
-    "maintainer": "jschonfeld@apple.com",
+    "maintainer": "yizhe_hu@apple.com",
     "compatibility": [
       {
         "version": "5.9",
