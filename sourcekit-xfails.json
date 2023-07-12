@@ -627,7 +627,7 @@
       "offset" : 2745
     },
     "applicableConfigs" : [
-      "main", "release/5.9"
+      "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57439"
   },
@@ -639,7 +639,7 @@
       "offset" : 1890
     },
     "applicableConfigs" : [
-      "main", "release/5.9"
+      "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58274"
   },
@@ -723,7 +723,7 @@
       "offset" : 2373
     },
     "applicableConfigs" : [
-      "main", "release/5.9"
+      "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58316"
   },
@@ -1135,7 +1135,7 @@
       "offset" : 506
     },
     "applicableConfigs" : [
-      "main", "release/5.9"
+      "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1407,7 +1407,7 @@
       "offset" : 4527
     },
     "applicableConfigs" : [
-      "main", "release/5.9"
+      "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65816"
   },
@@ -1419,7 +1419,7 @@
       "offset" : 1478
     },
     "applicableConfigs" : [
-      "main", "release/5.9"
+      "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1431,7 +1431,7 @@
       "offset" : 1479
     },
     "applicableConfigs" : [
-      "main", "release/5.9"
+      "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1479,7 +1479,7 @@
       "offset" : 1858
     },
     "applicableConfigs" : [
-      "main", "release/5.9"
+      "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1491,7 +1491,7 @@
       "offset" : 1859
     },
     "applicableConfigs" : [
-      "main", "release/5.9"
+      "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1503,7 +1503,7 @@
       "offset" : 1478
     },
     "applicableConfigs" : [
-      "main", "release/5.9"
+      "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1515,7 +1515,7 @@
       "offset" : 1479
     },
     "applicableConfigs" : [
-      "main", "release/5.9"
+      "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1539,7 +1539,7 @@
       "offset" : 1858
     },
     "applicableConfigs" : [
-      "main", "release/5.9"
+      "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1551,7 +1551,7 @@
       "offset" : 1859
     },
     "applicableConfigs" : [
-      "main", "release/5.9"
+      "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1563,7 +1563,7 @@
       "offset" : 1790
     },
     "applicableConfigs" : [
-      "main", "release/5.9"
+      "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1575,7 +1575,7 @@
       "offset" : 1830
     },
     "applicableConfigs" : [
-      "main", "release/5.9"
+      "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1775,5 +1775,379 @@
       "main", "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/66926"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1511
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1519
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-743",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 743
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-743",
+    "issueDetail" : {
+      "kind" : "conformingMethodList",
+      "offset" : 743
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  }, 
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-768",
+    "issueDetail" : {
+      "kind" : "collectExpressionType"
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-772",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 25
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-777",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 85,
+      "offset" : 211
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-779",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 82,
+      "offset" : 25
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-787",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 0
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-813",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 133,
+      "offset" : 197
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-835",
+    "issueDetail" : {
+      "kind" : "collectExpressionType"
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-836",
+    "issueDetail" : {
+      "kind" : "conformingMethodList",
+      "offset" : 836
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-995",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 31,
+      "offset" : 964
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1016",
+    "issueDetail" : {
+      "kind" : "collectExpressionType"
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1026",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 59
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1026",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 51,
+      "offset" : 17
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1031",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 70
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1031",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 4,
+      "offset" : 69
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1048",
+    "issueDetail" : {
+      "kind" : "collectExpressionType"
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1053",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 90
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1073",
+    "issueDetail" : {
+      "kind" : "conformingMethodList",
+      "offset" : 1012
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1075",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1044
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1075",
+    "issueDetail" : {
+      "kind" : "conformingMethodList",
+      "offset" : 1044
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1296",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1203
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1296",
+    "issueDetail" : {
+      "kind" : "conformingMethodList",
+      "offset" : 1203
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1419",
+    "issueDetail" : {
+      "kind" : "conformingMethodList",
+      "offset" : 1255
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1420",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1256
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1428",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1264
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1488",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1269
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1493",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1274
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-1529",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1295
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
   }
 ]
