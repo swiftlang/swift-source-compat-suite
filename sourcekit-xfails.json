@@ -1604,6 +1604,18 @@
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
   {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1011
+    },
+    "applicableConfigs" : [
+      "release\/5.9"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/65895"
+  },
+  {
     "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/Macros.swift",
     "modification" : "unmodified",
     "issueDetail" : {
