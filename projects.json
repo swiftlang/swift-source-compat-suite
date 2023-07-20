@@ -2927,12 +2927,6 @@
                 "compatibility": "5.0",
                 "branch": ["release/5.8"],
                 "job": ["source-compat"]
-            },
-            {
-                "issue": "https://github.com/apple/swift/issues/67371",
-                "compatibility": "5.0",
-                "branch": ["main"],
-                "job": ["source-compat"]
             }
         ]
       },
