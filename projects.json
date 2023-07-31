@@ -973,7 +973,16 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "rdar://113121424",
+            "platform": "Darwin",
+            "compatibility": "5.0",
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -2693,7 +2702,16 @@
       {
         "action": "BuildSwiftPackage",
         "build_tests": "true",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": [
+          {
+            "issue": "rdar://113121424",
+            "platform": "Darwin",
+            "compatibility": "5.0",
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       }
     ]
   },
@@ -3321,7 +3339,16 @@
         "build_tests": "true",
         "build_tests_release": "true",
         "configuration": "debug",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "rdar://113121424",
+            "platform": "Darwin",
+            "compatibility": "5.0",
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       }
     ]
   },
@@ -3346,7 +3373,16 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "rdar://113121424",
+            "platform": "Darwin",
+            "compatibility": "5.0",
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -3462,7 +3498,16 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "rdar://113121424",
+            "platform": "Darwin",
+            "compatibility": "5.0",
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -4563,7 +4608,16 @@
        {
          "action": "BuildSwiftPackage",
          "configuration": "release",
-         "tags": "swiftpm"
+         "tags": "swiftpm",
+         "xfail": [
+           {
+             "issue": "rdar://113121424",
+             "platform": "Darwin",
+             "compatibility": "5.0",
+             "branch": ["main"],
+             "job": ["source-compat"]
+           }
+         ]
        }
      ]
    },
