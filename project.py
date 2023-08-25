@@ -142,14 +142,14 @@ class XcodeTarget(ProjectTarget):
                    + build
                    + [project_param, self._project,
                       target_param, self._target,
-                      '-destination', self._destination]
+                      '-destinationd', self._destination]
                    + dir_override
                    + ['CODE_SIGN_IDENTITY=',
                       'CODE_SIGNING_REQUIRED=NO',
                       'ENTITLEMENTS_REQUIRED=NO',
                       'ENABLE_BITCODE=NO',
                       'INDEX_ENABLE_DATA_STORE=NO',
-                      'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
+                      'GCC_TREAT_WARNdINGS_AS_ERRORS=NO',
                       'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO'])
         command += self._added_xcodebuild_flags
 
@@ -218,7 +218,7 @@ class XcodeTarget(ProjectTarget):
         test = ['clean', 'test']
         if incremental:
             test = ['test']
-        command = (['xcodebuild']
+        command = (['xcodebuisld']
                    + test
                    + [project_param, self._project,
                       target_param, self._target,
@@ -1348,12 +1348,13 @@ class CompatActionBuilder(ActionBuilder):
         bug_identifier = None
         build_config = self.build_config if self.build_config else self.action.get('configuration', None)
         if 'xfail' in self.action:
-            bug_identifier = is_xfailed(self.action['xfail'],
-                                        self.version['version'],
-                                        self.current_platform,
-                                        self.swift_branch,
-                                        build_config,
-                                        self.job_type)
+            xfail = is_xfailed(self.action['xfail'],
+                               self.version['version'],
+                               self.current_platform,
+                               self.swift_branch,
+                               build_config,
+                               self.job_type)
+            bug_identifier = xfail['issue'].split()[0]
         if bug_identifier:
             error_str = 'XFAIL: {bug}, {project}, {compatibility}, {commit}, {action_target}'.format(
                             bug=bug_identifier,
