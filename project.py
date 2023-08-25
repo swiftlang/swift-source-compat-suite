@@ -524,7 +524,6 @@ def is_xfailed(xfail_args, compatible_version, platform, swift_branch, build_con
         return arg in spec if isinstance(spec, list) else spec == arg
 
     def matches(spec):
-        issue = spec['issue'].split()[0]
         current = {
             'compatibility': compatible_version,
             'branch': swift_branch,
@@ -540,7 +539,7 @@ def is_xfailed(xfail_args, compatible_version, platform, swift_branch, build_con
         for key, value in current.items():
           if key in spec and not is_or_contains(spec[key], value):
             return None
-        return issue
+        return spec
 
     for spec in xfail_args:
         issue = matches(spec)
@@ -1382,15 +1381,20 @@ class CompatActionBuilder(ActionBuilder):
     def succeeded(self, identifier):
         version_commit = self.version['commit'][:6]
         bug_identifier = None
+        is_flaky = False
         build_config = self.build_config if self.build_config else self.action.get('configuration', None)
         if 'xfail' in self.action:
-            bug_identifier = is_xfailed(self.action['xfail'],
-                                        self.version['version'],
-                                        self.current_platform,
-                                        self.swift_branch,
-                                        build_config,
-                                        self.job_type)
-        if bug_identifier:
+            xfail = is_xfailed(self.action['xfail'],
+                               self.version['version'],
+                               self.current_platform,
+                               self.swift_branch,
+                               build_config,
+                               self.job_type)
+            bug_identifier = xfail['issue'].split()[0]
+            is_flaky = xfail.get('flaky', False)
+
+        # If the test is xfailed and not marked as flaky, it's a UPASS
+        if bug_identifier and not is_flaky:
             error_str = 'UPASS: {bug}, {project}, {compatibility}, {commit}, {action_target}'.format(
                             bug=bug_identifier,
                             project=self.project['path'],
