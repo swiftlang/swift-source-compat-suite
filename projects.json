@@ -1296,14 +1296,32 @@
         "scheme": "Kingfisher",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+            {
+                "issue": "https://github.com/apple/swift/issues/68142",
+                "compatibility": "5.0",
+                "branch": ["main", "release/5.9"],
+                "job": ["source-compat"],
+                "flaky": true
+            }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Kingfisher.xcworkspace",
         "scheme": "Kingfisher",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+            {
+                "issue": "https://github.com/apple/swift/issues/68142",
+                "compatibility": "5.0",
+                "branch": ["main", "release/5.9"],
+                "job": ["source-compat"],
+                "flaky": true
+            }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -1658,7 +1676,8 @@
                 "issue": "https://github.com/apple/swift/issues/65203",
                 "compatibility": ["5.0"],
                 "branch": ["main", "release/5.9", "release/5.8"],
-                "job": ["source-compat"]
+                "job": ["source-compat"],
+                "flaky": true
             }
         ]
       }
@@ -3179,14 +3198,32 @@
         "scheme": "SwifterSwift-macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+            {
+                "issue": "https://github.com/apple/swift/issues/68142",
+                "compatibility": ["4.0", "5.0"],
+                "branch": ["main", "release/5.9"],
+                "job": ["source-compat"],
+                "flaky": true
+            }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "SwifterSwift.xcworkspace",
         "scheme": "SwifterSwift-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+            {
+                "issue": "https://github.com/apple/swift/issues/68142",
+                "compatibility": ["4.0", "5.0"],
+                "branch": ["main", "release/5.9"],
+                "job": ["source-compat"],
+                "flaky": true
+            }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
