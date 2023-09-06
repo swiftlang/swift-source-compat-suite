@@ -1362,7 +1362,9 @@ class CompatActionBuilder(ActionBuilder):
                                self.swift_branch,
                                build_config,
                                self.job_type)
-            bug_identifier = xfail['issue'].split()[0]
+            if xfail is not None:
+                bug_identifier = xfail['issue'].split()[0]
+
         if bug_identifier:
             error_str = 'XFAIL: {bug}, {project}, {compatibility}, {commit}, {action_target}'.format(
                             bug=bug_identifier,
@@ -1399,8 +1401,10 @@ class CompatActionBuilder(ActionBuilder):
                                self.swift_branch,
                                build_config,
                                self.job_type)
-            bug_identifier = xfail['issue'].split()[0]
-            is_flaky = xfail.get('flaky', False)
+
+            if xfail is not None:
+                bug_identifier = xfail['issue'].split()[0]
+                is_flaky = xfail.get('flaky', False)
 
         # If the test is xfailed and not marked as flaky, it's a UPASS
         if bug_identifier and not is_flaky:
