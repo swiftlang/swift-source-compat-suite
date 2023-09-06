@@ -1328,7 +1328,16 @@
         "workspace": "Kingfisher.xcworkspace",
         "scheme": "Kingfisher",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+            {
+                "issue": "https://github.com/apple/swift/issues/68142",
+                "compatibility": "5.0",
+                "branch": ["main", "release/5.9"],
+                "job": ["source-compat"],
+                "flaky": true
+            }
+        ]
       }
     ]
   },
@@ -3230,25 +3239,61 @@
         "workspace": "SwifterSwift.xcworkspace",
         "scheme": "SwifterSwift-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+            {
+                "issue": "https://github.com/apple/swift/issues/68142",
+                "compatibility": ["4.0", "5.0"],
+                "branch": ["main", "release/5.9"],
+                "job": ["source-compat"],
+                "flaky": true
+            }
+        ]
       },
       {
         "action": "TestXcodeWorkspaceScheme",
         "workspace": "SwifterSwift.xcworkspace",
         "scheme": "SwifterSwift-iOSTests",
-        "destination": "platform=iOS Simulator,name=iPhone 7,OS=10.2"
+        "destination": "platform=iOS Simulator,name=iPhone 7,OS=10.2",
+        "xfail": [
+            {
+                "issue": "https://github.com/apple/swift/issues/68142",
+                "compatibility": ["4.0", "5.0"],
+                "branch": ["main", "release/5.9"],
+                "job": ["source-compat"],
+                "flaky": true
+            }
+        ]
       },
       {
         "action": "TestXcodeWorkspaceScheme",
         "workspace": "SwifterSwift.xcworkspace",
         "scheme": "SwifterSwift-tvOSTests",
-        "destination": "platform=tvOS Simulator,name=Apple TV 1080p"
+        "destination": "platform=tvOS Simulator,name=Apple TV 1080p",
+        "xfail": [
+            {
+                "issue": "https://github.com/apple/swift/issues/68142",
+                "compatibility": ["4.0", "5.0"],
+                "branch": ["main", "release/5.9"],
+                "job": ["source-compat"],
+                "flaky": true
+            }
+        ]
       },
       {
         "action": "TestXcodeWorkspaceScheme",
         "workspace": "SwifterSwift.xcworkspace",
         "scheme": "SwifterSwift-macOSTests",
-        "destination": "platform=macOS"
+        "destination": "platform=macOS",
+        "xfail": [
+            {
+                "issue": "https://github.com/apple/swift/issues/68142",
+                "compatibility": ["4.0", "5.0"],
+                "branch": ["main", "release/5.9"],
+                "job": ["source-compat"],
+                "flaky": true
+            }
+        ]
       }
     ]
   },

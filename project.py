@@ -142,14 +142,14 @@ class XcodeTarget(ProjectTarget):
                    + build
                    + [project_param, self._project,
                       target_param, self._target,
-                      '-destinationd', self._destination]
+                      '-destination', self._destination]
                    + dir_override
                    + ['CODE_SIGN_IDENTITY=',
                       'CODE_SIGNING_REQUIRED=NO',
                       'ENTITLEMENTS_REQUIRED=NO',
                       'ENABLE_BITCODE=NO',
                       'INDEX_ENABLE_DATA_STORE=NO',
-                      'GCC_TREAT_WARNdINGS_AS_ERRORS=NO',
+                      'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
                       'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO'])
         command += self._added_xcodebuild_flags
 
@@ -218,7 +218,7 @@ class XcodeTarget(ProjectTarget):
         test = ['clean', 'test']
         if incremental:
             test = ['test']
-        command = (['xcodebuisld']
+        command = (['xcodebuild']
                    + test
                    + [project_param, self._project,
                       target_param, self._target,
@@ -1186,17 +1186,19 @@ class ActionBuilder(Factory):
         pass
 
     def build(self, stdout=sys.stdout):
-        self.checkout_branch(self.project['branch'],
-                             stdout=stdout, stderr=stdout)
+        if self.checkout_branch(self.project['branch'],
+                                stdout=stdout, stderr=stdout) != 0:
+            return self.failed('%s, %s' % (self.version['version'], self.version['commit'][:6]), "Failed to checkout git repo")
+
         return self.dispatch(self.project['branch'],
                              stdout=stdout, stderr=stdout)
 
     def checkout_branch(self, branch, stdout=sys.stdout, stderr=sys.stderr):
-        self.checkout(ref=branch, ref_is_sha=False, pull_after_update=True,
+        return self.checkout(ref=branch, ref_is_sha=False, pull_after_update=True,
                       stdout=stdout, stderr=stderr)
 
     def checkout_sha(self, sha, stdout=sys.stdout, stderr=sys.stderr):
-        self.checkout(ref=sha, ref_is_sha=True, pull_after_update=False,
+        return self.checkout(ref=sha, ref_is_sha=True, pull_after_update=False,
                       stdout=stdout, stderr=stderr)
 
     def checkout(self, ref, ref_is_sha, pull_after_update,
@@ -1208,9 +1210,12 @@ class ActionBuilder(Factory):
         if self.project['repository'] == 'Git':
             if os.path.exists(path):
                 if ref_is_sha:
-                    common.git_update(self.project['url'], ref, path,
-                                      incremental=self.skip_clean,
-                                      stdout=stdout, stderr=stderr)
+                    if common.git_update(
+                            self.project['url'], ref, path,
+                            incremental=self.skip_clean,
+                            stdout=stdout, stderr=stderr
+                    ) != 0:
+                        return 1
                 else:
                     if not self.skip_clean:
                         common.git_clean(path, stdout=stdout, stderr=stderr)
@@ -1225,6 +1230,7 @@ class ActionBuilder(Factory):
         else:
             raise common.Unreachable('Unsupported repository: %s' %
                                      self.project['repository'])
+        return 0
 
     def dispatch(self, identifier, stdout=sys.stdout, stderr=sys.stderr):
         try:
@@ -1335,10 +1341,12 @@ class CompatActionBuilder(ActionBuilder):
         if len(self.version['commit']) != 40:
             common.debug_print("ERROR: Commits must be 40 character SHA hashes")
             exit(1)
-        self.checkout_sha(
-            self.version['commit'],
-            stdout=stdout, stderr=stdout
-        )
+        if self.checkout_sha(
+                self.version['commit'],
+                stdout=stdout, stderr=stdout
+        ) != 0:
+            return self.failed('%s, %s' % (self.version['version'], self.version['commit'][:6]), "Failed to checkout git repo")
+
         action_result = self.dispatch('%s, %s' % (self.version['version'], self.version['commit'][:6]),
                                       stdout=stdout, stderr=stdout)
         return action_result

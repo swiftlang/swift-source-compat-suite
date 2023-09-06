@@ -558,7 +558,11 @@ def git_update(url, configured_sha, path,
     returncodes = []
     try:
         if not incremental:
-            git_clean(path, stdout=stdout, stderr=stderr)
+            try:
+                git_clean(path, stdout=stdout, stderr=stderr)
+            except:
+                return 1
+
         current_sha = git_sha(path, stdout=stdout, stderr=stderr)
         debug_print('current_sha: ' + current_sha, stderr=stderr)
         debug_print('configured_sha: ' + configured_sha, stderr=stderr)
