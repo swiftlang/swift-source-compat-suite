@@ -1,6 +1,32 @@
 [
   {
     "repository": "Git",
+    "url": "https://github.com/Dimillian/MovieSwiftUI.git",
+    "path": "MovieSwift",
+    "branch": "master",
+    "maintainer": "ricouard77@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "237010a51afd6923fdfac09f5bc88dd206c49e3a"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "MovieSwift/MovieSwift.xcodeproj",
+        "target": "MovieSwift",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/Dimillian/ACHNBrowserUI.git",
     "path": "ACHNBrowserUI",
     "branch": "main",
@@ -1627,40 +1653,6 @@
       },
       {
         "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/Dimillian/MovieSwiftUI.git",
-    "path": "MovieSwift",
-    "branch": "master",
-    "maintainer": "ricouard77@gmail.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "237010a51afd6923fdfac09f5bc88dd206c49e3a"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "MovieSwift/MovieSwift.xcodeproj",
-        "target": "MovieSwift",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke",
-        "xfail": [
-            {
-                "issue": "https://github.com/apple/swift/issues/65203",
-                "compatibility": ["5.0"],
-                "branch": ["main", "release/5.9", "release/5.8"],
-                "job": ["source-compat"]
-            }
-        ]
       }
     ]
   },
@@ -4602,7 +4594,7 @@
     "compatibility": [
       {
         "version": "5.9",
-        "commit": "db11c382b354a0a5c0f35a89419394cb9ae233c0"
+        "commit": "d7025a7ac85f2220db8fb4c3aa717d612395cc5d"
       }
     ],
     "platforms": [
