@@ -1,6 +1,32 @@
 [
   {
     "repository": "Git",
+    "url": "https://github.com/Dimillian/MovieSwiftUI.git",
+    "path": "MovieSwift",
+    "branch": "master",
+    "maintainer": "ricouard77@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "237010a51afd6923fdfac09f5bc88dd206c49e3a"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "MovieSwift/MovieSwift.xcodeproj",
+        "target": "MovieSwift",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/Dimillian/ACHNBrowserUI.git",
     "path": "ACHNBrowserUI",
     "branch": "main",
@@ -1632,40 +1658,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/Dimillian/MovieSwiftUI.git",
-    "path": "MovieSwift",
-    "branch": "master",
-    "maintainer": "ricouard77@gmail.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "237010a51afd6923fdfac09f5bc88dd206c49e3a"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "MovieSwift/MovieSwift.xcodeproj",
-        "target": "MovieSwift",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke",
-        "xfail": [
-            {
-                "issue": "https://github.com/apple/swift/issues/65203",
-                "compatibility": ["5.0"],
-                "branch": ["main", "release/5.9", "release/5.8"],
-                "job": ["source-compat"]
-            }
-        ]
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/ethanhuang13/NSAttributedStringBuilder.git",
     "path": "NSAttributedStringBuilder",
     "branch": "master",
@@ -2895,6 +2887,40 @@
         "configuration": "release",
         "build_tests": "true",
         "tags": "swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/kishikawakatsumi/swift-power-assert",
+    "path": "swift-power-assert",
+    "branch": "main",
+    "maintainer": "kishikawakatsumi@mac.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "a60cb50b141d723ec51c1788fe454e93d468d5de"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit sourcekit-smoke",
+        "xfail": [
+            {
+                "issue": "Only Supports 5.9+",
+                "compatibility": "5.0",
+                "branch": ["release/5.8"],
+                "job": ["source-compat"]
+            }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -4558,5 +4584,41 @@
          "action": "TestSwiftPackage"
        }
      ]
-   }
+   },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-foundation",
+    "path": "swift-foundation",
+    "branch": "main",
+    "maintainer": "yizhe_hu@apple.com",
+    "compatibility": [
+      {
+        "version": "5.9",
+        "commit": "d7025a7ac85f2220db8fb4c3aa717d612395cc5d"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "Only Supports 5.9+",
+            "compatibility": ["5.9"],
+            "branch": ["release/5.8"],
+            "job": ["source-compat"]
+          }
+        ]
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  }
 ]
