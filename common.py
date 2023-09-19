@@ -23,7 +23,7 @@ import subprocess
 import sys
 import shlex
 
-DEFAULT_EXECUTE_TIMEOUT = 10*60
+DEFAULT_EXECUTE_TIMEOUT = 3600
 swift_branch = None
 
 def set_swift_branch(branch):

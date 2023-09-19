@@ -246,7 +246,6 @@ class XcodeTarget(ProjectTarget):
         if time_reporter:
             start_time = time.time()
         returncode = common.check_execute(self.get_build_command(incremental=incremental),
-                                          timeout=3600,
                                           sandbox_profile=sandbox_profile,
                                           stdout=stdout, stderr=stdout)
         if returncode == 0 and time_reporter:
