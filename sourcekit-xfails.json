@@ -2275,19 +2275,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/67248"
   },
   {
-    "path" : "*\/swift-power-assert\/Sources\/StringWidth\/CodePointWidth.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Convert Function to Async",
-      "offset" : 24
-    },
-    "applicableConfigs" : [
-      "main", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/67248"
-  },
-  {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
     "modification" : "insideOut-226",
     "issueDetail" : {
