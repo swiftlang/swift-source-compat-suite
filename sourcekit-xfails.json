@@ -2208,5 +2208,17 @@
       "release\/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChart.swift",
+    "modification" : "insideOut-166",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 89
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
   }
 ]
