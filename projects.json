@@ -4626,7 +4626,7 @@
     "url": "https://github.com/apple/swift-testing",
     "path": "swift-testing",
     "branch": "main",
-    "maintainer": "smontgomery@apple.com",
+    "maintainer": "bcroom@apple.com",
     "compatibility": [
       {
         "version": "5.0",
