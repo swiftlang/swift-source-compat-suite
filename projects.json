@@ -4643,7 +4643,15 @@
         "configuration": "release",
         "build_tests": "true",
         "build_tests_release": "true",
-        "tags": "swiftpm"
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/69096",
+            "compatibility": ["5.0"],
+            "branch": ["release/5.10", "main"],
+            "job": ["source-compat"]
+          }
+        ]
       }
     ]
   }
