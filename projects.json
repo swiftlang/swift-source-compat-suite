@@ -4620,5 +4620,31 @@
         "action": "TestSwiftPackage"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-testing",
+    "path": "swift-testing",
+    "branch": "main",
+    "maintainer": "smontgomery@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "f9deef4f09f85064a542335b00f35430e8bf7432"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "build_tests_release": "true",
+        "tags": "swiftpm"
+      }
+    ]
   }
 ]
