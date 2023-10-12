@@ -1074,10 +1074,27 @@ class ProjectListBuilder(ListBuilder):
         # Create results object to store results
         results = self.new_result()
 
-        projects_to_build = [subtarget for subtarget in self.subtargets() if self.included(subtarget)]
+        projects_to_build = []
+        projects_to_build_first = []
+
+        for subtarget in self.subtargets():
+            if self.included(subtarget):
+                if subtarget.get('build_first', False):
+                    projects_to_build_first.append(subtarget)
+                else:
+                    projects_to_build.append(subtarget)
+
         common.debug_print(
             f"Building {len(projects_to_build)} projects across {self.processes} parallel processes\n"
         )
+
+        # Some projects need to build first as a priority
+        for project in projects_to_build_first:
+            project_subbuilder = self.subbuilder.initialize(*([project] + self.payload()))
+            worker = thread_pool.submit(self.start_process, project_subbuilder, common.DEFAULT_EXECUTE_TIMEOUT)
+            submitted_futures.append(worker)
+
+        futures.wait(submitted_futures)
 
         # For each project that needs building, submit a future to build said project
         for project in projects_to_build:
@@ -1333,6 +1350,7 @@ class CompatActionBuilder(ActionBuilder):
             [self.project['path'], self.version['version'], self.action['action']] +
             ([scheme_target] if scheme_target else [])
         )
+
         if len(self.version['commit']) != 40:
             common.debug_print("ERROR: Commits must be 40 character SHA hashes")
             exit(1)
