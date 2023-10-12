@@ -5,6 +5,7 @@
     "path": "MovieSwift",
     "branch": "master",
     "maintainer": "ricouard77@gmail.com",
+    "build_first": true,
     "compatibility": [
       {
         "version": "5.0",
