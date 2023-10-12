@@ -4648,7 +4648,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/69096",
             "compatibility": ["5.0"],
-            "branch": ["release/5.10", "main"],
+            "branch": ["main"],
             "job": ["source-compat"]
           }
         ]
