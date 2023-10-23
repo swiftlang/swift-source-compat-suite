@@ -15,6 +15,7 @@
 
 import multiprocessing
 import os
+import pathlib
 import pipes
 import platform
 import signal
@@ -23,203 +24,7 @@ import sys
 import shlex
 
 DEFAULT_EXECUTE_TIMEOUT = 3600
-
-branches = {
-    'main': {
-        'llvm-project': 'stable/20221013',
-        'swift-llvm-bindings': 'stable/20221013',
-        'swift': 'main',
-        'cmark': 'gfm',
-        'ninja': 'release',
-        'llbuild': 'main',
-        'swiftpm': 'main',
-        'swift-corelibs-libdispatch': 'main',
-        'swift-corelibs-foundation': 'main',
-        'swift-corelibs-xctest': 'main',
-        'swift-argument-parser': '1.2.3',
-        'swift-driver': 'main',
-        'yams': '5.0.1',
-        'swift-tools-support-core': 'main',
-        'swift-crypto': '3.0.0',
-        'swift-asn1': '1.0.0',
-        'swift-certificates': '1.0.1',
-        'swift-atomics': '1.0.2',
-        'swift-collections': '1.0.1',
-        'swift-numerics': '1.0.1',
-        'swift-system': '1.1.1',
-        'swift-experimental-string-processing': 'swift/main',
-        'swift-syntax': 'main',
-    },
-    'release/5.10': {
-        'llvm-project': 'swift/release/5.10',
-        'swift-llvm-bindings': 'swift/release/5.10',
-        'swift': 'release/5.10',
-        'cmark': 'release/5.10',
-        'ninja': 'release',
-        'llbuild': 'release/5.10',
-        'swiftpm': 'release/5.10',
-        'swift-corelibs-libdispatch': 'release/5.10',
-        'swift-corelibs-foundation': 'release/5.10',
-        'swift-corelibs-xctest': 'release/5.10',
-        'swift-argument-parser': '1.2.3',
-        'swift-driver': 'release/5.10',
-        'yams': '5.0.1',
-        'swift-tools-support-core': 'release/5.10',
-        'swift-crypto': '2.5.0',
-        'swift-asn1': '0.8.0',
-        'swift-certificates': '0.6.0',
-        'swift-atomics': '1.0.2',
-        'swift-collections': '1.0.1',
-        'swift-numerics': '1.0.1',
-        'swift-system': '1.1.1',
-        'swift-experimental-string-processing': 'swift/release/5.10',
-        'swift-syntax': 'release/5.10',
-    },
-    'release/5.9': {
-        'llvm-project': 'swift/release/5.9',
-        'swift-llvm-bindings': 'swift/release/5.9',
-        'swift': 'release/5.9',
-        'cmark': 'release/5.9',
-        'ninja': 'release',
-        'llbuild': 'release/5.9',
-        'swiftpm': 'release/5.9',
-        'swift-corelibs-libdispatch': 'release/5.9',
-        'swift-corelibs-foundation': 'release/5.9',
-        'swift-corelibs-xctest': 'release/5.9',
-        'swift-argument-parser': '1.2.2',
-        'swift-driver': 'release/5.9',
-        'yams': '5.0.1',
-        'swift-tools-support-core': 'release/5.9',
-        'swift-crypto': '2.5.0',
-        'swift-asn1': '0.7.0',
-        'swift-certificates': '0.4.1',
-        'swift-atomics': '1.0.2',
-        'swift-collections': '1.0.1',
-        'swift-numerics': '1.0.1',
-        'swift-system': '1.1.1',
-        'swift-experimental-string-processing': 'swift/release/5.9',
-        'swift-syntax': 'release/5.9',
-    },
-    'release/5.8': {
-        'llvm-project': 'swift/release/5.8',
-        'swift-llvm-bindings': 'swift/release/5.8',
-        'swift': 'release/5.8',
-        'cmark': 'release/5.8',
-        'ninja': 'release',
-        'llbuild': 'release/5.8',
-        'swiftpm': 'release/5.8',
-        'swift-corelibs-libdispatch': 'release/5.8',
-        'swift-corelibs-foundation': 'release/5.8',
-        'swift-corelibs-xctest': 'release/5.8',
-        'swift-argument-parser': '1.0.3',
-        'swift-driver': 'release/5.8',
-        'yams': '5.0.1',
-        'swift-tools-support-core': 'release/5.8',
-        'swift-crypto': '2.2.3',
-        'swift-atomics': '1.0.2',
-        'swift-collections': '1.0.1',
-        'swift-numerics': '1.0.1',
-        'swift-system': '1.1.1',
-        'swift-experimental-string-processing': 'swift/release/5.8',
-        'swift-syntax': 'release/5.8',
-    },
-    'release/5.7': {
-        'llvm-project': 'swift/release/5.7',
-        'swift': 'release/5.7',
-        'cmark': 'release/5.7',
-        'ninja': 'release',
-        'llbuild': 'release/5.7',
-        'swiftpm': 'release/5.7',
-        'swift-corelibs-libdispatch': 'release/5.7',
-        'swift-corelibs-foundation': 'release/5.7',
-        'swift-corelibs-xctest': 'release/5.7',
-        'swift-argument-parser': '1.0.3',
-        'swift-driver': 'release/5.7',
-        'yams': '4.0.2',
-        'swift-tools-support-core': 'release/5.7',
-        'swift-crypto': '1.1.5',
-        'swift-atomics': '1.0.2',
-        'swift-collections': '1.0.1',
-        'swift-numerics': '1.0.1',
-        'swift-system': '1.1.1',
-        'swift-experimental-string-processing': 'swift/release/5.7',
-    },
-    'release/5.6': {
-        'llvm-project': 'swift/release/5.6',
-        'swift': 'release/5.6',
-        'cmark': 'release/5.6',
-        'ninja': 'release',
-        'llbuild': 'release/5.6',
-        'swiftpm': 'release/5.6',
-        'swift-corelibs-libdispatch': 'release/5.6',
-        'swift-corelibs-foundation': 'release/5.6',
-        'swift-corelibs-xctest': 'release/5.6',
-        'swift-argument-parser': '1.0.3',
-        'swift-driver': 'release/5.6',
-        'yams': '4.0.2',
-        'swift-tools-support-core': 'release/5.6',
-        'swift-crypto': '1.1.5',
-        'swift-atomics': '1.0.2',
-        'swift-collections': '1.0.1',
-        'swift-numerics': '1.0.1',
-        'swift-system': '1.1.1',
-    },
-    'release/5.5': {
-        'llvm-project': 'swift/release/5.5',
-        'swift': 'release/5.5',
-        'cmark': 'release/5.5',
-        'ninja': 'release',
-        'llbuild': 'release/5.5',
-        'swiftpm': 'release/5.5',
-        'swift-corelibs-libdispatch': 'release/5.5',
-        'swift-corelibs-foundation': 'release/5.5',
-        'swift-corelibs-xctest': 'release/5.5',
-        'swift-argument-parser': '0.4.3',
-        'swift-driver': 'release/5.5',
-        'yams': '4.0.2',
-        'swift-tools-support-core': 'release/5.5',
-        'swift-crypto': '1.1.5',
-        'swift-atomics': '0.0.3',
-        'swift-collections': '0.0.4',
-        'swift-numerics': '0.1.0',
-        'swift-system': '0.0.2',
-    },
-    'release/5.4': {
-        'llvm-project': 'swift/release/5.4',
-        'swift': 'release/5.4',
-        'cmark': 'release/5.4',
-        'ninja': 'release',
-        'llbuild': 'release/5.4',
-        'swiftpm': 'release/5.4',
-        'swift-corelibs-libdispatch': 'release/5.4',
-        'swift-corelibs-foundation': 'release/5.4',
-        'swift-corelibs-xctest': 'release/5.4',
-        'swift-argument-parser': '0.3.0',
-        'swift-driver': 'release/5.4',
-        'yams': '3.0.1',
-        'swift-tools-support-core': 'release/5.4',
-        'swift-crypto': '1.1.5',
-        'swift-atomics': '0.0.3',
-        'swift-collections': '0.0.4',
-        'swift-numerics': '0.1.0',
-        'swift-system': '0.0.2',
-    },
-}
-
-swiftc_operation = {
-    'main': '-typecheck',
-    'swift-3.1-branch': '-typecheck',
-    'swift-3.0-branch': '-parse',
-}
-
-swiftc_version = {
-    'main': '3',
-    'swift-3.1-branch': '3',
-    'swift-3.0-branch': None,
-}
-
 swift_branch = None
-
 
 def set_swift_branch(branch):
     """Configure the common library for a specific branch.
@@ -236,135 +41,26 @@ def set_default_execute_timeout(timeout):
     DEFAULT_EXECUTE_TIMEOUT = timeout
 
 
-def clone_repos():
-    """Clone Swift and dependencies in parallel.
-
-    >>> import tempfile
-    >>> set_swift_branch('main')
-    >>> tmpdir = tempfile.mkdtemp()
-    >>> with DirectoryContext(tmpdir):
-    ...     clone_repos()
-    >>> repos = os.listdir(tmpdir)
-    >>> check_execute(['rm', '-rf', tmpdir])
-    0
-    >>> repos #doctest: +NORMALIZE_WHITESPACE
-    ['llvm-project', 'swift-llvm-bindings', 'cmark', 'llbuild', 'ninja',
-     'swift', 'swift-corelibs-foundation', 'swift-corelibs-libdispatch',
-     'swift-corelibs-xctest', 'swiftpm', 'swift-experimental-string-processing']
-    """
-    cpu_count = multiprocessing.cpu_count()
+def clone_repos(swift_branch):
+    """Clone Swift and dependencies using update-checkout."""
     workspace = private_workspace('.')
-    repos = [
-        '{} git@github.com:apple/llvm-project.git '
-        '{}/llvm-project '.format(
-            branches[swift_branch]['llvm-project'], workspace
-        ),
-        '{} git@github.com:apple/swift.git {}/swift '.format(
-            branches[swift_branch]['swift'], workspace
-        ),
-        '{} git@github.com:apple/swift-cmark.git {}/cmark '.format(
-            branches[swift_branch]['cmark'], workspace
-        ),
-        '{} git@github.com:ninja-build/ninja.git {}/ninja '.format(
-            branches[swift_branch]['ninja'], workspace
-        ),
-        '{} git@github.com:apple/swift-llbuild.git {}/llbuild '.format(
-            branches[swift_branch]['llbuild'], workspace
-        ),
-        '{} git@github.com:apple/swift-package-manager.git '
-        '{}/swiftpm '.format(
-            branches[swift_branch]['swiftpm'], workspace
-        ),
-        '{} git@github.com:apple/swift-corelibs-foundation.git '
-        '{}/swift-corelibs-foundation '.format(
-            branches[swift_branch]['swift-corelibs-foundation'], workspace
-        ),
-        '{} git@github.com:apple/swift-corelibs-libdispatch.git '
-        '{}/swift-corelibs-libdispatch '.format(
-            branches[swift_branch]['swift-corelibs-libdispatch'], workspace
-        ),
-        '{} git@github.com:apple/swift-corelibs-xctest.git '
-        '{}/swift-corelibs-xctest '.format(
-            branches[swift_branch]['swift-corelibs-xctest'], workspace
-        ),
-        '{} git@github.com:apple/swift-argument-parser.git '
-        '{}/swift-argument-parser '.format(
-            branches[swift_branch]['swift-argument-parser'], workspace
-        ),
-        '{} git@github.com:apple/swift-driver.git '
-        '{}/swift-driver '.format(
-            branches[swift_branch]['swift-driver'], workspace
-        ),
-        '{} git@github.com:jpsim/Yams.git '
-        '{}/yams '.format(
-            branches[swift_branch]['yams'], workspace
-        ),
-        '{} git@github.com:apple/swift-tools-support-core.git '
-        '{}/swift-tools-support-core '.format(
-            branches[swift_branch]['swift-tools-support-core'], workspace
-        ),
-        '{} git@github.com:apple/swift-crypto.git '
-        '{}/swift-crypto '.format(
-            branches[swift_branch]['swift-crypto'], workspace
-        ),
-        '{} git@github.com:apple/swift-atomics.git '
-        '{}/swift-atomics '.format(
-            branches[swift_branch]['swift-atomics'], workspace
-        ),
-        '{} git@github.com:apple/swift-collections.git '
-        '{}/swift-collections '.format(
-            branches[swift_branch]['swift-collections'], workspace
-        ),
-        '{} git@github.com:apple/swift-numerics.git '
-        '{}/swift-numerics '.format(
-            branches[swift_branch]['swift-numerics'], workspace
-        ),
-        '{} git@github.com:apple/swift-system.git '
-        '{}/swift-system '.format(
-            branches[swift_branch]['swift-system'], workspace
-        ),
-        '{} git@github.com:apple/swift-experimental-string-processing.git '
-        '{}/swift-experimental-string-processing '.format(
-            branches[swift_branch]['swift-experimental-string-processing'], workspace
-        ),
+    swift = os.path.join(workspace, "swift")
+
+    # Clone swift checkout
+    if not os.path.exists(swift):
+        git_clone('git@github.com:apple/swift.git', swift, tree=swift_branch)
+
+    # Update checkout
+    checkout_cmd = [os.path.join(swift, 'utils/update-checkout')]
+    checkout_cmd += [
+        "--clone-with-ssh",
+        "--reset-to-remote",
+        "--scheme",
+        swift_branch,
+        '-j',
+        str(multiprocessing.cpu_count())
     ]
-    if swift_branch not in ['release/5.7', 'release/5.6',
-                            'release/5.5', 'release/5.4']:
-        repos += [
-            '{} git@github.com:apple/swift-llvm-bindings.git '
-            '{}/swift-llvm-bindings '.format(
-                branches[swift_branch]['swift-llvm-bindings'], workspace
-            ),
-            '{} git@github.com:apple/swift-syntax.git '
-            '{}/swift-syntax '.format(
-                branches[swift_branch]['swift-syntax'], workspace
-            ),
-        ]
-
-    if swift_branch not in ['release/5.8', 'release/5.7', 'release/5.6',
-                            'release/5.5', 'release/5.4']:
-        repos += [
-            '{} git@github.com:apple/swift-asn1.git '
-            '{}/swift-asn1 '.format(
-                branches[swift_branch]['swift-asn1'], workspace
-            ),
-            '{} git@github.com:apple/swift-certificates.git '
-            '{}/swift-certificates '.format(
-                branches[swift_branch]['swift-certificates'], workspace
-            ),
-        ]
-
-    process0 = subprocess.Popen([
-        'xargs', '-P%s' % cpu_count, '-n3',
-        'bash', '-c', 'set -x; git clone -q -b "$0" --recursive "$1" "$2"'
-    ], stdin=subprocess.PIPE)
-
-    for repo in repos:
-        process0.stdin.write(repo.encode('utf-8'))
-
-    process0.stdin.close()
-
-    assert process0.wait() == 0
+    check_execute(checkout_cmd, timeout=60*30)
 
 
 class Unreachable(Exception):
