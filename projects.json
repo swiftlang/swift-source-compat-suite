@@ -2257,7 +2257,7 @@
         "xfail": [
             {
               "issue": "https://github.com/apple/swift/issues/69410",
-              "compatibility": ["5.0", "4.0"],
+              "compatibility": ["5.0"],
               "branch": ["main"],
               "job": ["source-compat"],
               "platform": "Darwin"
@@ -3376,17 +3376,7 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "build_tests_release": "true",
-        "configuration": "debug",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-            {
-              "issue": "https://github.com/apple/swift/issues/69411",
-              "compatibility": ["5.7"],
-              "branch": ["main"],
-              "configuration": "release",
-              "job": ["source-compat"]
-            }
-        ]
+        "configuration": "debug"
       }
     ]
   },
