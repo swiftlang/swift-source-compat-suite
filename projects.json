@@ -387,13 +387,31 @@
         "workspace": "CKWorkspace.xcworkspace",
         "scheme": "CareKit",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/69581",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+           }
+        ]
       },
       {
         "action": "TestXcodeWorkspaceScheme",
         "workspace": "CKWorkspace.xcworkspace",
         "scheme": "CareKit",
-        "destination": "platform=iOS Simulator,name=iPhone 11 Pro Max"
+        "destination": "platform=iOS Simulator,name=iPhone 11 Pro Max",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/69581",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       }
     ]
   },
