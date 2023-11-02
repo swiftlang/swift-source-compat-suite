@@ -41,9 +41,9 @@ def set_default_execute_timeout(timeout):
     DEFAULT_EXECUTE_TIMEOUT = timeout
 
 
-def clone_repos(swift_branch):
+def clone_repos(swift_branch, workspace='.'):
     """Clone Swift and dependencies using update-checkout."""
-    workspace = private_workspace('.')
+    workspace = private_workspace(workspace)
     swift = os.path.join(workspace, "swift")
 
     # Clone swift checkout
