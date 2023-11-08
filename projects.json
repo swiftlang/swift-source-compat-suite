@@ -392,7 +392,15 @@
           {
             "issue": "https://github.com/apple/swift/issues/69581",
             "compatibility": ["5.0"],
-            "branch": ["main"],
+            "branch": ["main", "release/5.10"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+           },
+          {
+            "issue": "https://github.com/apple/swift/issues/69581",
+            "compatibility": ["5.0"],
+            "branch": ["release/5.9"],
+            "configuration": "release",
             "job": ["source-compat"],
             "platform": "Darwin"
            }
