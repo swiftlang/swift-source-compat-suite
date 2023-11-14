@@ -4762,5 +4762,27 @@
         ]
       }
     ]
+  },{
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-sdk-generator.git",
+    "path": "swift-sdk-generator",
+    "branch": "main",
+    "maintainer": "m_desiatov@apple.com",
+    "compatibility": [
+      {
+        "version": "5.9",
+        "commit": "bc3a5584fbf645269f2ecf7dd52e69d0e2cecfa3"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      }
+    ]
   }
 ]
