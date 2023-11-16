@@ -386,6 +386,7 @@
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CKWorkspace.xcworkspace",
         "scheme": "CareKit",
+        "external_build_folder": true,
         "destination": "generic/platform=iOS",
         "configuration": "Release",
         "xfail": [
