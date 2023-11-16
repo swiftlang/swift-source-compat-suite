@@ -2268,5 +2268,29 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModifiers\/AdaptsToSoftwareKeyboard.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 962
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/69936"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModifiers\/AdaptsToSoftwareKeyboard.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1247
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/69936"
   }
 ]
