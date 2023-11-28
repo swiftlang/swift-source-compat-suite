@@ -155,7 +155,9 @@ class XcodeTarget(ProjectTarget):
                       'ENABLE_BITCODE=NO',
                       'INDEX_ENABLE_DATA_STORE=NO',
                       'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
-                      'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO'])
+                      'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO',
+                      "IPHONEOS_DEPLOYMENT_TARGET=16.0",
+                      "MACOSX_DEPLOYMENT_TARGET=13"])
         command += self._added_xcodebuild_flags
 
         if self._destination == 'generic/platform=watchOS':
@@ -212,7 +214,9 @@ class XcodeTarget(ProjectTarget):
                       'ENABLE_BITCODE=NO',
                       'INDEX_ENABLE_DATA_STORE=NO',
                       'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
-                      'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO'])
+                      'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO',
+                      "IPHONEOS_DEPLOYMENT_TARGET=16.0",
+                      "MACOSX_DEPLOYMENT_TARGET=13"])
         command += self._added_xcodebuild_flags
 
         if self._destination == 'generic/platform=watchOS':
