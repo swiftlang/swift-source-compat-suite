@@ -4720,7 +4720,7 @@
     "compatibility": [
       {
         "version": "5.9",
-        "commit": "f9deef4f09f85064a542335b00f35430e8bf7432"
+        "commit": "c6340bd1d0fd486e9b917db086c9a3ffdca2dcaf"
       }
     ],
     "platforms": [
@@ -4735,25 +4735,6 @@
         "build_tests_release": "true",
         "tags": "swiftpm",
         "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/69096",
-            "compatibility": ["5.9"],
-            "branch": ["main"],
-            "job": ["source-compat"]
-          },
-          {
-            "issue": "https://github.com/apple/swift/issues/69278",
-            "compatibility": ["5.9"],
-            "branch": ["release/5.10", "release/5.9"],
-            "job": ["source-compat"]
-          },
-          {
-            "issue": "https://github.com/apple/swift/issues/69279",
-            "compatibility": ["5.9"],
-            "platform": "Linux",
-            "branch": ["main", "release/5.10", "release/5.9"],
-            "job": ["source-compat"]
-          },
           {
             "issue": "Only Supports 5.9+",
             "compatibility": ["5.9"],
