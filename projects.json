@@ -4719,7 +4719,7 @@
     "maintainer": "bcroom@apple.com",
     "compatibility": [
       {
-        "version": "5.9",
+        "version": "5.10",
         "commit": "c6340bd1d0fd486e9b917db086c9a3ffdca2dcaf"
       }
     ],
@@ -4736,9 +4736,9 @@
         "tags": "swiftpm",
         "xfail": [
           {
-            "issue": "Only Supports 5.9+",
-            "compatibility": ["5.9"],
-            "branch": ["release/5.8"],
+            "issue": "Only Supports 5.10+",
+            "compatibility": ["5.10"],
+            "branch": ["release/5.8", "release/5.9"],
             "job": ["source-compat"]
           }
         ]
