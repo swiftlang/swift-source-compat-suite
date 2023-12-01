@@ -371,7 +371,7 @@
     "url": "https://github.com/carekit-apple/CareKit.git",
     "path": "CareKit",
     "branch": "main",
-    "maintainer": "erik_h@apple.com",
+    "maintainer": "grawson@apple.com",
     "compatibility": [
       {
         "version": "5.0",
