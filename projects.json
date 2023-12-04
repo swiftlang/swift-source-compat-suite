@@ -547,7 +547,16 @@
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "ToDo: Update source revision",
+            "compatibility": ["4.0", "4.2"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -555,21 +564,48 @@
         "scheme": "CoreStore OSX",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "ToDo: Update source revision",
+            "compatibility": ["4.0", "4.2"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "ToDo: Update source revision",
+            "compatibility": ["4.0", "4.2"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "ToDo: Update source revision",
+            "compatibility": ["4.0", "4.2"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -2386,7 +2422,16 @@
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "ToDo: Update Xcode revision",
+            "compatibility": ["4.0", "5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       }
     ]
   },
@@ -4601,7 +4646,16 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "swiftpm"
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "ToDo: Update source revision",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
