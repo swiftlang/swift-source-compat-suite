@@ -371,11 +371,11 @@
     "url": "https://github.com/carekit-apple/CareKit.git",
     "path": "CareKit",
     "branch": "main",
-    "maintainer": "erik_h@apple.com",
+    "maintainer": "grawson@apple.com",
     "compatibility": [
       {
         "version": "5.0",
-        "commit": "ffa0fb36d6b497316cf0f858e04fad511e939ea5"
+        "commit": "5288dce002c38d81ee6470fc7dbe41f5d80de375"
       }
     ],
     "platforms": [
@@ -388,24 +388,7 @@
         "scheme": "CareKit",
         "external_build_folder": true,
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/69581",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/5.10"],
-            "job": ["source-compat"],
-            "platform": "Darwin"
-           },
-          {
-            "issue": "https://github.com/apple/swift/issues/69581",
-            "compatibility": ["5.0"],
-            "branch": ["release/5.9"],
-            "configuration": "release",
-            "job": ["source-compat"],
-            "platform": "Darwin"
-           }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
