@@ -2290,16 +2290,7 @@
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": [
-            {
-              "issue": "https://github.com/apple/swift/issues/69410",
-              "compatibility": ["5.0"],
-              "branch": ["main"],
-              "job": ["source-compat"],
-              "platform": "Darwin"
-            }
-        ]
+        "configuration": "Release"
       }
     ]
   },
@@ -3270,32 +3261,14 @@
         "workspace": "SwifterSwift.xcworkspace",
         "scheme": "SwifterSwift-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": [
-            {
-              "issue": "https://github.com/apple/swift/issues/69410",
-              "compatibility": ["5.0"],
-              "branch": ["main"],
-              "job": ["source-compat"],
-              "platform": "Darwin"
-            }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "SwifterSwift.xcworkspace",
         "scheme": "SwifterSwift-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": [
-            {
-              "issue": "https://github.com/apple/swift/issues/69410",
-              "compatibility": ["5.0", "4.0"],
-              "branch": ["main"],
-              "job": ["source-compat"],
-              "platform": "Darwin"
-            }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -4637,16 +4610,7 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "swiftpm",
-        "xfail": [
-          {
-            "issue": "ToDo: Update source revision",
-            "compatibility": ["5.0"],
-            "branch": ["main"],
-            "job": ["source-compat"],
-            "platform": "Darwin"
-          }
-        ]
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -4763,12 +4727,6 @@
         "build_tests_release": "true",
         "tags": "swiftpm",
         "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/69096",
-            "compatibility": ["5.9"],
-            "branch": ["main"],
-            "job": ["source-compat"]
-          },
           {
             "issue": "https://github.com/apple/swift/issues/69278",
             "compatibility": ["5.9"],
