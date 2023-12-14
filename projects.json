@@ -216,16 +216,7 @@
         "project": "AsyncNinja.xcodeproj",
         "scheme": "AsyncNinja",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": [
-            {
-              "issue": "https://github.com/apple/swift/issues/69410",
-              "compatibility": ["5.0", "4.0"],
-              "branch": ["main"],
-              "job": ["source-compat"],
-              "platform": "Darwin"
-            }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "BuildSwiftPackage",
