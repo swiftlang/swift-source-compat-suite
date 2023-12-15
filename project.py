@@ -156,9 +156,10 @@ class XcodeTarget(ProjectTarget):
                       'INDEX_ENABLE_DATA_STORE=NO',
                       'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
                       'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO',
-                      "IPHONEOS_DEPLOYMENT_TARGET=12.0",
+                      "IPHONEOS_DEPLOYMENT_TARGET=16.0",
                       "MACOSX_DEPLOYMENT_TARGET=10.13",
-                      "WATCHOS_DEPLOYMENT_TARGET=4.0"
+                      "WATCHOS_DEPLOYMENT_TARGET=4.0",
+                      "TVOS_DEPLOYMENT_TARGET=16.0",
                       ])
         command += self._added_xcodebuild_flags
 
@@ -217,9 +218,10 @@ class XcodeTarget(ProjectTarget):
                       'INDEX_ENABLE_DATA_STORE=NO',
                       'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
                       'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO',
-                      "IPHONEOS_DEPLOYMENT_TARGET=12.0",
+                      "IPHONEOS_DEPLOYMENT_TARGET=16.0",
                       "MACOSX_DEPLOYMENT_TARGET=10.13",
-                      "WATCHOS_DEPLOYMENT_TARGET=4.0"
+                      "WATCHOS_DEPLOYMENT_TARGET=4.0",
+                      "TVOS_DEPLOYMENT_TARGET=16.0",
                       ])
         command += self._added_xcodebuild_flags
 

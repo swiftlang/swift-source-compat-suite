@@ -3228,16 +3228,7 @@
         "workspace": "SwifterSwift.xcworkspace",
         "scheme": "SwifterSwift-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": [
-            {
-              "issue": "https://github.com/apple/swift/issues/69410",
-              "compatibility": ["5.0"],
-              "branch": ["main"],
-              "job": ["source-compat"],
-              "platform": "Darwin"
-            }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -3245,16 +3236,7 @@
         "scheme": "SwifterSwift-macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled",
-        "xfail": [
-            {
-              "issue": "https://github.com/apple/swift/issues/69410",
-              "compatibility": ["5.0"],
-              "branch": ["main"],
-              "job": ["source-compat"],
-              "platform": "Darwin"
-            }
-        ]
+        "tags": "sourcekit-disabled"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
