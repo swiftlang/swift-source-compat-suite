@@ -541,7 +541,7 @@
         "configuration": "Release",
         "xfail": [
           {
-            "issue": "ToDo: Update source revision",
+            "issue": "https://github.com/apple/swift/issues/70742",
             "compatibility": ["4.0", "4.2"],
             "branch": ["main"],
             "job": ["source-compat"],
@@ -558,9 +558,9 @@
         "tags": "sourcekit-disabled",
         "xfail": [
           {
-            "issue": "ToDo: Update source revision",
+            "issue": "https://github.com/apple/swift/issues/70742",
             "compatibility": ["4.0", "4.2"],
-            "branch": ["main"],
+            "branch": ["main", "release/5.10"],
             "job": ["source-compat"],
             "platform": "Darwin"
           }
@@ -574,9 +574,9 @@
         "configuration": "Release",
         "xfail": [
           {
-            "issue": "ToDo: Update source revision",
+            "issue": "https://github.com/apple/swift/issues/70742",
             "compatibility": ["4.0", "4.2"],
-            "branch": ["main"],
+            "branch": ["main", "release/5.10"],
             "job": ["source-compat"],
             "platform": "Darwin"
           }
@@ -590,7 +590,7 @@
         "configuration": "Release",
         "xfail": [
           {
-            "issue": "ToDo: Update source revision",
+            "issue": "https://github.com/apple/swift/issues/70742",
             "compatibility": ["4.0", "4.2"],
             "branch": ["main"],
             "job": ["source-compat"],
@@ -2407,7 +2407,7 @@
         "configuration": "Release",
         "xfail": [
           {
-            "issue": "ToDo: Update Xcode revision",
+            "issue": "https://github.com/apple/swift/issues/70744",
             "compatibility": ["4.0", "5.0"],
             "branch": ["main"],
             "job": ["source-compat"],
