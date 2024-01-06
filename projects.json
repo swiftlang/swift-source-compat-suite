@@ -543,7 +543,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/70742",
             "compatibility": ["4.0", "4.2"],
-            "branch": ["main"],
+            "branch": ["main", "release/5.10"],
             "job": ["source-compat"],
             "platform": "Darwin"
           }
@@ -592,7 +592,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/70742",
             "compatibility": ["4.0", "4.2"],
-            "branch": ["main"],
+            "branch": ["main", "release/5.10"],
             "job": ["source-compat"],
             "platform": "Darwin"
           }
