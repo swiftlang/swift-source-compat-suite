@@ -155,7 +155,12 @@ class XcodeTarget(ProjectTarget):
                       'ENABLE_BITCODE=NO',
                       'INDEX_ENABLE_DATA_STORE=NO',
                       'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
-                      'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO'])
+                      'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO',
+                      "IPHONEOS_DEPLOYMENT_TARGET=16.0",
+                      "MACOSX_DEPLOYMENT_TARGET=10.13",
+                      "WATCHOS_DEPLOYMENT_TARGET=4.0",
+                      "TVOS_DEPLOYMENT_TARGET=16.0",
+                      ])
         command += self._added_xcodebuild_flags
 
         if self._destination == 'generic/platform=watchOS':
@@ -212,7 +217,12 @@ class XcodeTarget(ProjectTarget):
                       'ENABLE_BITCODE=NO',
                       'INDEX_ENABLE_DATA_STORE=NO',
                       'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
-                      'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO'])
+                      'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO',
+                      "IPHONEOS_DEPLOYMENT_TARGET=16.0",
+                      "MACOSX_DEPLOYMENT_TARGET=10.13",
+                      "WATCHOS_DEPLOYMENT_TARGET=4.0",
+                      "TVOS_DEPLOYMENT_TARGET=16.0",
+                      ])
         command += self._added_xcodebuild_flags
 
         if self._destination == 'generic/platform=watchOS':
@@ -307,7 +317,7 @@ def build_swift_package(path, swiftc, swift_version, configuration,
     if not incremental:
         clean_swift_package(path, swiftc, sandbox_profile,
                             stdout=stdout, stderr=stderr)
-    env = os.environ
+    env = os.environ.copy()
     env['DYLD_LIBRARY_PATH'] = get_stdlib_platform_path(swiftc, 'macOS')
     env['SWIFT_EXEC'] = override_swift_exec or swiftc
     command = [swift, 'build', '--package-path', path, '--verbose',
