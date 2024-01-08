@@ -543,7 +543,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/70742",
             "compatibility": ["4.0", "4.2"],
-            "branch": ["main", "release/5.10"],
+            "branch": ["main", "release/5.9", "release/5.10"],
             "job": ["source-compat"],
             "platform": "Darwin"
           }
@@ -560,7 +560,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/70742",
             "compatibility": ["4.0", "4.2"],
-            "branch": ["main", "release/5.10"],
+            "branch": ["main", "release/5.9", "release/5.10"],
             "job": ["source-compat"],
             "platform": "Darwin"
           }
@@ -576,7 +576,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/70742",
             "compatibility": ["4.0", "4.2"],
-            "branch": ["main", "release/5.10"],
+            "branch": ["main", "release/5.9", "release/5.10"],
             "job": ["source-compat"],
             "platform": "Darwin"
           }
@@ -592,7 +592,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/70742",
             "compatibility": ["4.0", "4.2"],
-            "branch": ["main", "release/5.10"],
+            "branch": ["main", "release/5.9", "release/5.10"],
             "job": ["source-compat"],
             "platform": "Darwin"
           }
@@ -772,6 +772,13 @@
                 "issue": "https://github.com/apple/swift/issues/57755",
                 "compatibility": "5.0",
                 "branch": ["release/5.5"],
+                "job": ["source-compat"]
+            },
+            {
+                "issue": "https://github.com/apple/swift/issues/70764",
+                "compatibility": "5.0",
+                "branch": ["main", "release/5.9"],
+                "configuration": "debug",
                 "job": ["source-compat"]
             }
         ]
@@ -2409,7 +2416,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/70744",
             "compatibility": ["4.0", "5.0"],
-            "branch": ["main", "release/5.10"],
+            "branch": ["main", "release/5.9", "release/5.10"],
             "job": ["source-compat"],
             "platform": "Darwin"
           }
