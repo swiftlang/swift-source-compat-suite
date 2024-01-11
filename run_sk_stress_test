@@ -247,8 +247,7 @@ class StressTesterRunner(object):
             'SK_XFAILS_PATH': self.xfails_path,
             'SK_STRESS_ACTIVE_CONFIG': self.swift_branch,
             'SK_STRESS_REWRITE_MODES': 'none concurrent insideout',
-            'SK_STRESS_REQUEST_DURATIONS_FILE': request_durations,
-            'EnableSwiftBuildSystemIntegration': 'NO'
+            'SK_STRESS_REQUEST_DURATIONS_FILE': request_durations
         }
         run_env.update(os.environ)
         run_cmd = ['./runner.py',
@@ -263,8 +262,9 @@ class StressTesterRunner(object):
           '--only-latest-versions',
           # Don't build projects in parallel because stress testing a single project already utilises the CPU 100% and stress testing multiple causes timeouts.
           '--process-count', '1',
-          # archs override is set to arm64 for generic/iOS actions that would otherwise invoke the stress tester for both arm64 and armv7
-          '--add-xcodebuild-flags', 'ARCHS={archs_override}']
+          # ARCHS is set to arm64 for generic/iOS actions that would otherwise invoke the stress tester for both arm64 and armv7
+          # SWIFT_USE_INTEGRATED_DRIVER is set to NO so that sk-swiftc-wrapper can hook into the compilation process at the driver's stage.
+          '--add-xcodebuild-flags', 'ARCHS={archs_override} SWIFT_USE_INTEGRATED_DRIVER=NO']
 
         if extra_runner_args:
             run_cmd.extend(extra_runner_args)
