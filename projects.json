@@ -2450,7 +2450,15 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit sourcekit-smoke swiftpm"
+        "tags": "sourcekit sourcekit-smoke swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/70970",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
