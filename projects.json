@@ -4735,7 +4735,7 @@
       }
     ]
   },
-    {
+  {
     "repository": "Git",
     "url": "https://github.com/vapor/penny-bot.git",
     "path": "penny-bot",
