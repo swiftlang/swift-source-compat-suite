@@ -4734,5 +4734,30 @@
         ]
       }
     ]
+  },
+    {
+    "repository": "Git",
+    "url": "https://github.com/vapor/penny-bot.git",
+    "path": "penny-bot",
+    "branch": "main",
+    "maintainer": "contact@mahdibm.com",
+    "compatibility": [
+      {
+        "version": "5.9",
+        "commit": "6726c1f39e3b54936cb02fa4b45979b12e503c10"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "swiftpm"
+      }
+    ]
   }
 ]
