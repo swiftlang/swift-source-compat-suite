@@ -4744,7 +4744,7 @@
     "compatibility": [
       {
         "version": "5.9",
-        "commit": "6726c1f39e3b54936cb02fa4b45979b12e503c10"
+        "commit": "62006b34c8ac82a91c8e5adbdd7dab6f67c33fbd"
       }
     ],
     "platforms": [
@@ -4757,6 +4757,9 @@
         "configuration": "release",
         "build_tests": "true",
         "tags": "swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
       }
     ]
   }
