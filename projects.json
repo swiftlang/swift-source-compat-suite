@@ -781,14 +781,6 @@
                 "configuration": "debug",
                 "platform": "Darwin",
                 "job": ["source-compat"]
-            },
-            {
-              "issue": "https://github.com/apple/swift/issues/71311",
-              "compatibility": ["5.0", "5.7"],
-              "branch": ["main"],
-              "configuration": "debug",
-              "platform": "Linux",
-              "job": ["source-compat"]
             }
         ]
       },
