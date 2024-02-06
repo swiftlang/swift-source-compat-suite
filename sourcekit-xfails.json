@@ -2258,18 +2258,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/67248"
   },
   {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/listing\/ListingRow.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 237
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/67248"
-  },
-  {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/base\/MoviesList.swift",
     "modification" : "unmodified",
     "issueDetail" : {
@@ -3540,79 +3528,6 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/state\/AppState.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2513
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/71078"
-  },
-  
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/state\/AppState.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2521
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/71078"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/environments\/Items.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 5731
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/71078"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/environments\/Items.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 5736
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/71078"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/environments\/Items.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 6361
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/71078"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/settings\/SettingsView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1405
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/71078"
   },
   {
     "path" : "*\/MovieSwift\/MovieSwift\/Packages\/UI\/Sources\/UI\/badges\/PopularityBadge.swift",
