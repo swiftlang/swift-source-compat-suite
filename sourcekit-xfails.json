@@ -1656,18 +1656,6 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 1792
-    },
-    "applicableConfigs" : [
-      "main", "release/5.10", "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/66925"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/PowerAssert.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
       "offset" : 4190
     },
     "applicableConfigs" : [
