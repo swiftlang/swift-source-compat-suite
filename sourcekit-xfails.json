@@ -2253,7 +2253,7 @@
       "offset" : 2218
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2265,7 +2265,7 @@
       "offset" : 2229
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2277,7 +2277,7 @@
       "offset" : 2233
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2289,7 +2289,7 @@
       "offset" : 2238
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2301,7 +2301,7 @@
       "offset" : 2254
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2313,7 +2313,7 @@
       "offset" : 3873
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2325,7 +2325,7 @@
       "offset" : 3888
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2337,7 +2337,7 @@
       "offset" : 3889
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2349,7 +2349,7 @@
       "offset" : 3894
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2361,7 +2361,7 @@
       "offset" : 3896
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2373,7 +2373,7 @@
       "offset" : 3901
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2385,7 +2385,7 @@
       "offset" : 3929
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2397,7 +2397,7 @@
       "offset" : 1580
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2409,7 +2409,7 @@
       "offset" : 1596
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2421,7 +2421,7 @@
       "offset" : 1597
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2433,7 +2433,7 @@
       "offset" : 1604
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2445,7 +2445,7 @@
       "offset" : 1580
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2457,7 +2457,7 @@
       "offset" : 1112
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2469,7 +2469,7 @@
       "offset" : 1122
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2481,7 +2481,7 @@
       "offset" : 1123
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2493,7 +2493,7 @@
       "offset" : 1132
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2505,7 +2505,7 @@
       "offset" : 1133
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2517,7 +2517,7 @@
       "offset" : 1140
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2529,7 +2529,7 @@
       "offset" : 1112
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2541,7 +2541,7 @@
       "offset" : 1082
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2553,7 +2553,7 @@
       "offset" : 1082
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2565,7 +2565,7 @@
       "offset" : 1093
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2577,7 +2577,7 @@
       "offset" : 1093
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2589,7 +2589,7 @@
       "offset" : 1112
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2601,7 +2601,7 @@
       "offset" : 1122
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2613,7 +2613,7 @@
       "offset" : 1123
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2625,7 +2625,7 @@
       "offset" : 1133
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2637,7 +2637,7 @@
       "offset" : 1133
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2649,7 +2649,7 @@
       "offset" : 1140
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2661,7 +2661,7 @@
       "offset" : 1140
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2673,7 +2673,7 @@
       "offset" : 1174
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2685,7 +2685,7 @@
       "offset" : 1174
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2697,7 +2697,7 @@
       "offset" : 1197
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2709,7 +2709,7 @@
       "offset" : 1197
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2721,7 +2721,7 @@
       "offset" : 1357
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2733,7 +2733,7 @@
       "offset" : 1365
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2745,7 +2745,7 @@
       "offset" : 1365
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2757,7 +2757,7 @@
       "offset" : 1367
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2769,7 +2769,7 @@
       "offset" : 1367
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2781,7 +2781,7 @@
       "offset" : 1375
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2793,7 +2793,7 @@
       "offset" : 1375
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2805,7 +2805,7 @@
       "offset" : 7021
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2817,7 +2817,7 @@
       "offset" : 7286
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2829,7 +2829,7 @@
       "offset" : 7295
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2841,7 +2841,7 @@
       "offset" : 7381
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2853,7 +2853,7 @@
       "offset" : 7382
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2865,7 +2865,7 @@
       "offset" : 7389
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2877,7 +2877,7 @@
       "offset" : 7408
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2889,7 +2889,7 @@
       "offset" : 7467
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2901,7 +2901,7 @@
       "offset" : 7482
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2913,7 +2913,7 @@
       "offset" : 7483
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2925,7 +2925,7 @@
       "offset" : 7484
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2937,7 +2937,7 @@
       "offset" : 7493
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2949,7 +2949,7 @@
       "offset" : 7494
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2961,7 +2961,7 @@
       "offset" : 904
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2973,7 +2973,7 @@
       "offset" : 916
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2985,7 +2985,7 @@
       "offset" : 917
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -2997,7 +2997,7 @@
       "offset" : 930
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3009,7 +3009,7 @@
       "offset" : 941
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3021,7 +3021,7 @@
       "offset" : 953
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3033,7 +3033,7 @@
       "offset" : 954
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3045,7 +3045,7 @@
       "offset" : 968
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3057,7 +3057,7 @@
       "offset" : 969
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3069,7 +3069,7 @@
       "offset" : 976
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3081,7 +3081,7 @@
       "offset" : 904
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3093,7 +3093,7 @@
       "offset" : 941
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3105,7 +3105,7 @@
       "offset" : 916
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3117,7 +3117,7 @@
       "offset" : 917
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3129,7 +3129,7 @@
       "offset" : 930
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3141,7 +3141,7 @@
       "offset" : 904
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3153,7 +3153,7 @@
       "offset" : 904
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3165,7 +3165,7 @@
       "offset" : 915
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3177,7 +3177,7 @@
       "offset" : 915
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3189,7 +3189,7 @@
       "offset" : 916
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3201,7 +3201,7 @@
       "offset" : 916
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3213,7 +3213,7 @@
       "offset" : 917
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3225,7 +3225,7 @@
       "offset" : 917
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3237,7 +3237,7 @@
       "offset" : 930
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3249,7 +3249,7 @@
       "offset" : 930
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3261,7 +3261,7 @@
       "offset" : 941
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3273,7 +3273,7 @@
       "offset" : 941
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3285,7 +3285,7 @@
       "offset" : 952
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3297,7 +3297,7 @@
       "offset" : 952
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3309,7 +3309,7 @@
       "offset" : 953
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3321,7 +3321,7 @@
       "offset" : 953
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3333,7 +3333,7 @@
       "offset" : 954
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3345,7 +3345,7 @@
       "offset" : 954
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3357,7 +3357,7 @@
       "offset" : 967
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3369,7 +3369,7 @@
       "offset" : 967
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3380,7 +3380,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3393,7 +3393,7 @@
       "offset" : 21
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3405,7 +3405,7 @@
       "offset" : 897
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3417,7 +3417,7 @@
       "offset" : 6389
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3429,7 +3429,7 @@
       "offset" : 6396
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3441,7 +3441,7 @@
       "offset" : 6434
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3453,7 +3453,7 @@
       "offset" : 6697
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3465,7 +3465,7 @@
       "offset" : 6704
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3477,7 +3477,7 @@
       "offset" : 6740
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3489,7 +3489,7 @@
       "offset" : 6932
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3501,7 +3501,7 @@
       "offset" : 2938
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3513,7 +3513,7 @@
       "offset" : 2946
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
