@@ -2229,7 +2229,7 @@
       "offset" : 6622
     },
     "applicableConfigs" : [
-      "main"
+      "main", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/67248"
   },
@@ -3022,6 +3022,18 @@
     },
     "applicableConfigs" : [
       "main", "release/5.10"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/71077"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "conformingMethodList",
+      "offset" : 953
+    },
+    "applicableConfigs" : [
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -4413,7 +4425,7 @@
       "offset" : 1357
     },
     "applicableConfigs" : [
-      "main", "release/5.10"
+      "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -4617,7 +4629,7 @@
       "offset" : 7138
     },
     "applicableConfigs" : [
-      "main", "release/5.10"
+      "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
