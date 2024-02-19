@@ -2450,15 +2450,7 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/70970",
-            "compatibility": ["5.0"],
-            "branch": ["main"],
-            "job": ["source-compat"]
-          }
-        ]
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
