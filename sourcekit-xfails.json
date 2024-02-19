@@ -5845,5 +5845,17 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71189"
-  }  
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/PowerAssert.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1792
+    },
+    "applicableConfigs" : [
+      "release\/5.10"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/71728"
+  }
 ]
