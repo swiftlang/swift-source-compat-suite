@@ -216,16 +216,7 @@
         "project": "AsyncNinja.xcodeproj",
         "scheme": "AsyncNinja",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": [
-            {
-              "issue": "https://github.com/apple/swift/issues/69410",
-              "compatibility": ["5.0", "4.0"],
-              "branch": ["main"],
-              "job": ["source-compat"],
-              "platform": "Darwin"
-            }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "BuildSwiftPackage",
@@ -371,11 +362,11 @@
     "url": "https://github.com/carekit-apple/CareKit.git",
     "path": "CareKit",
     "branch": "main",
-    "maintainer": "erik_h@apple.com",
+    "maintainer": "grawson@apple.com",
     "compatibility": [
       {
         "version": "5.0",
-        "commit": "ffa0fb36d6b497316cf0f858e04fad511e939ea5"
+        "commit": "5288dce002c38d81ee6470fc7dbe41f5d80de375"
       }
     ],
     "platforms": [
@@ -386,25 +377,9 @@
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CKWorkspace.xcworkspace",
         "scheme": "CareKit",
+        "external_build_folder": true,
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/69581",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/5.10"],
-            "job": ["source-compat"],
-            "platform": "Darwin"
-           },
-          {
-            "issue": "https://github.com/apple/swift/issues/69581",
-            "compatibility": ["5.0"],
-            "branch": ["release/5.9"],
-            "configuration": "release",
-            "job": ["source-compat"],
-            "platform": "Darwin"
-           }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -563,7 +538,16 @@
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/70742",
+            "compatibility": ["4.0", "4.2"],
+            "branch": ["main", "release/5.9", "release/5.10"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -571,21 +555,48 @@
         "scheme": "CoreStore OSX",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/70742",
+            "compatibility": ["4.0", "4.2"],
+            "branch": ["main", "release/5.9", "release/5.10"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/70742",
+            "compatibility": ["4.0", "4.2"],
+            "branch": ["main", "release/5.9", "release/5.10"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/70742",
+            "compatibility": ["4.0", "4.2"],
+            "branch": ["main", "release/5.9", "release/5.10"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -761,6 +772,14 @@
                 "issue": "https://github.com/apple/swift/issues/57755",
                 "compatibility": "5.0",
                 "branch": ["release/5.5"],
+                "job": ["source-compat"]
+            },
+            {
+                "issue": "https://github.com/apple/swift/issues/70764",
+                "compatibility": "5.0",
+                "branch": ["main", "release/5.9", "release/5.10"],
+                "configuration": "debug",
+                "platform": "Darwin",
                 "job": ["source-compat"]
             }
         ]
@@ -2279,16 +2298,7 @@
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": [
-            {
-              "issue": "https://github.com/apple/swift/issues/69410",
-              "compatibility": ["5.0"],
-              "branch": ["main"],
-              "job": ["source-compat"],
-              "platform": "Darwin"
-            }
-        ]
+        "configuration": "Release"
       }
     ]
   },
@@ -2402,7 +2412,16 @@
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/70744",
+            "compatibility": ["4.0", "5.0"],
+            "branch": ["main", "release/5.9", "release/5.10"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       }
     ]
   },
@@ -2431,7 +2450,7 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit sourcekit-smoke swiftpm"
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -2488,7 +2507,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/57554",
             "compatibility": ["4.2", "5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10"],
+            "branch": ["release/5.5", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10"],
             "job": ["source-compat"]
           }
         ],
@@ -3217,16 +3236,7 @@
         "workspace": "SwifterSwift.xcworkspace",
         "scheme": "SwifterSwift-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": [
-            {
-              "issue": "https://github.com/apple/swift/issues/69410",
-              "compatibility": ["5.0"],
-              "branch": ["main"],
-              "job": ["source-compat"],
-              "platform": "Darwin"
-            }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -3234,48 +3244,21 @@
         "scheme": "SwifterSwift-macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled",
-        "xfail": [
-            {
-              "issue": "https://github.com/apple/swift/issues/69410",
-              "compatibility": ["5.0"],
-              "branch": ["main"],
-              "job": ["source-compat"],
-              "platform": "Darwin"
-            }
-        ]
+        "tags": "sourcekit-disabled"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "SwifterSwift.xcworkspace",
         "scheme": "SwifterSwift-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release",
-        "xfail": [
-            {
-              "issue": "https://github.com/apple/swift/issues/69410",
-              "compatibility": ["5.0"],
-              "branch": ["main"],
-              "job": ["source-compat"],
-              "platform": "Darwin"
-            }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "SwifterSwift.xcworkspace",
         "scheme": "SwifterSwift-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": [
-            {
-              "issue": "https://github.com/apple/swift/issues/69410",
-              "compatibility": ["5.0", "4.0"],
-              "branch": ["main"],
-              "job": ["source-compat"],
-              "platform": "Darwin"
-            }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -4577,7 +4560,7 @@
     "compatibility": [
       {
         "version": "5.0",
-        "commit": "2d719d75a2065f213e58a5164384a3d2fcf9b59a"
+        "commit": "27432ccb77082cf4bf1f79fd900f0338642fab8a"
       }
     ],
     "platforms": [
@@ -4718,8 +4701,8 @@
     "maintainer": "bcroom@apple.com",
     "compatibility": [
       {
-        "version": "5.9",
-        "commit": "f9deef4f09f85064a542335b00f35430e8bf7432"
+        "version": "5.10",
+        "commit": "c6340bd1d0fd486e9b917db086c9a3ffdca2dcaf"
       }
     ],
     "platforms": [
@@ -4735,31 +4718,49 @@
         "tags": "swiftpm",
         "xfail": [
           {
-            "issue": "https://github.com/apple/swift/issues/69096",
-            "compatibility": ["5.9"],
-            "branch": ["main"],
-            "job": ["source-compat"]
-          },
-          {
-            "issue": "https://github.com/apple/swift/issues/69278",
-            "compatibility": ["5.9"],
-            "branch": ["release/5.10", "release/5.9"],
-            "job": ["source-compat"]
-          },
-          {
-            "issue": "https://github.com/apple/swift/issues/69279",
-            "compatibility": ["5.9"],
-            "platform": "Linux",
-            "branch": ["main", "release/5.10", "release/5.9"],
-            "job": ["source-compat"]
-          },
-          {
-            "issue": "Only Supports 5.9+",
-            "compatibility": ["5.9"],
-            "branch": ["release/5.8"],
+            "issue": "Only Supports 5.10+",
+            "compatibility": ["5.10"],
+            "branch": ["release/5.8", "release/5.9"],
             "job": ["source-compat"]
           }
         ]
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/penny-bot.git",
+    "path": "penny-bot",
+    "branch": "main",
+    "maintainer": "contact@mahdibm.com",
+    "compatibility": [
+      {
+        "version": "5.9",
+        "commit": "62006b34c8ac82a91c8e5adbdd7dab6f67c33fbd"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/71316",
+            "compatibility": ["5.9"],
+            "branch": ["release/5.9"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
+      },
+      {
+        "action": "TestSwiftPackage"
       }
     ]
   },{

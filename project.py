@@ -86,7 +86,8 @@ class XcodeTarget(ProjectTarget):
                  added_xcodebuild_flags, is_workspace, has_scheme,
                  clean_build,
                  stdout,
-                 stderr):
+                 stderr,
+                 external_build_folder):
         self._swiftc = swiftc
         self._project = project
         self._target = target
@@ -99,6 +100,7 @@ class XcodeTarget(ProjectTarget):
         self._clean_build = clean_build
         self.stdout = stdout,
         self.stderr = stderr
+        self.external_build_folder = external_build_folder
 
     @property
     def project_param(self):
@@ -125,7 +127,10 @@ class XcodeTarget(ProjectTarget):
         except common.ExecuteCommandFailure as error:
             build_parent_dir = os.path.dirname(self._project)
 
-        build_dir = os.path.join(build_parent_dir, 'build')
+        if self.external_build_folder:
+            build_dir = os.path.join(build_parent_dir, '..', f'{self._target}-build')
+        else:
+            build_dir = os.path.join(build_parent_dir, 'build')
 
         build = []
         if self._clean_build and not incremental and not self._pretargets:
@@ -150,7 +155,12 @@ class XcodeTarget(ProjectTarget):
                       'ENABLE_BITCODE=NO',
                       'INDEX_ENABLE_DATA_STORE=NO',
                       'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
-                      'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO'])
+                      'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO',
+                      "IPHONEOS_DEPLOYMENT_TARGET=16.0",
+                      "MACOSX_DEPLOYMENT_TARGET=10.13",
+                      "WATCHOS_DEPLOYMENT_TARGET=4.0",
+                      "TVOS_DEPLOYMENT_TARGET=16.0",
+                      ])
         command += self._added_xcodebuild_flags
 
         if self._destination == 'generic/platform=watchOS':
@@ -173,7 +183,10 @@ class XcodeTarget(ProjectTarget):
         except common.ExecuteCommandFailure as error:
             build_parent_dir = os.path.dirname(self._project)
 
-        build_dir = os.path.join(build_parent_dir, 'build')
+        if self.external_build_folder:
+            build_dir = os.path.join(build_parent_dir, '..', f'{self._target}-build')
+        else:
+            build_dir = os.path.join(build_parent_dir, 'build')
 
         build = []
         if self._clean_build and not incremental:
@@ -204,7 +217,12 @@ class XcodeTarget(ProjectTarget):
                       'ENABLE_BITCODE=NO',
                       'INDEX_ENABLE_DATA_STORE=NO',
                       'GCC_TREAT_WARNINGS_AS_ERRORS=NO',
-                      'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO'])
+                      'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO',
+                      "IPHONEOS_DEPLOYMENT_TARGET=16.0",
+                      "MACOSX_DEPLOYMENT_TARGET=10.13",
+                      "WATCHOS_DEPLOYMENT_TARGET=4.0",
+                      "TVOS_DEPLOYMENT_TARGET=16.0",
+                      ])
         command += self._added_xcodebuild_flags
 
         if self._destination == 'generic/platform=watchOS':
@@ -299,7 +317,7 @@ def build_swift_package(path, swiftc, swift_version, configuration,
     if not incremental:
         clean_swift_package(path, swiftc, sandbox_profile,
                             stdout=stdout, stderr=stderr)
-    env = os.environ
+    env = os.environ.copy()
     env['DYLD_LIBRARY_PATH'] = get_stdlib_platform_path(swiftc, 'macOS')
     env['SWIFT_EXEC'] = override_swift_exec or swiftc
     command = [swift, 'build', '--package-path', path, '--verbose',
@@ -498,7 +516,8 @@ def dispatch(root_path, repo, action, swiftc, swift_version,
                         has_scheme,
                         clean_build,
                         stdout,
-                        stderr)
+                        stderr,
+                        action.get("external_build_folder", False))
         if should_strip_resource_phases:
             strip_resource_phases(os.path.join(root_path, repo['path']),
                                   stdout=stdout, stderr=stderr)
