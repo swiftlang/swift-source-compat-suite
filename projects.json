@@ -2507,7 +2507,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/57554",
             "compatibility": ["4.2", "5.0"],
-            "branch": ["release/5.5", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10"],
+            "branch": ["release/5.5", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10", "main"],
             "job": ["source-compat"]
           }
         ],
