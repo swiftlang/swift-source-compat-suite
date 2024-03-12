@@ -4792,16 +4792,15 @@
         "configuration": "release",
         "xfail": [
           {
-            "issue": "rdar://124167314",
+            "issue": "5.9 and below are not supported",
             "compatibility": ["5.9"],
             "branch": ["release/5.9"],
-            "job": ["source-compat"],
-            "platform": "Darwin"
+            "job": ["source-compat"]
           },
           {
             "issue": "rdar://124167314",
             "compatibility": "5.9",
-            "branch": ["main", "release/5.9", "release/5.10"],
+            "branch": ["main", "release/5.10"],
             "job": ["source-compat"],
             "platform": "Linux"
           }
