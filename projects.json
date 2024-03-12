@@ -4685,6 +4685,13 @@
             "compatibility": ["5.9"],
             "branch": ["release/5.8"],
             "job": ["source-compat"]
+          },
+          {
+            "issue": "rdar://123970205",
+            "compatibility": ["5.9"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Linux"
           }
         ]
       },
