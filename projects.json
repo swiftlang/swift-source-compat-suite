@@ -4685,6 +4685,13 @@
             "compatibility": ["5.9"],
             "branch": ["release/5.8"],
             "job": ["source-compat"]
+          },
+          {
+            "issue": "rdar://123970205",
+            "compatibility": ["5.9"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Linux"
           }
         ]
       },
@@ -4782,7 +4789,22 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": [
+          {
+            "issue": "5.9 and below are not supported",
+            "compatibility": ["5.9"],
+            "branch": ["release/5.9"],
+            "job": ["source-compat"]
+          },
+          {
+            "issue": "rdar://124167314",
+            "compatibility": "5.9",
+            "branch": ["main", "release/5.10"],
+            "job": ["source-compat"],
+            "platform": "Linux"
+          }
+        ]
       }
     ]
   }
