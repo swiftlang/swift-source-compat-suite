@@ -5895,19 +5895,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/67248"
   },
   {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Listing.swift",
-    "modification" : "insideOut-608",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Add Explicit Codable Implementation",
-      "offset" : 41
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/72387"
-  },
-  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
     "modification" : "unmodified",
     "issueDetail" : {
