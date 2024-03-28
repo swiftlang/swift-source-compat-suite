@@ -4796,7 +4796,8 @@
             "issue": "5.9 and below are not supported",
             "compatibility": ["5.9"],
             "branch": ["release/5.9"],
-            "job": ["source-compat"]
+            "job": ["source-compat"],
+            "platform": "Darwin"
           }
         ]
       }
