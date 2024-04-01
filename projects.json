@@ -222,16 +222,7 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "swiftpm",
-        "xfail": [
-          {
-            "issue": "rdar://125016028",
-            "compatibility": ["5.0"],
-            "branch": ["main"],
-            "configuration": "debug",
-            "platform": "Linux"
-          }
-        ]
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -3394,29 +3385,7 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "build_tests_release": "true",
-        "configuration": "debug",
-        "xfail": [
-          {
-            "issue": "rdar://125516572",
-            "compatibility": ["5.7"],
-            "branch": ["main"],
-            "configuration": "release",
-            "platform": "Darwin"
-          },
-          {
-            "issue": "rdar://125516572",
-            "compatibility": ["5.7"],
-            "branch": ["main", "release/6.0"],
-            "platform": "Linux",
-            "configuration": "debug"
-          },
-          {
-            "issue": "rdar://125516572",
-            "compatibility": ["5.7"],
-            "branch": ["release/6.0"],
-            "platform": "Darwin"
-          }
-        ]
+        "configuration": "debug"
       }
     ]
   },
@@ -4194,16 +4163,7 @@
         "project": "Siesta.xcodeproj",
         "target": "Siesta iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "rdar://125516572",
-            "compatibility": ["4.0"],
-            "branch": ["main", "release/6.0"],
-            "configuration": "release",
-            "platform": "Darwin"
-          }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -4211,32 +4171,14 @@
         "target": "Siesta macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled",
-        "xfail": [
-          {
-            "issue": "rdar://125516572",
-            "compatibility": ["4.0"],
-            "branch": ["main", "release/6.0"],
-            "configuration": "release",
-            "platform": "Darwin"
-          }
-        ]
+        "tags": "sourcekit-disabled"
       },
       {
         "action": "BuildXcodeProjectTarget",
         "project": "Siesta.xcodeproj",
         "target": "SiestaUI iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "rdar://125516572",
-            "compatibility": ["4.0"],
-            "branch": ["main", "release/6.0"],
-            "configuration": "release",
-            "platform": "Darwin"
-          }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -4244,16 +4186,7 @@
         "target": "SiestaUI macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled",
-        "xfail": [
-          {
-            "issue": "rdar://125516572",
-            "compatibility": ["4.0"],
-            "branch": ["main", "release/6.0"],
-            "configuration": "release",
-            "platform": "Darwin"
-          }
-        ]
+        "tags": "sourcekit-disabled"
       }
     ]
   },
@@ -4278,17 +4211,7 @@
         "project": "Siesta.xcodeproj",
         "target": "Siesta iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "rdar://125516572",
-            "compatibility": ["5.0"],
-            "branch": ["main"],
-            "configuration": "release",
-            "platform": "Darwin",
-            "job": ["source-compat"]
-          }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -4296,34 +4219,14 @@
         "target": "Siesta macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled",
-        "xfail": [
-          {
-            "issue": "rdar://125516572",
-            "compatibility": ["5.0"],
-            "branch": ["main"],
-            "configuration": "release",
-            "platform": "Darwin",
-            "job": ["source-compat"]
-          }
-        ]
+        "tags": "sourcekit-disabled"
       },
       {
         "action": "BuildXcodeProjectTarget",
         "project": "Siesta.xcodeproj",
         "target": "SiestaUI iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "rdar://125516572",
-            "compatibility": ["5.0"],
-            "branch": ["main"],
-            "configuration": "release",
-            "platform": "Darwin",
-            "job": ["source-compat"]
-          }
-        ]
+        "configuration": "Release"
       },
       {
         "action": "BuildXcodeProjectTarget",
@@ -4331,17 +4234,7 @@
         "target": "SiestaUI macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled",
-        "xfail": [
-          {
-            "issue": "rdar://125516572",
-            "compatibility": ["5.0"],
-            "branch": ["main"],
-            "configuration": "release",
-            "platform": "Darwin",
-            "job": ["source-compat"]
-          }
-        ]
+        "tags": "sourcekit-disabled"
       },
       {
         "action": "BuildSwiftPackage",
@@ -4866,26 +4759,10 @@
         "tags": "swiftpm",
         "xfail": [
           {
-            "issue": "https://github.com/apple/swift/issues/71316",
+            "issue": "rdar://125674969",
             "compatibility": ["5.9"],
-            "branch": ["release/5.9"],
-            "job": ["source-compat"],
-            "platform": "Darwin"
-          },
-          {
-            "issue": "rdar://125516040",
-            "compatibility": ["5.9"],
-            "branch": ["main", "release/6.0"],
-            "job": ["source-compat"],
-            "platform": "Linux",
-            "configuration": "debug"
-          },
-          {
-            "issue": "rdar://125516040",
-            "compatibility": ["5.9"],
-            "branch": ["release/6.0"],
-            "job": ["source-compat"],
-            "platform": "Darwin"
+            "branch": ["main"],
+            "job": ["source-compat"]
           }
         ]
       },
@@ -4912,7 +4789,16 @@
     "actions": [
       {
         "action": "BuildSwiftPackage",
-        "configuration": "release"
+        "configuration": "release",
+        "xfail": [
+          {
+            "issue": "5.9 and below are not supported",
+            "compatibility": ["5.9"],
+            "branch": ["release/5.9"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       }
     ]
   }
