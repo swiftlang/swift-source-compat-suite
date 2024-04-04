@@ -5086,7 +5086,7 @@
       "offset" : 1132
     },
     "applicableConfigs" : [
-      "main", "release/5.10"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -5857,5 +5857,77 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/extensions\/Font.swift",
+    "modification" : "concurrent-648",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 649
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/72855"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/extensions\/Font.swift",
+    "modification" : "concurrent-904",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 905
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/72855"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/actions\/MoviesActions.swift",
+    "modification" : "concurrent-634",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 629
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/72852"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/actions\/MoviesActions.swift",
+    "modification" : "concurrent-1569",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 1564
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/72852"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/actions\/PeopleActions.swift",
+    "modification" : "concurrent-496",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 491
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/72852"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/actions\/PeopleActions.swift",
+    "modification" : "concurrent-1147",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 1142
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/72852"
   }
 ]
