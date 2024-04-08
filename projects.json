@@ -4757,7 +4757,6 @@
         "configuration": "release",
         "build_tests": "true",
         "tags": "swiftpm"
-        ]
       },
       {
         "action": "TestSwiftPackage"
