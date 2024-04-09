@@ -3405,7 +3405,7 @@
       "offset" : 897
     },
     "applicableConfigs" : [
-      "main", "release/5.10"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -5025,7 +5025,7 @@
       "offset" : 968
     },
     "applicableConfigs" : [
-      "main", "release/5.10"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -5037,7 +5037,7 @@
       "offset" : 969
     },
     "applicableConfigs" : [
-      "main", "release/5.10"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
