@@ -3385,7 +3385,14 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "build_tests_release": "true",
-        "configuration": "debug"
+        "configuration": "debug",
+        "xfail": [
+          {
+            "issue": "rdar://126079715",
+            "compatibility": ["5.7"],
+            "branch": ["main", "release/6.0"]
+          }
+        ]
       }
     ]
   },
