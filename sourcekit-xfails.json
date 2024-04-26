@@ -5929,5 +5929,17 @@
       "main"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/72852"
+  },
+  {
+    "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/Model.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2470
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/73302"
   }
 ]
