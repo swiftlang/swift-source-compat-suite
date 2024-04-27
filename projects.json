@@ -3390,7 +3390,7 @@
           {
             "issue": "rdar://126079715",
             "compatibility": ["5.7"],
-            "branch": ["main", "release/6.0"]
+            "branch": ["main"]
           }
         ]
       }
