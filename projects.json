@@ -4770,7 +4770,10 @@
             "compatibility": ["5.9"],
             "branch": ["release/5.9"],
             "job": ["source-compat"],
-            "platform": "Darwin"
+            "platforms": [
+              "Darwin",
+              "Linux"
+            ],
           }
         ]
       },
