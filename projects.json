@@ -4768,7 +4768,7 @@
           {
             "issue": "https://github.com/apple/swift-package-manager/issues/7521",
             "compatibility": ["5.9"],
-            "branch": ["release/5.9"],
+            "branch": ["main", "release/6.0"],
             "job": ["source-compat"],
             "platforms": [
               "Darwin",
