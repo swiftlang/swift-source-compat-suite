@@ -1,21 +1,5 @@
-#!/usr/bin/env python3
-# ===--- common.py --------------------------------------------------------===
-#
-#  This source file is part of the Swift.org open source project
-#
-#  Copyright (c) 2014 - 2022 Apple Inc. and the Swift project authors
-#  Licensed under Apache License v2.0 with Runtime Library Exception
-#
-#  See https://swift.org/LICENSE.txt for license information
-#  See https://swift.org/CONTRIBUTORS.txt for the list of Swift project authors
-#
-# ===----------------------------------------------------------------------===
-
-"""A library containing common utility functionality."""
-
 import multiprocessing
 import os
-import pathlib
 import pipes
 import platform
 import signal
@@ -27,19 +11,14 @@ DEFAULT_EXECUTE_TIMEOUT = 3600
 swift_branch = None
 
 def set_swift_branch(branch):
-    """Configure the common library for a specific branch.
-
-    >>> set_swift_branch('main')
-    """
+    """Configure the common library for a specific branch."""
     global swift_branch
     swift_branch = branch
 
-
 def set_default_execute_timeout(timeout):
-    """Override the default execute timeout"""
+    """Override the default execute timeout."""
     global DEFAULT_EXECUTE_TIMEOUT
     DEFAULT_EXECUTE_TIMEOUT = timeout
-
 
 def clone_repos(swift_branch, workspace='.'):
     """Clone Swift and dependencies using update-checkout."""
@@ -350,7 +329,6 @@ def call(c):
     formatted = [x.format(**os.environ) for x in c]
     shell_debug_print(c)
     return subprocess.call(formatted)
-
 
 if __name__ == "__main__":
     import doctest
