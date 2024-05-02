@@ -4763,7 +4763,16 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "swiftpm"
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift-package-manager/issues/7521",
+            "compatibility": ["5.9"],
+            "branch": ["release/5.9"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
