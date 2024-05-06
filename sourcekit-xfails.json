@@ -807,7 +807,7 @@
       "offset" : 915
     },
     "applicableConfigs" : [
-      "main", "release/5.10", "release/5.9"    
+      "main", "release/5.10", "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
@@ -1616,42 +1616,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
   {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/Macros.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 743
-    },
-    "applicableConfigs" : [
-      "main", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/66923"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/Macros.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1065
-    },
-    "applicableConfigs" : [
-      "main", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/66923"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/Macros.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1392
-    },
-    "applicableConfigs" : [
-      "main", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/66923"
-  },
-  {
     "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/PowerAssert.swift",
     "modification" : "unmodified",
     "issueDetail" : {
@@ -1710,7 +1674,7 @@
       "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/67248"
-  }, 
+  },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
     "modification" : "insideOut-768",
