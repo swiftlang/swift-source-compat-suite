@@ -4750,8 +4750,8 @@
     "maintainer": "contact@mahdibm.com",
     "compatibility": [
       {
-        "version": "5.9",
-        "commit": "62006b34c8ac82a91c8e5adbdd7dab6f67c33fbd"
+        "version": "5.10",
+        "commit": "b30d76e2dcab8a44aa1f25305266d564aa7c6b41"
       }
     ],
     "platforms": [
@@ -4763,19 +4763,7 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift-package-manager/issues/7521",
-            "compatibility": ["5.9"],
-            "branch": ["main", "release/6.0"],
-            "job": ["source-compat"],
-            "platforms": [
-              "Darwin",
-              "Linux"
-            ]
-          }
-        ]
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
