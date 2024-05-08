@@ -3081,7 +3081,7 @@
       "offset" : 917
     },
     "applicableConfigs" : [
-      "main", "release/5.10"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -3093,7 +3093,7 @@
       "offset" : 930
     },
     "applicableConfigs" : [
-      "main", "release/5.10"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -4977,7 +4977,7 @@
       "offset" : 968
     },
     "applicableConfigs" : [
-      "main", "release/5.10"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -5026,7 +5026,7 @@
       "offset" : 1112
     },
     "applicableConfigs" : [
-      "main", "release/5.10"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -5122,7 +5122,7 @@
       "offset" : 969
     },
     "applicableConfigs" : [
-      "main", "release/5.10"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -5134,7 +5134,7 @@
       "offset" : 976
     },
     "applicableConfigs" : [
-      "main", "release/5.10"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -5146,7 +5146,7 @@
       "offset" : 976
     },
     "applicableConfigs" : [
-      "main", "release/5.10"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -5182,7 +5182,7 @@
       "offset" : 1015
     },
     "applicableConfigs" : [
-      "main", "release/5.10"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -5194,7 +5194,7 @@
       "offset" : 1096
     },
     "applicableConfigs" : [
-      "main", "release/5.10"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
@@ -5785,18 +5785,6 @@
       "release\/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71728"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/myLists\/MyLists.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 3945
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/67248"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
