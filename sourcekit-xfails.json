@@ -1443,7 +1443,7 @@
       "offset" : 1492
     },
     "applicableConfigs" : [
-      "main", "release/5.10", "release/5.9"
+      "release/5.10", "release/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
