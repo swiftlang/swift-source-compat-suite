@@ -3388,9 +3388,9 @@
         "configuration": "debug",
         "xfail": [
           {
-            "issue": "rdar://126079715",
+            "issue": "rdar://127206143",
             "compatibility": ["5.7"],
-            "branch": ["main"]
+            "branch": ["main", "release/6.0"]
           }
         ]
       }
