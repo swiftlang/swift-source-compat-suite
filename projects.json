@@ -216,7 +216,17 @@
         "project": "AsyncNinja.xcodeproj",
         "scheme": "AsyncNinja",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/73802",
+            "compatibility": "4.0",
+            "branch": ["main"],
+            "platform": "Darwin",
+            "configuration": "debug",
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "BuildSwiftPackage",
@@ -379,7 +389,17 @@
         "scheme": "CareKit",
         "external_build_folder": true,
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "rdar://128491243",
+            "compatibility": ["5.0"],
+            "branch": ["release/6.0"],
+            "job": ["source-compat"],
+            "platform": "Darwin",
+            "configuration": "release"
+          }
+        ]
       },
       {
         "action": "TestXcodeWorkspaceScheme",
@@ -546,6 +566,13 @@
             "branch": ["main", "release/5.9", "release/5.10", "release/6.0"],
             "job": ["source-compat"],
             "platform": "Darwin"
+          },
+          {
+            "issue": "https://github.com/apple/swift/issues/73802",
+            "compatibility": "5.0",
+            "branch": ["main"],
+            "platform": "Darwin",
+            "job": ["source-compat"]
           }
         ]
       },
@@ -595,6 +622,13 @@
             "branch": ["main", "release/5.9", "release/5.10", "release/6.0"],
             "job": ["source-compat"],
             "platform": "Darwin"
+          },
+          {
+            "issue": "https://github.com/apple/swift/issues/73802",
+            "compatibility": "5.0",
+            "branch": ["main"],
+            "platform": "Darwin",
+            "job": ["source-compat"]
           }
         ]
       },
@@ -781,6 +815,14 @@
                 "configuration": "debug",
                 "platform": "Darwin",
                 "job": ["source-compat"]
+            },
+            {
+              "issue": "https://github.com/apple/swift/issues/73802",
+              "compatibility": "5.7",
+              "branch": ["main"],
+              "platform": "Darwin",
+              "configuration": "debug",
+              "job": ["source-compat"]
             }
         ]
       },
@@ -4170,7 +4212,17 @@
         "project": "Siesta.xcodeproj",
         "target": "Siesta iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/73802",
+            "compatibility": "5.0",
+            "branch": ["main"],
+            "platform": "Darwin",
+            "configuration": "debug",
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeProjectTarget",
