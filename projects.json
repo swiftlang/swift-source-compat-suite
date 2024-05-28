@@ -4823,8 +4823,8 @@
     "maintainer": "adamfowler71@gmail.com",
     "compatibility": [
       {
-        "version": "6.0",
-        "commit": "66e311074bff4918b1bb2c2be905961f20fbebd0"
+        "version": "5.10",
+        "commit": "61ca04429d4267e7b30423b7199d7285fde7b9c6"
       }
     ],
     "platforms": [
