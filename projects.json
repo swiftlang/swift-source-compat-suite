@@ -4814,5 +4814,30 @@
         ]
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/hummingbird-project/hummingbird",
+    "path": "hummingbird",
+    "branch": "main",
+    "maintainer": "adamfowler71@gmail.com",
+    "compatibility": [
+      {
+        "version": "6.0",
+        "commit": "66e311074bff4918b1bb2c2be905961f20fbebd0"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "swiftpm"
+      }
+    ]
   }
 ]
