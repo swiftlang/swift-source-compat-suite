@@ -121,6 +121,13 @@ supported_configs = {
                        'Target: x86_64-apple-macosx14.0\n',
             'description': 'Xcode 15.0 (contains Swift 5.9.0)',
             'branch': 'swift-5.9-branch'
+        },
+        '5.10': {
+            'version': 'Apple Swift version 5.10 '
+                       '(swiftlang-5.10.0.13 clang-1500.3.9.4)\n'
+                       'Target: x86_64-apple-macosx14.0\n',
+            'description': 'Xcode 15.4 (contains Swift 5.10.0)',
+            'branch': 'swift-5.10-branch'
         }
     },
     # NOTE: Linux isn't fully supported yet
