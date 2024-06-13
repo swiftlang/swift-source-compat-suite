@@ -4758,21 +4758,11 @@
         "build_tests": "true",
         "tags": "swiftpm",
         "xfail": [
-          {
-            "issue": "rdar://128175704",
-            "branch": ["main"],
-            "job": ["source-compat"]
-          }
         ]
       },
       {
         "action": "TestSwiftPackage",
         "xfail": [
-          {
-            "issue": "rdar://128175704",
-            "branch": ["main"],
-            "job": ["source-compat"]
-          }
         ]
       }
     ]
