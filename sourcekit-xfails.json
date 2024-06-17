@@ -1616,6 +1616,42 @@
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
   {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/Macros.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 743
+    },
+    "applicableConfigs" : [
+      "release/5.10"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/66923"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/Macros.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1065
+    },
+    "applicableConfigs" : [
+      "release/5.10"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/66923"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/Macros.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1392
+    },
+    "applicableConfigs" : [
+      "release/5.10"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/66923"
+  },
+  {
     "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/PowerAssert.swift",
     "modification" : "unmodified",
     "issueDetail" : {
@@ -2982,6 +3018,18 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
+      "offset" : 953
+    },
+    "applicableConfigs" : [
+      "release/5.10"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/71077"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "conformingMethodList",
       "offset" : 953
     },
     "applicableConfigs" : [
@@ -5063,18 +5111,6 @@
     },
     "applicableConfigs" : [
       "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/71077"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
-    "modification" : "insideOut-908",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 901
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
