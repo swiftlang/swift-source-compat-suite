@@ -2246,6 +2246,18 @@
     "issueUrl" : "https://github.com/apple/swift/issues/67248"
   },
   {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
+    "modification" : "insideOut-908",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 901
+    },
+    "applicableConfigs" : [
+      "release\/5.10"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/67248"
+  },
+  {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/base\/MoviesList.swift",
     "modification" : "unmodified",
     "issueDetail" : {
