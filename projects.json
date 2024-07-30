@@ -924,30 +924,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/vapor/fluent",
-    "path": "fluent",
-    "branch": "main",
-    "maintainer": "tanner@vapor.codes",
-    "compatibility": [
-      {
-        "version": "4.2",
-        "commit": "270b6fa372f03809b9795e8f8b9d1c31267a0ff3"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "build_tests": "true",
-        "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/GraphQLSwift/Graphiti.git",
     "path": "Graphiti",
     "branch": "main",
@@ -4257,14 +4233,14 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/vapor/console.git",
-    "path": "vapor_console",
+    "url": "https://github.com/vapor/apns.git",
+    "path": "vapor_apns",
     "branch": "main",
-    "maintainer": "tanner@vapor.codes",
+    "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
-        "version": "4.2",
-        "commit": "5b9796d39f201b3dd06800437abd9d774a455e57"
+        "version": "5.10",
+        "commit": "98ba2f290bdb0e9ff1045c3afe335ed25b0e88d1"
       }
     ],
     "platforms": [
@@ -4282,14 +4258,14 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/vapor/core.git",
-    "path": "vapor_core",
+    "url": "https://github.com/vapor/async-kit.git",
+    "path": "vapor_async-kit",
     "branch": "main",
-    "maintainer": "tanner@vapor.codes",
+    "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
-        "version": "4.2",
-        "commit": "08a5764af95ccf0a08d0a510358c18628736070d"
+        "version": "5.10",
+        "commit": "15b3fb7b2437f9db11f6ddcf365c5b5db8c3a346"
       }
     ],
     "platforms": [
@@ -4307,39 +4283,14 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/vapor/database-kit.git",
-    "path": "vapor_database-kit",
-    "branch": "master",
-    "maintainer": "tanner@vapor.codes",
-    "compatibility": [
-      {
-        "version": "4.2",
-        "commit": "3a17dbbe9be5f8c37703e4b7982c1332ad6b00c4"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "build_tests": "true",
-        "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/vapor/multipart.git",
-    "path": "vapor_multipart",
+    "url": "https://github.com/vapor/console-kit.git",
+    "path": "vapor_console-kit",
     "branch": "main",
-    "maintainer": "tanner@vapor.codes",
+    "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
-        "version": "4.2",
-        "commit": "e57007c23a52b68e44ebdfc70cbe882a7c4f1ec3"
+        "version": "5.10",
+        "commit": "9f7932f22ab6f64aafadc14491e694179b7d0f6f"
       }
     ],
     "platforms": [
@@ -4357,14 +4308,14 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/vapor/routing.git",
-    "path": "vapor_routing",
+    "url": "https://github.com/vapor/fluent-kit",
+    "path": "vapor_fluent-kit",
     "branch": "main",
-    "maintainer": "tanner@vapor.codes",
+    "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
-        "version": "4.2",
-        "commit": "3219e328491b0853b8554c5a694add344d2c6cfb"
+        "version": "5.10",
+        "commit": "cff1c3e7e948ac4ac8b6760351aa44795e35df57"
       }
     ],
     "platforms": [
@@ -4382,48 +4333,38 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/vapor/service.git",
-    "path": "vapor_service",
-    "branch": "master",
-    "maintainer": "tanner@vapor.codes",
+    "url": "https://github.com/vapor/fluent",
+    "path": "fluent",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
-        "version": "4.2",
-        "commit": "281a70b69783891900be31a9e70051b6fe19e146"
+        "version": "5.10",
+        "commit": "dfcbeba27a576c20ff181d496f21ecd45d2c1a71"
       }
     ],
     "platforms": [
-      "Darwin",
-      "Linux"
+      "Darwin"
     ],
     "actions": [
       {
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/61624",
-            "compatibility": ["4.2"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10", "release/6.0"],
-            "job": ["source-compat"],
-            "configuration": "debug"
-          }
-        ]
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
   {
     "repository": "Git",
-    "url": "https://github.com/vapor/template-kit.git",
-    "path": "vapor_template-kit",
-    "branch": "master",
-    "maintainer": "tanner@vapor.codes",
+    "url": "https://github.com/vapor/fluent-mysql-driver",
+    "path": "vapor_fluent-mysql-driver",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
-        "version": "4.2",
-        "commit": "db35b1c35aabd0f5db3abca0cfda7becfe9c43e2"
+        "version": "5.10",
+        "commit": "93e725419decad6dbad48613e7423deaa2808a7c"
       }
     ],
     "platforms": [
@@ -4441,14 +4382,14 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/vapor/url-encoded-form.git",
-    "path": "vapor_url-encoded-form",
-    "branch": "master",
-    "maintainer": "tanner@vapor.codes",
+    "url": "https://github.com/vapor/fluent-postgres-driver",
+    "path": "vapor_fluent-postgres-driver",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
-        "version": "4.2",
-        "commit": "cbfe7ef6301557d3f2d0807a98165232ae06e1c6"
+        "version": "5.10",
+        "commit": "e2988a8c960196eca2891f3a0bb1caad9044e7ea"
       }
     ],
     "platforms": [
@@ -4466,14 +4407,539 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/vapor/validation.git",
-    "path": "vapor_validation",
-    "branch": "master",
-    "maintainer": "tanner@vapor.codes",
+    "url": "https://github.com/vapor/fluent-sqlite-driver",
+    "path": "vapor_fluent-sqlite-driver",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
-        "version": "4.2",
-        "commit": "156f8adeac3440e868da3757777884efbc6ec0cc"
+        "version": "5.10",
+        "commit": "9cc162da8516a8869adeb1e887bc3f6f9af727d8"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/jwt-kit.git",
+    "path": "vapor_jwt-kit",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "faa6f73c313b55b35bafbad5857406a5d4f478c0"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/jwt.git",
+    "path": "vapor_jwt",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "f240c5ff4b08cd8839e8a19b036dad81bc7167b1"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/leaf-kit.git",
+    "path": "vapor_leaf-kit",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "c04e54753fb30a985b42c3be8530bb94442da9c6"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/leaf.git",
+    "path": "vapor_leaf",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "dd799be2a92e7207ad86c567e4fc7dd37413ff60"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/multipart-kit.git",
+    "path": "vapor_multipart-kit",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "a31236f24bfd2ea2f520a74575881f6731d7ae68"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/mysql-kit",
+    "path": "vapor_mysql-kit",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "ac03d7c3d4be7b6602a73a226b4bfdc97c5b8b11"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/mysql-nio",
+    "path": "vapor_mysql-nio",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "d60444dc7b1525000eb443baa08bf79f059202ad"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/postgres-kit.git",
+    "path": "vapor_postgres-kit",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "0b72fa83b1023c4b82072e4049a3db6c29781fff"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/postgres-nio.git",
+    "path": "vapor_postgres-nio",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "d18b137640222fe29a22568077c4799d213fdf96"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/queues.git",
+    "path": "vapor_queues",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "15829c524480424ce29b24fc36c452b07e352124"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/queues-redis-driver.git",
+    "path": "vapor_queues-redis-driver",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "828e284223516bd895901924e6a6acdb7bfce129"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/redis.git",
+    "path": "vapor_redis",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "383ed57e5b5acd4dd447c2967aa665dc3bbe5be9"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/routing-kit.git",
+    "path": "vapor_routing-kit",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "8c9a227476555c55837e569be71944e02a056b72"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/sql-kit.git",
+    "path": "vapor_sql-kit",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "f697d3289c628acd241e3b2c7d3ff068adcc52d1"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/sqlite-kit.git",
+    "path": "vapor_sqlite-kit",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "f35a863ecc2da5d563b836a9a696b148b0f4169f"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/sqlite-nio.git",
+    "path": "vapor_sqlite-nio",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "1b03dafcd8b86047650925325a2bd4d20f6205fd"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/template-bare.git",
+    "path": "vapor_template-bare",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "609c217e9971c5e130114f18c5bfbeb5bedf858c"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/template-fluent-postgres-leaf.git",
+    "path": "vapor_template-fluent-postgres-leaf",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "89935b40acf4987997d48d0a6e57cc557e4e2efe"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/toolbox.git",
+    "path": "vapor_toolbox",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "3e9a23ad47496ebfc975a31e71dbeefd1eda0386"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/vapor.git",
+    "path": "vapor_vapor",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "a823735db57b46100b0c61cdfc5a08525b1e7cad"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/websocket-kit.git",
+    "path": "vapor_websocket-kit",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "4232d34efa49f633ba61afde365d3896fc7f8740"
       }
     ],
     "platforms": [
