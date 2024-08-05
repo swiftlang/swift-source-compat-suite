@@ -5165,6 +5165,7 @@
     "path": "swift-foundation",
     "branch": "main",
     "maintainer": "yizhe_hu@apple.com",
+    "build_first": true,
     "compatibility": [
       {
         "version": "5.9",
@@ -5209,6 +5210,7 @@
     "path": "swift-testing",
     "branch": "main",
     "maintainer": "bcroom@apple.com",
+    "build_first": true,
     "compatibility": [
       {
         "version": "5.10",
@@ -5243,6 +5245,7 @@
     "path": "penny-bot",
     "branch": "main",
     "maintainer": "contact@mahdibm.com",
+    "build_first": true,
     "compatibility": [
       {
         "version": "5.10",
