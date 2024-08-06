@@ -713,7 +713,16 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/75498",
+            "compatibility": ["5.0"],
+            "branch": ["main", "release/6.0"],
+            "platform": "Linux",
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeProjectScheme",
@@ -4776,7 +4785,16 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/75655",
+            "compatibility": ["5.10"],
+            "branch": ["main"],
+            "configuration": "debug",
+            "job": ["source-compat"]
+          }
+        ]
       }
     ]
   },
@@ -4951,7 +4969,16 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/75656",
+            "compatibility": ["5.10"],
+            "branch": ["main", "release/6.0", "release/5.10"],
+            "configuration": "debug",
+            "job": ["source-compat"]
+          }
+        ]
       }
     ]
   },
@@ -5116,7 +5143,16 @@
      "actions": [
        {
          "action": "BuildSwiftPackage",
-         "configuration": "release"
+         "configuration": "release",
+         "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/75499",
+            "compatibility": ["5.3"],
+            "branch": ["main", "release/6.0"],
+            "platform": "Linux",
+            "job": ["source-compat"]
+          }
+        ]
        },
        {
          "action": "TestSwiftPackage"
@@ -5129,6 +5165,7 @@
     "path": "swift-foundation",
     "branch": "main",
     "maintainer": "yizhe_hu@apple.com",
+    "build_first": true,
     "compatibility": [
       {
         "version": "5.9",
@@ -5173,6 +5210,7 @@
     "path": "swift-testing",
     "branch": "main",
     "maintainer": "bcroom@apple.com",
+    "build_first": true,
     "compatibility": [
       {
         "version": "5.10",
@@ -5207,6 +5245,7 @@
     "path": "penny-bot",
     "branch": "main",
     "maintainer": "contact@mahdibm.com",
+    "build_first": true,
     "compatibility": [
       {
         "version": "5.10",
@@ -5224,6 +5263,13 @@
         "build_tests": "true",
         "tags": "swiftpm",
         "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/75499",
+            "compatibility": ["5.10"],
+            "branch": ["main", "release/6.0"],
+            "platform": "Linux",
+            "job": ["source-compat"]
+          }
         ]
       },
       {
