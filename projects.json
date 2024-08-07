@@ -2435,7 +2435,7 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "swiftpm"
+        "tags": "sourcekit sourcekit-smoke swiftpm"
       },
       {
         "action": "TestSwiftPackage"
