@@ -5917,5 +5917,79 @@
       "main", "release/6.0"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/73302"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/shared\/contextMenu\/PeopleContextMenu.swift",
+    "modification" : "insideOut-797",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 6,
+      "offset" : 0
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/75740"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/shared\/contextMenu\/PeopleContextMenu.swift",
+    "modification" : "insideOut-810",
+    "issueDetail" : {
+      "kind" : "collectExpressionType"
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/75740"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/shared\/contextMenu\/PeopleContextMenu.swift",
+    "modification" : "insideOut-816",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 361
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/75740"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/shared\/contextMenu\/PeopleContextMenu.swift",
+    "modification" : "insideOut-830",
+    "issueDetail" : {
+      "kind" : "collectExpressionType"
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/75740"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/shared\/contextMenu\/PeopleContextMenu.swift",
+    "modification" : "insideOut-831",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 312,
+      "offset" : 446
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/75740"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/shared\/contextMenu\/PeopleContextMenu.swift",
+    "modification" : "insideOut-836",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 9,
+      "offset" : 758
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/75740"
   }
+
 ]
