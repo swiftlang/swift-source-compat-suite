@@ -5475,6 +5475,30 @@
     "issueUrl" : "https://github.com/apple/swift/issues/71189"
   },
   {
+    "path" : "*\/Result\/Package@swift-5.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 101
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/71189"
+  },
+  {
+    "path" : "\/Users\/ec2-user\/jenkins\/workspace\/swift-main-sourcekitd-stress-tester\/swift-source-compat-suite\/project_cache\/Result\/Package@swift-5.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 146
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/71189"
+  },
+  {
     "path" : "*\/DNS\/Sources\/DNS\/Bytes.swift",
     "modification" : "unmodified",
     "issueDetail" : {
@@ -5990,6 +6014,65 @@
       "main"
     ],
     "issueUrl" : "https://github.com/swiftlang/swift/issues/75740"
+  },
+  {
+    "path" : "*\/project_cache\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2552
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/75845"
+  },
+  {
+    "path" : "\/Users\/ec2-user\/jenkins\/workspace\/swift-main-sourcekitd-stress-tester\/swift-source-compat-suite\/project_cache\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2563
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/75845"
+  },
+  {
+    "path" : "\/Users\/ec2-user\/jenkins\/workspace\/swift-main-sourcekitd-stress-tester\/swift-source-compat-suite\/project_cache\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 5771
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "<issue url>"
+  },
+  {
+    "path" : "\/Users\/ec2-user\/jenkins\/workspace\/swift-main-sourcekitd-stress-tester\/swift-source-compat-suite\/project_cache\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 5772
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "<issue url>"
+  },
+  {
+    "path" : "\/Users\/ec2-user\/jenkins\/workspace\/swift-main-sourcekitd-stress-tester\/swift-source-compat-suite\/project_cache\/Result\/Result\/Result.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 5773
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "<issue url>"
   }
-
 ]
