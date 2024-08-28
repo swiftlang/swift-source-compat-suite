@@ -6086,5 +6086,137 @@
       "main"
     ],
     "issueUrl" : "https://github.com/swiftlang/swift/issues/75898"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "concurrent-1940",
+    "issueDetail" : {
+      "kind" : "typeContextInfo",
+      "offset" : 1212
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "concurrent-1945",
+    "issueDetail" : {
+      "kind" : "typeContextInfo",
+      "offset" : 1217
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "concurrent-1951",
+    "issueDetail" : {
+      "kind" : "typeContextInfo",
+      "offset" : 1553
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "concurrent-1957",
+    "issueDetail" : {
+      "kind" : "typeContextInfo",
+      "offset" : 1559
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "concurrent-1993",
+    "issueDetail" : {
+      "kind" : "typeContextInfo",
+      "offset" : 1827
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "concurrent-1997",
+    "issueDetail" : {
+      "kind" : "typeContextInfo",
+      "offset" : 1831
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "concurrent-2582",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1870
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "concurrent-2582",
+    "issueDetail" : {
+      "kind" : "conformingMethodList",
+      "offset" : 1870
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "concurrent-2589",
+    "issueDetail" : {
+      "kind" : "typeContextInfo",
+      "offset" : 1877
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "concurrent-2591",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2231
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
+  },
+  {
+    "path" : "*\/Result\/Result\/Result.swift",
+    "modification" : "concurrent-2591",
+    "issueDetail" : {
+      "kind" : "conformingMethodList",
+      "offset" : 2231
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
   }
 ]
