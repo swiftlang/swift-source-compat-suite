@@ -5161,51 +5161,6 @@
    },
   {
     "repository": "Git",
-    "url": "https://github.com/apple/swift-foundation",
-    "path": "swift-foundation",
-    "branch": "main",
-    "maintainer": "yizhe_hu@apple.com",
-    "build_first": true,
-    "compatibility": [
-      {
-        "version": "5.9",
-        "commit": "d7025a7ac85f2220db8fb4c3aa717d612395cc5d"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "swiftpm",
-        "xfail": [
-          {
-            "issue": "Only Supports 5.9+",
-            "compatibility": ["5.9"],
-            "branch": ["release/5.8"],
-            "job": ["source-compat"]
-          },
-          {
-            "issue": "rdar://123970205",
-            "compatibility": ["5.9"],
-            "branch": ["main", "release/6.0"],
-            "job": ["source-compat"],
-            "platform": "Linux",
-            "configuration": "debug"
-          }
-        ]
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/apple/swift-testing",
     "path": "swift-testing",
     "branch": "main",
