@@ -997,32 +997,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/63611"
   },
   {
-    "path" : "*\/Dollar\/Sources\/Dollar.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Local Rename",
-      "offset" : 43395
-    },
-    "applicableConfigs" : [
-      "release/5.10", "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/63611"
-  },
-  {
-    "path" : "*\/Dollar\/Sources\/Dollar.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Local Rename",
-      "offset" : 43490
-    },
-    "applicableConfigs" : [
-      "release/5.10", "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/63611"
-  },
-  {
     "path" : "*\/Result\/Result\/Result.swift",
     "modification" : "unmodified",
     "issueDetail" : {
@@ -1348,32 +1322,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
   {
-    "path" : "*\/swift-power-assert\/Sources\/StringWidth\/StringWidth.swift",
-    "modification" : "concurrent-438",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Local Rename",
-      "offset" : 433
-    },
-    "applicableConfigs" : [
-      "release/5.10", "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/64512"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertMacro.swift",
-    "modification" : "concurrent-790",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Local Rename",
-      "offset" : 328
-    },
-    "applicableConfigs" : [
-      "release/5.10", "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/64512"
-  },
-  {
     "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/PowerAssert.swift",
     "modification" : "unmodified",
     "issueDetail" : {
@@ -1501,54 +1449,6 @@
     "issueDetail" : {
       "kind" : "typeContextInfo",
       "offset" : 1478
-    },
-    "applicableConfigs" : [
-      "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65895"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "typeContextInfo",
-      "offset" : 1479
-    },
-    "applicableConfigs" : [
-      "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65895"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "typeContextInfo",
-      "offset" : 1492
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65895"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "typeContextInfo",
-      "offset" : 1858
-    },
-    "applicableConfigs" : [
-      "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65895"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "typeContextInfo",
-      "offset" : 1859
     },
     "applicableConfigs" : [
       "release/5.9"
@@ -5859,30 +5759,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/71728"
   },
   {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/extensions\/Font.swift",
-    "modification" : "concurrent-648",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 649
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/72855"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/extensions\/Font.swift",
-    "modification" : "concurrent-904",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 905
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/72855"
-  },
-  {
     "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/actions\/MoviesActions.swift",
     "modification" : "concurrent-634",
     "issueDetail" : {
@@ -6074,149 +5950,5 @@
       "main"
     ],
     "issueUrl" : "https://github.com/swiftlang/swift/issues/75845"
-  },
-  {
-    "path" : "*\/Result\/Result\/ResultProtocol.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 3839
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/75898"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "concurrent-1940",
-    "issueDetail" : {
-      "kind" : "typeContextInfo",
-      "offset" : 1212
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "concurrent-1945",
-    "issueDetail" : {
-      "kind" : "typeContextInfo",
-      "offset" : 1217
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "concurrent-1951",
-    "issueDetail" : {
-      "kind" : "typeContextInfo",
-      "offset" : 1553
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "concurrent-1957",
-    "issueDetail" : {
-      "kind" : "typeContextInfo",
-      "offset" : 1559
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "concurrent-1993",
-    "issueDetail" : {
-      "kind" : "typeContextInfo",
-      "offset" : 1827
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "concurrent-1997",
-    "issueDetail" : {
-      "kind" : "typeContextInfo",
-      "offset" : 1831
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "concurrent-2582",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1870
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "concurrent-2582",
-    "issueDetail" : {
-      "kind" : "conformingMethodList",
-      "offset" : 1870
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "concurrent-2589",
-    "issueDetail" : {
-      "kind" : "typeContextInfo",
-      "offset" : 1877
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "concurrent-2591",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2231
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "concurrent-2591",
-    "issueDetail" : {
-      "kind" : "conformingMethodList",
-      "offset" : 2231
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/76137"
   }
 ]
