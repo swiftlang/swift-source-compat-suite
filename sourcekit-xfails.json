@@ -6,7 +6,7 @@
       "offset" : 7449
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/51404"
   },
@@ -17,7 +17,7 @@
       "offset" : 7836
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/51404"
   },
@@ -28,7 +28,7 @@
       "offset" : 8038
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/51404"
   },
@@ -40,7 +40,7 @@
       "offset" : 79
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/51404"
   },
@@ -52,7 +52,7 @@
       "offset" : 5606
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/51404"
   },
@@ -63,7 +63,7 @@
       "offset" : 194
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/56898"
   },
@@ -74,7 +74,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -85,7 +85,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -96,7 +96,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -107,7 +107,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -118,7 +118,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -129,7 +129,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -142,7 +142,7 @@
       "offset" : 248
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -154,7 +154,7 @@
       "offset" : 250
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -166,7 +166,7 @@
       "offset" : 279
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -179,7 +179,7 @@
       "offset" : 279
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -191,7 +191,7 @@
       "offset" : 315
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -204,7 +204,7 @@
       "offset" : 315
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -217,7 +217,7 @@
       "offset" : 387
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -229,7 +229,7 @@
       "offset" : 389
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -242,7 +242,7 @@
       "offset" : 421
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -254,7 +254,7 @@
       "offset" : 421
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -267,7 +267,7 @@
       "offset" : 769
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -280,7 +280,7 @@
       "offset" : 828
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -292,7 +292,7 @@
       "offset" : 830
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -305,7 +305,7 @@
       "offset" : 879
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -317,7 +317,7 @@
       "offset" : 376
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -329,7 +329,7 @@
       "offset" : 411
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -341,7 +341,7 @@
       "offset" : 444
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -353,7 +353,7 @@
       "offset" : 857
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -365,7 +365,7 @@
       "offset" : 872
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -377,7 +377,7 @@
       "offset" : 878
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -388,7 +388,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -399,7 +399,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -410,7 +410,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -421,7 +421,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -432,7 +432,7 @@
       "kind" : "collectExpressionType"
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -445,7 +445,7 @@
       "offset" : 277
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -457,7 +457,7 @@
       "offset" : 279
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -470,7 +470,7 @@
       "offset" : 342
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -483,7 +483,7 @@
       "offset" : 501
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -496,7 +496,7 @@
       "offset" : 1006
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -508,7 +508,7 @@
       "offset" : 1008
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -520,7 +520,7 @@
       "offset" : 263
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -532,7 +532,7 @@
       "offset" : 301
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -544,7 +544,7 @@
       "offset" : 307
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -556,7 +556,7 @@
       "offset" : 316
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -568,7 +568,7 @@
       "offset" : 1026
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -580,7 +580,7 @@
       "offset" : 1036
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -592,7 +592,7 @@
       "offset" : 1044
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -604,7 +604,7 @@
       "offset" : 1045
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57045"
   },
@@ -615,33 +615,9 @@
       "offset" : 724
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/57237"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2745
-    },
-    "applicableConfigs" : [
-      "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57439"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/services\/NotificationsManager.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1890
-    },
-    "applicableConfigs" : [
-      "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/58274"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModels\/CategoriesSearchViewModel.swift",
@@ -651,7 +627,7 @@
       "offset" : 754
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58275"
   },
@@ -663,7 +639,7 @@
       "offset" : 2140
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58275"
   },
@@ -675,7 +651,7 @@
       "offset" : 1132
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58275"
   },
@@ -687,7 +663,7 @@
       "offset" : 1823
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58275"
   },
@@ -699,7 +675,7 @@
       "offset" : 976
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58275"
   },
@@ -711,21 +687,9 @@
       "offset" : 1517
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/58276"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/settings\/SettingsView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2373
-    },
-    "applicableConfigs" : [
-      "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/58316"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChart.swift",
@@ -735,7 +699,7 @@
       "offset" : 125
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
@@ -747,7 +711,7 @@
       "offset" : 125
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
@@ -759,7 +723,7 @@
       "offset" : 125
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
@@ -771,7 +735,7 @@
       "offset" : 131
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
@@ -783,19 +747,7 @@
       "offset" : 173
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/60192"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/extensions\/Path.swift",
-    "modification" : "insideOut-907",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 904
-    },
-    "applicableConfigs" : [
-      "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
@@ -807,32 +759,7 @@
       "offset" : 915
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/60192"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/viewModels\/ItemsViewModel.swift",
-    "modification" : "insideOut-489",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 16,
-      "offset" : 135
-    },
-    "applicableConfigs" : [
-      "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/60192"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
-    "modification" : "insideOut-231",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 73
-    },
-    "applicableConfigs" : [
-      "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
@@ -845,7 +772,7 @@
       "offset" : 72
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
@@ -857,7 +784,7 @@
       "offset" : 77
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
@@ -870,31 +797,7 @@
       "offset" : 77
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/60192"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/extensions\/Path.swift",
-    "modification" : "insideOut-893",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 884
-    },
-    "applicableConfigs" : [
-      "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/60192"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/extensions\/Path.swift",
-    "modification" : "insideOut-895",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 889
-    },
-    "applicableConfigs" : [
-      "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
@@ -906,19 +809,7 @@
       "offset" : 131
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/60192"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DraggableCover.swift",
-    "modification" : "insideOut-258",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 244
-    },
-    "applicableConfigs" : [
-      "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/60192"
   },
@@ -930,7 +821,7 @@
       "offset" : 602
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/61488"
   },
@@ -942,7 +833,7 @@
       "offset" : 15
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/63049"
   },
@@ -954,7 +845,7 @@
       "offset" : 15
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/63049"
   },
@@ -966,7 +857,7 @@
       "offset" : 15
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/63049"
   },
@@ -979,7 +870,7 @@
       "offset" : 734
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/63610"
   },
@@ -992,7 +883,33 @@
       "offset" : 179
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63611"
+  },
+  {
+    "path" : "*\/Dollar\/Sources\/Dollar.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 43395
+    },
+    "applicableConfigs" : [
+      "release/5.10"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/63611"
+  },
+  {
+    "path" : "*\/Dollar\/Sources\/Dollar.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 43490
+    },
+    "applicableConfigs" : [
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/63611"
   },
@@ -1005,7 +922,7 @@
       "offset" : 6494
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/63611"
   },
@@ -1018,7 +935,7 @@
       "offset" : 6517
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/63611"
   },
@@ -1031,7 +948,7 @@
       "offset" : 6581
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/63611"
   },
@@ -1044,7 +961,7 @@
       "offset" : 6604
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/63611"
   },
@@ -1057,7 +974,7 @@
       "offset" : 489
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1070,7 +987,7 @@
       "offset" : 602
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1083,7 +1000,7 @@
       "offset" : 1127
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1096,20 +1013,7 @@
       "offset" : 1229
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/64512"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartValuesView.swift",
-    "modification" : "concurrent-678",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Local Rename",
-      "offset" : 506
-    },
-    "applicableConfigs" : [
-      "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1122,7 +1026,7 @@
       "offset" : 1198
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1135,7 +1039,7 @@
       "offset" : 1283
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1148,7 +1052,7 @@
       "offset" : 593
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1161,7 +1065,7 @@
       "offset" : 547
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1174,7 +1078,7 @@
       "offset" : 6501
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1187,7 +1091,7 @@
       "offset" : 6525
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1200,7 +1104,7 @@
       "offset" : 6550
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1213,7 +1117,7 @@
       "offset" : 6558
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1226,7 +1130,7 @@
       "offset" : 6588
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1239,7 +1143,7 @@
       "offset" : 6612
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1252,7 +1156,7 @@
       "offset" : 6637
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1265,7 +1169,7 @@
       "offset" : 6645
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1278,7 +1182,7 @@
       "offset" : 6989
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1291,7 +1195,7 @@
       "offset" : 6997
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1304,7 +1208,7 @@
       "offset" : 165
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1317,7 +1221,33 @@
       "offset" : 165
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/StringWidth\/StringWidth.swift",
+    "modification" : "concurrent-438",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 433
+    },
+    "applicableConfigs" : [
+      "release/5.10"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/64512"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertMacro.swift",
+    "modification" : "concurrent-790",
+    "issueDetail" : {
+      "kind" : "semanticRefactoring",
+      "refactoring" : "Local Rename",
+      "offset" : 328
+    },
+    "applicableConfigs" : [
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1330,7 +1260,7 @@
       "offset" : 4181
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
@@ -1343,45 +1273,9 @@
       "offset" : 4259
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/custom list\/CustomListDetail.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 4527
-    },
-    "applicableConfigs" : [
-      "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65816"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1478
-    },
-    "applicableConfigs" : [
-      "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65895"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1479
-    },
-    "applicableConfigs" : [
-      "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift",
@@ -1391,7 +1285,7 @@
       "offset" : 1492
     },
     "applicableConfigs" : [
-      "release/5.10", "release/5.9"
+      "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1403,7 +1297,7 @@
       "offset" : 1503
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1415,31 +1309,7 @@
       "offset" : 1512
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65895"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1858
-    },
-    "applicableConfigs" : [
-      "release/5.9"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65895"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1859
-    },
-    "applicableConfigs" : [
-      "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1448,10 +1318,10 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "typeContextInfo",
-      "offset" : 1478
+      "offset" : 1492
     },
     "applicableConfigs" : [
-      "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1487,7 +1357,7 @@
       "offset" : 1583
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1499,7 +1369,7 @@
       "offset" : 1583
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1559,7 +1429,7 @@
       "offset" : 4190
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10", "release/5.9"
+      "main", "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/66926"
   },
@@ -1571,7 +1441,7 @@
       "offset" : 1511
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
+      "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/67248"
   },
@@ -1728,7 +1598,7 @@
       "offset" : 1502
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
+      "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/67248"
   },
