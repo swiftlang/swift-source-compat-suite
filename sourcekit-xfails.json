@@ -1309,7 +1309,7 @@
       "offset" : 1512
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
+      "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
   },
@@ -1453,7 +1453,7 @@
       "offset" : 1519
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
+      "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/67248"
   },
@@ -2899,7 +2899,7 @@
       "offset" : 916
     },
     "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
+      "release/6.0", "release/5.10"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
