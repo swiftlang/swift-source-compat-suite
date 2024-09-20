@@ -2516,7 +2516,8 @@
       }
     ],
     "platforms": [
-      "Darwin"
+      "Darwin",
+      "Linux"
     ],
     "actions": [
       {
@@ -2656,6 +2657,21 @@
         "scheme": "RxTest",
         "destination": "generic/platform=tvOS",
         "configuration": "Release"
+      },
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/76039",
+            "compatibility": ["5.0"],
+            "branch": ["main", "release/6.0"],
+            "job": ["source-compat"],
+            "platform": "Linux"
+          }
+        ]
       }
     ]
   },
