@@ -4801,7 +4801,7 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm",
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
