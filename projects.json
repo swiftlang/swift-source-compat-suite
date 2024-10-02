@@ -4789,7 +4789,7 @@
     "compatibility": [
       {
         "version": "5.10",
-        "commit": "f697d3289c628acd241e3b2c7d3ff068adcc52d1"
+        "commit": "e0b35ff07601465dd9f3af19a1c23083acaae3bd"
       }
     ],
     "platforms": [
@@ -4801,16 +4801,7 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/swiftlang/swift/issues/75655",
-            "compatibility": ["5.10"],
-            "branch": ["main"],
-            "configuration": "debug",
-            "job": ["source-compat"]
-          }
-        ]
+        "tags": "sourcekit-disabled swiftpm"
       }
     ]
   },
