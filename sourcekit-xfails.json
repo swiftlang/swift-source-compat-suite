@@ -5820,5 +5820,174 @@
       "main"
     ],
     "issueUrl" : "https://github.com/swiftlang/swift/issues/75845"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DiscoverCoverImage.swift",
+    "modification" : "concurrent-703",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 704
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76944"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DiscoverCoverImage.swift",
+    "modification" : "concurrent-704",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 353
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76944"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/discover\/DiscoverCoverImage.swift",
+    "modification" : "concurrent-719",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 720
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76944"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/peopleDetail\/PeopleDetail.swift",
+    "modification" : "concurrent-1350",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 744
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76944"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/shared\/contextMenu\/PeopleContextMenu.swift",
+    "modification" : "insideOut-843",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 0
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76944"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/shared\/contextMenu\/PeopleContextMenu.swift",
+    "modification" : "insideOut-843",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 13,
+      "offset" : 0
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76944"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/shared\/contextMenu\/PeopleContextMenu.swift",
+    "modification" : "insideOut-851",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 13
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76944"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/extensions\/Collection.swift",
+    "modification" : "concurrent-516",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 448
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76944"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Item.swift",
+    "modification" : "concurrent-1616",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1617
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76944"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/services\/NotificationsManager.swift",
+    "modification" : "concurrent-1343",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 942
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76944"
+  },
+  {
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartVerticalLegend.swift",
+    "modification" : "concurrent-1312",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1024
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76944"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/IP.swift",
+    "modification" : "concurrent-1264",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 837
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76944"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/IP.swift",
+    "modification" : "concurrent-1278",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1146
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76944"
+  },
+  {
+    "path" : "*\/DNS\/Sources\/DNS\/IP.swift",
+    "modification" : "concurrent-1283",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1283
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/76944"
   }
 ]
