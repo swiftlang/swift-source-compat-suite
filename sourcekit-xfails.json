@@ -5820,5 +5820,42 @@
       "main"
     ],
     "issueUrl" : "https://github.com/swiftlang/swift/issues/75845"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/shared\/contextMenu\/PeopleContextMenu.swift",
+    "modification" : "insideOut-843",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 0
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/77008"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/shared\/contextMenu\/PeopleContextMenu.swift",
+    "modification" : "insideOut-843",
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 13,
+      "offset" : 0
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/77008"
+  },
+  {
+    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/shared\/contextMenu\/PeopleContextMenu.swift",
+    "modification" : "insideOut-851",
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 13
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/77008"
   }
 ]
