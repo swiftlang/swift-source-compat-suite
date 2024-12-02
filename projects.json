@@ -4501,7 +4501,15 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "rdar://139409616",
+            "compatibility": ["5.10"],
+            "branch": ["release/5.10"],
+            "job": ["source-compat"]
+          }
+        ]
       }
     ]
   },
