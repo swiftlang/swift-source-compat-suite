@@ -16,6 +16,8 @@
 import argparse
 import json
 import sys
+import os
+import shutil
 
 import common
 import project
@@ -41,6 +43,12 @@ def main():
     # To track removing this line: rdar://59302467.
     xcodebuild_flags = args.add_xcodebuild_flags
     xcodebuild_flags += (' ' if xcodebuild_flags else '') + 'DEBUG_INFORMATION_FORMAT=dwarf'
+
+    # Cleanup clang Module cache from any recently built clang compilers to prevent swift
+    # project build failures
+    for root, dirs, files in os.walk("/var/folders"):
+        if root.endswith("/clang/ModuleCache") and os.path.isdir(root):
+            shutil.rmtree(root)
 
     # Use clang for building xcode projects.
     if args.clang:
