@@ -46,8 +46,6 @@ To be accepted into the Swift source compatibility test suite, a project must:
 	* MPL 2.0
 	* CDDL
 
-Note: Linux compatibility testing in continuous integration is not available
-yet, but Linux projects are being accepted now.
 
 ### Adding a Project
 
