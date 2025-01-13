@@ -693,30 +693,6 @@
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChart.swift",
-    "modification" : "insideOut-171",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 125
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/60192"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChart.swift",
-    "modification" : "insideOut-171",
-    "issueDetail" : {
-      "kind" : "typeContextInfo",
-      "offset" : 125
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/60192"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChart.swift",
     "modification" : "insideOut-177",
     "issueDetail" : {
       "kind" : "cursorInfo",
@@ -733,30 +709,6 @@
     "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 131
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/60192"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChart.swift",
-    "modification" : "insideOut-188",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 173
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/60192"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/extensions\/Path.swift",
-    "modification" : "insideOut-915",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 915
     },
     "applicableConfigs" : [
       "main", "release/6.0", "release/5.10"
