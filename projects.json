@@ -1000,6 +1000,10 @@
       {
         "version": "5.7",
         "commit": "2d19cab2b525f885ee8d7efec96093431f6b5f20"
+      },
+      {
+        "version": "6.0",
+        "commit": "3ecb5c54553559217592d21a6d9841becb891b38"
       }
     ],
     "platforms": [
