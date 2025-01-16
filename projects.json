@@ -5218,8 +5218,8 @@
     "build_first": true,
     "compatibility": [
       {
-        "version": "5.10",
-        "commit": "b30d76e2dcab8a44aa1f25305266d564aa7c6b41"
+        "version": "6.0",
+        "commit": "3dee39cedacbfe529f9f1060c0b62c6ae0d84876"
       }
     ],
     "platforms": [
@@ -5231,19 +5231,12 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/swiftlang/swift/issues/75499",
-            "compatibility": ["5.10"],
-            "branch": ["main", "release/6.0"],
-            "platform": "Linux",
-            "job": ["source-compat"]
-          }
-        ]
+        "build_tests_release": "true",
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage",
+        "configuration": "release",
         "xfail": [
         ]
       }
