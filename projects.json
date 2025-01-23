@@ -4989,7 +4989,7 @@
           {
             "issue": "https://github.com/swiftlang/swift/issues/75656",
             "compatibility": ["5.10"],
-            "branch": ["main", "release/6.0", "release/5.10"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "configuration": "debug",
             "job": ["source-compat"]
           }
