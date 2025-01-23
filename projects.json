@@ -786,7 +786,7 @@
             {
                 "issue": "https://github.com/apple/swift/issues/70764",
                 "compatibility": "5.0",
-                "branch": ["release/5.9", "release/5.10", "release/6.0"],
+                "branch": ["release/5.9", "release/5.10", "release/6.0", "release/6.1"],
                 "configuration": "debug",
                 "platform": "Darwin",
                 "job": ["source-compat"]
