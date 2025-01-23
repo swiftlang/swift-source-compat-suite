@@ -4504,9 +4504,9 @@
         "tags": "sourcekit-disabled swiftpm",
         "xfail": [
           {
-            "issue": "rdar://139409616",
+            "issue": "https://github.com/swiftlang/swift/issues/78870",
             "compatibility": ["5.10"],
-            "branch": ["release/5.10"],
+            "branch": ["release/6.1", "main"],
             "job": ["source-compat"]
           }
         ]
