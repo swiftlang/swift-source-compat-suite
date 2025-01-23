@@ -1379,9 +1379,9 @@
         "configuration": "Release",
         "xfail": [
             {
-              "issue": "https://github.com/apple/swift/issues/69410",
+              "issue": "https://github.com/swiftlang/swift/issues/78866",
               "compatibility": ["5.0"],
-              "branch": ["main", "release/6.0"],
+              "branch": ["main", "release/6.0", "release/6.1"],
               "job": ["source-compat"],
               "platform": "Darwin"
             }
