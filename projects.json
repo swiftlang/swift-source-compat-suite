@@ -1420,14 +1420,14 @@
                 "issue": "rdar://83373628",
                 "platform": "Linux",
                 "compatibility": "5.0",
-                "branch": ["main", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10", "release/6.0"],
+                "branch": ["main", "release/6.0", "release/6.1"],
                 "job": ["source-compat"]
             },
             {
                 "issue": "rdar://83373628",
                 "platform": "Linux",
                 "compatibility": "4.0",
-                "branch": ["main", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10", "release/6.0"],
+                "branch": ["main", "release/6.0", "release/6.1"],
                 "job": ["source-compat"]
             }
 
