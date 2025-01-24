@@ -5171,7 +5171,7 @@
           {
             "issue": "https://github.com/swiftlang/swift/issues/75499",
             "compatibility": ["5.3"],
-            "branch": ["main", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "platform": "Linux",
             "job": ["source-compat"]
           }
