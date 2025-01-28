@@ -541,9 +541,9 @@
         "configuration": "Release",
         "xfail": [
           {
-            "issue": "https://github.com/apple/swift/issues/70742",
+            "issue": "https://github.com/swiftlang/swift/issues/78863",
             "compatibility": ["4.0", "4.2"],
-            "branch": ["main", "release/5.9", "release/5.10", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "job": ["source-compat"],
             "platform": "Darwin"
           }
@@ -558,9 +558,9 @@
         "tags": "sourcekit-disabled",
         "xfail": [
           {
-            "issue": "https://github.com/apple/swift/issues/70742",
+            "issue": "https://github.com/swiftlang/swift/issues/78863",
             "compatibility": ["4.0", "4.2"],
-            "branch": ["main", "release/5.9", "release/5.10", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "job": ["source-compat"],
             "platform": "Darwin"
           }
@@ -574,9 +574,9 @@
         "configuration": "Release",
         "xfail": [
           {
-            "issue": "https://github.com/apple/swift/issues/70742",
+            "issue": "https://github.com/swiftlang/swift/issues/78863",
             "compatibility": ["4.0", "4.2"],
-            "branch": ["main", "release/5.9", "release/5.10", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "job": ["source-compat"],
             "platform": "Darwin"
           }
@@ -590,9 +590,9 @@
         "configuration": "Release",
         "xfail": [
           {
-            "issue": "https://github.com/apple/swift/issues/70742",
+            "issue": "https://github.com/swiftlang/swift/issues/78863",
             "compatibility": ["4.0", "4.2"],
-            "branch": ["main", "release/5.9", "release/5.10", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "job": ["source-compat"],
             "platform": "Darwin"
           }
@@ -718,7 +718,7 @@
           {
             "issue": "https://github.com/swiftlang/swift/issues/75498",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "platform": "Linux",
             "job": ["source-compat"]
           }
@@ -786,7 +786,7 @@
             {
                 "issue": "https://github.com/apple/swift/issues/70764",
                 "compatibility": "5.0",
-                "branch": ["release/5.9", "release/5.10", "release/6.0"],
+                "branch": ["release/5.9", "release/5.10", "release/6.0", "release/6.1"],
                 "configuration": "debug",
                 "platform": "Darwin",
                 "job": ["source-compat"]
@@ -918,9 +918,9 @@
         "build_tests": "true",
         "xfail": [
           {
-            "issue": "https://github.com/apple/swift/issues/61614",
+            "issue": "https://github.com/swiftlang/swift/issues/78864",
             "compatibility": ["4.2", "5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "job": ["source-compat"],
             "configuration": "debug"
           }
@@ -1379,9 +1379,9 @@
         "configuration": "Release",
         "xfail": [
             {
-              "issue": "https://github.com/apple/swift/issues/69410",
+              "issue": "https://github.com/swiftlang/swift/issues/78866",
               "compatibility": ["5.0"],
-              "branch": ["main", "release/6.0"],
+              "branch": ["main", "release/6.0", "release/6.1"],
               "job": ["source-compat"],
               "platform": "Darwin"
             }
@@ -1420,14 +1420,14 @@
                 "issue": "rdar://83373628",
                 "platform": "Linux",
                 "compatibility": "5.0",
-                "branch": ["main", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10", "release/6.0"],
+                "branch": ["main", "release/6.0", "release/6.1"],
                 "job": ["source-compat"]
             },
             {
                 "issue": "rdar://83373628",
                 "platform": "Linux",
                 "compatibility": "4.0",
-                "branch": ["main", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10", "release/6.0"],
+                "branch": ["main", "release/6.0", "release/6.1"],
                 "job": ["source-compat"]
             }
 
@@ -1639,7 +1639,7 @@
                 "issue": "https://github.com/apple/swift/issues/64251",
                 "platform": "Linux",
                 "compatibility": ["5.0", "4.2"],
-                "branch": ["main", "release/5.9", "release/5.10", "release/6.0"],
+                "branch": ["main", "release/6.0", "release/6.1"],
                 "job": ["source-compat"]
             }
         ]
@@ -1866,7 +1866,7 @@
                 "issue": "rdar://83373864",
                 "platform": "Linux",
                 "compatibility": "4.2",
-                "branch": ["main", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10", "release/6.0"],
+                "branch": ["main", "release/6.0", "release/6.1"],
                 "job": ["source-compat"]
             }
         ]
@@ -2010,7 +2010,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/65197",
             "compatibility": ["4.2", "5.0"],
-            "branch": ["main", "release/5.9", "release/5.8", "release/5.10", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "job": ["source-compat"]
           }
         ]
@@ -2084,7 +2084,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/65197",
             "compatibility": ["4.0", "5.0"],
-            "branch": ["main", "release/5.9", "release/5.8", "release/5.10", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "job": ["source-compat"]
           }
         ]
@@ -2127,7 +2127,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/65204",
             "compatibility": ["4.2", "5.0"],
-            "branch": ["main", "release/5.9", "release/5.8", "release/5.10", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "job": ["source-compat"]
           }
         ]
@@ -2402,7 +2402,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/70744",
             "compatibility": ["4.0", "5.0"],
-            "branch": ["main", "release/5.9", "release/5.10", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "job": ["source-compat"],
             "platform": "Darwin"
           }
@@ -2731,7 +2731,7 @@
             {
                 "issue": "https://github.com/apple/swift/issues/61615",
                 "compatibility": ["4.2", "5.0"],
-                "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10", "release/6.0"],
+                "branch": ["main", "release/5.5", "release/6.0", "release/6.1"],
                 "job": ["source-compat"],
                 "configuration": "debug"
             }
@@ -3164,7 +3164,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/61616",
             "compatibility": ["4.0", "4.2"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10", "release/6.0"],
+            "branch": ["main",  "release/6.0", "release/6.1"],
             "job": ["source-compat"],
             "configuration": "debug"
           }
@@ -3202,7 +3202,7 @@
                 "issue": "rdar://83374141",
                 "platform": "Linux",
                 "compatibility": "5.0",
-                "branch": ["main", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10", "release/6.0"],
+                "branch": ["main", "release/6.0", "release/6.1"],
                 "job": ["source-compat"]
             }
         ]
@@ -3670,7 +3670,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/65202",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.9", "release/5.8", "release/5.10", "release/6.0"]
+            "branch": ["main",  "release/6.0", "release/6.1"]
           }
         ]
       },
@@ -4127,7 +4127,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/65197",
             "compatibility": ["4.0", "4.2", "5.0"],
-            "branch": ["main", "release/5.9", "release/5.8", "release/5.10", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "job": ["source-compat"]
           }
         ]
@@ -4246,7 +4246,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/57431",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "job": ["source-compat"]
           }
         ]
@@ -4476,7 +4476,15 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/78870",
+            "compatibility": ["5.10"],
+            "branch": ["release/6.1", "main"],
+            "job": ["source-compat"]
+          }
+        ]
       }
     ]
   },
@@ -4504,9 +4512,9 @@
         "tags": "sourcekit-disabled swiftpm",
         "xfail": [
           {
-            "issue": "rdar://139409616",
+            "issue": "https://github.com/swiftlang/swift/issues/78870",
             "compatibility": ["5.10"],
-            "branch": ["release/5.10"],
+            "branch": ["release/6.1", "main"],
             "job": ["source-compat"]
           }
         ]
@@ -4989,7 +4997,7 @@
           {
             "issue": "https://github.com/swiftlang/swift/issues/75656",
             "compatibility": ["5.10"],
-            "branch": ["main", "release/6.0", "release/5.10"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "configuration": "debug",
             "job": ["source-compat"]
           }
@@ -5048,7 +5056,7 @@
           {
             "issue": "https://github.com/apple/swift/issues/57431",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/5.5", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "configuration": "debug",
             "job": ["source-compat"]
           }
@@ -5163,7 +5171,7 @@
           {
             "issue": "https://github.com/swiftlang/swift/issues/75499",
             "compatibility": ["5.3"],
-            "branch": ["main", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "platform": "Linux",
             "job": ["source-compat"]
           }
@@ -5236,7 +5244,7 @@
           {
             "issue": "https://github.com/swiftlang/swift/issues/75499",
             "compatibility": ["5.10"],
-            "branch": ["main", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "platform": "Linux",
             "job": ["source-compat"]
           }
