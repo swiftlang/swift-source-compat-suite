@@ -367,7 +367,7 @@ def test_swift_package(path, swiftc, sandbox_profile,
         clean_swift_package(path, swiftc, sandbox_profile)
     env = os.environ
     env['SWIFT_EXEC'] = override_swift_exec or swiftc
-    command = [swift, 'test', '-C', path, '--verbose']
+    command = [swift, 'test', '--package-path', path, '--verbose']
     if added_swift_flags is not None:
         for flag in added_swift_flags.split():
             command += ["-Xswiftc", flag]
