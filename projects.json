@@ -5206,12 +5206,12 @@
     "url": "https://github.com/vapor/penny-bot.git",
     "path": "penny-bot",
     "branch": "main",
-    "maintainer": "contact@mahdibm.com",
+    "maintainer": "penny-bot@mahdibm.com",
     "build_first": true,
     "compatibility": [
       {
         "version": "6.0",
-        "commit": "3dee39cedacbfe529f9f1060c0b62c6ae0d84876"
+        "commit": "a758896be7ed63cf0a80e68b652e07305121bf36"
       }
     ],
     "platforms": [
