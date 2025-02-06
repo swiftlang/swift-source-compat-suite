@@ -364,10 +364,11 @@ def test_swift_package(path, swiftc, sandbox_profile,
     """Test a Swift package manager project."""
     swift = os.path.join(os.path.dirname(swiftc), 'swift')
     if not incremental:
-        clean_swift_package(path, swiftc, sandbox_profile)
+        clean_swift_package(path, swiftc, sandbox_profile,
+                            stdout=stdout, stderr=stderr)
     env = os.environ
     env['SWIFT_EXEC'] = override_swift_exec or swiftc
-    command = [swift, 'test', '-C', path, '--verbose']
+    command = [swift, 'test', '--package-path', path, '--verbose']
     if added_swift_flags is not None:
         for flag in added_swift_flags.split():
             command += ["-Xswiftc", flag]
