@@ -5296,5 +5296,30 @@
         "tags": "swiftpm"
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/ordo-one/package-distributed-system",
+    "path": "package-distributed-system",
+    "branch": "main",
+    "maintainer": "swift-source-compat-suite@ordo.one",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "6bcfd78be1eea564d710a8c46fca7e14d6435dfd"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "swiftpm"
+      }
+    ]
   }
 ]
