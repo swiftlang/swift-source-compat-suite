@@ -2665,9 +2665,9 @@
         "tags": "swiftpm",
         "xfail": [
           {
-            "issue": "https://github.com/swiftlang/swift/issues/76039",
+            "issue": "https://github.com/swiftlang/swift-corelibs-foundation/issues/5108",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
             "job": ["source-compat"],
             "platform": "Linux"
           }
