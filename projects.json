@@ -5206,12 +5206,12 @@
     "url": "https://github.com/vapor/penny-bot.git",
     "path": "penny-bot",
     "branch": "main",
-    "maintainer": "contact@mahdibm.com",
+    "maintainer": "penny-bot@mahdibm.com",
     "build_first": true,
     "compatibility": [
       {
-        "version": "5.10",
-        "commit": "b30d76e2dcab8a44aa1f25305266d564aa7c6b41"
+        "version": "6.0",
+        "commit": "a758896be7ed63cf0a80e68b652e07305121bf36"
       }
     ],
     "platforms": [
@@ -5223,19 +5223,12 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/swiftlang/swift/issues/75499",
-            "compatibility": ["5.10"],
-            "branch": ["main", "release/6.0", "release/6.1"],
-            "platform": "Linux",
-            "job": ["source-compat"]
-          }
-        ]
+        "build_tests_release": "true",
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage",
+        "configuration": "release",
         "xfail": [
         ]
       }
