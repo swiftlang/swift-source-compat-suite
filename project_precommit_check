@@ -24,127 +24,231 @@ project_list = os.path.join(script_path, 'projects.json')
 runner_path = os.path.join(script_path, 'runner.py')
 supported_configs = {
     'Darwin': {
-        '3.0': {
-            'version': 'Apple Swift version 3.0 '
-                       '(swiftlang-800.0.46.2 clang-800.0.38)\n'
-                       'Target: x86_64-apple-macosx10.9\n',
-            'description': 'Xcode 8.0 (contains Swift 3.0)',
-            'branch': 'swift-3.0-branch'
-        },
-        '3.1': {
-            'version': 'Apple Swift version 3.1 '
-                       '(swiftlang-802.0.53 clang-802.0.42)\n'
-                       'Target: x86_64-apple-macosx10.9\n',
-            'description': 'Xcode 8.3.2 (contains Swift 3.1)',
-            'branch': 'swift-3.0-branch'
-        },
         '4.0': {
             'version': 'Apple Swift version 4.0 '
                        '(swiftlang-900.0.65.2 clang-900.0.37)\n'
                        'Target: x86_64-apple-macosx10.9\n',
             'description': 'Xcode 9.0.1 (contains Swift 4.0)',
-            'branch': 'swift-4.0-branch'
-        },
-        '3.2': {
-            'version': 'Apple Swift version 4.0.3 '
-                       '(swiftlang-900.0.74.1 clang-900.0.39.2)\n'
-                       'Target: x86_64-apple-macosx10.9\n',
-            'description': 'Xcode 9.2 (contains Swift 3.2 compatibility mode)',
-            'branch': 'swift-4.0-branch'
+            'branch': 'release/4.0'
         },
         '4.0.3': {
             'version': 'Apple Swift version 4.0.3 '
                        '(swiftlang-900.0.74.1 clang-900.0.39.2)\n'
                        'Target: x86_64-apple-macosx10.9\n',
             'description': 'Xcode 9.2 (contains Swift 4.0.3)',
-            'branch': 'swift-4.0-branch'
+            'branch': 'release/4.0'
         },
         '4.1': {
             'version': 'Apple Swift version 4.1 '
                        '(swiftlang-902.0.48 clang-902.0.37.1)\n'
                        'Target: x86_64-apple-darwin17.7.0\n',
             'description': 'Xcode 9.3 (contains Swift 4.1)',
-            'branch': 'swift-4.1-branch'
+            'branch': 'release/4.1'
         },
         '4.2': {
             'version': 'Apple Swift version 4.2 '
                        '(swiftlang-1000.11.37.1 clang-1000.11.45.1)\n'
                        'Target: x86_64-apple-darwin17.7.0\n',
             'description': 'Xcode 10.0 (contains Swift 4.2)',
-            'branch': 'swift-4.2-branch'
+            'branch': 'release/4.2'
         },
         '4.2.1': {
             'version': 'Apple Swift version 4.2.1 '
                        '(swiftlang-1000.11.42 clang-1000.11.45.1)\n'
                        'Target: x86_64-apple-darwin17.7.0\n',
             'description': 'Xcode 10.1 (contains Swift 4.2.1)',
-            'branch': 'swift-4.2-branch'
+            'branch': 'release/4.2'
         },
         '5.0': {
             'version': 'Apple Swift version 5.0 '
                        '(swiftlang-1001.0.69.5 clang-1001.0.46.3)\n'
                        'Target: x86_64-apple-darwin18.2.0\n',
             'description': 'Xcode 10.2 (contains Swift 5.0)',
-            'branch': 'swift-5.0-branch'
+            'branch': 'release/5.0'
         },
         '5.1': {
             'version': 'Apple Swift version 5.1 '
                        '(swiftlang-1100.0.270.6 clang-1100.0.32.1)\n'
                        'Target: x86_64-apple-darwin18.2.0\n',
             'description': 'Xcode 11 Beta 6 (contains Swift 5.1)',
-            'branch': 'swift-5.1-branch'
+            'branch': 'release/5.1'
         },
         '5.2': {
             'version': 'Apple Swift version 5.2.4 '
                        '(swiftlang-1103.0.32.9 clang-1103.0.32.53)\n'
                        'Target: x86_64-apple-darwin18.2.0\n',
             'description': 'Xcode 11.5 (contains Swift 5.2.4)',
-            'branch': 'swift-5.2-branch'
+            'branch': 'release/5.2'
         },
         '5.3': {
             'version': 'Apple Swift version 5.3.2 '
                        '(swiftlang-1200.0.45 clang-1200.0.32.28)\n'
                        'Target: x86_64-apple-darwin20.3.0\n',
             'description': 'Xcode 12.4 (contains Swift 5.3.2)',
-            'branch': 'swift-5.3-branch'
+            'branch': 'release/5.3'
         },
         '5.7': {
             'version': 'Apple Swift version 5.7.0 '
                        '(swiftlang-5.7.0.123.8 clang-1400.0.29.50)\n'
                        'Target: x86_64-apple-darwin22.3.0\n',
             'description': 'Xcode 14.0 (contains Swift 5.7.0)',
-            'branch': 'swift-5.7-branch'
+            'branch': 'release/5.7'
         },
         '5.9': {
             'version': 'Apple Swift version 5.9 '
                        '(swiftlang-5.9.0.128.108 clang-1500.0.40.1)\n'
                        'Target: x86_64-apple-macosx14.0\n',
             'description': 'Xcode 15.0 (contains Swift 5.9.0)',
-            'branch': 'swift-5.9-branch'
+            'branch': 'release/5.9'
         },
         '5.10': {
             'version': 'Apple Swift version 5.10 '
                        '(swiftlang-5.10.0.13 clang-1500.3.9.4)\n'
                        'Target: x86_64-apple-macosx14.0\n',
             'description': 'Xcode 15.4 (contains Swift 5.10.0)',
-            'branch': 'swift-5.10-branch'
+            'branch': 'release/5.10'
+        },
+        '6.0': {
+            'version': 'Apple Swift version 6.0 '
+                       '(swiftlang-6.0.0.9.10 clang-1600.0.26.2)\n'
+                       'Target: x86_64-apple-macosx15.0\n',
+            'description': 'Xcode 16.0 (contains Swift 6.0.0)',
+            'branch': 'release/6.0'
+        },
+        '6.0.2': {
+            'version': 'Apple Swift version 6.0.2 '
+                       '(swiftlang-6.0.2.1.2 clang-1600.0.26.4)\n'
+                       'Target: x86_64-apple-macosx15.0\n',
+            'description': 'Xcode 16.1 (contains Swift 6.0.2)',
+            'branch': 'release/6.0'
+        },
+        '6.0.3': {
+            'version': 'Apple Swift version 6.0.3 '
+                       '(swiftlang-6.0.3.1.10 clang-1600.0.30.1)\n'
+                       'Target: x86_64-apple-macosx15.0\n',
+            'description': 'Xcode 16.2 (contains Swift 6.0.3)',
+            'branch': 'release/6.0'
+        },
+        '6.1': {
+            'version': 'Apple Swift version 6.1-dev ' 'Apple Swift version 6.1-dev (LLVM 10f6ce806c05501, Swift 430dcd3bf98b9e1)'
+                       '(LLVM 10f6ce806c05501, Swift 430dcd3bf98b9e1)\n'
+                       'Target: x86_64-apple-macosx15.0\n',
+            'description': 'https://www.swift.org/install/macos/',
+            'branch': 'release/6.1'
         }
     },
-    # NOTE: Linux isn't fully supported yet
     'Linux': {
-        '3.0': {
-            'version': 'Swift version 3.0 '
-                       '(swift-3.0-RELEASE)\n'
+        '4.0': {
+            'version': 'Swift version 4.0 '
+                       '(swift-4.0-RELEASE)\n'
                        'Target: x86_64-unknown-linux-gnu\n',
-            'description': 'swift-3.0-RELEASE toolchain',
-            'branch': 'swift-3.0-branch'
+            'description': 'swift-4.0-RELEASE toolchain',
+            'branch': 'release/4.0'
         },
-        '3.1': {
-            'version': 'Swift version 3.1 '
-                       '(swift-3.1-RELEASE)\n'
+        '4.0.3': {
+            'version': 'Swift version 4.0.3 '
+                       '(swift-4.0.3-RELEASE)\n'
                        'Target: x86_64-unknown-linux-gnu\n',
-            'description': 'swift-3.1-RELEASE toolchain',
-            'branch': 'swift-3.0-branch'
+            'description': 'swift-4.0.3-RELEASE toolchain',
+            'branch': 'release/4.0'
+        },
+        '4.1': {
+            'version': 'Swift version 4.1 '
+                       '(swift-4.1-RELEASE)\n'
+                       'Target: x86_64-unknown-linux-gnu\n',
+            'description': 'swift-4.1-RELEASE toolchain',
+            'branch': 'release/4.1'
+        },
+        '4.2': {
+            'version': 'Swift version 4.2 '
+                       '(swift-4.2-RELEASE)\n'
+                       'Target: x86_64-unknown-linux-gnu\n',
+            'description': 'swift-4.2-RELEASE toolchain',
+            'branch': 'release/4.2'
+        },
+        '4.2.1': {
+            'version': 'Swift version 4.2.1 '
+                       '(swift-4.2.1-RELEASE)\n'
+                       'Target: x86_64-unknown-linux-gnu\n',
+            'description': 'swift-4.2.1-RELEASE toolchain',
+            'branch': 'release/4.2'
+        },
+        '5.0': {
+            'version': 'Swift version 5.0 '
+                       '(swift-5.0-RELEASE)\n'
+                       'Target: x86_64-unknown-linux-gnu\n',
+            'description': 'swift-5.0-RELEASE toolchain',
+            'branch': 'release/5.0'
+        },
+        '5.1': {
+            'version': 'Swift version 5.1 '
+                       '(swift-5.1-RELEASE)\n'
+                       'Target: x86_64-unknown-linux-gnu\n',
+            'description': 'swift-5.1-RELEASE toolchain',
+            'branch': 'release/5.1'
+        },
+        '5.2': {
+            'version': 'Swift version 5.2 '
+                       '(swift-5.2-RELEASE)\n'
+                       'Target: x86_64-unknown-linux-gnu\n',
+            'description': 'swift-5.2-RELEASE toolchain',
+            'branch': 'release/5.2'
+        },
+        '5.3': {
+            'version': 'Swift version 5.3 '
+                       '(swift-5.3-RELEASE)\n'
+                       'Target: x86_64-unknown-linux-gnu\n',
+            'description': 'swift-5.3-RELEASE toolchain',
+            'branch': 'release/5.3'
+        },
+        '5.7': {
+            'version': 'Swift version 5.7 '
+                       '(swift-5.7-RELEASE)\n'
+                       'Target: x86_64-unknown-linux-gnu\n',
+            'description': 'swift-5.7-RELEASE toolchain',
+            'branch': 'release/5.7'
+        },
+        '5.9': {
+            'version': 'Swift version 5.9 '
+                       '(swift-5.9-RELEASE)\n'
+                       'Target: x86_64-unknown-linux-gnu\n',
+            'description': 'swift-5.9-RELEASE toolchain',
+            'branch': 'release/5.9'
+        },
+        '5.10': {
+            'version': 'Swift version 5.10 '
+                       '(swift-5.10-RELEASE)\n'
+                       'Target: x86_64-unknown-linux-gnu\n',
+            'description': 'swift-5.10-RELEASE toolchain',
+            'branch': 'release/5.10'
+        },
+        '6.0': {
+            'version': 'Swift version 6.0 '
+                       '(swift-6.0-RELEASE)\n'
+                       'Target: x86_64-unknown-linux-gnu\n',
+            'description': 'swift-6.0-RELEASE toolchain',
+            'branch': 'release/6.0'
+        },
+        '6.0.2': {
+            'version': 'Swift version 6.0.2 '
+                       '(swift-6.0.2-RELEASE)\n'
+                       'Target: x86_64-unknown-linux-gnu\n',
+            'description': 'swift-6.0.2-RELEASE toolchain',
+            'branch': 'release/6.0'
+        },
+        '6.0.3': {
+            'version': 'Swift version 6.0.3 '
+                       '(swift-6.0.3-RELEASE)\n'
+                       'Target: x86_64-unknown-linux-gnu\n',
+            'description': 'swift-6.0.3-RELEASE toolchain',
+            'branch': 'release/6.0'
+        },
+        '6.1': {
+            'version': 'Swift version 6.1-dev '
+                       'Swift version 6.1-dev (LLVM 36d7ebc48349af6, Swift c710b6d3de6a71b)\n'
+                       'Target: x86_64-unknown-linux-gnu\n',
+            'description': 'https://www.swift.org/install/linux/',
+            'branch': 'release/6.1'
         }
     }
 }
