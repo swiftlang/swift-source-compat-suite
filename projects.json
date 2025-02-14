@@ -5224,7 +5224,15 @@
         "configuration": "release",
         "build_tests": "true",
         "build_tests_release": "true",
-        "tags": "swiftpm"
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift-package-manager/issues/8292",
+            "compatibility": ["6.0"],
+            "branch": ["main", "release/6.0", "release/6.1"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage",
