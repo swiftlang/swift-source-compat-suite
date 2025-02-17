@@ -1281,18 +1281,6 @@
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
     "modification" : "unmodified",
     "issueDetail" : {
-      "kind" : "typeContextInfo",
-      "offset" : 1583
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65895"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 1011
     },
