@@ -160,6 +160,7 @@ class XcodeTarget(ProjectTarget):
                       "MACOSX_DEPLOYMENT_TARGET=10.13",
                       "WATCHOS_DEPLOYMENT_TARGET=4.0",
                       "TVOS_DEPLOYMENT_TARGET=16.0",
+                      "SDK_STAT_CACHE_ENABLE=NO",
                       ])
         command += self._added_xcodebuild_flags
 
@@ -222,6 +223,7 @@ class XcodeTarget(ProjectTarget):
                       "MACOSX_DEPLOYMENT_TARGET=10.13",
                       "WATCHOS_DEPLOYMENT_TARGET=4.0",
                       "TVOS_DEPLOYMENT_TARGET=16.0",
+                      "SDK_STAT_CACHE_ENABLE=NO",
                       ])
         command += self._added_xcodebuild_flags
 
