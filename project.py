@@ -397,12 +397,14 @@ def strip_resource_phases(repo_path, stdout=sys.stdout, stderr=sys.stderr):
     """Strip resource build phases from a given project."""
     command = ['perl', '-i', '-00ne',
                'print unless /Begin PBXResourcesBuildPhase/']
+    env = os.environ.copy()
+    env['LANG'] ='en_US.UTF-8'
     for root, dirs, files in os.walk(repo_path):
         for filename in files:
             if filename == 'project.pbxproj':
                 pbxfile = os.path.join(root, filename)
                 common.check_execute(command + [pbxfile],
-                                     stdout=stdout, stderr=stderr)
+                                     stdout=stdout, stderr=stderr, env=env)
 
 
 def dispatch(root_path, repo, action, swiftc, swift_version,
