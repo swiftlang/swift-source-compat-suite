@@ -1380,16 +1380,7 @@
         "workspace": "Kingfisher.xcworkspace",
         "scheme": "Kingfisher",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": [
-            {
-              "issue": "https://github.com/swiftlang/swift/issues/78866",
-              "compatibility": ["5.0"],
-              "branch": ["main", "release/6.0", "release/6.1"],
-              "job": ["source-compat"],
-              "platform": "Darwin"
-            }
-        ]
+        "configuration": "Release"
       }
     ]
   },
@@ -2401,16 +2392,7 @@
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/70744",
-            "compatibility": ["4.0", "5.0"],
-            "branch": ["main", "release/6.0", "release/6.1"],
-            "job": ["source-compat"],
-            "platform": "Darwin"
-          }
-        ]
+        "configuration": "Release"
       }
     ]
   },
