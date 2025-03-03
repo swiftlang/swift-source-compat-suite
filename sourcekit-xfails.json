@@ -124,17 +124,6 @@
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1699",
-    "issueDetail" : {
-      "kind" : "collectExpressionType"
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
     "modification" : "concurrent-352",
     "issueDetail" : {
       "kind" : "rangeInfo",
@@ -275,34 +264,8 @@
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
     "modification" : "concurrent-1301",
     "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 8,
-      "offset" : 828
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1301",
-    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 830
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1689",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 345,
-      "offset" : 879
     },
     "applicableConfigs" : [
       "main", "release/6.0", "release/5.10"
@@ -339,42 +302,6 @@
     "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 444
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1322",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 857
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1337",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 872
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1343",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 878
     },
     "applicableConfigs" : [
       "main", "release/6.0", "release/5.10"
@@ -5543,5 +5470,510 @@
       "main"
     ],
     "issueUrl" : "https://github.com/swiftlang/swift/issues/75845"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 2476
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/MovieSwift\/MovieSwift\/launch\/SceneDelegate.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 349
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "concurrent-348",
+    "path": "*\/MovieSwift\/MovieSwift\/launch\/SceneDelegate.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 2118
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/MovieSwift\/MovieSwift\/views\/components\/custom list\/rows\/CustomListRow.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 83
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "insideOut-1112",
+    "path": "*\/MovieSwift\/MovieSwift\/views\/components\/movieDetail\/MovieDetail.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 718
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/MovieSwift\/MovieSwift\/views\/components\/movieDetail\/reviews\/ReviewRow.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 1058
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/MovieSwift\/MovieSwift\/views\/components\/movieDetail\/rows\/MovieKeywords.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 1219
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/MovieKeywordList.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 2564
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/MoviesGenreList.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 488
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "insideOut-489",
+    "path": "*\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/MoviesGenreList.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 456
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "insideOut-456",
+    "path": "*\/MovieSwift\/MovieSwift\/views\/components\/peopleDetail\/rows\/PeopleDetailHeaderRow.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 297
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/CastResponse.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 629
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/CastResponse.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 1063
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/CastResponse.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 629
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "concurrent-628",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/CastResponse.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 1063
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "concurrent-1062",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/CastResponse.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 2
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "insideOut-1146",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/CastResponse.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 2
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "insideOut-23",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/CustomList.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 2
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "insideOut-11",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/Genre.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 2
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "insideOut-25",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/Image.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 2
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "insideOut-11",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/Keyword.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 1524
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/Movie.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 2210
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/Movie.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 260
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "concurrent-259",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/Movie.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 2
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "insideOut-661",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/Movie.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 2
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "insideOut-170",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/People.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 2
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "insideOut-436",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/People.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 2
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "insideOut-20",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/Review.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "codeComplete",
+      "offset": 2
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "insideOut-32",
+    "path": "*\/MovieSwift\/Shared\/flux\/models\/Video.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "typeContextInfo",
+      "offset": 1539
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/viewModels\/CategoriesSearchViewModel.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "typeContextInfo",
+      "offset": 1539
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "concurrent-1538",
+    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/viewModels\/CategoriesSearchViewModel.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "typeContextInfo",
+      "offset": 623
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "typeContextInfo",
+      "offset": 627
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "typeContextInfo",
+      "offset": 623
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "concurrent-895",
+    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "typeContextInfo",
+      "offset": 627
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "concurrent-899",
+    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "typeContextInfo",
+      "offset": 743
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartBottomLegendView.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "typeContextInfo",
+      "offset": 951
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartBottomLegendView.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "typeContextInfo",
+      "offset": 743
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "concurrent-1442",
+    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartBottomLegendView.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "typeContextInfo",
+      "offset": 956
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartGrid.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "typeContextInfo",
+      "offset": 600
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "unmodified",
+    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartVerticalLegend.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail": {
+      "kind": "typeContextInfo",
+      "offset": 600
+    },
+    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
+    "modification": "concurrent-888",
+    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartVerticalLegend.swift"
+  },
+  {
+    "applicableConfigs": [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "rangeInfo",
+      "length" : 8,
+      "offset" : 870
+    },
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/57045",
+    "modification" : "concurrent-1329",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 857
+    },
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/57045",
+    "modification" : "concurrent-1328",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift"
   }
 ]
