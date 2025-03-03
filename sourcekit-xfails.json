@@ -124,17 +124,6 @@
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1699",
-    "issueDetail" : {
-      "kind" : "collectExpressionType"
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
     "modification" : "concurrent-352",
     "issueDetail" : {
       "kind" : "rangeInfo",
@@ -275,34 +264,8 @@
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
     "modification" : "concurrent-1301",
     "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 8,
-      "offset" : 828
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1301",
-    "issueDetail" : {
       "kind" : "cursorInfo",
       "offset" : 830
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1689",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 345,
-      "offset" : 879
     },
     "applicableConfigs" : [
       "main", "release/6.0", "release/5.10"
@@ -339,42 +302,6 @@
     "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 444
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1322",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 857
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1337",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 872
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1343",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 878
     },
     "applicableConfigs" : [
       "main", "release/6.0", "release/5.10"
