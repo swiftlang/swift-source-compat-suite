@@ -5952,7 +5952,7 @@
     "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartVerticalLegend.swift"
   },
   {
-    "applicableConfigs": [
+    "applicableConfigs" : [
       "main"
     ],
     "issueDetail" : {
@@ -5961,7 +5961,7 @@
       "offset" : 870
     },
     "issueUrl" : "https://github.com/swiftlang/swift/issues/57045",
-    "modification" : "concurrent-1329",
+    "modification" : "concurrent-1337",
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift"
   },
   {
@@ -5974,6 +5974,41 @@
     },
     "issueUrl" : "https://github.com/swiftlang/swift/issues/57045",
     "modification" : "concurrent-1328",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 872
+    },
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/57045",
+    "modification" : "concurrent-1330",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "cursorInfo",
+      "offset" : 872
+    },
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/57045",
+    "modification" : "concurrent-1336",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "collectExpressionType"
+    },
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/57045",
+    "modification" : "concurrent-1346",
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift"
   }
 ]
