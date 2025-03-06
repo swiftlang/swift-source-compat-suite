@@ -1028,7 +1028,7 @@
             {
                 "issue": "https://github.com/swiftlang/swift/issues/79796",
                 "platform": "Darwin",
-                "compatibility": ["4.2", "5.1", "5.3", "5.7", "6.0"],
+                "compatibility": ["4.2", "5.1", "5.3", "5.7"],
                 "branch": ["main", "release/6.1"],
                 "job": ["source-compat"]
             }
