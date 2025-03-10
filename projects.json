@@ -1067,7 +1067,7 @@
                 "compatibility": ["5.0"],
                 "branch": ["main"],
                 "configuration": "release",
-                "platform": "Darwin",
+                "platform": "Linux",
                 "job": ["source-compat"]
             }
         ]
