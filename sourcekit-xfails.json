@@ -4607,19 +4607,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/71077"
   },
   {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
-    "modification" : "insideOut-921",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 13,
-      "offset" : 0
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/71077"
-  },
-  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift",
     "modification" : "concurrent-1384",
     "issueDetail" : {
@@ -6010,5 +5997,137 @@
     "issueUrl" : "https://github.com/swiftlang/swift/issues/57045",
     "modification" : "concurrent-1346",
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1511
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1457
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1304
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1250
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 969
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 954
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 941
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 917
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 904
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2521
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/apple/swift/issues/71189",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/listing\/ListingRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2424
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/apple/swift/issues/71189",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/listing\/ListingRow.swift"
   }
 ]
