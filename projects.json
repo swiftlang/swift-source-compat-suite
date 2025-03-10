@@ -1031,6 +1031,14 @@
                 "compatibility": ["4.2", "5.1", "5.3", "5.7"],
                 "branch": ["main", "release/6.1"],
                 "job": ["source-compat"]
+            },
+            {
+                "issue": "https://github.com/swiftlang/swift/issues/79888",
+                "platform": "Darwin",
+                "configuration": "debug",
+                "compatibility": ["6.0"],
+                "branch": ["main", "release/6.1"],
+                "job": ["source-compat"]
             }
         ]
       },
