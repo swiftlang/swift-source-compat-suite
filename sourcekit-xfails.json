@@ -6012,31 +6012,6 @@
     "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartVerticalLegend.swift"
   },
   {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 8,
-      "offset" : 870
-    },
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/57045",
-    "modification" : "concurrent-1329",
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift"
-  },
-  {
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 857
-    },
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/57045",
-    "modification" : "concurrent-1328",
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift"
-  },
-  {
     "applicableConfigs" : [
       "main"
     ],
