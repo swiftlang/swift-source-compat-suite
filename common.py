@@ -16,7 +16,7 @@
 import multiprocessing
 import os
 import pathlib
-import pipes
+import shlex
 import platform
 import signal
 import subprocess
@@ -119,7 +119,7 @@ def shell_join(command):
     >>> shell_join(['echo', 'Hello, World!'])
     "echo 'Hello, World!'"
     """
-    return ' '.join([pipes.quote(x) for x in command])
+    return ' '.join([shlex.quote(x) for x in command])
 
 
 def debug_print(s, stderr=sys.stderr):
