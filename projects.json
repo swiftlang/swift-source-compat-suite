@@ -3435,7 +3435,7 @@
           {
             "issue": "https://github.com/swiftlang/swift/issues/80169",
             "compatibility": ["5.7"],
-            "branch": ["main",  "release/6.0", "release/6.1"]
+            "branch": ["main"]
           }
         ]
       }
