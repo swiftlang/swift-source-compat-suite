@@ -3430,14 +3430,7 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "build_tests_release": "true",
-        "configuration": "debug",
-        "xfail": [
-          {
-            "issue": "https://github.com/swiftlang/swift/issues/80169",
-            "compatibility": ["5.7"],
-            "branch": ["main"]
-          }
-        ]
+        "configuration": "debug"
       }
     ]
   },
