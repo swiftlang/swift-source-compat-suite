@@ -794,7 +794,7 @@
             {
                 "issue": "https://github.com/swiftlang/swift/issues/79801",
                 "compatibility": ["5.0", "5.7"],
-                "branch": ["main", "release/6.1"],
+                "branch": ["release/6.1"],
                 "configuration": "release",
                 "platform": "Darwin",
                 "job": ["source-compat"]
