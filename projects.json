@@ -1068,17 +1068,7 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-            {
-                "issue": "https://github.com/swiftlang/swift/issues/79802",
-                "compatibility": ["5.0"],
-                "branch": ["main"],
-                "configuration": "release",
-                "platform": "Linux",
-                "job": ["source-compat"]
-            }
-        ]
+        "tags": "sourcekit-disabled swiftpm"
       },
       {
         "action": "TestSwiftPackage"
