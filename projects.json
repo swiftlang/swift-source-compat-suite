@@ -5306,7 +5306,7 @@
     "compatibility": [
       {
         "version": "5.10",
-        "commit": "e531316cbd5e5b3d85318ff72cb30f7af14ff264"
+        "commit": "48e8f8f68a61fffb62400e8298223d7c861c650e"
       }
     ],
     "platforms": [
@@ -5317,17 +5317,8 @@
       {
         "action": "BuildSwiftPackage",
         "build_tests": "true",
-        "configuration": "debug",
-        "tags": "swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/swiftlang/swift/issues/79318",
-            "compatibility": ["5.10"],
-            "branch": ["main", "release/6.1"],
-            "job": ["source-compat"],
-            "configuration": "debug"
-          }
-        ]
+        "configuration": "release",
+        "tags": "swiftpm"
       }
     ]
   }
