@@ -5354,7 +5354,16 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "swiftpm"
+  			"tags": "swiftpm",
+        "xfail": [
+          {
+  					"issue": "https://github.com/swiftlang/swift/issues/78863",
+            "compatibility": ["5.10"],
+            "branch": ["release/6.1"],
+            "job": ["source-compat"],
+            "platform": "Linux"
+          }
+        ]
       }
     ]
   }
