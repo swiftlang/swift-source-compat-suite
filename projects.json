@@ -111,7 +111,16 @@
         "workspace": "Alamofire.xcworkspace",
         "scheme": "Alamofire iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/80935",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -119,28 +128,64 @@
         "scheme": "Alamofire macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/80935",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Alamofire.xcworkspace",
         "scheme": "Alamofire tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/80935",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Alamofire.xcworkspace",
         "scheme": "Alamofire watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/80935",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Alamofire.xcworkspace",
         "scheme": "iOS Example",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/80935",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       }
     ]
   },
@@ -4059,7 +4104,16 @@
         "workspace": "Kommander.xcworkspace",
         "scheme": "Kommander",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/80935",
+            "compatibility": ["4.2", "5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -4067,21 +4121,48 @@
         "scheme": "Kommander macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/80935",
+            "compatibility": ["4.2", "5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Kommander.xcworkspace",
         "scheme": "Kommander tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/80935",
+            "compatibility": ["4.2", "5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "Kommander.xcworkspace",
         "scheme": "Kommander watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/80935",
+            "compatibility": ["4.2", "5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       }
     ]
   },
