@@ -112,7 +112,7 @@ def main():
             run_command += ['--skip-clone']
         if args.assertions:
             run_command += ['--assertions']
-        common.check_execute(run_command, timeout=3600)
+        common.check_execute(run_command, timeout=common.DEFAULT_EXECUTE_TIMEOUT)
 
     # Build specified indexed project. Otherwise, build all indexed projects
     runner_command = [
