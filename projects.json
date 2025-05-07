@@ -5361,6 +5361,7 @@
             "compatibility": ["5.10"],
             "branch": ["release/6.1"],
             "job": ["source-compat"],
+            "configuration": "release",
             "platform": "Linux"
           }
         ]
