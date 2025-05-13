@@ -352,7 +352,7 @@ def build_swift_package(path, swiftc, swift_version, configuration,
     if added_swift_flags is not None:
         for flag in added_swift_flags.split():
             command += ["-Xswiftc", flag]
-    return common.check_execute(command, timeout=3600,
+    return common.check_execute(command, timeout=common.DEFAULT_EXECUTE_TIMEOUT,
                                 sandbox_profile=sandbox_profile,
                                 stdout=stdout, stderr=stderr,
                                 env=env)
@@ -377,7 +377,7 @@ def test_swift_package(path, swiftc, sandbox_profile,
     if (swift_branch not in ['swift-3.0-branch',
                              'swift-3.1-branch']):
         command.insert(2, '--disable-sandbox')
-    return common.check_execute(command, timeout=3600,
+    return common.check_execute(command, timeout=common.DEFAULT_EXECUTE_TIMEOUT,
                                 sandbox_profile=sandbox_profile,
                                 stdout=stdout, stderr=stderr,
                                 env=env)
