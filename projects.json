@@ -3664,6 +3664,56 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/apple/swift-openapi-runtime",
+    "path": "swift-openapi-runtime",
+    "branch": "main",
+    "maintainer": "honza@apple.com",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "7cf0cf2bc44a09dbdba493f8761f25f4758a76a0"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-openapi-generator",
+    "path": "swift-openapi-generator",
+    "branch": "main",
+    "maintainer": "honza@apple.com",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "0bd6d842f7f25047d024fdb6e2b9b8ce932518c2"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/apple/swift-numerics",
     "path": "swift-numerics",
     "branch": "main",
