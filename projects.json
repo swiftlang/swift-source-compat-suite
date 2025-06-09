@@ -1351,14 +1351,30 @@
         "scheme": "ReactiveExtensions-iOS",
         "destination": "generic/platform=iOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "rdar://152672172",
+            "compatibility": ["4.2", "5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeProjectScheme",
         "project": "ReactiveExtensions.xcodeproj",
         "scheme": "ReactiveExtensions-TestHelpers-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "rdar://152672172",
+            "compatibility": ["4.2", "5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       }
     ]
   },
@@ -1621,7 +1637,15 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "rdar://152672172",
+            "compatibility": ["5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -2273,7 +2297,15 @@
         "scheme": "ReactiveCocoa-macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "rdar://152672172",
+            "compatibility": ["4.0", "5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
@@ -2287,6 +2319,12 @@
             "compatibility": ["4.0", "5.0"],
             "branch": ["release/5.4"],
             "configuration": "debug",
+            "job": ["source-compat"]
+          },
+          {
+            "issue": "rdar://152672172",
+            "compatibility": ["4.0", "5.0"],
+            "branch": ["main"],
             "job": ["source-compat"]
           }
         ]
@@ -2304,6 +2342,12 @@
             "branch": ["release/5.4"],
             "configuration": "debug",
             "job": ["source-compat"]
+          },
+          {
+            "issue": "rdar://152672172",
+            "compatibility": ["4.0", "5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"]
           }
         ]
       },
@@ -2312,7 +2356,15 @@
         "workspace": "ReactiveCocoa.xcworkspace",
         "scheme": "ReactiveCocoa-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "rdar://152672172",
+            "compatibility": ["4.0", "5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       }
     ]
   },
@@ -2405,28 +2457,60 @@
         "scheme": "ReactiveSwift-macOS",
         "destination": "generic/platform=macOS",
         "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "tags": "sourcekit-disabled",
+        "xfail": [
+          {
+            "issue": "rdar://152672172",
+            "compatibility": ["4.0", "5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-iOS",
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "rdar://152672172",
+            "compatibility": ["4.0", "5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-tvOS",
         "destination": "generic/platform=tvOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "rdar://152672172",
+            "compatibility": ["4.0", "5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       },
       {
         "action": "BuildXcodeWorkspaceScheme",
         "workspace": "ReactiveSwift.xcworkspace",
         "scheme": "ReactiveSwift-watchOS",
         "destination": "generic/platform=watchOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "rdar://152672172",
+            "compatibility": ["4.0", "5.0"],
+            "branch": ["main"],
+            "job": ["source-compat"]
+          }
+        ]
       }
     ]
   },
