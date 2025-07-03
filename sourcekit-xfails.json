@@ -5645,6 +5645,66 @@
     ],
     "issueDetail" : {
       "kind" : "codeComplete",
+      "offset" : 1436
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2376
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/listing\/ListingRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2455
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/listing\/ListingRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2476
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/listing\/ListingRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2493
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/listing\/ListingRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
       "offset" : 2521
     },
     "modification" : "unmodified",
