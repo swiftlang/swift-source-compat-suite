@@ -5490,7 +5490,7 @@
       {
         "version": "6.1",
         "commit": "12b637c896535955c6996d05483dce2a6b0b3ad1"
-      },       
+      } 
     ],
     "platforms": [
       "Darwin",
