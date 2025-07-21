@@ -5472,66 +5472,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/73302"
   },
   {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2552
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/75845"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2563
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/75845"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 5771
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/75845"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 5772
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/75845"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 5773
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/75845"
-  },
-  {
     "applicableConfigs" : [
       "main"
     ],
