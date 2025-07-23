@@ -5501,5 +5501,59 @@
         ]
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/brightdigit/SyndiKit",
+    "path": "SyndiKit",
+    "branch": "main",
+    "maintainer": "leo@brightdigit.com",
+    "compatibility": [
+      {
+        "version": "5.5",
+        "commit": "468f15671688bcede7db40b51cbdb78df949e7e1"
+      },      
+      {
+        "version": "5.6",
+        "commit": "468f15671688bcede7db40b51cbdb78df949e7e1"
+      },      
+      {
+        "version": "5.7",
+        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
+      },      
+      {
+        "version": "5.8",
+        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
+      },      
+      {
+        "version": "5.9",
+        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
+      },      
+      {
+        "version": "5.10",
+        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
+      },      
+      {
+        "version": "6.0",
+        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
+      },      
+      {
+        "version": "6.1",
+        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
+      } 
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
   }
 ]
