@@ -1270,18 +1270,6 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 1583
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65895"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
       "offset" : 1011
     },
     "applicableConfigs" : [
@@ -5549,43 +5537,7 @@
     ],
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 941
-    },
-    "modification" : "unmodified",
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift"
-  },
-  {
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueDetail" : {
-      "kind" : "codeComplete",
       "offset" : 917
-    },
-    "modification" : "unmodified",
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift"
-  },
-  {
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 904
-    },
-    "modification" : "unmodified",
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift"
-  },
-  {
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1436
     },
     "modification" : "unmodified",
     "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
@@ -5622,18 +5574,6 @@
     "issueDetail" : {
       "kind" : "codeComplete",
       "offset" : 2476
-    },
-    "modification" : "unmodified",
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/listing\/ListingRow.swift"
-  },
-  {
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2493
     },
     "modification" : "unmodified",
     "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
