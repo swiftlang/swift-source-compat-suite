@@ -3504,18 +3504,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/71189"
   },
   {
-    "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesHome\/grid\/MoviesHomeGrid.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2384
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/84028"
-  },
-  {
     "path" : "*\/MovieSwift\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/base\/MoviesList.swift",
     "modification" : "unmodified",
     "issueDetail" : {
