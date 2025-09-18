@@ -29,8 +29,7 @@ protection against unintentional source breakage in future Swift releases.
 To be accepted into the Swift source compatibility test suite, a project must:
 
 1. Target Linux, macOS, or iOS/tvOS/watchOS device
-2. Be an *Xcode* or *Swift Package Manager* project (Carthage and CocoaPods are currently unsupported but are being explored to be supported in the future)
-3. Support building on either Linux or macOS
+2. Be an *Xcode* or *Swift Package Manager* project
 4. Be contained in a publicly accessible git repository
 5. Maintain a project branch that builds against Swift 4.2 compatibility mode
    and passes any unit tests
