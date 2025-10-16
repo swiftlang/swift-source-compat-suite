@@ -379,7 +379,16 @@
         "scheme": "CareKit",
         "external_build_folder": true,
         "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "configuration": "Release",
+        "xfail": [
+          {
+            "issue": "https://github.com/carekit-apple/CareKit/issues/731",
+            "compatibility": ["5.0"],
+            "branch": ["main", "release/6.0", "release/6.2"],
+            "job": ["source-compat"],
+            "platform": "Darwin"
+          }
+        ]
       },
       {
         "action": "TestXcodeWorkspaceScheme",
