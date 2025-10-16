@@ -384,7 +384,7 @@
           {
             "issue": "https://github.com/carekit-apple/CareKit/issues/731",
             "compatibility": ["5.0"],
-            "branch": ["main", "release/6.0", "release/6.2"],
+            "branch": ["release/6.2"],
             "job": ["source-compat"],
             "platform": "Darwin"
           }
