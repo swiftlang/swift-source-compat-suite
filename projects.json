@@ -3210,8 +3210,17 @@
             "issue": "https://github.com/apple/swift/issues/61616",
             "compatibility": ["4.0", "4.2"],
             "branch": ["main",  "release/6.0", "release/6.1", "release/6.2"],
-            "job": ["source-compat"]
+            "job": ["source-compat"],
+            "configuration": ["debug"]
+          },
+          {
+            "issue": "rdar://159565344",
+            "compatibility": ["4.0", "4.2"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "configuration": ["release"]
           }
+             
         ]
       },
       {
