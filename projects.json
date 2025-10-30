@@ -1075,7 +1075,6 @@
             "platform": "Darwin",
             "compatibility": "5.0",
             "branch": [
-              "main",
               "release/6.0",
               "release/6.1",
               "release/6.2"
@@ -3461,7 +3460,6 @@
             "platform": "Darwin",
             "compatibility": "5.7",
             "branch": [
-              "main",
               "release/6.0",
               "release/6.1",
               "release/6.2"
