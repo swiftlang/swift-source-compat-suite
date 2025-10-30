@@ -3467,6 +3467,18 @@
             "job": [
               "source-compat"
             ]
+          },
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/85215",
+            "platform": "Darwin",
+            "compatibility": "5.7",
+            "configuration": "release",
+            "branch": [
+              "main"
+            ],
+            "job": [
+              "source-compat"
+            ]
           }
         ]
       }
@@ -5424,7 +5436,17 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "swiftpm"
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "rdar://163167975",
+            "compatibility": ["5.10"],
+            "branch": ["main"],
+            "job": ["source-compat"],
+            "platform": "Darwin",
+            "configuration": "release"
+          }
+        ]
       }
     ]
   },
