@@ -3467,6 +3467,18 @@
             "job": [
               "source-compat"
             ]
+          },
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/85215",
+            "platform": "Darwin",
+            "compatibility": "5.7",
+            "configuration": "release",
+            "branch": [
+              "main"
+            ],
+            "job": [
+              "source-compat"
+            ]
           }
         ]
       }
@@ -5431,7 +5443,8 @@
             "compatibility": ["5.10"],
             "branch": ["main"],
             "job": ["source-compat"],
-            "platform": "Darwin"
+            "platform": "Darwin",
+            "configuration": "release"
           }
         ]
       }
