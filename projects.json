@@ -2781,7 +2781,7 @@
     "maintainer": "clack@passivelogic.com",
     "compatibility": [
       {
-        "version": "5.0",
+        "version": "6.0",
         "commit": "e8f09e1715bdb88499b2722dbd1df140be475d1a"
       }
     ],
@@ -4420,7 +4420,7 @@
     "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
-        "version": "5.10",
+        "version": "6.0",
         "commit": "98ba2f290bdb0e9ff1045c3afe335ed25b0e88d1"
       }
     ],
@@ -4644,7 +4644,7 @@
     "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
-        "version": "5.10",
+        "version": "6.0",
         "commit": "f240c5ff4b08cd8839e8a19b036dad81bc7167b1"
       }
     ],
@@ -4702,7 +4702,7 @@
     "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
-        "version": "5.10",
+        "version": "6.0",
         "commit": "dd799be2a92e7207ad86c567e4fc7dd37413ff60"
       }
     ],
@@ -4852,7 +4852,7 @@
     "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
-        "version": "5.10",
+        "version": "6.0",
         "commit": "15829c524480424ce29b24fc36c452b07e352124"
       }
     ],
@@ -4877,7 +4877,7 @@
     "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
-        "version": "5.10",
+        "version": "6.0",
         "commit": "828e284223516bd895901924e6a6acdb7bfce129"
       }
     ],
@@ -4902,7 +4902,7 @@
     "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
-        "version": "5.10",
+        "version": "6.0",
         "commit": "383ed57e5b5acd4dd447c2967aa665dc3bbe5be9"
       }
     ],
@@ -5027,7 +5027,7 @@
     "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
-        "version": "5.10",
+        "version": "6.0",
         "commit": "609c217e9971c5e130114f18c5bfbeb5bedf858c"
       }
     ],
@@ -5052,7 +5052,7 @@
     "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
-        "version": "5.10",
+        "version": "6.0",
         "commit": "89935b40acf4987997d48d0a6e57cc557e4e2efe"
       }
     ],
