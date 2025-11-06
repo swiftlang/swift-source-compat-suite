@@ -797,8 +797,8 @@ def evaluate_predicate(element, predicate):
     ns = {}
     for key in element:
         if isinstance(element[key], str):
-            exec(key + ' = """' + element[key] + '"""', locals=ns)
-    return eval(predicate, locals=ns)
+            exec(key + ' = """' + element[key] + '"""', ns)
+    return eval(predicate, ns)
 
 
 def included_element(include_predicates, exclude_predicates, element):
