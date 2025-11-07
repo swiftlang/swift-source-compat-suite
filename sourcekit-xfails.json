@@ -5020,18 +5020,6 @@
     ],
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 2455
-    },
-    "modification" : "unmodified",
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/listing\/ListingRow.swift"
-  },
-  {
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueDetail" : {
-      "kind" : "codeComplete",
       "offset" : 2476
     },
     "modification" : "unmodified",
