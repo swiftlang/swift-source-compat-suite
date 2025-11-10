@@ -3477,13 +3477,6 @@
             "job": [
               "source-compat"
             ]
-          },
-          {
-            "issue": "rdar://163791748",
-            "platform": "Darwin",
-            "compatibility": "5.7",
-            "branch": ["main"],
-            "job": ["source-compat"]
           }
         ]
       }
