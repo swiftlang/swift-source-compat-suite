@@ -3210,15 +3210,7 @@
             "branch": ["main",  "release/6.0", "release/6.1", "release/6.2"],
             "job": ["source-compat"],
             "configuration": ["debug"]
-          },
-          {
-            "issue": "rdar://159565344",
-            "compatibility": ["4.0", "4.2"],
-            "branch": ["main"],
-            "job": ["source-compat"],
-            "configuration": ["release"]
           }
-             
         ]
       },
       {
@@ -5442,17 +5434,7 @@
         "action": "BuildSwiftPackage",
         "build_tests": "true",
         "configuration": "release",
-        "tags": "swiftpm",
-        "xfail": [
-          {
-            "issue": "rdar://163680457",
-            "compatibility": ["5.10"],
-            "branch": ["main"],
-            "job": ["source-compat"],
-            "platform": "Darwin",
-            "configuration": "release"
-          }
-        ]
+        "tags": "swiftpm"
       }
     ]
   },
