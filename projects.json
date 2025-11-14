@@ -4647,6 +4647,7 @@
           {
             "issue": "rdar://164019335",
             "compatibility": ["5.10"],
+            "platform": "Darwin",
             "branch": ["main", "release/6.2"],
             "job": ["source-compat"]
           }
