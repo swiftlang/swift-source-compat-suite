@@ -3018,8 +3018,8 @@
     "maintainer": "kishikawakatsumi@mac.com",
     "compatibility": [
       {
-        "version": "5.0",
-        "commit": "a60cb50b141d723ec51c1788fe454e93d468d5de"
+        "version": "5.9",
+        "commit": "e06a8c7588b01957228a59d5009fd24c31f6de38"
       }
     ],
     "platforms": [
@@ -3029,15 +3029,7 @@
       {
         "action": "BuildSwiftPackage",
         "configuration": "release",
-        "tags": "sourcekit sourcekit-smoke",
-        "xfail": [
-            {
-                "issue": "Only Supports 5.9+",
-                "compatibility": "5.0",
-                "branch": ["release/5.8"],
-                "job": ["source-compat"]
-            }
-        ]
+        "tags": "sourcekit sourcekit-smoke"
       },
       {
         "action": "TestSwiftPackage"
