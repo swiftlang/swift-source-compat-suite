@@ -3421,6 +3421,7 @@
     "path": "swift-distributed-actors",
     "branch": "main",
     "maintainer": "ktoso@apple.com",
+    "build_first": true,
     "compatibility": [
       {
         "version": "5.7",
@@ -3445,18 +3446,6 @@
             "branch": [
               "release/6.0",
               "release/6.1"
-            ],
-            "job": [
-              "source-compat"
-            ]
-          },
-          {
-            "issue": "https://github.com/swiftlang/swift/issues/85215",
-            "platform": "Darwin",
-            "compatibility": "5.7",
-            "configuration": "release",
-            "branch": [
-              "main"
             ],
             "job": [
               "source-compat"
