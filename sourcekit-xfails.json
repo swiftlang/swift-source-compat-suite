@@ -601,58 +601,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
   {
-    "path" : "*\/swift-power-assert\/Sources\/StringWidth\/StringWidth.swift",
-    "modification" : "concurrent-438",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Local Rename",
-      "offset" : 433
-    },
-    "applicableConfigs" : [
-      "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/64512"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertMacro.swift",
-    "modification" : "concurrent-790",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Local Rename",
-      "offset" : 328
-    },
-    "applicableConfigs" : [
-      "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/64512"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/PowerAssert.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Local Rename",
-      "offset" : 4181
-    },
-    "applicableConfigs" : [
-      "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/64512"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/PowerAssert.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Local Rename",
-      "offset" : 4259
-    },
-    "applicableConfigs" : [
-      "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/64512"
-  },
-  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift",
     "modification" : "unmodified",
     "issueDetail" : {
@@ -735,54 +683,6 @@
       "release\/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/Macros.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 743
-    },
-    "applicableConfigs" : [
-      "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/66923"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/Macros.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1065
-    },
-    "applicableConfigs" : [
-      "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/66923"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/Macros.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1392
-    },
-    "applicableConfigs" : [
-      "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/66923"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/PowerAssert.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 4190
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/66926"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift",
@@ -4779,7 +4679,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 192
+      "offset" : 254
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -4791,7 +4691,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 251
+      "offset" : 313
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -4803,7 +4703,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 290
+      "offset" : 352
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -4815,7 +4715,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 411
+      "offset" : 514
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -4827,7 +4727,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 527
+      "offset" : 636
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -4839,7 +4739,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 597
+      "offset" : 708
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -4851,7 +4751,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 664
+      "offset" : 772
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -4863,7 +4763,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 728
+      "offset" : 982
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -4875,7 +4775,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 803
+      "offset" : 1133
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -4887,24 +4787,12 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 875
+      "offset" : 1603
     },
     "applicableConfigs" : [
       "main", "release/6.0"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/71189"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/PowerAssert.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1792
-    },
-    "applicableConfigs" : [
-      "release\/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/71728"
   },
   {
     "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/Model.swift",
