@@ -4795,6 +4795,234 @@
     "issueUrl" : "https://github.com/apple/swift/issues/71189"
   },
   {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/PowerAssert.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 779
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85646"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/Diff.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2624
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85664"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1412
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85664"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1785
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1793
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2035
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2050
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2278
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2286
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2525
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2537
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 3413
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 3421
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 3664
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 3679
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 3908
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 3916
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 4156
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 4168
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
     "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/Model.swift",
     "modification" : "unmodified",
     "issueDetail" : {
