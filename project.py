@@ -794,10 +794,11 @@ def add_minimal_arguments(parser):
 def evaluate_predicate(element, predicate):
     """Evaluate predicate in context of index element fields."""
     # pylint: disable=I0011,W0122,W0123
+    ns = {}
     for key in element:
         if isinstance(element[key], str):
-            exec(key + ' = """' + element[key] + '"""')
-    return eval(predicate)
+            exec(key + ' = """' + element[key] + '"""', ns)
+    return eval(predicate, ns)
 
 
 def included_element(include_predicates, exclude_predicates, element):

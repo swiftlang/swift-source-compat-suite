@@ -68,547 +68,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/56898"
   },
   {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-658",
-    "issueDetail" : {
-      "kind" : "collectExpressionType"
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-824",
-    "issueDetail" : {
-      "kind" : "collectExpressionType"
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-548",
-    "issueDetail" : {
-      "kind" : "collectExpressionType"
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1311",
-    "issueDetail" : {
-      "kind" : "collectExpressionType"
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-736",
-    "issueDetail" : {
-      "kind" : "collectExpressionType"
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1699",
-    "issueDetail" : {
-      "kind" : "collectExpressionType"
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-352",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 5,
-      "offset" : 248
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-352",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 250
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-439",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 279
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-451",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 7,
-      "offset" : 279
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-534",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 315
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-536",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 7,
-      "offset" : 315
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-697",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 8,
-      "offset" : 387
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-697",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 389
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-785",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 7,
-      "offset" : 421
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-783",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 421
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-784",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 16,
-      "offset" : 769
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1301",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 8,
-      "offset" : 828
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1301",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 830
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1689",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 345,
-      "offset" : 879
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-676",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 376
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-763",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 411
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-849",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 444
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1322",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 857
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1337",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 872
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/packages\/Backend\/Sources\/Backend\/models\/Villager.swift",
-    "modification" : "concurrent-1343",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 878
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-331",
-    "issueDetail" : {
-      "kind" : "collectExpressionType"
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-471",
-    "issueDetail" : {
-      "kind" : "collectExpressionType"
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-1874",
-    "issueDetail" : {
-      "kind" : "collectExpressionType"
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-267",
-    "issueDetail" : {
-      "kind" : "collectExpressionType"
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-442",
-    "issueDetail" : {
-      "kind" : "collectExpressionType"
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-436",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 8,
-      "offset" : 277
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-436",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 279
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-437",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 96,
-      "offset" : 342
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-612",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 112,
-      "offset" : 501
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-1864",
-    "issueDetail" : {
-      "kind" : "rangeInfo",
-      "length" : 6,
-      "offset" : 1006
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-1864",
-    "issueDetail" : {
-      "kind" : "cursorInfo",
-      "offset" : 1008
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-    {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-336",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 263
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-486",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 301
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-492",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 307
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-612",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 316
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-1878",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1026
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-1888",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1036
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-1896",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1044
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
-    "path" : "*\/MovieSwift\/MovieSwift\/Shared\/flux\/models\/Movie.swift",
-    "modification" : "concurrent-1897",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1045
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/57045"
-  },
-  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/userLists\/UserListDetailView.swift",
     "issueDetail" : {
       "kind" : "codeComplete",
@@ -1142,58 +601,6 @@
     "issueUrl" : "https://github.com/apple/swift/issues/64512"
   },
   {
-    "path" : "*\/swift-power-assert\/Sources\/StringWidth\/StringWidth.swift",
-    "modification" : "concurrent-438",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Local Rename",
-      "offset" : 433
-    },
-    "applicableConfigs" : [
-      "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/64512"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertMacro.swift",
-    "modification" : "concurrent-790",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Local Rename",
-      "offset" : 328
-    },
-    "applicableConfigs" : [
-      "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/64512"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/PowerAssert.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Local Rename",
-      "offset" : 4181
-    },
-    "applicableConfigs" : [
-      "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/64512"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/PowerAssert.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "semanticRefactoring",
-      "refactoring" : "Local Rename",
-      "offset" : 4259
-    },
-    "applicableConfigs" : [
-      "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/64512"
-  },
-  {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift",
     "modification" : "unmodified",
     "issueDetail" : {
@@ -1270,72 +677,12 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 1583
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/65895"
-  },
-  {
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
       "offset" : 1011
     },
     "applicableConfigs" : [
       "release\/5.9"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/65895"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/Macros.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 743
-    },
-    "applicableConfigs" : [
-      "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/66923"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/Macros.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1065
-    },
-    "applicableConfigs" : [
-      "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/66923"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/Macros.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 1392
-    },
-    "applicableConfigs" : [
-      "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/66923"
-  },
-  {
-    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/PowerAssert.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 4190
-    },
-    "applicableConfigs" : [
-      "main", "release/6.0", "release/5.10"
-    ],
-    "issueUrl" : "https://github.com/apple/swift/issues/66926"
   },
   {
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift",
@@ -5332,7 +4679,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 192
+      "offset" : 254
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -5344,7 +4691,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 251
+      "offset" : 313
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -5356,7 +4703,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 290
+      "offset" : 352
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -5368,7 +4715,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 411
+      "offset" : 514
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -5380,7 +4727,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 527
+      "offset" : 636
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -5392,7 +4739,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 597
+      "offset" : 708
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -5404,7 +4751,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 664
+      "offset" : 772
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -5416,7 +4763,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 728
+      "offset" : 982
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -5428,7 +4775,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 803
+      "offset" : 1133
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -5440,7 +4787,7 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 875
+      "offset" : 1603
     },
     "applicableConfigs" : [
       "main", "release/6.0"
@@ -5452,12 +4799,228 @@
     "modification" : "unmodified",
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 1792
+      "offset" : 779
     },
     "applicableConfigs" : [
-      "release\/5.10"
+      "main"
     ],
-    "issueUrl" : "https://github.com/apple/swift/issues/71728"
+    "issueUrl" : "https://github.com/apple/swift/issues/85646"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssert\/Diff.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2624
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85664"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1412
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85664"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1785
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1793
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2035
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2050
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2278
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2286
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2525
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2537
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 3413
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 3421
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 3664
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 3679
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 3908
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 3916
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 4156
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
+  },
+  {
+    "path" : "*\/swift-power-assert\/Sources\/PowerAssertPlugin\/PowerAssertRewriter.swift",
+    "modification" : "unmodified",
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 4168
+    },
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueUrl" : "https://github.com/apple/swift/issues/85665"
   },
   {
     "path" : "*\/Base64CoderSwiftUI\/Base64CoderSwiftUI\/Model.swift",
@@ -5470,546 +5033,6 @@
       "main", "release/6.0"
     ],
     "issueUrl" : "https://github.com/apple/swift/issues/73302"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2552
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/75845"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 2563
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/75845"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 5771
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/75845"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 5772
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/75845"
-  },
-  {
-    "path" : "*\/Result\/Result\/Result.swift",
-    "modification" : "unmodified",
-    "issueDetail" : {
-      "kind" : "codeComplete",
-      "offset" : 5773
-    },
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/75845"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 2476
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/MovieSwift\/MovieSwift\/launch\/SceneDelegate.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 349
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "concurrent-348",
-    "path": "*\/MovieSwift\/MovieSwift\/launch\/SceneDelegate.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 2118
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/MovieSwift\/MovieSwift\/views\/components\/custom list\/rows\/CustomListRow.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 83
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "insideOut-1112",
-    "path": "*\/MovieSwift\/MovieSwift\/views\/components\/movieDetail\/MovieDetail.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 718
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/MovieSwift\/MovieSwift\/views\/components\/movieDetail\/reviews\/ReviewRow.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 1058
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/MovieSwift\/MovieSwift\/views\/components\/movieDetail\/rows\/MovieKeywords.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 1219
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/MovieKeywordList.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 2564
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/MoviesGenreList.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 488
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "insideOut-489",
-    "path": "*\/MovieSwift\/MovieSwift\/views\/components\/moviesList\/MoviesGenreList.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 456
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "insideOut-456",
-    "path": "*\/MovieSwift\/MovieSwift\/views\/components\/peopleDetail\/rows\/PeopleDetailHeaderRow.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 297
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/CastResponse.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 629
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/CastResponse.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 1063
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/CastResponse.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 629
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "concurrent-628",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/CastResponse.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 1063
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "concurrent-1062",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/CastResponse.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 2
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "insideOut-1146",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/CastResponse.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 2
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "insideOut-23",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/CustomList.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 2
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "insideOut-11",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/Genre.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 2
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "insideOut-25",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/Image.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 2
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "insideOut-11",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/Keyword.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 1524
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/Movie.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 2210
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/Movie.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 260
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "concurrent-259",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/Movie.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 2
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "insideOut-661",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/Movie.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 2
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "insideOut-170",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/People.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 2
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "insideOut-436",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/People.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 2
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "insideOut-20",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/Review.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "codeComplete",
-      "offset": 2
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "insideOut-32",
-    "path": "*\/MovieSwift\/Shared\/flux\/models\/Video.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "typeContextInfo",
-      "offset": 1539
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/viewModels\/CategoriesSearchViewModel.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "typeContextInfo",
-      "offset": 1539
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "concurrent-1538",
-    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/viewModels\/CategoriesSearchViewModel.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "typeContextInfo",
-      "offset": 623
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "typeContextInfo",
-      "offset": 627
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "typeContextInfo",
-      "offset": 623
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "concurrent-895",
-    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "typeContextInfo",
-      "offset": 627
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "concurrent-899",
-    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/collection\/CollectionListView.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "typeContextInfo",
-      "offset": 743
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartBottomLegendView.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "typeContextInfo",
-      "offset": 951
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartBottomLegendView.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "typeContextInfo",
-      "offset": 743
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "concurrent-1442",
-    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartBottomLegendView.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "typeContextInfo",
-      "offset": 956
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartGrid.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "typeContextInfo",
-      "offset": 600
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "unmodified",
-    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartVerticalLegend.swift"
-  },
-  {
-    "applicableConfigs": [
-      "main"
-    ],
-    "issueDetail": {
-      "kind": "typeContextInfo",
-      "offset": 600
-    },
-    "issueUrl": "https://github.com/swiftlang/swift/issues/79636",
-    "modification": "concurrent-888",
-    "path": "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/charts\/TurnipsChartVerticalLegend.swift"
   },
   {
     "applicableConfigs" : [
@@ -6089,18 +5112,6 @@
     ],
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 941
-    },
-    "modification" : "unmodified",
-    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift"
-  },
-  {
-    "applicableConfigs" : [
-      "main"
-    ],
-    "issueDetail" : {
-      "kind" : "codeComplete",
       "offset" : 917
     },
     "modification" : "unmodified",
@@ -6113,11 +5124,23 @@
     ],
     "issueDetail" : {
       "kind" : "codeComplete",
-      "offset" : 904
+      "offset" : 2376
     },
     "modification" : "unmodified",
     "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
-    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayTurnipSection.swift"
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/listing\/ListingRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2476
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/79879",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/listing\/ListingRow.swift"
   },
   {
     "applicableConfigs" : [
