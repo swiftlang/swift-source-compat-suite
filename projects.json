@@ -5367,5 +5367,30 @@
         ]
       }
     ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-configuration",
+    "path": "swift-configuration",
+    "branch": "main",
+    "maintainer": "honza@apple.com",
+    "compatibility": [
+      {
+        "version": "6.2",
+        "commit": "3528deb75256d7dcbb0d71fa75077caae0a8c749"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "swiftpm"
+      }
+    ]
   }
 ]
