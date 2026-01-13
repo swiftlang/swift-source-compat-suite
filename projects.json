@@ -1471,7 +1471,7 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/lyft/Kronos.git",
+    "url": "https://github.com/MobileNativeFoundation/Kronos.git",
     "path": "Kronos",
     "branch": "main",
     "maintainer": "Reflejo@gmail.com",
