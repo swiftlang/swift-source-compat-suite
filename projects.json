@@ -3408,7 +3408,16 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/86803",
+            "compatibility": ["5.0"],
+            "branch": ["main", "release/6.3"],
+            "job": ["source-compat"],
+            "platform": "Linux"
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -3592,7 +3601,16 @@
         "action": "BuildSwiftPackage",
         "configuration": "release",
         "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/86803",
+            "compatibility": ["5.0"],
+            "branch": ["main", "release/6.3"],
+            "job": ["source-compat"],
+            "platform": "Linux"
+          }
+        ]
       },
       {
         "action": "TestSwiftPackage"
@@ -5390,6 +5408,13 @@
             "branch": ["release/5.9"],
             "job": ["source-compat"],
             "platform": "Darwin"
+          },
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/86803",
+            "compatibility": ["5.9"],
+            "branch": ["main", "release/6.3"],
+            "job": ["source-compat"],
+            "platform": "Linux"
           }
         ]
       }
