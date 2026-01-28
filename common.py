@@ -90,29 +90,6 @@ def alarm_handler(signum, frame):
     """A callback function that raises an alarm."""
     raise Alarm
 
-
-class Timeout(object):
-    """A class to enable timing out a given 'with' block.
-
-    >>> import time
-    >>> with Timeout(1):
-    ...    time.sleep(0.5)
-    >>> with Timeout(1):
-    ...    time.sleep(2)
-    Traceback (most recent call last):
-    Alarm
-    """
-    def __init__(self, timeout_seconds):
-        self.timeout_seconds = timeout_seconds
-
-    def __enter__(self):
-        signal.signal(signal.SIGALRM, alarm_handler)
-        signal.alarm(self.timeout_seconds)
-
-    def __exit__(self, etype, value, traceback):
-        signal.alarm(0)
-
-
 def shell_join(command):
     """Return a valid shell string from a given command list.
 
@@ -160,11 +137,10 @@ def execute(command, timeout=None,
     shell_debug_print(command, stderr=stderr)
     returncode = 124  # timeout return code
     try:
-        with Timeout(timeout):
-            returncode = subprocess.call(
-                command, stdout=stdout, stderr=stderr, **kwargs
-            )
-    except Alarm:
+        returncode = subprocess.call(
+            command, stdout=stdout, stderr=stderr, timeout=timeout, **kwargs,
+        )
+    except subprocess.TimeoutExpired:
         debug_print(command[0] + ': Timed out', stderr=stderr)
 
     return returncode
@@ -181,10 +157,9 @@ def check_execute_output(command, timeout=None,
         timeout = DEFAULT_EXECUTE_TIMEOUT
     shell_debug_print(command, stderr=stderr)
     try:
-        with Timeout(timeout):
-            output = subprocess.check_output(
-                command, stderr=stderr, **kwargs
-            ).decode('utf-8')
+        output = subprocess.check_output(
+            command, stderr=stderr,timeout=timeout, **kwargs
+        ).decode('utf-8')
     except subprocess.CalledProcessError as e:
         debug_print(e, stderr=stderr)
         raise

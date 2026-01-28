@@ -1245,8 +1245,7 @@ class ActionBuilder(Factory):
     def checkout(self, ref, ref_is_sha, pull_after_update,
                  stdout=sys.stdout, stderr=sys.stderr):
         if not os.path.exists(self.root_path):
-            common.check_execute(['mkdir', '-p', self.root_path],
-                                 stdout=stdout, stderr=stderr)
+            os.makedirs( self.root_path, exist_ok=True)
         path = os.path.join(self.root_path, self.project['path'])
         if self.project['repository'] == 'Git':
             if os.path.exists(path):

@@ -16,6 +16,8 @@
 import json
 import os
 import argparse
+import platform
+import shutil
 import sys
 
 import common
@@ -40,6 +42,21 @@ def parse_args():
                         
     return parser.parse_args()
 
+
+def onerror(func, path, exc_info):
+    """
+    Error handler for ``shutil.rmtree``.
+
+    Usage : ``shutil.rmtree(path, onerror=onerror)``
+    """
+    import stat
+    # Make path writable (and thus removable)
+    if not os.access(path, os.W_OK):
+        os.chmod(path, stat.S_IWUSR)
+        func(path)
+    else:
+        raise
+
 def main():
     """Clone and checkout pinned commits for indexed projects."""
     os.chdir(os.path.dirname(__file__))
@@ -52,17 +69,19 @@ def main():
     total_repos = 0
 
     if os.path.exists(root_path):
-        common.check_execute(['chflags', '-R', 'nouchg', root_path])
-        common.check_execute(['rm', '-rf', root_path])
+        shutil.rmtree(root_path, onerror=onerror)
 
-    common.check_execute(['mkdir', '-p', root_path])
+    os.makedirs(root_path, exist_ok=True)
 
     for repo in index:
         if args.project_path and repo['path'] not in args.project_path:
             continue
-        total_repos += 1
+        # Skip repos that aren't supported on the platform
+        if platform.system() not in repo['platforms']:
+            continue
         for compatible_swift in repo['compatibility']:
             project.checkout(root_path, repo, compatible_swift['commit'])
+        total_repos += 1
     common.debug_print('='*40)
     common.debug_print('Repository Summary:')
     common.debug_print('      Total: %s' % total_repos)
