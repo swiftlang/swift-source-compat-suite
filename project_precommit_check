@@ -128,6 +128,13 @@ supported_configs = {
                        'Target: x86_64-apple-macosx14.0\n',
             'description': 'Xcode 15.4 (contains Swift 5.10.0)',
             'branch': 'swift-5.10-branch'
+        },
+        '6.2.1': {
+            'version': 'Apple Swift version 6.2.1 '
+                       '(swiftlang-6.2.1.4.8 clang-1700.4.4.1)\n'
+                       'Target: arm64-apple-macosx26.0\n',
+            'description': 'Xcode 26.1.1 (contains Swift 6.2.1)',
+            'branch': 'swift-6.2-branch'
         }
     },
     # NOTE: Linux isn't fully supported yet
