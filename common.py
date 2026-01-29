@@ -104,6 +104,19 @@ def debug_print(s, stderr=sys.stderr):
     print(s, file=stderr)
     stderr.flush()
 
+def onerror(func, path, exc_info):
+    """
+    Error handler for ``shutil.rmtree``.
+
+    Usage : ``shutil.rmtree(path, onerror=onerror)``
+    """
+    import stat
+    # Make path writable (and thus removable)
+    if not os.access(path, os.W_OK):
+        os.chmod(path, stat.S_IWUSR)
+        func(path)
+    else:
+        raise
 
 def shell_debug_print(command, stderr=sys.stderr):
     """Print a command list as a shell string to stderr and flush."""
