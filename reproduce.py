@@ -23,6 +23,7 @@ Usage:
 
 import argparse
 import os
+import platform
 import sys
 
 import common
@@ -70,6 +71,10 @@ def parse_args():
 
 def main():
     args = parse_args()
+
+    if platform.system() != 'Darwin':
+        raise common.UnsupportedPlatform
+
     common.set_swift_branch(args.swift_branch)
     common.debug_print('** REPRODUCE **')
 

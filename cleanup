@@ -12,12 +12,11 @@
 # ===----------------------------------------------------------------------===
 
 """A cleanup script to be executed as a Jenkins post-build step."""
-
-import sys
-import os
 import argparse
-import platform
 import glob
+import os
+import shutil
+import sys
 
 import common
 
@@ -25,8 +24,6 @@ import common
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('swift_branch')
-    parser.add_argument('--skip-ci-steps',
-                        action='store_true')
     parser.add_argument('--cleanup-cache',
                         action='store_true')
     return parser.parse_args()
@@ -74,20 +71,15 @@ def main():
     if args.cleanup_cache:
         paths.append('project_cache')
 
-    with open('/dev/null', 'w') as devnull:
-        common.debug_print('Deleting build and source directories...')
-        for path in paths:
-            common.check_execute([
-                'rm', '-rf', common.private_workspace(path)
-            ], stdout=devnull, stderr=devnull)
+    common.debug_print('Deleting build and source directories...')
+    for path in paths:
+        if os.path.exists(path):
+            shutil.rmtree(common.private_workspace(path), onerror=common.onerror)
 
-        common.debug_print('Deleting log files...')
-        for log in glob.glob('*.log'):
-            common.check_execute(['rm', log], stdout=devnull, stderr=devnull)
-
-    if not args.skip_ci_steps:
-        if platform.system() == 'Darwin':
-            pass
+    common.debug_print('Deleting log files...')
+    for log in glob.glob('*.log'):
+        if os.path.isfile(log):
+            os.remove(log)
 
     return 0
 

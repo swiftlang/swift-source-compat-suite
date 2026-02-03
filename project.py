@@ -1053,6 +1053,9 @@ class ListBuilder(Factory):
                 finally:
                     if output_fd is not sys.stdout:
                         output_fd.close()
+                        if os.path.exists( '%s_%s' % (subbuilder_result, log_filename)):
+                            os.remove( '%s_%s' % (subbuilder_result, log_filename))
+
                         os.rename(
                             log_filename,
                             '%s_%s' % (subbuilder_result, log_filename),
@@ -1110,7 +1113,7 @@ class ProjectListBuilder(ListBuilder):
                     projects_to_build.append(subtarget)
 
         common.debug_print(
-            f"Building {len(projects_to_build)} projects across {self.processes} parallel processes\n"
+            f"Building {len(projects_to_build) + len(projects_to_build_first)} projects across {self.processes} parallel processes\n"
         )
 
         # Some projects need to build first as a priority
@@ -1245,8 +1248,7 @@ class ActionBuilder(Factory):
     def checkout(self, ref, ref_is_sha, pull_after_update,
                  stdout=sys.stdout, stderr=sys.stderr):
         if not os.path.exists(self.root_path):
-            common.check_execute(['mkdir', '-p', self.root_path],
-                                 stdout=stdout, stderr=stderr)
+            os.makedirs( self.root_path, exist_ok=True)
         path = os.path.join(self.root_path, self.project['path'])
         if self.project['repository'] == 'Git':
             if os.path.exists(path):
