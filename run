@@ -25,6 +25,10 @@ script_dir = os.path.abspath(os.path.dirname(__file__))
 
 def main():
     common.debug_print('** RUN **')
+
+    if platform.system() != 'Darwin':
+        raise common.UnsupportedPlatform
+
     os.chdir(os.path.dirname(__file__))
 
     args = parse_args()

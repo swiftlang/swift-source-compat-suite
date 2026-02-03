@@ -15,13 +15,11 @@
 
 import multiprocessing
 import os
-import pathlib
-import shlex
 import platform
-import signal
+import shlex
+import shutil
 import subprocess
 import sys
-import shlex
 
 DEFAULT_EXECUTE_TIMEOUT = 3600
 swift_branch = None
@@ -290,7 +288,7 @@ def git_update(url, configured_sha, path,
     except ExecuteCommandFailure:
         debug_print("warning: Unable to update. Falling back to a clone.",
                     stderr=stderr)
-        check_execute(['rm', '-rf', path], stdout=stdout, stderr=stderr)
+        shutil.rmtree(path, onerror=onerror)
         return git_clone(url, path, tree=configured_sha,
                          stdout=stdout, stderr=stderr)
     return 0 if all(rc == 0 for rc in returncodes) else 1
@@ -304,11 +302,13 @@ class DirectoryContext(object):
 
     def __enter__(self):
         self.previous_path = os.getcwd()
-        shell_debug_print(['pushd', self.path], stderr=self.stderr)
+        cmd = ['cd', self.path] if platform.system() == 'Windows' else ['pushd', self.path]
+        shell_debug_print(cmd, stderr=self.stderr)
         os.chdir(self.path)
 
     def __exit__(self, etype, value, traceback):
-        shell_debug_print(['popd'], stderr=self.stderr)
+        cmd = ['cd', self.previous_path] if platform.system() == 'Windows' else ['popd']
+        shell_debug_print(cmd, stderr=self.stderr)
         os.chdir(self.previous_path)
 
 
