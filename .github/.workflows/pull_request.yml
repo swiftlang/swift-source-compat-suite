@@ -1,0 +1,123 @@
+name: Pull request
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check_projects_list_format:
+    name: Check projects.json Formating
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.10'
+      - name: Format Projects List
+        run: python utils/format_projects_list.py --project-index projects.json
+      - name: Check For Changes
+        run: git diff --exit-code
+  lint:
+    name: Lint Python Files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v6
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install Ruff
+        run: pip install ruff
+      - name: Run Ruff
+        run: ruff check .
+  builds:
+    name: Build Projects
+    strategy:
+      matrix:
+        build-config: [release, debug]
+        os: [ubuntu-latest, windows-latest]
+        include:
+          - os: ubuntu-latest
+            container-image: swiftlang/swift:nightly-main-rhel-ubi9
+    runs-on: ${{ matrix.os }}
+    container: ${{ matrix.os == 'ubuntu-latest' && matrix.container-image || null }}
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v6
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Setup MSBuild
+        if: matrix.os == 'windows-latest'
+        uses: microsoft/setup-msbuild@v2
+      - name: Install Swift Nightly
+        if: matrix.os == 'windows-latest'
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $ProgressPreference = 'SilentlyContinue'
+
+          $SWIFT_RELEASE_METADATA = "https://download.swift.org/development/windows10/latest-build.json"
+          $Release = curl.exe -sL $SWIFT_RELEASE_METADATA | ConvertFrom-JSON
+          $SWIFT_URL = "https://download.swift.org/development/windows10/$($Release.dir)/$($Release.download)"
+          
+          Write-Host -NoNewLine "Downloading $SWIFT_URL ... "
+          Invoke-WebRequest -Uri $SWIFT_URL -OutFile installer.exe
+          Write-Host '✓'
+          
+          Write-Host -NoNewLine 'Installing Swift ... '
+          $Process = Start-Process installer.exe -Wait -PassThru -NoNewWindow -ArgumentList @(
+            '/quiet',
+            '/norestart'
+          )
+          
+          if ($Process.ExitCode -eq 0) {
+            Write-Host '✓'
+          } else {
+            Write-Host "✘ ($($Process.ExitCode))"
+            exit 1
+          }
+          
+          Remove-Item -Force installer.exe
+          
+          # Add Swift to PATH
+          $swiftPath = "C:\Library\Developer\Toolchains\unknown-Asserts-development.xctoolchain\usr\bin"
+          echo "$swiftPath" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          
+          # Set swiftc path as environment variable
+          $swiftcPath = "$swiftPath\swiftc.exe"
+          echo "SWIFTC_PATH=$swiftcPath" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          
+          # Verify installation
+          & "$swiftPath\swiftc.exe" --version
+      - name: Set Swift path
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          echo "SWIFTC_PATH=/usr/bin/swiftc" >> $GITHUB_ENV
+      - name: Build Projects
+        run: |
+          python runner.py \
+            --swift-branch main \
+            --build-config=${{ matrix.build-config }} \
+            --junit \
+            --swiftc $SWIFTC_PATH \
+            --projects projects.json \
+            --include-actions="action.startswith(\"BuildSwiftPackage\")"
+      - name: Save report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: results-${{ matrix.os }}-${{ matrix.build-config }}
+          path: results.xml
+          retention-days: 5
