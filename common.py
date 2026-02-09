@@ -15,13 +15,11 @@
 
 import multiprocessing
 import os
-import pathlib
-import shlex
 import platform
-import signal
+import shlex
+import shutil
 import subprocess
 import sys
-import shlex
 
 DEFAULT_EXECUTE_TIMEOUT = 3600
 swift_branch = None
@@ -90,29 +88,6 @@ def alarm_handler(signum, frame):
     """A callback function that raises an alarm."""
     raise Alarm
 
-
-class Timeout(object):
-    """A class to enable timing out a given 'with' block.
-
-    >>> import time
-    >>> with Timeout(1):
-    ...    time.sleep(0.5)
-    >>> with Timeout(1):
-    ...    time.sleep(2)
-    Traceback (most recent call last):
-    Alarm
-    """
-    def __init__(self, timeout_seconds):
-        self.timeout_seconds = timeout_seconds
-
-    def __enter__(self):
-        signal.signal(signal.SIGALRM, alarm_handler)
-        signal.alarm(self.timeout_seconds)
-
-    def __exit__(self, etype, value, traceback):
-        signal.alarm(0)
-
-
 def shell_join(command):
     """Return a valid shell string from a given command list.
 
@@ -127,6 +102,19 @@ def debug_print(s, stderr=sys.stderr):
     print(s, file=stderr)
     stderr.flush()
 
+def onerror(func, path, exc_info):
+    """
+    Error handler for ``shutil.rmtree``.
+
+    Usage : ``shutil.rmtree(path, onerror=onerror)``
+    """
+    import stat
+    # Make path writable (and thus removable)
+    if not os.access(path, os.W_OK):
+        os.chmod(path, stat.S_IWUSR)
+        func(path)
+    else:
+        raise
 
 def shell_debug_print(command, stderr=sys.stderr):
     """Print a command list as a shell string to stderr and flush."""
@@ -160,11 +148,10 @@ def execute(command, timeout=None,
     shell_debug_print(command, stderr=stderr)
     returncode = 124  # timeout return code
     try:
-        with Timeout(timeout):
-            returncode = subprocess.call(
-                command, stdout=stdout, stderr=stderr, **kwargs
-            )
-    except Alarm:
+        returncode = subprocess.call(
+            command, stdout=stdout, stderr=stderr, timeout=timeout, **kwargs,
+        )
+    except subprocess.TimeoutExpired:
         debug_print(command[0] + ': Timed out', stderr=stderr)
 
     return returncode
@@ -181,10 +168,9 @@ def check_execute_output(command, timeout=None,
         timeout = DEFAULT_EXECUTE_TIMEOUT
     shell_debug_print(command, stderr=stderr)
     try:
-        with Timeout(timeout):
-            output = subprocess.check_output(
-                command, stderr=stderr, **kwargs
-            ).decode('utf-8')
+        output = subprocess.check_output(
+            command, stderr=stderr,timeout=timeout, **kwargs
+        ).decode('utf-8')
     except subprocess.CalledProcessError as e:
         debug_print(e, stderr=stderr)
         raise
@@ -302,7 +288,7 @@ def git_update(url, configured_sha, path,
     except ExecuteCommandFailure:
         debug_print("warning: Unable to update. Falling back to a clone.",
                     stderr=stderr)
-        check_execute(['rm', '-rf', path], stdout=stdout, stderr=stderr)
+        shutil.rmtree(path, onerror=onerror)
         return git_clone(url, path, tree=configured_sha,
                          stdout=stdout, stderr=stderr)
     return 0 if all(rc == 0 for rc in returncodes) else 1
@@ -316,11 +302,13 @@ class DirectoryContext(object):
 
     def __enter__(self):
         self.previous_path = os.getcwd()
-        shell_debug_print(['pushd', self.path], stderr=self.stderr)
+        cmd = ['cd', self.path] if platform.system() == 'Windows' else ['pushd', self.path]
+        shell_debug_print(cmd, stderr=self.stderr)
         os.chdir(self.path)
 
     def __exit__(self, etype, value, traceback):
-        shell_debug_print(['popd'], stderr=self.stderr)
+        cmd = ['cd', self.previous_path] if platform.system() == 'Windows' else ['popd']
+        shell_debug_print(cmd, stderr=self.stderr)
         os.chdir(self.previous_path)
 
 

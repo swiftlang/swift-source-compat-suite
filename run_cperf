@@ -92,6 +92,10 @@ class SelfTest(unittest.TestCase):
 def main():
 
     args = parse_args()
+
+    if platform.system() != 'Darwin':
+        raise common.UnsupportedPlatform
+
     if args.self_test:
         SelfTest.args = args
         suite = unittest.TestLoader().loadTestsFromTestCase(SelfTest)
