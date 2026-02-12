@@ -1,33 +1,6 @@
 [
   {
     "repository": "Git",
-    "url": "https://github.com/Dimillian/MovieSwiftUI.git",
-    "path": "MovieSwift",
-    "branch": "master",
-    "maintainer": "ricouard77@gmail.com",
-    "build_first": true,
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "237010a51afd6923fdfac09f5bc88dd206c49e3a"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "MovieSwift/MovieSwift.xcodeproj",
-        "target": "MovieSwift",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/Dimillian/ACHNBrowserUI.git",
     "path": "ACHNBrowserUI",
     "branch": "main",
@@ -231,6 +204,32 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/lolgear/Base64CoderSwiftUI.git",
+    "path": "Base64CoderSwiftUI",
+    "branch": "master",
+    "maintainer": "gaussblurinc@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "f94c86027607f411e1b2e2f7373df375dc0173d6"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Base64CoderSwiftUI.xcodeproj",
+        "target": "Base64CoderSwiftUI",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/igor-makarov/BeaconKit.git",
     "path": "BeaconKit",
     "branch": "master",
@@ -343,7 +342,8 @@
     ],
     "platforms": [
       "Darwin",
-      "Linux"
+      "Linux",
+      "Windows"
     ],
     "actions": [
       {
@@ -389,9 +389,18 @@
         "xfail": [
           {
             "issue": "https://github.com/apple/swift/issues/69581",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/6.0", "release/6.2", "release/6.3"],
-            "job": ["source-compat"],
+            "compatibility": [
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ],
             "platform": "Darwin"
           }
         ]
@@ -542,9 +551,20 @@
         "xfail": [
           {
             "issue": "https://github.com/swiftlang/swift/issues/78863",
-            "compatibility": ["4.0", "4.2"],
-            "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-            "job": ["source-compat"],
+            "compatibility": [
+              "4.0",
+              "4.2"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ],
             "platform": "Darwin"
           }
         ]
@@ -559,9 +579,20 @@
         "xfail": [
           {
             "issue": "https://github.com/swiftlang/swift/issues/78863",
-            "compatibility": ["4.0", "4.2"],
-            "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-            "job": ["source-compat"],
+            "compatibility": [
+              "4.0",
+              "4.2"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ],
             "platform": "Darwin"
           }
         ]
@@ -575,9 +606,20 @@
         "xfail": [
           {
             "issue": "https://github.com/swiftlang/swift/issues/78863",
-            "compatibility": ["4.0", "4.2"],
-            "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-            "job": ["source-compat"],
+            "compatibility": [
+              "4.0",
+              "4.2"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ],
             "platform": "Darwin"
           }
         ]
@@ -591,9 +633,20 @@
         "xfail": [
           {
             "issue": "https://github.com/swiftlang/swift/issues/78863",
-            "compatibility": ["4.0", "4.2"],
-            "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-            "job": ["source-compat"],
+            "compatibility": [
+              "4.0",
+              "4.2"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ],
             "platform": "Darwin"
           }
         ]
@@ -615,49 +668,6 @@
         "workspace": "CoreStore.xcworkspace",
         "scheme": "CoreStore tvOS",
         "destination": "platform=tvOS Simulator,name=Apple TV 1080p"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/louisdh/cub.git",
-    "path": "cub",
-    "branch": "master",
-    "maintainer": "louisdhauwe@silverfox.be",
-    "compatibility": [
-      {
-        "version": "4.0",
-        "commit": "3574d3fda70091f8dea6494cafa4bca0c340b354"
-      },
-      {
-        "version": "5.0",
-        "commit": "4c7d90d715d16cba5d6bfa3741149d7175b34412"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Cub.xcworkspace",
-        "scheme": "Cub iOS [Double]",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "Cub.xcworkspace",
-        "scheme": "Cub macOS Release [Double]",
-        "destination": "generic/platform=macOS",
-        "configuration": "Release",
-        "tags": "sourcekit-disabled"
-      },
-      {
-        "action": "TestXcodeWorkspaceScheme",
-        "workspace": "Cub.xcworkspace",
-        "scheme": "Cub macOS Tests",
-        "destination": "platform=macOS"
       }
     ]
   },
@@ -717,10 +727,20 @@
         "xfail": [
           {
             "issue": "https://github.com/swiftlang/swift/issues/75498",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
+            "compatibility": [
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
             "platform": "Linux",
-            "job": ["source-compat"]
+            "job": [
+              "source-compat"
+            ]
           }
         ]
       },
@@ -777,28 +797,47 @@
         "configuration": "release",
         "tags": "swiftpm",
         "xfail": [
-            {
-                "issue": "https://github.com/apple/swift/issues/57755",
-                "compatibility": "5.0",
-                "branch": ["release/5.5"],
-                "job": ["source-compat"]
-            },
-            {
-                "issue": "https://github.com/apple/swift/issues/70764",
-                "compatibility": "5.0",
-                "branch": ["release/5.9", "release/5.10", "release/6.0", "release/6.1", "release/6.2"],
-                "configuration": "debug",
-                "platform": "Darwin",
-                "job": ["source-compat"]
-            },
-            {
-                "issue": "https://github.com/swiftlang/swift/issues/79801",
-                "compatibility": ["5.0", "5.7"],
-                "branch": ["release/6.1"],
-                "configuration": "release",
-                "platform": "Darwin",
-                "job": ["source-compat"]
-            }
+          {
+            "issue": "https://github.com/apple/swift/issues/57755",
+            "compatibility": "5.0",
+            "branch": [
+              "release/5.5"
+            ],
+            "job": [
+              "source-compat"
+            ]
+          },
+          {
+            "issue": "https://github.com/apple/swift/issues/70764",
+            "compatibility": "5.0",
+            "branch": [
+              "release/5.9",
+              "release/5.10",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2"
+            ],
+            "configuration": "debug",
+            "platform": "Darwin",
+            "job": [
+              "source-compat"
+            ]
+          },
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/79801",
+            "compatibility": [
+              "5.0",
+              "5.7"
+            ],
+            "branch": [
+              "release/6.1"
+            ],
+            "configuration": "release",
+            "platform": "Darwin",
+            "job": [
+              "source-compat"
+            ]
+          }
         ]
       },
       {
@@ -900,95 +939,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/exercism/swift.git",
-    "path": "exercism-swift",
-    "branch": "main",
-    "maintainer": "cheyo@masters3d.com",
-    "compatibility": [
-      {
-        "version": "4.2",
-        "commit": "3df5e4ab83a9ab47228a46da7263e09a2a2b0b90"
-      },
-      {
-        "version": "5.0",
-        "commit": "3df5e4ab83a9ab47228a46da7263e09a2a2b0b90"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm",
-        "build_tests": "true",
-        "xfail": [
-          {
-            "issue": "https://github.com/swiftlang/swift/issues/78864",
-            "compatibility": ["4.2", "5.0"],
-            "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-            "job": ["source-compat"],
-            "configuration": "debug"
-          }
-        ]
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/GraphQLSwift/Graphiti.git",
-    "path": "Graphiti",
-    "branch": "main",
-    "maintainer": "clack@passivelogic.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "64b180e08fe6dcd48d17485f167b8a49c16ad9e9"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "build_tests": "true",
-        "configuration": "release"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/GraphQLSwift/GraphQL.git",
-    "path": "GraphQL",
-    "branch": "main",
-    "maintainer": "clack@passivelogic.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "7c910f22508b918900c7a91e53638184dc6504d4"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "build_tests": "true",
-        "configuration": "release"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/groue/GRDB.swift.git",
     "path": "GRDB.swift",
     "branch": "master",
@@ -1025,21 +975,42 @@
         "configuration": "release",
         "tags": "sourcekit-disabled swiftpm",
         "xfail": [
-            {
-                "issue": "https://github.com/swiftlang/swift/issues/79796",
-                "platform": "Darwin",
-                "compatibility": ["4.2", "5.1", "5.3", "5.7"],
-                "branch": ["main", "release/6.1", "release/6.2", "release/6.3"],
-                "job": ["source-compat"]
-            },
-            {
-                "issue": "https://github.com/swiftlang/swift/issues/79888",
-                "platform": "Darwin",
-                "configuration": "debug",
-                "compatibility": ["6.0"],
-                "branch": ["main", "release/6.1", "release/6.2", "release/6.3"],
-                "job": ["source-compat"]
-            }
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/79796",
+            "platform": "Darwin",
+            "compatibility": [
+              "4.2",
+              "5.1",
+              "5.3",
+              "5.7"
+            ],
+            "branch": [
+              "main",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
+          },
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/79888",
+            "platform": "Darwin",
+            "configuration": "debug",
+            "compatibility": [
+              "6.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
+          }
         ]
       },
       {
@@ -1049,14 +1020,14 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/grpc/grpc-swift",
-    "path": "grpc-swift",
+    "url": "https://github.com/GraphQLSwift/GraphQL.git",
+    "path": "GraphQL",
     "branch": "main",
-    "maintainer": "gbarnett@apple.com",
+    "maintainer": "clack@passivelogic.com",
     "compatibility": [
       {
         "version": "5.0",
-        "commit": "a45db1b439bc85b9e18f7ee1a5bf3ec564107819"
+        "commit": "7c910f22508b918900c7a91e53638184dc6504d4"
       }
     ],
     "platforms": [
@@ -1067,25 +1038,31 @@
       {
         "action": "BuildSwiftPackage",
         "build_tests": "true",
-        "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/swiftlang/swift-package-manager/issues/7470",
-            "platform": "Darwin",
-            "compatibility": "5.0",
-            "branch": [
-              "release/6.0",
-              "release/6.1"
-            ],
-            "job": [
-              "source-compat"
-            ]
-          }
-        ]
-      },
+        "configuration": "release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/GraphQLSwift/Graphiti.git",
+    "path": "Graphiti",
+    "branch": "main",
+    "maintainer": "clack@passivelogic.com",
+    "compatibility": [
       {
-        "action": "TestSwiftPackage"
+        "version": "5.0",
+        "commit": "64b180e08fe6dcd48d17485f167b8a49c16ad9e9"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release"
       }
     ]
   },
@@ -1135,7 +1112,8 @@
     ],
     "platforms": [
       "Darwin",
-      "Linux"
+      "Linux",
+      "Windows"
     ],
     "actions": [
       {
@@ -1450,21 +1428,36 @@
         "configuration": "release",
         "tags": "sourcekit-disabled swiftpm",
         "xfail": [
-            {
-                "issue": "rdar://83373628",
-                "platform": "Linux",
-                "compatibility": "5.0",
-                "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-                "job": ["source-compat"]
-            },
-            {
-                "issue": "rdar://83373628",
-                "platform": "Linux",
-                "compatibility": "4.0",
-                "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-                "job": ["source-compat"]
-            }
-
+          {
+            "issue": "rdar://83373628",
+            "platform": "Linux",
+            "compatibility": "5.0",
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
+          },
+          {
+            "issue": "rdar://83373628",
+            "platform": "Linux",
+            "compatibility": "4.0",
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
+          }
         ]
       }
     ]
@@ -1559,35 +1552,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/line/line-sdk-ios-swift.git",
-    "path": "line-sdk-ios-swift",
-    "branch": "master",
-    "maintainer": "dl_linesdk_cocoapods@linecorp.com",
-    "compatibility": [
-      {
-        "version": "4.2",
-        "commit": "d8bb2bc535e2895b5fbe66f4872327b654d19a34"
-      },
-      {
-        "version": "5.0",
-        "commit": "d8bb2bc535e2895b5fbe66f4872327b654d19a34"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeWorkspaceScheme",
-        "workspace": "LineSDK.xcworkspace",
-        "scheme": "LineSDK",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/ssamadgh/ModelAssistant.git",
     "path": "ModelAssistant",
     "branch": "master",
@@ -1617,6 +1581,33 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/Dimillian/MovieSwiftUI.git",
+    "path": "MovieSwift",
+    "branch": "master",
+    "maintainer": "ricouard77@gmail.com",
+    "build_first": true,
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "237010a51afd6923fdfac09f5bc88dd206c49e3a"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "MovieSwift/MovieSwift.xcodeproj",
+        "target": "MovieSwift",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release",
+        "tags": "sourcekit sourcekit-smoke"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/Moya/Moya.git",
     "path": "Moya",
     "branch": "master",
@@ -1636,6 +1627,33 @@
         "build_tests": "true",
         "configuration": "release",
         "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/ethanhuang13/NSAttributedStringBuilder.git",
+    "path": "NSAttributedStringBuilder",
+    "branch": "master",
+    "maintainer": "blesserx@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "f651c44c5bbac2b598763e138082e5c5e66742a2"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "swiftpm"
       },
       {
         "action": "TestSwiftPackage"
@@ -1669,13 +1687,70 @@
         "configuration": "release",
         "tags": "sourcekit-disabled swiftpm",
         "xfail": [
-            {
-                "issue": "https://github.com/apple/swift/issues/64251",
-                "platform": "Linux",
-                "compatibility": ["5.0", "4.2"],
-                "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-                "job": ["source-compat"]
-            }
+          {
+            "issue": "https://github.com/apple/swift/issues/64251",
+            "platform": "Linux",
+            "compatibility": [
+              "5.0",
+              "4.2"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
+          }
+        ]
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/Quick/Nimble",
+    "path": "Nimble",
+    "branch": "main",
+    "maintainer": "suicaicoca@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "eea5843b34beb559dd51cf004953f75028e47add"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/57431",
+            "compatibility": [
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "configuration": "debug",
+            "job": [
+              "source-compat"
+            ]
+          }
         ]
       },
       {
@@ -1697,7 +1772,8 @@
     ],
     "platforms": [
       "Darwin",
-      "Linux"
+      "Linux",
+      "Windows"
     ],
     "actions": [
       {
@@ -1728,33 +1804,6 @@
         "destination": "generic/platform=watchOS",
         "configuration": "Release"
       },
-      {
-        "action": "BuildSwiftPackage",
-        "build_tests": "true",
-        "configuration": "release",
-        "tags": "swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/ethanhuang13/NSAttributedStringBuilder.git",
-    "path": "NSAttributedStringBuilder",
-    "branch": "master",
-    "maintainer": "blesserx@gmail.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "f651c44c5bbac2b598763e138082e5c5e66742a2"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
       {
         "action": "BuildSwiftPackage",
         "build_tests": "true",
@@ -1831,7 +1880,8 @@
     ],
     "platforms": [
       "Darwin",
-      "Linux"
+      "Linux",
+      "Windows"
     ],
     "actions": [
       {
@@ -1896,13 +1946,21 @@
         "configuration": "release",
         "tags": "sourcekit-disabled swiftpm",
         "xfail": [
-            {
-                "issue": "rdar://83373864",
-                "platform": "Linux",
-                "compatibility": "4.2",
-                "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-                "job": ["source-compat"]
-            }
+          {
+            "issue": "rdar://83373864",
+            "platform": "Linux",
+            "compatibility": "4.2",
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
+          }
         ]
       }
     ]
@@ -1923,7 +1981,8 @@
       }
     ],
     "platforms": [
-      "Darwin"
+      "Darwin",
+      "Windows"
     ],
     "maintainer": "connerk@gmail.com",
     "actions": [
@@ -1985,7 +2044,8 @@
     "maintainer": "rmalik@pinterest.com",
     "platforms": [
       "Darwin",
-      "Linux"
+      "Linux",
+      "Windows"
     ],
     "actions": [
       {
@@ -2043,9 +2103,20 @@
         "xfail": [
           {
             "issue": "https://github.com/apple/swift/issues/65197",
-            "compatibility": ["4.2", "5.0"],
-            "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-            "job": ["source-compat"]
+            "compatibility": [
+              "4.2",
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
           }
         ]
       },
@@ -2064,13 +2135,23 @@
         "configuration": "Release",
         "tags": "sourcekit-disabled",
         "xfail": [
-            {
-                "issue": "https://github.com/swiftlang/swift/issues/79797",
-                "platform": "Darwin",
-                "compatibility": ["4.2", "5.0"],
-                "branch": ["main", "release/6.1", "release/6.2", "release/6.3"],
-                "job": ["source-compat"]
-            }
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/79797",
+            "platform": "Darwin",
+            "compatibility": [
+              "4.2",
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
+          }
         ]
       },
       {
@@ -2126,9 +2207,20 @@
         "xfail": [
           {
             "issue": "https://github.com/apple/swift/issues/65197",
-            "compatibility": ["4.0", "5.0"],
-            "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-            "job": ["source-compat"]
+            "compatibility": [
+              "4.0",
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
           }
         ]
       },
@@ -2169,9 +2261,20 @@
         "xfail": [
           {
             "issue": "https://github.com/apple/swift/issues/65204",
-            "compatibility": ["4.2", "5.0"],
-            "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-            "job": ["source-compat"]
+            "compatibility": [
+              "4.2",
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
           }
         ]
       },
@@ -2298,10 +2401,17 @@
         "xfail": [
           {
             "issue": "rdar://problem/68590422",
-            "compatibility": ["4.0", "5.0"],
-            "branch": ["release/5.4"],
+            "compatibility": [
+              "4.0",
+              "5.0"
+            ],
+            "branch": [
+              "release/5.4"
+            ],
             "configuration": "debug",
-            "job": ["source-compat"]
+            "job": [
+              "source-compat"
+            ]
           }
         ]
       },
@@ -2314,10 +2424,17 @@
         "xfail": [
           {
             "issue": "rdar://problem/68590422",
-            "compatibility": ["4.0", "5.0"],
-            "branch": ["release/5.4"],
+            "compatibility": [
+              "4.0",
+              "5.0"
+            ],
+            "branch": [
+              "release/5.4"
+            ],
             "configuration": "debug",
-            "job": ["source-compat"]
+            "job": [
+              "source-compat"
+            ]
           }
         ]
       },
@@ -2462,7 +2579,8 @@
     "maintainer": "matt@diephouse.com",
     "platforms": [
       "Darwin",
-      "Linux"
+      "Linux",
+      "Windows"
     ],
     "actions": [
       {
@@ -2525,9 +2643,21 @@
         "xfail": [
           {
             "issue": "https://github.com/apple/swift/issues/57554",
-            "compatibility": ["4.2", "5.0"],
-            "branch": ["release/5.5", "release/5.6", "release/5.7", "release/5.8", "release/5.9", "release/5.10"],
-            "job": ["source-compat"]
+            "compatibility": [
+              "4.2",
+              "5.0"
+            ],
+            "branch": [
+              "release/5.5",
+              "release/5.6",
+              "release/5.7",
+              "release/5.8",
+              "release/5.9",
+              "release/5.10"
+            ],
+            "job": [
+              "source-compat"
+            ]
           }
         ],
         "configuration": "release"
@@ -2700,9 +2830,19 @@
         "xfail": [
           {
             "issue": "https://github.com/swiftlang/swift-corelibs-foundation/issues/5108",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-            "job": ["source-compat"],
+            "compatibility": [
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ],
             "platform": "Linux"
           }
         ]
@@ -2722,7 +2862,8 @@
       }
     ],
     "platforms": [
-      "Darwin"
+      "Darwin",
+      "Windows"
     ],
     "actions": [
       {
@@ -2762,13 +2903,25 @@
         "configuration": "release",
         "tags": "sourcekit-disabled swiftpm",
         "xfail": [
-            {
-                "issue": "https://github.com/apple/swift/issues/61615",
-                "compatibility": ["4.2", "5.0"],
-                "branch": ["main", "release/5.5", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-                "job": ["source-compat"],
-                "configuration": "debug"
-            }
+          {
+            "issue": "https://github.com/apple/swift/issues/61615",
+            "compatibility": [
+              "4.2",
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/5.5",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ],
+            "configuration": "debug"
+          }
         ]
       }
     ]
@@ -2819,13 +2972,22 @@
         "configuration": "release",
         "tags": "sourcekit-disabled swiftpm",
         "xfail": [
-            {
-                "issue": "https://github.com/swiftlang/swift/issues/79798",
-                "platform": "Darwin",
-                "compatibility": ["5.0"],
-                "branch": ["main", "release/6.1", "release/6.2", "release/6.3"],
-                "job": ["source-compat"]
-            }
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/79798",
+            "platform": "Darwin",
+            "compatibility": [
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
+          }
         ]
       },
       {
@@ -2930,141 +3092,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/apple/swift-algorithms",
-    "path": "swift-algorithms",
-    "branch": "main",
-    "maintainer": "natecook@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "3864606e00177c3438db075df56659cdfbc01ca8"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-argument-parser",
-    "path": "swift-argument-parser",
-    "branch": "main",
-    "maintainer": "natecook@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "41f5fe52a34b2c7b9938996387fabfaca21918bd"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-atomics",
-    "path": "swift-atomics",
-    "branch": "main",
-    "maintainer": "klorentey@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "df9f811f19a852fa7b78af9cffa8ec447eaeb40a"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/kishikawakatsumi/swift-power-assert",
-    "path": "swift-power-assert",
-    "branch": "main",
-    "maintainer": "kishikawakatsumi@mac.com",
-    "compatibility": [
-      {
-        "version": "5.9",
-        "commit": "e06a8c7588b01957228a59d5009fd24c31f6de38"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "tags": "sourcekit sourcekit-smoke"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-standard-library-preview.git",
-    "path": "swift-standard-library-preview",
-    "branch": "main",
-    "maintainer": "guillaume.lessard@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "6f72db4c56431d2a2aba0ea41697f60f7cd5917e"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/malcommac/SwiftDate",
     "path": "SwiftDate",
     "branch": "master",
@@ -3159,7 +3186,8 @@
     ],
     "platforms": [
       "Darwin",
-      "Linux"
+      "Linux",
+      "Windows"
     ],
     "actions": [
       {
@@ -3167,6 +3195,67 @@
         "build_tests": "true",
         "configuration": "release",
         "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/realm/SwiftLint.git",
+    "path": "SwiftLint",
+    "branch": "master",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "180d94132758dd183124ab1e63d6aa8e10023ec2"
+      }
+    ],
+    "maintainer": "jp@jpsim.com",
+    "platforms": [
+      "Darwin",
+      "Linux",
+      "Windows"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "rdar://83374141",
+            "platform": "Linux",
+            "compatibility": "5.0",
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
+          },
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/79798",
+            "compatibility": [
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
+          }
+        ]
+      },
+      {
+        "action": "TestSwiftPackage"
       }
     ]
   },
@@ -3198,54 +3287,24 @@
         "xfail": [
           {
             "issue": "https://github.com/apple/swift/issues/61616",
-            "compatibility": ["4.0", "4.2"],
-            "branch": ["main",  "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-            "job": ["source-compat"],
-            "configuration": ["debug"]
+            "compatibility": [
+              "4.0",
+              "4.2"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ],
+            "configuration": [
+              "debug"
+            ]
           }
-        ]
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/realm/SwiftLint.git",
-    "path": "SwiftLint",
-    "branch": "master",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "180d94132758dd183124ab1e63d6aa8e10023ec2"
-      }
-    ],
-    "maintainer": "jp@jpsim.com",
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "build_tests": "true",
-        "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-            {
-                "issue": "rdar://83374141",
-                "platform": "Linux",
-                "compatibility": "5.0",
-                "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-                "job": ["source-compat"]
-            },
-            {
-              "issue": "https://github.com/swiftlang/swift/issues/79798",
-              "compatibility": ["5.0"],
-              "branch": ["main", "release/6.1", "release/6.2", "release/6.3"],
-              "job": ["source-compat"]
-            }
         ]
       },
       {
@@ -3324,579 +3383,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/dfunckt/swift-futures",
-    "path": "swift-futures",
-    "branch": "master",
-    "maintainer": "akiskesoglou@gmail.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "68500e5501ca9986e996e16736496b5b2491af87"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "build_tests": "true",
-        "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-            {
-                "issue": "https://github.com/swiftlang/swift/issues/79799",
-                "platform": "Darwin",
-                "compatibility": ["5.0"],
-                "branch": ["main", "release/6.1", "release/6.2", "release/6.3"],
-                "job": ["source-compat"]
-            }
-        ]
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-nio",
-    "path": "swift-nio",
-    "branch": "main",
-    "maintainer": "cbenfield@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "45167b8006448c79dda4b7bd604e07a034c15c49"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-log",
-    "path": "swift-log",
-    "branch": "main",
-    "maintainer": "ktoso@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "16cfcc60e49d940c93367e5fe0e0533bd27e9733"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/swiftlang/swift/issues/86803",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/6.3"],
-            "job": ["source-compat"],
-            "platform": "Linux"
-          }
-        ]
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-distributed-actors",
-    "path": "swift-distributed-actors",
-    "branch": "main",
-    "maintainer": "ktoso@apple.com",
-    "build_first": true,
-    "compatibility": [
-      {
-        "version": "5.7",
-        "commit": "e024c1fae5d2b17346c8a2c4482675a70f35fccc"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "build_tests": "true",
-        "build_tests_release": "true",
-        "configuration": "debug",
-        "xfail": [
-          {
-            "issue": "https://github.com/swiftlang/swift-package-manager/issues/7470",
-            "platform": "Darwin",
-            "compatibility": "5.7",
-            "branch": [
-              "release/6.0",
-              "release/6.1"
-            ],
-            "job": [
-              "source-compat"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/swift-server/async-http-client",
-    "path": "async-http-client",
-    "branch": "main",
-    "maintainer": "ktoso@apple.com",
-    "compatibility": [
-      {
-        "version": "5.4",
-        "commit": "60235983163d040f343a489f7e2e77c1918a8bd9"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "build_tests": "true",
-        "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-nio-http2",
-    "path": "swift-nio-http2",
-    "branch": "main",
-    "maintainer": "cbenfield@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "492a77b1867c2d31b08a3d7db63de59a8e2399ac"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-metrics",
-    "path": "swift-metrics",
-    "branch": "main",
-    "maintainer": "ktoso@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "68e6cb29387754df21d96cb35d09b6ad0f59300f"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-nio-extras",
-    "path": "swift-nio-extras",
-    "branch": "main",
-    "maintainer": "cbenfield@apple.com",
-    "compatibility": [
-      {
-        "version": "4.2",
-        "commit": "0dbd54199d06c80a35b441c39ac2ef1b78778740"
-      },
-      {
-        "version": "5.0",
-        "commit": "55f37f388c2cbe717395176fbe8984354d8488d2"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-nio-ssl",
-    "path": "swift-nio-ssl",
-    "branch": "main",
-    "maintainer": "cbenfield@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "5c07eca3ac2cb05c26712dfc37e513412faf08fd"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/swiftlang/swift/issues/86803",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/6.3"],
-            "job": ["source-compat"],
-            "platform": "Linux"
-          }
-        ]
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-nio-ssh",
-    "path": "swift-nio-ssh",
-    "branch": "main",
-    "maintainer": "cbenfield@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "09778e0388bda898c7592887f2ec84bb81ef21eb"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-nio-transport-services",
-    "path": "swift-nio-transport-services",
-    "branch": "main",
-    "maintainer": "cbenfield@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "e7f5278a26442dc46783ba7e063643d524e414a0"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-crypto",
-    "path": "swift-crypto",
-    "branch": "main",
-    "maintainer": "cbenfield@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "127d3745c37b5705e4bc8d16c7951c48dcc3332c"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-openapi-runtime",
-    "path": "swift-openapi-runtime",
-    "branch": "main",
-    "maintainer": "honza@apple.com",
-    "compatibility": [
-      {
-        "version": "5.10",
-        "commit": "7cf0cf2bc44a09dbdba493f8761f25f4758a76a0"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-openapi-generator",
-    "path": "swift-openapi-generator",
-    "branch": "main",
-    "maintainer": "honza@apple.com",
-    "compatibility": [
-      {
-        "version": "5.10",
-        "commit": "0bd6d842f7f25047d024fdb6e2b9b8ce932518c2"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-numerics",
-    "path": "swift-numerics",
-    "branch": "main",
-    "maintainer": "stephentyrone@gmail.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "2624562948fd284a3e64ad9e96706f51d9a6a6e9"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/abertelrud/swift-protobuf-plugin-example.git",
-    "path": "swift-protobuf-plugin-example",
-    "branch": "main",
-    "maintainer": "anders@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "85bec04626e571ae8391175285e0cf111140fddc"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "build_tests": "true",
-        "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/65202",
-            "compatibility": ["5.0"],
-            "branch": ["main",  "release/6.0", "release/6.1", "release/6.2", "release/6.3"]
-          }
-        ]
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-system",
-    "path": "swift-system",
-    "branch": "main",
-    "maintainer": "milseman@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "0627d28e6ae514940c6ee061acfd36a3c231b87f"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-distributed-tracing",
-    "path": "swift-distributed-tracing",
-    "branch": "main",
-    "maintainer": "ktoso@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "4733b6ead3b2d3a3b9b63256a9ba5b567687e7f1"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-cluster-membership",
-    "path": "swift-cluster-membership",
-    "branch": "main",
-    "maintainer": "ktoso@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "e9619146a1198253c587f6f34c0869d3a98b0c76"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "sourcekit-disabled swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/SwiftyJSON/SwiftyJSON.git",
     "path": "SwiftyJSON",
     "branch": "master",
@@ -3964,35 +3450,6 @@
     ]
   },
   {
-      "repository": "Git",
-      "url": "https://github.com/advantagefse/json-logic-swift.git",
-      "path": "json-logic-swift",
-      "branch": "master",
-      "maintainer": "christos.koninis@gmail.com",
-      "compatibility": [{
-              "version": "4.2",
-              "commit": "a048b09190e2a80f563ecd7425ca21547407a5ab"
-          },
-          {
-              "version": "5.0",
-              "commit": "a048b09190e2a80f563ecd7425ca21547407a5ab"
-          }
-      ],
-      "platforms": [
-          "Darwin",
-          "Linux"
-      ],
-      "actions": [{
-              "action": "BuildSwiftPackage",
-              "configuration": "release",
-              "build_tests": "true"
-          },
-          {
-              "action": "TestSwiftPackage"
-          }
-      ]
-  },
-  {
     "repository": "Git",
     "url": "https://github.com/bizz84/SwiftyStoreKit",
     "path": "SwiftyStoreKit",
@@ -4038,6 +3495,61 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/brightdigit/SyndiKit",
+    "path": "SyndiKit",
+    "branch": "main",
+    "maintainer": "leo@brightdigit.com",
+    "compatibility": [
+      {
+        "version": "5.5",
+        "commit": "468f15671688bcede7db40b51cbdb78df949e7e1"
+      },
+      {
+        "version": "5.6",
+        "commit": "468f15671688bcede7db40b51cbdb78df949e7e1"
+      },
+      {
+        "version": "5.7",
+        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
+      },
+      {
+        "version": "5.8",
+        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
+      },
+      {
+        "version": "5.9",
+        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
+      },
+      {
+        "version": "5.10",
+        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
+      },
+      {
+        "version": "6.0",
+        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
+      },
+      {
+        "version": "6.1",
+        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux",
+      "Windows"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/pointfreeco/swift-tagged.git",
     "path": "Tagged",
     "branch": "master",
@@ -4050,7 +3562,8 @@
     ],
     "platforms": [
       "Darwin",
-      "Linux"
+      "Linux",
+      "Windows"
     ],
     "actions": [
       {
@@ -4117,6 +3630,252 @@
         "build_tests": "true",
         "configuration": "release",
         "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/swift-server/async-http-client",
+    "path": "async-http-client",
+    "branch": "main",
+    "maintainer": "ktoso@apple.com",
+    "compatibility": [
+      {
+        "version": "5.4",
+        "commit": "60235983163d040f343a489f7e2e77c1918a8bd9"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/louisdh/cub.git",
+    "path": "cub",
+    "branch": "master",
+    "maintainer": "louisdhauwe@silverfox.be",
+    "compatibility": [
+      {
+        "version": "4.0",
+        "commit": "3574d3fda70091f8dea6494cafa4bca0c340b354"
+      },
+      {
+        "version": "5.0",
+        "commit": "4c7d90d715d16cba5d6bfa3741149d7175b34412"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Cub.xcworkspace",
+        "scheme": "Cub iOS [Double]",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "Cub.xcworkspace",
+        "scheme": "Cub macOS Release [Double]",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release",
+        "tags": "sourcekit-disabled"
+      },
+      {
+        "action": "TestXcodeWorkspaceScheme",
+        "workspace": "Cub.xcworkspace",
+        "scheme": "Cub macOS Tests",
+        "destination": "platform=macOS"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/exercism/swift.git",
+    "path": "exercism-swift",
+    "branch": "main",
+    "maintainer": "cheyo@masters3d.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "3df5e4ab83a9ab47228a46da7263e09a2a2b0b90"
+      },
+      {
+        "version": "5.0",
+        "commit": "3df5e4ab83a9ab47228a46da7263e09a2a2b0b90"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm",
+        "build_tests": "true",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/78864",
+            "compatibility": [
+              "4.2",
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ],
+            "configuration": "debug"
+          }
+        ]
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/fluent",
+    "path": "fluent",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "dfcbeba27a576c20ff181d496f21ecd45d2c1a71"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/grpc/grpc-swift",
+    "path": "grpc-swift",
+    "branch": "main",
+    "maintainer": "gbarnett@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "a45db1b439bc85b9e18f7ee1a5bf3ec564107819"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift-package-manager/issues/7470",
+            "platform": "Darwin",
+            "compatibility": "5.0",
+            "branch": [
+              "release/6.0",
+              "release/6.1"
+            ],
+            "job": [
+              "source-compat"
+            ]
+          }
+        ]
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/hummingbird-project/hummingbird",
+    "path": "hummingbird",
+    "branch": "main",
+    "maintainer": "adamfowler71@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "61ca04429d4267e7b30423b7199d7285fde7b9c6"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/advantagefse/json-logic-swift.git",
+    "path": "json-logic-swift",
+    "branch": "master",
+    "maintainer": "christos.koninis@gmail.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "a048b09190e2a80f563ecd7425ca21547407a5ab"
+      },
+      {
+        "version": "5.0",
+        "commit": "a048b09190e2a80f563ecd7425ca21547407a5ab"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux",
+      "Windows"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true"
       },
       {
         "action": "TestSwiftPackage"
@@ -4206,6 +3965,35 @@
   },
   {
     "repository": "Git",
+    "url": "https://github.com/line/line-sdk-ios-swift.git",
+    "path": "line-sdk-ios-swift",
+    "branch": "master",
+    "maintainer": "dl_linesdk_cocoapods@linecorp.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "d8bb2bc535e2895b5fbe66f4872327b654d19a34"
+      },
+      {
+        "version": "5.0",
+        "commit": "d8bb2bc535e2895b5fbe66f4872327b654d19a34"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeWorkspaceScheme",
+        "workspace": "LineSDK.xcworkspace",
+        "scheme": "LineSDK",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
     "url": "https://github.com/lyft/mapper.git",
     "path": "mapper",
     "branch": "master",
@@ -4225,7 +4013,8 @@
       }
     ],
     "platforms": [
-      "Darwin"
+      "Darwin",
+      "Windows"
     ],
     "actions": [
       {
@@ -4259,9 +4048,21 @@
         "xfail": [
           {
             "issue": "https://github.com/apple/swift/issues/65197",
-            "compatibility": ["4.0", "4.2", "5.0"],
-            "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-            "job": ["source-compat"]
+            "compatibility": [
+              "4.0",
+              "4.2",
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
           }
         ]
       },
@@ -4278,49 +4079,116 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/bustoutsolutions/siesta.git",
-    "path": "siesta-legacy",
+    "url": "https://github.com/sroebert/mqtt-nio",
+    "path": "mqtt-nio",
     "branch": "main",
+    "maintainer": "steven@roebert.nl",
     "compatibility": [
       {
-        "version": "4.0",
-        "commit": "926127231446fc5c1c8c3236033914a4006ab9a2"
+        "version": "5.0",
+        "commit": "17794a4ac977b7a30fe6aac669c3a1b3ce55cc21"
       }
     ],
-    "maintainer": "cantrell@pobox.com",
     "platforms": [
-      "Darwin"
+      "Darwin",
+      "Linux"
     ],
     "actions": [
       {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Siesta.xcodeproj",
-        "target": "Siesta iOS",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/ordo-one/package-distributed-system",
+    "path": "package-distributed-system",
+    "branch": "main",
+    "maintainer": "swift-source-compat-suite@ordo.one",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "48e8f8f68a61fffb62400e8298223d7c861c650e"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/78863",
+            "compatibility": [
+              "5.10"
+            ],
+            "branch": [
+              "release/6.1"
+            ],
+            "job": [
+              "source-compat"
+            ],
+            "configuration": "release",
+            "platform": "Linux"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/penny-bot.git",
+    "path": "penny-bot",
+    "branch": "main",
+    "maintainer": "penny-bot@mahdibm.com",
+    "build_first": true,
+    "compatibility": [
+      {
+        "version": "6.0",
+        "commit": "a758896be7ed63cf0a80e68b652e07305121bf36"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "build_tests_release": "true",
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift-package-manager/issues/8292",
+            "compatibility": [
+              "6.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
+          }
+        ]
       },
       {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Siesta.xcodeproj",
-        "target": "Siesta macOS",
-        "destination": "generic/platform=macOS",
-        "configuration": "Release",
-        "tags": "sourcekit-disabled"
-      },
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Siesta.xcodeproj",
-        "target": "SiestaUI iOS",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release"
-      },
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Siesta.xcodeproj",
-        "target": "SiestaUI macOS",
-        "destination": "generic/platform=macOS",
-        "configuration": "Release",
-        "tags": "sourcekit-disabled"
+        "action": "TestSwiftPackage",
+        "configuration": "release",
+        "xfail": []
       }
     ]
   },
@@ -4378,21 +4246,956 @@
         "xfail": [
           {
             "issue": "https://github.com/apple/swift/issues/57431",
-            "compatibility": ["5.0"],
-            "branch": ["release/6.0", "release/6.1", "release/6.2"],
-            "job": ["source-compat"]
+            "compatibility": [
+              "5.0"
+            ],
+            "branch": [
+              "release/6.0",
+              "release/6.1",
+              "release/6.2"
+            ],
+            "job": [
+              "source-compat"
+            ]
           },
           {
             "issue": "https://github.com/apple/swift/issues/57431",
-            "compatibility": ["5.0"],
+            "compatibility": [
+              "5.0"
+            ],
             "configuration": "debug",
-            "branch": ["main", "release/6.3"],
-            "job": ["source-compat"]
+            "branch": [
+              "main",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
           }
         ]
       },
       {
         "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/bustoutsolutions/siesta.git",
+    "path": "siesta-legacy",
+    "branch": "main",
+    "compatibility": [
+      {
+        "version": "4.0",
+        "commit": "926127231446fc5c1c8c3236033914a4006ab9a2"
+      }
+    ],
+    "maintainer": "cantrell@pobox.com",
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Siesta.xcodeproj",
+        "target": "Siesta iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Siesta.xcodeproj",
+        "target": "Siesta macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release",
+        "tags": "sourcekit-disabled"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Siesta.xcodeproj",
+        "target": "SiestaUI iOS",
+        "destination": "generic/platform=iOS",
+        "configuration": "Release"
+      },
+      {
+        "action": "BuildXcodeProjectTarget",
+        "project": "Siesta.xcodeproj",
+        "target": "SiestaUI macOS",
+        "destination": "generic/platform=macOS",
+        "configuration": "Release",
+        "tags": "sourcekit-disabled"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-algorithms",
+    "path": "swift-algorithms",
+    "branch": "main",
+    "maintainer": "natecook@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "3864606e00177c3438db075df56659cdfbc01ca8"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Windows"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-argument-parser",
+    "path": "swift-argument-parser",
+    "branch": "main",
+    "maintainer": "natecook@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "41f5fe52a34b2c7b9938996387fabfaca21918bd"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Windows"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-atomics",
+    "path": "swift-atomics",
+    "branch": "main",
+    "maintainer": "klorentey@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "df9f811f19a852fa7b78af9cffa8ec447eaeb40a"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-cluster-membership",
+    "path": "swift-cluster-membership",
+    "branch": "main",
+    "maintainer": "ktoso@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "e9619146a1198253c587f6f34c0869d3a98b0c76"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-collections",
+    "path": "swift-collections",
+    "branch": "main",
+    "maintainer": "klorentey@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "27432ccb77082cf4bf1f79fd900f0338642fab8a"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux",
+      "Windows"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-collections-benchmark",
+    "path": "swift-collections-benchmark",
+    "branch": "main",
+    "maintainer": "klorentey@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "49297647d1c0855eb33ec18cd6ee1181727c159b"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-crypto",
+    "path": "swift-crypto",
+    "branch": "main",
+    "maintainer": "cbenfield@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "127d3745c37b5705e4bc8d16c7951c48dcc3332c"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux",
+      "Windows"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-distributed-actors",
+    "path": "swift-distributed-actors",
+    "branch": "main",
+    "maintainer": "ktoso@apple.com",
+    "build_first": true,
+    "compatibility": [
+      {
+        "version": "5.7",
+        "commit": "e024c1fae5d2b17346c8a2c4482675a70f35fccc"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "build_tests_release": "true",
+        "configuration": "debug",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift-package-manager/issues/7470",
+            "platform": "Darwin",
+            "compatibility": "5.7",
+            "branch": [
+              "release/6.0",
+              "release/6.1"
+            ],
+            "job": [
+              "source-compat"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-distributed-tracing",
+    "path": "swift-distributed-tracing",
+    "branch": "main",
+    "maintainer": "ktoso@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "4733b6ead3b2d3a3b9b63256a9ba5b567687e7f1"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/dfunckt/swift-futures",
+    "path": "swift-futures",
+    "branch": "master",
+    "maintainer": "akiskesoglou@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "68500e5501ca9986e996e16736496b5b2491af87"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/79799",
+            "platform": "Darwin",
+            "compatibility": [
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
+          }
+        ]
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-log",
+    "path": "swift-log",
+    "branch": "main",
+    "maintainer": "ktoso@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "16cfcc60e49d940c93367e5fe0e0533bd27e9733"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux",
+      "Windows"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/86803",
+            "compatibility": [
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ],
+            "platform": "Linux"
+          }
+        ]
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-metrics",
+    "path": "swift-metrics",
+    "branch": "main",
+    "maintainer": "ktoso@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "68e6cb29387754df21d96cb35d09b6ad0f59300f"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-nio",
+    "path": "swift-nio",
+    "branch": "main",
+    "maintainer": "cbenfield@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "45167b8006448c79dda4b7bd604e07a034c15c49"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-nio-extras",
+    "path": "swift-nio-extras",
+    "branch": "main",
+    "maintainer": "cbenfield@apple.com",
+    "compatibility": [
+      {
+        "version": "4.2",
+        "commit": "0dbd54199d06c80a35b441c39ac2ef1b78778740"
+      },
+      {
+        "version": "5.0",
+        "commit": "55f37f388c2cbe717395176fbe8984354d8488d2"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-nio-http2",
+    "path": "swift-nio-http2",
+    "branch": "main",
+    "maintainer": "cbenfield@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "492a77b1867c2d31b08a3d7db63de59a8e2399ac"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-nio-ssh",
+    "path": "swift-nio-ssh",
+    "branch": "main",
+    "maintainer": "cbenfield@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "09778e0388bda898c7592887f2ec84bb81ef21eb"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-nio-ssl",
+    "path": "swift-nio-ssl",
+    "branch": "main",
+    "maintainer": "cbenfield@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "5c07eca3ac2cb05c26712dfc37e513412faf08fd"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/86803",
+            "compatibility": [
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ],
+            "platform": "Linux"
+          }
+        ]
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-nio-transport-services",
+    "path": "swift-nio-transport-services",
+    "branch": "main",
+    "maintainer": "cbenfield@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "e7f5278a26442dc46783ba7e063643d524e414a0"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "sourcekit-disabled swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-numerics",
+    "path": "swift-numerics",
+    "branch": "main",
+    "maintainer": "stephentyrone@gmail.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "2624562948fd284a3e64ad9e96706f51d9a6a6e9"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Windows"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-openapi-generator",
+    "path": "swift-openapi-generator",
+    "branch": "main",
+    "maintainer": "honza@apple.com",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "0bd6d842f7f25047d024fdb6e2b9b8ce932518c2"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-openapi-runtime",
+    "path": "swift-openapi-runtime",
+    "branch": "main",
+    "maintainer": "honza@apple.com",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "7cf0cf2bc44a09dbdba493f8761f25f4758a76a0"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux",
+      "Windows"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/kishikawakatsumi/swift-power-assert",
+    "path": "swift-power-assert",
+    "branch": "main",
+    "maintainer": "kishikawakatsumi@mac.com",
+    "compatibility": [
+      {
+        "version": "5.9",
+        "commit": "e06a8c7588b01957228a59d5009fd24c31f6de38"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Windows"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "tags": "sourcekit sourcekit-smoke"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/abertelrud/swift-protobuf-plugin-example.git",
+    "path": "swift-protobuf-plugin-example",
+    "branch": "main",
+    "maintainer": "anders@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "85bec04626e571ae8391175285e0cf111140fddc"
+      }
+    ],
+    "platforms": [
+      "Darwin"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm",
+        "xfail": [
+          {
+            "issue": "https://github.com/apple/swift/issues/65202",
+            "compatibility": [
+              "5.0"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ]
+          }
+        ]
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-sdk-generator.git",
+    "path": "swift-sdk-generator",
+    "branch": "main",
+    "maintainer": "m_desiatov@apple.com",
+    "compatibility": [
+      {
+        "version": "5.9",
+        "commit": "db85e25d97d0443560cfcff848d20f7690868454"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "xfail": [
+          {
+            "issue": "5.9 and below are not supported",
+            "compatibility": [
+              "5.9"
+            ],
+            "branch": [
+              "release/5.9"
+            ],
+            "job": [
+              "source-compat"
+            ],
+            "platform": "Darwin"
+          },
+          {
+            "issue": "https://github.com/swiftlang/swift/issues/86803",
+            "compatibility": [
+              "5.9"
+            ],
+            "branch": [
+              "main",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ],
+            "platform": "Linux"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-standard-library-preview.git",
+    "path": "swift-standard-library-preview",
+    "branch": "main",
+    "maintainer": "guillaume.lessard@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "6f72db4c56431d2a2aba0ea41697f60f7cd5917e"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux",
+      "Windows"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-system",
+    "path": "swift-system",
+    "branch": "main",
+    "maintainer": "milseman@apple.com",
+    "compatibility": [
+      {
+        "version": "5.0",
+        "commit": "0627d28e6ae514940c6ee061acfd36a3c231b87f"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Windows"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "tags": "swiftpm"
+      },
+      {
+        "action": "TestSwiftPackage"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/apple/swift-testing",
+    "path": "swift-testing",
+    "branch": "main",
+    "maintainer": "bcroom@apple.com",
+    "build_first": true,
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "3ed2f90058afe4437369aee4880890e7fa65d1ec"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux",
+      "Windows"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "configuration": "release",
+        "build_tests": "true",
+        "build_tests_release": "true",
+        "tags": "swiftpm",
+        "xfail": [
+          {
+            "issue": "Only Supports 5.10+",
+            "compatibility": [
+              "5.10"
+            ],
+            "branch": [
+              "release/5.8",
+              "release/5.9"
+            ],
+            "job": [
+              "source-compat"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -4498,30 +5301,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/vapor/fluent",
-    "path": "fluent",
-    "branch": "main",
-    "maintainer": "contact@vapor.codes",
-    "compatibility": [
-      {
-        "version": "5.10",
-        "commit": "dfcbeba27a576c20ff181d496f21ecd45d2c1a71"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "build_tests": "true",
-        "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/vapor/fluent-mysql-driver",
     "path": "vapor_fluent-mysql-driver",
     "branch": "main",
@@ -4597,31 +5376,6 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/vapor/jwt-kit.git",
-    "path": "vapor_jwt-kit",
-    "branch": "main",
-    "maintainer": "contact@vapor.codes",
-    "compatibility": [
-      {
-        "version": "5.10",
-        "commit": "faa6f73c313b55b35bafbad5857406a5d4f478c0"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "build_tests": "true",
-        "configuration": "release",
-        "tags": "sourcekit-disabled swiftpm"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
     "url": "https://github.com/vapor/jwt.git",
     "path": "vapor_jwt",
     "branch": "main",
@@ -4645,10 +5399,18 @@
         "xfail": [
           {
             "issue": "rdar://164019335",
-            "compatibility": ["5.10"],
+            "compatibility": [
+              "5.10"
+            ],
             "platform": "Darwin",
-            "branch": ["main", "release/6.2", "release/6.3"],
-            "job": ["source-compat"]
+            "branch": [
+              "main",
+              "release/6.2",
+              "release/6.3"
+            ],
+            "job": [
+              "source-compat"
+            ]
           }
         ]
       }
@@ -4656,19 +5418,20 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/vapor/leaf-kit.git",
-    "path": "vapor_leaf-kit",
+    "url": "https://github.com/vapor/jwt-kit.git",
+    "path": "vapor_jwt-kit",
     "branch": "main",
     "maintainer": "contact@vapor.codes",
     "compatibility": [
       {
         "version": "5.10",
-        "commit": "c04e54753fb30a985b42c3be8530bb94442da9c6"
+        "commit": "faa6f73c313b55b35bafbad5857406a5d4f478c0"
       }
     ],
     "platforms": [
       "Darwin",
-      "Linux"
+      "Linux",
+      "Windows"
     ],
     "actions": [
       {
@@ -4689,6 +5452,31 @@
       {
         "version": "5.10",
         "commit": "dd799be2a92e7207ad86c567e4fc7dd37413ff60"
+      }
+    ],
+    "platforms": [
+      "Darwin",
+      "Linux"
+    ],
+    "actions": [
+      {
+        "action": "BuildSwiftPackage",
+        "build_tests": "true",
+        "configuration": "release",
+        "tags": "sourcekit-disabled swiftpm"
+      }
+    ]
+  },
+  {
+    "repository": "Git",
+    "url": "https://github.com/vapor/leaf-kit.git",
+    "path": "vapor_leaf-kit",
+    "branch": "main",
+    "maintainer": "contact@vapor.codes",
+    "compatibility": [
+      {
+        "version": "5.10",
+        "commit": "c04e54753fb30a985b42c3be8530bb94442da9c6"
       }
     ],
     "platforms": [
@@ -4918,7 +5706,8 @@
     ],
     "platforms": [
       "Darwin",
-      "Linux"
+      "Linux",
+      "Windows"
     ],
     "actions": [
       {
@@ -5129,10 +5918,20 @@
         "xfail": [
           {
             "issue": "https://github.com/swiftlang/swift/issues/75656",
-            "compatibility": ["5.10"],
-            "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
+            "compatibility": [
+              "5.10"
+            ],
+            "branch": [
+              "main",
+              "release/6.0",
+              "release/6.1",
+              "release/6.2",
+              "release/6.3"
+            ],
             "configuration": "debug",
-            "job": ["source-compat"]
+            "job": [
+              "source-compat"
+            ]
           }
         ]
       }
@@ -5140,385 +5939,15 @@
   },
   {
     "repository": "Git",
-    "url": "https://github.com/lolgear/Base64CoderSwiftUI.git",
-    "path": "Base64CoderSwiftUI",
-    "branch": "master",
-    "maintainer": "gaussblurinc@gmail.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "f94c86027607f411e1b2e2f7373df375dc0173d6"
-      }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildXcodeProjectTarget",
-        "project": "Base64CoderSwiftUI.xcodeproj",
-        "target": "Base64CoderSwiftUI",
-        "destination": "generic/platform=iOS",
-        "configuration": "Release",
-        "tags": "sourcekit sourcekit-smoke"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/Quick/Nimble",
-    "path": "Nimble",
+    "url": "https://github.com/LiarPrincess/Violet",
+    "path": "violet",
     "branch": "main",
-    "maintainer": "suicaicoca@gmail.com",
+    "maintainer": "mail@liarprincess.me",
     "compatibility": [
       {
-        "version": "5.0",
-        "commit": "eea5843b34beb559dd51cf004953f75028e47add"
+        "version": "5.3",
+        "commit": "01693c2e4010a788dfd96e9b494b6c4b926262ca"
       }
-    ],
-    "platforms": [
-      "Darwin"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "build_tests": "true",
-        "configuration": "release",
-        "tags": "swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/apple/swift/issues/57431",
-            "compatibility": ["5.0"],
-            "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-            "configuration": "debug",
-            "job": ["source-compat"]
-          }
-        ]
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-collections",
-    "path": "swift-collections",
-    "branch": "main",
-    "maintainer": "klorentey@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "27432ccb77082cf4bf1f79fd900f0338642fab8a"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-collections-benchmark",
-    "path": "swift-collections-benchmark",
-    "branch": "main",
-    "maintainer": "klorentey@apple.com",
-    "compatibility": [
-      {
-        "version": "5.0",
-        "commit": "49297647d1c0855eb33ec18cd6ee1181727c159b"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "tags": "swiftpm"
-      },
-      {
-        "action": "TestSwiftPackage"
-      }
-    ]
-  },
-  {
-     "repository": "Git",
-     "url": "https://github.com/sroebert/mqtt-nio",
-     "path": "mqtt-nio",
-     "branch": "main",
-     "maintainer": "steven@roebert.nl",
-     "compatibility": [
-       {
-         "version": "5.0",
-         "commit": "17794a4ac977b7a30fe6aac669c3a1b3ce55cc21"
-       }
-     ],
-     "platforms": [
-       "Darwin",
-       "Linux"
-     ],
-     "actions": [
-       {
-         "action": "BuildSwiftPackage",
-         "configuration": "release",
-         "tags": "swiftpm"
-       }
-     ]
-   },
-   {
-     "repository": "Git",
-     "url": "https://github.com/LiarPrincess/Violet",
-     "path": "violet",
-     "branch": "main",
-     "maintainer": "mail@liarprincess.me",
-     "compatibility": [
-       {
-         "version": "5.3",
-         "commit": "01693c2e4010a788dfd96e9b494b6c4b926262ca"
-       }
-     ],
-     "platforms": [
-       "Darwin",
-       "Linux"
-     ],
-     "actions": [
-       {
-         "action": "BuildSwiftPackage",
-         "configuration": "release"
-       },
-       {
-         "action": "TestSwiftPackage"
-       }
-     ]
-   },
-  {
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-testing",
-    "path": "swift-testing",
-    "branch": "main",
-    "maintainer": "bcroom@apple.com",
-    "build_first": true,
-    "compatibility": [
-      {
-        "version": "5.10",
-        "commit": "3ed2f90058afe4437369aee4880890e7fa65d1ec"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "build_tests_release": "true",
-        "tags": "swiftpm",
-        "xfail": [
-          {
-            "issue": "Only Supports 5.10+",
-            "compatibility": ["5.10"],
-            "branch": ["release/5.8", "release/5.9"],
-            "job": ["source-compat"]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/vapor/penny-bot.git",
-    "path": "penny-bot",
-    "branch": "main",
-    "maintainer": "penny-bot@mahdibm.com",
-    "build_first": true,
-    "compatibility": [
-      {
-        "version": "6.0",
-        "commit": "a758896be7ed63cf0a80e68b652e07305121bf36"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "build_tests": "true",
-        "build_tests_release": "true",
-        "tags": "swiftpm",
-        "xfail": [
-          {
-            "issue": "https://github.com/swiftlang/swift-package-manager/issues/8292",
-            "compatibility": ["6.0"],
-            "branch": ["main", "release/6.0", "release/6.1", "release/6.2", "release/6.3"],
-            "job": ["source-compat"]
-          }
-        ]
-      },
-      {
-        "action": "TestSwiftPackage",
-        "configuration": "release",
-        "xfail": [
-        ]
-      }
-    ]
-  },{
-    "repository": "Git",
-    "url": "https://github.com/apple/swift-sdk-generator.git",
-    "path": "swift-sdk-generator",
-    "branch": "main",
-    "maintainer": "m_desiatov@apple.com",
-    "compatibility": [
-      {
-        "version": "5.9",
-        "commit": "db85e25d97d0443560cfcff848d20f7690868454"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "configuration": "release",
-        "xfail": [
-          {
-            "issue": "5.9 and below are not supported",
-            "compatibility": ["5.9"],
-            "branch": ["release/5.9"],
-            "job": ["source-compat"],
-            "platform": "Darwin"
-          },
-          {
-            "issue": "https://github.com/swiftlang/swift/issues/86803",
-            "compatibility": ["5.9"],
-            "branch": ["main", "release/6.3"],
-            "job": ["source-compat"],
-            "platform": "Linux"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/hummingbird-project/hummingbird",
-    "path": "hummingbird",
-    "branch": "main",
-    "maintainer": "adamfowler71@gmail.com",
-    "compatibility": [
-      {
-        "version": "5.10",
-        "commit": "61ca04429d4267e7b30423b7199d7285fde7b9c6"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "build_tests": "true",
-        "configuration": "release",
-        "tags": "swiftpm"
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/ordo-one/package-distributed-system",
-    "path": "package-distributed-system",
-    "branch": "main",
-    "maintainer": "swift-source-compat-suite@ordo.one",
-    "compatibility": [
-      {
-        "version": "5.10",
-        "commit": "48e8f8f68a61fffb62400e8298223d7c861c650e"
-      }
-    ],
-    "platforms": [
-      "Darwin",
-      "Linux"
-    ],
-    "actions": [
-      {
-        "action": "BuildSwiftPackage",
-        "build_tests": "true",
-        "configuration": "release",
-  			"tags": "swiftpm",
-        "xfail": [
-          {
-  					"issue": "https://github.com/swiftlang/swift/issues/78863",
-            "compatibility": ["5.10"],
-            "branch": ["release/6.1"],
-            "job": ["source-compat"],
-            "configuration": "release",
-            "platform": "Linux"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "repository": "Git",
-    "url": "https://github.com/brightdigit/SyndiKit",
-    "path": "SyndiKit",
-    "branch": "main",
-    "maintainer": "leo@brightdigit.com",
-    "compatibility": [
-      {
-        "version": "5.5",
-        "commit": "468f15671688bcede7db40b51cbdb78df949e7e1"
-      },      
-      {
-        "version": "5.6",
-        "commit": "468f15671688bcede7db40b51cbdb78df949e7e1"
-      },      
-      {
-        "version": "5.7",
-        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
-      },      
-      {
-        "version": "5.8",
-        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
-      },      
-      {
-        "version": "5.9",
-        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
-      },      
-      {
-        "version": "5.10",
-        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
-      },      
-      {
-        "version": "6.0",
-        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
-      },      
-      {
-        "version": "6.1",
-        "commit": "b4c4e8ee02a897cc90a21a126e662abc264d6180"
-      } 
     ],
     "platforms": [
       "Darwin",
