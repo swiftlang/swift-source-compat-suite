@@ -1,0 +1,32 @@
+name: Pull request
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  soundness:
+    name: Soundness
+    uses: swiftlang/github-workflows/.github/workflows/soundness.yml@main
+    with:
+      api_breakage_check_enabled: false
+      format_check_enabled: false
+      docs_check_enabled: false
+      python_lint_check_enabled: true
+      license_header_check_enabled: true
+      license_header_check_project_name: "Swift Source Compatibility Suite"
+
+  check_projects_list_format:
+    name: Check projects.json Formating
+    uses: swiftlang/github-workflows/.github/workflows/swift_package_test.yml@0.0.6
+    with:
+      linux_os_versions: '["noble"]'
+      linux_swift_versions: '["nightly-main"]'
+      linux_build_command: |
+        python utils/format_projects_list.py --project-index projects.json && git diff --exit-code
+      enable_windows_checks: false
+      enable_ios_checks: false
+      enable_macos_checks: false
