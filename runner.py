@@ -37,7 +37,7 @@ def main():
     args = parse_args()
 
     if args.default_timeout:
-        common.set_default_execute_timeout(args.default_timeout)
+        common.set_default_execute_timeout(args.default_timeout if args.default_timeout > 0 else None)
 
     # DISABLED DUE TO: rdar://59302454.
     # To track removing this line: rdar://59302467.
