@@ -196,7 +196,7 @@ def build_swift_toolchain(workspace: str, args: argparse.Namespace) -> None:
         f'installable_package={workspace}/build/compat_macos/root.tar.gz',
         f'symbols_package={workspace}/build/compat_macos/root-symbols.tar.gz',
     ]
-    common.check_execute(build_command, timeout=9999999)
+    common.check_execute(build_command)
 
 
 def processed_files_contain(processed_files: List[str], file_path: str) -> bool:
@@ -271,7 +271,7 @@ class StressTesterRunner(object):
 
         self._filter_projects(filtered_projects)
         try:
-            common.check_execute(run_cmd, timeout=-1, env=run_env)
+            common.check_execute(run_cmd, env=run_env)
         except common.ExecuteCommandFailure:
             self.compat_runner_failed = True
 
