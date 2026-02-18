@@ -32,6 +32,9 @@ def main() -> int:
     common.debug_print('** RUN SOURCEKIT STRESS TESTER **')
     os.chdir(os.path.dirname(__file__))
 
+    # Disable timeouts by default for stress testing.
+    common.set_default_execute_timeout(None)
+
     args = parse_args()
     common.set_swift_branch(args.swift_branch)
     workspace = common.private_workspace('.')
