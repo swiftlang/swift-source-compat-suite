@@ -145,8 +145,6 @@ def execute(command, timeout=None,
     """
     if timeout is None:
         timeout = DEFAULT_EXECUTE_TIMEOUT
-    elif timeout < 0:
-        timeout = None
     shell_debug_print(command, stderr=stderr)
     returncode = 124  # timeout return code
     try:
