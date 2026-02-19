@@ -299,7 +299,7 @@ Build all projects:
 ```bash
 ./runner.py --swift-branch main --projects projects.json \
   --include-actions 'action.startswith("Build")' \
-  --swiftc $(xcrun -f swiftc)
+  --swiftc $(which swiftc)
 ```
 
 Build a specific project:
@@ -307,14 +307,14 @@ Build a specific project:
 ./runner.py --swift-branch main --projects projects.json \
   --include-actions 'action.startswith("Build")' \
   --include-repos 'path == "Alamofire"' \
-  --swiftc $(xcrun -f swiftc)
+  --swiftc $(which swiftc)
 ```
 
 Build with verbose output:
 ```bash
 ./runner.py --swift-branch main --projects projects.json \
   --include-actions 'action.startswith("Build")' --verbose \
-  --swiftc $(xcrun -f swiftc)
+  --swiftc $(which swiftc)
 ```
 
 ### Building on Linux
@@ -323,7 +323,7 @@ Build all projects:
 ```bash
 ./runner.py --swift-branch main --projects projects.json \
   --include-actions 'action.startswith("BuildSwiftPackage")' \
-  --swiftc /usr/bin/swiftc
+  --swiftc $(which swiftc)
 ```
 
 Build a specific project:
@@ -331,27 +331,42 @@ Build a specific project:
 ./runner.py --swift-branch main --projects projects.json \
   --include-actions 'action.startswith("BuildSwiftPackage")' \
   --include-repos 'path == "Alamofire"' \
-  --swiftc /usr/bin/swiftc
+  --swiftc $(which swiftc)
 ```
 
 ### Building on Windows
 
 Build all projects:
-```bash
-python runner.py --swift-branch main --projects projects.json \
-  --include-actions "action.startswith('BuildSwiftPackage')" \
-  --swiftc C:\Program Files\Swift\bin\swiftc.exe
+```batch
+python runner.py --swift-branch main --projects projects.json ^
+  --include-actions "action.startswith('BuildSwiftPackage')" ^
+  --swiftc %LOCALAPPDATA%\Programs\Swift\Toolchains\0.0.0+Asserts\usr\bin\swiftc.exe
+```
+
+Or using PowerShell:
+```powershell
+python runner.py --swift-branch main --projects projects.json `
+  --include-actions "action.startswith('BuildSwiftPackage')" `
+  --swiftc (where.exe swiftc)
 ```
 
 Build a specific project:
-```bash
-python runner.py --swift-branch main --projects projects.json \
-  --include-actions "action.startswith('BuildSwiftPackage')" \
-  --include-repos "path == 'Alamofire'" \
-  --swiftc C:\Program Files\Swift\bin\swiftc.exe
+```batch
+python runner.py --swift-branch main --projects projects.json ^
+  --include-actions "action.startswith('BuildSwiftPackage')" ^
+  --include-repos "path == 'SyndiKit'" ^
+  --swiftc %LOCALAPPDATA%\Programs\Swift\Toolchains\0.0.0+Asserts\usr\bin\swiftc.exe
 ```
 
-**Note:** On Windows, use forward slashes or escaped backslashes in paths, and use double quotes for arguments containing spaces or special characters.
+Or using PowerShell:
+```powershell
+python runner.py --swift-branch main --projects projects.json `
+  --include-actions "action.startswith('BuildSwiftPackage')" `
+  --include-repos "path == 'SyndiKit'" `
+  --swiftc (where.exe swiftc)
+```
+
+**Note:** On Windows, use `where.exe swiftc` in PowerShell to locate the Swift compiler automatically, or specify the full path if Swift is not in your PATH.
 
 By default, build output is redirected to per-action `.log` files in the current
 working directory. To change this behavior to output build results to standard
