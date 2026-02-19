@@ -10,7 +10,7 @@ on:
 jobs:
   soundness:
     name: Soundness
-    uses: swiftlang/github-workflows/.github/workflows/soundness.yml@main
+    uses: swiftlang/github-workflows/.github/workflows/soundness.yml@0.0.7
     with:
       api_breakage_check_enabled: false
       format_check_enabled: false
@@ -21,7 +21,7 @@ jobs:
 
   check_projects_list_format:
     name: Check projects.json Formating
-    uses: swiftlang/github-workflows/.github/workflows/swift_package_test.yml@0.0.6
+    uses: swiftlang/github-workflows/.github/workflows/swift_package_test.yml@0.0.7
     with:
       linux_os_versions: '["noble"]'
       linux_swift_versions: '["nightly-main"]'
