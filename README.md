@@ -1,16 +1,60 @@
 # Swift Source Compatibility Suite
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Why Add Your Project?](#why-add-your-project)
+- [Continuous Integration](#continuous-integration)
+- [Python Support](#python-support)
+- [Platform Support](#platform-support)
+- [Current List of Projects](#current-list-of-projects)
+- [Adding Projects](#adding-projects)
+  - [Acceptance Criteria](#acceptance-criteria)
+  - [Adding a Project](#adding-a-project)
+- [Maintaining Projects](#maintaining-projects)
+- [Building Projects](#building-projects)
+  - [macOS](#building-on-macos)
+  - [Linux](#building-on-linux)
+  - [Windows](#building-on-windows)
+- [Marking Actions as Expected Failures](#marking-actions-as-expected-failures)
+- [Contributing](#contributing)
+  - [Pull Request Testing](#pull-request-testing)
+
+## Overview
+
 Source compatibility is a strong goal for future Swift releases. To aid in this
 goal, a community owned source compatibility test suite serves to regression
 test changes to the compiler against a (gradually increasing) corpus of Swift
 source code. Projects added to this test suite are periodically built against
-the latest development versions of Swift as part of [Swift's continuous
-integration system](https://ci.swift.org), allowing Swift compiler developers to
+the latest development versions of Swift as part of Swift's continuous
+integration system, allowing Swift compiler developers to
 understand the compatibility impact their changes have on real-world Swift
 projects.
 
+## Why Add Your Project?
+
+Adding your project to the Swift Source Compatibility Suite allows you to catch source-breaking changes in upcoming Swift releases before they're officially released, giving you time to adapt your codebase. Additionally, your project helps Swift compiler developers understand the real-world impact of their changes, ensuring that the evolution of Swift considers practical use cases from the community.
+
+## Continuous Integration
+
+The Swift Source Compatibility Suite runs as part of Swift's continuous integration infrastructure:
+
+- **macOS and Linux**: [https://ci.swift.org](https://ci.swift.org)
+- **Windows**: [https://ci-external.swift.org](https://ci-external.swift.org)
+
 ## Python Support
+
 The Source compatibility suite currently supports Python 3.8+. You may experience performance issues if you attempt to execute any of the associated files with a lesser version of Python 3.
+
+## Platform Support
+
+The Swift Source Compatibility Suite supports building projects on:
+
+- **macOS** (Darwin) - Full support including Xcode projects and Swift Package Manager
+- **Linux** - Full support for Swift Package Manager projects
+- **Windows** - Support for Swift Package Manager projects
+
+Platform-specific features like `xcodebuild` are only available on macOS.
 
 ## Current List of Projects
 
@@ -28,12 +72,12 @@ protection against unintentional source breakage in future Swift releases.
 
 To be accepted into the Swift source compatibility test suite, a project must:
 
-1. Target Linux, macOS, or iOS/tvOS/watchOS device
-2. Be an *Xcode* or *Swift Package Manager* project (Carthage and CocoaPods are currently unsupported but are being explored to be supported in the future)
-3. Support building on either Linux or macOS
+1. Target Linux, Windows, macOS, or iOS/tvOS/watchOS device
+2. Be an *Xcode* or *Swift Package Manager* project
+3. Support building on either Linux, Windows, or macOS
 4. Be contained in a publicly accessible git repository
-5. Maintain a project branch that builds against Swift 4.2 compatibility mode
-   and passes any unit tests
+5. Maintain a project branch that builds against all specified compatibility modes
+   with recent compilers
 6. Have maintainers who will commit to resolve issues in a timely manner
 7. Be compatible with the latest GM/Beta versions of *Xcode* and *swiftpm*
 8. Add value not already included in the suite
@@ -46,14 +90,12 @@ To be accepted into the Swift source compatibility test suite, a project must:
 	* MPL 2.0
 	* CDDL
 
-
 ### Adding a Project
 
 To add a project meeting the acceptance criteria to the suite, perform the
 following steps:
 
-1. Ensure the project builds successfully at a chosen commit against
-   Swift 4.2 GM
+1. Ensure the project builds successfully at each chosen commit using the Swift compatibility version you wish to validate (e.g., 4.2, 5.0, 6.0)
 2. Create a pull request against the [source compatibility suite
    repository](https://github.com/apple/swift-source-compat-suite),
    modifying **projects.json** to include a reference to the project being added
@@ -62,14 +104,16 @@ following steps:
 The project index is a JSON file that contains a list of repositories containing
 Xcode and/or Swift Package Manager target actions.
 
+#### Swift Package Manager Project Template
+
 To add a new Swift Package Manager project, use the following template:
 
-~~~json
+```json
 {
   "repository": "Git",
   "url": "https://github.com/example/project.git",
   "path": "project",
-  "branch": "master",
+  "branch": "main",
   "maintainer": "email@example.com",
   "compatibility": [
     {
@@ -90,29 +134,59 @@ To add a new Swift Package Manager project, use the following template:
     }
   ]
 }
-~~~
+```
+
+**Field Descriptions:**
+
+- `repository`: Must be "Git"
+- `url`: The HTTPS URL to your Git repository
+- `path`: A unique identifier for your project (typically the repo name)
+- `branch`: The default branch to track (e.g., "main" or "master")
+- `maintainer`: Contact email for the project maintainer
+- `compatibility`: List of Swift versions and commits that build successfully
+  - `version`: The earliest Swift version compatible with this commit (e.g., "4.2", "5.0", "6.0")
+  - `commit`: The 40-character Git SHA that builds with this Swift version
+- `platforms`: List of supported platforms: "Darwin", "Linux", or "Windows"
+- `actions`: List of build/test actions to perform
+
+**Optional Fields:**
+
+- `build_tests`: When set to `"true"` on a `BuildSwiftPackage` action, the build will also compile test targets (equivalent to `swift build --build-tests`). This is useful for verifying that test code compiles without actually running the tests.
+
+Example with `build_tests`:
+
+```json
+{
+  "action": "BuildSwiftPackage",
+  "build_tests": "true",
+  "configuration": "release"
+}
+```
 
 The `compatibility` field contains a list of version dictionaries, each
 containing a Swift version and a commit. Commits are checked out before
 building a project in the associated Swift version compatibility mode. The
 Swift version is the earliest version of Swift known to compile the project at
-the given commit. The goal is to have multiple commits at different points in a
-project's history that are compatible with all supported Swift version
-compatibility modes.
+the given commit. Ideally, projects should provide multiple compatibility 
+entries spanning different Swift versions, allowing the test suite to 
+validate that the project builds successfully across various points in its 
+development history.
 
 The `platforms` field specifies the platforms that can be used to build the
-project. Linux and Darwin can currently be specified.
+project. Linux, Darwin, and Windows can currently be specified.
 
 If tests aren't supported, remove the test action entry.
 
+#### Xcode Workspace Template
+
 To add a new Swift Xcode workspace, use the following template:
 
-~~~json
+```json
 {
   "repository": "Git",
   "url": "https://github.com/example/project.git",
   "path": "project",
-  "branch": "master",
+  "branch": "main",
   "maintainer": "email@example.com",
   "compatibility": [
     {
@@ -172,20 +246,22 @@ To add a new Swift Xcode workspace, use the following template:
     }
   ]
 }
-~~~
+```
+
+#### Xcode Project Template
 
 To add a new Swift Xcode project, use the following template:
 
-~~~json
+```json
 {
   "repository": "Git",
   "url": "https://github.com/example/project.git",
   "path": "project",
-  "branch": "master",
+  "branch": "main",
   "maintainer": "email@example.com",
   "compatibility": [
     {
-      "version": "4.2",
+      "version": "6.0",
       "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
     }
   ],
@@ -202,72 +278,86 @@ To add a new Swift Xcode project, use the following template:
     }
   ]
 }
-~~~
-
-After adding a new project to the index, ensure it builds successfully at the
-pinned commits against the specified versions of Swift. In the examples,
-the commits are specified as being compatible with Swift 4.2, which is included
-in Xcode 10.
-
-~~~bash
-# Select Xcode 10 GM
-sudo xcode-select -s /Applications/Xcode.app
-# Build project at pinned commit against selected Xcode
-./project_precommit_check project-path-field --earliest-compatible-swift-version 4.2
-~~~
-
-On Linux, you can build against the Swift 4.2 release toolchain:
-
-~~~bash
-curl -O https://swift.org/builds/swift-4.2-release/ubuntu1604/swift-4.2-RELEASE/swift-4.2-RELEASE-ubuntu16.04.tar.gz
-tar xzvf swift-4.2-RELEASE-ubuntu16.04.tar.gz
-./project_precommit_check project-path-field --earliest-compatible-swift-version 4.2 --swiftc swift-4.2-RELEASE-ubuntu15.10/usr/bin/swiftc
-~~~
+```
 
 ## Maintaining Projects
 
 In the event that Swift introduces a change that breaks source compatibility
 with a project (e.g., a compiler bug fix that fixes wrong behavior in the
-compiler), project maintainers are expected to update their projects and submit
-a new pull request with the updated commit hash within two weeks of being
+compiler), the Swift team will notify the project maintainer via the email address listed in the project's entry. Project maintainers are expected to update their projects and submit a new pull request with the updated commit hash within two weeks of being
 notified. Otherwise, unmaintained projects may be removed from the project
 index.
 
-## Contributing 
-Welcome to the Swift community!
-
-Contributions to /swift-source-compat-suite are welcomed and encouraged! Please see the [Contributing to Swift guide](swift.org/contributing) and check out the [structure of the community](https://www.swift.org/community/#community-structure).
-
-To be a truly great community, Swift needs to welcome developers from all walks of life, with different backgrounds, and with a wide range of experience. A diverse and friendly community will have more great ideas, more unique perspectives, and produce more great code. We will work diligently to make the Swift community welcoming to everyone.
-
-To give clarity of what is expected of our members, Swift has adopted the code of conduct defined by the Contributor Covenant. This document is used across many open source communities, and we think it articulates our values well. For more, see the [Code of Conduct](https://www.swift.org/code-of-conduct/).
-
-### Pull Request Testing
-
-Pull request testing against the Swift source compatibility suite can be
-executed by commenting with `@swift-ci Please test source compatibility` in a
-Swift pull request.
-
 ## Building Projects
 
-To build all projects against a specified Swift compiler locally, use the
-`runner.py` utility as shown below.
+To build projects locally against a specified Swift compiler, use the
+`runner.py` utility.
 
-~~~bash
-./runner.py --swift-branch main --projects projects.json --include-actions 'action.startswith("Build")' --swiftc path/to/swiftc
-~~~
+### Building on macOS
 
-Use the `--include-repos` flag to build a specific project.
+Build all projects:
+```bash
+./runner.py --swift-branch main --projects projects.json \
+  --include-actions 'action.startswith("Build")' \
+  --swiftc $(xcrun -f swiftc)
+```
 
-~~~bash
-./runner.py --swift-branch main --projects projects.json --include-actions 'action.startswith("Build")' --include-repos 'path == "Alamofire"' --swiftc path/to/swiftc
-~~~
+Build a specific project:
+```bash
+./runner.py --swift-branch main --projects projects.json \
+  --include-actions 'action.startswith("Build")' \
+  --include-repos 'path == "Alamofire"' \
+  --swiftc $(xcrun -f swiftc)
+```
+
+Build with verbose output:
+```bash
+./runner.py --swift-branch main --projects projects.json \
+  --include-actions 'action.startswith("Build")' --verbose \
+  --swiftc $(xcrun -f swiftc)
+```
+
+### Building on Linux
+
+Build all projects:
+```bash
+./runner.py --swift-branch main --projects projects.json \
+  --include-actions 'action.startswith("BuildSwiftPackage")' \
+  --swiftc /usr/bin/swiftc
+```
+
+Build a specific project:
+```bash
+./runner.py --swift-branch main --projects projects.json \
+  --include-actions 'action.startswith("BuildSwiftPackage")' \
+  --include-repos 'path == "Alamofire"' \
+  --swiftc /usr/bin/swiftc
+```
+
+### Building on Windows
+
+Build all projects:
+```bash
+python runner.py --swift-branch main --projects projects.json \
+  --include-actions "action.startswith('BuildSwiftPackage')" \
+  --swiftc C:\Program Files\Swift\bin\swiftc.exe
+```
+
+Build a specific project:
+```bash
+python runner.py --swift-branch main --projects projects.json \
+  --include-actions "action.startswith('BuildSwiftPackage')" \
+  --include-repos "path == 'Alamofire'" \
+  --swiftc C:\Program Files\Swift\bin\swiftc.exe
+```
+
+**Note:** On Windows, use forward slashes or escaped backslashes in paths, and use double quotes for arguments containing spaces or special characters.
 
 By default, build output is redirected to per-action `.log` files in the current
 working directory. To change this behavior to output build results to standard
 out, use the `--verbose` flag.
 
-## Marking actions as expected failures
+## Marking Actions as Expected Failures
 
 When an action is expected to fail for an extended period of time, it's
 important to mark the action as an expected failure to make new failures more
@@ -275,20 +365,20 @@ visible.
 
 To mark an action as an expected failure, add an `xfail` entry for the correct
 Swift version and branch to the failing actions, associating each with a link
-to a JIRA issue reporting the relevant failure. The following is an example of
-an action that's XFAIL'd when building against Swift main branch in 4.2
+to a GitHub issue reporting the relevant failure. The following is an example of
+an action that's XFAIL'd when building against Swift main branch in 6.0
 compatibility mode.
 
-~~~json
+```json
 {
   "repository": "Git",
   "url": "https://github.com/example/project.git",
   "path": "project",
-  "branch": "master",
+  "branch": "main",
   "maintainer": "email@example.com",
   "compatibility": [
     {
-      "version": "4.2",
+      "version": "6.0",
       "commit": "195cd8cde2bb717242b3081f9c367ccd0a2f0121"
     }
   ],
@@ -304,33 +394,33 @@ compatibility mode.
       "configuration": "Release",
       "xfail": {
         "issue": "https://github.com/apple/swift/issues/9999",
-        "compatibility": "4.2",
+        "compatibility": "6.0",
         "branch": "main"
       }
     }
   ]
 }
-~~~
+```
 
 Additional Swift branches and versions can be added to XFAIL different
 configurations. The currently supported fields for XFAIL entries are:
 
 - `"compatibility"`: the Swift version(s) it fails with, e.g. `"4.0"`
 - `"branch"`: the branch(es) of the swift compiler it fails with, e.g.
-  `"swift-5.1-branch"`
+  `"release/6.0"`
 - `"platform"`: the platform(s) it fails on, e.g. `"Darwin"` or `"Linux"`
 - `"configuration"`: the build configuration(s) if fails with, i.e. `"release"`
   or `"debug"`)
-- `"job"`: Allows XFailing the project for only the source compatibility build 
-  or the SourceKit Stress Tester. Use `"source-compat"` to only XFail the Source 
-  Compatibility Suite CI job and `"stress-test"` to only stress test the 
+- `"job"`: Allows XFailing the project for only the source compatibility build
+  or the SourceKit Stress Tester. Use `"source-compat"` to only XFail the Source
+  Compatibility Suite CI job and `"stress-test"` to only stress test the
   SourceKit Stress Tester CI job.
 
 Values can either be a single string literal or a list of alternative string
-literals to match against. For example the below action is expected to fail on
-both main and swift-5.1-branch in both 4.0 and 5.1 compatibility modes:
+literals to match against. For example the below action is expected to fail when building with
+both main and release/6.0 branches of swift in both 4.0 and 5.1 compatibility modes:
 
-~~~json
+```json
 ...
 {
   "action": "BuildXcodeProjectTarget",
@@ -341,23 +431,23 @@ both main and swift-5.1-branch in both 4.0 and 5.1 compatibility modes:
   "xfail": {
     "issue": "https://github.com/apple/swift/issues/9999",
     "compatibility": ["4.0", "5.1"],
-    "branch": ["main", "swift-5.1-branch"]
+    "branch": ["main", "release/6.0"]
   }
 }
 ...
-~~~
+```
 
 If an action is failing for different reasons in different configurations, the
 value of the action's `"xfail"` entry can also become a list rather than
 a single entry. In this case the `"issue"` of the first item that matches will
 be reported. In the below example any failure on Linux would be reported as
 *SR-7777*, while a failure on other platforms would be reported as *SR-8888*
-using a toolchain built from the *master* branch and *SR-9999* using a
-toolchain built from *swift-5.1-branch*. If the entries were in the reverse
+using a toolchain built from the *main* branch and *SR-9999* using a
+toolchain built from *release/6.0*. If the entries were in the reverse
 order, *SR-7777* would only be reported for Linux failures with toolchains built
-from a branch other than *main* or *swift-5.1-branch*.
+from a branch other than *main* or *release/6.0*.
 
-~~~json
+```json
 ...
 {
   "action": "BuildXcodeProjectTarget",
@@ -376,9 +466,31 @@ from a branch other than *main* or *swift-5.1-branch*.
     },
     {
       "issue": "https://github.com/apple/swift/issues/9999",
-      "branch": "swift-5.1-branch"
+      "branch": "release/6.0"
     }
   ]
 }
 ...
-~~~
+```
+
+## Contributing
+
+Welcome to the Swift community!
+
+Contributions to swift-source-compat-suite are welcomed and encouraged! Please see the [Contributing to Swift guide](https://swift.org/contributing) and check out the [structure of the community](https://www.swift.org/community/#community-structure).
+
+To be a truly great community, Swift needs to welcome developers from all walks of life, with different backgrounds, and with a wide range of experience. A diverse and friendly community will have more great ideas, more unique perspectives, and produce more great code. We will work diligently to make the Swift community welcoming to everyone.
+
+To give clarity of what is expected of our members, Swift has adopted the code of conduct defined by the Contributor Covenant. This document is used across many open source communities, and we think it articulates our values well. For more, see the [Code of Conduct](https://www.swift.org/code-of-conduct/).
+
+### Pull Request Testing
+
+**Testing changes to the Swift compiler:**
+
+Pull request testing of Swift compiler changes against the Swift source compatibility suite can be
+executed by commenting with `@swift-ci Please test source compatibility` in a
+Swift pull request.
+
+**Testing changes to this repository:**
+
+To test changes to the source compatibility suite infrastructure itself (changes to this repository), comment with `@swift-ci test` in your pull request to this repository.
