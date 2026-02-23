@@ -331,7 +331,7 @@ def build_swift_package(path, swiftc, swift_version, configuration,
     if build_tests:
         command += ['--build-tests']
 
-        if sys.platform == "linux":
+        if sys.platform.startswith(("linux", "win")):
             command += ['--enable-test-discovery']
 
         added_swift_flags += ' -enable-testing'
