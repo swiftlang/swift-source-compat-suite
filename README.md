@@ -7,7 +7,6 @@
 - [Continuous Integration](#continuous-integration)
 - [Python Support](#python-support)
 - [Platform Support](#platform-support)
-- [Current List of Projects](#current-list-of-projects)
 - [Adding Projects](#adding-projects)
   - [Acceptance Criteria](#acceptance-criteria)
   - [Adding a Project](#adding-a-project)
@@ -56,10 +55,6 @@ The Swift Source Compatibility Suite supports building projects on:
 
 Platform-specific features like `xcodebuild` are only available on macOS.
 
-## Current List of Projects
-
-The <a href="https://swift.org/source-compatibility/#current-list-of-projects">current list of projects</a> can be viewed on Swift.org.
-
 ## Adding Projects
 
 The Swift source compatibility test suite is community driven, meaning that open
@@ -97,7 +92,7 @@ following steps:
 
 1. Ensure the project builds successfully at each chosen commit using the Swift compatibility version you wish to validate (e.g., 4.2, 5.0, 6.0)
 2. Create a pull request against the [source compatibility suite
-   repository](https://github.com/apple/swift-source-compat-suite),
+   repository](https://github.com/swiftlang/swift-source-compat-suite),
    modifying **projects.json** to include a reference to the project being added
    to the test suite.
 
@@ -408,7 +403,7 @@ compatibility mode.
       "destination": "generic/platform=iOS",
       "configuration": "Release",
       "xfail": {
-        "issue": "https://github.com/apple/swift/issues/9999",
+        "issue": "https://github.com/swiftlang/swift/issues/9999",
         "compatibility": "6.0",
         "branch": "main"
       }
@@ -444,7 +439,7 @@ both main and release/6.0 branches of swift in both 4.0 and 5.1 compatibility mo
   "destination": "generic/platform=iOS",
   "configuration": "Release",
   "xfail": {
-    "issue": "https://github.com/apple/swift/issues/9999",
+    "issue": "https://github.com/swiftlang/swift/issues/9999",
     "compatibility": ["4.0", "5.1"],
     "branch": ["main", "release/6.0"]
   }
@@ -472,15 +467,15 @@ from a branch other than *main* or *release/6.0*.
   "configuration": "Release",
   "xfail": [
     {
-      "issue": "https://github.com/apple/swift/issues/7777",
+      "issue": "https://github.com/swiftlang/swift/issues/7777",
       "platform": "Linux"
     },
     {
-      "issue": "https://github.com/apple/swift/issues/8888",
+      "issue": "https://github.com/swiftlang/swift/issues/8888",
       "branch": "main"
     },
     {
-      "issue": "https://github.com/apple/swift/issues/9999",
+      "issue": "https://github.com/swiftlang/swift/issues/9999",
       "branch": "release/6.0"
     }
   ]
@@ -492,7 +487,7 @@ from a branch other than *main* or *release/6.0*.
 
 Welcome to the Swift community!
 
-Contributions to swift-source-compat-suite are welcomed and encouraged! Please see the [Contributing to Swift guide](https://swift.org/contributing) and check out the [structure of the community](https://www.swift.org/community/#community-structure).
+Contributions to swift-source-compat-suite are welcomed and encouraged! Please see the [Contributing to Swift guide](https://swift.org/contributing).
 
 To be a truly great community, Swift needs to welcome developers from all walks of life, with different backgrounds, and with a wide range of experience. A diverse and friendly community will have more great ideas, more unique perspectives, and produce more great code. We will work diligently to make the Swift community welcoming to everyone.
 
