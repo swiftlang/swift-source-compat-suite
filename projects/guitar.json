@@ -1,0 +1,28 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/artsabintsev/Guitar.git",
+  "path": "Guitar",
+  "branch": "master",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "7609e913619c606b7b1e3f251f18b906a1ef7272"
+    }
+  ],
+  "maintainer": "arthur@sabintsev.com",
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit sourcekit-smoke swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

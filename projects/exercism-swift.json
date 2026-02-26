@@ -1,0 +1,52 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/exercism/swift.git",
+  "path": "exercism-swift",
+  "branch": "main",
+  "maintainer": "cheyo@masters3d.com",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "3df5e4ab83a9ab47228a46da7263e09a2a2b0b90"
+    },
+    {
+      "version": "5.0",
+      "commit": "3df5e4ab83a9ab47228a46da7263e09a2a2b0b90"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "build_tests": "true",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/78864",
+          "compatibility": [
+            "4.2",
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "configuration": "debug"
+        }
+      ]
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

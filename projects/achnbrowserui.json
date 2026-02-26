@@ -1,0 +1,26 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/Dimillian/ACHNBrowserUI.git",
+  "path": "ACHNBrowserUI",
+  "branch": "main",
+  "maintainer": "ricouard77@gmail.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "5b393fb6af26f86d8f77cbc2272115d605b1e793"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "ACHNBrowserUI/ACHNBrowserUI.xcodeproj",
+      "target": "ACHNBrowserUI",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release",
+      "tags": "sourcekit sourcekit-smoke"
+    }
+  ]
+}

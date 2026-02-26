@@ -1,0 +1,28 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-distributed-tracing",
+  "path": "swift-distributed-tracing",
+  "branch": "main",
+  "maintainer": "ktoso@apple.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "4733b6ead3b2d3a3b9b63256a9ba5b567687e7f1"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "tags": "sourcekit-disabled swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

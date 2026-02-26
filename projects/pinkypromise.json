@@ -1,0 +1,61 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/willowtreeapps/PinkyPromise.git",
+  "path": "PinkyPromise",
+  "branch": "master",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "131ad277b9b63e198606d46999217e9e0cc452c6"
+    },
+    {
+      "version": "5.0",
+      "commit": "131ad277b9b63e198606d46999217e9e0cc452c6"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Windows"
+  ],
+  "maintainer": "connerk@gmail.com",
+  "actions": [
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "PinkyPromise.xcodeproj",
+      "scheme": "PinkyPromise_iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "PinkyPromise.xcodeproj",
+      "scheme": "PinkyPromise_macOS",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "swiftpm"
+    },
+    {
+      "action": "TestXcodeProjectScheme",
+      "project": "PinkyPromise.xcodeproj",
+      "scheme": "PinkyPromise_iOS",
+      "destination": "platform=iOS Simulator,name=iPhone 7",
+      "configuration": "Release"
+    },
+    {
+      "action": "TestXcodeProjectScheme",
+      "project": "PinkyPromise.xcodeproj",
+      "scheme": "PinkyPromise_macOS",
+      "destination": "platform=macOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

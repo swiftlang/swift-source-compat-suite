@@ -1,0 +1,49 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/nodes-ios/Serpent.git",
+  "path": "Serpent",
+  "branch": "master",
+  "maintainer": "ios@nodes.dk",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "61d72cd2fbe8a0e9ab69878eb585a99eb15859cc"
+    },
+    {
+      "version": "5.0",
+      "commit": "61d72cd2fbe8a0e9ab69878eb585a99eb15859cc"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/apple/swift/issues/61615",
+          "compatibility": [
+            "4.2",
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/5.5",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "configuration": "debug"
+        }
+      ]
+    }
+  ]
+}

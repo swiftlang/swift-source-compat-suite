@@ -1,0 +1,25 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/vapor/fluent-sqlite-driver",
+  "path": "vapor_fluent-sqlite-driver",
+  "branch": "main",
+  "maintainer": "contact@vapor.codes",
+  "compatibility": [
+    {
+      "version": "5.10",
+      "commit": "9cc162da8516a8869adeb1e887bc3f6f9af727d8"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm"
+    }
+  ]
+}

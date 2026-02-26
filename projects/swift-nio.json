@@ -1,0 +1,28 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-nio",
+  "path": "swift-nio",
+  "branch": "main",
+  "maintainer": "cbenfield@apple.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "45167b8006448c79dda4b7bd604e07a034c15c49"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "tags": "sourcekit-disabled swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/LiarPrincess/Violet",
+  "path": "violet",
+  "branch": "main",
+  "maintainer": "mail@liarprincess.me",
+  "compatibility": [
+    {
+      "version": "5.3",
+      "commit": "01693c2e4010a788dfd96e9b494b6c4b926262ca"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/Quick/Nimble",
+  "path": "Nimble",
+  "branch": "main",
+  "maintainer": "suicaicoca@gmail.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "eea5843b34beb559dd51cf004953f75028e47add"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/apple/swift/issues/57431",
+          "compatibility": [
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "configuration": "debug",
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

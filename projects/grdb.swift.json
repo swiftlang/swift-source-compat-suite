@@ -1,0 +1,81 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/groue/GRDB.swift.git",
+  "path": "GRDB.swift",
+  "branch": "master",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "5ee47c3c2765bdfde0f44c2ea9a263f6aa252d63"
+    },
+    {
+      "version": "5.1",
+      "commit": "5ee47c3c2765bdfde0f44c2ea9a263f6aa252d63"
+    },
+    {
+      "version": "5.3",
+      "commit": "dd7e7f39e8e4d7a22d258d9809a882f914690b01"
+    },
+    {
+      "version": "5.7",
+      "commit": "2d19cab2b525f885ee8d7efec96093431f6b5f20"
+    },
+    {
+      "version": "6.0",
+      "commit": "6eba24d16952452a8a54f6a639491f3c8215527f"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "maintainer": "gwendal.roue@gmail.com",
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/79796",
+          "platform": "Darwin",
+          "compatibility": [
+            "4.2",
+            "5.1",
+            "5.3",
+            "5.7"
+          ],
+          "branch": [
+            "main",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        },
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/79888",
+          "platform": "Darwin",
+          "configuration": "debug",
+          "compatibility": [
+            "6.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/vapor/async-kit.git",
+  "path": "vapor_async-kit",
+  "branch": "main",
+  "maintainer": "contact@vapor.codes",
+  "compatibility": [
+    {
+      "version": "5.10",
+      "commit": "15b3fb7b2437f9db11f6ddcf365c5b5db8c3a346"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/vapor/sqlite-nio.git",
+  "path": "vapor_sqlite-nio",
+  "branch": "main",
+  "maintainer": "contact@vapor.codes",
+  "compatibility": [
+    {
+      "version": "5.10",
+      "commit": "1b03dafcd8b86047650925325a2bd4d20f6205fd"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm"
+    }
+  ]
+}

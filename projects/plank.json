@@ -1,0 +1,33 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/pinterest/plank.git",
+  "path": "Plank",
+  "branch": "master",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "71a3a5ce5e38161eaf4e46a7f609f2e4523d8248"
+    },
+    {
+      "version": "5.0",
+      "commit": "71a3a5ce5e38161eaf4e46a7f609f2e4523d8248"
+    }
+  ],
+  "maintainer": "rmalik@pinterest.com",
+  "platforms": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

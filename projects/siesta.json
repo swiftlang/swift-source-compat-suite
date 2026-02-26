@@ -1,0 +1,87 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/bustoutsolutions/siesta.git",
+  "path": "siesta",
+  "branch": "main",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "cb9c1bf6dbb89028798b9179fe4d1e1762586057"
+    }
+  ],
+  "maintainer": "cantrell@pobox.com",
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "Siesta.xcodeproj",
+      "target": "Siesta iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "Siesta.xcodeproj",
+      "target": "Siesta macOS",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "Siesta.xcodeproj",
+      "target": "SiestaUI iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "Siesta.xcodeproj",
+      "target": "SiestaUI macOS",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/apple/swift/issues/57431",
+          "compatibility": [
+            "5.0"
+          ],
+          "branch": [
+            "release/6.0",
+            "release/6.1",
+            "release/6.2"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        },
+        {
+          "issue": "https://github.com/apple/swift/issues/57431",
+          "compatibility": [
+            "5.0"
+          ],
+          "configuration": "debug",
+          "branch": [
+            "main",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

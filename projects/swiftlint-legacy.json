@@ -1,0 +1,53 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/realm/SwiftLint.git",
+  "path": "SwiftLint-Legacy",
+  "branch": "master",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "60f98ec50d74c6e6aa7c527493d844960653f3a6"
+    },
+    {
+      "version": "4.2",
+      "commit": "60f98ec50d74c6e6aa7c527493d844960653f3a6"
+    }
+  ],
+  "maintainer": "jp@jpsim.com",
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/apple/swift/issues/61616",
+          "compatibility": [
+            "4.0",
+            "4.2"
+          ],
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "configuration": [
+            "debug"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

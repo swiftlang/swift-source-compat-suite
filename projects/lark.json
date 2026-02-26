@@ -1,0 +1,31 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/Bouke/Lark.git",
+  "path": "Lark",
+  "branch": "master",
+  "maintainer": "bouke@haarsma.eu",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "af39c8ba22ff1c7318a47e06666c4fee9aa9dd50"
+    },
+    {
+      "version": "5.0",
+      "commit": "b1ed2b1393f89a61c04fda9d7c1c91d47bfa680a"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

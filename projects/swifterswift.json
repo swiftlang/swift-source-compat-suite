@@ -1,0 +1,69 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/SwifterSwift/SwifterSwift.git",
+  "path": "SwifterSwift",
+  "branch": "master",
+  "maintainer": "omaralbeik@gmail.com",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "d3c3fdba03cd876baf3c7f675f03ad7c3f32c811"
+    },
+    {
+      "version": "5.0",
+      "commit": "ccdc4e4d8c116de133c993370c81263b87c5a4d6"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "SwifterSwift.xcworkspace",
+      "scheme": "SwifterSwift-iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "SwifterSwift.xcworkspace",
+      "scheme": "SwifterSwift-macOS",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "SwifterSwift.xcworkspace",
+      "scheme": "SwifterSwift-tvOS",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "SwifterSwift.xcworkspace",
+      "scheme": "SwifterSwift-watchOS",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "TestXcodeWorkspaceScheme",
+      "workspace": "SwifterSwift.xcworkspace",
+      "scheme": "SwifterSwift-iOSTests",
+      "destination": "platform=iOS Simulator,name=iPhone 7,OS=10.2"
+    },
+    {
+      "action": "TestXcodeWorkspaceScheme",
+      "workspace": "SwifterSwift.xcworkspace",
+      "scheme": "SwifterSwift-tvOSTests",
+      "destination": "platform=tvOS Simulator,name=Apple TV 1080p"
+    },
+    {
+      "action": "TestXcodeWorkspaceScheme",
+      "workspace": "SwifterSwift.xcworkspace",
+      "scheme": "SwifterSwift-macOSTests",
+      "destination": "platform=macOS"
+    }
+  ]
+}

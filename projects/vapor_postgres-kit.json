@@ -1,0 +1,25 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/vapor/postgres-kit.git",
+  "path": "vapor_postgres-kit",
+  "branch": "main",
+  "maintainer": "contact@vapor.codes",
+  "compatibility": [
+    {
+      "version": "5.10",
+      "commit": "0b72fa83b1023c4b82072e4049a3db6c29781fff"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/ProcedureKit/ProcedureKit.git",
+  "path": "ProcedureKit",
+  "branch": "master",
+  "maintainer": "danthorpe@me.com",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "94193d59bc06689526772023428402da1e0e299f"
+    },
+    {
+      "version": "5.0",
+      "commit": "a7fa565e648d90083c7f10c0c6be9bf249dcdbde"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "ProcedureKit.xcodeproj",
+      "target": "ProcedureKit",
+      "destination": "platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "ProcedureKit.xcodeproj",
+      "target": "ProcedureKit",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "ProcedureKit.xcodeproj",
+      "target": "ProcedureKit",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release",
+      "xfail": [
+        {
+          "issue": "https://github.com/apple/swift/issues/65197",
+          "compatibility": [
+            "4.2",
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "ProcedureKit.xcodeproj",
+      "target": "ProcedureKit",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "ProcedureKit.xcodeproj",
+      "target": "ProcedureKitCloud",
+      "destination": "platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/79797",
+          "platform": "Darwin",
+          "compatibility": [
+            "4.2",
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "TestXcodeProjectTarget",
+      "project": "ProcedureKit.xcodeproj",
+      "target": "ProcedureKit",
+      "destination": "platform=macOS"
+    }
+  ]
+}

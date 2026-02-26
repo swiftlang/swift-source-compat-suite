@@ -1,0 +1,42 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/vapor/jwt.git",
+  "path": "vapor_jwt",
+  "branch": "main",
+  "maintainer": "contact@vapor.codes",
+  "compatibility": [
+    {
+      "version": "5.10",
+      "commit": "f240c5ff4b08cd8839e8a19b036dad81bc7167b1"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "rdar://164019335",
+          "compatibility": [
+            "5.10"
+          ],
+          "platform": "Darwin",
+          "branch": [
+            "main",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    }
+  ]
+}

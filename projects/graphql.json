@@ -1,0 +1,24 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/GraphQLSwift/GraphQL.git",
+  "path": "GraphQL",
+  "branch": "main",
+  "maintainer": "clack@passivelogic.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "7c910f22508b918900c7a91e53638184dc6504d4"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release"
+    }
+  ]
+}

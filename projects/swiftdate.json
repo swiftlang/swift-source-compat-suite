@@ -1,0 +1,47 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/malcommac/SwiftDate",
+  "path": "SwiftDate",
+  "branch": "master",
+  "maintainer": "me@danielemargutti.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "6190d0cefff3013e77ed567e6b074f324e5c5bf5"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "SwiftDate.xcodeproj",
+      "scheme": "SwiftDate-iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "SwiftDate.xcodeproj",
+      "scheme": "SwiftDate-macOS",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "SwiftDate.xcodeproj",
+      "scheme": "SwiftDate-tvOS",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "SwiftDate.xcodeproj",
+      "scheme": "SwiftDate-watchOS",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    }
+  ]
+}

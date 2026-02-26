@@ -1,0 +1,28 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-nio-ssh",
+  "path": "swift-nio-ssh",
+  "branch": "main",
+  "maintainer": "cbenfield@apple.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "09778e0388bda898c7592887f2ec84bb81ef21eb"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "tags": "sourcekit-disabled swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

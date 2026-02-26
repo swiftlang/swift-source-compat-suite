@@ -1,0 +1,75 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/SusanDoggie/Doggie.git",
+  "path": "Doggie",
+  "branch": "main",
+  "maintainer": "susan.doggie@gmail.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "96594678095747b012ffd2899a82c688cbd88c14"
+    },
+    {
+      "version": "5.7",
+      "commit": "9c173f6c44b69593c182bd64d026ebd9f1842373"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/apple/swift/issues/57755",
+          "compatibility": "5.0",
+          "branch": [
+            "release/5.5"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        },
+        {
+          "issue": "https://github.com/apple/swift/issues/70764",
+          "compatibility": "5.0",
+          "branch": [
+            "release/5.9",
+            "release/5.10",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2"
+          ],
+          "configuration": "debug",
+          "platform": "Darwin",
+          "job": [
+            "source-compat"
+          ]
+        },
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/79801",
+          "compatibility": [
+            "5.0",
+            "5.7"
+          ],
+          "branch": [
+            "release/6.1"
+          ],
+          "configuration": "release",
+          "platform": "Darwin",
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

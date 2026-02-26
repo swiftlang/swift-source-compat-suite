@@ -1,0 +1,28 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-system",
+  "path": "swift-system",
+  "branch": "main",
+  "maintainer": "milseman@apple.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "0627d28e6ae514940c6ee061acfd36a3c231b87f"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "tags": "swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

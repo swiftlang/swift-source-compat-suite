@@ -1,0 +1,28 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-algorithms",
+  "path": "swift-algorithms",
+  "branch": "main",
+  "maintainer": "natecook@apple.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "3864606e00177c3438db075df56659cdfbc01ca8"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "tags": "swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

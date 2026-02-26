@@ -1,0 +1,53 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/emaloney/CleanroomLogger.git",
+  "path": "CleanroomLogger",
+  "branch": "master",
+  "maintainer": "emaloney@gilt.com",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "7a75a8a6ae0c43a848c8fb9e261f477405f91664"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "CleanroomLogger.xcodeproj",
+      "scheme": "CleanroomLogger",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "CleanroomLogger.xcodeproj",
+      "scheme": "CleanroomLogger",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "CleanroomLogger.xcodeproj",
+      "scheme": "CleanroomLogger",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "CleanroomLogger.xcodeproj",
+      "scheme": "CleanroomLogger",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "TestXcodeProjectScheme",
+      "project": "CleanroomLogger.xcodeproj",
+      "scheme": "CleanroomLogger",
+      "destination": "platform=macOS"
+    }
+  ]
+}

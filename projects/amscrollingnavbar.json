@@ -1,0 +1,34 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/andreamazz/AMScrollingNavbar.git",
+  "path": "AMScrollingNavbar",
+  "branch": "master",
+  "maintainer": "andrea@fancypixel.it",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "de70ea613ca1648e98650fdade4f003f4223b510"
+    },
+    {
+      "version": "4.2",
+      "commit": "8bfcc8b881634c97d0b46705f0ba43f692ad8644"
+    },
+    {
+      "version": "5.0",
+      "commit": "8bfcc8b881634c97d0b46705f0ba43f692ad8644"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "AMScrollingNavbar.xcodeproj",
+      "target": "AMScrollingNavbar",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    }
+  ]
+}

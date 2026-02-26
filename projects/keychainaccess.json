@@ -1,0 +1,51 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/kishikawakatsumi/KeychainAccess.git",
+  "path": "KeychainAccess",
+  "branch": "master",
+  "maintainer": "kishikawakatsumi@mac.com",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "0fffcc37adcf55d3557f1e06dd0172ace582effe"
+    },
+    {
+      "version": "5.0",
+      "commit": "0fffcc37adcf55d3557f1e06dd0172ace582effe"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "KeychainAccess.xcworkspace",
+      "scheme": "KeychainAccess",
+      "destination": "platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "KeychainAccess.xcworkspace",
+      "scheme": "KeychainAccess",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "KeychainAccess.xcworkspace",
+      "scheme": "KeychainAccess",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "KeychainAccess.xcworkspace",
+      "scheme": "KeychainAccess",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    }
+  ]
+}

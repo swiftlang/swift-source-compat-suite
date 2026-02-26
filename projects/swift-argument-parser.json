@@ -1,0 +1,28 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-argument-parser",
+  "path": "swift-argument-parser",
+  "branch": "main",
+  "maintainer": "natecook@apple.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "41f5fe52a34b2c7b9938996387fabfaca21918bd"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "tags": "swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

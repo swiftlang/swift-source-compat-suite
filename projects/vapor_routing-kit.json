@@ -1,0 +1,26 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/vapor/routing-kit.git",
+  "path": "vapor_routing-kit",
+  "branch": "main",
+  "maintainer": "contact@vapor.codes",
+  "compatibility": [
+    {
+      "version": "5.10",
+      "commit": "8c9a227476555c55837e569be71944e02a056b72"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm"
+    }
+  ]
+}

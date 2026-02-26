@@ -1,0 +1,25 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/vapor/toolbox.git",
+  "path": "vapor_toolbox",
+  "branch": "main",
+  "maintainer": "contact@vapor.codes",
+  "compatibility": [
+    {
+      "version": "5.10",
+      "commit": "3e9a23ad47496ebfc975a31e71dbeefd1eda0386"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm"
+    }
+  ]
+}

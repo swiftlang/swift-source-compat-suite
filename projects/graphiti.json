@@ -1,0 +1,24 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/GraphQLSwift/Graphiti.git",
+  "path": "Graphiti",
+  "branch": "main",
+  "maintainer": "clack@passivelogic.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "64b180e08fe6dcd48d17485f167b8a49c16ad9e9"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release"
+    }
+  ]
+}

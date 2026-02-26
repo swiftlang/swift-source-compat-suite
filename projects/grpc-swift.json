@@ -1,0 +1,42 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/grpc/grpc-swift",
+  "path": "grpc-swift",
+  "branch": "main",
+  "maintainer": "gbarnett@apple.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "a45db1b439bc85b9e18f7ee1a5bf3ec564107819"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift-package-manager/issues/7470",
+          "platform": "Darwin",
+          "compatibility": "5.0",
+          "branch": [
+            "release/6.0",
+            "release/6.1"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

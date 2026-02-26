@@ -1,0 +1,42 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/vapor/template-bare.git",
+  "path": "vapor_template-bare",
+  "branch": "main",
+  "maintainer": "contact@vapor.codes",
+  "compatibility": [
+    {
+      "version": "5.10",
+      "commit": "609c217e9971c5e130114f18c5bfbeb5bedf858c"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/87196",
+          "compatibility": [
+            "5.10"
+          ],
+          "branch": [
+            "main",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "platform": "Darwin"
+        }
+      ]
+    }
+  ]
+}

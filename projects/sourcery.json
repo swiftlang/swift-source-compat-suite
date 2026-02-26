@@ -1,0 +1,45 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/krzysztofzablocki/Sourcery.git",
+  "path": "Sourcery",
+  "branch": "master",
+  "maintainer": "krzysztof.zablocki@pixle.pl",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "6e7daf6065bc21f2be038c00fcaac520fe473b9c"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/79798",
+          "platform": "Darwin",
+          "compatibility": [
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

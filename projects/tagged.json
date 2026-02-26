@@ -1,0 +1,57 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/pointfreeco/swift-tagged.git",
+  "path": "Tagged",
+  "branch": "master",
+  "maintainer": "support@pointfree.co",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "926e8e0c3d893481b94b418118898a8b9e530353"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Tagged.xcworkspace",
+      "scheme": "Tagged_macOS",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Tagged.xcworkspace",
+      "scheme": "Tagged_iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Tagged.xcworkspace",
+      "scheme": "Tagged_tvOS",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Tagged.xcworkspace",
+      "scheme": "Tagged_watchOS",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

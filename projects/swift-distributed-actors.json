@@ -1,0 +1,40 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-distributed-actors",
+  "path": "swift-distributed-actors",
+  "branch": "main",
+  "maintainer": "ktoso@apple.com",
+  "build_first": true,
+  "compatibility": [
+    {
+      "version": "5.7",
+      "commit": "e024c1fae5d2b17346c8a2c4482675a70f35fccc"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "build_tests_release": "true",
+      "configuration": "debug",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift-package-manager/issues/7470",
+          "platform": "Darwin",
+          "compatibility": "5.7",
+          "branch": [
+            "release/6.0",
+            "release/6.1"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    }
+  ]
+}

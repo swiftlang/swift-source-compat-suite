@@ -1,0 +1,41 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/Mikroservices/Smtp.git",
+  "path": "Smtp",
+  "branch": "master",
+  "maintainer": "clack@passivelogic.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "e8f09e1715bdb88499b2722dbd1df140be475d1a"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/87196",
+          "compatibility": [
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "platform": "Darwin"
+        }
+      ]
+    }
+  ]
+}

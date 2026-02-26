@@ -1,0 +1,42 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/vapor/queues-redis-driver.git",
+  "path": "vapor_queues-redis-driver",
+  "branch": "main",
+  "maintainer": "contact@vapor.codes",
+  "compatibility": [
+    {
+      "version": "5.10",
+      "commit": "828e284223516bd895901924e6a6acdb7bfce129"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/87196",
+          "compatibility": [
+            "5.10"
+          ],
+          "branch": [
+            "main",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "platform": "Darwin"
+        }
+      ]
+    }
+  ]
+}

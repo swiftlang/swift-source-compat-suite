@@ -1,0 +1,28 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-cluster-membership",
+  "path": "swift-cluster-membership",
+  "branch": "main",
+  "maintainer": "ktoso@apple.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "e9619146a1198253c587f6f34c0869d3a98b0c76"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "tags": "sourcekit-disabled swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-testing",
+  "path": "swift-testing",
+  "branch": "main",
+  "maintainer": "bcroom@apple.com",
+  "build_first": true,
+  "compatibility": [
+    {
+      "version": "5.10",
+      "commit": "3ed2f90058afe4437369aee4880890e7fa65d1ec"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "build_tests_release": "true",
+      "tags": "swiftpm",
+      "xfail": [
+        {
+          "issue": "Only Supports 5.10+",
+          "compatibility": [
+            "5.10"
+          ],
+          "branch": [
+            "release/5.8",
+            "release/5.9"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    }
+  ]
+}

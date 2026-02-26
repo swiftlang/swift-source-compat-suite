@@ -1,0 +1,28 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/Bouke/SRP.git",
+  "path": "SRP",
+  "branch": "master",
+  "maintainer": "bouke@haarsma.eu",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "c01934477cb0aa14b4da5c3cb61d447bd6393ce0"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

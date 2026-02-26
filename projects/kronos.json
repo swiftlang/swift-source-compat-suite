@@ -1,0 +1,57 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/MobileNativeFoundation/Kronos.git",
+  "path": "Kronos",
+  "branch": "main",
+  "maintainer": "Reflejo@gmail.com",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "d38491d123fb58897ecb339920cf69da479d19d0"
+    },
+    {
+      "version": "4.2",
+      "commit": "d38491d123fb58897ecb339920cf69da479d19d0"
+    },
+    {
+      "version": "5.0",
+      "commit": "d38491d123fb58897ecb339920cf69da479d19d0"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "Kronos.xcodeproj",
+      "target": "Kronos",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "Kronos.xcodeproj",
+      "target": "Kronos",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "Kronos.xcodeproj",
+      "target": "Kronos",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

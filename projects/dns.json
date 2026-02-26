@@ -1,0 +1,31 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/Bouke/DNS.git",
+  "path": "DNS",
+  "branch": "master",
+  "maintainer": "bouke@haarsma.eu",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "04ae84dbaf423214c644590cbe0d837edfbfd411"
+    },
+    {
+      "version": "5.0",
+      "commit": "328a0cdecc07ea973fddaec4b380a068acd97920"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit sourcekit-smoke swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/devxoul/Then.git",
+  "path": "Then",
+  "branch": "master",
+  "maintainer": "devxoul@gmail.com",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "3edb1c0f557506d845362fda6d8564718435bfb1"
+    },
+    {
+      "version": "5.0",
+      "commit": "3edb1c0f557506d845362fda6d8564718435bfb1"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

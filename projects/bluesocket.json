@@ -1,0 +1,37 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/IBM-Swift/BlueSocket",
+  "path": "BlueSocket",
+  "branch": "master",
+  "maintainer": "babt@us.ibm.com",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "fb4e74cd8eb3ce4a2b860fbf727b2dada796d77d"
+    },
+    {
+      "version": "5.0",
+      "commit": "fb4e74cd8eb3ce4a2b860fbf727b2dada796d77d"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "BlueSocket.xcworkspace",
+      "scheme": "Socket",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "BlueSocket.xcworkspace",
+      "scheme": "Socket-iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    }
+  ]
+}

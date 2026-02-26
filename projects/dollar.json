@@ -1,0 +1,31 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/ankurp/Dollar.git",
+  "path": "Dollar",
+  "branch": "master",
+  "maintainer": "ankur.patel@ymail.com",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "433d4ba9a3bec8aa739f05cb8505527aab7a30e7"
+    },
+    {
+      "version": "5.0",
+      "commit": "4feadc1a626424ebd5649aa9537dec361074cd32"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "Dollar.xcodeproj",
+      "scheme": "Dollar",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit sourcekit-smoke"
+    }
+  ]
+}
