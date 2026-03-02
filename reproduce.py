@@ -53,6 +53,13 @@ def parse_args():
     parser.add_argument("--no-prompt",
                         help="default yes to all prompts",
                         action="store_true")
+    projects_group = parser.add_mutually_exclusive_group()
+    projects_group.add_argument('--projects',
+                        metavar='PATH',
+                        help='JSON project file (default: projects.json)')
+    projects_group.add_argument('--projects-dir',
+                        metavar='PATH',
+                        help='directory of per-project JSON files')
     parser.add_argument('--sandbox-profile-xcodebuild',
                         metavar='FILE',
                         help='sandbox xcodebuild build and test operations '
@@ -122,12 +129,15 @@ def main():
     # Build specified indexed project. Otherwise, build all indexed projects
     runner_command = [
         './runner.py',
-        '--projects', 'projects.json',
         '--swift-branch', args.swift_branch,
         '--swift-version', '3',
         '--include-actions', 'action.startswith("Build")',
         '--verbose',
     ]
+    if args.projects_dir:
+        runner_command += ['--projects-dir', args.projects_dir]
+    else:
+        runner_command += ['--projects', args.projects or 'projects.json']
     if args.swiftc:
         runner_command += ['--swiftc', args.swiftc]
     else:

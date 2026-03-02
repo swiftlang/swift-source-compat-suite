@@ -14,7 +14,6 @@
 """Build and optionally test a collection of Swift projects."""
 
 import argparse
-import json
 import sys
 
 import common
@@ -32,8 +31,7 @@ def main():
     """Execute specified indexed project actions."""
     args = parse_args()
 
-    with open(args.projects) as projects:
-        index = json.loads(projects.read())
+    index = project.load_projects(args)
 
     result = project.ProjectListBuilder(
         args.include_repos,
