@@ -11,7 +11,7 @@
 #
 # ===----------------------------------------------------------------------===
 
-"""Check for JSON syntax errors and format a given project index file."""
+"""Check for JSON syntax errors and format a given project index file or directory."""
 
 import argparse
 import os
@@ -31,30 +31,39 @@ def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "project_index",
-        help="a project index file to check (e.g. projects.json)",
+        help="a project index file (e.g. projects.json) or directory of per-project JSON files",
         type=os.path.abspath
     )
     return parser.parse_args()
+
+
+def format_file(path):
+    with open(path) as f:
+        parsed = json.JSONDecoder(
+            object_pairs_hook=collections.OrderedDict
+        ).decode(f.read())
+
+    if isinstance(parsed, list):
+        parsed = sorted(parsed, key=lambda repo: repo['path'])
+
+    json_string = strip_trailing_whitespace(
+        json.dumps(parsed, sort_keys=False, indent=2)
+    )
+
+    with open(path, 'w') as f:
+        f.write(json_string)
 
 
 def main():
     # pylint: disable=I0011,C0111
     args = parse_args()
 
-    with open(args.project_index) as project_index:
-        parsed_project_index = sorted(
-            json.JSONDecoder(
-                object_pairs_hook=collections.OrderedDict
-            ).decode(project_index.read()),
-            key=lambda repo: repo['path']
-        )
-
-    json_string = strip_trailing_whitespace(
-        json.dumps(parsed_project_index, sort_keys=False, indent=2)
-    )
-
-    with open(args.project_index, 'w') as project_index:
-        project_index.write(json_string)
+    if os.path.isdir(args.project_index):
+        for filename in os.listdir(args.project_index):
+            if filename.endswith('.json'):
+                format_file(os.path.join(args.project_index, filename))
+    else:
+        format_file(args.project_index)
 
     return 0
 
