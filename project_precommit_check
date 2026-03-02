@@ -20,7 +20,6 @@ import common
 import project
 
 script_path = os.path.dirname(os.path.realpath(__file__))
-project_list = os.path.join(script_path, 'projects.json')
 runner_path = os.path.join(script_path, 'runner.py')
 supported_configs = {
     'Darwin': {
@@ -173,12 +172,12 @@ def parse_args():
     return parser.parse_args()
 
 
-def validate(project_path, compatibility_version, projects_file=None, projects_dir_path=None):
+def validate(project_path, compatibility_version, projects_file, projects_dir):
     common.debug_print("--- Validating %s Swift version %s compatibility ---" % (project_path, compatibility_version))
 
     args = argparse.Namespace(
-        projects=projects_file or project_list,
-        projects_dir=projects_dir_path,
+        projects=projects_file,
+        projects_dir=projects_dir,
     )
     index = project.load_projects(args)
 
@@ -225,7 +224,7 @@ def is_correct_swift_version(swiftc, compatibility_version):
     return True
 
 
-def check(project, swift_branch, swiftc, compatibility_version, projects_file=None, projects_dir_path=None):
+def check(project, swift_branch, swiftc, compatibility_version, projects_file, projects_dir):
     if not swiftc:
         if platform.system() == 'Darwin':
             common.debug_print("--- Locating swiftc executable ---")
@@ -244,10 +243,10 @@ def check(project, swift_branch, swiftc, compatibility_version, projects_file=No
         '--include-versions', 'version == "%s"' % compatibility_version,
         '--include-actions', 'action.startswith("Build")',
     ]
-    if projects_dir_path:
-        runner_command += ['--projects-dir', projects_dir_path]
+    if projects_dir:
+        runner_command += ['--projects-dir', projects_dir]
     else:
-        runner_command += ['--projects', projects_file or project_list]
+        runner_command += ['--projects', projects_file]
     common.debug_print("--- Executing build actions ---")
     try:
         common.check_execute(runner_command, timeout=common.DEFAULT_EXECUTE_TIMEOUT)
@@ -265,8 +264,8 @@ def main():
     validate(
         args.project,
         args.earliest_compatible_swift_version,
-        projects_file=args.projects,
-        projects_dir_path=args.projects_dir
+        args.projects,
+        args.projects_dir
     )
     config = supported_configs[platform.system()][args.earliest_compatible_swift_version]
     common.set_swift_branch(config['branch'])
@@ -275,8 +274,8 @@ def main():
         config['branch'],
         args.swiftc,
         args.earliest_compatible_swift_version,
-        projects_file=args.projects,
-        projects_dir_path=args.projects_dir
+        args.projects,
+        args.projects_dir
     )
 
 if __name__ == '__main__':
