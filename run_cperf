@@ -242,7 +242,7 @@ def build_swift_toolchain(workspace, args):
 
 def get_projects(suite):
     if suite == 'full':
-        return 'projects.json'
+        return 'projects'
     elif suite == 'smoketest':
         return 'projects-cperf-smoketest.json'
     else:
@@ -299,12 +299,15 @@ def execute_runner(instance, workspace, configs, args):
         runner_command = [
             './runner.py',
             '--swiftc', swiftc_path,
-            '--projects', projects,
             '--build-config', config,
             '--include-actions', actions,
             '--swift-branch', args.swift_branch,
             '--add-swift-flags', flags,
         ]
+        if os.path.isdir(projects):
+            runner_command += ['--projects-dir', projects]
+        else:
+            runner_command += ['--projects', projects]
         if args.sandbox:
             runner_command += get_sandbox_profile_flags()
         if args.verbose:

@@ -31,7 +31,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "project_index",
-        help="a project index file (e.g. projects.json) or directory of per-project JSON files",
+        help="a project index file or directory of per-project JSON files",
         type=os.path.abspath
     )
     return parser.parse_args()

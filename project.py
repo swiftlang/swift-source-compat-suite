@@ -701,13 +701,13 @@ def add_arguments(parser):
     parser.add_argument("--add-swift-flags",
                         metavar="FLAGS",
                         help='add flags to each Swift invocation (note: field '
-                             'names from projects.json enclosed in {} will be '
+                             'names from the project index enclosed in {} will be '
                              'replaced with their value)',
                         default='')
     parser.add_argument("--add-xcodebuild-flags",
                         metavar="FLAGS",
                         help='add flags to each xcodebuild invocation (note: field '
-                             'names from projects.json enclosed in {} will be '
+                             'names from the project index enclosed in {} will be '
                              'replaced with their value)',
                         default='')
     parser.add_argument("--skip-clean",
@@ -719,7 +719,7 @@ def add_arguments(parser):
                         choices=['debug', 'release'],
                         dest='build_config',
                         help='specify "debug" or "release" to override '
-                             'the build configuration in the projects.json file')
+                             'the build configuration in the project index')
     parser.add_argument("--strip-resource-phases",
                         help='strip all resource phases from project file '
                              'before building (default: true)',

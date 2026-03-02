@@ -165,7 +165,7 @@ def parse_args():
     projects_group = parser.add_mutually_exclusive_group()
     projects_group.add_argument('--projects',
                         metavar='PATH',
-                        help='JSON project file (default: projects.json)')
+                        help='JSON project file')
     projects_group.add_argument('--projects-dir',
                         metavar='PATH',
                         help='directory of per-project JSON files')
