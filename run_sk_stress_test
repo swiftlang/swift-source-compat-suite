@@ -20,6 +20,7 @@ import argparse
 import platform
 
 import common
+import project
 from typing import List
 
 script_dir = os.path.abspath(os.path.dirname(__file__))
@@ -56,10 +57,15 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument('swift_branch')
     parser.add_argument('--sandbox', action='store_true')
-    parser.add_argument('--projects',
+    projects_group = parser.add_mutually_exclusive_group()
+    projects_group.add_argument('--projects',
                         metavar='PATH',
                         help='JSON project file',
                         default='projects.json')
+    projects_group.add_argument('--projects-dir',
+                        metavar='PATH',
+                        help='directory of per-project JSON files',
+                        default=None)
     parser.add_argument('--filter-by-tag',
                         metavar='TAG',
                         help='Only run project actions with the given tag',
@@ -171,7 +177,7 @@ def execute_runner(workspace: str, args: argparse.Namespace) -> bool:
     if args.filter_by_project:
         extra_runner_args += ['--include-repos', 'path == "{}"'.format(args.filter_by_project)]
 
-    runner = StressTesterRunner(wrapper_path, stress_tester_path, swiftc_path, args.projects, args.swift_branch, os.path.abspath(args.sourcekit_xfails))
+    runner = StressTesterRunner(wrapper_path, stress_tester_path, swiftc_path, args, args.swift_branch, os.path.abspath(args.sourcekit_xfails))
     passed = runner.run(extra_runner_args)
 
     return passed
@@ -220,13 +226,13 @@ class StressTesterRunner(object):
     swiftc: str
     branch: str
 
-    def __init__(self, wrapper: str, stress_tester: str, swiftc: str, projects_path: str, branch: str, xfails_path: str):
+    def __init__(self, wrapper: str, stress_tester: str, swiftc: str, args: argparse.Namespace, branch: str, xfails_path: str):
         self.wrapper = wrapper
         self.stress_tester = stress_tester
         self.swiftc = swiftc
 
         self.xfails_path = xfails_path
-        self.projects_path = projects_path
+        self.args = args
         self.swift_branch = branch
 
         self.compat_runner_failed = False
@@ -374,21 +380,20 @@ class StressTesterRunner(object):
 
 
     def _filter_projects(self, output: str) -> str:
-        with open(self.projects_path) as json_file:
-            projects = json.load(json_file)
-            for project in projects:
-                for action in project['actions']:
-                    # This is used in combination with --add-xcodebuild-flags
-                    # to prevent running the stress tester over the same files
-                    # for difference architectures. generic/iOS actions
-                    # normally invoke the wrapper for both arm64 and armv7 and
-                    # generic/macOS actions for arm64 and x86_64.
-                    if action.get('destination') == 'generic/platform=iOS':
-                        action['archs_override'] = 'arm64'
-                    elif action.get('destination') == 'generic/platform=macOS':
-                        action['archs_override'] = 'x86_64'
-                    else:
-                        action['archs_override'] = '$ARCHS'
+        projects = project.load_projects(self.args)
+        for entry in projects:
+            for action in entry['actions']:
+                # This is used in combination with --add-xcodebuild-flags
+                # to prevent running the stress tester over the same files
+                # for difference architectures. generic/iOS actions
+                # normally invoke the wrapper for both arm64 and armv7 and
+                # generic/macOS actions for arm64 and x86_64.
+                if action.get('destination') == 'generic/platform=iOS':
+                    action['archs_override'] = 'arm64'
+                elif action.get('destination') == 'generic/platform=macOS':
+                    action['archs_override'] = 'x86_64'
+                else:
+                    action['archs_override'] = '$ARCHS'
 
         with open(output, 'w') as outfile:
             json.dump(projects, outfile, indent=4)
