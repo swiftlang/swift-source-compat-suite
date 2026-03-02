@@ -15,9 +15,9 @@ import sys
 import os
 import argparse
 import platform
-import json
 
 import common
+import project
 
 script_path = os.path.dirname(os.path.realpath(__file__))
 project_list = os.path.join(script_path, 'projects.json')
@@ -163,21 +163,31 @@ def parse_args():
     parser.add_argument('--swiftc',
                         metavar='PATH',
                         help='swiftc executable')
+    projects_group = parser.add_mutually_exclusive_group()
+    projects_group.add_argument('--projects',
+                        metavar='PATH',
+                        help='JSON project file (default: projects.json)')
+    projects_group.add_argument('--projects-dir',
+                        metavar='PATH',
+                        help='directory of per-project JSON files')
     return parser.parse_args()
 
 
-def validate(project_path, compatibility_version):
+def validate(project_path, compatibility_version, projects_file=None, projects_dir_path=None):
     common.debug_print("--- Validating %s Swift version %s compatibility ---" % (project_path, compatibility_version))
 
-    with open(project_list) as projects:
-        index = json.loads(projects.read())
+    args = argparse.Namespace(
+        projects=projects_file or project_list,
+        projects_dir=projects_dir_path,
+    )
+    index = project.load_projects(args)
 
-    project = next((p for p in index if p['path'] == project_path), None)
-    if not project:
+    entry = next((p for p in index if p['path'] == project_path), None)
+    if not entry:
         common.debug_print("error: Unable to find %s in project index ---" % project_path)
         exit(1)
     try:
-        compatibility_dict = {version['version']: version for version in project['compatibility']}
+        compatibility_dict = {version['version']: version for version in entry['compatibility']}
         compatibility_dict[compatibility_version]
     except (IndexError, KeyError, TypeError) as e:
         common.debug_print("error: Unable to find %s Swift version %s compatibility in project index ---" % (project_path, compatibility_version))
@@ -186,7 +196,7 @@ def validate(project_path, compatibility_version):
     common.debug_print("--- Project configured to be compatible with Swift %s ---" % compatibility_version)
 
     common.debug_print("--- Checking %s platform compatibility with %s ---" % (project_path, platform.system()))
-    if not platform.system() in project['platforms']:
+    if not platform.system() in entry['platforms']:
         common.debug_print("error: %s is not configured to be compatible with %s ---" % (project_path, platform.system()))
         common.debug_print("-- Add %s to the platforms list for %s ---" % (platform.system(), project_path))
         exit(1)
@@ -215,7 +225,7 @@ def is_correct_swift_version(swiftc, compatibility_version):
     return True
 
 
-def check(project, swift_branch, swiftc, compatibility_version):
+def check(project, swift_branch, swiftc, compatibility_version, projects_file=None, projects_dir_path=None):
     if not swiftc:
         if platform.system() == 'Darwin':
             common.debug_print("--- Locating swiftc executable ---")
@@ -230,11 +240,14 @@ def check(project, swift_branch, swiftc, compatibility_version):
         runner_path,
         '--swift-branch', swift_branch,
         '--swiftc', swiftc_path,
-        '--projects', project_list,
         '--include-repos', 'path == "%s"' % project,
         '--include-versions', 'version == "%s"' % compatibility_version,
         '--include-actions', 'action.startswith("Build")',
     ]
+    if projects_dir_path:
+        runner_command += ['--projects-dir', projects_dir_path]
+    else:
+        runner_command += ['--projects', projects_file or project_list]
     common.debug_print("--- Executing build actions ---")
     try:
         common.check_execute(runner_command, timeout=common.DEFAULT_EXECUTE_TIMEOUT)
@@ -249,10 +262,22 @@ def main():
     os.chdir(os.path.dirname(__file__))
     args = parse_args()
     common.debug_print('** CHECK **')
-    validate(args.project, args.earliest_compatible_swift_version)
+    validate(
+        args.project,
+        args.earliest_compatible_swift_version,
+        projects_file=args.projects,
+        projects_dir_path=args.projects_dir
+    )
     config = supported_configs[platform.system()][args.earliest_compatible_swift_version]
     common.set_swift_branch(config['branch'])
-    return check(args.project, config['branch'], args.swiftc, args.earliest_compatible_swift_version)
+    return check(
+        args.project,
+        config['branch'],
+        args.swiftc,
+        args.earliest_compatible_swift_version,
+        projects_file=args.projects,
+        projects_dir_path=args.projects_dir
+    )
 
 if __name__ == '__main__':
     sys.exit(main())
