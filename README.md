@@ -93,11 +93,12 @@ following steps:
 1. Ensure the project builds successfully at each chosen commit using the Swift compatibility version you wish to validate (e.g., 4.2, 5.0, 6.0)
 2. Create a pull request against the [source compatibility suite
    repository](https://github.com/swiftlang/swift-source-compat-suite),
-   modifying **projects.json** to include a reference to the project being added
+   adding a new JSON file to the **projects/** directory to include a reference to the project being added
    to the test suite.
 
-The project index is a JSON file that contains a list of repositories containing
-Xcode and/or Swift Package Manager target actions.
+The project index is a directory of per-project JSON files (or alternatively a
+single JSON file containing a list of repositories) with Xcode and/or Swift
+Package Manager target actions.
 
 #### Swift Package Manager Project Template
 
@@ -292,14 +293,14 @@ To build projects locally against a specified Swift compiler, use the
 
 Build all projects:
 ```bash
-./runner.py --swift-branch main --projects projects.json \
+./runner.py --swift-branch main --projects-dir projects \
   --include-actions 'action.startswith("Build")' \
   --swiftc $(which swiftc)
 ```
 
 Build a specific project:
 ```bash
-./runner.py --swift-branch main --projects projects.json \
+./runner.py --swift-branch main --projects-dir projects \
   --include-actions 'action.startswith("Build")' \
   --include-repos 'path == "Alamofire"' \
   --swiftc $(which swiftc)
@@ -307,7 +308,7 @@ Build a specific project:
 
 Build with verbose output:
 ```bash
-./runner.py --swift-branch main --projects projects.json \
+./runner.py --swift-branch main --projects-dir projects \
   --include-actions 'action.startswith("Build")' --verbose \
   --swiftc $(which swiftc)
 ```
@@ -316,14 +317,14 @@ Build with verbose output:
 
 Build all projects:
 ```bash
-./runner.py --swift-branch main --projects projects.json \
+./runner.py --swift-branch main --projects-dir projects \
   --include-actions 'action.startswith("BuildSwiftPackage")' \
   --swiftc $(which swiftc)
 ```
 
 Build a specific project:
 ```bash
-./runner.py --swift-branch main --projects projects.json \
+./runner.py --swift-branch main --projects-dir projects \
   --include-actions 'action.startswith("BuildSwiftPackage")' \
   --include-repos 'path == "Alamofire"' \
   --swiftc $(which swiftc)
@@ -333,21 +334,21 @@ Build a specific project:
 
 Build all projects:
 ```batch
-python runner.py --swift-branch main --projects projects.json ^
+python runner.py --swift-branch main --projects-dir projects ^
   --include-actions "action.startswith('BuildSwiftPackage')" ^
   --swiftc %LOCALAPPDATA%\Programs\Swift\Toolchains\0.0.0+Asserts\usr\bin\swiftc.exe
 ```
 
 Or using PowerShell:
 ```powershell
-python runner.py --swift-branch main --projects projects.json `
+python runner.py --swift-branch main --projects-dir projects `
   --include-actions "action.startswith('BuildSwiftPackage')" `
   --swiftc (where.exe swiftc)
 ```
 
 Build a specific project:
 ```batch
-python runner.py --swift-branch main --projects projects.json ^
+python runner.py --swift-branch main --projects-dir projects ^
   --include-actions "action.startswith('BuildSwiftPackage')" ^
   --include-repos "path == 'SyndiKit'" ^
   --swiftc %LOCALAPPDATA%\Programs\Swift\Toolchains\0.0.0+Asserts\usr\bin\swiftc.exe
@@ -355,13 +356,15 @@ python runner.py --swift-branch main --projects projects.json ^
 
 Or using PowerShell:
 ```powershell
-python runner.py --swift-branch main --projects projects.json `
+python runner.py --swift-branch main --projects-dir projects `
   --include-actions "action.startswith('BuildSwiftPackage')" `
   --include-repos "path == 'SyndiKit'" `
   --swiftc (where.exe swiftc)
 ```
 
 **Note:** On Windows, use `where.exe swiftc` in PowerShell to locate the Swift compiler automatically, or specify the full path if Swift is not in your PATH.
+
+`--projects-dir` accepts a directory of per-project JSON files (one project per file). Alternatively, `--projects` accepts a single JSON file containing a list of project entries. The two options are mutually exclusive.
 
 By default, build output is redirected to per-action `.log` files in the current
 working directory. To change this behavior to output build results to standard
