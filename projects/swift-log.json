@@ -1,0 +1,45 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-log",
+  "path": "swift-log",
+  "branch": "main",
+  "maintainer": "ktoso@apple.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "16cfcc60e49d940c93367e5fe0e0533bd27e9733"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/86803",
+          "compatibility": [
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "platform": "Linux"
+        }
+      ]
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

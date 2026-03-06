@@ -1,0 +1,85 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/lyft/mapper.git",
+  "path": "mapper",
+  "branch": "master",
+  "maintainer": "k@keith.so",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "d501cb83be55d67779dd2dc3e2dea53fdf78c39d"
+    },
+    {
+      "version": "4.2",
+      "commit": "d501cb83be55d67779dd2dc3e2dea53fdf78c39d"
+    },
+    {
+      "version": "5.0",
+      "commit": "877dc54e709058ba1698da1417dd1b92fcb4085d"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "Mapper.xcodeproj",
+      "target": "Mapper",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "Mapper.xcodeproj",
+      "target": "Mapper",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "Mapper.xcodeproj",
+      "target": "Mapper",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "Mapper.xcodeproj",
+      "target": "Mapper",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release",
+      "xfail": [
+        {
+          "issue": "https://github.com/apple/swift/issues/65197",
+          "compatibility": [
+            "4.0",
+            "4.2",
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

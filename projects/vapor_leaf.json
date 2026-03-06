@@ -1,0 +1,42 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/vapor/leaf.git",
+  "path": "vapor_leaf",
+  "branch": "main",
+  "maintainer": "contact@vapor.codes",
+  "compatibility": [
+    {
+      "version": "5.10",
+      "commit": "dd799be2a92e7207ad86c567e4fc7dd37413ff60"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/87196",
+          "compatibility": [
+            "5.10"
+          ],
+          "branch": [
+            "main",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "platform": "Darwin"
+        }
+      ]
+    }
+  ]
+}

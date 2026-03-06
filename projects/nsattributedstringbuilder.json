@@ -1,0 +1,27 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/ethanhuang13/NSAttributedStringBuilder.git",
+  "path": "NSAttributedStringBuilder",
+  "branch": "master",
+  "maintainer": "blesserx@gmail.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "f651c44c5bbac2b598763e138082e5c5e66742a2"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

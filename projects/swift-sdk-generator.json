@@ -1,0 +1,52 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-sdk-generator.git",
+  "path": "swift-sdk-generator",
+  "branch": "main",
+  "maintainer": "m_desiatov@apple.com",
+  "compatibility": [
+    {
+      "version": "5.9",
+      "commit": "db85e25d97d0443560cfcff848d20f7690868454"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "xfail": [
+        {
+          "issue": "5.9 and below are not supported",
+          "compatibility": [
+            "5.9"
+          ],
+          "branch": [
+            "release/5.9"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "platform": "Darwin"
+        },
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/86803",
+          "compatibility": [
+            "5.9"
+          ],
+          "branch": [
+            "main",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "platform": "Linux"
+        }
+      ]
+    }
+  ]
+}

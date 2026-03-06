@@ -1,0 +1,52 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/ReactiveCocoa/ReactiveSwift.git",
+  "path": "ReactiveSwift",
+  "branch": "master",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "46fb4d4a8285286e54929add1d12f384675895c6"
+    },
+    {
+      "version": "5.0",
+      "commit": "e60a8b14536399613ded1c8e651aa31e1867f2ea"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "maintainer": "anders@andersha.com",
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "ReactiveSwift.xcworkspace",
+      "scheme": "ReactiveSwift-macOS",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "ReactiveSwift.xcworkspace",
+      "scheme": "ReactiveSwift-iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "ReactiveSwift.xcworkspace",
+      "scheme": "ReactiveSwift-tvOS",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "ReactiveSwift.xcworkspace",
+      "scheme": "ReactiveSwift-watchOS",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    }
+  ]
+}

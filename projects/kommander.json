@@ -1,0 +1,51 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/intelygenz/Kommander-iOS.git",
+  "path": "kommander",
+  "branch": "master",
+  "maintainer": "alejandro.ruperez@intelygenz.com",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "03555e5e2a517f977ba8736172115f0db2c645a8"
+    },
+    {
+      "version": "5.0",
+      "commit": "03555e5e2a517f977ba8736172115f0db2c645a8"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Kommander.xcworkspace",
+      "scheme": "Kommander",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Kommander.xcworkspace",
+      "scheme": "Kommander macOS",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Kommander.xcworkspace",
+      "scheme": "Kommander tvOS",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Kommander.xcworkspace",
+      "scheme": "Kommander watchOS",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    }
+  ]
+}

@@ -583,6 +583,22 @@ def str2bool(s):
         raise argparse.ArgumentTypeError('true/false boolean value expected.')
 
 
+def load_projects(args):
+    """Load the project list from --projects (JSON file) or --projects-dir (directory).
+    Returns a list of project dicts.
+    """
+    if args.projects:
+        with open(args.projects) as f:
+            return json.loads(f.read())
+    else:
+        entries = [file for file in os.listdir(args.projects_dir) if file.endswith('.json')]
+        index = []
+        for file in entries:
+            with open(os.path.join(args.projects_dir, file)) as f:
+                index.append(json.loads(f.read()))
+        return index
+
+
 def add_arguments(parser):
     """Add common arguments to parser."""
     parser.register('type', 'bool', str2bool)
@@ -607,10 +623,14 @@ def add_arguments(parser):
         parser.add_argument('--override-swift-exec',
                             metavar='PATH',
                             help='override the SWIFT_EXEC that is used to build the projects')
-    parser.add_argument('--projects',
+    projects_group = parser.add_mutually_exclusive_group(required=True)
+    projects_group.add_argument('--projects',
                         metavar='PATH',
-                        required=True,
                         help='JSON project file',
+                        type=os.path.abspath)
+    projects_group.add_argument('--projects-dir',
+                        metavar='PATH',
+                        help='directory of per-project JSON files',
                         type=os.path.abspath)
     parser.add_argument('--swift-version',
                         metavar='VERS',
@@ -681,13 +701,13 @@ def add_arguments(parser):
     parser.add_argument("--add-swift-flags",
                         metavar="FLAGS",
                         help='add flags to each Swift invocation (note: field '
-                             'names from projects.json enclosed in {} will be '
+                             'names from the project index enclosed in {} will be '
                              'replaced with their value)',
                         default='')
     parser.add_argument("--add-xcodebuild-flags",
                         metavar="FLAGS",
                         help='add flags to each xcodebuild invocation (note: field '
-                             'names from projects.json enclosed in {} will be '
+                             'names from the project index enclosed in {} will be '
                              'replaced with their value)',
                         default='')
     parser.add_argument("--skip-clean",
@@ -699,7 +719,7 @@ def add_arguments(parser):
                         choices=['debug', 'release'],
                         dest='build_config',
                         help='specify "debug" or "release" to override '
-                             'the build configuration in the projects.json file')
+                             'the build configuration in the project index')
     parser.add_argument("--strip-resource-phases",
                         help='strip all resource phases from project file '
                              'before building (default: true)',
@@ -734,10 +754,14 @@ def add_minimal_arguments(parser):
     """Add common arguments to parser."""
     parser.add_argument('--verbose',
                         action='store_true')
-    parser.add_argument('--projects',
+    projects_group = parser.add_mutually_exclusive_group(required=True)
+    projects_group.add_argument('--projects',
                         metavar='PATH',
-                        required=True,
                         help='JSON project file',
+                        type=os.path.abspath)
+    projects_group.add_argument('--projects-dir',
+                        metavar='PATH',
+                        help='directory of per-project JSON files',
                         type=os.path.abspath)
     parser.add_argument('--include-repos',
                         metavar='PREDICATE',

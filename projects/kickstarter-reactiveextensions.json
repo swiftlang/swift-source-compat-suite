@@ -1,0 +1,37 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/kickstarter/Kickstarter-ReactiveExtensions",
+  "path": "Kickstarter-ReactiveExtensions",
+  "branch": "master",
+  "maintainer": "appledev@kickstarter.com",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "e3f7786b5bcc7b99c14b9fd313302bb59d9c3fe9"
+    },
+    {
+      "version": "5.0",
+      "commit": "e3f7786b5bcc7b99c14b9fd313302bb59d9c3fe9"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "ReactiveExtensions.xcodeproj",
+      "scheme": "ReactiveExtensions-iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "ReactiveExtensions.xcodeproj",
+      "scheme": "ReactiveExtensions-TestHelpers-iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    }
+  ]
+}

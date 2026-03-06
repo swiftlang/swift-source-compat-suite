@@ -1,0 +1,153 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/JohnEstropia/CoreStore",
+  "path": "CoreStore",
+  "branch": "master",
+  "maintainer": "rommel.estropia@gmail.com",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "83e6082c5646c5eb4d3130ce575ab858df168c59"
+    },
+    {
+      "version": "4.2",
+      "commit": "2863605d845cd9bb255ddd91f47f92717dec637f"
+    },
+    {
+      "version": "5.0",
+      "commit": "b2dba0d6fd0811ce688217b842c4177bd14a84b7"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "CoreStore.xcworkspace",
+      "scheme": "CoreStore iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/78863",
+          "compatibility": [
+            "4.0",
+            "4.2"
+          ],
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "platform": "Darwin"
+        }
+      ]
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "CoreStore.xcworkspace",
+      "scheme": "CoreStore OSX",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/78863",
+          "compatibility": [
+            "4.0",
+            "4.2"
+          ],
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "platform": "Darwin"
+        }
+      ]
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "CoreStore.xcworkspace",
+      "scheme": "CoreStore tvOS",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/78863",
+          "compatibility": [
+            "4.0",
+            "4.2"
+          ],
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "platform": "Darwin"
+        }
+      ]
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "CoreStore.xcworkspace",
+      "scheme": "CoreStore watchOS",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/78863",
+          "compatibility": [
+            "4.0",
+            "4.2"
+          ],
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "platform": "Darwin"
+        }
+      ]
+    },
+    {
+      "action": "TestXcodeWorkspaceScheme",
+      "workspace": "CoreStore.xcworkspace",
+      "scheme": "CoreStore iOS",
+      "destination": "platform=iOS Simulator,name=iPhone 7"
+    },
+    {
+      "action": "TestXcodeWorkspaceScheme",
+      "workspace": "CoreStore.xcworkspace",
+      "scheme": "CoreStore OSX",
+      "destination": "platform=macOS"
+    },
+    {
+      "action": "TestXcodeWorkspaceScheme",
+      "workspace": "CoreStore.xcworkspace",
+      "scheme": "CoreStore tvOS",
+      "destination": "platform=tvOS Simulator,name=Apple TV 1080p"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/mac-cain13/R.swift.git",
+  "path": "R.swift",
+  "branch": "master",
+  "maintainer": "tom@lokhorst.eu",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "f96758593573d3d1d9ae8084721033ab0bf392f6"
+    },
+    {
+      "version": "5.0",
+      "commit": "f96758593573d3d1d9ae8084721033ab0bf392f6"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/apple/swift/issues/65204",
+          "compatibility": [
+            "4.2",
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

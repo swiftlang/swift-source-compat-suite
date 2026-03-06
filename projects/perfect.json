@@ -1,0 +1,42 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/PerfectlySoft/Perfect.git",
+  "path": "Perfect",
+  "branch": "master",
+  "maintainer": "sean@perfect.org",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "cdc17d544ec8e87da5f3b24cdbda8d02d77bb943"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "rdar://83373864",
+          "platform": "Linux",
+          "compatibility": "4.2",
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    }
+  ]
+}

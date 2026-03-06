@@ -1,0 +1,71 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/mxcl/PromiseKit.git",
+  "path": "PromiseKit",
+  "branch": "master",
+  "maintainer": "mxcl@me.com",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "c538a244b110389483c71d5801f7944e042b5b7b"
+    },
+    {
+      "version": "5.0",
+      "commit": "8e5f5d0945afc0bb6ee16a9ac12470722590b563"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "PromiseKit.xcodeproj",
+      "target": "PromiseKit",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "PromiseKit.xcodeproj",
+      "target": "PromiseKit",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "PromiseKit.xcodeproj",
+      "target": "PromiseKit",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release",
+      "xfail": [
+        {
+          "issue": "https://github.com/apple/swift/issues/65197",
+          "compatibility": [
+            "4.0",
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "PromiseKit.xcodeproj",
+      "target": "PromiseKit",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    }
+  ]
+}

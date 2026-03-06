@@ -1,0 +1,57 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/pointfreeco/swift-nonempty.git",
+  "path": "NonEmpty",
+  "branch": "master",
+  "maintainer": "support@pointfree.co",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "6c98dcee567465d85f6655d6d2ff401cebc7aff5"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "NonEmpty.xcworkspace",
+      "scheme": "NonEmpty_macOS",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "NonEmpty.xcworkspace",
+      "scheme": "NonEmpty_iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "NonEmpty.xcworkspace",
+      "scheme": "NonEmpty_tvOS",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "NonEmpty.xcworkspace",
+      "scheme": "NonEmpty_watchOS",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/bignerdranch/Deferred.git",
+  "path": "Deferred",
+  "branch": "master",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "50d16c6dc29318cfa4d5f7e62e2ac7e17ef0404b"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "maintainer": "zachary@bignerdranch.com",
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/75498",
+          "compatibility": [
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "platform": "Linux",
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "Deferred.xcodeproj",
+      "scheme": "MobileDeferred",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "Deferred.xcodeproj",
+      "scheme": "TVDeferred",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "Deferred.xcodeproj",
+      "scheme": "NanoDeferred",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

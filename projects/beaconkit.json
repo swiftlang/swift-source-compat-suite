@@ -1,0 +1,32 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/igor-makarov/BeaconKit.git",
+  "path": "BeaconKit",
+  "branch": "master",
+  "maintainer": "igormaka@gmail.com",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "6e6b0f86670d357d71db0a60fe3b1bb7d24dac33"
+    },
+    {
+      "version": "5.0",
+      "commit": "c40f343a11e6ced4a44f8689bffa3ab4338c38d1"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "debug",
+      "tags": "sourcekit-disabled swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage",
+      "configuration": "debug"
+    }
+  ]
+}

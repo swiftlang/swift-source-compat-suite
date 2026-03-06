@@ -1,0 +1,47 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/onevcat/Kingfisher.git",
+  "path": "Kingfisher",
+  "branch": "master",
+  "maintainer": "onev@onevcat.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "44450a8f564d7c0165f736ba2250649ff8d3e556"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Kingfisher.xcworkspace",
+      "scheme": "Kingfisher",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Kingfisher.xcworkspace",
+      "scheme": "Kingfisher",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Kingfisher.xcworkspace",
+      "scheme": "Kingfisher",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Kingfisher.xcworkspace",
+      "scheme": "Kingfisher",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/ssamadgh/ModelAssistant.git",
+  "path": "ModelAssistant",
+  "branch": "master",
+  "maintainer": "ssamadgh@gmail.com",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "e880839b9185a33acb8683413a89cca44d1955ef"
+    },
+    {
+      "version": "5.0",
+      "commit": "e880839b9185a33acb8683413a89cca44d1955ef"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "ModelAssistant.xcodeproj",
+      "scheme": "ModelAssistant iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    }
+  ]
+}

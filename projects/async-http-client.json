@@ -1,0 +1,28 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/swift-server/async-http-client",
+  "path": "async-http-client",
+  "branch": "main",
+  "maintainer": "ktoso@apple.com",
+  "compatibility": [
+    {
+      "version": "5.4",
+      "commit": "60235983163d040f343a489f7e2e77c1918a8bd9"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

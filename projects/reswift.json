@@ -1,0 +1,51 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/ReSwift/ReSwift.git",
+  "path": "ReSwift",
+  "branch": "master",
+  "maintainer": "Benjamin.Encz@gmail.com",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "beeb3c6368d573980a703ea37ab58e01f2a825c5"
+    },
+    {
+      "version": "5.0",
+      "commit": "beeb3c6368d573980a703ea37ab58e01f2a825c5"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "ReSwift.xcodeproj",
+      "scheme": "ReSwift-iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "ReSwift.xcodeproj",
+      "scheme": "ReSwift-macOS",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "ReSwift.xcodeproj",
+      "scheme": "ReSwift-tvOS",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "ReSwift.xcodeproj",
+      "scheme": "ReSwift-watchOS",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/IBAnimatable/IBAnimatable.git",
+  "path": "IBAnimatable",
+  "branch": "master",
+  "maintainer": "JakeLinAu@gmail.com",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "eb4acb6d78f0181dbcd9cee7bf48a8b95e39d1d7"
+    },
+    {
+      "version": "5.0",
+      "commit": "0776c5c099b308cd0cffe14f8cf89f0371153d03"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "IBAnimatable.xcworkspace",
+      "scheme": "IBAnimatable",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "IBAnimatable.xcworkspace",
+      "scheme": "IBAnimatableApp",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    }
+  ]
+}

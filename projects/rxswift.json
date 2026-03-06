@@ -1,0 +1,182 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/ReactiveX/RxSwift.git",
+  "path": "RxSwift",
+  "branch": "main",
+  "maintainer": "freak4pc@gmail.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "b4307ba0b6425c0ba4178e138799946c3da594f8"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxSwift",
+      "destination": "platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxSwift",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxSwift",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxSwift",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxRelay",
+      "destination": "platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxRelay",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxRelay",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxRelay",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxCocoa",
+      "destination": "platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxCocoa",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxCocoa",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxCocoa",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxBlocking",
+      "destination": "platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxBlocking",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxBlocking",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxBlocking",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxTest",
+      "destination": "platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxTest",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Rx.xcworkspace",
+      "scheme": "RxTest",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift-corelibs-foundation/issues/5108",
+          "compatibility": [
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "platform": "Linux"
+        }
+      ]
+    }
+  ]
+}

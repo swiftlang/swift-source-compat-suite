@@ -1,0 +1,26 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/vapor/jwt-kit.git",
+  "path": "vapor_jwt-kit",
+  "branch": "main",
+  "maintainer": "contact@vapor.codes",
+  "compatibility": [
+    {
+      "version": "5.10",
+      "commit": "faa6f73c313b55b35bafbad5857406a5d4f478c0"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm"
+    }
+  ]
+}

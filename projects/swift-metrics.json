@@ -1,0 +1,28 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-metrics",
+  "path": "swift-metrics",
+  "branch": "main",
+  "maintainer": "ktoso@apple.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "68e6cb29387754df21d96cb35d09b6ad0f59300f"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "tags": "sourcekit-disabled swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

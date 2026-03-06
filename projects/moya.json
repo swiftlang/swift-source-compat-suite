@@ -1,0 +1,27 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/Moya/Moya.git",
+  "path": "Moya",
+  "branch": "master",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "b833221910d1b190743b64dec266aecd9404d859"
+    }
+  ],
+  "maintainer": "ash@ashfurrow.com",
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/realm/SwiftLint.git",
+  "path": "SwiftLint",
+  "branch": "master",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "180d94132758dd183124ab1e63d6aa8e10023ec2"
+    }
+  ],
+  "maintainer": "jp@jpsim.com",
+  "platforms": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "rdar://83374141",
+          "platform": "Linux",
+          "compatibility": "5.0",
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        },
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/79798",
+          "compatibility": [
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

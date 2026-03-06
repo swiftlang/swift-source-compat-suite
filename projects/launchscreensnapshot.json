@@ -1,0 +1,30 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/alexruperez/LaunchScreenSnapshot.git",
+  "path": "launchscreensnapshot",
+  "branch": "master",
+  "maintainer": "contact@alexruperez.com",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "f168b4fd2757cbda7092c3db8685dc2854b80003"
+    },
+    {
+      "version": "5.0",
+      "commit": "a4dcad1fd70e8ac41621e80dd606cbe74dd0c410"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "LaunchScreenSnapshot.xcworkspace",
+      "scheme": "LaunchScreenSnapshot",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    }
+  ]
+}

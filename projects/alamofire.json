@@ -1,0 +1,58 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/Alamofire/Alamofire.git",
+  "path": "Alamofire",
+  "branch": "master",
+  "maintainer": "cnoon@alamofire.org",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "a5cd9e233f24df3583f4b02f7e4722c076ab9032"
+    },
+    {
+      "version": "5.0",
+      "commit": "576437d07f1c7f6db5a848fb3ee6bacc6bcdba24"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Alamofire.xcworkspace",
+      "scheme": "Alamofire iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Alamofire.xcworkspace",
+      "scheme": "Alamofire macOS",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Alamofire.xcworkspace",
+      "scheme": "Alamofire tvOS",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Alamofire.xcworkspace",
+      "scheme": "Alamofire watchOS",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Alamofire.xcworkspace",
+      "scheme": "iOS Example",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    }
+  ]
+}

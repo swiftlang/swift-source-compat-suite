@@ -1,0 +1,44 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/vapor/websocket-kit.git",
+  "path": "vapor_websocket-kit",
+  "branch": "main",
+  "maintainer": "contact@vapor.codes",
+  "compatibility": [
+    {
+      "version": "5.10",
+      "commit": "4232d34efa49f633ba61afde365d3896fc7f8740"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/75656",
+          "compatibility": [
+            "5.10"
+          ],
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "configuration": "debug",
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    }
+  ]
+}

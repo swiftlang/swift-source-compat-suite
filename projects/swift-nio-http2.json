@@ -1,0 +1,28 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-nio-http2",
+  "path": "swift-nio-http2",
+  "branch": "main",
+  "maintainer": "cbenfield@apple.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "492a77b1867c2d31b08a3d7db63de59a8e2399ac"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "tags": "sourcekit-disabled swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}
