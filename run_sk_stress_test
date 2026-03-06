@@ -177,7 +177,8 @@ def execute_runner(workspace: str, args: argparse.Namespace) -> bool:
     if args.filter_by_project:
         extra_runner_args += ['--include-repos', 'path == "{}"'.format(args.filter_by_project)]
 
-    runner = StressTesterRunner(wrapper_path, stress_tester_path, swiftc_path, args, args.swift_branch, os.path.abspath(args.sourcekit_xfails))
+    projects = project.load_projects(args)
+    runner = StressTesterRunner(wrapper_path, stress_tester_path, swiftc_path, projects, args.swift_branch, os.path.abspath(args.sourcekit_xfails))
     passed = runner.run(extra_runner_args)
 
     return passed
@@ -226,13 +227,13 @@ class StressTesterRunner(object):
     swiftc: str
     branch: str
 
-    def __init__(self, wrapper: str, stress_tester: str, swiftc: str, args: argparse.Namespace, branch: str, xfails_path: str):
+    def __init__(self, wrapper: str, stress_tester: str, swiftc: str, projects: list, branch: str, xfails_path: str):
         self.wrapper = wrapper
         self.stress_tester = stress_tester
         self.swiftc = swiftc
 
         self.xfails_path = xfails_path
-        self.args = args
+        self.projects = projects
         self.swift_branch = branch
 
         self.compat_runner_failed = False
@@ -380,8 +381,7 @@ class StressTesterRunner(object):
 
 
     def _filter_projects(self, output: str) -> str:
-        projects = project.load_projects(self.args)
-        for entry in projects:
+        for entry in self.projects:
             for action in entry['actions']:
                 # This is used in combination with --add-xcodebuild-flags
                 # to prevent running the stress tester over the same files
@@ -396,7 +396,7 @@ class StressTesterRunner(object):
                     action['archs_override'] = '$ARCHS'
 
         with open(output, 'w') as outfile:
-            json.dump(projects, outfile, indent=4)
+            json.dump(self.projects, outfile, indent=4)
         return output
 
     @staticmethod
