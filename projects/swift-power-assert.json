@@ -4,6 +4,7 @@
   "path": "swift-power-assert",
   "branch": "main",
   "maintainer": "kishikawakatsumi@mac.com",
+  "build_first": true,
   "compatibility": [
     {
       "version": "5.9",
