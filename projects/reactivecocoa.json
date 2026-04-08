@@ -1,0 +1,83 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/ReactiveCocoa/ReactiveCocoa.git",
+  "path": "ReactiveCocoa",
+  "branch": "master",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "72dd2096c04e66bb10a5dd0c230c7a7ceef467e9"
+    },
+    {
+      "version": "5.0",
+      "commit": "78e2c70921dfe2f291d302cb61d00c9ff1c9bced"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "maintainer": "anders@andersha.com",
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "ReactiveCocoa.xcworkspace",
+      "scheme": "ReactiveCocoa-macOS",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "ReactiveCocoa.xcworkspace",
+      "scheme": "ReactiveCocoa-iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release",
+      "xfail": [
+        {
+          "issue": "rdar://problem/68590422",
+          "compatibility": [
+            "4.0",
+            "5.0"
+          ],
+          "branch": [
+            "release/5.4"
+          ],
+          "configuration": "debug",
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "ReactiveCocoa.xcworkspace",
+      "scheme": "ReactiveCocoa-tvOS",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release",
+      "xfail": [
+        {
+          "issue": "rdar://problem/68590422",
+          "compatibility": [
+            "4.0",
+            "5.0"
+          ],
+          "branch": [
+            "release/5.4"
+          ],
+          "configuration": "debug",
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "ReactiveCocoa.xcworkspace",
+      "scheme": "ReactiveCocoa-watchOS",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    }
+  ]
+}

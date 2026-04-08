@@ -1,0 +1,44 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/daltoniam/Starscream",
+  "path": "Starscream",
+  "branch": "master",
+  "maintainer": "daltoniam@gmail.com",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "114e5df9b6251970a069e8f1c0cbb5802759f0a9"
+    },
+    {
+      "version": "5.0",
+      "commit": "a2ed45c0b2f996cb8c335c4f270ecc68c3bd4c0f"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "examples/AutobahnTest/Autobahn.xcodeproj",
+      "scheme": "Starscream",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "examples/SimpleTest/SimpleTest.xcodeproj",
+      "scheme": "Starscream",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "Starscream.xcodeproj",
+      "scheme": "Starscream",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    }
+  ]
+}

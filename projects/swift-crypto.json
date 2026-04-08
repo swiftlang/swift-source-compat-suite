@@ -1,0 +1,29 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-crypto",
+  "path": "swift-crypto",
+  "branch": "main",
+  "maintainer": "cbenfield@apple.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "127d3745c37b5705e4bc8d16c7951c48dcc3332c"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "tags": "sourcekit-disabled swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/asynchrony/Re-Lax.git",
+  "path": "Re-Lax",
+  "branch": "master",
+  "maintainer": "marksands07@gmail.com",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "4502081d713257bb414d7dffa25f10ba59fa6770"
+    },
+    {
+      "version": "5.0",
+      "commit": "38739c2e30ae554ec78704576e4509190324794c"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "ReLax.xcworkspace",
+      "scheme": "ReLax",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    }
+  ]
+}

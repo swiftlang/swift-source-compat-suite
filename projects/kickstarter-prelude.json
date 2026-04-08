@@ -1,0 +1,34 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/kickstarter/Kickstarter-Prelude",
+  "path": "Kickstarter-Prelude",
+  "branch": "master",
+  "maintainer": "appledev@kickstarter.com",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "8988b02ab963294d98d8f37d1a7dc0ee392fcd8d"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "Prelude.xcodeproj",
+      "scheme": "Prelude-iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "Prelude.xcodeproj",
+      "scheme": "Prelude-UIKit-iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    }
+  ]
+}

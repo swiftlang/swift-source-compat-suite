@@ -1,0 +1,29 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-collections",
+  "path": "swift-collections",
+  "branch": "main",
+  "maintainer": "klorentey@apple.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "27432ccb77082cf4bf1f79fd900f0338642fab8a"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "tags": "swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

@@ -14,7 +14,6 @@
 """Build and optionally compatibility test a collection of Swift projects."""
 
 import argparse
-import json
 import sys
 import os
 import shutil
@@ -60,8 +59,7 @@ def main():
     if args.report_time_path:
         time_reporter = project.TimeReporter(args.report_time_path)
 
-    with open(args.projects) as projects:
-        index = json.loads(projects.read())
+    index = project.load_projects(args)
 
     result = project.ProjectListBuilder(
         args.include_repos,

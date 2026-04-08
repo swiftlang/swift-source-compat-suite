@@ -1,0 +1,28 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-numerics",
+  "path": "swift-numerics",
+  "branch": "main",
+  "maintainer": "stephentyrone@gmail.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "2624562948fd284a3e64ad9e96706f51d9a6a6e9"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "tags": "swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

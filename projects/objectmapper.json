@@ -1,0 +1,51 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/Hearst-DD/ObjectMapper.git",
+  "path": "ObjectMapper",
+  "branch": "master",
+  "maintainer": "tristanhimmelman@gmail.com",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "ed1caa237b9742135996fefe3682b834bb394a6a"
+    },
+    {
+      "version": "5.0",
+      "commit": "ed1caa237b9742135996fefe3682b834bb394a6a"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "ObjectMapper.xcworkspace",
+      "scheme": "ObjectMapper-iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "ObjectMapper.xcworkspace",
+      "scheme": "ObjectMapper-Mac",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "ObjectMapper.xcworkspace",
+      "scheme": "ObjectMapper-tvOS",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "ObjectMapper.xcworkspace",
+      "scheme": "ObjectMapper-watchOS",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    }
+  ]
+}

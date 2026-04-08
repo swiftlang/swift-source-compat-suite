@@ -1,0 +1,61 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/Kitura/Kitura.git",
+  "path": "Kitura",
+  "branch": "master",
+  "maintainer": "danny@dannysung.com",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "f1c3169b5b923ded814e5b1ef5a354720da93a36"
+    },
+    {
+      "version": "5.0",
+      "commit": "8578c439701ecbeea33564d151976727fad16da8"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "rdar://83373628",
+          "platform": "Linux",
+          "compatibility": "5.0",
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        },
+        {
+          "issue": "rdar://83373628",
+          "platform": "Linux",
+          "compatibility": "4.0",
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    }
+  ]
+}

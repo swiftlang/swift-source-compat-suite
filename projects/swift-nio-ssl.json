@@ -1,0 +1,44 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-nio-ssl",
+  "path": "swift-nio-ssl",
+  "branch": "main",
+  "maintainer": "cbenfield@apple.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "5c07eca3ac2cb05c26712dfc37e513412faf08fd"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/86803",
+          "compatibility": [
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "platform": "Linux"
+        }
+      ]
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

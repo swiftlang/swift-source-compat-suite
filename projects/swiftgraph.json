@@ -1,0 +1,34 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/davecom/SwiftGraph.git",
+  "path": "SwiftGraph",
+  "branch": "master",
+  "maintainer": "david@oaksnow.com",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "6c8c5d699db17f3726776656a09f058bb29d76ec"
+    },
+    {
+      "version": "4.2",
+      "commit": "f4948e01657156afbf0687cd4113990dd3c0971d"
+    },
+    {
+      "version": "5.0",
+      "commit": "872092a1285fc61f03bd886f01822145eb13fde4"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm"
+    }
+  ]
+}

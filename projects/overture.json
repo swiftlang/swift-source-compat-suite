@@ -1,0 +1,57 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/pointfreeco/swift-overture.git",
+  "path": "Overture",
+  "branch": "main",
+  "maintainer": "support@pointfree.co",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "f61b98879b61affe3236796ef4daa3d6f9ff783b"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Overture.xcworkspace",
+      "scheme": "Overture_macOS",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Overture.xcworkspace",
+      "scheme": "Overture_iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Overture.xcworkspace",
+      "scheme": "Overture_tvOS",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Overture.xcworkspace",
+      "scheme": "Overture_watchOS",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

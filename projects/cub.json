@@ -1,0 +1,43 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/louisdh/cub.git",
+  "path": "cub",
+  "branch": "master",
+  "maintainer": "louisdhauwe@silverfox.be",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "3574d3fda70091f8dea6494cafa4bca0c340b354"
+    },
+    {
+      "version": "5.0",
+      "commit": "4c7d90d715d16cba5d6bfa3741149d7175b34412"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Cub.xcworkspace",
+      "scheme": "Cub iOS [Double]",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "Cub.xcworkspace",
+      "scheme": "Cub macOS Release [Double]",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "TestXcodeWorkspaceScheme",
+      "workspace": "Cub.xcworkspace",
+      "scheme": "Cub macOS Tests",
+      "destination": "platform=macOS"
+    }
+  ]
+}

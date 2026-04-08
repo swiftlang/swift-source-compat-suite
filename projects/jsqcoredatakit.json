@@ -1,0 +1,36 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/jessesquires/JSQCoreDataKit.git",
+  "path": "JSQCoreDataKit",
+  "branch": "main",
+  "maintainer": "jesse@jessesquires.com",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "e651887d0a621c6b66ca09c2e8cea9fce691c00e"
+    },
+    {
+      "version": "5.0",
+      "commit": "e651887d0a621c6b66ca09c2e8cea9fce691c00e"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "JSQCoreDataKit.xcodeproj",
+      "target": "JSQCoreDataKit",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "TestXcodeProjectScheme",
+      "project": "JSQCoreDataKit.xcodeproj",
+      "scheme": "JSQCoreDataKit-Tests",
+      "destination": "platform=iOS Simulator,name=iPhone X"
+    }
+  ]
+}

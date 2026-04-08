@@ -13,7 +13,6 @@
 
 """Clone and checkout pinned commits for indexed projects."""
 
-import json
 import os
 import argparse
 import platform
@@ -29,10 +28,14 @@ def parse_args():
     parser = argparse.ArgumentParser(
         description="Clone and checkout pinned commits for indexed projects."
     )
-    parser.add_argument('--projects',
+    projects_group = parser.add_mutually_exclusive_group(required=True)
+    projects_group.add_argument('--projects',
                         metavar='PATH',
-                        required=True,
                         help='JSON project file',
+                        type=os.path.abspath)
+    projects_group.add_argument('--projects-dir',
+                        metavar='PATH',
+                        help='directory of per-project JSON files',
                         type=os.path.abspath)
     parser.add_argument('--project-path',
                         metavar='PATH',
@@ -47,8 +50,7 @@ def main():
     os.chdir(os.path.dirname(__file__))
     args = parse_args()
 
-    with open(args.projects) as projects:
-        index = json.loads(projects.read())
+    index = project.load_projects(args)
 
     root_path = common.private_workspace('project_cache')
     total_repos = 0

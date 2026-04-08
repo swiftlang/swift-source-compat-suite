@@ -1,0 +1,28 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-atomics",
+  "path": "swift-atomics",
+  "branch": "main",
+  "maintainer": "klorentey@apple.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "df9f811f19a852fa7b78af9cffa8ec447eaeb40a"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "tags": "swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

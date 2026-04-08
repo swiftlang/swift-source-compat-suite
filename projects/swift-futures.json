@@ -1,0 +1,46 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/dfunckt/swift-futures",
+  "path": "swift-futures",
+  "branch": "master",
+  "maintainer": "akiskesoglou@gmail.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "68500e5501ca9986e996e16736496b5b2491af87"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit-disabled swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/79799",
+          "platform": "Darwin",
+          "compatibility": [
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.1",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

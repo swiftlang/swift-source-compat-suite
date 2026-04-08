@@ -62,10 +62,15 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('swift_branch')
     parser.add_argument('--sandbox', action='store_true')
-    parser.add_argument('--projects',
+    projects_group = parser.add_mutually_exclusive_group()
+    projects_group.add_argument('--projects',
                         metavar='PATH',
                         help='JSON project file',
-                        default='projects.json')
+                        default=None)
+    projects_group.add_argument('--projects-dir',
+                        metavar='PATH',
+                        help='directory of per-project JSON files',
+                        default=None)
     parser.add_argument("--verbose",
                         action='store_true')
     parser.add_argument("--assertions",
@@ -108,13 +113,13 @@ def parse_args():
     parser.add_argument("--add-swift-flags",
                         metavar="FLAGS",
                         help='add flags to each Swift invocation (note: field '
-                             'names from projects.json enclosed in {} will be '
+                             'names from the project index enclosed in {} will be '
                              'replaced with their value)',
                         default='')
     parser.add_argument("--add-xcodebuild-flags",
                         metavar="FLAGS",
                         help='add flags to each xcodebuild invocation (note: field '
-                             'names from projects.json enclosed in {} will be '
+                             'names from the project index enclosed in {} will be '
                              'replaced with their value)',
                         default='')
     parser.add_argument("--distcc",
@@ -125,7 +130,7 @@ def parse_args():
                         choices=['debug', 'release'],
                         dest='build_config',
                         help='specify "debug" or "release" to override '
-                             'the build configuration in the projects.json file')
+                             'the build configuration in the project index')
     parser.add_argument('--cmake-c-launcher',
                         metavar="PATH",
                         help='the absolute path to set CMAKE_C_COMPILER_LAUNCHER for build script')
@@ -198,10 +203,13 @@ def execute_runner(workspace, args, additional_runner_args):
     runner_command = [
         './runner.py',
         '--swiftc', swiftc_path,
-        '--projects', args.projects,
         '--include-actions', action_filter,
         '--swift-branch', args.swift_branch
     ]
+    if args.projects_dir:
+        runner_command += ['--projects-dir', args.projects_dir]
+    else:
+        runner_command += ['--projects', args.projects]
     if args.sandbox:
         if args.test:
             runner_command += get_sandbox_profile_flags_test()

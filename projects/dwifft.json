@@ -1,0 +1,30 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/jflinter/Dwifft.git",
+  "path": "Dwifft",
+  "branch": "master",
+  "maintainer": "jflinter11@gmail.com",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "6e09d221d6589c6f620af810727cfb6a2657d911"
+    },
+    {
+      "version": "5.0",
+      "commit": "c5a9c62a56d6218bc78d97e77bfccbf984e1c95c"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectTarget",
+      "project": "Dwifft.xcodeproj",
+      "target": "Dwifft",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    }
+  ]
+}

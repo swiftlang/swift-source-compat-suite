@@ -1,0 +1,33 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/antitypical/Result.git",
+  "path": "Result",
+  "branch": "master",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "2fe5b325a8a54e77c545b2f511213420da133b8c"
+    },
+    {
+      "version": "5.0",
+      "commit": "c30700bfcab7f555bf1d386fdd609407a94f369c"
+    }
+  ],
+  "maintainer": "matt@diephouse.com",
+  "platforms": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "sourcekit sourcekit-smoke swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}

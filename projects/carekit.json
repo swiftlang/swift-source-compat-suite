@@ -1,0 +1,50 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/carekit-apple/CareKit.git",
+  "path": "CareKit",
+  "branch": "main",
+  "maintainer": "grawson@apple.com",
+  "compatibility": [
+    {
+      "version": "5.0",
+      "commit": "5288dce002c38d81ee6470fc7dbe41f5d80de375"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeWorkspaceScheme",
+      "workspace": "CKWorkspace.xcworkspace",
+      "scheme": "CareKit",
+      "external_build_folder": true,
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "TestXcodeWorkspaceScheme",
+      "workspace": "CKWorkspace.xcworkspace",
+      "scheme": "CareKit",
+      "destination": "platform=iOS Simulator,name=iPhone 11 Pro Max",
+      "xfail": [
+        {
+          "issue": "https://github.com/apple/swift/issues/69581",
+          "compatibility": [
+            "5.0"
+          ],
+          "branch": [
+            "main",
+            "release/6.0",
+            "release/6.2",
+            "release/6.3"
+          ],
+          "job": [
+            "source-compat"
+          ],
+          "platform": "Darwin"
+        }
+      ]
+    }
+  ]
+}

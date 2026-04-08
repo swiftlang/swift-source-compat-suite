@@ -1,0 +1,51 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/mattt/Surge",
+  "path": "Surge",
+  "branch": "master",
+  "maintainer": "rfdickerson@gmail.com",
+  "compatibility": [
+    {
+      "version": "4.2",
+      "commit": "38a328eefe5ffef13d28dcb2804d2772aecf6107"
+    },
+    {
+      "version": "5.0",
+      "commit": "38a328eefe5ffef13d28dcb2804d2772aecf6107"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "Surge.xcodeproj",
+      "scheme": "Surge-iOS",
+      "destination": "generic/platform=iOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "Surge.xcodeproj",
+      "scheme": "Surge-macOS",
+      "destination": "generic/platform=macOS",
+      "configuration": "Release",
+      "tags": "sourcekit-disabled"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "Surge.xcodeproj",
+      "scheme": "Surge-tvOS",
+      "destination": "generic/platform=tvOS",
+      "configuration": "Release"
+    },
+    {
+      "action": "BuildXcodeProjectScheme",
+      "project": "Surge.xcodeproj",
+      "scheme": "Surge-watchOS",
+      "destination": "generic/platform=watchOS",
+      "configuration": "Release"
+    }
+  ]
+}

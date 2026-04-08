@@ -1,0 +1,24 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/RxSwiftCommunity/RxDataSources",
+  "path": "RxDataSources",
+  "branch": "main",
+  "maintainer": "krunoslav.zaher@gmail.com",
+  "compatibility": [
+    {
+      "version": "4.0",
+      "commit": "5458733cb4d2a1ca6a457804921a5fac4b72fca2"
+    }
+  ],
+  "platforms": [
+    "Darwin"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true",
+      "configuration": "release",
+      "tags": "swiftpm"
+    }
+  ]
+}
