@@ -35,6 +35,20 @@
             "source-compat"
           ],
           "platform": "Darwin"
+        },
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/88401",
+          "compatibility": [
+            "5.10"
+          ],
+          "branch": [
+            "release/6.2"
+          ],
+          "platform": "Linux",
+          "configuration": "release",
+          "job": [
+            "source-compat"
+          ]
         }
       ]
     }
