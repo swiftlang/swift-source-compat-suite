@@ -19,7 +19,23 @@
       "action": "BuildSwiftPackage",
       "configuration": "release",
       "build_tests": "true",
-      "tags": "swiftpm"
+      "tags": "swiftpm",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/88397",
+          "compatibility": [
+            "5.0"
+          ],
+          "branch": [
+            "main"
+          ],
+          "platform": "Darwin",
+          "configuration": "debug",
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
     },
     {
       "action": "TestSwiftPackage"
