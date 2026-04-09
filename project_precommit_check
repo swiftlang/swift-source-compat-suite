@@ -162,7 +162,7 @@ def parse_args():
     parser.add_argument('--swiftc',
                         metavar='PATH',
                         help='swiftc executable')
-    projects_group = parser.add_mutually_exclusive_group()
+    projects_group = parser.add_mutually_exclusive_group(required=True)
     projects_group.add_argument('--projects',
                         metavar='PATH',
                         help='JSON project file')

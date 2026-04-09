@@ -53,7 +53,7 @@ def parse_args():
     parser.add_argument("--no-prompt",
                         help="default yes to all prompts",
                         action="store_true")
-    projects_group = parser.add_mutually_exclusive_group()
+    projects_group = parser.add_mutually_exclusive_group(required=True)
     projects_group.add_argument('--projects',
                         metavar='PATH',
                         help='JSON project file')
@@ -137,7 +137,7 @@ def main():
     if args.projects_dir:
         runner_command += ['--projects-dir', args.projects_dir]
     else:
-        runner_command += ['--projects', args.projects or 'projects.json']
+        runner_command += ['--projects', args.projects]
     if args.swiftc:
         runner_command += ['--swiftc', args.swiftc]
     else:
