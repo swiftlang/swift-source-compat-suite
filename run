@@ -62,7 +62,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('swift_branch')
     parser.add_argument('--sandbox', action='store_true')
-    projects_group = parser.add_mutually_exclusive_group()
+    projects_group = parser.add_mutually_exclusive_group(required=True)
     projects_group.add_argument('--projects',
                         metavar='PATH',
                         help='JSON project file',
