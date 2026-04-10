@@ -36,6 +36,20 @@
           "job": [
             "source-compat"
           ]
+        },
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/88396",
+          "compatibility": [
+            "5.10"
+          ],
+          "branch": [
+            "main",
+            "release/6.3",
+            "release/6.2"
+          ],
+          "job": [
+            "source-compat"
+          ]
         }
       ]
     }
