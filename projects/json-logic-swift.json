@@ -23,7 +23,24 @@
     {
       "action": "BuildSwiftPackage",
       "configuration": "release",
-      "build_tests": "true"
+      "build_tests": "true",
+      "xfail": [
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/88451",
+          "platform": "Windows",
+          "configuration": "debug",
+          "compatibility": [
+            "4.2",
+            "5.0"
+          ],
+          "branch": [
+            "main"
+          ],
+          "job": [
+            "source-compat"
+          ]
+        }
+      ]
     },
     {
       "action": "TestSwiftPackage"

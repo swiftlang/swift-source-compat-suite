@@ -63,6 +63,7 @@
             "6.0"
           ],
           "branch": [
+            "main",
             "release/6.1",
             "release/6.2",
             "release/6.3"
