@@ -34,7 +34,8 @@
             "5.0"
           ],
           "branch": [
-            "main"
+            "main",
+            "release/6.4.x"
           ],
           "job": [
             "source-compat"
