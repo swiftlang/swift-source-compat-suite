@@ -1,4 +1,4 @@
-# Swift Source Compatibility Suite
+# Swift Source Compatibility Suite (testing CI)
 
 ## Table of Contents
 
