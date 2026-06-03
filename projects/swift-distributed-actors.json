@@ -7,8 +7,8 @@
   "build_first": true,
   "compatibility": [
     {
-      "version": "5.7",
-      "commit": "e024c1fae5d2b17346c8a2c4482675a70f35fccc"
+      "version": "6.1",
+      "commit": "50e789fbb6db9a9869a60b1915e659bd752e1d42"
     }
   ],
   "platforms": [
@@ -20,33 +20,7 @@
       "action": "BuildSwiftPackage",
       "build_tests": "true",
       "build_tests_release": "true",
-      "configuration": "debug",
-      "xfail": [
-        {
-          "issue": "https://github.com/swiftlang/swift-package-manager/issues/7470",
-          "platform": "Darwin",
-          "compatibility": "5.7",
-          "branch": [
-            "release/6.0",
-            "release/6.1"
-          ],
-          "job": [
-            "source-compat"
-          ]
-        },
-        {
-          "issue": "https://github.com/swiftlang/swift/issues/90052",
-          "platform": "Darwin",
-          "compatibility": "5.7",
-          "branch": [
-            "main",
-            "release/6.4.x"
-          ],
-          "job": [
-            "source-compat"
-          ]
-        }
-      ]
+      "configuration": "debug"
     }
   ]
 }
