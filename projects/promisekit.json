@@ -35,31 +35,11 @@
       "configuration": "Release"
     },
     {
-      "action": "BuildXcodeProjectTarget",
+      "action": "BuildXcodeProjectScheme",
       "project": "PromiseKit.xcodeproj",
-      "target": "PromiseKit",
+      "scheme": "PromiseKit",
       "destination": "generic/platform=watchOS",
-      "configuration": "Release",
-      "xfail": [
-        {
-          "issue": "https://github.com/apple/swift/issues/65197",
-          "compatibility": [
-            "4.0",
-            "5.0"
-          ],
-          "branch": [
-            "main",
-            "release/6.0",
-            "release/6.1",
-            "release/6.2",
-            "release/6.3",
-            "release/6.4.x"
-          ],
-          "job": [
-            "source-compat"
-          ]
-        }
-      ]
+      "configuration": "Release"
     },
     {
       "action": "BuildXcodeProjectTarget",
