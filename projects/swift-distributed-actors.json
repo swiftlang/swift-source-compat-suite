@@ -33,6 +33,18 @@
           "job": [
             "source-compat"
           ]
+        },
+        {
+          "issue": "https://github.com/swiftlang/swift/issues/90052",
+          "platform": "Darwin",
+          "compatibility": "5.7",
+          "branch": [
+            "main",
+            "release/6.4.x"
+          ],
+          "job": [
+            "source-compat"
+          ]
         }
       ]
     }

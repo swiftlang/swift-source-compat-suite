@@ -158,14 +158,17 @@ class XcodeTarget(ProjectTarget):
                       'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO',
                       "IPHONEOS_DEPLOYMENT_TARGET=16.0",
                       "MACOSX_DEPLOYMENT_TARGET=10.13",
-                      "WATCHOS_DEPLOYMENT_TARGET=4.0",
+                      "WATCHOS_DEPLOYMENT_TARGET=9.0",
                       "TVOS_DEPLOYMENT_TARGET=16.0",
                       "SDK_STAT_CACHE_ENABLE=NO",
                       ])
         command += self._added_xcodebuild_flags
 
         if self._destination == 'generic/platform=watchOS':
-            command += ['ARCHS=armv7k']
+            # This is akin to setting ARCHS properly
+            # in the project -- see for reference
+            # https://developer.apple.com/documentation/technotes/tn3117-resolving-build-errors-for-apple-silicon
+            command += ['VALID_ARCHS=$(ARCHS_STANDARD)']
         if self._destination == 'generic/platform=iOS':
             command += ['EXCLUDED_ARCHS=armv7 armv7s']
 
@@ -221,14 +224,17 @@ class XcodeTarget(ProjectTarget):
                       'SWIFT_TREAT_WARNINGS_AS_ERRORS=NO',
                       "IPHONEOS_DEPLOYMENT_TARGET=16.0",
                       "MACOSX_DEPLOYMENT_TARGET=10.13",
-                      "WATCHOS_DEPLOYMENT_TARGET=4.0",
+                      "WATCHOS_DEPLOYMENT_TARGET=9.0",
                       "TVOS_DEPLOYMENT_TARGET=16.0",
                       "SDK_STAT_CACHE_ENABLE=NO",
                       ])
         command += self._added_xcodebuild_flags
 
         if self._destination == 'generic/platform=watchOS':
-            command += ['ARCHS=armv7k']
+            # This is akin to setting ARCHS properly
+            # in the project -- see for reference
+            # https://developer.apple.com/documentation/technotes/tn3117-resolving-build-errors-for-apple-silicon
+            command += ['VALID_ARCHS=$(ARCHS_STANDARD)']
 
         return command
 
