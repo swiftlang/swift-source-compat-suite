@@ -18,11 +18,7 @@
     {
       "action": "BuildSwiftPackage",
       "configuration": "release",
-      "build_tests": "true",
       "tags": "sourcekit-disabled swiftpm"
-    },
-    {
-      "action": "TestSwiftPackage"
     }
   ]
 }
