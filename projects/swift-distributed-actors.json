@@ -7,7 +7,7 @@
   "build_first": true,
   "compatibility": [
     {
-      "version": "6.1",
+      "version": "5.10",
       "commit": "50e789fbb6db9a9869a60b1915e659bd752e1d42"
     }
   ],
