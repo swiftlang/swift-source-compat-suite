@@ -20,24 +20,7 @@
       "action": "BuildSwiftPackage",
       "configuration": "release",
       "build_tests": "true",
-      "tags": "sourcekit-disabled swiftpm",
-      "xfail": [
-        {
-          "issue": "https://github.com/swiftlang/swift/issues/88397",
-          "compatibility": [
-            "5.0"
-          ],
-          "branch": [
-            "main",
-            "release/6.4.x"
-          ],
-          "platform": "Darwin",
-          "configuration": "debug",
-          "job": [
-            "source-compat"
-          ]
-        }
-      ]
+      "tags": "sourcekit-disabled swiftpm"
     },
     {
       "action": "TestSwiftPackage"
