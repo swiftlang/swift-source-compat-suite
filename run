@@ -256,7 +256,7 @@ def execute_build_incremental(workspace, args, additional_runner_args):
 def get_preset_name(args):
     platform_name = None
     if platform.system() == 'Darwin':
-        platform_name = 'macos'
+        platform_name = 'macos_arm64' if platform.machine() == 'arm64' else 'macos'
     elif platform.system() == 'Linux':
         platform_name = 'linux'
     else:
