@@ -35,7 +35,8 @@
           "job": [
             "source-compat"
           ],
-          "platform": "Darwin"
+          "platform": "Darwin",
+          "configuration": "release"
         },
         {
           "issue": "https://github.com/swiftlang/swift/issues/88401",
