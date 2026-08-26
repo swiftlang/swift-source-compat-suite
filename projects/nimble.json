@@ -26,7 +26,6 @@
             "5.0"
           ],
           "branch": [
-            "main",
             "release/6.0",
             "release/6.1",
             "release/6.2",
