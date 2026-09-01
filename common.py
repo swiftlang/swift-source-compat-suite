@@ -61,6 +61,28 @@ def clone_repos(swift_branch, workspace='.'):
     check_execute(checkout_cmd, timeout=60*30)
 
 
+def get_preset_name(base, args):
+    platform_name = None
+    if platform.system() == 'Darwin':
+        platform_name = 'macos_arm64' if platform.machine() == 'arm64' else 'macos'
+    elif platform.system() == 'Linux':
+        platform_name = 'linux'
+    else:
+        raise UnsupportedPlatform
+    assert(platform_name is not None)
+
+    build_type = ''
+    if args.debug:
+        build_type = build_type + 'D'
+    else:
+        build_type = build_type + 'R'
+
+    if args.assertions:
+        build_type = build_type + 'A'
+
+    return f'{base}_{platform_name}_{build_type}'
+
+
 class Unreachable(Exception):
     """An exception to be thrown at an unreachable."""
     def __init__(self, s):

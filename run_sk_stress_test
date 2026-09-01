@@ -183,22 +183,10 @@ def execute_runner(workspace: str, args: argparse.Namespace) -> bool:
     return passed
 
 
-def get_preset_name(args):
-    build_type = ''
-    if args.debug:
-        build_type = build_type + 'D'
-    else:
-        build_type = build_type + 'R'
-
-    if args.assertions:
-        build_type = build_type + 'A'
-
-    return f'sourcekit_stress_test_macos_{build_type}'
-
 def build_swift_toolchain(workspace: str, args: argparse.Namespace) -> None:
     build_command = [
         os.path.join(workspace, 'swift/utils/build-script'),
-        f'--preset={get_preset_name(args)}',
+        f'--preset={common.get_preset_name("sourcekit_stress_test", args)}',
         f'install_destdir={workspace}/build/compat_macos/install',
         f'install_prefix=/toolchain/usr',
         f'install_symroot={workspace}/build/compat_macos/symroot',
