@@ -215,6 +215,17 @@ def execute_runner(workspace, args, additional_runner_args):
             runner_command += get_sandbox_profile_flags_test()
         else:
             runner_command += get_sandbox_profile_flags()
+        # The outer sandbox profiles above already confine the entire build.
+        # Recent swift-main additionally sandboxes every swift-plugin-server
+        # launch by re-invoking sandbox-exec with an inline
+        # `(import "system.sb") ...` profile. On macOS 26+ the kernel refuses
+        # that nested sandbox_apply regardless of what the outer profile
+        # grants, and every macro expansion fails with "produced malformed
+        # response". Disable the inner compiler sandbox here, coupled to
+        # --sandbox, so that defense-in-depth stays intact when no outer
+        # confinement is in force (running the runner locally without
+        # --sandbox keeps swiftc's default plugin sandbox on).
+        args.add_swift_flags = (args.add_swift_flags + ' -disable-sandbox').strip()
     if args.verbose:
         runner_command += ["--verbose"]
 
