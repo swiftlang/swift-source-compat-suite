@@ -65,6 +65,20 @@
           "job": [
             "source-compat"
           ]
+        },
+        {
+          "issue": "rdar://185931146",
+          "compatibility": [
+            "5.0",
+            "5.7"
+          ],
+          "branch": [
+            "main"
+          ],
+          "platform": "Darwin",
+          "job": [
+            "source-compat"
+          ]
         }
       ]
     },
