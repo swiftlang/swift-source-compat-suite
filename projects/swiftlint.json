@@ -52,8 +52,7 @@
           ],
           "job": [
             "source-compat"
-          ],
-          "configuration": "release"
+          ]
         }
       ]
     },

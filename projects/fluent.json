@@ -34,8 +34,7 @@
           "job": [
             "source-compat"
           ],
-          "platform": "Darwin",
-          "configuration": "release"
+          "platform": "Darwin"
         }
       ]
     }
