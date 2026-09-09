@@ -50,7 +50,8 @@
             "release/6.1",
             "release/6.2",
             "release/6.3",
-            "release/6.4.x"
+            "release/6.4.x",
+            "release/6.4.0"
           ],
           "job": [
             "source-compat"
@@ -68,7 +69,8 @@
             "release/6.1",
             "release/6.2",
             "release/6.3",
-            "release/6.4.x"
+            "release/6.4.x",
+            "release/6.4.0"
           ],
           "job": [
             "source-compat"
