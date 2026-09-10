@@ -22,24 +22,6 @@
       "tags": "sourcekit-disabled swiftpm",
       "xfail": [
         {
-          "issue": "https://github.com/swiftlang/swift/issues/87196",
-          "compatibility": [
-            "5.10"
-          ],
-          "branch": [
-            "main",
-            "release/6.2",
-            "release/6.3",
-            "release/6.4.x",
-            "release/6.4.0"
-          ],
-          "job": [
-            "source-compat"
-          ],
-          "platform": "Darwin",
-          "configuration": "release"
-        },
-        {
           "issue": "https://github.com/swiftlang/swift/issues/88401",
           "compatibility": [
             "5.10"
