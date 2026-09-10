@@ -5117,5 +5117,341 @@
     "modification" : "unmodified",
     "issueUrl" : "https://github.com/apple/swift/issues/71189",
     "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/listing\/ListingRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1452
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/apple/swift/issues/71189",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoriesView.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1597
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/apple/swift/issues/71189",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoriesView.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1672
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/apple/swift/issues/71189",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoriesView.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1723
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/apple/swift/issues/71189",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoriesView.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1740
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/apple/swift/issues/71189",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoriesView.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1852
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/apple/swift/issues/71189",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoriesView.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1861
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/apple/swift/issues/71189",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/categories\/CategoriesView.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1417
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/apple/swift/issues/71189",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/todayDashboard\/TodayCollectionProgressSection.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1624
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1631
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1657
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1664
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1694
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1700
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1731
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1743
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1770
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1814
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1886
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1892
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1918
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1924
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1954
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1960
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 1991
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2003
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2030
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
+  },
+  {
+    "applicableConfigs" : [
+      "main"
+    ],
+    "issueDetail" : {
+      "kind" : "codeComplete",
+      "offset" : 2074
+    },
+    "modification" : "unmodified",
+    "issueUrl" : "https://github.com/swiftlang/swift/issues/92161",
+    "path" : "*\/ACHNBrowserUI\/ACHNBrowserUI\/views\/turnips\/rows\/TurnipsAveragePriceRow.swift"
   }
 ]
