@@ -31,6 +31,7 @@
           "compatibility": "5.0",
           "branch": [
             "main",
+            "rebranch",
             "release/6.0",
             "release/6.1",
             "release/6.2",
@@ -48,6 +49,7 @@
           "compatibility": "4.0",
           "branch": [
             "main",
+            "rebranch",
             "release/6.0",
             "release/6.1",
             "release/6.2",
