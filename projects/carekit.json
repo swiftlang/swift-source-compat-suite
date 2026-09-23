@@ -35,6 +35,7 @@
           ],
           "branch": [
             "main",
+            "rebranch",
             "release/6.0",
             "release/6.2",
             "release/6.3",
