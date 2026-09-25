@@ -6,7 +6,7 @@
   "maintainer": "jadams23@apple.com",
   "compatibility": [
     {
-      "version": "6.0",
+      "version": "5.10",
       "commit": "5e393c5747c331bb43cb651cd252fb4f4eb95a91"
     }
   ],
