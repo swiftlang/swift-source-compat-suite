@@ -1,0 +1,23 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/swiftlang/swiftly.git",
+  "path": "swiftly",
+  "branch": "main",
+  "maintainer": "jadams23@apple.com",
+  "compatibility": [
+    {
+      "version": "5.10",
+      "commit": "5e393c5747c331bb43cb651cd252fb4f4eb95a91"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "build_tests": "true"
+    }
+  ]
+}
