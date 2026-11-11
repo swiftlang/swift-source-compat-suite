@@ -1,0 +1,28 @@
+{
+  "repository": "Git",
+  "url": "https://github.com/apple/swift-network-evolution",
+  "path": "swift-network-evolution",
+  "branch": "main",
+  "maintainer": "rpaulo@apple.com",
+  "compatibility": [
+    {
+      "version": "6.4",
+      "commit": "d4598cb790c60f17d8424c6b07756ba3ab116125"
+    }
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux"
+  ],
+  "actions": [
+    {
+      "action": "BuildSwiftPackage",
+      "configuration": "release",
+      "build_tests": "true",
+      "tags": "sourcekit-disabled swiftpm"
+    },
+    {
+      "action": "TestSwiftPackage"
+    }
+  ]
+}
